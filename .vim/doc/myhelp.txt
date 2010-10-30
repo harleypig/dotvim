@@ -1,0 +1,12 @@
+*myhelp.txt* A constantly changing file of things I'm trying to remember/learn about VIm.
+
+Revision Control
+================
+Status <Leader>cs   Diff    <Leader>cd VCSDiff
+Add    <Leader>ca   VimDiff <Leader>cv VCSVimDiff
+Commit <Leader>cc
+
+Update <Leader>cu   Annotate <Leader>cn
+Info   <Leader>ci   Log      <Leader>cl
+
+Currently, <Leader> is \
