@@ -47,23 +47,25 @@ map <Leader>o :<C-U>call append(line("."), repeat([''], v:count1))<CR>
 " http://www.vim.org/scripts/script.php?script_id=2390
 " set t_Co=256
 
-" Plugins
-"
-" Align      http://www.vim.org/scripts/script.php?script_id=294
-"            http://github.com/vim-scripts/Align
-"
-" AutoAlign  http://www.vim.org/scripts/script.php?script_id=884
-"            http://github.com/vim-scripts/AutoAlign
-"
-" Surround   http://www.vim.org/scripts/script.php?script_id=1697
-"            http://github.com/tpope/vim-surround
-"
+" Plugins Installed
+
 " ShowMarks  http://www.vim.org/scripts/script.php?script_id=152
 "            http://github.com/vim-scripts/showmarks
-"
+
+" Plugins To Be Installed
+
+" Align      http://www.vim.org/scripts/script.php?script_id=294
+"            http://github.com/vim-scripts/Align
+
+" AutoAlign  http://www.vim.org/scripts/script.php?script_id=884
+"            http://github.com/vim-scripts/AutoAlign
+
+" Surround   http://www.vim.org/scripts/script.php?script_id=1697
+"            http://github.com/tpope/vim-surround
+
 " Syntastic  http://www.vim.org/scripts/script.php?script_id=2736
 "            http://github.com/scrooloose/syntastic/
-"
+
 " VCSCommand http://www.vim.org/scripts/script.php?script_id=90
 "            http://repo.or.cz/w/vcscommand.git
 
