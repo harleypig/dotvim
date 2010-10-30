@@ -1,6 +1,14 @@
 " Excellent HTML formatted copy of the VIm documentation at
 " http://vimdoc.sourceforge.net/htmldoc/
 
+" Automatically reload this file when it's saved.
+if !exists( "autoload_vimrc" )
+
+  let autoload_vimrc = 1
+  autocmd BufWritePost ~/.vimrc source ~/.vimrc
+
+endif
+
 " set verbose=0
 
 colorscheme freya
@@ -20,14 +28,6 @@ helptags ~/.vim/doc
 " Forget to sudo to edit a file? Use w!!
 " via http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/96492#96492
 cmap w!! %!sudo tee > /dev/null %
-
-" Automatically reload this file when it's saved.
-if !exists( "autoload_vimrc" )
-
-  let autoload_vimrc = 1
-  autocmd BufWritePost ~/.vimrc source ~/.vimrc
-
-endif
 
 " Sort visually selected text by word
 " c d a f e => a c d e f
@@ -83,6 +83,9 @@ let g:VCSCommandEnableBufferSetup=1
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 
+" Surround   http://www.vim.org/scripts/script.php?script_id=1697
+"            http://github.com/tpope/vim-surround
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins To Be Installed
 
@@ -91,9 +94,6 @@ let g:syntastic_auto_loc_list=1
 
 " AutoAlign  http://www.vim.org/scripts/script.php?script_id=884
 "            http://github.com/vim-scripts/AutoAlign
-
-" Surround   http://www.vim.org/scripts/script.php?script_id=1697
-"            http://github.com/tpope/vim-surround
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Check these plugins out

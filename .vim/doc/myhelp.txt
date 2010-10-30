@@ -15,3 +15,23 @@ Insert Blank Lines
 ==================
 Above <count?><Leader>O
 Below <count?><Leader>o
+
+Change Surrounding Pairs
+========================
+csXY where X is the existing pair and Y is the desired pair.
+
+"Hello world" -> cs"' -> 'Hello world'
+
+Additionaly, in the case of opening and closing pairs (e.g., parens) using the
+opening character causes leading and trailing whitespace between the pairs.
+Using the closing character removes leading and trailing whitespace.
+
+$hash{'key'} -> cs{{ -> $hash{ 'key' }
+
+dsX deletes the pair
+
+"Hello world" -> ds" -> Hello world
+
+ysMOTIONX
+
+Long sentence and wrap three words. -> ys3w" -> Long "sentence and wrap" three words.
