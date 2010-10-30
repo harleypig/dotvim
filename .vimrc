@@ -14,7 +14,8 @@ set nocompatible
 
 helptags ~/.vim/doc
 
-set statusline=%02n%M%R%H%W%Y\ [%03b:%02B][%02l/%02L\ %p%%][%c%V]\ %{getcwd()}\ %f
+set statusline=%02n%m%r%h%w%y%{VCSCommandGetStatusLine()}[%02l/%02L\ %p%%][%c%V][%03b:%02B]%=%F
+set laststatus=2
 
 " Forget to sudo to edit a file? Use w!!
 " via http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/96492#96492
@@ -57,6 +58,9 @@ let g:showmarks_hlline_lower=1
 
 " VCSCommand http://www.vim.org/scripts/script.php?script_id=90
 "            http://repo.or.cz/w/vcscommand.git
+
+" For statusline (VCSCommandGetStatusLine)
+let g:VCSCommandEnableBufferSetup=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins To Be Installed
