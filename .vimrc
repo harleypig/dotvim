@@ -59,7 +59,7 @@ set statusline+=%=
 set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%*
 
 " Builtin
-set statusline+=%F
+set statusline+=\ %F
 
 set laststatus=2
 
@@ -86,14 +86,14 @@ let g:syntastic_auto_loc_list=1
 " Surround   http://www.vim.org/scripts/script.php?script_id=1697
 "            http://github.com/tpope/vim-surround
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins To Be Installed
-
 " Align      http://www.vim.org/scripts/script.php?script_id=294
 "            http://github.com/vim-scripts/Align
 
 " AutoAlign  http://www.vim.org/scripts/script.php?script_id=884
 "            http://github.com/vim-scripts/AutoAlign
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins To Be Installed
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Check these plugins out
@@ -124,7 +124,7 @@ let g:syntastic_auto_loc_list=1
 " Whitespace
 " Turn trailing whitespace red: http://github.com/vim-scripts/trailing-whitespace.vim
 " Auto trim trailing whitespace: http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/103606#103606
-"   - done in .vim/after/ftplugin/perl.vim Does it work? Do other places need it?
+"   done in .vim/after/ftplugin/perl.vim Does it work? Do other places need it?
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ScrollColors - colorscheme scroller, chooser and browser
