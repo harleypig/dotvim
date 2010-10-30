@@ -12,7 +12,7 @@ syntax on
 set   number
 set nocompatible
 
-" helptags ~/.vim/doc
+helptags ~/.vim/doc
 
 set statusline=%02n%M%R%H%W%Y\ [%03b:%02B][%02l/%02L\ %p%%][%c%V]\ %{getcwd()}\ %f
 
@@ -52,6 +52,9 @@ map <Leader>o :<C-U>call append(line("."), repeat([''], v:count1))<CR>
 " ShowMarks  http://www.vim.org/scripts/script.php?script_id=152
 "            http://github.com/vim-scripts/showmarks
 
+" VCSCommand http://www.vim.org/scripts/script.php?script_id=90
+"            http://repo.or.cz/w/vcscommand.git
+
 " Plugins To Be Installed
 
 " Align      http://www.vim.org/scripts/script.php?script_id=294
@@ -65,9 +68,6 @@ map <Leader>o :<C-U>call append(line("."), repeat([''], v:count1))<CR>
 
 " Syntastic  http://www.vim.org/scripts/script.php?script_id=2736
 "            http://github.com/scrooloose/syntastic/
-
-" VCSCommand http://www.vim.org/scripts/script.php?script_id=90
-"            http://repo.or.cz/w/vcscommand.git
 
 " Check these plugins out
 
