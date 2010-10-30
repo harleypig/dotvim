@@ -66,6 +66,7 @@ b:VCSCommandOriginalBuffer	vcscommand.txt	/*b:VCSCommandOriginalBuffer*
 b:VCSCommandSourceFile	vcscommand.txt	/*b:VCSCommandSourceFile*
 b:VCSCommandVCSType	vcscommand.txt	/*b:VCSCommandVCSType*
 cvscommand-changes	vcscommand.txt	/*cvscommand-changes*
+myhelp.txt	myhelp.txt	/*myhelp.txt*
 showmarks	showmarks.txt	/*showmarks*
 showmarks-changelog	showmarks.txt	/*showmarks-changelog*
 showmarks-commands	showmarks.txt	/*showmarks-commands*
