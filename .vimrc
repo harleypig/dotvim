@@ -14,8 +14,8 @@ set nocompatible
 
 helptags ~/.vim/doc
 
-set statusline=%02n%m%r%h%w%y%{VCSCommandGetStatusLine()}[%02l/%02L\ %p%%][%c%V][%03b:%02B]%=%F
-set laststatus=2
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Miscellaneous stuff
 
 " Forget to sudo to edit a file? Use w!!
 " via http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/96492#96492
@@ -36,17 +36,32 @@ vnoremap <F2> d:execute 'normal i' . join(sort(split(getreg('"'))), '')<CR>"')))
 
 " Add blank lines without going into insert mode
 " http://stackoverflow.com/questions/3170348/insert-empty-lines-without-entering-insert-mode
-map <Leader>O :<C-U>call insert(line("."), repeat([''], v:count1))<CR>
+map <Leader>O :<C-U>call append(line(".") -1, repeat([''], v:count1))<CR>
 map <Leader>o :<C-U>call append(line("."), repeat([''], v:count1))<CR>
 
-" ScrollColors - colorscheme scroller, chooser and browser
-" http://www.vim.org/scripts/script.php?script_id=1488
-" map <silent><Leader>nc :NEXTCOLOR<CR>
-" map <silent><Leader>pc :PREVCOLOR<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set the statusline
+"   broken up for ease of manipulation and readability.
 
-" CSApprox - Make gvim-only colorschemes work transparently in terminal vim
-" http://www.vim.org/scripts/script.php?script_id=2390
-" set t_Co=256
+" Builtin
+set statusline =%02n%m%r%h%w%y
+
+" From vcscommand
+set statusline+=%{VCSCommandGetStatusLine()}
+
+" Builtin
+set statusline+=[%02l/%02L\ %p%%][%c%V][%03b:%02B]
+
+" End of Left Aligned, Begin of Right Aligned
+set statusline+=%=
+
+" From syntastic
+set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%*
+
+" Builtin
+set statusline+=%F
+
+set laststatus=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins Installed
@@ -62,6 +77,12 @@ let g:showmarks_hlline_lower=1
 " For statusline (VCSCommandGetStatusLine)
 let g:VCSCommandEnableBufferSetup=1
 
+" Syntastic  http://www.vim.org/scripts/script.php?script_id=2736
+"            http://github.com/scrooloose/syntastic/
+
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins To Be Installed
 
@@ -73,9 +94,6 @@ let g:VCSCommandEnableBufferSetup=1
 
 " Surround   http://www.vim.org/scripts/script.php?script_id=1697
 "            http://github.com/tpope/vim-surround
-
-" Syntastic  http://www.vim.org/scripts/script.php?script_id=2736
-"            http://github.com/scrooloose/syntastic/
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Check these plugins out
@@ -107,3 +125,13 @@ let g:VCSCommandEnableBufferSetup=1
 " Turn trailing whitespace red: http://github.com/vim-scripts/trailing-whitespace.vim
 " Auto trim trailing whitespace: http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/103606#103606
 "   - done in .vim/after/ftplugin/perl.vim Does it work? Do other places need it?
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ScrollColors - colorscheme scroller, chooser and browser
+" http://www.vim.org/scripts/script.php?script_id=1488
+" map <silent><Leader>nc :NEXTCOLOR<CR>
+" map <silent><Leader>pc :PREVCOLOR<CR>
+
+" CSApprox - Make gvim-only colorschemes work transparently in terminal vim
+" http://www.vim.org/scripts/script.php?script_id=2390
+" set t_Co=256

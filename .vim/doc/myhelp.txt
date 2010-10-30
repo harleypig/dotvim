@@ -1,5 +1,7 @@
 *myhelp.txt* A constantly changing file of things I'm trying to remember/learn about VIm.
 
+Currently, <Leader> is \
+
 Revision Control
 ================
 Status <Leader>cs   Diff    <Leader>cd VCSDiff
@@ -9,4 +11,7 @@ Commit <Leader>cc
 Update <Leader>cu   Annotate <Leader>cn
 Info   <Leader>ci   Log      <Leader>cl
 
-Currently, <Leader> is \
+Insert Blank Lines
+==================
+Above <count?><Leader>O
+Below <count?><Leader>o
