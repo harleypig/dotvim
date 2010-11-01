@@ -17,10 +17,42 @@ set background=dark
 filetype plugin indent on
 syntax on
 
-set   number
-set nocompatible
-
 helptags ~/.vim/doc
+
+" Sort this section by doing the following (it will ignore the 'set no' or
+" 'set   ' and sort by keywords :
+
+" <range>!perl -ne 'push@a,$_}{print$_ for sort{substr($a,6)cmp substr$b,6}@a'
+
+set nocompatible
+set   linebreak
+set   magic
+set   number
+set   showcmd
+set   showmatch
+set   terse
+set   title
+set   wildmenu
+set nowrap
+
+set backupdir=/tmp,~/tmp
+set clipboard+=unnamed
+set directory=/tmp,~/tmp
+set display=uhex,lastline
+set encoding=utf-8
+set history=1000
+set mouse=
+set pastetoggle=<S-F1>
+set report=1
+set scrolloff=9999999
+set shortmess=a
+set undolevels=1000
+set updatetime=3000
+set virtualedit=block
+set whichwrap=b,s,<,>,[,]
+set wildignore+=*/CVS/
+set wildignore+=*/SVN/
+set wildmode=list:longest,full
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Miscellaneous stuff
@@ -91,6 +123,10 @@ let g:syntastic_auto_loc_list=1
 
 " AutoAlign  http://www.vim.org/scripts/script.php?script_id=884
 "            http://github.com/vim-scripts/AutoAlign
+
+" Vim-Perl   http://github.com/petdance/vim-perl
+
+" See after/ftplugin/perl.vim for filetype specific settings.
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins To Be Installed
