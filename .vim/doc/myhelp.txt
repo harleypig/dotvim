@@ -2,8 +2,13 @@
 
 Currently, <Leader> is \
 
-Revision Control
-================
+*Paste*
+=======
+
+Use Shift-F1 to toggle paste mode! (Doesn't appear to work on my netbook)
+
+*Revision Control*
+==================
 Status <Leader>cs   Diff    <Leader>cd VCSDiff
 Add    <Leader>ca   VimDiff <Leader>cv VCSVimDiff
 Commit <Leader>cc
@@ -11,13 +16,13 @@ Commit <Leader>cc
 Update <Leader>cu   Annotate <Leader>cn
 Info   <Leader>ci   Log      <Leader>cl
 
-Insert Blank Lines
-==================
+*Insert Blank Lines*
+====================
 Above <count?><Leader>O
 Below <count?><Leader>o
 
-Change Surrounding Pairs
-========================
+*Change Surrounding Pairs*
+==========================
 csXY where X is the existing pair and Y is the desired pair.
 
 "Hello world" -> cs"' -> 'Hello world'

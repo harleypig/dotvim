@@ -30,6 +30,7 @@ set   magic
 set   number
 set   showcmd
 set   showmatch
+set   spell
 set   terse
 set   title
 set   wildmenu
@@ -76,7 +77,7 @@ map <Leader>o :<C-U>call append(line("."), repeat([''], v:count1))<CR>
 "   broken up for ease of manipulation and readability.
 
 " Builtin
-set statusline =%02n%m%r%h%w%y
+set statusline =%02n%#warningmsg#%m%*%r%h%w%y
 
 " From vcscommand
 set statusline+=%{VCSCommandGetStatusLine()}
@@ -137,6 +138,12 @@ let g:syntastic_auto_loc_list=1
 " Gundo http://sjl.bitbucket.org/gundo.vim/
 "       http://github.com/sjl/gundo.vim
 
+" Vim-Ref http://github.com/thinca/vim-ref (perldoc)
+
+" Compare easytags and PerlTags:
+"   http://search.cpan.org/~osfameron/Perl-Tags-0.28/
+"   http://github.com/xolox/vim-easytags
+
 " Compare AutoClose
 "   http://www.vim.org/scripts/script.php?script_id=1849 http://github.com/vim-scripts/Autoclose
 "   http://www.vim.org/scripts/script.php?script_id=2009 http://github.com/vim-scripts/AutoClose--Alves
@@ -161,6 +168,8 @@ let g:syntastic_auto_loc_list=1
 " Pathogen http://github.com/tpope/vim-pathogen
 
 " SnipMate http://github.com/msanders/snipmate.vim
+
+" Up to: http://github.com/search?langOverride=&q=vim&repo=&start_value=5&type=Repositories
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Rip off code from these projects for my own use
