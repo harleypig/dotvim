@@ -134,6 +134,9 @@ let g:syntastic_auto_loc_list=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Check these plugins out
 
+" Gundo http://sjl.bitbucket.org/gundo.vim/
+"       http://github.com/sjl/gundo.vim
+
 " Compare AutoClose
 "   http://www.vim.org/scripts/script.php?script_id=1849 http://github.com/vim-scripts/Autoclose
 "   http://www.vim.org/scripts/script.php?script_id=2009 http://github.com/vim-scripts/AutoClose--Alves
@@ -149,6 +152,15 @@ let g:syntastic_auto_loc_list=1
 
 " VOoM   http://www.vim.org/scripts/script.php?script_id=2657
 "        http://github.com/vim-scripts/VOoM
+
+" Git Branch Info http://github.com/taq/vim-git-branch-info
+
+" Braid http://github.com/evilchelu/braid
+"   see http://github.com/astrails/dotvim for live usage
+
+" Pathogen http://github.com/tpope/vim-pathogen
+
+" SnipMate http://github.com/msanders/snipmate.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Rip off code from these projects for my own use
