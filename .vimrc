@@ -129,9 +129,15 @@ let g:syntastic_auto_loc_list=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ScrollColors - colorscheme scroller, chooser and browser
 " http://www.vim.org/scripts/script.php?script_id=1488
-" map <silent><Leader>nc :NEXTCOLOR<CR>
-" map <silent><Leader>pc :PREVCOLOR<CR>
+"map <silent><Leader>nc :NEXTCOLOR<CR>
+"map <silent><Leader>pc :PREVCOLOR<CR>
 
 " CSApprox - Make gvim-only colorschemes work transparently in terminal vim
 " http://www.vim.org/scripts/script.php?script_id=2390
-" set t_Co=256
+"set t_Co=256
+
+" bufferlist.vim : simple, fast, and slick non-disturbing buffer list
+" http://www.vim.org/scripts/script.php?script_id=1325
+"map <silent> <F3> :call BufferList()<CR>
+"let g:BufferListWidth = 25
+"let g:BufferListMaxWidth = 50

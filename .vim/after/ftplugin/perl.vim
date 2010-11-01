@@ -14,12 +14,6 @@ compiler perl
 " Use perltidy for the '=' command
 setlocal equalprg=perltidy 
 
-" bufferlist.vim : simple, fast, and slick non-disturbing buffer list
-" http://www.vim.org/scripts/script.php?script_id=1325
-map <silent> <F3> :call BufferList()<CR>
-let g:BufferListWidth = 25
-let g:BufferListMaxWidth = 50
-
 " Sort this section by doing the following (it will ignore the 'set no' or
 " 'set   ' and sort by keywords :
 
@@ -74,7 +68,6 @@ setlocal foldmethod=syntax
 setlocal formatoptions=r
 setlocal guioptions+=agimrLt
 setlocal history=500
-setlocal laststatus=2
 setlocal matchtime=3
 setlocal mouse=
 setlocal nrformats=octal,hex,alpha
@@ -95,12 +88,17 @@ setlocal wildignore+=*/CVS/
 setlocal wildignore+=*/SVN/
 setlocal wildmode=list:longest,full
 
+hi BufferSelected term=reverse ctermfg=white ctermbg=red cterm=bold
+hi BufferNormal term=NONE ctermfg=black ctermbg=darkcyan cterm=NONE
+
 " FindFuncName - Find the name of the function you are editing
 " http://www.vim.org/scripts/script.php?script_id=1628
 map \func :echo FunctionName()<CR>
 
-hi BufferSelected term=reverse ctermfg=white ctermbg=red cterm=bold
-hi BufferNormal term=NONE ctermfg=black ctermbg=darkcyan cterm=NONE
+" setlocal statusline+=\ %{FunctionName()}
+autocmd BufWritePre * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
+" autocmd BufNewFile *.pm 0r ~/.vim/skeleton/perl_package.pm
+" autocmd BufNewFile *.pl 0r ~/.vim/skeleton/perl_script.pl
 
 " Found here: http://www.vim.org/scripts/script.php?script_id=2852
 fun! PerlCompletionBehavior()
@@ -130,11 +128,6 @@ fun! StripTrailingWhitespace()
   let @/ = saved_search
 
 endf
-
-" setlocal statusline+=\ %{FunctionName()}
-autocmd BufWritePre * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
-" autocmd BufNewFile *.pm 0r ~/.vim/skeleton/perl_package.pm
-" autocmd BufNewFile *.pl 0r ~/.vim/skeleton/perl_script.pl
 
 " type 'Chmod' to set execute for owner only
 command! -bar -nargs=* Chmod :!chmod 0700 % <args>
