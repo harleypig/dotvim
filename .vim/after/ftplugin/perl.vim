@@ -41,13 +41,14 @@ setlocal   shiftround
 setlocal   smartindent
 setlocal   smarttab
 
+" <range>!perl -ne 'push@a,$_}{print$_ for sort{substr($a,9)cmp substr$b,9}@a'
+
 setlocal cinkeys-=0#
 setlocal diffopt=filler,iwhite
 setlocal fillchars=fold:=,diff:=
 setlocal foldcolumn=5
 setlocal foldlevelstart=0
 setlocal foldmethod=syntax
-setlocal formatoptions=r
 setlocal guioptions+=agimrLt
 setlocal matchtime=3
 setlocal nrformats=octal,hex,alpha
