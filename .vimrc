@@ -1,6 +1,8 @@
 " Excellent HTML formatted copy of the VIm documentation at
 " http://vimdoc.sourceforge.net/htmldoc/
 
+"let &runtimepath = '/root/harleypig/.vim,' . &runtimepath . ',/root/harleypig/.vim/after'
+
 " Automatically reload this file when it's saved.
 if !exists( "autoload_vimrc" )
 
