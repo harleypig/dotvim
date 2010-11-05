@@ -144,6 +144,7 @@ let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl'
 " VimDebug http://www.vim.org/scripts/script.php?script_id=663
 "          https://github.com/vim-scripts/VimDebug
 
+" Need VIm 7.3+
 " Gundo http://sjl.bitbucket.org/gundo.vim/
 "       http://github.com/sjl/gundo.vim
 
