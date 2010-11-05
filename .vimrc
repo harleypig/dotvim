@@ -118,6 +118,7 @@ let g:VCSCommandEnableBufferSetup=1
 
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
+let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl'
 
 " Surround   http://www.vim.org/scripts/script.php?script_id=1697
 "            http://github.com/tpope/vim-surround
