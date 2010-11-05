@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
 # This is shamelessly ripped from $VIMRUNTIME/tools/efm_perl.pl (which was last
 # updated in 2001 according to the version history--but I'm willing to accept #
@@ -6,8 +6,7 @@
 # details and historical information.
 
 use strict;
-
-use constant VERSION => 0.3;
+use warnings;
 
 ( my $file = shift ) or die "No filename to check!\n";
 
@@ -17,7 +16,10 @@ my $errors = 0;
 
 foreach my $line ( @lines ) {
 
-    if ( my ( $message, $file, $lineno, $rest ) = $line =~ /^(.*)\sat\s(.*)\sline\s(\d+)(\.|,\snear\s\".*\")$/ ) {
+    next if $line =~ /\"DB\:\:single\" used only once\: possible typo/;
+
+    if ( my ( $message, $file, $lineno, $rest ) = $line =~ /^(.*)\sat\s(.*)\sline\s(\d+)(\.|,\snear\s\".*\"?)$/ ) {
+
 
       $errors++;
       $message .= $rest if ($rest =~ s/^,//);
