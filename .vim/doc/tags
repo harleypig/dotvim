@@ -41,6 +41,7 @@
 :VCSUpdate	vcscommand.txt	/*:VCSUpdate*
 :VCSVimDiff	vcscommand.txt	/*:VCSVimDiff*
 Align-copyright	Align.txt	/*Align-copyright*
+Paste	myhelp.txt	/*Paste*
 ShowMarksClearAll	showmarks.txt	/*ShowMarksClearAll*
 ShowMarksClearMark	showmarks.txt	/*ShowMarksClearMark*
 ShowMarksOn	showmarks.txt	/*ShowMarksOn*

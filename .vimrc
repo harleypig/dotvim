@@ -30,17 +30,20 @@ set   magic
 set   number
 set   showcmd
 set   showmatch
-set   spell
+"set   spell
 set   terse
 set   title
 set   wildmenu
 set nowrap
+
+" <range>!perl -ne 'push@a,$_}{print$_ for sort{substr($a,4)cmp substr$b,4}@a'
 
 set backupdir=/tmp,~/tmp
 set clipboard+=unnamed
 set directory=/tmp,~/tmp
 set display=uhex,lastline
 set encoding=utf-8
+set formatoptions=tcroq1
 set history=1000
 set mouse=
 set pastetoggle=<S-F1>
@@ -102,7 +105,7 @@ set laststatus=2
 " ShowMarks  http://www.vim.org/scripts/script.php?script_id=152
 "            http://github.com/vim-scripts/showmarks
 
-let g:showmarks_hlline_lower=1
+" let g:showmarks_hlline_lower=1
 
 " VCSCommand http://www.vim.org/scripts/script.php?script_id=90
 "            http://repo.or.cz/w/vcscommand.git
@@ -135,10 +138,23 @@ let g:syntastic_auto_loc_list=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Check these plugins out
 
+" VimDebug http://www.vim.org/scripts/script.php?script_id=663
+"          https://github.com/vim-scripts/VimDebug
+
 " Gundo http://sjl.bitbucket.org/gundo.vim/
 "       http://github.com/sjl/gundo.vim
 
 " Vim-Ref http://github.com/thinca/vim-ref (perldoc)
+
+" Git Branch Info http://github.com/taq/vim-git-branch-info
+
+" Compare Pathogen and Braid
+
+" Pathogen http://github.com/tpope/vim-pathogen
+"   http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
+
+" Braid http://github.com/evilchelu/braid see
+" http://github.com/astrails/dotvim for live usage
 
 " Compare easytags and PerlTags:
 "   http://search.cpan.org/~osfameron/Perl-Tags-0.28/
@@ -159,13 +175,6 @@ let g:syntastic_auto_loc_list=1
 
 " VOoM   http://www.vim.org/scripts/script.php?script_id=2657
 "        http://github.com/vim-scripts/VOoM
-
-" Git Branch Info http://github.com/taq/vim-git-branch-info
-
-" Braid http://github.com/evilchelu/braid
-"   see http://github.com/astrails/dotvim for live usage
-
-" Pathogen http://github.com/tpope/vim-pathogen
 
 " SnipMate http://github.com/msanders/snipmate.vim
 
