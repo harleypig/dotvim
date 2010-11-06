@@ -30,7 +30,6 @@ setlocal nocompatible
 setlocal   confirm
 setlocal nocopyindent
 setlocal   cursorline
-setlocal   expandtab
 setlocal   foldenable
 setlocal nohidden
 setlocal   hlsearch

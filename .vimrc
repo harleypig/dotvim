@@ -1,6 +1,9 @@
 " Excellent HTML formatted copy of the VIm documentation at
 " http://vimdoc.sourceforge.net/htmldoc/
 
+" Stuff found in various places:
+"   http://got-ravings.blogspot.com
+
 "let &runtimepath = '/root/harleypig/.vim,' . &runtimepath . ',/root/harleypig/.vim/after'
 
 " Automatically reload this file when it's saved.
@@ -26,13 +29,15 @@ helptags ~/.vim/doc
 
 " <range>!perl -ne 'push@a,$_}{print$_ for sort{substr($a,6)cmp substr$b,6}@a'
 
+"set   spell
 set nocompatible
+set   expandtab
 set   linebreak
+set   list
 set   magic
 set   number
 set   showcmd
 set   showmatch
-"set   spell
 set   terse
 set   title
 set   wildmenu
@@ -47,6 +52,7 @@ set display=uhex,lastline
 set encoding=utf-8
 set formatoptions=tcroq1
 set history=1000
+set listchars=tab:>-,trail:*
 set mouse=
 set pastetoggle=<S-F1>
 set report=1
@@ -81,25 +87,109 @@ map <Leader>o :<C-U>call append(line("."), repeat([''], v:count1))<CR>
 " Set the statusline
 "   broken up for ease of manipulation and readability.
 
-" Builtin
-set statusline =%02n%#warningmsg#%m%*%r%h%w%y
+let b:StatuslineTrailingSpaceText = ' \s'
+let b:StatuslineExpandTabText = ' &et'
+let b:StatuslineMixedIndentText = ' mixed-indenting'
 
-" From vcscommand
-set statusline+=%{VCSCommandGetStatusLine()}
+set statusline=
 
-" Builtin
-set statusline+=[%02l/%02L\ %p%%][%c%V][%03b:%02B]
+" Various status flags/indicators
+" Can I customize each of H, R and W like M?
+set statusline+=[%02n%H%R%W
+set statusline+=\ %{strlen(&filetype)?&filetype:'none'}
+set statusline+=%#warningmsg#
+set statusline+=%M " Change this to + (no comma or anything) and X when not modifiable (:h modified & :h modifiable)
+set statusline+=%{&fileformat!='unix'?'\ *'.&fileformat.'*\ ':''}
+set statusline+=%{(&fileencoding!='utf-8'&&&fileencoding!='')?'\ *'.&fileencoding.'*\ ':''}
+set statusline+=%{StatuslineMixedIndentWarning()}
+set statusline+=%{StatuslineTrailingSpaceWarning()}
+set statusline+=\ %{SyntasticStatuslineFlag()}
+set statusline+=%*]
 
-" End of Left Aligned, Begin of Right Aligned
+" Informational
+set statusline+=[%02l/%02L\ %p%%\ %{FileSize()}][%c%V][%03b:%02B]
+set statusline+=\ %{synIDattr(synID(line('.'),col('.'),1),'name')}
+
+" Middle (end of left justified, begin right justified)
 set statusline+=%=
 
-" From syntastic
-set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%*
-
-" Builtin
-set statusline+=\ %F
+" File Info
+set statusline+=%{VCSCommandGetStatusLine()}\ %F
 
 set laststatus=2
+
+" found @ http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html
+function! FileSize()
+  let bytes = getfsize(expand("%:p"))
+
+  if bytes <= 0
+    return ''
+  else
+    return bytes . 'b'
+  endif
+endfunction
+
+"recalculate the warnings when idle or after saving
+autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
+autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
+
+function! StatuslineMixedIndentWarning()
+
+  if !exists("b:StatuslineMixedIndentText")
+    let b:StatuslineMixedIndentText = '[mixed-indenting]'
+  endif
+
+  if !exists("b:StatuslineExpandTabText")
+    let b:StatuslineExpandTabText = '[&et]'
+  endif
+
+  if !exists("b:statusline_tab_warning")
+    let tabs = search('^\t', 'nw') != 0
+    let spaces = search('^ ', 'nw') != 0
+
+    if tabs && spaces
+      let b:statusline_tab_warning = b:StatuslineMixedIndentText
+    elseif (spaces && !&et) || (tabs && &et)
+      let b:statusline_tab_warning = b:StatuslineExpandTabText
+    else
+      let b:statusline_tab_warning = ''
+    endif
+  endif
+
+  return b:statusline_tab_warning
+endfunction
+
+function! StatuslineTrailingSpaceWarning()
+
+  if !exists("b:StatuslineTrailingSpaceText")
+    let b:StatuslineTrailingSpaceText = ' \s'
+  endif
+
+  if !exists("b:statusline_trailing_space_warning")
+    if search('\s\+$', 'nw') != 0
+      let b:statusline_trailing_space_warning = b:StatuslineTrailingSpaceText
+    else
+      let b:statusline_trailing_space_warning = ''
+    endif
+  endif
+
+  return b:statusline_trailing_space_warning
+endfunction
+
+"function! InsertStatuslineColor(mode)
+"  if a:mode == 'i'
+"    hi statusline ctermbg=0
+"  elseif a:mode == 'r'
+"    hi statusline ctermbg=3
+"  else
+"    hi statusline ctermbg=5
+"  endif
+"endfunction
+"
+"au InsertEnter * call InsertStatuslineColor(v:insertmode)
+"au InsertLeave * hi statusline ctermbg=4
+"
+"hi statusline term=bold cterm=bold ctermfg=3 ctermbg=4
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins Installed
@@ -140,6 +230,9 @@ let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Check these plugins out
+
+" Not a plugin, but let's see how well it works:
+" https://github.com/tomtom/vimtips2help.rb
 
 " VimDebug http://www.vim.org/scripts/script.php?script_id=663
 "          https://github.com/vim-scripts/VimDebug
