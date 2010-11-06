@@ -10,7 +10,7 @@
 if !exists( "autoload_vimrc" )
 
   let autoload_vimrc = 1
-  autocmd BufWritePost ~/.vimrc source ~/.vimrc
+  autocmd BufWritePost .vimrc source $MYVIMRC
 
 endif
 
@@ -223,13 +223,16 @@ let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl'
 
 " Vim-Perl   http://github.com/petdance/vim-perl
 
-" See after/ftplugin/perl.vim for filetype specific settings.
+" See after/ftplugin/perl.vim for perl specific settings.
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins To Be Installed
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Check these plugins out
+
+" Unimpaired url?
+" http://vimcasts.org/episodes/bubbling-text/
 
 " Not a plugin, but let's see how well it works:
 " https://github.com/tomtom/vimtips2help.rb
@@ -245,10 +248,13 @@ let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl'
 
 " Git Branch Info http://github.com/taq/vim-git-branch-info
 
+" CPAN https://github.com/c9s/cpan.vim
+
 " Compare Pathogen and Braid
 
 " Pathogen http://github.com/tpope/vim-pathogen
 "   http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
+"   http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
 
 " Braid http://github.com/evilchelu/braid see
 " http://github.com/astrails/dotvim for live usage
@@ -275,7 +281,7 @@ let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl'
 
 " SnipMate http://github.com/msanders/snipmate.vim
 
-" Up to: http://github.com/search?langOverride=&q=vim&repo=&start_value=5&type=Repositories
+" Up to: http://github.com/search?langOverride=&q=vim&repo=&start_value=7&type=Repositories
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Rip off code from these projects for my own use
