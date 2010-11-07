@@ -243,6 +243,10 @@ let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl'
 " Need VIm 7.3+
 " Gundo http://sjl.bitbucket.org/gundo.vim/
 "       http://github.com/sjl/gundo.vim
+"
+" This one browses undo history too
+" Histwin https://github.com/chrisbra/histwin.vim
+
 
 " Vim-Ref http://github.com/thinca/vim-ref (perldoc)
 
@@ -281,7 +285,15 @@ let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl'
 
 " SnipMate http://github.com/msanders/snipmate.vim
 
-" Up to: http://github.com/search?langOverride=&q=vim&repo=&start_value=7&type=Repositories
+" perldoc https://github.com/hotchpotch/perldoc-vim
+
+" googlesuggest https://github.com/mattn/googlesuggest-complete-vim/blob/master/googlesuggest-complete.vim
+
+" csapprox https://github.com/godlygeek/csapprox
+
+" simplenote https://github.com/mrtazz/simplenote.vim
+
+" Up to: http://github.com/search?langOverride=&q=vim&repo=&start_value=9&type=Repositories
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Rip off code from these projects for my own use

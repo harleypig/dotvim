@@ -23,7 +23,7 @@ foreach my $line ( @lines ) {
 
       $errors++;
       $message .= $rest if ($rest =~ s/^,//);
-      print "$file:$lineno:$message";
+      print "$file:$lineno:$message\n";
 
     }
 }
