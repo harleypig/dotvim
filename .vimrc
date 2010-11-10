@@ -53,7 +53,7 @@ set display=uhex,lastline
 set encoding=utf-8
 set formatoptions=tcroq1
 set history=1000
-set listchars=tab:>-,trail:*
+set listchars=tab:>\ ,trail:*
 set mouse=
 set pastetoggle=<S-F1>
 set report=1
@@ -88,34 +88,29 @@ map <Leader>o :<C-U>call append(line("."), repeat([''], v:count1))<CR>
 " Set the statusline
 "   broken up for ease of manipulation and readability.
 
-let b:StatuslineTrailingSpaceText = ' \s'
-let b:StatuslineExpandTabText = ' &et'
-let b:StatuslineMixedIndentText = ' mixed-indenting'
+let g:StatuslineTrailingSpaceText = '\s'
+let g:StatuslineExpandTabText = '&et'
+let g:StatuslineMixedIndentText = 'mixed-indenting'
 
 set statusline=
-
-" Various status flags/indicators
-" Can I customize each of H, R and W like M?
-set statusline+=[%02n%H%R%W
-set statusline+=\ %{strlen(&filetype)?&filetype:'none'}
+set statusline+=[%02n
+set statusline+=%(\ %{strlen(&filetype)?&filetype:'none'}%)
 set statusline+=%#warningmsg#
-set statusline+=%M " Change this to + (no comma or anything) and X when not modifiable (:h modified & :h modifiable)
-set statusline+=%{&fileformat!='unix'?'\ *'.&fileformat.'*\ ':''}
-set statusline+=%{(&fileencoding!='utf-8'&&&fileencoding!='')?'\ *'.&fileencoding.'*\ ':''}
-set statusline+=%{StatuslineMixedIndentWarning()}
-set statusline+=%{StatuslineTrailingSpaceWarning()}
-set statusline+=\ %{SyntasticStatuslineFlag()}
+set statusline+=%(\ %{&modifiable?&modified?'+':'':'X'}%)
+set statusline+=%(\ %{&fileformat!='unix'?'*'.&fileformat.'*':''}%)
+set statusline+=%(\ %{(&fileencoding!='utf-8'&&&fileencoding!='')?'*'.&fileencoding.'*':''}%)
+set statusline+=%(\ %{StatuslineMixedIndentWarning()}%)
+set statusline+=%(\ %{StatuslineTrailingSpaceWarning()}%)
+set statusline+=%(\ %{SyntasticStatuslineFlag()}%)
 set statusline+=%*]
 
 " Informational
 set statusline+=[%02l/%02L\ %p%%\ %{FileSize()}][%c%V][%03b:%02B]
+set statusline+=%{VCSCommandGetStatusLine()}
 set statusline+=\ %{synIDattr(synID(line('.'),col('.'),1),'name')}
 
 " Middle (end of left justified, begin right justified)
-set statusline+=%=
-
-" File Info
-set statusline+=%{VCSCommandGetStatusLine()}\ %F
+set statusline+=%=%F
 
 set laststatus=2
 
@@ -136,12 +131,16 @@ autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
 
 function! StatuslineMixedIndentWarning()
 
-  if !exists("b:StatuslineMixedIndentText")
-    let b:StatuslineMixedIndentText = '[mixed-indenting]'
+  if (&filetype == 'help')
+    return ''
   endif
 
-  if !exists("b:StatuslineExpandTabText")
-    let b:StatuslineExpandTabText = '[&et]'
+  if !exists("g:StatuslineMixedIndentText")
+    let g:StatuslineMixedIndentText = '[mixed-indenting]'
+  endif
+
+  if !exists("g:StatuslineExpandTabText")
+    let g:StatuslineExpandTabText = '[&et]'
   endif
 
   if !exists("b:statusline_tab_warning")
@@ -149,9 +148,9 @@ function! StatuslineMixedIndentWarning()
     let spaces = search('^ ', 'nw') != 0
 
     if tabs && spaces
-      let b:statusline_tab_warning = b:StatuslineMixedIndentText
+      let b:statusline_tab_warning = g:StatuslineMixedIndentText
     elseif (spaces && !&et) || (tabs && &et)
-      let b:statusline_tab_warning = b:StatuslineExpandTabText
+      let b:statusline_tab_warning = g:StatuslineExpandTabText
     else
       let b:statusline_tab_warning = ''
     endif
@@ -162,13 +161,17 @@ endfunction
 
 function! StatuslineTrailingSpaceWarning()
 
-  if !exists("b:StatuslineTrailingSpaceText")
-    let b:StatuslineTrailingSpaceText = ' \s'
+  if (&filetype == 'help')
+    return ''
+  endif
+
+  if !exists("g:StatuslineTrailingSpaceText")
+    let g:StatuslineTrailingSpaceText = ' \s'
   endif
 
   if !exists("b:statusline_trailing_space_warning")
     if search('\s\+$', 'nw') != 0
-      let b:statusline_trailing_space_warning = b:StatuslineTrailingSpaceText
+      let b:statusline_trailing_space_warning = g:StatuslineTrailingSpaceText
     else
       let b:statusline_trailing_space_warning = ''
     endif
