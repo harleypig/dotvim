@@ -17,6 +17,7 @@ my $errors = 0;
 foreach my $line ( @lines ) {
 
     next if $line =~ /\"DB\:\:single\" used only once\: possible typo/;
+    next if $line =~ /BEGIN failed--compilation aborted/;
 
     if ( my ( $message, $file, $lineno, $rest ) = $line =~ /^(.*)\sat\s(.*)\sline\s(\d+)(\.|,\snear\s\".*\"?)$/ ) {
 
