@@ -21,7 +21,6 @@ foreach my $line ( @lines ) {
 
     if ( my ( $message, $file, $lineno, $rest ) = $line =~ /^(.*)\sat\s(.*)\sline\s(\d+)(\.|,\snear\s\".*\"?)$/ ) {
 
-
       $errors++;
       $message .= $rest if ($rest =~ s/^,//);
       print "$file:$lineno:$message\n";

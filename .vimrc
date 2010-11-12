@@ -10,7 +10,6 @@
 if !exists( "autoload_vimrc" )
 
   let autoload_vimrc = 1
-"  autocmd BufWritePost .vimrc source $MYVIMRC
   autocmd BufWritePost .vimrc source %
 
 endif
