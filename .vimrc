@@ -246,10 +246,9 @@ let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl'
 " Need VIm 7.3+
 " Gundo http://sjl.bitbucket.org/gundo.vim/
 "       http://github.com/sjl/gundo.vim
-"
+
 " This one browses undo history too
 " Histwin https://github.com/chrisbra/histwin.vim
-
 
 " Vim-Ref http://github.com/thinca/vim-ref (perldoc)
 
