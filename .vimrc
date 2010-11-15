@@ -6,6 +6,10 @@
 
 "let &runtimepath = '/root/harleypig/.vim,' . &runtimepath . ',/root/harleypig/.vim/after'
 
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+helptags ~/.vim/doc
+
 " Automatically reload this file when it's saved.
 if !exists( "autoload_vimrc" )
 
@@ -21,8 +25,6 @@ set background=dark
 
 filetype plugin indent on
 syntax on
-
-helptags ~/.vim/doc
 
 " Sort this section by doing the following (it will ignore the 'set no' or
 " 'set   ' and sort by keywords :
