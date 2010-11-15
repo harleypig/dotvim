@@ -22,21 +22,11 @@
 " This one browses undo history too
 " Histwin https://github.com/chrisbra/histwin.vim
 
-
 " Vim-Ref http://github.com/thinca/vim-ref (perldoc)
 
 " Git Branch Info http://github.com/taq/vim-git-branch-info
 
 " CPAN https://github.com/c9s/cpan.vim
-
-" Compare Pathogen and Braid
-
-" Pathogen http://github.com/tpope/vim-pathogen
-"   http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
-"   http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
-
-" Braid http://github.com/evilchelu/braid see
-" http://github.com/astrails/dotvim for live usage
 
 " Compare easytags and PerlTags:
 "   http://search.cpan.org/~osfameron/Perl-Tags-0.28/

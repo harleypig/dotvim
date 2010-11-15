@@ -4,6 +4,8 @@
 " Stuff found in various places:
 "   http://got-ravings.blogspot.com
 
+" See .vim/after/ftplugin/perl.vim for perl specific settings.
+
 "let &runtimepath = '/root/harleypig/.vim,' . &runtimepath . ',/root/harleypig/.vim/after'
 
 call pathogen#runtime_append_all_bundles()
@@ -229,4 +231,6 @@ let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl'
 
 " Vim-Perl   http://github.com/petdance/vim-perl
 
-" See after/ftplugin/perl.vim for perl specific settings.
+" Pathogen http://github.com/tpope/vim-pathogen
+"   http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
+"   http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
