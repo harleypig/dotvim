@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 # This is shamelessly ripped from $VIMRUNTIME/tools/efm_perl.pl (which was last
-# updated in 2001 according to the version history--but I'm willing to accept #
+# updated in 2001 according to the version history--but I'm willing to accept
 # that someone has probably made changes to it since then.) Check that file for
 # details and historical information.
 
@@ -10,20 +10,27 @@ use warnings;
 
 ( my $file = shift ) or die "No filename to check!\n";
 
-my @lines = `perl -c $file 2>&1`;
+my $error = qr{(.*)\sat\s(.*)\sline\s(\d+)(\.|,\snear\s\".*\"?)};
 
-my $errors = 0;
+# Add error messages to be skipped.
+my @skip = (
 
-foreach my $line ( @lines ) {
+  '"DB::single" used only once: possible typo',
+  'BEGIN failed--compilation aborted',
 
-    next if $line =~ /\"DB\:\:single\" used only once\: possible typo/;
-    next if $line =~ /BEGIN failed--compilation aborted/;
+);
 
-    if ( my ( $message, $file, $lineno, $rest ) = $line =~ /^(.*)\sat\s(.*)\sline\s(\d+)(\.|,\snear\s\".*\"?)$/ ) {
+my $skip = join '|', @skip;
 
-      $errors++;
-      $message .= $rest if ($rest =~ s/^,//);
-      print "$file:$lineno:$message\n";
+for my $line ( `perl -c $file 2>&1` ) {
 
-    }
+  chomp $line;
+  next if $line =~ /$skip/;
+
+  if ( my ( $message, $file, $lineno, $rest ) = $line =~ /^$error$/ ) {
+
+    $message .= $rest if ($rest =~ s/^,//);
+    print "$file:$lineno:$message\n";
+
+  }
 }
