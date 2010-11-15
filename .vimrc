@@ -109,6 +109,7 @@ set statusline+=%*]
 set statusline+=[%02l/%02L\ %p%%\ %{FileSize()}][%c%V][%03b:%02B]
 set statusline+=%{VCSCommandGetStatusLine()}
 set statusline+=\ %{synIDattr(synID(line('.'),col('.'),1),'name')}
+"set statusline+=%{strftime('%D\ %T',getftime(expand('%:p')))}
 
 " Middle (end of left justified, begin right justified)
 set statusline+=%=%F
