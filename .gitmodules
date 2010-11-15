@@ -13,3 +13,6 @@
 [submodule ".vim/bundle/align"]
 	path = .vim/bundle/align
 	url = git://github.com/vim-scripts/Align.git
+[submodule ".vim/bundle/autoalign"]
+	path = .vim/bundle/autoalign
+	url = git://github.com/vim-scripts/AutoAlign.git
