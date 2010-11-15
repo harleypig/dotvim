@@ -1,5 +1,5 @@
-[submodule ".vim/bundle/ShowMarks"]
-	path = .vim/bundle/ShowMarks
+[submodule ".vim/bundle/showmarks"]
+	path = .vim/bundle/showmarks
 	url = git://github.com/vim-scripts/ShowMarks.git
 [submodule ".vim/bundle/vcscommand"]
 	path = .vim/bundle/vcscommand
@@ -16,3 +16,6 @@
 [submodule ".vim/bundle/autoalign"]
 	path = .vim/bundle/autoalign
 	url = git://github.com/vim-scripts/AutoAlign.git
+[submodule ".vim/bundle/perl"]
+	path = .vim/bundle/perl
+	url = git://github.com/petdance/vim-perl.git
