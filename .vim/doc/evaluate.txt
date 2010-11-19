@@ -1,7 +1,6 @@
 *evaluate.txt* Plugins I want to look at for possible use
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins To Be Installed
+" Plugins To Be Evaluated
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Check these plugins out
@@ -12,9 +11,6 @@
 " Not a plugin, but let's see how well it works:
 " https://github.com/tomtom/vimtips2help.rb
 
-" VimDebug http://www.vim.org/scripts/script.php?script_id=663
-"          https://github.com/vim-scripts/VimDebug
-
 " Need VIm 7.3+
 " Gundo http://sjl.bitbucket.org/gundo.vim/
 "       http://github.com/sjl/gundo.vim
@@ -22,11 +18,12 @@
 " This one browses undo history too
 " Histwin https://github.com/chrisbra/histwin.vim
 
-" Vim-Ref http://github.com/thinca/vim-ref (perldoc)
-
-" Git Branch Info http://github.com/taq/vim-git-branch-info
-
-" CPAN https://github.com/c9s/cpan.vim
+" perldoc
+" Vim-Ref http://github.com/thinca/vim-ref
+" ManPageView https://github.com/vim-scripts/ManPageView
+" perldoc https://github.com/hotchpotch/perldoc-vim
+" perldoc https://github.com/pshangov/perldoc-vim
+" perldoc https://github.com/c9s/perldoc.vim
 
 " Compare easytags and PerlTags:
 "   http://search.cpan.org/~osfameron/Perl-Tags-0.28/
@@ -48,9 +45,10 @@
 " VOoM   http://www.vim.org/scripts/script.php?script_id=2657
 "        http://github.com/vim-scripts/VOoM
 
-" SnipMate http://github.com/msanders/snipmate.vim
+" Completion
+"   neocomplcache https://github.com/Shougo/neocomplcache
 
-" perldoc https://github.com/hotchpotch/perldoc-vim
+" SnipMate http://github.com/msanders/snipmate.vim
 
 " googlesuggest https://github.com/mattn/googlesuggest-complete-vim/blob/master/googlesuggest-complete.vim
 
@@ -58,7 +56,7 @@
 
 " simplenote https://github.com/mrtazz/simplenote.vim
 
-" Up to: http://github.com/search?langOverride=&q=vim&repo=&start_value=9&type=Repositories
+" Up to: http://github.com/search?langOverride=&q=vim&repo=&start_value=10&type=Repositories
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Rip off code from these projects for my own use
