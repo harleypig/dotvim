@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BUNDLES='.vim/bundle'
+EXCLUDE_FILE='.git/info/exclude'
+
+for i in ${BUNDLES}/*
+do
+  echo doc/tags >> $i/${EXCLUDE_FILE}
+done
