@@ -1,6 +1,3 @@
-[submodule ".vim/bundle/showmarks"]
-	path = .vim/bundle/showmarks
-	url = git://github.com/vim-scripts/ShowMarks.git
 [submodule ".vim/bundle/vcscommand"]
 	path = .vim/bundle/vcscommand
 	url = git@github.com:harleypig/vcscommand.vim.git
@@ -22,3 +19,6 @@
 [submodule ".vim/bundle/pathogen"]
 	path = .vim/bundle/pathogen
 	url = git://github.com/tpope/vim-pathogen.git
+[submodule ".vim/bundle/showmarks"]
+	path = .vim/bundle/showmarks
+	url = git@github.com:harleypig/ShowMarks.git
