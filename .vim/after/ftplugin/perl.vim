@@ -14,9 +14,11 @@ let g:perl_nofold_subs=1
 
 " Sets make and errorformat for perl (see $VIMRUNTIME/compiler/perl)
 compiler perl
+"setlocal shellpipe=2>&1\ >
+"setlocal makeef=errors.err
 
 " Use perltidy for the '=' command
-setlocal equalprg=perltidy 
+setlocal equalprg=perltidy
 
 " Sort this section by doing the following (it will ignore the 'set no' or
 " 'set   ' and sort by keywords :
@@ -26,10 +28,9 @@ setlocal equalprg=perltidy
 setlocal   autoindent
 setlocal   autoread
 setlocal   autowrite
-setlocal nocompatible
 setlocal   confirm
 setlocal nocopyindent
-setlocal   cursorline
+setlocal nocursorline
 setlocal   foldenable
 setlocal nohidden
 setlocal   hlsearch
@@ -51,11 +52,6 @@ setlocal foldmethod=syntax
 setlocal guioptions+=agimrLt
 setlocal matchtime=3
 setlocal nrformats=octal,hex,alpha
-setlocal numberwidth=5
-setlocal path=.,$HOME
-setlocal shiftwidth=2
-setlocal softtabstop=2
-setlocal tabstop=2
 
 hi BufferSelected term=reverse ctermfg=white ctermbg=red cterm=bold
 hi BufferNormal term=NONE ctermfg=black ctermbg=darkcyan cterm=NONE
@@ -89,13 +85,40 @@ command! -bar -nargs=* Debug call WhichDebugger(<q-args>)
 
 " can we run ptkdb or not?
 function! WhichDebugger(args)
-	if has('gui_running')
-		execute "!perl -d:ptkdb " . fnameescape(expand("%")) . " " . a:args
-		"execute "!ddd --perl " . fnameescape(expand('%')) . ' ' . a:args
-	else
-		execute "!perl -d " . fnameescape(expand("%")) . " " . a:args
-	endif
+  if has('gui_running')
+    execute "!perl -d:ptkdb " . fnameescape(expand("%")) . " " . a:args
+    "execute "!ddd --perl " . fnameescape(expand('%')) . ' ' . a:args
+  else
+    execute "!perl -d " . fnameescape(expand("%")) . " " . a:args
+  endif
 endfunction
+
+" Perl code goes here
+if has( 'perl' )
+perl << EOP
+
+use strict;
+
+eval "use PPIx::LineToSub";
+my $PPIxLineToSub = $@ ? 0 : 1;
+sub testPerl { VIM::Msg( "PPIxLineToSub: $PPIxLineToSub" ); }
+EOP
+
+function! Tperl()
+  perl testPerl()
+endfunction
+
+endif
+
+"#if ( $PPIxLineToSub ) {
+"#
+"#  eval q{ sub StatusLineSubName {
+"#
+"#my $d = PPI::Document->new( './efm_perl.pl' );
+"#$d->index_line_to_sub;
+"#return $d->line_to_sub( +shift );
+"#
+"#};
 
 " How do I turn off autocommenting?
 " autocmd FileType perl iab usrbinperl #!/usr/bin/perl<CR><CR>use strict;<CR>use warnings;<CR><CR>
@@ -103,7 +126,7 @@ endfunction
 " Need to experiment with this to make it work correctly, plus you can't just enter the word dumper
 " autocmd FileType perl imap dumper <ESC>^iwarn Data::Dumper->Dump([\<ESC>llyw$a], ['<ESC>pa']);<ESC>
 "
-" Omnicompletion for perl: http://www.vim.org/scripts/script.php?script_id=1924 
+" Omnicompletion for perl: http://www.vim.org/scripts/script.php?script_id=1924
 "
 " Where are identifiers used? http://vimdoc.sourceforge.net/htmldoc/tips.html#ident-search
 
