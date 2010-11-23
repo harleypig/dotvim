@@ -93,32 +93,48 @@ function! WhichDebugger(args)
   endif
 endfunction
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Perl code goes here
 if has( 'perl' )
 perl << EOP
-
 use strict;
 
 eval "use PPIx::LineToSub";
-my $PPIxLineToSub = $@ ? 0 : 1;
-sub testPerl { VIM::Msg( "PPIxLineToSub: $PPIxLineToSub" ); }
+my $sub_name;
+
+if ( $@ ) {
+
+  $sub_name = sub { VIM::DoCommand "let subName='$@'" };
+
+} else {
+
+  $sub_name = sub {
+
+    my $document = join "\n", Buffer->Get( 0 .. Buffer->Count );
+    my $ppi = PPI::Document->new( \$document );
+    $ppi->index_line_to_sub;
+    VIM::DoCommand sprintf "let subName='%s'", $ppi->line_to_sub( ( Window->Cursor )[0] );
+
+  };
+}
 EOP
 
-function! Tperl()
-  perl testPerl()
+function! LineToSub()
+  perl $sub_name->()
+  return subName
 endfunction
-
 endif
 
-"#if ( $PPIxLineToSub ) {
-"#
-"#  eval q{ sub StatusLineSubName {
-"#
-"#my $d = PPI::Document->new( './efm_perl.pl' );
-"#$d->index_line_to_sub;
-"#return $d->line_to_sub( +shift );
-"#
-"#};
+" ??? Why am I getting the following error when calling LineToSub?
+
+" Undefined subroutine &main:: called at (eval 19) line 1.
+" Error detected while processing function LineToSub:
+" line    2:
+" E121: Undefined variable: subName
+" E15: Invalid expression: subName
+
+" End perl code
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " How do I turn off autocommenting?
 " autocmd FileType perl iab usrbinperl #!/usr/bin/perl<CR><CR>use strict;<CR>use warnings;<CR><CR>
