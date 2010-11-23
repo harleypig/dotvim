@@ -8,7 +8,9 @@
 use strict;
 use warnings;
 
-( my $file = shift ) or die "No filename to check!\n";
+die "Too many arguments!\n" if @ARGV > 1;
+
+my $file = shift or die "No filename to check!\n";
 
 my $error = qr{(.*)\sat\s(.*)\sline\s(\d+)(\.|,\snear\s\".*\"?)};
 
@@ -22,10 +24,11 @@ my @skip = (
 
 my $skip = join '|', @skip;
 
-for my $line ( `perl -c $file 2>&1` ) {
+for my $line ( `perl -Wc $file 2>&1` ) {
 
   chomp $line;
   next if $line =~ /$skip/;
+  $line =~ s/([()])/\\$1/g;
 
   if ( my ( $message, $file, $lineno, $rest ) = $line =~ /^$error$/ ) {
 

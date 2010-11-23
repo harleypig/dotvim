@@ -1,6 +1,8 @@
 " Excellent HTML formatted copy of the VIm documentation at
 " http://vimdoc.sourceforge.net/htmldoc/
 
+set nocompatible
+
 " Stuff found in various places:
 "   http://got-ravings.blogspot.com
 
@@ -34,7 +36,6 @@ syntax on
 " <range>!perl -ne 'push@a,$_}{print$_ for sort{substr($a,6)cmp substr$b,6}@a'
 
 "set   spell
-set nocompatible
 set   expandtab
 set   linebreak
 set   list
@@ -58,10 +59,15 @@ set formatoptions=tcroq1
 set history=1000
 set listchars=tab:>\ ,trail:*
 set mouse=
+set numberwidth=5
 set pastetoggle=<S-F1>
+set path=.,$HOME
 set report=1
 set scrolloff=9999999
+set shiftwidth=2
 set shortmess=a
+set softtabstop=2
+set tabstop=2
 set undolevels=1000
 set updatetime=3000
 set virtualedit=block
@@ -99,7 +105,7 @@ set statusline=
 set statusline+=[%02n
 set statusline+=%(\ %{strlen(&filetype)?&filetype:'none'}%)
 set statusline+=%#warningmsg#
-set statusline+=%(\ %{&modifiable?&modified?'+':'':'X'}%)
+set statusline+=%(\ %{&modifiable?&modified?'+':'-':'X'}%)
 set statusline+=%(\ %{&fileformat!='unix'?'*'.&fileformat.'*':''}%)
 set statusline+=%(\ %{(&fileencoding!='utf-8'&&&fileencoding!='')?'*'.&fileencoding.'*':''}%)
 set statusline+=%(\ %{StatuslineMixedIndentWarning()}%)
@@ -110,7 +116,7 @@ set statusline+=%*]
 " Informational
 set statusline+=[%02l/%02L\ %p%%\ %{FileSize()}][%c%V][%03b:%02B]
 set statusline+=%{VCSCommandGetStatusLine()}
-set statusline+=\ %{synIDattr(synID(line('.'),col('.'),1),'name')}
+set statusline+=%(\ %{synIDattr(synID(line('.'),col('.'),1),'name')}%)
 "set statusline+=%{strftime('%D\ %T',getftime(expand('%:p')))}
 
 " Middle (end of left justified, begin right justified)
@@ -219,6 +225,8 @@ let g:VCSCommandEnableBufferSetup=1
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl'
+"let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl errors.err'
+"let g:syntastic_disabled_filetypes = ['perl']
 
 " Surround   http://www.vim.org/scripts/script.php?script_id=1697
 "            http://github.com/tpope/vim-surround

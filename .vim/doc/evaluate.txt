@@ -1,87 +1,98 @@
 *evaluate.txt* Plugins I want to look at for possible use
 
-" Plugins To Be Evaluated
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Check these plugins out
+Find or make plugin with these modules
 
-" Unimpaired url?
-" http://vimcasts.org/episodes/bubbling-text/
+http://search.cpan.org/~azawawi/PPIx-EditorTools/
+http://search.cpan.org/~mgrimes/App-EditorTools-0.12/
+http://search.cpan.org/~adamk/PPI-Tester/
+http://search.cpan.org/~PSHANGOV/Pod-Simple-Vim/
+http://search.cpan.org/~marcel/Vim-Tag/
+http://search.cpan.org/~marcel/Vim-Complete/
 
-" Not a plugin, but let's see how well it works:
-" https://github.com/tomtom/vimtips2help.rb
+Can I use anything from these sites?
+http://blogs.perl.org/users/ovid/2010/11/method-extraction-in-vim.html
 
-" Need VIm 7.3+
-" Gundo http://sjl.bitbucket.org/gundo.vim/
-"       http://github.com/sjl/gundo.vim
-"
-" This one browses undo history too
-" Histwin https://github.com/chrisbra/histwin.vim
 
-" perldoc
-" Vim-Ref http://github.com/thinca/vim-ref
-" ManPageView https://github.com/vim-scripts/ManPageView
-" perldoc https://github.com/hotchpotch/perldoc-vim
-" perldoc https://github.com/pshangov/perldoc-vim
-" perldoc https://github.com/c9s/perldoc.vim
+Check these plugins out
 
-" Compare easytags and PerlTags:
-"   http://search.cpan.org/~osfameron/Perl-Tags-0.28/
-"   http://github.com/xolox/vim-easytags
+Unimpaired url?
+http://vimcasts.org/episodes/bubbling-text/
 
-" Compare AutoClose
-"   http://www.vim.org/scripts/script.php?script_id=1849 http://github.com/vim-scripts/Autoclose
-"   http://www.vim.org/scripts/script.php?script_id=2009 http://github.com/vim-scripts/AutoClose--Alves
+Not a plugin, but let's see how well it works:
+https://github.com/tomtom/vimtips2help.rb
 
-" Repeat http://www.vim.org/scripts/script.php?script_id=2136
-"        http://github.com/tpope/vim-repeat
+Need VIm 7.3+
+Gundo http://sjl.bitbucket.org/gundo.vim/
+http://github.com/sjl/gundo.vim
 
-" Compare TVO with VOoM
+This one browses undo history too
+Histwin https://github.com/chrisbra/histwin.vim
 
-" TVO    http://www.vim.org/scripts/script.php?script_id=517
-"        http://github.com/vim-scripts/TVO--The-Vim-Outliner
-"          http://github.com/vim-scripts/vimoutliner-colorscheme-fix
+perldoc
+Vim-Ref http://github.com/thinca/vim-ref
+ManPageView https://github.com/vim-scripts/ManPageView
+perldoc https://github.com/hotchpotch/perldoc-vim
+perldoc https://github.com/pshangov/perldoc-vim
+perldoc https://github.com/c9s/perldoc.vim
 
-" VOoM   http://www.vim.org/scripts/script.php?script_id=2657
-"        http://github.com/vim-scripts/VOoM
+Compare easytags and PerlTags:
+http://search.cpan.org/~osfameron/Perl-Tags-0.28/
+http://github.com/xolox/vim-easytags
 
-" Completion
-"   neocomplcache https://github.com/Shougo/neocomplcache
+Compare AutoClose
+http://www.vim.org/scripts/script.php?script_id=1849 http://github.com/vim-scripts/Autoclose
+http://www.vim.org/scripts/script.php?script_id=2009 http://github.com/vim-scripts/AutoClose--Alves
 
-" SnipMate http://github.com/msanders/snipmate.vim
+Repeat http://www.vim.org/scripts/script.php?script_id=2136
+http://github.com/tpope/vim-repeat
 
-" googlesuggest https://github.com/mattn/googlesuggest-complete-vim/blob/master/googlesuggest-complete.vim
+Compare TVO with VOoM
 
-" csapprox https://github.com/godlygeek/csapprox
+TVO    http://www.vim.org/scripts/script.php?script_id=517
+http://github.com/vim-scripts/TVO--The-Vim-Outliner
+http://github.com/vim-scripts/vimoutliner-colorscheme-fix
 
-" simplenote https://github.com/mrtazz/simplenote.vim
+VOoM   http://www.vim.org/scripts/script.php?script_id=2657
+http://github.com/vim-scripts/VOoM
 
-" Up to: http://github.com/search?langOverride=&q=vim&repo=&start_value=10&type=Repositories
+Completion
+neocomplcache https://github.com/Shougo/neocomplcache
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Rip off code from these projects for my own use
+SnipMate http://github.com/msanders/snipmate.vim
 
-" Timestamp
-" http://github.com/vim-scripts/timestamp
-" http://github.com/vim-scripts/timestamp.vim
+googlesuggest https://github.com/mattn/googlesuggest-complete-vim/blob/master/googlesuggest-complete.vim
 
-" Whitespace
-" Turn trailing whitespace red: http://github.com/vim-scripts/trailing-whitespace.vim
-" Auto trim trailing whitespace: http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/103606#103606
-"   done in .vim/after/ftplugin/perl.vim Does it work? Do other places need it?
+csapprox https://github.com/godlygeek/csapprox
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ScrollColors - colorscheme scroller, chooser and browser
-" http://www.vim.org/scripts/script.php?script_id=1488
-"map <silent><Leader>nc :NEXTCOLOR<CR>
-"map <silent><Leader>pc :PREVCOLOR<CR>
+simplenote https://github.com/mrtazz/simplenote.vim
 
-" CSApprox - Make gvim-only colorschemes work transparently in terminal vim
-" http://www.vim.org/scripts/script.php?script_id=2390
-"set t_Co=256
+Up to: http://github.com/search?langOverride=&q=vim&repo=&start_value=10&type=Repositories
 
-" bufferlist.vim : simple, fast, and slick non-disturbing buffer list
-" http://www.vim.org/scripts/script.php?script_id=1325
-"map <silent> <F3> :call BufferList()<CR>
-"let g:BufferListWidth = 25
-"let g:BufferListMaxWidth = 50
+
+Rip off code from these projects for my own use
+
+Timestamp
+http://github.com/vim-scripts/timestamp
+http://github.com/vim-scripts/timestamp.vim
+
+Whitespace
+Turn trailing whitespace red: http://github.com/vim-scripts/trailing-whitespace.vim
+Auto trim trailing whitespace: http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/103606#103606
+done in .vim/after/ftplugin/perl.vim Does it work? Do other places need it?
+
+
+ScrollColors - colorscheme scroller, chooser and browser
+http://www.vim.org/scripts/script.php?script_id=1488
+map <silent><Leader>nc :NEXTCOLOR<CR>
+map <silent><Leader>pc :PREVCOLOR<CR>
+
+CSApprox - Make gvim-only colorschemes work transparently in terminal vim
+http://www.vim.org/scripts/script.php?script_id=2390
+set t_Co=256
+
+bufferlist.vim : simple, fast, and slick non-disturbing buffer list
+http://www.vim.org/scripts/script.php?script_id=1325
+map <silent> <F3> :call BufferList()<CR>
+let g:BufferListWidth = 25
+let g:BufferListMaxWidth = 50
