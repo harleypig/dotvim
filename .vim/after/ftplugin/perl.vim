@@ -29,10 +29,7 @@ setlocal   autoindent
 setlocal   autoread
 setlocal   autowrite
 setlocal   confirm
-setlocal nocopyindent
-setlocal nocursorline
 setlocal   foldenable
-setlocal nohidden
 setlocal   hlsearch
 setlocal   incsearch
 setlocal   lazyredraw
@@ -53,24 +50,33 @@ setlocal guioptions+=agimrLt
 setlocal matchtime=3
 setlocal nrformats=octal,hex,alpha
 
-hi BufferSelected term=reverse ctermfg=white ctermbg=red cterm=bold
-hi BufferNormal term=NONE ctermfg=black ctermbg=darkcyan cterm=NONE
+if ! exists("g:did_perl_statusline")
+  setlocal statusline+=%(\ %{StatusLineSubname()}%)
+  let g:did_perl_statusline = 1
+endif
 
-" Found here: http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/103606#103606
-autocmd BufWritePre * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
+"hi BufferSelected term=reverse ctermfg=white ctermbg=red cterm=bold
+"hi BufferNormal term=NONE ctermfg=black ctermbg=darkcyan cterm=NONE
+
+" http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/103606#103606
+" http://vim.wikia.com/wiki/Remove_unwanted_spaces
+autocmd BufWritePre    * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
+autocmd FileWritePre   * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
+autocmd FileAppendPre  * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
+autocmd FilterWritePre * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
+autocmd BufWritePre    * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
 
 fun! StripTrailingWhitespace()
 
-  " Store current cursor location and search value
-  silent exe "normal ma<CR>"
+  silent exe "normal mz<CR>"
   let saved_search = @/
 
-  " delete the nasty whitespace
   %s/\s\+$//e
 
-  " restore the stuff we saved
-  silent exe "normal `a<CR>"
+  silent exe "normal `z<CR>"
   let @/ = saved_search
+
+  delmarks z
 
 endf
 
@@ -93,48 +99,97 @@ function! WhichDebugger(args)
   endif
 endfunction
 
+"" http://use.perl.org/~Ovid/journal/36929
+"" Only works for subs defined in current package
+"function! GotoSub(subname)
+"    let files  = []
+"
+"    " find paths to modules with that sub
+"    let paths = split(system("ack --perl -l 'sub\\s+".a:subname."' lib t/lib"), "\n")
+"
+"    if empty(paths)
+"        echomsg("Subroutine '".a:subname."' not found")
+"    else
+"        let file = PickFromList('file', paths)
+"        execute "edit +1 " . file
+"
+"        " jump to where that sub is defined
+"        execute "/sub\\s\\+"  . a:subname . "\\>"
+"    endif
+"endfunction
+"
+"function! PickFromList( name, list, ... )
+"    let forcelist = a:0 && a:1 ? 1 : 0
+"
+"    if 1 == len(a:list) && !forcelist
+"        let choice = 0
+"    else
+"        let lines = [ 'Choose a '. a:name . ':' ]
+"            \ + map(range(1, len(a:list)), 'v:val .": ". a:list[v:val - 1]')
+"        let choice  = inputlist(lines)
+"        if choice > 0 && choice <= len(a:list)
+"            let choice = choice - 1
+"        else
+"            let choice = choice - 1
+"        endif
+"    end
+"
+"    return a:list[choice]
+"endfunction
+"
+"noremap <Leader>gs :call GotoSub(expand('<cword>'))<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Perl code goes here
+" http://vim.wikia.com/wiki/Using_embedded_Perl_interpreter
+
 if has( 'perl' )
 perl << EOP
 use strict;
 
 eval "use PPIx::LineToSub";
-my $sub_name;
+my $error = $@;
 
-if ( $@ ) {
+sub sub_name {
 
-  $sub_name = sub { VIM::DoCommand "let subName='$@'" };
+  if ( $error ) {
 
-} else {
+    VIM::DoCommand "let subName='$error'";
 
-  $sub_name = sub {
+  } else {
 
-    my $document = join "\n", Buffer->Get( 0 .. Buffer->Count );
+    my $curwin = $main::curwin;
+    my $curbuf = $main::curbuf;
+    my $document;
+
+    for ( my $line = 0 ; $line <= $curbuf->Count ; $line++ ) {
+
+      my $text = $curbuf->Get( $line );
+      $document .= "$text\n";
+
+    }
+
     my $ppi = PPI::Document->new( \$document );
     $ppi->index_line_to_sub;
-    VIM::DoCommand sprintf "let subName='%s'", $ppi->line_to_sub( ( Window->Cursor )[0] );
+    ( my $line, undef ) = $curwin->Cursor;
+    my $sub_name = $ppi->line_to_sub( $line );
+    VIM::DoCommand "let subName='$sub_name'";
 
-  };
+  }
 }
+
 EOP
 
-function! LineToSub()
-  perl $sub_name->()
+function! StatusLineSubname()
+  perl sub_name()
   return subName
 endfunction
 endif
 
-" ??? Why am I getting the following error when calling LineToSub?
-
-" Undefined subroutine &main:: called at (eval 19) line 1.
-" Error detected while processing function LineToSub:
-" line    2:
-" E121: Undefined variable: subName
-" E15: Invalid expression: subName
-
 " End perl code
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Integrate pmtools http://search.cpan.org/dist/pmtools/
 
 " How do I turn off autocommenting?
 " autocmd FileType perl iab usrbinperl #!/usr/bin/perl<CR><CR>use strict;<CR>use warnings;<CR><CR>

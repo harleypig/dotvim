@@ -36,7 +36,10 @@ syntax on
 " <range>!perl -ne 'push@a,$_}{print$_ for sort{substr($a,6)cmp substr$b,6}@a'
 
 "set   spell
+set nocopyindent
+set nocursorline
 set   expandtab
+set nohidden
 set   linebreak
 set   list
 set   magic
@@ -92,6 +95,9 @@ vnoremap <F2> d:execute 'normal i' . join(sort(split(getreg('"'))), '')<CR>"')))
 " http://stackoverflow.com/questions/3170348/insert-empty-lines-without-entering-insert-mode
 map <Leader>O :<C-U>call append(line(".") -1, repeat([''], v:count1))<CR>
 map <Leader>o :<C-U>call append(line("."), repeat([''], v:count1))<CR>
+
+" http://use.perl.org/~Ovid/journal/36297
+autocmd FileType {vim,help} setlocal keywordprg=:help
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set the statusline
