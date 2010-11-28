@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/showmarks"]
 	path = .vim/bundle/showmarks
 	url = git@github.com:harleypig/ShowMarks.git
+[submodule ".vim/bundle/github"]
+	path = .vim/bundle/github
+	url = git://github.com/thinca/vim-github.git
