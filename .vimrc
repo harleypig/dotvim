@@ -229,7 +229,7 @@ let g:VCSCommandEnableBufferSetup=1
 "            http://github.com/scrooloose/syntastic/
 
 let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=1
+"let g:syntastic_auto_loc_list=1
 let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl'
 "let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl errors.err'
 "let g:syntastic_disabled_filetypes = ['perl']
