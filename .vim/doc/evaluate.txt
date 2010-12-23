@@ -128,4 +128,4 @@ https://github.com/shemerey/vim-dbext
 https://github.com/vim-scripts/database-client
 https://github.com/vim-scripts/VimExplorer
 https://github.com/scrooloose/nerdtree
-
+http://github.com/Townk/vim-autoclose.git
