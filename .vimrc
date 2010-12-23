@@ -1,6 +1,8 @@
 " Excellent HTML formatted copy of the VIm documentation at
 " http://vimdoc.sourceforge.net/htmldoc/
 
+" See http://nvie.com/posts/how-i-boosted-my-vim/ for more ideas
+
 set nocompatible
 
 " Stuff found in various places:

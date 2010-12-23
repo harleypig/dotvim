@@ -58,6 +58,11 @@ http://github.com/vim-scripts/VOoM
 
 Completion
 neocomplcache https://github.com/Shougo/neocomplcache
+https://github.com/vim-scripts/perlomni.vim
+
+Matchit
+https://github.com/vim-scripts/matchit.zip
+https://github.com/edsono/vim-matchit
 
 SnipMate http://github.com/msanders/snipmate.vim
 
@@ -96,3 +101,31 @@ http://www.vim.org/scripts/script.php?script_id=1325
 map <silent> <F3> :call BufferList()<CR>
 let g:BufferListWidth = 25
 let g:BufferListMaxWidth = 50
+
+Paste text to a pastebin
+https://github.com/vim-scripts/paster.vim
+https://github.com/weierophinney/paster.vim
+
+Git
+https://github.com/tpope/vim-fugitive
+
+Perl Tester
+https://github.com/threebytesfull/perltest
+
+Calendar
+https://github.com/mattn/calendar-vim
+https://github.com/vim-scripts/calendar.vim--Matsumoto
+https://github.com/vim-scripts/calendar.vim
+https://github.com/vim-scripts/vcal.vim
+https://github.com/vim-scripts/ftplugin-for-Calendar
+https://github.com/vim-scripts/journal.vim
+
+Something to look at.
+https://github.com/vim-scripts/autoload_cscope.vim
+https://github.com/vim-scripts/SQLUtilities
+https://github.com/vim-scripts/dbext.vim
+https://github.com/shemerey/vim-dbext
+https://github.com/vim-scripts/database-client
+https://github.com/vim-scripts/VimExplorer
+https://github.com/scrooloose/nerdtree
+

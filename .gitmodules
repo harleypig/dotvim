@@ -25,3 +25,6 @@
 [submodule ".vim/bundle/github"]
 	path = .vim/bundle/github
 	url = git://github.com/thinca/vim-github.git
+[submodule ".vim/bundle/perlcritic"]
+	path = .vim/bundle/perlcritic
+	url = git://github.com/mattfoster/vim-Perl-Critic.git
