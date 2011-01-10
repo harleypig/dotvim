@@ -24,7 +24,7 @@ my @skip = (
 
 my $skip = join '|', @skip;
 
-for my $line ( `perl -Wc $file 2>&1` ) {
+for my $line ( `perl -c $file 2>&1` ) {
 
   chomp $line;
   next if $line =~ /$skip/;
