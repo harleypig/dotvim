@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/perlcritic"]
 	path = .vim/bundle/perlcritic
 	url = git://github.com/mattfoster/vim-Perl-Critic.git
+[submodule ".vim/bundle/irssilog"]
+	path = .vim/bundle/irssilog
+	url = git://github.com/vim-scripts/irssilog.vim.git

@@ -108,35 +108,48 @@ source ~/.vim/statusline.vim
 
 " ShowMarks  http://www.vim.org/scripts/script.php?script_id=152
 "            http://github.com/vim-scripts/showmarks
+"            In .vim/bundle/showmarks
 
 " let g:showmarks_hlline_lower=1
 
 " VCSCommand http://www.vim.org/scripts/script.php?script_id=90
 "            http://repo.or.cz/w/vcscommand.git
+"            In .vim/bundle/vcscommand
 
 " For statusline (VCSCommandGetStatusLine)
 let g:VCSCommandEnableBufferSetup=1
 
 " Syntastic  http://www.vim.org/scripts/script.php?script_id=2736
 "            http://github.com/scrooloose/syntastic/
+"            In .vim/bundle/syntastic
 
 let g:syntastic_enable_signs=1
 "let g:syntastic_auto_loc_list=1
 let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl'
-"let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl errors.err'
 "let g:syntastic_disabled_filetypes = ['perl']
 
 " Surround   http://www.vim.org/scripts/script.php?script_id=1697
 "            http://github.com/tpope/vim-surround
+"            In .vim/bundle/surround
 
 " Align      http://www.vim.org/scripts/script.php?script_id=294
 "            http://github.com/vim-scripts/Align
+"            In .vim/bundle/align
 
 " AutoAlign  http://www.vim.org/scripts/script.php?script_id=884
 "            http://github.com/vim-scripts/AutoAlign
+"            In .vim/bundle/autoalign
 
 " Vim-Perl   http://github.com/petdance/vim-perl
+"            In .vim/bundle/perl
 
 " Pathogen http://github.com/tpope/vim-pathogen
 "   http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
 "   http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
+"   In .vim/bundle/pathogen
+
+" Github http://github.com/thinca/vim-github
+"        In .vim/bundle/github
+
+" PerlCritic https://github.com/mattfoster/vim-Perl-Critic
+"            In .vim/bundle/perlcritic
