@@ -51,7 +51,7 @@ setlocal matchtime=3
 setlocal nrformats=octal,hex,alpha
 
 if ! exists("g:did_perl_statusline")
-  setlocal statusline+=%(\ %{StatusLineSubname()}%)
+  setlocal statusline+=%(\ %{StatusLineIndexLine()}%)
   let g:did_perl_statusline = 1
 endif
 
@@ -150,7 +150,7 @@ use strict;
 eval "use PPIx::LineToSub";
 my $error = $@;
 
-sub sub_name {
+sub index_line {
 
   if ( $error ) {
 
@@ -173,15 +173,15 @@ sub sub_name {
     $ppi->index_line_to_sub;
     ( my $line, undef ) = $curwin->Cursor;
     my $sub_name = $ppi->line_to_sub( $line );
-    VIM::DoCommand "let subName='$sub_name'";
+    VIM::DoCommand "let subName='$line: $sub_name'";
 
   }
 }
 
 EOP
 
-function! StatusLineSubname()
-  perl sub_name()
+function! StatusLineIndexLine()
+  perl index_line()
   return subName
 endfunction
 endif
