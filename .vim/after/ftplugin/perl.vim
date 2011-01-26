@@ -50,6 +50,10 @@ setlocal guioptions+=agimrLt
 setlocal matchtime=3
 setlocal nrformats=octal,hex,alpha
 
+" This makes the status line work *only* for the first perl file loaded, but
+" if I don't do it this way, the statusline has this check appended each time
+" the buffer is visited.  How to fix this?
+
 if ! exists("g:did_perl_statusline")
   setlocal statusline+=%(\ %{StatusLineIndexLine()}%)
   let g:did_perl_statusline = 1
@@ -147,7 +151,7 @@ if has( 'perl' )
 perl << EOP
 use strict;
 
-eval "use PPIx::LineToSub";
+eval "use PPIx::IndexLines";
 my $error = $@;
 
 sub index_line {
@@ -160,19 +164,14 @@ sub index_line {
 
     my $curwin = $main::curwin;
     my $curbuf = $main::curbuf;
-    my $document;
 
-    for ( my $line = 0 ; $line <= $curbuf->Count ; $line++ ) {
+    # There's got to be a better way to slurp in the current buffer!
+    my $document = join "\n", map { $curbuf->Get( $_ ) } 0 .. $curbuf->Count;
 
-      my $text = $curbuf->Get( $line );
-      $document .= "$text\n";
-
-    }
-
-    my $ppi = PPI::Document->new( \$document );
-    $ppi->index_line_to_sub;
+    my $ppi = PPIx::IndexLines->new( \$document );
+    $ppi->index_lines;
     ( my $line, undef ) = $curwin->Cursor;
-    my $sub_name = $ppi->line_to_sub( $line );
+    my $sub_name = $ppi->line_type( $line );
     VIM::DoCommand "let subName='$line: $sub_name'";
 
   }
