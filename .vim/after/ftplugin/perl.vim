@@ -172,7 +172,7 @@ sub index_line {
     $ppi->index_lines;
     ( my $line, undef ) = $curwin->Cursor;
     my $sub_name = $ppi->line_type( $line );
-    VIM::DoCommand "let subName='$line: $sub_name'";
+    VIM::DoCommand "let subName='$sub_name'";
 
   }
 }
