@@ -31,3 +31,6 @@
 [submodule ".vim/bundle/irssilog"]
 	path = .vim/bundle/irssilog
 	url = git://github.com/vim-scripts/irssilog.vim.git
+[submodule ".vim/bundle/gitolite"]
+	path = .vim/bundle/gitolite
+	url = git://github.com/tmatilai/gitolite.vim.git
