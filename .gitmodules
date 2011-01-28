@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/gitolite"]
 	path = .vim/bundle/gitolite
 	url = git://github.com/tmatilai/gitolite.vim.git
+[submodule ".vim/bundle/ledger"]
+	path = .vim/bundle/ledger
+	url = git://github.com/vim-scripts/ledger.vim.git
