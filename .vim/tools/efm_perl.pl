@@ -24,13 +24,22 @@ my @skip = (
 
 my $skip = join '|', @skip;
 
-for my $line ( `perl -c $file 2>&1` ) {
+# Thanks to
+# http://blogs.perl.org/users/ovid/2011/01/warningsunused-versus-ppi.html for
+# the 'warnings::unused' trick.
+#
+# Note: warnings::unused, indirect, uninit and warnings::method need to be
+# installed.
+
+my ( $message, $extracted_file, $lineno, $rest );
+
+for my $line ( `perl -Mwarnings::unused -M-indirect -Muninit -Mwarnings::method -c $file 2>&1` ) {
 
   chomp $line;
   next if $line =~ /$skip/;
   $line =~ s/([()])/\\$1/g;
 
-  if ( my ( $message, $file, $lineno, $rest ) = $line =~ /^$error$/ ) {
+  if ( ( $message, $extracted_file, $lineno, $rest ) = $line =~ /^$error$/ ) {
 
     $message .= $rest if ($rest =~ s/^,//);
     print "$file:$lineno:$message\n";

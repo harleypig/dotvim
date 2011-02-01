@@ -166,7 +166,7 @@ sub index_line {
     my $curbuf = $main::curbuf;
 
     # There's got to be a better way to slurp in the current buffer!
-    my $document = join "\n", map { $curbuf->Get( $_ ) } 0 .. $curbuf->Count;
+    my $document = join "\n", $curbuf->Get( 1 .. $curbuf->Count );
 
     my $ppi = PPIx::IndexLines->new( \$document );
     $ppi->index_lines;
