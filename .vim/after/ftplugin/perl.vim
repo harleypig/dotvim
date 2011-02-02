@@ -54,9 +54,9 @@ setlocal nrformats=octal,hex,alpha
 " if I don't do it this way, the statusline has this check appended each time
 " the buffer is visited.  How to fix this?
 
-if ! exists("g:did_perl_statusline")
+if ! exists("b:did_perl_statusline")
   setlocal statusline+=%(\ %{StatusLineIndexLine()}%)
-  let g:did_perl_statusline = 1
+  let b:did_perl_statusline = 1
 endif
 
 "hi BufferSelected term=reverse ctermfg=white ctermbg=red cterm=bold
