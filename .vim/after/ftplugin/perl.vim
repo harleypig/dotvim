@@ -50,15 +50,6 @@ setlocal guioptions+=agimrLt
 setlocal matchtime=3
 setlocal nrformats=octal,hex,alpha
 
-" This makes the status line work *only* for the first perl file loaded, but
-" if I don't do it this way, the statusline has this check appended each time
-" the buffer is visited.  How to fix this?
-
-if ! exists("b:did_perl_statusline")
-  setlocal statusline+=%(\ %{StatusLineIndexLine()}%)
-  let b:did_perl_statusline = 1
-endif
-
 "hi BufferSelected term=reverse ctermfg=white ctermbg=red cterm=bold
 "hi BufferNormal term=NONE ctermfg=black ctermbg=darkcyan cterm=NONE
 
@@ -195,6 +186,11 @@ endif
 
 " End perl code
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if ! exists("b:did_perl_statusline")
+  setlocal statusline+=%(\ %{StatusLineIndexLine()}%)
+  let b:did_perl_statusline = 1
+endif
 
 " Integrate pmtools http://search.cpan.org/dist/pmtools/
 
