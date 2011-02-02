@@ -65,10 +65,9 @@ endif
 " http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/103606#103606
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 autocmd BufWritePre    * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
-autocmd FileWritePre   * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
 autocmd FileAppendPre  * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
+autocmd FileWritePre   * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
 autocmd FilterWritePre * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
-autocmd BufWritePre    * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
 
 fun! StripTrailingWhitespace()
 
