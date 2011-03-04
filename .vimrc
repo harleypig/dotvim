@@ -62,7 +62,7 @@ set display=uhex,lastline
 set encoding=utf-8
 set formatoptions=tcroq1
 set history=1000
-set listchars=tab:>\ ,trail:*
+set listchars=tab:>\
 set mouse=
 set numberwidth=5
 set pastetoggle=<S-F1>
@@ -80,6 +80,11 @@ set whichwrap=b,s,<,>,[,]
 set wildignore+=*/CVS/
 set wildignore+=*/SVN/
 set wildmode=list:longest,full
+
+" http://sartak.org/2011/03/end-of-line-whitespace-in-vim.html
+autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
+autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
+highlight EOLWS ctermbg=red guibg=red
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Miscellaneous stuff
