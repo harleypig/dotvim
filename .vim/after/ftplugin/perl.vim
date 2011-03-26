@@ -8,9 +8,9 @@ let perl_string_as_statement=1
 " unlet perl_no_sync_on_global_var
 " let perl_sync_dist = 100
 " unlet perl_fold
-let g:perl_fold=1
-let g:perl_fold_blocks=1
-let g:perl_nofold_subs=1
+"let g:perl_fold=1
+"let g:perl_fold_blocks=1
+"let g:perl_nofold_subs=1
 
 " Sets make and errorformat for perl (see $VIMRUNTIME/compiler/perl)
 compiler perl
@@ -29,7 +29,6 @@ setlocal   autoindent
 setlocal   autoread
 setlocal   autowrite
 setlocal   confirm
-setlocal   foldenable
 setlocal   hlsearch
 setlocal   incsearch
 setlocal   lazyredraw
