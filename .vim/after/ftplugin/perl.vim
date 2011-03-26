@@ -29,6 +29,7 @@ setlocal   autoindent
 setlocal   autoread
 setlocal   autowrite
 setlocal   confirm
+setlocal nofoldenable
 setlocal   hlsearch
 setlocal   incsearch
 setlocal   lazyredraw
