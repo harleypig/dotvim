@@ -153,3 +153,11 @@ let g:VCSCommandEnableBufferSetup=1
 
 " PerlCritic https://github.com/mattfoster/vim-Perl-Critic
 "            In .vim/bundle/perlcritic
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins To Checkout
+
+" AutoComplPop http://www.vim.org/scripts/script.php?script_id=1879
+" Snipmate http://www.vim.org/scripts/script.php?script_id=2540
+" PerlOmni http://www.vim.org/scripts/script.php?script_id=2852
+
