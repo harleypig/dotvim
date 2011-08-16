@@ -48,6 +48,8 @@ setlocal matchpairs+=<:>
 setlocal matchtime=3
 setlocal nrformats=octal,hex,alpha
 
+iab dbs $DB::single = 1;<ESC>
+
 " Extended pair matching via matchit
 let b:match_words = '\<if\>:\<elsif\>:\<else\>'
 "let b:match_debug = 1
