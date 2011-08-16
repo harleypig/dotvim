@@ -37,21 +37,27 @@ syntax on
 
 " <range>!perl -ne 'push@a,$_}{print$_ for sort{substr($a,6)cmp substr$b,6}@a'
 
-"set   spell
+set   autoindent
 set nocopyindent
 set nocursorline
 set   expandtab
 set nohidden
+set   hlsearch
+set   ignorecase
+set   incsearch
 set   linebreak
 set   list
 set   magic
 set   number
 set   showcmd
 set   showmatch
+set   smartcase
+set   smartindent
 set   terse
 set   title
 set   wildmenu
-set nowrap
+"set   spell
+"set nowrap
 
 " <range>!perl -ne 'push@a,$_}{print$_ for sort{substr($a,4)cmp substr$b,4}@a'
 
@@ -74,12 +80,18 @@ set shortmess=a
 set softtabstop=2
 set tabstop=2
 set undolevels=1000
+set updatecount=10
 set updatetime=3000
+set viminfo=h,%10,'50,s1000
 set virtualedit=block
 set whichwrap=b,s,<,>,[,]
+set wildignore+=*/.git/
 set wildignore+=*/CVS/
 set wildignore+=*/SVN/
 set wildmode=list:longest,full
+set wrapmargin=2
+
+iab dbs $DB::single = 1;<ESC>
 
 " http://sartak.org/2011/03/end-of-line-whitespace-in-vim.html
 autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
@@ -103,8 +115,60 @@ vnoremap <F2> d:execute 'normal i' . join(sort(split(getreg('"'))), '')<CR>"')))
 map <Leader>O :<C-U>call append(line(".") -1, repeat([''], v:count1))<CR>
 map <Leader>o :<C-U>call append(line("."), repeat([''], v:count1))<CR>
 
+" He got tired of typing this over and over again too.
+" https://github.com/thoughtstream/Damian-Conway-s-Vim-Setup
+nmap S :%s//g<LEFT><LEFT>
+vmap S :s//g<LEFT><LEFT>
+
 " http://use.perl.org/~Ovid/journal/36297
 autocmd FileType {vim,help} setlocal keywordprg=:help
+
+" http://vim.wikia.com/wiki/Modeline_magic
+" Append modeline after last line in buffer.
+
+function! AppendModeline()
+  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d :", &tabstop, &shiftwidth, &textwidth)
+  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
+  call append(0, l:modeline)
+endfunction
+nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
+
+"https://github.com/thoughtstream/Damian-Conway-s-Vim-Setup
+""=====[ Highlight cursor (plus row and column on request) ]===================
+"
+"" Inverse highlighting for cursor...
+"highlight CursorInverse   term=inverse ctermfg=black ctermbg=white
+"call matchadd('CursorInverse', '\%#', 100)
+"
+"" Need an invisible cursor column to make it update on every cursor move...
+"highlight clear CursorColumn
+"highlight CursorColumn term=none cterm=none
+"set cursorcolumn
+"
+"" Toggle cursor row highlighting on request...
+"highlight CursorLine   term=bold ctermfg=black ctermbg=cyan  cterm=bold
+"map <silent> ;r :set cursorline!<CR>
+"
+"" Toggle cursor column highlighting on request...
+"map <silent> ;c :silent call Toggle_CursorColumn('flip')<CR>
+"
+"" Implement cursor toggle...
+"let g:cursorcolumn_visible = 0
+"function! Toggle_CursorColumn (requested_state)
+"    if a:requested_state == 'off' || g:cursorcolumn_visible && a:requested_state == 'flip'
+"        let g:cursorcolumn_visible = 0
+"        highlight clear CursorColumn
+"        highlight CursorColumn term=none cterm=none
+"    else
+"        let g:cursorcolumn_visible = 1
+"        highlight CursorColumn term=bold ctermfg=black ctermbg=cyan cterm=bold
+"    endif
+"endfunction
+"
+""=====[ Highlight spelling errors on request ]===================
+"
+"set spelllang=en_au
+"map <silent> ;s :setlocal invspell<CR>
 
 source ~/.vim/statusline.vim
 

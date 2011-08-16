@@ -25,17 +25,13 @@ setlocal equalprg=perltidy
 
 " <range>!perl -ne 'push@a,$_}{print$_ for sort{substr($a,11)cmp substr$b,11}@a'
 
-setlocal   autoindent
 setlocal   autoread
 setlocal   autowrite
 setlocal   confirm
 setlocal nofoldenable
-setlocal   hlsearch
-setlocal   incsearch
 setlocal   lazyredraw
 setlocal   more
 setlocal   shiftround
-setlocal   smartindent
 setlocal   smarttab
 
 " <range>!perl -ne 'push@a,$_}{print$_ for sort{substr($a,9)cmp substr$b,9}@a'
@@ -47,8 +43,34 @@ setlocal foldcolumn=5
 setlocal foldlevelstart=0
 setlocal foldmethod=syntax
 setlocal guioptions+=agimrLt
+setlocal iskeyword+=$,%,@
+setlocal matchpairs+=<:>
 setlocal matchtime=3
 setlocal nrformats=octal,hex,alpha
+
+" Extended pair matching via matchit
+let b:match_words = '\<if\>:\<elsif\>:\<else\>'
+"let b:match_debug = 1
+
+" Better handling of smartwrapping for perl, courtesy of
+" https://github.com/thoughtstream/Damian-Conway-s-Vim-Setup
+inoremap # X<C-H>#|
+nnoremap <silent> >> :call ShiftLine()<CR>|
+
+fun! ShiftLine()
+
+  set nosmartindent
+  normal! >>
+  set smartindent
+
+endfun
+
+" Better handling of for include files, courtesy of
+" https://github.com/thoughtstream/Damian-Conway-s-Vim-Setup
+set include=^\\s*use\\s\\+\\zs\\k\\+\\ze
+set includeexpr=substitute(v:fname,'::','/','g')
+set suffixesadd=.pm
+execute 'set path+=' . substitute($PERL5LIB, ':', ',', 'g')
 
 "hi BufferSelected term=reverse ctermfg=white ctermbg=red cterm=bold
 "hi BufferNormal term=NONE ctermfg=black ctermbg=darkcyan cterm=NONE
