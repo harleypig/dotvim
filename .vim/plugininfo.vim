@@ -64,6 +64,12 @@ let g:VCSCommandEnableBufferSetup=1
 "            .vim/syntax/vimwiki_default.vim
 "            .vim/syntax/vimwiki_media.vim
 
+let g:vimwiki_auto_checkbox = 1
+let g:vimwiki_listsyms      = ' _-+X'
+let g:vimwiki_folding       = 1
+let g:vimwiki_fold_lists    = 1
+let g:vimwiki_file_exts     = 'pdf,txt,doc,rtf,xls,php,zip,rar,7z,html,gz,pl,cgi'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins To Checkout
 
