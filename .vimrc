@@ -26,7 +26,8 @@ endif
 
 " set verbose=0
 
-colorscheme freya
+set t_Co=256
+colorscheme desert256
 set background=dark
 
 filetype plugin indent on
@@ -167,6 +168,12 @@ nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 "
 "set spelllang=en_au
 "map <silent> ;s :setlocal invspell<CR>
+
+" http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/95139#95139
+" Comment to this answer: Instead of manually typing nohlsearch, try mapping
+" it. Ctrl-L already redraws the screen, so I make it also and remove search
+" highlighting: ... pydave Feb 23 at 19:04
+nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 source ~/.vim/statusline.vim
 source ~/.vim/plugininfo.vim
