@@ -70,6 +70,12 @@ let g:vimwiki_folding       = 1
 let g:vimwiki_fold_lists    = 1
 let g:vimwiki_file_exts     = 'pdf,txt,doc,rtf,xls,php,zip,rar,7z,html,gz,pl,cgi'
 
+" Fugitive   https://github.com/tpope/vim-fugitive
+"            In .vim/bundle/fugitive
+
+" gitv       https://github.com/gregsexton/gitv
+"            In .vim/bundle/gitv
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins To Checkout
 

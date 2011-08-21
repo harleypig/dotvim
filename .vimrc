@@ -3,6 +3,9 @@
 
 " See http://nvie.com/posts/how-i-boosted-my-vim/ for more ideas
 
+" Lookit this:
+" http://www.gregsexton.org/2011/04/enhancing-window-movement-and-positioning-in-vim/
+
 set nocompatible
 
 " Stuff found in various places:
@@ -174,6 +177,33 @@ nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 " it. Ctrl-L already redraws the screen, so I make it also and remove search
 " highlighting: ... pydave Feb 23 at 19:04
 nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+" http://www.gregsexton.org/2011/03/improving-the-text-displayed-in-a-fold/
+fu! CustomFoldText()
+
+  "get first non-blank line
+  let fs = v:foldstart
+  while getline(fs) =~ '^\s*$' | let fs = nextnonblank(fs + 1)
+  endwhile
+
+  if fs > v:foldend
+      let line = getline(v:foldstart)
+  else
+      let line = substitute(getline(fs), '\t', repeat(' ', &tabstop), 'g')
+  endif
+
+  let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
+  let foldSize = 1 + v:foldend - v:foldstart
+  let foldSizeStr = " " . foldSize . " lines "
+  let foldLevelStr = repeat("+--", v:foldlevel)
+  let lineCount = line("$")
+  let foldPercentage = printf("[%.1f", (foldSize*1.0)/lineCount*100) . "%] "
+  let expansionString = repeat(".", w - strwidth(foldSizeStr.line.foldLevelStr.foldPercentage))
+
+  return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
+
+endf
+set foldtext=CustomFoldText()
 
 source ~/.vim/statusline.vim
 source ~/.vim/plugininfo.vim
