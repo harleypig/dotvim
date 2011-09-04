@@ -1,6 +1,5 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set the statusline
-"   broken up for ease of manipulation and readability.
 
 set laststatus=2
 
@@ -52,10 +51,7 @@ set statusline+=%(\ %{&paste?'PASTE':''}%)
 set statusline+=%*]
 
 " Read the Syntastic docs.
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=2
-let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl'
-let g:syntastic_stl_format='[%E{Error @ %fe (#%e)}%B{, }%W{Warning @ %fw (#%w)} ":Error" shows]'
+" see .vim/plugininfo.vim for settings
 set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%*
 
 " column and line # of total lines ; what percentage of the file are we at?

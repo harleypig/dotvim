@@ -4,6 +4,7 @@
 " ShowMarks  http://www.vim.org/scripts/script.php?script_id=152
 "            http://github.com/vim-scripts/showmarks
 "            In .vim/bundle/showmarks
+let g:showmarks_ignore_type="hpq"
 
 " let g:showmarks_hlline_lower=1
 
@@ -17,6 +18,11 @@ let g:VCSCommandEnableBufferSetup=1
 " Syntastic  http://www.vim.org/scripts/script.php?script_id=2736
 "            http://github.com/scrooloose/syntastic/
 "            In .vim/bundle/syntastic
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=2
+let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl'
+let g:syntastic_stl_format='[%E{Error @ %fe (#%e)}%B{, }%W{Warning @ %fw (#%w)} "\err" toggles]'
+nmap <Leader>err :ToggleError<CR>
 
 " Surround   http://www.vim.org/scripts/script.php?script_id=1697
 "            http://github.com/tpope/vim-surround
@@ -75,6 +81,9 @@ let g:vimwiki_file_exts     = 'pdf,txt,doc,rtf,xls,php,zip,rar,7z,html,gz,pl,cgi
 
 " gitv       https://github.com/gregsexton/gitv
 "            In .vim/bundle/gitv
+
+" quickfixstatus https://github.com/dannyob/quickfixstatus
+"                In .vim/bundle/quickfixstatus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins To Checkout
