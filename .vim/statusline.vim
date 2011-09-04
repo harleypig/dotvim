@@ -83,7 +83,7 @@ set statusline+=%(\ %{getfperm(expand('%'))}%)
 set statusline+=%(\ %{FileSize()}%)
 
 " What file are we editing?
-set statusline+=\ %F
+set statusline+=\ %-.20F
 
 " found @ http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html
 function! FileSize()
@@ -154,19 +154,3 @@ function! StatuslineTrailingSpaceWarning()
 
   return b:statusline_trailing_space_warning
 endfunction
-
-"function! InsertStatuslineColor(mode)
-"  if a:mode == 'i'
-"    hi statusline ctermbg=0
-"  elseif a:mode == 'r'
-"    hi statusline ctermbg=3
-"  else
-"    hi statusline ctermbg=5
-"  endif
-"endfunction
-"
-"au InsertEnter * call InsertStatuslineColor(v:insertmode)
-"au InsertLeave * hi statusline ctermbg=4
-"
-"hi statusline term=bold cterm=bold ctermfg=3 ctermbg=4
-
