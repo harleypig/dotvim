@@ -14,7 +14,7 @@ my $file = shift or die "No filename to check!\n";
 
 my $error = qr{(.*)\sat\s(.*)\sline\s(\d+)(\.|,\snear\s\".*\"?)};
 
-# Add error messages to be skipped.
+# Error messages to be skipped.
 my @skip = (
 
   '"DB::single" used only once: possible typo',
@@ -31,9 +31,18 @@ my $skip = join '|', @skip;
 # Note: warnings::unused, indirect, uninit and warnings::method need to be
 # installed.
 
+my @checks;
+
+push @checks, '-Mwarnings::unused' if `perldoc -l warnings::unused`;
+push @checks, '-M-indirect'        if `perldoc -l indirect`;
+push @checks, '-Muninit'           if ( $] < 5.010 ) && `perldoc -l uninit`;
+push @checks, '-Mwarnings::method' if `perldoc -l warnings::method`;
+
+my $checks = join ' ', @checks;
+
 my ( $message, $extracted_file, $lineno, $rest );
 
-for my $line ( `perl -Mwarnings::unused -M-indirect -Muninit -Mwarnings::method -c $file 2>&1` ) {
+for my $line ( `perl @checks -c $file 2>&1` ) {
 
   chomp $line;
   next if $line =~ /$skip/;
