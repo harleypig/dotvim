@@ -88,7 +88,8 @@ let g:vimwiki_file_exts     = 'pdf,txt,doc,rtf,xls,php,zip,rar,7z,html,gz,pl,cgi
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins To Checkout
 
-" AutoComplPop http://www.vim.org/scripts/script.php?script_id=1879
-" Snipmate http://www.vim.org/scripts/script.php?script_id=2540
-" PerlOmni http://www.vim.org/scripts/script.php?script_id=2852
+" AutoComplPop  http://www.vim.org/scripts/script.php?script_id=1879
+" Snipmate      http://www.vim.org/scripts/script.php?script_id=2540
+" PerlOmni      http://www.vim.org/scripts/script.php?script_id=2852
+" Google Script https://github.com/dubenstein/vim-google-scribe
 
