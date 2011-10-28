@@ -75,6 +75,8 @@ let g:vimwiki_listsyms      = ' _-+X'
 let g:vimwiki_folding       = 1
 let g:vimwiki_fold_lists    = 1
 let g:vimwiki_file_exts     = 'pdf,txt,doc,rtf,xls,php,zip,rar,7z,html,gz,pl,cgi'
+let g:vimwiki_list = [ { 'path': '~/Dropbox/vimwiki/main' },
+                       { 'path': '~/Dropbox/vimwiki/work' }]
 
 " Fugitive   https://github.com/tpope/vim-fugitive
 "            In .vim/bundle/fugitive
