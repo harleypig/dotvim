@@ -51,7 +51,7 @@ nmap <Leader>err :ToggleError<CR>
 "            In .vim/bundle/perlcritic
 
 " VimWiki    http://code.google.com/p/vimwiki/
-"            Installed as a vimball
+"            Installed as a vimball 2011-08-01 ( v1.2 )
 "            git show --pretty="format:" --name-only 98bf498 shows:
 "
 "            .vim/.VimballRecord
@@ -76,6 +76,11 @@ let g:vimwiki_folding       = 1
 let g:vimwiki_fold_lists    = 1
 let g:vimwiki_file_exts     = 'pdf,txt,doc,rtf,xls,php,zip,rar,7z,html,gz,pl,cgi'
 
+" http://code.google.com/p/vimwiki/wiki/MultipleWikies
+let g:vimwiki_list = [{ 'path': '~/Dropbox/vimwiki/main' },
+                    \ { 'path': '~/Dropbox/vimwiki/work' },
+                    \ { 'path': '~/Dropbox/vimwiki/boinc' }]
+
 " Fugitive   https://github.com/tpope/vim-fugitive
 "            In .vim/bundle/fugitive
 
@@ -88,7 +93,11 @@ let g:vimwiki_file_exts     = 'pdf,txt,doc,rtf,xls,php,zip,rar,7z,html,gz,pl,cgi
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins To Checkout
 
-" AutoComplPop http://www.vim.org/scripts/script.php?script_id=1879
-" Snipmate http://www.vim.org/scripts/script.php?script_id=2540
-" PerlOmni http://www.vim.org/scripts/script.php?script_id=2852
+" AutoComplPop  http://www.vim.org/scripts/script.php?script_id=1879
+" Snipmate      http://www.vim.org/scripts/script.php?script_id=2540
+" PerlOmni      http://www.vim.org/scripts/script.php?script_id=2852
+" Google Script https://github.com/dubenstein/vim-google-scribe
+" SVNDiff       http://www.vim.org/scripts/script.php?script_id=1881
 
+" Look into looking for or creating a plugin for GRAC
+" http://grac.sourceforge.net/

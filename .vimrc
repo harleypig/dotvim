@@ -5,6 +5,7 @@
 
 " Lookit this:
 " http://www.gregsexton.org/2011/04/enhancing-window-movement-and-positioning-in-vim/
+" https://github.com/gmarik/vundle - replacement for pathogen?
 
 set nocompatible
 
