@@ -33,10 +33,10 @@ my $skip = join '|', @skip;
 
 my @checks;
 
-push @checks, '-Mwarnings::unused' if `perldoc -l warnings::unused`;
-push @checks, '-M-indirect'        if `perldoc -l indirect`;
-push @checks, '-Muninit'           if ( $] < 5.010 ) && `perldoc -l uninit`;
-push @checks, '-Mwarnings::method' if `perldoc -l warnings::method`;
+push @checks, '-Mwarnings::unused' if `perldoc -l warnings::unused 2> /dev/null`;
+push @checks, '-M-indirect'        if `perldoc -l indirect 2> /dev/null`;
+push @checks, '-Muninit'           if ( $] < 5.010 ) && `perldoc -l uninit 2> /dev/null`;
+push @checks, '-Mwarnings::method' if `perldoc -l warnings::method 2> /dev/null`;
 
 my $checks = join ' ', @checks;
 
