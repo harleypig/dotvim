@@ -49,3 +49,6 @@
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = git@github.com:harleypig/syntastic.git
+[submodule ".vim/bundle/smartusline"]
+	path = .vim/bundle/smartusline
+	url = https://github.com/molok/vim-smartusline.git
