@@ -34,9 +34,6 @@
 [submodule ".vim/bundle/ledger"]
 	path = .vim/bundle/ledger
 	url = git://github.com/vim-scripts/ledger.vim.git
-[submodule ".vim/bundle/tagbar"]
-	path = .vim/bundle/tagbar
-	url = git://github.com/majutsushi/tagbar
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git

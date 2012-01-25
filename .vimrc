@@ -84,6 +84,7 @@ set shiftwidth=2
 set shortmess=a
 set softtabstop=2
 set tabstop=2
+set textwidth=78
 set undolevels=1000
 set updatecount=10
 set updatetime=3000
