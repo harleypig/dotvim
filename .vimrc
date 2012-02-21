@@ -209,3 +209,5 @@ set foldtext=CustomFoldText()
 
 source ~/.vim/statusline.vim
 source ~/.vim/plugininfo.vim
+
+"http://geekblog.oneandoneis2.org/index.php/2012/02/15/cuz-multiple-steps-into-one-is-cool
