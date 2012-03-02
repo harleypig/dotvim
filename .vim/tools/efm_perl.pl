@@ -25,18 +25,24 @@ my @skip = (
 my $skip = join '|', @skip;
 
 # Thanks to
+#
 # http://blogs.perl.org/users/ovid/2011/01/warningsunused-versus-ppi.html for
 # the 'warnings::unused' trick.
 #
-# Note: warnings::unused, indirect, uninit and warnings::method need to be
-# installed.
+# https://github.com/Ovid/DB--Color.git for the 'circular::require' trick
+
+# Note: Most of the following modules need to be installed, most are not
+# included in core.
 
 my @checks;
 
-push @checks, '-Mwarnings::unused' if `perldoc -l warnings::unused 2> /dev/null`;
-push @checks, '-M-indirect'        if `perldoc -l indirect 2> /dev/null`;
-push @checks, '-Muninit'           if ( $] < 5.010 ) && `perldoc -l uninit 2> /dev/null`;
-push @checks, '-Mwarnings::method' if `perldoc -l warnings::method 2> /dev/null`;
+push @checks, '-M-circular::require' if `perldoc -l circular::require 2> /dev/null`;
+push @checks, '-M-indirect'          if `perldoc -l indirect 2> /dev/null`;
+push @checks, '-Mwarnings::method'   if `perldoc -l warnings::method 2> /dev/null`;
+push @checks, '-Mwarnings::unused'   if `perldoc -l warnings::unused 2> /dev/null`;
+
+# uninit is not included in 5.10 and later
+push @checks, '-Muninit'             if ( $] < 5.010 ) && `perldoc -l uninit 2> /dev/null`;
 
 my $checks = join ' ', @checks;
 
