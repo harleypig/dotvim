@@ -30,8 +30,8 @@ endif
 
 " set verbose=0
 
-set t_Co=256
-colorscheme desert256
+"set t_Co=256
+colorscheme desert
 set background=dark
 
 filetype plugin indent on
