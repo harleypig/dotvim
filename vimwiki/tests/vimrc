@@ -16,4 +16,7 @@ set runtimepath=../src,$VIMRUNTIME
 let wiki = {}
 let wiki.path = getcwd().'/wiki'
 let wiki.path_html = getcwd().'/html'
+let wiki.template_path = getcwd().'/'
+let wiki.template_default = 'empty'
+let wiki.template_ext = '.tpl'
 let g:vimwiki_list = [wiki]

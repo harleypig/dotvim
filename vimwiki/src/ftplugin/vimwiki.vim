@@ -193,7 +193,8 @@ endfunction "}}}
 command! -buffer Vimwiki2HTML
       \ silent w <bar> 
       \ call vimwiki#html#Wiki2HTML(expand(VimwikiGet('path_html')),
-      \                             expand('%')) <bar>
+      \                             expand('%'))
+      \<bar>
       \ echo 'HTML conversion is done.'
 command! -buffer Vimwiki2HTMLBrowse
       \ silent w <bar> 
@@ -344,7 +345,7 @@ nnoremap <silent><script><buffer>
 
 function! s:CR() "{{{
   let res = vimwiki#lst#kbd_cr()
-  if res == "\<CR>" && g:vimwiki_table_auto_fmt
+  if res == "\<CR>" && g:vimwiki_table_mappings
     let res = vimwiki#tbl#kbd_cr()
   endif
   return res
@@ -358,7 +359,7 @@ nnoremap <buffer> o :<C-U>call vimwiki#lst#kbd_oO('o')<CR>
 nnoremap <buffer> O :<C-U>call vimwiki#lst#kbd_oO('O')<CR>
 
 " Table mappings
-if g:vimwiki_table_auto_fmt
+if g:vimwiki_table_mappings
   inoremap <expr> <buffer> <Tab> vimwiki#tbl#kbd_tab()
   inoremap <expr> <buffer> <S-Tab> vimwiki#tbl#kbd_shift_tab()
 endif
@@ -397,8 +398,21 @@ vnoremap <silent><buffer> ac :<C-U>call vimwiki#base#TO_table_col(0, 1)<CR>
 onoremap <silent><buffer> ic :<C-U>call vimwiki#base#TO_table_col(1, 0)<CR>
 vnoremap <silent><buffer> ic :<C-U>call vimwiki#base#TO_table_col(1, 1)<CR>
 
-nnoremap <silent><buffer> = :call vimwiki#base#AddHeaderLevel()<CR>
-nnoremap <silent><buffer> - :call vimwiki#base#RemoveHeaderLevel()<CR>
+if !hasmapto('<Plug>VimwikiAddHeaderLevel')
+  nmap <silent><buffer> = <Plug>VimwikiAddHeaderLevel
+endif
+nnoremap <silent><buffer> <Plug>VimwikiAddHeaderLevel :
+      \<C-U>call vimwiki#base#AddHeaderLevel()<CR>
+
+if !hasmapto('<Plug>VimwikiRemoveHeaderLevel')
+  nmap <silent><buffer> - <Plug>VimwikiRemoveHeaderLevel
+endif
+nnoremap <silent><buffer> <Plug>VimwikiRemoveHeaderLevel :
+      \<C-U>call vimwiki#base#RemoveHeaderLevel()<CR>
+
+nnoremap <silent><buffer> + :call vimwiki#base#NormalizeLinkSyntax(0)<CR>
+"vnoremap <silent><buffer> + :<C-U>call vimwiki#base#NormalizeLinkSyntax(1)<CR>
+"UNSTABLE
 
 " }}}
 
@@ -413,3 +427,9 @@ if VimwikiGet('auto_export')
 endif
 
 " AUTOCOMMANDS }}}
+
+" PASTE, CAT URL {{{
+" html commands
+command! -buffer VimwikiPasteUrl call vimwiki#html#PasteUrl(expand('%'))
+command! -buffer VimwikiCatUrl call vimwiki#html#CatUrl(expand('%'))
+" }}}
