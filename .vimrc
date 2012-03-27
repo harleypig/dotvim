@@ -125,6 +125,14 @@ map <Leader>o :<C-U>call append(line("."), repeat([''], v:count1))<CR>
 nmap S :%s//g<LEFT><LEFT>
 vmap S :s//g<LEFT><LEFT>
 
+" http://vimbits.com/bits/323
+" list buffers and switch to a buffer quickly
+nmap <leader>b :ls<CR>:buffer<Space>
+
+" http://vimbits.com/bits/11
+" make Y consistent with D, C, A, etc.
+map Y y$
+
 " http://use.perl.org/~Ovid/journal/36297
 autocmd FileType {vim,help} setlocal keywordprg=:help
 
