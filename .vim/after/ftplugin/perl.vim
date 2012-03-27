@@ -211,10 +211,10 @@ endif
 " End perl code
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-if ! exists("b:did_perl_statusline")
-  setlocal statusline+=%(\ %{StatusLineIndexLine()}%)
-  let b:did_perl_statusline = 1
-endif
+"if ! exists("b:did_perl_statusline")
+"  setlocal statusline+=%(\ %{StatusLineIndexLine()}%)
+"  let b:did_perl_statusline = 1
+"endif
 
 " Integrate pmtools http://search.cpan.org/dist/pmtools/
 
