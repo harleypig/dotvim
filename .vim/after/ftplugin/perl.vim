@@ -161,52 +161,52 @@ endfunction
 " Perl code goes here
 " http://vim.wikia.com/wiki/Using_embedded_Perl_interpreter
 
-if has( 'perl' )
-  function! EvalPerl()
-  perl << EOP
-use strict;
-use warnings FATAL => 'all', NONFATAL => 'redefine';
-
-eval "use PPIx::IndexLines";
-my $error = $@;
-my %hash;
-
-sub index_line {
-
-  if ( $error ) {
-
-    VIM::DoCommand "let subName='$error'";
-
-  } else {
-
-    my $curbuf = $main::curbuf;
-
-    if ( VIM::Eval( '&modified' ) || ! exists $hash{ $curbuf->Name } ) {
-
-      # There's got to be a better way to slurp in the current buffer!
-      my $document = join "\n", $curbuf->Get( 1 .. $curbuf->Count );
-
-      $hash{ $curbuf->Name } = PPIx::IndexLines->new( \$document );
-      $hash{ $curbuf->Name }->index_lines;
-
-    };
-
-    my ( $line ) = $main::curwin->Cursor;
-    my $sub_name = $hash{ $curbuf->Name }->line_type( $line );
-
-    VIM::DoCommand "let subName='$sub_name'";
-
-  }
-}
-EOP
-  endfunction
-  call EvalPerl()
-
-  function! StatusLineIndexLine()
-    perl index_line()
-    return subName
-  endfunction
-endif
+"if has( 'perl' )
+"  function! EvalPerl()
+"  perl << EOP
+"use strict;
+"use warnings FATAL => 'all', NONFATAL => 'redefine';
+"
+"eval "use PPIx::IndexLines";
+"my $error = $@;
+"my %hash;
+"
+"sub index_line {
+"
+"  if ( $error ) {
+"
+"    VIM::DoCommand "let subName='$error'";
+"
+"  } else {
+"
+"    my $curbuf = $main::curbuf;
+"
+"    if ( VIM::Eval( '&modified' ) || ! exists $hash{ $curbuf->Name } ) {
+"
+"      # There's got to be a better way to slurp in the current buffer!
+"      my $document = join "\n", $curbuf->Get( 1 .. $curbuf->Count );
+"
+"      $hash{ $curbuf->Name } = PPIx::IndexLines->new( \$document );
+"      $hash{ $curbuf->Name }->index_lines;
+"
+"    };
+"
+"    my ( $line ) = $main::curwin->Cursor;
+"    my $sub_name = $hash{ $curbuf->Name }->line_type( $line );
+"
+"    VIM::DoCommand "let subName='$sub_name'";
+"
+"  }
+"}
+"EOP
+"  endfunction
+"  call EvalPerl()
+"
+"  function! StatusLineIndexLine()
+"    perl index_line()
+"    return subName
+"  endfunction
+"endif
 
 " End perl code
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

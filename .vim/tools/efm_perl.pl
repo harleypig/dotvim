@@ -8,9 +8,14 @@
 use strict;
 use warnings;
 
+use Cwd;
+use File::Basename;
+
 die "Too many arguments!\n" if @ARGV > 1;
 
 my $file = shift or die "No filename to check!\n";
+my $dir  = dirname( $file ) . '/lib';
+my $cwd  = cwd() . '/lib';
 
 my $error = qr{(.*)\sat\s(.*)\sline\s(\d+)(\.|,\snear\s\".*\"?)};
 
@@ -48,7 +53,7 @@ my $checks = join ' ', @checks;
 
 my ( $message, $extracted_file, $lineno, $rest );
 
-for my $line ( `perl @checks -c $file 2>&1` ) {
+for my $line ( `perl -I $dir -I $cwd @checks -c $file 2>&1` ) {
 
   chomp $line;
   next if $line =~ /$skip/;
