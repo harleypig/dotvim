@@ -208,9 +208,9 @@ endfunction
 "  endfunction
 "endif
 "
-"" End perl code
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
+" End perl code
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 "if ! exists("b:did_perl_statusline")
 "  setlocal statusline+=%(\ %{StatusLineIndexLine()}%)
 "  let b:did_perl_statusline = 1

@@ -7,12 +7,18 @@
 
 use strict;
 use warnings;
+use utf8;
 
-die "Too many arguments!\n" if @ARGV > 1;
+use Cwd;
+use File::Basename;
 
-my $file = shift or die "No filename to check!\n";
+die "Too many arguments!\n" if @ARGV > 1; ## no critic qw( ErrorHandling::RequireUseOfExceptions )
 
-my $error = qr{(.*)\sat\s(.*)\sline\s(\d+)(\.|,\snear\s\".*\"?)};
+my $file = shift or die "No filename to check!\n"; ## no critic qw( ErrorHandling::RequireUseOfExceptions )
+my $dir  = dirname( $file ) . '/lib';
+my $cwd  = cwd() . '/lib';
+
+my $error = qr{(.*)\sat\s(.*)\sline\s(\d+)(\.|,\snear\s["'].*["']?)};
 
 # Error messages to be skipped.
 my @skip = (
@@ -22,7 +28,7 @@ my @skip = (
 
 );
 
-my $skip = join '|', @skip;
+my $skip = join q{|}, @skip;
 
 # Thanks to
 #
@@ -36,19 +42,23 @@ my $skip = join '|', @skip;
 
 my @checks;
 
+## no critic qw( InputOutput::ProhibitBacktickOperators )
+
 push @checks, '-M-circular::require' if `perldoc -l circular::require 2> /dev/null`;
 push @checks, '-M-indirect'          if `perldoc -l indirect 2> /dev/null`;
 push @checks, '-Mwarnings::method'   if `perldoc -l warnings::method 2> /dev/null`;
 push @checks, '-Mwarnings::unused'   if `perldoc -l warnings::unused 2> /dev/null`;
 
-# uninit is not included in 5.10 and later
-push @checks, '-Muninit'             if ( $] < 5.010 ) && `perldoc -l uninit 2> /dev/null`;
+push @checks, "-Mcriticism=no_defaults,1" if `perldoc -l criticism 2> /dev/null`;
 
-my $checks = join ' ', @checks;
+# uninit is not included in 5.10 and later
+push @checks, '-Muninit' if ( $] < 5.010 ) && `perldoc -l uninit 2> /dev/null`; ## no critic qw( ValuesAndExpressions::ProhibitMagicNumbers )
+
+my $checks = join q{ }, @checks;
 
 my ( $message, $extracted_file, $lineno, $rest );
 
-for my $line ( `perl @checks -c $file 2>&1` ) {
+for my $line ( `perl -I $dir -I $cwd @checks -c $file 2>&1` ) {
 
   chomp $line;
   next if $line =~ /$skip/;
