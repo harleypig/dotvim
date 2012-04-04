@@ -74,10 +74,10 @@ set encoding=utf-8
 set formatoptions=tcroq1
 set history=1000
 "set listchars=tab:>\
-set listchars=tab:\ \ 
+"set listchars=tab:\ \
 set mouse=
 set numberwidth=5
-set pastetoggle=<S-F1>
+set pastetoggle=<Leader>paste
 set path=.,$HOME
 set report=1
 set scrolloff=9999999
@@ -97,6 +97,12 @@ set wildignore+=*/CVS/
 set wildignore+=*/SVN/
 set wildmode=list:longest,full
 set wrapmargin=2
+
+" Gently lifted from http://mg.pov.lt/vim/vimrc
+" Show ↪ at the beginning of wrapped lines
+if has("linebreak")
+  let &sbr = nr2char(8618) . ' '
+endif
 
 " http://sartak.org/2011/03/end-of-line-whitespace-in-vim.html
 autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
