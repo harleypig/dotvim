@@ -42,6 +42,8 @@ else
   setl comments=n:*,n:#
 endif
 setlocal formatoptions=tnro
+" setlocal formatoptions+=tnro
+" setlocal formatoptions-=c
 
 if !empty(&langmap)
   " Valid only if langmap is a comma separated pairs of chars
@@ -68,11 +70,8 @@ function! VimwikiFoldLevel(lnum) "{{{
     return '>'.n
   endif
 
-  if g:vimwiki_fold_trailing_empty_lines == 0 && line =~ '^\s*$'
-    let nnline = getline(nextnonblank(a:lnum + 1))
-  else
-    let nnline = getline(a:lnum + 1)
-  endif
+  let nnline = getline(a:lnum + 1)
+
   if nnline =~ g:vimwiki_rxHeader
     let n = vimwiki#base#count_first_sym(nnline)
     return '<'.n
@@ -95,6 +94,9 @@ function! VimwikiFoldLevel(lnum) "{{{
 
       if leveln > level
         return ">".(base_level+leveln-adj)
+      elseif (nnum-a:lnum) > 1 " check if multilined list item
+            \ (nline =~ rx_list_item || nnline !~ '^\s*$')
+        return ">".(base_level+level+1-adj)
       else
         return (base_level+level-adj)
       endif
@@ -102,19 +104,10 @@ function! VimwikiFoldLevel(lnum) "{{{
       " process multilined list items
       let [pnum, pline] = s:find_backward(rx_list_item, a:lnum)
       if pline =~ rx_list_item
-        if indent(a:lnum) > indent(pnum)
+        if indent(a:lnum) >= indent(pnum) && line !~ '^\s*$'
           let level = s:get_li_level(pnum)
           let adj = s:get_li_level(s:get_start_list(rx_list_item, pnum))
-
-          let [nnum, nline] = s:find_forward(rx_list_item, a:lnum)
-          if nline =~ rx_list_item
-            let leveln = s:get_li_level(nnum)
-            if leveln > level
-              return (base_level+leveln-adj)
-            endif
-          endif
-
-          return (base_level+level-adj)
+          return (base_level+level+1-adj)
         endif
       endif
     endif
@@ -198,12 +191,16 @@ endfunction "}}}
 
 " COMMANDS {{{
 command! -buffer Vimwiki2HTML
-      \ w <bar> call vimwiki#html#Wiki2HTML(expand(VimwikiGet('path_html')),
+      \ silent w <bar>
+      \ call vimwiki#html#Wiki2HTML(expand(VimwikiGet('path_html')),
       \                             expand('%'))
+      \<bar>
+      \ echo 'HTML conversion is done.'
 command! -buffer Vimwiki2HTMLBrowse
-      \ w <bar> call VimwikiWeblinkHandler(
-      \   vimwiki#html#Wiki2HTML(expand(VimwikiGet('path_html')),
-      \                          expand('%')))
+      \ silent w <bar>
+      \ call VimwikiWeblinkHandler(vimwiki#html#Wiki2HTML(
+      \         expand(VimwikiGet('path_html')),
+      \         expand('%')))
 command! -buffer VimwikiAll2HTML
       \ call vimwiki#html#WikiAll2HTML(expand(VimwikiGet('path_html')))
 
@@ -221,6 +218,9 @@ command! -buffer VimwikiTabnewLink call vimwiki#base#follow_link('tabnew')
 command! -buffer -range VimwikiToggleListItem call vimwiki#lst#ToggleListItem(<line1>, <line2>)
 
 command! -buffer VimwikiGenerateLinks call vimwiki#base#generate_links()
+
+command! -buffer -nargs=0 VimwikiBacklinks call vimwiki#base#backlinks()
+command! -buffer -nargs=0 VWB call vimwiki#base#backlinks()
 
 exe 'command! -buffer -nargs=* VimwikiSearch lvimgrep <args> '.
       \ escape(VimwikiGet('path').'**/*'.VimwikiGet('ext'), ' ')
@@ -247,7 +247,7 @@ command! -buffer VimwikiDiaryPrevDay call vimwiki#diary#goto_prev_day()
 if g:vimwiki_use_mouse
   nmap <buffer> <S-LeftMouse> <NOP>
   nmap <buffer> <C-LeftMouse> <NOP>
-  nnoremap <silent><buffer> <2-LeftMouse> :VimwikiFollowLink<CR>
+  nnoremap <silent><buffer> <2-LeftMouse> :call vimwiki#base#follow_link("nosplit", "\<lt>2-LeftMouse>")<CR>
   nnoremap <silent><buffer> <S-2-LeftMouse> <LeftMouse>:VimwikiSplitLink<CR>
   nnoremap <silent><buffer> <C-2-LeftMouse> <LeftMouse>:VimwikiVSplitLink<CR>
   nnoremap <silent><buffer> <RightMouse><LeftMouse> :VimwikiGoBackLink<CR>
@@ -345,7 +345,7 @@ nnoremap <silent><script><buffer>
 
 function! s:CR() "{{{
   let res = vimwiki#lst#kbd_cr()
-  if res == "\<CR>" && g:vimwiki_table_auto_fmt
+  if res == "\<CR>" && g:vimwiki_table_mappings
     let res = vimwiki#tbl#kbd_cr()
   endif
   return res
@@ -359,7 +359,7 @@ nnoremap <buffer> o :<C-U>call vimwiki#lst#kbd_oO('o')<CR>
 nnoremap <buffer> O :<C-U>call vimwiki#lst#kbd_oO('O')<CR>
 
 " Table mappings
-if g:vimwiki_table_auto_fmt
+if g:vimwiki_table_mappings
   inoremap <expr> <buffer> <Tab> vimwiki#tbl#kbd_tab()
   inoremap <expr> <buffer> <S-Tab> vimwiki#tbl#kbd_shift_tab()
 endif
@@ -377,8 +377,6 @@ endif
 nnoremap <silent><script><buffer>
       \ <Plug>VimwikiTableMoveColumnRight :VimwikiTableMoveColumnRight<CR>
 
-" Misc mappings
-inoremap <buffer> <S-CR> <br /><CR>
 
 
 " Text objects {{{
@@ -400,8 +398,21 @@ vnoremap <silent><buffer> ac :<C-U>call vimwiki#base#TO_table_col(0, 1)<CR>
 onoremap <silent><buffer> ic :<C-U>call vimwiki#base#TO_table_col(1, 0)<CR>
 vnoremap <silent><buffer> ic :<C-U>call vimwiki#base#TO_table_col(1, 1)<CR>
 
-nnoremap <silent><buffer> = :call vimwiki#base#AddHeaderLevel()<CR>
-nnoremap <silent><buffer> - :call vimwiki#base#RemoveHeaderLevel()<CR>
+if !hasmapto('<Plug>VimwikiAddHeaderLevel')
+  nmap <silent><buffer> = <Plug>VimwikiAddHeaderLevel
+endif
+nnoremap <silent><buffer> <Plug>VimwikiAddHeaderLevel :
+      \<C-U>call vimwiki#base#AddHeaderLevel()<CR>
+
+if !hasmapto('<Plug>VimwikiRemoveHeaderLevel')
+  nmap <silent><buffer> - <Plug>VimwikiRemoveHeaderLevel
+endif
+nnoremap <silent><buffer> <Plug>VimwikiRemoveHeaderLevel :
+      \<C-U>call vimwiki#base#RemoveHeaderLevel()<CR>
+
+nnoremap <silent><buffer> + :call vimwiki#base#NormalizeLinkSyntax(0)<CR>
+"vnoremap <silent><buffer> + :<C-U>call vimwiki#base#NormalizeLinkSyntax(1)<CR>
+"UNSTABLE
 
 " }}}
 
@@ -416,3 +427,9 @@ if VimwikiGet('auto_export')
 endif
 
 " AUTOCOMMANDS }}}
+
+" PASTE, CAT URL {{{
+" html commands
+command! -buffer VimwikiPasteUrl call vimwiki#html#PasteUrl(expand('%'))
+command! -buffer VimwikiCatUrl call vimwiki#html#CatUrl(expand('%'))
+" }}}
