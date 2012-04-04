@@ -75,6 +75,7 @@ set formatoptions=tcroq1
 set history=1000
 "set listchars=tab:>\
 "set listchars=tab:\ \
+set listchars=
 set mouse=
 set numberwidth=5
 set pastetoggle=<Leader>paste
