@@ -120,7 +120,7 @@ cmap w!! %!sudo tee > /dev/null %
 " Sort visually selected text by word
 " c d a f e => a c d e f
 " http://stackoverflow.com/questions/1327978/sorting-words-not-lines-in-vim
-vnoremap <F2> d:execute 'normal i' . join(sort(split(getreg('"'))), '')<CR>"'))))'
+vnoremap <F2> d:execute 'normal i' . join(sort(split(getreg('"'))), ' ')<CR>"'))))'
 
 " Add blank lines without going into insert mode
 " http://stackoverflow.com/questions/3170348/insert-empty-lines-without-entering-insert-mode

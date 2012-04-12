@@ -5,8 +5,9 @@
 "            http://github.com/vim-scripts/showmarks
 "            In .vim/bundle/showmarks
 let g:showmarks_ignore_type="hpq"
-
-" let g:showmarks_hlline_lower=1
+let g:showmarks_textlower="\t"
+let g:showmarks_textupper="\t"
+let g:showmarks_textother="\t"
 
 " VCSCommand http://www.vim.org/scripts/script.php?script_id=90
 "            http://repo.or.cz/w/vcscommand.git

@@ -13,11 +13,14 @@ use warnings;
 use Cwd;
 use File::Basename;
 
-die "Too many arguments!\n" if @ARGV > 1; ## no critic qw( ErrorHandling::RequireUseOfExceptions )
+die "Too many arguments!\n"
+  if @ARGV > 1; ## no critic qw( ErrorHandling::RequireUseOfExceptions )
 
-my $file = shift or die "No filename to check!\n"; ## no critic qw( ErrorHandling::RequireUseOfExceptions )
-my $dir  = dirname( $file ) . '/lib';
-my $cwd  = cwd() . '/lib';
+my $file = shift
+  or die "No filename to check!\n"; ## no critic qw( ErrorHandling::RequireUseOfExceptions )
+
+my $dir = dirname( $file ) . '/lib';
+my $cwd = cwd() . '/lib';
 
 my $error = qr{(.*)\sat\s(.*)\sline\s(\d+)([.]|,?\snear\s["'].*["']?)};
 
@@ -53,11 +56,13 @@ push @checks, '-Mwarnings::unused'   if `perldoc -l warnings::unused 2> /dev/nul
 my $verbose
   = '%m at %f line %l near "%r" Severity: %s %p\n'; ## no critic qw( ValuesAndExpressions::RequireInterpolationOfMetachars);
 
-push @checks, "-Mcriticism=no_defaults,1,verbose,'$verbose'" if `perldoc -l criticism 2> /dev/null`;
+#push @checks, "-Mcriticism=no_defaults,1,verbose,'$verbose'" if `perldoc -l criticism 2> /dev/null`;
+push @checks, "'-Mcriticism=severity,5,verbose,$verbose'" if `perldoc -l criticism 2> /dev/null`;
 
 # uninit is not included in 5.10 and later
 push @checks, '-Muninit'
-  if ( $] < 5.010 ) && `perldoc -l uninit 2> /dev/null`; ## no critic qw( ValuesAndExpressions::ProhibitMagicNumbers )
+  if ( $] < 5.010 )
+  && `perldoc -l uninit 2> /dev/null`; ## no critic qw( ValuesAndExpressions::ProhibitMagicNumbers )
 
 my $checks = join q{ }, @checks;
 
