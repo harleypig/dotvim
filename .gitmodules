@@ -45,4 +45,4 @@
 	url = git://github.com/dannyob/quickfixstatus.git
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
-	url = git://github.com/scrooloose/syntastic.git
+	url = git://github.com/harleypig/syntastic.git

@@ -1,0 +1,85 @@
+% ViM LaTeX style
+% (c) Lubomir Host 'rajo' <host8 AT keplerDOTfmphDOTunibaDOTsk>
+
+% $Id: vim.sty,v 1.6 2002/04/12 03:40:49 host8 Exp $
+
+% Section
+\def\vimhelpSection#1{
+	\section{#1}
+	}
+
+% Subsection
+\def\vimhelpSubsection#1{
+	\subsection{#1}
+	}
+
+% Subsubsection
+\def\vimhelpSubsubsection#1{
+	\subsubsection{#1}
+	}
+
+% Modeline
+\def\vimhelpModeline#1{
+	%empty
+	}
+
+% Separator
+\def\vimhelpSeparator{
+%-----------------------------------------------------------
+	}
+
+% Pipe
+\def\vimhelpPipe#1{\textcolor{blue}{|#1|} }
+
+% Star
+\def\vimhelpStar#1{
+	\textcolor{magenta}{*#1*}
+	\label{#1}
+	\index{#1}
+	}
+
+% StarSpecial
+\def\vimhelpStarSpecial#1#2{
+	\textcolor{magenta}{*#1*}
+	\label{#2}
+	\index{#1}
+	}
+
+% Quote
+\def\vimhelpQuote#1{
+	}
+
+% Example -- NOT used
+\newenvironment{vimhelpExample}{
+	\begin{verbatim}}{
+	\end{verbatim}
+	}
+
+% Note
+\def\vimhelpNote#1{
+	}
+
+	
+% Table  '.* ~$'
+\def\vimhelpTable{
+	VIMHELPTABLE: \\
+	}
+
+% NotInVi
+\def\vimhelpNotInVi#1{ 
+	\hfill \textcolor{red}{\{#1\}} \\
+	}
+
+% something in '{}', vim keys, etc. ... 
+\def\vimhelpSpecial#1{
+	\textcolor{red}{#1} \\
+	}
+
+\def\vimhelpParenthises#1{\textcolor{red}{\{#1\}}}
+
+% Vim Markers '{{{,}}}'
+\def\vimhelpMarkerFirst{\{\{\{}
+\def\vimhelpMarkerLast{\}\}\}}
+
+% Filenames 'usr_XX.txt'
+\def\usr#1{\protect usr\_#1}

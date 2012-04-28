@@ -57,7 +57,7 @@ my $verbose
   = '%m at %f line %l near "%r" Severity: %s %p\n'; ## no critic qw( ValuesAndExpressions::RequireInterpolationOfMetachars);
 
 #push @checks, "-Mcriticism=no_defaults,1,verbose,'$verbose'" if `perldoc -l criticism 2> /dev/null`;
-push @checks, "'-Mcriticism=severity,5,verbose,$verbose'" if `perldoc -l criticism 2> /dev/null`;
+#push @checks, "'-Mcriticism=severity,5,verbose,$verbose'" if `perldoc -l criticism 2> /dev/null`;
 
 # uninit is not included in 5.10 and later
 push @checks, '-Muninit'

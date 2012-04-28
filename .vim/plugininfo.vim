@@ -61,7 +61,7 @@ function! ToggleLocList()
 endf
 
 command! ToggleLocList :call ToggleLocList()
-nmap <Leader>err :ToggleLocList<CR>
+nmap <Leader>err ToggleLocList<CR>
 
 " Surround   http://www.vim.org/scripts/script.php?script_id=1697
 "            http://github.com/tpope/vim-surround
@@ -119,7 +119,7 @@ let g:vimwiki_file_exts     = 'pdf,txt,doc,rtf,xls,php,zip,rar,7z,html,gz,pl,cgi
 " http://code.google.com/p/vimwiki/wiki/MultipleWikies
 let g:vimwiki_list = [{ 'path': '~/Dropbox/vimwiki/main' },
                     \ { 'path': '~/Dropbox/vimwiki/work' },
-                    \ { 'path': '~/Dropbox/vimwiki/boinc' }]
+                    \ { 'path': '~/Dropbox/vimwiki/web' }]
 
 " Fugitive   https://github.com/tpope/vim-fugitive
 "            In .vim/bundle/fugitive
@@ -129,6 +129,13 @@ let g:vimwiki_list = [{ 'path': '~/Dropbox/vimwiki/main' },
 
 " quickfixstatus https://github.com/dannyob/quickfixstatus
 "                In .vim/bundle/quickfixstatus
+
+" :h 2html
+" :h TOHtml
+let g:html_no_progress   = 1
+let g:html_number_lines  = 0
+let g:html_dynamic_folds = 1
+let g:html_use_xhtml     = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins To Checkout
