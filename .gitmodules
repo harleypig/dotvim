@@ -1,51 +1,68 @@
 [submodule ".vim/bundle/vcscommand"]
 	path = .vim/bundle/vcscommand
 	url = git://repo.or.cz/vcscommand.git
+  ignore = untracked
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
 	url = git://github.com/tpope/vim-surround.git
+  ignore = untracked
 [submodule ".vim/bundle/align"]
 	path = .vim/bundle/align
 	url = git://github.com/vim-scripts/Align.git
+  ignore = untracked
 [submodule ".vim/bundle/autoalign"]
 	path = .vim/bundle/autoalign
 	url = git://github.com/vim-scripts/AutoAlign.git
+  ignore = untracked
 [submodule ".vim/bundle/perl"]
 	path = .vim/bundle/perl
 	url = git://github.com/petdance/vim-perl.git
+  ignore = untracked
 [submodule ".vim/bundle/pathogen"]
 	path = .vim/bundle/pathogen
 	url = git://github.com/tpope/vim-pathogen.git
+  ignore = untracked
 [submodule ".vim/bundle/showmarks"]
 	path = .vim/bundle/showmarks
 	url = git@github.com:harleypig/ShowMarks.git
+  ignore = untracked
 [submodule ".vim/bundle/github"]
 	path = .vim/bundle/github
 	url = git://github.com/thinca/vim-github.git
+  ignore = untracked
 [submodule ".vim/bundle/perlcritic"]
 	path = .vim/bundle/perlcritic
 	url = git://github.com/mattfoster/vim-Perl-Critic.git
+  ignore = untracked
 [submodule ".vim/bundle/irssilog"]
 	path = .vim/bundle/irssilog
 	url = git://github.com/vim-scripts/irssilog.vim.git
+  ignore = untracked
 [submodule ".vim/bundle/gitolite"]
 	path = .vim/bundle/gitolite
 	url = git://github.com/tmatilai/gitolite.vim.git
+  ignore = untracked
 [submodule ".vim/bundle/ledger"]
 	path = .vim/bundle/ledger
 	url = git://github.com/vim-scripts/ledger.vim.git
+  ignore = untracked
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
+  ignore = untracked
 [submodule ".vim/bundle/gitv"]
 	path = .vim/bundle/gitv
 	url = git://github.com/gregsexton/gitv.git
+  ignore = untracked
 [submodule ".vim/bundle/quickfixstatus"]
 	path = .vim/bundle/quickfixstatus
 	url = git://github.com/dannyob/quickfixstatus.git
+  ignore = untracked
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = git://github.com/harleypig/syntastic.git
+  ignore = untracked
 [submodule ".vim/bundle/evervim"]
 	path = .vim/bundle/evervim
 	url = git://github.com/kakkyz81/evervim.git
+  ignore = untracked
