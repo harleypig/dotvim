@@ -196,6 +196,10 @@ nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 " highlighting: ... pydave Feb 23 at 19:04
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
+" http://vimbits.com/bits/380
+" This changes the behavior of the very useful . command to leave the cursor at the point where it was before editing started.
+nnoremap . .`[
+
 " http://www.gregsexton.org/2011/03/improving-the-text-displayed-in-a-fold/
 fu! CustomFoldText()
 
