@@ -14,13 +14,11 @@ colorscheme desert
 filetype plugin indent on
 syntax on
 
+runtime! extra/*.vim
+
 " Automatically reload this file when it, or any sourced file, is saved.
-if !exists( "autoload_vimrc" )
-
-  let autoload_vimrc = 1
-  autocmd BufWritePost .vimrc source $MYVIMRC
-
-  " how can I make it so my custom config files are auto reloaded also?
-  " autocmd BufWritePost .vim/after/plugin/statusline source $MYVIMRC
-
-endif
+aug AutoloadVimrc
+  au!
+  au BufWritePost .vimrc        source $MYVIMRC
+  au BufWritePost */extra/*.vim source $MYVIMRC
+aug END
