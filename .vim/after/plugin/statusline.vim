@@ -1,5 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set the statusline
+"
+" look into replacing this with https://github.com/Lokaltog/vim-powerline
 
 set laststatus=2
 
