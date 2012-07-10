@@ -27,3 +27,5 @@ function! VimwikiMisc2Html() "{{{
   execute 'wq'
 endfunction "}}}
 command -nargs=0 VimwikiMisc2Html call VimwikiMisc2Html()
+
+

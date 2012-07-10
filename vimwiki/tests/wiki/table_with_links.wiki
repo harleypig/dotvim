@@ -5,7 +5,6 @@
 | [[Github]]                  |
 | http://github.com           |
 | [[http://github.com]]       |
-| [http://github.com GitHub]  |
 
 | Description         |
 |---------------------|
@@ -13,7 +12,6 @@
 | `Github`            |
 | `http://github.com` |
 | `http://github.com` |
-| `GitHub`            |
 
 | URL                 |
 |---------------------|
@@ -21,4 +19,4 @@
 | `Github.wiki`       |
 | `http://github.com` |
 | `http://github.com` |
-| `http://github.com` |
+

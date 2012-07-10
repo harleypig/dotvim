@@ -64,16 +64,16 @@ let g:vimwiki_char_subscript = ',,'
 let g:vimwiki_rxH = '='
 let g:vimwiki_symH = 1
 
-" Link templates are currently initialized together with per-wiki options
+
 
 " <hr>, horizontal rule
-let g:vimwiki_rxHR = '^----.*$'
+let g:vimwiki_rxHR = '^-----*$'
 
 " Tables. Each line starts and ends with '|'; each cell is separated by '|'
 let g:vimwiki_rxTableSep = '|'
 
 " List items start with optional whitespace(s) then '* ' or '# '
-let g:vimwiki_rxListBullet = '^\s*\%(\*\|-\)\s'
+let g:vimwiki_rxListBullet = '^\s*[*-]\s'
 let g:vimwiki_rxListNumber = '^\s*#\s'
 
 let g:vimwiki_rxListDefine = '::\(\s\|$\)'

@@ -56,7 +56,7 @@ prefixes of a URL that end with a colon `:`
 
 In addition to standard web schemes (e.g. `http:`, `https:`, `ftp:`, etc.) the
 following special schemes are supported:
- # `wiki:` URLs to wiki pages specified without '.wiki' extension relative to the
+ # `wiki#:` URLs to wiki pages specified without '.wiki' extension relative to the
    current page
  # `diary:` URLs to diary pages specified without '.wiki' extension
  # `local:` URLs to local resources specified with extension relative to the
@@ -64,8 +64,8 @@ following special schemes are supported:
  # `wiki#:`, `diary#:`, and `local#:` same as above except that URLs are specified
    relative to the root of the #-identified wiki
  # `file:` URLs to local resources specified with extension via absolute paths
-
-Schemeless URLs are equivalent to wiki:URLs except when converted to Html.  For
+ 
+Schemeless URLs are equivalent to wiki#:URLs except when converted to Html.  For
 Html, schemeless links translate to plain relative path links (nearly verbatim
 "relpath/wikifile.html"), while `wiki#:`, `local#:`, and `diary#:` prepend
 absolute paths e.g. file:///abs_path_to_htmlJ/relpath/wikiname.html
@@ -75,39 +75,40 @@ absolute paths e.g. file:///abs_path_to_htmlJ/relpath/wikiname.html
 
 Some users may wish to customize the separators for wiki-links and
 wiki-includes, respectively `']['` and `'}{'` above.  These are customizable
-via per-wiki options:
-
- * `link_separator = ']['`
- * `incl_separator = '}{'`
+via syntax file variables:
+ 
+ * `g:vimwiki_link_separator = ']['`
+ * `g:vimwiki_incl_separator = '}{'`
 
 Setting identical separators is not recommended; for best results, their
 characters-sets should not overlap.  The prefix and suffix pairs `'[['`, `']]'`
 and, `'{{'`, `'}}'` are not currently customizable.
 
-Templates may be used to customize Vimwiki's web- and image- links; e.g.
-Markdown compatibility is met with the following:
+Templates may be used to customize Vimwiki's web- and image- links.  For
+backwards compatibility with Vimwiki V1.2, the web_template for the default
+syntax is set accordingly:
 
- * Web Link Template: `[__LinkDescription__](__LinkUrl__)`
- * Image Link Template: `![__LinkDescription__](__LinkUrl__ __LinkStyle__)`
-
-For backwards compatibility with Vimwiki V1.2, the default web_template is set
-accordingly:
-
- * Web Link Template: `[__LinkUrl__ __LinkDescription__]`
+ * Web Template: `[__LinkUrl__ __LinkDescription__]`
 
 For image links, backwards compatibility with Vimwiki V1.2 is harder to
 maintain.  Instead, the default syntax replaces `[[` and `]]` delimiters with
 `{` and `}`:
 
- * Image Link Template: `{__LinkUrl__|__LinkDescription__|__LinkStyle__}`
+ * Image Template: `{__LinkUrl__|__LinkDescription__|__LinkStyle__}`
 
-In your `.vimrc` these are configured as follows:
+Markdown compatibility is met with the following:
+
+ * Web Template: `[__LinkDescription__](__LinkUrl__)`
+ * Image Template: `![__LinkDescription__](__LinkUrl__ __LinkStyle__)`
+
+These may be configured in your chosen syntax file `src/syntax/vimwiki_xxx.vim`
+as follows:
 
 {{{
-  let wiki.link_separator   = ']['
-  let wiki.incl_separator   = '}{'
-  let wiki.web_template     = '[__LinkDescription__](__LinkUrl__)'
-  let wiki.image_template   = '![__LinkDescription__](__LinkUrl__ __LinkStyle__)'
+  let g:vimwiki_link_separator   = ']['
+  let g:vimwiki_incl_separator   = '}{'
+  let g:vimwiki_web_template     = '[__LinkDescription__](__LinkUrl__)'
+  let g:vimwiki_image_template   = '![__LinkDescription__](__LinkUrl__ __LinkStyle__)'
 }}}
 
 
@@ -129,7 +130,7 @@ g:vimwiki_camel_case is being considered for deprecation)
 Note *2*: Only works wiki page is missing (i.e. it does not yet exist)
 
 Note *3*: Only works wiki page exists
-
+ 
 *Markup & Expected Results*
 
 | Link | Markup        | Description   | URL                     |
@@ -221,7 +222,7 @@ Local resources are specified relative current wiki page
    slash and without appending `/homepage.html`
    * [[local:../src][vimwiki src/]] (*4*)
  # Extensions are not modified with the "local:" scheme
-   * [[local:vimwikiqrc.pdf]]
+   * [[local:vimwikiqrc.pdf]] 
 
 Note *6*: Only works if `g:vimwiki_dir_link = 'homepage'`
 
@@ -273,17 +274,17 @@ Includes the contents of URL in the Html output.
    * Expected Target: `<img src="http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png" alt="Vimwiki"/>`
    * Example: {{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png}{Vimwiki}} (*7*)
  # Link to an image with alternate text and some style
-   * Markup: `{{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png}{cool stuff}{width:150px; height: 120px;}}`
+   * Markup: `{{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png}{cool stuff}{style="width:150px; height: 120px;"}}`
    * Expected Alternate: `cool stuff`
    * Expected Style: `width:150px; height:120px`
    * Expected Target: `<img src="http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png" alt="cool stuff" style="width:150px; height:120px"/>`
-   * Markup: {{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png}{cool stuff}{width:150px; height: 120px;}} (*7*) TODO: fix vim highlighting (style not concealed!?)
+   * Markup: {{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png}{cool stuff}{style="width:150px; height: 120px;"}} (*7*)
  # Link to an image without alternate text and some style
-   * Markup: `{{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png}{}{width:150px; height: 120px;}}`
+   * Markup: `{{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png}{}{style="width:150px; height: 120px;"}}`
    * Expected Alternate: n/a
    * Expected Style: `width:150px; height:120px`
    * Expected Target: `<img src="http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png" style="width:150px; height:120px"/>`
-   * Example: {{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png}{}{width:150px; height: 120px;}} (*7*) TODO: fix vim highlighting (style not concealed!?)
+   * Example: {{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png}{}{style="width:150px; height: 120px;"}} (*7*) XXX: Everything is concealed, nothing to see!
 
 Note *7*: Only works if vimwiki-option `incl_separator == '}{'`
 
@@ -296,23 +297,23 @@ Note *7*: Only works if vimwiki-option `incl_separator == '}{'`
    * Expected Target: `<img src="http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png" alt="Vimwiki"/>`
    * Example: {{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png|Vimwiki}} (*8*)
  # Link to an image with alternate text and some style
-   * Markup: `{{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png|cool stuff|width:150px; height: 120px;}}`
-   * Expected Alternate: `cool stuff~width:150px; height: 120px;`
+   * Markup: `{{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png|cool stuff|style="width:150px; height: 120px;"}}`
+   * Expected Alternate: `cool stuff`
    * Expected Style: `width:150px; height:120px`
    * Expected Target: `<img src="http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png" alt="cool stuff" style="width:150px; height:120px"/>`
-   * Markup: {{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png|cool stuff|width:150px; height: 120px;}} (*8*) TODO: fix vim highlighting (style not concealed!?)
+   * Markup: {{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png|cool stuff|style="width:150px; height: 120px;"}} (*8*)
  # Link to an image without alternate text and some style
-   * Markup: `{{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png||width:150px; height: 120px;}}`
-   * Expected Alternate: `~width:150px; height: 120px;`
+   * Markup: `{{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png||style="width:150px; height: 120px;"}}`
+   * Expected Alternate: n/a
    * Expected Style: `width:150px; height:120px`
    * Expected Target: `<img src="http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png" style="width:150px; height:120px"/>`
-   * Example: {{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png||width:150px; height: 120px;}} (*8*) TODO: fix vim highlighting (style not concealed!?)
+   * Example: {{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png||style="width:150px; height: 120px;"}} (*8*) XXX: Everything is concealed, nothing to see!
 
 Note *8*: Only works if vimwiki-option `incl_separator == '|'`
 
 === d) {{-Wiki-Include Links To Local URLs ===
 
- # Schemeless URLs, or those with the "wiki:" scheme, appends an `.html`
+ # Schemeless URLs, or those with the "wiki#:" scheme, appends an `.html`
    extension
    * In other words, don't try this: `{{../images/vimwiki_logo.png}}` (*4*)
  # URLs with the `local:` scheme specify resources with paths relative current
@@ -335,10 +336,10 @@ Note *8*: Only works if vimwiki-option `incl_separator == '|'`
 === Example ===
 
  # Wikilinks with links to images as their descriptions
-   * Markup (a): `[[EgFoundPage][{{http://vimwiki.googlecode.com/hg/screenshots/tn_vimwiki1.png}{}{width:50px; height: 50px;}}]]`
-     * Example: [[EgFoundPage][{{http://vimwiki.googlecode.com/hg/screenshots/tn_vimwiki1.png}{}{width:50px; height: 50px;}}]] (*4*)
-   * Markup (b): `[[EgFoundPage|{{http://vimwiki.googlecode.com/hg/screenshots/tn_vimwiki1.png}{}{width:50px; height: 50px;}}]]`
-     * Example: [[EgFoundPage|{{http://vimwiki.googlecode.com/hg/screenshots/tn_vimwiki1.png}{}{width:50px; height: 50px;}}]] (*5*)
+   * Markup (a): `[[EgFoundPage][{{http://vimwiki.googlecode.com/hg/screenshots/tn_vimwiki1.png}{}{style="width:50px; height: 50px;"}}]]`
+     * Example: [[EgFoundPage][{{http://vimwiki.googlecode.com/hg/screenshots/tn_vimwiki1.png}{}{style="width:50px; height: 50px;"}}]] (*4*)
+   * Markup (b): `[[EgFoundPage|{{http://vimwiki.googlecode.com/hg/screenshots/tn_vimwiki1.png}{}{style="width:50px; height: 50px;"}}]]`
+     * Example: [[EgFoundPage|{{http://vimwiki.googlecode.com/hg/screenshots/tn_vimwiki1.png}{}{style="width:50px; height: 50px;"}}]] (*5*)
    * Expected Description: _the image_
    * Expected Alternate: n/a
    * Expected Style: n/a
@@ -348,7 +349,7 @@ Note *8*: Only works if vimwiki-option `incl_separator == '|'`
 
 == Templated Weblinks ==
 === a) Weblinks Overview ===
-
+ 
  # http://code.google.com/p/vimwiki
  # mailto:habamax@gmail.com
  # ftp://vim.org
@@ -356,9 +357,9 @@ Note *8*: Only works if vimwiki-option `incl_separator == '|'`
  # [mailto:habamax@gmail.com Drop a line to Maxim Kim] (*9*)
  # [habamax home page](http://habamax.ru/blog) (*10*)
 
-Note *9*: Only works if vimwiki-option `weblink_template == '[__LinkUrl__ __LinkDescription__]'`
+Note *9*: Only works if syntax = 'default'
 
-Note *10*: Only works if vimwiki-option `weblink_template == '[__LinkDescription__](__LinkUrl__)'`
+Note *10*: Only works if syntax = 'markdown'
 
 *Markup & Expected Results*
 
@@ -488,14 +489,14 @@ Note *11*: Only works if "gropen" is added to the list of web_schemes
    * Expected Style: `width:150px; height:120px`
    * Expected Target: `<img src="http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png" style="width:150px; height:120px"/>`
 
-Note *10*: Only works if vimwiki-option `image_template == '{__LinkUrl__|__LinkDescription__|__LinkStyle__}'`
+Note *10*: Only works if syntax = 'default'
 
-Note *11*: Only works if vimwiki-option `image_template == '![__LinkDescription__](__LinkUrl__ __LinkStyle__)'`
+Note *11*: Only works if syntax = 'markdown'
 
 
 == Example Images ==
 
- # Local Image
+ # Local Image 
    {{local:../images/vimwiki_logo.png}}
  # Vimwiki Thumbnail
    {{http://vimwiki.googlecode.com/hg/images/vimwiki_logo.png}{Vimwiki thumbnail}}
@@ -509,11 +510,11 @@ Note *11*: Only works if vimwiki-option `image_template == '![__LinkDescription_
 
 
 = Headers =
-== Heading 1 ==
-=== Heading 1.1 ===
-== Heading 2 ==
-=== Heading 2.1 ===
-=== Heading 2.2 ===
+== Heading 1 == 
+=== Heading 1.1 === 
+== Heading 2 == 
+=== Heading 2.1 === 
+=== Heading 2.2 === 
 
 = Lists =
 == List 1 ==
@@ -543,3 +544,5 @@ Note *11*: Only works if vimwiki-option `image_template == '![__LinkDescription_
   |---|---|---|---|
   | i | 8 | 8 | b |
   | j | 8 | 8 | j |
+
+
