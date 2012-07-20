@@ -19,9 +19,6 @@
 # http://blogs.perl.org/users/ovid/2012/07/integrating-perlcritic-and-vim.html
 # for the idea of separating perlcritic out of the perl -c test.
 
-# Note: Most of the following modules need to be installed, most are not
-# included in core.
-
 use 5.008;
 
 use strict;
@@ -60,6 +57,9 @@ my ( $perldoc, $err, $syserr, @checks );
 warn "$err\n" if $err;
 
 if ( ! $syserr ) {  # 0 = success because we're dealing with the shell
+
+  # Note: Most of the following modules need to be installed, most are not
+  # included in core.
 
   my @pragmas = qw( -circular::require -indirect warnings::method warnings::unused );
 
