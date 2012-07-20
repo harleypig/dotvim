@@ -5,24 +5,44 @@
 # that someone has probably made changes to it since then.) Check that file for
 # details and historical information.
 
-use 5.006;
+# Since I can only install this file in systems I'm able to install whatever
+# perl modules I want, I'm going to use some modules that make things a little
+# easier.
+
+# Thanks to:
+#
+# http://blogs.perl.org/users/ovid/2011/01/warningsunused-versus-ppi.html for
+# the 'warnings::unused' trick.
+#
+# https://github.com/Ovid/DB--Color.git for the 'circular::require' trick
+#
+# http://blogs.perl.org/users/ovid/2012/07/integrating-perlcritic-and-vim.html
+# for the idea of separating perlcritic out of the perl -c test.
+
+# Note: Most of the following modules need to be installed, most are not
+# included in core.
+
+use 5.008;
 
 use strict;
 use warnings;
+use autodie;
 
 use Cwd;
 use File::Basename;
+use IPC::Run3::Simple;
 
 die "Too many arguments!\n"
-  if @ARGV > 1; ## no critic qw( ErrorHandling::RequireUseOfExceptions )
+  if @ARGV > 1;
 
 my $file = shift
-  or die "No filename to check!\n"; ## no critic qw( ErrorHandling::RequireUseOfExceptions )
+  or die "No filename to check!\n";
 
+# Naive attempt to include working module libraries.
 my $dir = dirname( $file ) . '/lib';
 my $cwd = cwd() . '/lib';
 
-my $error = qr{(.*)\sat\s(.*)\sline\s(\d+)([.]|,?\snear\s["'].*["']?)};
+my $error_rx = qr{(.*)\sat\s(.*)\sline\s(\d+)([.]|,?\snear\s["'].*["']?)};
 
 # Error messages to be skipped.
 my @skip = (
@@ -34,52 +54,93 @@ my @skip = (
 
 my $skip = join q{|}, @skip;
 
-# Thanks to
-#
-# http://blogs.perl.org/users/ovid/2011/01/warningsunused-versus-ppi.html for
-# the 'warnings::unused' trick.
-#
-# https://github.com/Ovid/DB--Color.git for the 'circular::require' trick
+my ( $perldoc, $err, $syserr, @checks );
 
-# Note: Most of the following modules need to be installed, most are not
-# included in core.
+( $perldoc, $err, $syserr ) = run3( [qw( which perldoc )] );
+warn "$err\n" if $err;
 
-my @checks;
+if ( ! $syserr ) {  # 0 = success because we're dealing with the shell
 
-## no critic qw( InputOutput::ProhibitBacktickOperators )
+  my @pragmas = qw( -circular::require -indirect warnings::method warnings::unused );
 
-push @checks, '-M-circular::require' if `perldoc -l circular::require 2> /dev/null`;
-push @checks, '-M-indirect'          if `perldoc -l indirect 2> /dev/null`;
-push @checks, '-Mwarnings::method'   if `perldoc -l warnings::method 2> /dev/null`;
-push @checks, '-Mwarnings::unused'   if `perldoc -l warnings::unused 2> /dev/null`;
+  for my $pragma ( @pragmas ) {
 
-my $verbose
-  = '%m at %f line %l near "%r" Severity: %s %p\n'; ## no critic qw( ValuesAndExpressions::RequireInterpolationOfMetachars);
+    ( my $p = $pragma ) =~ s/^-?//;
+    my $cmd = [ $perldoc, '-l', $p ];
+    ( undef, $err, $syserr ) = run3( $cmd );
+    warn "$err\n" if $err;
 
-#push @checks, "-Mcriticism=no_defaults,1,verbose,'$verbose'" if `perldoc -l criticism 2> /dev/null`;
-#push @checks, "'-Mcriticism=severity,5,verbose,$verbose'" if `perldoc -l criticism 2> /dev/null`;
+    push @checks, "-M$pragma"
+      if ! $syserr;
 
-# uninit is not included in 5.10 and later
-push @checks, '-Muninit'
-  if ( $] < 5.010 )
-  && `perldoc -l uninit 2> /dev/null`; ## no critic qw( ValuesAndExpressions::ProhibitMagicNumbers )
+  }
+
+  # uninit is not included in 5.10 and later
+  if ( $] < 5.010 ) { ## no critic qw( ValuesAndExpressions::ProhibitMagicNumbers )
+
+    ( undef, $err, $syserr ) = run3( [ $perldoc, '-l', 'uninit' ] );
+    warn "$err\n" if $err;
+    push @checks, '-Muninit'
+      if ! $syserr;
+
+  }
+} ## end if ( ! $syserr )
 
 my $checks = join q{ }, @checks;
 
 my ( $message, $extracted_file, $lineno, $rest );
 
-#warn "perl -I $dir -I $cwd @checks -c $file 2>&1\n";
+my $cmd = [ 'perl', '-I', $dir, '-I', $cwd, @checks, '-c', $file ];
 
-for my $line ( `perl -I $dir -I $cwd @checks -c $file 2>&1` ) {
+run3( {
 
-  chomp $line;
-  next if $line =~ /$skip/;
-  $line =~ s/([()])/\\$1/g;
+    'cmd'    => $cmd,
+    'stdout' => \$err,
+    'stderr' => \my @errors,
+    'syserr' => \$syserr,
 
-  if ( ( $message, $extracted_file, $lineno, $rest ) = $line =~ /^$error$/ ) {
+} );
+
+warn "stdout: $err\n" if $err;
+
+#unshift @errors, "@$cmd";
+
+my $critique = 1;
+
+for my $error ( @errors ) {
+
+  next if $error =~ /$skip/;
+  $error =~ s/([()])/\\$1/g;
+
+  if ( ( $message, $extracted_file, $lineno, $rest ) = $error =~ /^$error_rx$/ ) {
 
     $message .= $rest if ( $rest =~ s/^,?\snear// );
-    print "$file:$lineno:$message\n"; ## no critic qw( InputOutput::RequireCheckedSyscalls )
+    print "$file:$lineno:$message\n";
+    $critique = 0;
 
   }
 }
+
+# If we have errors, we're not going to worry about perlcritic
+if ( $critique ) {
+
+  my $perlcritic;
+  ( $perlcritic, $err ) = run3( [qw( which perlcritic )] );
+  warn "$err\n" if $err;
+
+  my $format = '%f:%l:%m (near %r) Severity: %s %p\n'; ## no critic qw( ValuesAndExpressions::RequireInterpolationOfMetachars )
+  my $cmd = [ $perlcritic, '--quiet', '--verbose', $format, $file ]; ## no critic qw( Variables::ProhibitReusedNames )
+
+  run3( {
+
+      'cmd'    => $cmd,
+      'stdout' => \my @critiques,
+      'stderr' => \$err,
+
+  } );
+
+  #unshift @critiques, "@$cmd";
+
+  print "$_\n" for @critiques;
+
+} ## end if ( $critique )
