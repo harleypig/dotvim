@@ -111,9 +111,6 @@ run3( {
 
 warn "stdout: $err\n" if $err;
 
-unshift @errors, "@$cmd";
-warn "@$cmd\n";
-
 my $critique = 1;
 
 for my $error ( @errors ) {
@@ -138,7 +135,7 @@ if ( $critique ) {
   warn "$err\n" if $err;
 
   my $format = '%f:%l:%m (near %r) Severity: %s %p\n'; ## no critic qw( ValuesAndExpressions::RequireInterpolationOfMetachars )
-  my $cmd = [ $perlcritic, '--quiet', '--verbose', $format, $file ]; ## no critic qw( Variables::ProhibitReusedNames )
+  $cmd = [ $perlcritic, '--quiet', '--verbose', $format, $file ];
 
   run3( {
 
@@ -147,8 +144,6 @@ if ( $critique ) {
       'stderr' => \$err,
 
   } );
-
-  #unshift @critiques, "@$cmd";
 
   print "$_\n" for @critiques;
 
