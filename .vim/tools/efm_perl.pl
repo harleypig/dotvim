@@ -58,17 +58,25 @@ warn "$err\n" if $err;
 
 if ( ! $syserr ) {  # 0 = success because we're dealing with the shell
 
+  my @perldoc = ( $perldoc, '-l' );
+
   # Note: Most of the following modules need to be installed, most are not
   # included in core.
+
+  ( undef, undef, $syserr ) = run3( [ @perldoc, 'B::Lint::StrictOO' ] );
+
+  push @checks, '-MB::Lint::StrictOO'
+    if ! $syserr;
+
+  push @checks, '-MO=Lint,all,oo';
 
   my @pragmas = qw( -circular::require -indirect warnings::method warnings::unused );
 
   for my $pragma ( @pragmas ) {
 
     ( my $p = $pragma ) =~ s/^-?//;
-    my $cmd = [ $perldoc, '-l', $p ];
-    ( undef, $err, $syserr ) = run3( $cmd );
-    warn "$err\n" if $err;
+    my $cmd = [ @perldoc, $p ];
+    ( undef, undef, $syserr ) = run3( $cmd );
 
     push @checks, "-M$pragma"
       if ! $syserr;
@@ -78,7 +86,7 @@ if ( ! $syserr ) {  # 0 = success because we're dealing with the shell
   # uninit is not included in 5.10 and later
   if ( $] < 5.010 ) { ## no critic qw( ValuesAndExpressions::ProhibitMagicNumbers )
 
-    ( undef, $err, $syserr ) = run3( [ $perldoc, '-l', 'uninit' ] );
+    ( undef, $err, $syserr ) = run3( [ @perldoc, 'uninit' ] );
     warn "$err\n" if $err;
     push @checks, '-Muninit'
       if ! $syserr;
@@ -103,7 +111,8 @@ run3( {
 
 warn "stdout: $err\n" if $err;
 
-#unshift @errors, "@$cmd";
+unshift @errors, "@$cmd";
+warn "@$cmd\n";
 
 my $critique = 1;
 
