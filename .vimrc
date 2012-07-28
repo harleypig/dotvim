@@ -19,6 +19,6 @@ runtime! extra/*.vim
 " Automatically reload this file when it, or any sourced file, is saved.
 aug AutoloadVimrc
   au!
-  au BufWritePost .vimrc        source $MYVIMRC
+  au BufWritePost $MYVIMRC      source $MYVIMRC
   au BufWritePost */extra/*.vim source $MYVIMRC
 aug END

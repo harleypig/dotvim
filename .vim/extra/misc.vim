@@ -35,6 +35,9 @@ map <Leader>o :<C-U>call append(line("."), repeat([''], v:count1))<CR>
 nmap S :%s//g<LEFT><LEFT>
 vmap S :s//g<LEFT><LEFT>
 
+" Toggle syntax highlighting (also from Damian Conway)
+nmap <silent> <leader>y : if exists("syntax_on") <BAR> syntax off <BAR> else <BAR> syntax enable <BAR> endif<CR>
+
 " http://vimbits.com/bits/323
 " list buffers and switch to a buffer quickly
 nmap <leader>b :ls<CR>:buffer<Space>
@@ -55,12 +58,6 @@ function! AppendModeline()
   call append(0, l:modeline)
 endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
-
-" http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/95139#95139
-" Comment to this answer: Instead of manually typing nohlsearch, try mapping
-" it. Ctrl-L already redraws the screen, so I make it also and remove search
-" highlighting: ... pydave Feb 23 at 19:04
-nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 " http://vimbits.com/bits/380
 " This changes the behavior of the very useful . command to leave the cursor at the point where it was before editing started.

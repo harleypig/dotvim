@@ -3,22 +3,16 @@
 
 " <range>!perl -ne 'push@a,$_}{print$_ for sort{substr($a,6)cmp substr$b,6}@a'
 
-set   autoindent
-set nocopyindent
+set   autoread
 set nocursorline
 set   expandtab
 set nohidden
-set   hlsearch
-set   ignorecase
-set   incsearch
 set   linebreak
 set   list
 set   magic
 set   number
 set   showcmd
 set   showmatch
-set   smartcase
-set   smartindent
 set   terse
 set   title
 set   wildmenu
@@ -28,13 +22,14 @@ set   wildmenu
 
 set background=dark
 set backupdir=/tmp,~/tmp
+set backspace=indent,eol,start
 set clipboard+=unnamed
 set directory=/tmp,~/tmp
 set display=uhex,lastline
 set encoding=utf-8
-set formatoptions=tcroq1
 set history=1000
 set listchars=
+set matchpairs+=<:>
 set mouse=
 set numberwidth=5
 set pastetoggle=<Leader>paste
@@ -49,11 +44,30 @@ set textwidth=132
 set undolevels=1000
 set updatecount=10
 set updatetime=3000
-set viminfo=h,%10,'50,s1000
+set viminfo=h,%10,'50,s1000,/1000,:1000
 set virtualedit=block
 set whichwrap=b,s,<,>,[,]
 set wildignore+=*/.git/
 set wildignore+=*/CVS/
 set wildignore+=*/SVN/
 set wildmode=list:longest,full
-set wrapmargin=2
+
+" Search
+set   ignorecase
+set   incsearch
+set   smartcase
+set   hlsearch
+
+" http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/95139#95139
+" Comment to this answer: Instead of manually typing nohlsearch, try mapping
+" it. Ctrl-L already redraws the screen, so I make it also and remove search
+" highlighting: ... pydave Feb 23 at 19:04
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+" Smart wrapping
+set   formatoptions=tcroq1
+set   wrapmargin=2
+set   autoindent
+set   smartindent
+set nocopyindent
+

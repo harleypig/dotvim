@@ -83,20 +83,20 @@ execute 'set path+=' . substitute($PERL5LIB, ':', ',', 'g')
 "autocmd FileAppendPre  * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
 "autocmd FileWritePre   * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
 "autocmd FilterWritePre * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
-
-fun! StripTrailingWhitespace()
-
-  silent exe "normal mz<CR>"
-  let saved_search = @/
-
-  %s/\s\+$//e
-
-  silent exe "normal `z<CR>"
-  let @/ = saved_search
-
-  delmarks z
-
-endf
+"
+"fun! StripTrailingWhitespace()
+"
+"  silent exe "normal mz<CR>"
+"  let saved_search = @/
+"
+"  %s/\s\+$//e
+"
+"  silent exe "normal `z<CR>"
+"  let @/ = saved_search
+"
+"  delmarks z
+"
+"endf
 
 " type 'Chmod' to set execute for owner only
 command! -bar -nargs=* Chmod :!chmod 0700 % <args>
@@ -115,6 +115,25 @@ function! WhichDebugger(args)
   else
     execute "!perl -d " . fnameescape(expand("%")) . " " . a:args
   endif
+endfunction
+
+" Run perltidy and vimdiff
+" https://github.com/thoughtstream/Damian-Conway-s-Vim-Setup
+nmap <leader>pt :call Perltidy_diff()<CR>
+
+function! Perltidy_diff ()
+    " Work out what the tidied file will be called...
+    let perl_file = expand( '%' )
+    let tidy_file = perl_file . '.tdy'
+
+    call system( 'perltidy -nst ' . perl_file . ' -o ' . tidy_file )
+
+    " Add the diff to the right of the current window...
+    set splitright
+    exe ":vertical diffsplit " . tidy_file
+
+    " Clean up the tidied version...
+    call delete(tidy_file)
 endfunction
 
 "" http://use.perl.org/~Ovid/journal/36929
