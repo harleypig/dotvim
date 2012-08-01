@@ -58,10 +58,6 @@
 	path = .vim/bundle/quickfixstatus
 	url = git://github.com/dannyob/quickfixstatus.git
   ignore = untracked
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = git://github.com/harleypig/syntastic.git
-  ignore = untracked
 [submodule ".vim/bundle/evervim"]
 	path = .vim/bundle/evervim
 	url = git://github.com/kakkyz81/evervim.git
