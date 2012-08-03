@@ -53,7 +53,6 @@ set statusline+=%(\ %{&paste?'PASTE':''}%)
 set statusline+=%*]
 
 " Read the Syntastic docs.
-" see .vim/plugininfo.vim for settings
 set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%*
 
 " column and line # of total lines ; what percentage of the file are we at?
@@ -94,7 +93,7 @@ function! FileSize()
   elseif bytes < 1024 * 1024
     return ( bytes / 1024 ) . 'k'
   else
-    return 'Why are you editing such a freaking huge file?'
+    return 'TooDamnBig!'
   endif
 endfunction
 

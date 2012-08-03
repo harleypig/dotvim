@@ -37,6 +37,8 @@ my $file = shift
 
 my ( $perldoc, $efm, $err, $syserr, @checks );
 
+my $output_format = "%.1s:$file:%d:%s\n";
+
 # Grab custom instructions for this file from the file.
 
 # Any line that begins with no spaces and looks like
@@ -48,6 +50,8 @@ my ( $perldoc, $efm, $err, $syserr, @checks );
 my @tests = qw( circular indirect lint method perlcritic uninit unused );
 my %test; @test{ @tests } = ( 1 ) x @tests;
 
+printwarn( 1, 'testing warnings' );
+
 # Any line that begins with
 #
 # ## efm debug
@@ -58,7 +62,7 @@ my %test; @test{ @tests } = ( 1 ) x @tests;
 ## efm debug
 
 ( $efm, $err, $syserr ) = run3( [ 'grep', '^## efm ', $file ] );
-print "$file:1:$err\n" if $err;
+printerr( 1, $err ) if $err;
 
 my $DEBUG = 0;
 
@@ -83,7 +87,7 @@ if ( ! $syserr ) { # 0 = success because we're dealing with the shell
 if ( $DEBUG ) {
 
   my $tests = join ' ', sort keys %test;
-  print "DEBUG:1:using $tests\n";
+  printinfo( "using $tests" ) if $DEBUG;
 
 }
 
@@ -105,7 +109,7 @@ my $skip = join q{|}, @skip;
 
 # Grab perldoc location
 ( $perldoc, $err, $syserr ) = run3( [qw( which perldoc )] );
-print "$file:1:$err\n" if $err;
+printerr( 1, $err ) if $err;
 
 if ( ! $syserr ) {
 
@@ -152,7 +156,7 @@ if ( ! $syserr ) {
   if ( $] < 5.010 && exists $test{ uninit } ) { ## no critic qw( ValuesAndExpressions::ProhibitMagicNumbers )
 
     ( undef, $err, $syserr ) = run3( [ @perldoc, 'uninit' ] );
-    print "$file:1:$err\n" if $err;
+    printerr( 1, $err ) if $err;
     push @checks, '-Muninit'
       if ! $syserr;
 
@@ -164,7 +168,7 @@ my $checks = join q{ }, @checks;
 my ( $message, $extracted_file, $lineno, $rest );
 
 my $cmd = [ 'perl', '-I', $dir, '-I', $cwd, @checks, '-c', $file ];
-print "DEBUG:1:@$cmd\n" if $DEBUG;
+printinfo( "@$cmd" ) if $DEBUG;
 
 run3( {
 
@@ -175,7 +179,7 @@ run3( {
 
 } );
 
-print "$file:1:stdout - $err\n" if $err;
+printerr( 1, "stdout - $err" ) if $err;
 
 my $critique = exists $test{ perlcritic } || 0;
 my $err_count = 0;
@@ -188,25 +192,25 @@ for my $error ( @errors ) {
   if ( ( $message, $extracted_file, $lineno, $rest ) = $error =~ /^$error_rx$/ ) {
 
     $message .= $rest if ( $rest =~ s/^,?\snear// );
-    print "$file:$lineno:$message\n";
+    printerr( $lineno, $message );
     $critique = 0;
     $err_count++;
 
   }
 }
 
-print "DEBUG:1:$err_count error(s)\n" if $DEBUG;
+printinfo( "$err_count error(s)" ) if $DEBUG;
 
 # If we have errors, we're not going to worry about perlcritic
 if ( $critique ) {
 
   my $perlcritic;
   ( $perlcritic, $err ) = run3( [qw( which perlcritic )] );
-  print "$file:1:$err\n" if $err;
+  printerr( 1, $err ) if $err;
 
-  my $format = '%f:%l:%m (near %r) %p\n'; ## no critic qw( ValuesAndExpressions::RequireInterpolationOfMetachars )
+  my $format = 'W:%f:%l:%m (near %r) %p\n'; ## no critic qw( ValuesAndExpressions::RequireInterpolationOfMetachars )
   $cmd = [ $perlcritic, '--quiet', '--verbose', $format, $file ];
-  print "DEBUG:1:@$cmd\n" if $DEBUG;
+  printinfo( "@$cmd" ) if $DEBUG;
 
   run3( {
 
@@ -217,6 +221,12 @@ if ( $critique ) {
   } );
 
   print "$_\n" for @critiques;
-  printf "DEBUG:1:%d critique(s)\n", scalar @critiques if $DEBUG;
+  printinfo( scalar @critiques . 'critiques(s)' ) if $DEBUG;
 
 } ## end if ( $critique )
+
+sub printline { printf $output_format, @_ }
+
+sub printinfo { printline( 'I', 1, @_ ) }
+sub printwarn { printline( 'W', @_ ) }
+sub printerr  { printline( 'E', @_ ) }

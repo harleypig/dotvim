@@ -64,4 +64,4 @@
   ignore = untracked
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
-	url = git@github.com:harleypig/syntastic.git
+	url = https://github.com/scrooloose/syntastic.git
