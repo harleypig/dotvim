@@ -9,31 +9,15 @@ use File::Temp;
 use Regexp::Common 'ANSIescape';
 
 # Directory to save html files to
-my $html_dir = './html';
-
-# Doc files can be found in the runtimepath variable. See ':h help'. Dump the runtimepath to a temp file and read it in. Is there
-# a way to get this info directly from vim?
+my $html_dir = shift;
+die "$html_dir does not exist or is not a directory\n"
+  unless -d $html_dir;
 
 my @doc_dirs = do {
 
-  #my $fh = File::Temp->new;
-  #my $tmpfile = $fh->filename;
-  #
-  # Thanks to John Little on vim_use for the pointer to redir.
-  # https://groups.google.com/d/msg/vim_use/tGQdQX4MB68/kIhYPAMMsTgJ
-  # Also to Christian Brabandt for the idea of using pipes to make the command easier to read.
-  #my @cmd = ( 'vim', '-c', "redir! > $tmpfile | echo &rtp | redir END | q" );
-  #my ( undef, $err, $syserr, $time ) = run3( \@cmd );
-  #warn "Took $time seconds to run @cmd\n";
-  #die "err: ($syserr) $err\n" if $syserr;
-  #die "$err\n" if $err ne '' && $err ne 'Vim: Warning: Output is not to a terminal';
-  #
-  #map { "$_/doc" }
-  #  grep { ! /^$/ }
-  #    split /[,\s]+/, do { local $/ ; <$fh> };
-
   # Thanks to Christian Brabandt for the final solution.
   # https://groups.google.com/d/msg/vim_use/tGQdQX4MB68/kqP4mdR5hZsJ
+  # The following command returns a comma delimited list of directories
   my @cmd = (qw( vim -u ~/.vimrc -Esc ), 'verbose echo &rtp|q' );
   my ( $out, $err, $syserr, $time ) = run3( \@cmd );
 
@@ -41,6 +25,7 @@ my @doc_dirs = do {
   die "err: ($syserr) $err\n" if $syserr;
   die "out should be empty ($out)\n" if $out ne '';
 
+  # vim looks for a doc directory in each directory found in the runtime path.
   map { "$_/doc" } split /,/, $err;
 
 };
@@ -50,7 +35,7 @@ my @doc_dirs = do {
 # {tagfile}:{tagname} TAB {tagfile} TAB {tagaddress}
 # {tagname} TAB {tagfile} TAB {tagaddress} {term} {field} ..
 
-# The second format is obsolete, but I'm not going to worry about it until I run into it.
+# The second format is obsolete, so I'm not going to worry about it until I run into it.
 
 # We need to search for, and replace, three different bits of text in the help files:
 #
