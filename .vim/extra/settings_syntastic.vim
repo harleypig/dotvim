@@ -28,10 +28,11 @@
 ""syntastic_mode_map
 "let g:syntastic_quiet_warnings=0
 ""let g:syntastic_stl_format = '[%E{Error @ %fe (#%e)}%B{, }%W{Warning @ %fw (#%w)} \err toggles]'
-let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{:}%W{Warn: %fw #%w} does \err still toggle?]'
 
 " Perl settings
-"let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl'
+"let g:syntastic_perl_lib_path = './lib'
+let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl -I . -I ./lib'
 
 "nmap <Leader>err :SyntasticToggleMode<CR>
 
