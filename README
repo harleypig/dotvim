@@ -1,3 +1,0 @@
-You must run 'exclude_files' from the dot_vim root directory to add 'doc/tags' to each submodules .git/info/exclude file.
-
-If there's a better way to do this I'd appreciate hearing it.
