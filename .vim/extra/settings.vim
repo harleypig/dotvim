@@ -21,8 +21,8 @@ set   wildmenu
 " <range>!perl -ne 'push@a,$_}{print$_ for sort{substr($a,4)cmp substr$b,4}@a'
 
 set background=dark
-set backupdir=/tmp,~/tmp
 set backspace=indent,eol,start
+set backupdir=/tmp,~/tmp
 set clipboard+=unnamed
 set directory=/tmp,~/tmp
 set display=uhex,lastline
@@ -39,6 +39,8 @@ set scrolloff=9999999
 set shiftwidth=2
 set shortmess=a
 set softtabstop=2
+set t_te=
+set t_ti=
 set tabstop=2
 set textwidth=132
 set undolevels=1000
@@ -51,6 +53,8 @@ set wildignore+=*/.git/
 set wildignore+=*/CVS/
 set wildignore+=*/SVN/
 set wildmode=list:longest,full
+
+" See http://www.shallowsky.com/linux/noaltscreen.html for an explanation of set t_ti= t_te=
 
 " Search
 set   ignorecase
