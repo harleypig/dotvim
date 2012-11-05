@@ -11,10 +11,16 @@
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"""
+" Experimenting with SpaceHi to see if it will do what I want better.
+"""
+
 " http://sartak.org/2011/03/end-of-line-whitespace-in-vim.html
-autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
-autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
-highlight EOLWS ctermbg=red guibg=red
+" See http://www.reddit.com/r/vim/comments/12k0fi/highlight_spaces_at_the_end_of_lines_when_outside/c6vrvj6
+" for possible modifications here.
+"autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
+"autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
+"highlight EOLWS ctermbg=red guibg=red
 
 " Forget to sudo to edit a file? Use w!!
 " http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/96492#96492

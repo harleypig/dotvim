@@ -33,6 +33,10 @@
 " quickfixstatus https://github.com/dannyob/quickfixstatus
 "                In .vim/bundle/quickfixstatus
 
+" SpaceHi    https://github.com/jpalardy/spacehi.vim
+"            In .vim/bundle/spacehi
+autocmd syntax * SpaceHi
+
 "ledger
 "evervim
 "gitolite

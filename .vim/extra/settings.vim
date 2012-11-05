@@ -8,7 +8,8 @@ set nocursorline
 set   expandtab
 set nohidden
 set   linebreak
-set   list
+" This overrides SpaceHi, so don't set it.
+"set   list
 set   magic
 set   number
 set   showcmd
@@ -28,7 +29,7 @@ set directory=/tmp,~/tmp
 set display=uhex,lastline
 set encoding=utf-8
 set history=1000
-set listchars=
+"set listchars=
 set matchpairs+=<:>
 set mouse=
 set numberwidth=5
