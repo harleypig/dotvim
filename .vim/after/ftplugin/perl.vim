@@ -98,8 +98,9 @@ execute 'set path+=' . substitute($PERL5LIB, ':', ',', 'g')
 "
 "endf
 
+" Removed in favor of Tim Pope's Eunuch plugin
 " type 'Chmod' to set execute for owner only
-command! -bar -nargs=* Chmod :!chmod 0700 % <args>
+"command! -bar -nargs=* Chmod :!chmod 0700 % <args>
 
 " type 'Run' to run the current script
 command! -bar -nargs=* Run :!./% <args>

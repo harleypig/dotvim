@@ -65,3 +65,6 @@
 [submodule ".vim/bundle/spacehi"]
 	path = .vim/bundle/spacehi
 	url = git://github.com/jpalardy/spacehi.vim.git
+[submodule ".vim/bundle/eunuch"]
+	path = .vim/bundle/eunuch
+	url = git://github.com/tpope/vim-eunuch.git
