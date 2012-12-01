@@ -92,3 +92,6 @@
 [submodule ".vim/bundle/hypergit"]
 	path = .vim/bundle/hypergit
 	url = git://github.com/c9s/hypergit.vim.git
+[submodule ".vim/bundle/numbers"]
+	path = .vim/bundle/numbers
+	url = git://github.com/myusuf3/numbers.vim.git
