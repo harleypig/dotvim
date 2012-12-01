@@ -22,13 +22,6 @@ http://vimcasts.org/episodes/bubbling-text/
 Not a plugin, but let's see how well it works:
 https://github.com/tomtom/vimtips2help.rb
 
-Need VIm 7.3+
-Gundo http://sjl.bitbucket.org/gundo.vim/
-http://github.com/sjl/gundo.vim
-
-This one browses undo history too
-Histwin https://github.com/chrisbra/histwin.vim
-
 perldoc
 Vim-Ref http://github.com/thinca/vim-ref
 ManPageView https://github.com/vim-scripts/ManPageView
@@ -129,3 +122,5 @@ https://github.com/vim-scripts/database-client
 https://github.com/vim-scripts/VimExplorer
 https://github.com/scrooloose/nerdtree
 http://github.com/Townk/vim-autoclose.git
+https://github.com/majutsushi/tagbar
+
