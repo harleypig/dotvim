@@ -95,3 +95,6 @@
 [submodule ".vim/bundle/numbers"]
 	path = .vim/bundle/numbers
 	url = git://github.com/myusuf3/numbers.vim.git
+[submodule ".vim/bundle/matchtag"]
+	path = .vim/bundle/matchtag
+	url = git://github.com/gregsexton/MatchTag.git
