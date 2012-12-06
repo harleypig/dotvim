@@ -35,7 +35,10 @@
 
 " SpaceHi    https://github.com/jpalardy/spacehi.vim
 "            In .vim/bundle/spacehi
-autocmd syntax * SpaceHi
+
+" Don't highlight spaces in these filetypes
+let blacklist = [ 'help' ]
+autocmd BufWritePre * if index( blacklist, &ft ) < 0 | autocmd syntax * SpaceHi
 
 "ledger
 "evervim
