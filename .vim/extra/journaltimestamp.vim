@@ -6,14 +6,57 @@ endif
 
 let g:loaded_journaltimestamp = 1
 
-if ! exists( 'g:journaltimestamp_baseformat' )
+if exists( "*strftime" )
 
-  let g:journaltimestamp_baseformat = '**TS:%s** '
+  if ! exists( 'g:journaltimestamp_format_full' )
 
-endif
+    if ! exists( 'g:journaltimestamp_format_begin' )
 
-if exists ( "*strftime" )
+      let g:journaltimestamp_format_begin = '**TS:'
 
-  inoremap <Leader>ts <C-R>=strftime( g:journaltimestamp_baseformat )<CR>
+    endif
+
+    if ! exists( 'g:journaltimestamp_format_epoch' )
+
+      let g:journaltimestamp_format_epoch = '%s'
+
+    endif
+
+    if ! exists( 'g:journaltimestamp_format_delim' )
+
+      let g:journaltimestamp_format_delim = '|'
+
+    endif
+
+    if ! exists( 'g:journaltimestamp_format_human' )
+
+      let g:journaltimestamp_format_human = '%b %d, %Y %R'
+
+    endif
+
+    if ! exists( 'g:journaltimestamp_format_end' )
+
+      let g:journaltimestamp_format_end = '**'
+
+    endif
+
+    let g:journaltimestamp_format_full = g:journaltimestamp_format_begin . g:journaltimestamp_format_epoch . g:journaltimestamp_format_delim . g:journaltimestamp_format_human . g:journaltimestamp_format_end
+
+  endif
+
+"  if has( 'conceal' )
+"
+"    syntax conceal on
+"    execute 'syn match JT /' . g:journaltimestamp_format_begin . '/ contained transparent contains=NONE'
+"    set conceallevel=2
+"
+"  endif
+
+  "syntax region jtEpoch start=/\v\*\*TS\:/ skip=/\v.{-}/ end=/\v\*\*/
+  syntax region jtEpoch start='/\v\\*\\*TS:/' end='/\v\\*\\*/'
+  "highlight jtEpoch ctermfg=yellow ctermbg=blue
+  highlight link jtEpoch string
+
+  inoremap <Leader>ts <C-R>=strftime( g:journaltimestamp_format_full )<CR>
 
 endif

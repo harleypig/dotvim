@@ -104,3 +104,6 @@
 [submodule ".vim/bundle/autoclose"]
 	path = .vim/bundle/autoclose
 	url = git://github.com/Townk/vim-autoclose.git
+[submodule ".vim/bundle/cute-perl"]
+	path = .vim/bundle/cute-perl
+	url = git://github.com/mfontani/vim-cute-perl.git
