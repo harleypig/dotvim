@@ -65,45 +65,60 @@
 [submodule ".vim/bundle/spacehi"]
 	path = .vim/bundle/spacehi
 	url = git://github.com/jpalardy/spacehi.vim.git
+  ignore = untracked
 [submodule ".vim/bundle/eunuch"]
 	path = .vim/bundle/eunuch
 	url = git://github.com/tpope/vim-eunuch.git
+  ignore = untracked
 [submodule ".vim/bundle/repeat"]
 	path = .vim/bundle/repeat
 	url = git://github.com/tpope/vim-repeat.git
+  ignore = untracked
 [submodule ".vim/bundle/unimpaired"]
 	path = .vim/bundle/unimpaired
 	url = git://github.com/tpope/vim-unimpaired.git
+  ignore = untracked
 [submodule ".vim/bundle/speeddating"]
 	path = .vim/bundle/speeddating
 	url = git://github.com/tpope/vim-speeddating.git
+  ignore = untracked
 [submodule ".vim/bundle/commentary"]
 	path = .vim/bundle/commentary
 	url = git://github.com/tpope/vim-commentary.git
+  ignore = untracked
 [submodule ".vim/bundle/abolish"]
 	path = .vim/bundle/abolish
 	url = git://github.com/tpope/vim-abolish.git
+  ignore = untracked
 [submodule ".vim/bundle/indent-guides"]
 	path = .vim/bundle/indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
+  ignore = untracked
 [submodule ".vim/bundle/perlomni"]
 	path = .vim/bundle/perlomni
 	url = git://github.com/c9s/perlomni.vim.git
+  ignore = untracked
 [submodule ".vim/bundle/hypergit"]
 	path = .vim/bundle/hypergit
 	url = git://github.com/c9s/hypergit.vim.git
+  ignore = untracked
 [submodule ".vim/bundle/numbers"]
 	path = .vim/bundle/numbers
 	url = git://github.com/myusuf3/numbers.vim.git
+  ignore = untracked
 [submodule ".vim/bundle/matchtag"]
 	path = .vim/bundle/matchtag
 	url = git://github.com/gregsexton/MatchTag.git
+  ignore = untracked
 [submodule ".vim/bundle/gundo"]
 	path = .vim/bundle/gundo
 	url = git://github.com/sjl/gundo.vim.git
+  ignore = untracked
 [submodule ".vim/bundle/autoclose"]
 	path = .vim/bundle/autoclose
 	url = git://github.com/Townk/vim-autoclose.git
+  ignore = untracked
 [submodule ".vim/bundle/cute-perl"]
 	path = .vim/bundle/cute-perl
 	url = git://github.com/mfontani/vim-cute-perl.git
+  ignore = untracked
