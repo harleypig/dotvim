@@ -122,3 +122,6 @@
 	path = .vim/bundle/cute-perl
 	url = git://github.com/mfontani/vim-cute-perl.git
   ignore = untracked
+[submodule ".vim/bundle/taglist"]
+	path = .vim/bundle/taglist
+	url = git://github.com/vim-scripts/taglist.vim.git
