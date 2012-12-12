@@ -125,3 +125,8 @@
 [submodule ".vim/bundle/taglist"]
 	path = .vim/bundle/taglist
 	url = git://github.com/vim-scripts/taglist.vim.git
+  ignore = untracked
+[submodule ".vim/bundle/cscop_macros"]
+	path = .vim/bundle/cscop_macros
+	url = git://github.com/vim-scripts/cscope_macros.vim.git
+  ignore = untracked
