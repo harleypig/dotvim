@@ -1,62 +1,61 @@
-if exists ( 'g:loaded_journaltimestamp' )
+if exists ( 'g:loaded_timestamp' )
 
   finish
 
 endif
 
-let g:loaded_journaltimestamp = 1
+let g:loaded_timestamp = 1
 
 if exists( "*strftime" )
 
-  if ! exists( 'g:journaltimestamp_format_full' )
+  if ! exists( 'g:timestamp_format_full' )
 
-    if ! exists( 'g:journaltimestamp_format_begin' )
+    if ! exists( 'g:timestamp_format_begin' )
 
-      let g:journaltimestamp_format_begin = '**TS:'
-
-    endif
-
-    if ! exists( 'g:journaltimestamp_format_epoch' )
-
-      let g:journaltimestamp_format_epoch = '%s'
+      let g:timestamp_format_begin = '__TS:'
 
     endif
 
-    if ! exists( 'g:journaltimestamp_format_delim' )
+    if ! exists( 'g:timestamp_format_epoch' )
 
-      let g:journaltimestamp_format_delim = '|'
-
-    endif
-
-    if ! exists( 'g:journaltimestamp_format_human' )
-
-      let g:journaltimestamp_format_human = '%b %d, %Y %R'
+      let g:timestamp_format_epoch = '%s'
 
     endif
 
-    if ! exists( 'g:journaltimestamp_format_end' )
+    if ! exists( 'g:timestamp_format_delim' )
 
-      let g:journaltimestamp_format_end = '**'
+      let g:timestamp_format_delim = '|'
 
     endif
 
-    let g:journaltimestamp_format_full = g:journaltimestamp_format_begin . g:journaltimestamp_format_epoch . g:journaltimestamp_format_delim . g:journaltimestamp_format_human . g:journaltimestamp_format_end
+    if ! exists( 'g:timestamp_format_human' )
+
+      let g:timestamp_format_human = '%b %d, %Y %R'
+
+    endif
+
+    if ! exists( 'g:timestamp_format_end' )
+
+      let g:timestamp_format_end = '__ '
+
+    endif
+
+    let g:timestamp_format_full = g:timestamp_format_begin
+                                . g:timestamp_format_epoch
+                                . g:timestamp_format_delim
+                                . g:timestamp_format_human
+                                . g:timestamp_format_end
 
   endif
 
 "  if has( 'conceal' )
 "
-"    syntax conceal on
-"    execute 'syn match JT /' . g:journaltimestamp_format_begin . '/ contained transparent contains=NONE'
+"    " How can I use variables for the patterns?
+"    syntax region myTimeStamp start="__TS:" end="|" oneline conceal cchar=_
 "    set conceallevel=2
 "
 "  endif
 
-  "syntax region jtEpoch start=/\v\*\*TS\:/ skip=/\v.{-}/ end=/\v\*\*/
-  syntax region jtEpoch start='/\v\\*\\*TS:/' end='/\v\\*\\*/'
-  "highlight jtEpoch ctermfg=yellow ctermbg=blue
-  highlight link jtEpoch string
-
-  inoremap <Leader>ts <C-R>=strftime( g:journaltimestamp_format_full )<CR>
+  inoremap <Leader>ts <C-R>=strftime( g:timestamp_format_full )<CR>
 
 endif
