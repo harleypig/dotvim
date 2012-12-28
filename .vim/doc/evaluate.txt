@@ -122,6 +122,10 @@ https://github.com/shemerey/vim-dbext
 https://github.com/vim-scripts/database-client
 https://github.com/vim-scripts/VimExplorer
 https://github.com/scrooloose/nerdtree
-http://github.com/Townk/vim-autoclose.git
+https://github.com/Townk/vim-autoclose.git
 https://github.com/majutsushi/tagbar
+<<<<<<< HEAD
 https://github.com/kshenoy/vim-signature
+=======
+https://github.com/spiiph/vim-space
+>>>>>>> ...
