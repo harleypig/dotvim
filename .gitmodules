@@ -58,10 +58,6 @@
   path = .vim/bundle/evervim
   url = git://github.com/kakkyz81/evervim.git
   ignore = untracked
-[submodule ".vim/bundle/syntastic"]
-  path = .vim/bundle/syntastic
-  url = https://github.com/scrooloose/syntastic.git
-  ignore = untracked
 [submodule ".vim/bundle/spacehi"]
 	path = .vim/bundle/spacehi
 	url = git://github.com/jpalardy/spacehi.vim.git
