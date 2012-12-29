@@ -50,7 +50,7 @@ my $output_format = "%.1s:$file:%d:%s\n";
 my @tests = qw( circular indirect lint method perlcritic uninit unused );
 my %test; @test{ @tests } = ( 1 ) x @tests;
 
-printwarn( 1, 'testing warnings' );
+#printwarn( 1, 'testing warnings' );
 
 # Any line that begins with
 #
