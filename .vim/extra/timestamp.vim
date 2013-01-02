@@ -36,22 +36,11 @@ if exists( "*strftime" )
 
     if ! exists( 'g:timestamp_format_end' )
 
-      let g:timestamp_format_end = '__ '
+      let g:timestamp_format_end = ' '
 
     endif
 
     let g:timestamp_format_full = g:timestamp_format_begin . g:timestamp_format_epoch . g:timestamp_format_delim . g:timestamp_format_human . g:timestamp_format_end
-
-  endif
-
-  if has( 'conceal' )
-
-    " How can I use variables for the patterns?
-    "syntax region myTimeStamp start="__TS:" end="\|" oneline conceal cchar=_
-    syntax region myTimeStamp start="__TS:" end="\|"
-    "highlight link myTimeStamp Conceal
-    highlight myTimeStamp ctermfg=red ctermbg=blue
-    set conceallevel=2
 
   endif
 
