@@ -6,12 +6,11 @@ if ! exists( "autocmds_loaded" )
 endif
 
 if has( 'conceal' )
+  if exists ( "g:timestamp_format_begin" )
 
-  " How can I use variables for the patterns?
-  "syntax region myTimeStamp start="__TS:" end="|" conceal
-  syntax match myTimeStamp "__TS:.*|" conceal
-  highlight myTimeStamp ctermfg=red ctermbg=blue
-  set conceallevel=2
+    execute 'syntax match myTimeStamp "' . g:timestamp_format_begin . '.*' . g:timestamp_format_delim . '" conceal containedin=.*Comment.*'
+    highlight myTimeStamp ctermfg=red ctermbg=blue
+    set conceallevel=2
 
+  endif
 endif
-
