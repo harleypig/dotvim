@@ -47,7 +47,7 @@ my $output_format = "%.1s:$file:%d:%s\n";
 #
 # will skip the listed tests. Currently known tests are:
 
-my @tests = qw( circular indirect lint method perlcritic uninit unused );
+my @tests = qw( circular indirect lint method perlcritic todos uninit unused );
 my %test; @test{ @tests } = ( 1 ) x @tests;
 
 #printwarn( 1, 'testing warnings' );
@@ -181,7 +181,8 @@ run3( {
 
 printerr( 1, "stdout - $err" ) if $err;
 
-my $critique = exists $test{ perlcritic } || 0;
+my $critique  = exists $test{ perlcritic } || 0;
+my $todos     = exists $test{ todos } || 0;
 my $err_count = 0;
 
 for my $error ( @errors ) {
@@ -194,6 +195,7 @@ for my $error ( @errors ) {
     $message .= $rest if ( $rest =~ s/^,?\snear// );
     printerr( $lineno, $message );
     $critique = 0;
+    $todos    = 0;
     $err_count++;
 
   }
@@ -222,8 +224,16 @@ if ( $critique ) {
 
   print "$_\n" for @critiques;
   printinfo( scalar @critiques . 'critiques(s)' ) if $DEBUG;
+  $todos = 0 if @critiques;
 
 } ## end if ( $critique )
+
+# If we have errors or perlcritic has issues, we're not going to worry about todos.
+if ( $todos ) {
+
+## TODO: one
+  # XXX:
+}
 
 sub printline { printf $output_format, @_ }
 
