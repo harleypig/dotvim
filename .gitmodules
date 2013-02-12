@@ -114,10 +114,11 @@
 	path = .vim/bundle/taglist
 	url = git://github.com/vim-scripts/taglist.vim.git
   ignore = untracked
-[submodule ".vim/bundle/cscop_macros"]
-	path = .vim/bundle/cscop_macros
+[submodule ".vim/bundle/cscope_macros"]
+	path = .vim/bundle/cscope_macros
 	url = git://github.com/vim-scripts/cscope_macros.vim.git
   ignore = untracked
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
+  ignore = untracked
