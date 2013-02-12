@@ -22,15 +22,17 @@ let g:syntastic_echo_current_error=0
 "syntastic_style_warning_symbol='S>'
 let g:syntastic_enable_balloons=0
 let g:syntastic_enable_highlighting=1
-let g:syntastic_auto_jump=0
+let g:syntastic_auto_jump=1
 let g:syntastic_auto_loc_list=2
 let g:syntastic_loc_list_height=10
 "syntastic_mode_map
 let g:syntastic_quiet_warnings=0
-"let g:syntastic_stl_format = '[%E{Error @ %fe (#%e)}%B{, }%W{Warning @ %fw (#%w)} \err toggles]'
-let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{:}%W{Warn: %fw #%w} does \err still toggle?]'
+let g:syntastic_stl_format = '[%E{Error @ %fe (#%e)}%B{, }%W{Warning @ %fw (#%w)} \err toggles]'
+"let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{:}%W{Warn: %fw #%w} does \err still toggle?]'
 
 " Perl settings
+let g:syntastic_perl_perlcritic_options = '--severity 1'
+let g:syntastic_perl_perlcritic_thres   = 1
 "let g:syntastic_perl_lib_path = './lib'
 let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl -I . -I ./lib'
 
