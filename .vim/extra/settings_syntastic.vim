@@ -34,7 +34,8 @@ let g:syntastic_stl_format = '[%E{Error @ %fe (#%e)}%B{, }%W{Warning @ %fw (#%w)
 let g:syntastic_perl_perlcritic_options = '--severity 1'
 let g:syntastic_perl_perlcritic_thres   = 1
 "let g:syntastic_perl_lib_path = './lib'
-let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl -I . -I ./lib'
+let g:syntastic_perl_checkers=['perl']
+let g:syntastic_perl_efm_program='~/.vim/tools/efm_perl.pl'
 
 "nmap <Leader>err :SyntasticToggleMode<CR>
 
