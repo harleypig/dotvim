@@ -106,10 +106,6 @@
 	path = .vim/bundle/autoclose
 	url = git://github.com/Townk/vim-autoclose.git
   ignore = untracked
-[submodule ".vim/bundle/cute-perl"]
-	path = .vim/bundle/cute-perl
-	url = git://github.com/mfontani/vim-cute-perl.git
-  ignore = untracked
 [submodule ".vim/bundle/taglist"]
 	path = .vim/bundle/taglist
 	url = git://github.com/vim-scripts/taglist.vim.git
@@ -125,3 +121,4 @@
 [submodule ".vim/bundle/vim-perl"]
 	path = .vim/bundle/vim-perl
 	url = git://github.com/vim-perl/vim-perl.git
+  ignore = untracked
