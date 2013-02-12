@@ -122,6 +122,3 @@
 	path = .vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
   ignore = untracked
-[submodule ".vim/bundle/vim-perl"]
-	path = .vim/bundle/vim-perl
-	url = git://github.com/petdance/vim-perl.git
