@@ -183,3 +183,10 @@ data/images/vimwiki_logo.svg.i
 data/tests/wiki/bold.wiki.i
 data/tests/expected_html/image.html.i
 data/screenshots/tn_vimwiki3.png.i
+data/src/autoload/vimwiki/gitit2html.sh.i
+data/src/autoload/vimwiki/gitit_base.vim.i
+data/src/syntax/vimwiki_pandoc.vim.i
+data/src/syntax/vimwiki_gitit.vim.i
+data/src/autoload/vimwiki/pandoc_base.vim.i
+data/src/syntax/vimwiki_gitit_custom.vim.i
+data/src/syntax/vimwiki_pandoc_custom.vim.i
