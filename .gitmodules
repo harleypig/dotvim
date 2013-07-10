@@ -132,5 +132,5 @@
   ignore = untracked
 [submodule ".vim/bundle/vimwiki"]
   path = .vim/bundle/vimwiki
-  url = git@github.com:vim-scripts/vimwiki.git
+  url = git@github.com:vimwiki/vimwiki.git
   ignore = untracked
