@@ -55,70 +55,74 @@
   url = git://github.com/kakkyz81/evervim.git
   ignore = untracked
 [submodule ".vim/bundle/spacehi"]
-	path = .vim/bundle/spacehi
-	url = git://github.com/jpalardy/spacehi.vim.git
+  path = .vim/bundle/spacehi
+  url = git://github.com/jpalardy/spacehi.vim.git
   ignore = untracked
 [submodule ".vim/bundle/eunuch"]
-	path = .vim/bundle/eunuch
-	url = git://github.com/tpope/vim-eunuch.git
+  path = .vim/bundle/eunuch
+  url = git://github.com/tpope/vim-eunuch.git
   ignore = untracked
 [submodule ".vim/bundle/repeat"]
-	path = .vim/bundle/repeat
-	url = git://github.com/tpope/vim-repeat.git
+  path = .vim/bundle/repeat
+  url = git://github.com/tpope/vim-repeat.git
   ignore = untracked
 [submodule ".vim/bundle/unimpaired"]
-	path = .vim/bundle/unimpaired
-	url = git://github.com/tpope/vim-unimpaired.git
+  path = .vim/bundle/unimpaired
+  url = git://github.com/tpope/vim-unimpaired.git
   ignore = untracked
 [submodule ".vim/bundle/speeddating"]
-	path = .vim/bundle/speeddating
-	url = git://github.com/tpope/vim-speeddating.git
+  path = .vim/bundle/speeddating
+  url = git://github.com/tpope/vim-speeddating.git
   ignore = untracked
 [submodule ".vim/bundle/commentary"]
-	path = .vim/bundle/commentary
-	url = git://github.com/tpope/vim-commentary.git
+  path = .vim/bundle/commentary
+  url = git://github.com/tpope/vim-commentary.git
   ignore = untracked
 [submodule ".vim/bundle/abolish"]
-	path = .vim/bundle/abolish
-	url = git://github.com/tpope/vim-abolish.git
+  path = .vim/bundle/abolish
+  url = git://github.com/tpope/vim-abolish.git
   ignore = untracked
 [submodule ".vim/bundle/indent-guides"]
-	path = .vim/bundle/indent-guides
-	url = git://github.com/nathanaelkane/vim-indent-guides.git
+  path = .vim/bundle/indent-guides
+  url = git://github.com/nathanaelkane/vim-indent-guides.git
   ignore = untracked
 [submodule ".vim/bundle/perlomni"]
-	path = .vim/bundle/perlomni
-	url = git://github.com/c9s/perlomni.vim.git
+  path = .vim/bundle/perlomni
+  url = git://github.com/c9s/perlomni.vim.git
   ignore = untracked
 [submodule ".vim/bundle/hypergit"]
-	path = .vim/bundle/hypergit
-	url = git://github.com/c9s/hypergit.vim.git
+  path = .vim/bundle/hypergit
+  url = git://github.com/c9s/hypergit.vim.git
   ignore = untracked
 [submodule ".vim/bundle/matchtag"]
-	path = .vim/bundle/matchtag
-	url = git://github.com/gregsexton/MatchTag.git
+  path = .vim/bundle/matchtag
+  url = git://github.com/gregsexton/MatchTag.git
   ignore = untracked
 [submodule ".vim/bundle/gundo"]
-	path = .vim/bundle/gundo
-	url = git://github.com/sjl/gundo.vim.git
+  path = .vim/bundle/gundo
+  url = git://github.com/sjl/gundo.vim.git
   ignore = untracked
 [submodule ".vim/bundle/autoclose"]
-	path = .vim/bundle/autoclose
-	url = git://github.com/Townk/vim-autoclose.git
+  path = .vim/bundle/autoclose
+  url = git://github.com/Townk/vim-autoclose.git
   ignore = untracked
 [submodule ".vim/bundle/taglist"]
-	path = .vim/bundle/taglist
-	url = git://github.com/vim-scripts/taglist.vim.git
+  path = .vim/bundle/taglist
+  url = git://github.com/vim-scripts/taglist.vim.git
   ignore = untracked
 [submodule ".vim/bundle/cscope_macros"]
-	path = .vim/bundle/cscope_macros
-	url = git://github.com/vim-scripts/cscope_macros.vim.git
+  path = .vim/bundle/cscope_macros
+  url = git://github.com/vim-scripts/cscope_macros.vim.git
   ignore = untracked
 [submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = git://github.com/scrooloose/syntastic.git
+  path = .vim/bundle/syntastic
+  url = git://github.com/scrooloose/syntastic.git
   ignore = untracked
 [submodule ".vim/bundle/vim-perl"]
-	path = .vim/bundle/vim-perl
-	url = git://github.com/vim-perl/vim-perl.git
+  path = .vim/bundle/vim-perl
+  url = git://github.com/vim-perl/vim-perl.git
+  ignore = untracked
+[submodule ".vim/bundle/vim-repeat"]
+  path = .vim/bundle/vim-repeat
+  url = git@github.com:tpope/vim-repeat.git
   ignore = untracked
