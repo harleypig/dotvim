@@ -1,5 +1,0 @@
-vimwiki is a hg clone
-
-update it by cd'ing into the vimwiki directory and typing
-
-hg pull
