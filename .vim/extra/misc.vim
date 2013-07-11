@@ -103,6 +103,11 @@ let g:html_number_lines  = 0
 let g:html_dynamic_folds = 1
 let g:html_use_xhtml     = 1
 
+" http://www.reddit.com/r/vim/comments/1hocx4/better_lines_numbers_for_vim/cawqnit
+" toggle all 3 number settings in a loop
+" XXX: I just want to toggle between rnu and nu, but also have a way of turning numbering off completely.
+nnoremap <Leader>nn :set <c-r>={'00':'','01':'r','10':'nor'}[&rnu.&nu]<CR>nu<CR>
+
 " Gently lifted from http://mg.pov.lt/vim/vimrc
 " Show ↪ at the beginning of wrapped lines
 "if has("linebreak")
