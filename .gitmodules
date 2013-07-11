@@ -134,3 +134,7 @@
   path = .vim/bundle/vimwiki
   url = git@github.com:vimwiki/vimwiki.git
   ignore = untracked
+[submodule ".vim/bundle/vim-signify"]
+  path = .vim/bundle/vim-signify
+  url = git@github.com:mhinz/vim-signify.git
+  ignore = untracked
