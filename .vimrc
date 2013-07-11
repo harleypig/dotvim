@@ -5,9 +5,12 @@ set nocompatible
 
 " See .vim/after/ftplugin/perl.vim for perl specific settings.
 
-"call pathogen#runtime_append_all_bundles()
-call pathogen#incubate()
-call pathogen#helptags()
+" https://github.com/tpope/vim-pathogen
+" docs in .vim/bundle/pathogen/README.markdown
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
+" My own docs, mainly notes for myself
 helptags ~/.vim/doc
 
 " colorscheme desert
