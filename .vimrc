@@ -10,7 +10,8 @@ call pathogen#incubate()
 call pathogen#helptags()
 helptags ~/.vim/doc
 
-colorscheme desert
+" colorscheme desert
+colorscheme desert_harleypig
 
 filetype plugin indent on
 syntax on
