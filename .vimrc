@@ -7,10 +7,19 @@ set nocompatible
 
 " https://github.com/tpope/vim-pathogen
 " docs in .vim/bundle/pathogen/README.markdown
-runtime bundle/vim-pathogen/autoload/pathogen.vim
+runtime bundle/pathogen/autoload/pathogen.vim
+
+" Ignore plugins by using directory name under .vim/bundle
+" let g:pathogen_disabled = [ abolish, autoclose, ... ]
+let g:pathogen_disabled = []
+
+" Gundo requires at least vim 7.3
+if v:version < '703' || !has('python')
+  call add(g:pathogen_disabled, 'gundo')
+endif
+
 execute pathogen#infect()
 
-" My own docs, mainly notes for myself
 helptags ~/.vim/doc
 
 " colorscheme desert
