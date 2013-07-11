@@ -34,11 +34,8 @@ colorscheme desert_harleypig
 filetype plugin indent on
 syntax on
 
-runtime! extra/*.vim
-
 " Automatically reload this file when it, or any sourced file, is saved.
 aug AutoloadVimrc
   au!
   au BufWritePost $MYVIMRC      source $MYVIMRC
-  au BufWritePost */extra/*.vim source $MYVIMRC
 aug END
