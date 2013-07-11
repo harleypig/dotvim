@@ -53,6 +53,7 @@ set statusline+=%(\ %{&paste?'PASTE':''}%)
 set statusline+=%*]
 
 " Read the Syntastic docs.
+" XXX: Add check for Syntastic being installed
 set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%*
 
 " column and line # of total lines ; what percentage of the file are we at?
@@ -68,6 +69,7 @@ set statusline+=%(\ %{synIDattr(synID(line('.'),col('.'),1),'name')}%)
 set statusline+=%=
 
 " Version Control Information
+" XXX: What plugin is this? Add check for said plugin being installed
 set statusline+=%(\ %{VCSCommandGetStatusLine()}%)
 
 "Date time stamp for the current file.
@@ -97,7 +99,7 @@ function! FileSize()
   endif
 endfunction
 
-"recalculate the warnings when idle or after saving
+" recalculate the warnings when idle or after saving
 autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
 autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
 

@@ -5,6 +5,9 @@ set nocompatible
 
 " See .vim/after/ftplugin/perl.vim for perl specific settings.
 
+" XXX: How well is this working?
+runtime macros/editexisting.vim
+
 " https://github.com/tpope/vim-pathogen
 " docs in .vim/bundle/pathogen/README.markdown
 runtime bundle/pathogen/autoload/pathogen.vim
@@ -19,6 +22,9 @@ if v:version < '703' || !has('python')
 endif
 
 execute pathogen#infect()
+
+" XXX: How well is this working?
+runtime macros/justify.vim
 
 helptags ~/.vim/doc
 

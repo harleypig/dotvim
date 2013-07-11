@@ -13,6 +13,7 @@ let perl_string_as_statement=1
 "let g:perl_nofold_subs=1
 
 " Sets make and errorformat for perl (see $VIMRUNTIME/compiler/perl)
+" XXX: Is this redundant?
 compiler perl
 "setlocal shellpipe=2>&1\ >
 "setlocal makeef=errors.err

@@ -141,6 +141,6 @@
 [submodule ".vim/bundle/ansiesc"]
 	path = .vim/bundle/ansiesc
 	url = git@github.com:vim-scripts/AnsiEsc.vim.git
-[submodule ".vim/bundle/drawi"]
-	path = .vim/bundle/drawi
+[submodule ".vim/bundle/drawit"]
+	path = .vim/bundle/drawit
 	url = git@github.com:vim-scripts/DrawIt.git
