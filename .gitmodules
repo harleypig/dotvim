@@ -62,10 +62,6 @@
   path = .vim/bundle/eunuch
   url = git://github.com/tpope/vim-eunuch.git
   ignore = untracked
-[submodule ".vim/bundle/repeat"]
-  path = .vim/bundle/repeat
-  url = git://github.com/tpope/vim-repeat.git
-  ignore = untracked
 [submodule ".vim/bundle/unimpaired"]
   path = .vim/bundle/unimpaired
   url = git://github.com/tpope/vim-unimpaired.git

@@ -1,62 +1,140 @@
-" Surround   http://www.vim.org/scripts/script.php?script_id=1697
-"            http://github.com/tpope/vim-surround
-"            In .vim/bundle/surround
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  abolish
 
-" Align      http://www.vim.org/scripts/script.php?script_id=294
-"            http://github.com/vim-scripts/Align
-"            In .vim/bundle/align
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  align           http://github.com/vim-scripts/Align
 
-" AutoAlign  http://www.vim.org/scripts/script.php?script_id=884
-"            http://github.com/vim-scripts/AutoAlign
-"            In .vim/bundle/autoalign
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  ansiesc
 
-" Vim-Perl   http://github.com/petdance/vim-perl
-"            In .vim/bundle/perl
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  autoalign       http://github.com/vim-scripts/AutoAlign
 
-" Pathogen   http://github.com/tpope/vim-pathogen
-"            http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
-"            http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
-"            In .vim/bundle/pathogen
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  autoclose
 
-" Github     http://github.com/thinca/vim-github
-"            In .vim/bundle/github
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  cscope_macros
 
-" PerlCritic https://github.com/mattfoster/vim-Perl-Critic
-"            In .vim/bundle/perlcritic
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  drawit
 
-" Fugitive   https://github.com/tpope/vim-fugitive
-"            In .vim/bundle/fugitive
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  eunuch
 
-" gitv       https://github.com/gregsexton/gitv
-"            In .vim/bundle/gitv
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  evervim
 
-" quickfixstatus https://github.com/dannyob/quickfixstatus
-"                In .vim/bundle/quickfixstatus
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  fugitive        https://github.com/tpope/vim-fugitive
 
-" SpaceHi    https://github.com/jpalardy/spacehi.vim
-"            In .vim/bundle/spacehi
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  github          http://github.com/thinca/vim-github
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  gitolite
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  gitv            https://github.com/gregsexton/gitv
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  gundo
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  hypergit
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  indent-guides
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  irssilog
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  ledger
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  matchit
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  matchtag
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  pathogen        http://github.com/tpope/vim-pathogen
+"  Notes:
+"    http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
+"    http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
+
+" See .vimrc for pathogen usage.
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  perlcritic      https://github.com/mattfoster/vim-Perl-Critic
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  perlomni
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  showmarks
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  spacehi         https://github.com/jpalardy/spacehi.vim
 
 " Don't highlight spaces in these filetypes
 let blacklist = [ 'help' ]
 autocmd BufWritePre * if index( blacklist, &ft ) < 0 | autocmd syntax * SpaceHi
 
-"ledger
-"evervim
-"gitolite
-"irssilog
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  speeddating
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  sshconfig
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  statusline
+
+" This is my own module. There is nothing to set here, at least for now.
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  surround        http://github.com/tpope/vim-surround
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  syntastic
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  taglist
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  timestamp
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  unimpaired
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  vcscommand
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  vim-commentary
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  vim-perl        http://github.com/petdance/vim-perl
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  vim-repeat
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  vim-signify
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  vimwiki
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins To Checkout
 
 " AutoComplPop  http://www.vim.org/scripts/script.php?script_id=1879
 " Snipmate      http://www.vim.org/scripts/script.php?script_id=2540
 "               https://github.com/garbas/vim-snipmate
 "               https://github.com/honza/snipmate-snippets
-" PerlOmni      http://www.vim.org/scripts/script.php?script_id=2852
 " Google Script https://github.com/dubenstein/vim-google-scribe
 " SVNDiff       http://www.vim.org/scripts/script.php?script_id=1881
 " NERDTree      https://github.com/scrooloose/nerdtree
 " ctrlp         https://github.com/kien/ctrlp.vim
 
-" Look into looking for or creating a plugin for GRAC
-" http://grac.sourceforge.net/
