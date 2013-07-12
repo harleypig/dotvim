@@ -74,10 +74,6 @@
   path = .vim/bundle/speeddating
   url = git://github.com/tpope/vim-speeddating.git
   ignore = untracked
-[submodule ".vim/bundle/commentary"]
-  path = .vim/bundle/commentary
-  url = git://github.com/tpope/vim-commentary.git
-  ignore = untracked
 [submodule ".vim/bundle/abolish"]
   path = .vim/bundle/abolish
   url = git://github.com/tpope/vim-abolish.git
@@ -139,8 +135,10 @@
   url = git@github.com:mhinz/vim-signify.git
   ignore = untracked
 [submodule ".vim/bundle/ansiesc"]
-	path = .vim/bundle/ansiesc
-	url = git@github.com:vim-scripts/AnsiEsc.vim.git
+  path = .vim/bundle/ansiesc
+  url = git@github.com:vim-scripts/AnsiEsc.vim.git
+  ignore = untracked
 [submodule ".vim/bundle/drawit"]
-	path = .vim/bundle/drawit
-	url = git@github.com:vim-scripts/DrawIt.git
+  path = .vim/bundle/drawit
+  url = git@github.com:vim-scripts/DrawIt.git
+  ignore = untracked
