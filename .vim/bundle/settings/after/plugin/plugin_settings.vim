@@ -147,13 +147,17 @@ hi ShowMarksHLm ctermfg=white ctermbg=black cterm=bold guifg=blue guibg=lightblu
 
 " Don't highlight spaces in these filetypes
 let blacklist = [ 'help' ]
-autocmd BufWritePre * if index( blacklist, &ft ) < 0 | autocmd syntax * SpaceHi
+autocmd BufNewFile,BufReadPost,FilterReadPost,FileReadPost,Syntax * if index( blacklist, &ft ) < 0 | autocmd syntax * SpaceHi
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"  speeddating
+"  speeddating     https://github.com/tpope/vim-speeddating
+
+"  DISABLED ... I don't seem to have much use for this plugin.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  sshconfig
+
+"  Just adds a keywordprg for editing sshconfig.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  statusline
@@ -168,10 +172,17 @@ autocmd BufWritePre * if index( blacklist, &ft ) < 0 | autocmd syntax * SpaceHi
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  surround        https://github.com/tpope/vim-surround
 
+" There are no settings for this module
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"  syntastic
+"  syntastic       https://github.com/scrooloose/syntastic
 
 " See settings_syntastic.vim
+
+hi SyntasticErrorSign ctermfg=darkred ctermbg=lightred
+hi SyntasticStyleErrorSign ctermfg=darkred ctermbg=lightred
+hi SyntasticWarningSign ctermfg=yellow ctermbg=lightred
+hi SyntasticStyleWarningSign ctermfg=yellow ctermbg=lightred
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  taglist

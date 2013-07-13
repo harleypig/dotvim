@@ -79,8 +79,8 @@ hi   SpecialKey           guifg=#9acd32  guibg=NONE     guisp=NONE     gui=NONE 
 "hi  SpellLocal           --             no             settings       --
 "hi  SpellRare            --             no             settings       --
 hi   Statement            guifg=#f0e68c  guibg=NONE     guisp=NONE     gui=NONE            ctermfg=228   ctermbg=NONE  cterm=NONE
-hi   StatusLine           guifg=#000000  guibg=#c2bfa5  guisp=#c2bfa5  gui=NONE            ctermfg=NONE  ctermbg=187   cterm=NONE
-hi   StatusLineNC         guifg=#7f7f7f  guibg=#c2bfa5  guisp=#c2bfa5  gui=NONE            ctermfg=8     ctermbg=187   cterm=NONE
+"hi   StatusLine           guifg=#000000  guibg=#c2bfa5  guisp=#c2bfa5  gui=NONE            ctermfg=NONE  ctermbg=187   cterm=NONE
+"hi   StatusLineNC         guifg=#7f7f7f  guibg=#c2bfa5  guisp=#c2bfa5  gui=NONE            ctermfg=8     ctermbg=187   cterm=NONE
 hi   StorageClass         guifg=#bdb76b  guibg=NONE     guisp=NONE     gui=NONE            ctermfg=143   ctermbg=NONE  cterm=NONE
 hi   String               guifg=#ffa0a0  guibg=NONE     guisp=NONE     gui=NONE            ctermfg=217   ctermbg=NONE  cterm=NONE
 hi   Structure            guifg=#bdb76b  guibg=NONE     guisp=NONE     gui=NONE            ctermfg=143   ctermbg=NONE  cterm=NONE

@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+# XXX: Add support for podchecker and maybe cover
+
 # This is shamelessly ripped from $VIMRUNTIME/tools/efm_perl.pl (which was last
 # updated in 2001 according to the version history--but I'm willing to accept
 # that someone has probably made changes to it since then.) Check that file for
@@ -222,6 +224,7 @@ if ( $critique ) {
 
   } );
 
+  printerr( 1, $err ) if $err;
   print "$_\n" for @critiques;
   printinfo( scalar @critiques . 'critiques(s)' ) if $DEBUG;
   $todos = 0 if @critiques;

@@ -11,7 +11,7 @@ runtime macros/editexisting.vim
 
 " Ignore plugins by using directory name under .vim/bundle
 " let g:pathogen_disabled = [ 'abolish', 'autoclose', ... ]
-let g:pathogen_disabled = [ 'abolish', 'cscope_macros', 'drawit', 'evervim', 'fugitive', 'gundo' ]
+let g:pathogen_disabled = [ 'abolish', 'cscope_macros', 'drawit', 'evervim', 'fugitive', 'gundo', 'speeddating' ]
 
 " gundo requires vim 7.3 or greater
 if v:version < '703' || !has('python')
