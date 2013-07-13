@@ -24,7 +24,9 @@
 
 " Forget to sudo to edit a file? Use w!!
 " http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/96492#96492
-cmap w!! %!sudo tee > /dev/null %
+"cmap w!! %!sudo tee > /dev/null %
+" This has been obsoleted by tpope's eunuch plugin.
+cmap w!! :call SudoWrite()
 
 " Sort visually selected text by word
 " c d a f e => a c d e f

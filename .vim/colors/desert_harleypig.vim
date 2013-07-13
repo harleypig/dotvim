@@ -69,7 +69,7 @@ hi   PreProc              guifg=#cd5c5c  guibg=NONE     guisp=NONE     gui=NONE 
 hi   Question             guifg=#00ff7f  guibg=NONE     guisp=NONE     gui=NONE            ctermfg=48    ctermbg=NONE  cterm=NONE
 hi   Repeat               guifg=#bdb76b  guibg=NONE     guisp=NONE     gui=NONE            ctermfg=143   ctermbg=NONE  cterm=NONE
 hi   Search               guifg=#dfffdf  guibg=#4d4d4d  guisp=#4d4d4d  gui=NONE            ctermfg=194   ctermbg=239   cterm=NONE
-"hi  SignColumn           --             no             settings       --
+hi   SignColumn           guifg=Cyan     guibg=Grey     guisp=NONE     gui=NONE            ctermfg=White ctermbg=Black
 hi   SpecialChar          guifg=#ffdead  guibg=NONE     guisp=NONE     gui=NONE            ctermfg=223   ctermbg=NONE  cterm=NONE
 hi   SpecialComment       guifg=#ffdead  guibg=NONE     guisp=NONE     gui=NONE            ctermfg=223   ctermbg=NONE  cterm=NONE
 hi   Special              guifg=#ffdead  guibg=NONE     guisp=NONE     gui=NONE            ctermfg=223   ctermbg=NONE  cterm=NONE

@@ -55,6 +55,11 @@ iab dbs $DB::single = 1;<ESC>
 let b:match_words = '\<if\>:\<elsif\>:\<else\>'
 "let b:match_debug = 1
 
+" Jump to next/previous methods with ]m and [m
+" https://groups.google.com/d/topic/vim-perl/vrOD7wNISNE/discussion
+map <silent> ]m :call search('\v^\s*sub\s*\w+\s*(\(\s*.{-}\s*\))?\s*\{', 'W')<CR>
+map <silent> [m :call search('\v^\s*sub\s*\w+\s*(\(\s*.{-}\s*\))?\s*\{', 'bW')<CR>
+
 " Better handling of smartwrapping for perl, courtesy of
 " https://github.com/thoughtstream/Damian-Conway-s-Vim-Setup
 inoremap # X<C-H>#|
@@ -75,29 +80,29 @@ set includeexpr=substitute(v:fname,'::','/','g')
 set suffixesadd=.pm
 execute 'set path+=' . substitute($PERL5LIB, ':', ',', 'g')
 
-"hi BufferSelected term=reverse ctermfg=white ctermbg=red cterm=bold
-"hi BufferNormal term=NONE ctermfg=black ctermbg=darkcyan cterm=NONE
-
+" !!! Not a good idea to do this automatically.
 " http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/103606#103606
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 "autocmd BufWritePre    * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
 "autocmd FileAppendPre  * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
 "autocmd FileWritePre   * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
 "autocmd FilterWritePre * if &filetype == 'perl' | call StripTrailingWhitespace() | endif
-"
-"fun! StripTrailingWhitespace()
-"
-"  silent exe "normal mz<CR>"
-"  let saved_search = @/
-"
-"  %s/\s\+$//e
-"
-"  silent exe "normal `z<CR>"
-"  let @/ = saved_search
-"
-"  delmarks z
-"
-"endf
+
+fun! StripTrailingWhitespace()
+
+  silent exe "normal mz<CR>"
+  let saved_search = @/
+
+  %s/\s\+$//e
+
+  silent exe "normal `z<CR>"
+  let @/ = saved_search
+
+  delmarks z
+
+endf
+
+map <silent> <Leader>stw :call StripTrailingWhitespace()<Enter>
 
 " Removed in favor of Tim Pope's Eunuch plugin
 " type 'Chmod' to set execute for owner only
@@ -232,21 +237,16 @@ endfunction
 " End perl code
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"if ! exists("b:did_perl_statusline")
-"  setlocal statusline+=%(\ %{StatusLineIndexLine()}%)
-"  let b:did_perl_statusline = 1
-"endif
-
 " Integrate pmtools http://search.cpan.org/dist/pmtools/
 
 " How do I turn off autocommenting?
 " autocmd FileType perl iab usrbinperl #!/usr/bin/perl<CR><CR>use strict;<CR>use warnings;<CR><CR>
-"
+
 " Need to experiment with this to make it work correctly, plus you can't just enter the word dumper
 " autocmd FileType perl imap dumper <ESC>^iwarn Data::Dumper->Dump([\<ESC>llyw$a], ['<ESC>pa']);<ESC>
-"
+
 " Omnicompletion for perl: http://www.vim.org/scripts/script.php?script_id=1924
-"
+
 " Where are identifiers used? http://vimdoc.sourceforge.net/htmldoc/tips.html#ident-search
 
 " How can these options be used in perl development?
@@ -278,6 +278,3 @@ endfunction
 "        \ })
 "  return behavs
 "endf
-
-"autocmd BufNewFile *.pm 0r ~/.vim/skeleton/perl_package.pm
-"autocmd BufNewFile *.pl 0r ~/.vim/skeleton/perl_script.pl

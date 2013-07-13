@@ -26,10 +26,6 @@
   path = .vim/bundle/github
   url = git://github.com/thinca/vim-github.git
   ignore = untracked
-[submodule ".vim/bundle/perlcritic"]
-  path = .vim/bundle/perlcritic
-  url = git://github.com/mattfoster/vim-Perl-Critic.git
-  ignore = untracked
 [submodule ".vim/bundle/irssilog"]
   path = .vim/bundle/irssilog
   url = git://github.com/vim-scripts/irssilog.vim.git
@@ -45,10 +41,6 @@
 [submodule ".vim/bundle/fugitive"]
   path = .vim/bundle/fugitive
   url = git://github.com/tpope/vim-fugitive.git
-  ignore = untracked
-[submodule ".vim/bundle/gitv"]
-  path = .vim/bundle/gitv
-  url = git://github.com/gregsexton/gitv.git
   ignore = untracked
 [submodule ".vim/bundle/evervim"]
   path = .vim/bundle/evervim
@@ -81,10 +73,6 @@
 [submodule ".vim/bundle/perlomni"]
   path = .vim/bundle/perlomni
   url = git://github.com/c9s/perlomni.vim.git
-  ignore = untracked
-[submodule ".vim/bundle/hypergit"]
-  path = .vim/bundle/hypergit
-  url = git://github.com/c9s/hypergit.vim.git
   ignore = untracked
 [submodule ".vim/bundle/matchtag"]
   path = .vim/bundle/matchtag
@@ -138,3 +126,7 @@
   path = .vim/bundle/drawit
   url = git@github.com:vim-scripts/DrawIt.git
   ignore = untracked
+[submodule ".vim/bundle/supertab"]
+	path = .vim/bundle/supertab
+	url = git@github.com:ervandew/supertab.git
+	ignore = untracked
