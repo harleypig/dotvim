@@ -127,9 +127,10 @@
   url = git@github.com:vim-scripts/DrawIt.git
   ignore = untracked
 [submodule ".vim/bundle/supertab"]
-	path = .vim/bundle/supertab
-	url = git@github.com:ervandew/supertab.git
-	ignore = untracked
+  path = .vim/bundle/supertab
+  url = git@github.com:ervandew/supertab.git
+  ignore = untracked
 [submodule ".vim/bundle/vim-lint"]
-	path = .vim/bundle/vim-lint
-	url = https://github.com/dbakker/vim-lint.git
+  path = .vim/bundle/vim-lint
+  url = https://github.com/dbakker/vim-lint.git
+  ignore = untracked
