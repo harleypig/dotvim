@@ -3,8 +3,6 @@
 
 set nocompatible
 
-" See .vim/after/ftplugin/perl.vim for perl specific settings.
-
 " Try to force editing of the called file to an already existing window
 " XXX: How well is this working?
 runtime macros/editexisting.vim

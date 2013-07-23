@@ -146,7 +146,7 @@ hi ShowMarksHLm ctermfg=white ctermbg=black cterm=bold guifg=blue guibg=lightblu
 "  spacehi         https://github.com/jpalardy/spacehi.vim
 
 " Don't highlight spaces in these filetypes
-let blacklist = [ 'help' ]
+let blacklist = [ 'help', 'man' ]
 autocmd BufNewFile,BufReadPost,FilterReadPost,FileReadPost,Syntax * if index( blacklist, &ft ) < 0 | autocmd syntax * SpaceHi
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -178,6 +178,8 @@ autocmd BufNewFile,BufReadPost,FilterReadPost,FileReadPost,Syntax * if index( bl
 "  syntastic       https://github.com/scrooloose/syntastic
 
 " See settings_syntastic.vim
+
+" XXX: These colors are not taking affect!
 
 hi SyntasticErrorSign ctermfg=darkred ctermbg=lightred
 hi SyntasticStyleErrorSign ctermfg=darkred ctermbg=lightred

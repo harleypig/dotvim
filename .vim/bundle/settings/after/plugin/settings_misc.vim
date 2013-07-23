@@ -24,8 +24,8 @@
 
 " Forget to sudo to edit a file? Use w!!
 " http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/96492#96492
-"cmap w!! %!sudo tee > /dev/null %
 " This has been obsoleted by tpope's eunuch plugin.
+"cmap w!! %!sudo tee > /dev/null %
 cmap w!! :call SudoWrite()
 
 " Sort visually selected text by word
@@ -109,6 +109,10 @@ let g:html_use_xhtml     = 1
 " toggle all 3 number settings in a loop
 " XXX: I just want to toggle between rnu and nu, but also have a way of turning numbering off completely.
 nnoremap <Leader>nn :set <c-r>={'00':'','01':'r','10':'nor'}[&rnu.&nu]<CR>nu<CR>
+
+" Highlight WTF: (note the :) like a TODO
+syn match myTODO "WTF:"
+hi def link  myTODO Todo
 
 " Gently lifted from http://mg.pov.lt/vim/vimrc
 " Show ↪ at the beginning of wrapped lines
