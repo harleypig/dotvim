@@ -130,7 +130,7 @@ verbose = %m at %f line %l, near '%r' Severity: %s %p\n
 
 
 # Forbid $b before $a in sort blocks.
-[BuiltinFunctions::ProhibitReverseSortBlock]
+[-BuiltinFunctions::ProhibitReverseSortBlock]
 # set_themes                         = core cosmetic pbp
 # add_themes                         =
 # severity                           = 1

@@ -1,56 +1,78 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Set the statusline
 "
 " look into replacing this with https://github.com/Lokaltog/vim-powerline
+" powerline has been obsoleted by https://github.com/bling/vim-airline
+
+" After experimenting with airline I find I like a lot of the ideas, but
+" I don't like not being able to put what I want where I want.  So, I need to
+" continue to do my own.  However, I plan on ripping off as much as possible
+" from airline and other statusline tips and tricks I find.
 
 set laststatus=2
 
-hi StatusLine ctermbg=White ctermfg=Black
-au CmdwinEnter * hi StatusLine ctermbg=White ctermfg=Red
-au CmdwinLeave * hi StatusLine ctermbg=White ctermfg=Black
-au InsertEnter * hi StatusLine ctermbg=White ctermfg=DarkBlue
-au InsertLeave * hi StatusLine ctermbg=White ctermfg=Black
+" vim-yasl
 
-let g:StatuslineTrailingSpaceText = '\s'
-let g:StatuslineExpandTabText = '&et'
-let g:StatuslineMixedIndentText = 'mixed-indenting'
+hi StatusLine ctermbg=White ctermfg=Black
+au CmdwinEnter * hi StatusLine ctermbg=Gray ctermfg=Red
+au CmdwinLeave * hi StatusLine ctermbg=Gray ctermfg=Black
+au InsertEnter * hi StatusLine ctermbg=Gray ctermfg=DarkBlue
+au InsertLeave * hi StatusLine ctermbg=Gray ctermfg=Black
+
+if !exists("g:YASL_NoneFiletype")
+  let g:YASL_NoneFiletype = 'none'
+endif
+
+" Modify notification
+if !exists("g:YASL_Modified")
+  let g:YASL_Modified = '+'
+endif
+
+if !exists("g:YASL_NotModifiable")
+  let g:YASL_NotModifiable = 'X'
+endif
+
+if !exists("g:YASL_NotModified")
+  let g:YASL_NotModified = '-'
+endif
+
+if !exists("g:YASL_MixedIndentText")
+  let g:YASL_MixedIndentText = 'mixed indenting'
+endif
+
+if !exists("g:YASL_ExpandTabText")
+  let g:YASL_ExpandTabText = '&et'
+endif
+
+if !exists("g:YASL_TrailingSpaceText")
+  let g:YASL_TrailingSpaceText = 'trailing space'
+endif
+
+if !exists("g:YASL_PasteMode")
+  let g:YASL_PasteMode = 'PASTE'
+endif
+
+if !exists("g:YASL_NoPasteMode")
+  let g:YASL_NoPasteMode = ''
+endif
 
 "Make sure the status line is empty before we start.
 set statusline=
 
 " Buffer number
 set statusline+=[%02n
+set statusline+=%(\ %{YASL_Filetype()}%)
+set statusline+=%(\ %{YASL_IsModified()}%)
+set statusline+=]
 
-" What type of file are we editing?
-set statusline+=%(\ %{strlen(&filetype)?&filetype:'none'}%)
-
-" Show - if this file is modifiable and hasn't been modified.
-set statusline+=\ %(%{&modifiable&&&modified?'':'-'}%)
-
-" This section needs to stand out, so we're using the warningmsg hilite.
 set statusline+=%#warningmsg#
-
-" Show + if this file is modifiable and has been modified, or X if it's not
-" modifiable.
-set statusline+=%(%{&modifiable?&modified?'+':'':'X'}%)
-
-" We only want to see if the file format is not unix.
-set statusline+=%(\ %{&fileformat!='unix'?'*'.&fileformat.'*':''}%)
-
-" We only want to see if the file encoding is not utf-8.
-set statusline+=%(\ %{(&fileencoding!='utf-8'&&&fileencoding!='')?'*'.&fileencoding.'*':''}%)
-
-" Expand tab and mixed indenting warnings
-set statusline+=%(\ %{StatuslineMixedIndentWarning()}%)
-
-" Do we have trailing spaces somewhere in the file?
-set statusline+=%(\ %{StatuslineTrailingSpaceWarning()}%)
-
-" Are we in paste mode?
-set statusline+=%(\ %{&paste?'PASTE':''}%)
-
-" Return colorscheme to normal.
-set statusline+=%*]
+set statusline+=%(\ %{YASL_FileFormat()}%)
+set statusline+=%(\ %{YASL_FileEncoding()}%)
+set statusline+=%(\ %{YASL_MixedIndentWarning()}%)
+set statusline+=%(\ %{YASL_TrailingSpaceWarning()}%)
+set statusline+=%(\ %{YASL_PasteMode()}%)
+set statusline+=%*
 
 " Read the Syntastic docs.
 " XXX: Add check for Syntastic being installed
@@ -79,13 +101,13 @@ set statusline+=%(\ %{VCSCommandGetStatusLine()}%)
 set statusline+=%(\ %{getfperm(expand('%'))}%)
 
 " What size is the file?
-set statusline+=%(\ %{FileSize()}%)
+set statusline+=%(\ %{YASL_FileSize()}%)
 
 " What file are we editing?
 set statusline+=\ %-.20F
 
 " found @ http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html
-function! FileSize()
+function! YASL_FileSize()
   let bytes = getfsize(expand("%:p"))
 
   if bytes <= 0
@@ -103,18 +125,12 @@ endfunction
 autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
 autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
 
-function! StatuslineMixedIndentWarning()
+" Expand tab and mixed indenting warnings
+
+function! YASL_MixedIndentWarning()
 
   if (&filetype == 'help')
     return ''
-  endif
-
-  if !exists("g:StatuslineMixedIndentText")
-    let g:StatuslineMixedIndentText = '[mixed-indenting]'
-  endif
-
-  if !exists("g:StatuslineExpandTabText")
-    let g:StatuslineExpandTabText = '[&et]'
   endif
 
   if !exists("b:statusline_tab_warning")
@@ -122,9 +138,9 @@ function! StatuslineMixedIndentWarning()
     let spaces = search('^ ', 'nw') != 0
 
     if tabs && spaces
-      let b:statusline_tab_warning = g:StatuslineMixedIndentText
+      let b:statusline_tab_warning = g:YASL_MixedIndentText
     elseif (spaces && !&et) || (tabs && &et)
-      let b:statusline_tab_warning = g:StatuslineExpandTabText
+      let b:statusline_tab_warning = g:YASL_ExpandTabText
     else
       let b:statusline_tab_warning = ''
     endif
@@ -133,23 +149,90 @@ function! StatuslineMixedIndentWarning()
   return b:statusline_tab_warning
 endfunction
 
-function! StatuslineTrailingSpaceWarning()
+function! YASL_TrailingSpaceWarning()
 
+  " Need to move this to an array and allow for multiple filetypes to be skipped.
   if (&filetype == 'help')
     return ''
   endif
 
-  if !exists("g:StatuslineTrailingSpaceText")
-    let g:StatuslineTrailingSpaceText = ' \s'
-  endif
-
   if !exists("b:statusline_trailing_space_warning")
     if search('\s\+$', 'nw') != 0
-      let b:statusline_trailing_space_warning = g:StatuslineTrailingSpaceText
+      let b:statusline_trailing_space_warning = g:YASL_TrailingSpaceText
     else
       let b:statusline_trailing_space_warning = ''
     endif
   endif
 
   return b:statusline_trailing_space_warning
+endfunction
+
+" Show X if this file is not modifiable.
+" Show - if this file is modifiable and has not been modified.
+" Show + if this file is modifiable and has been modified.
+
+function! YASL_IsModified()
+
+  if &modifiable
+    if &modified
+      let l:text = g:YASL_Modified
+    else
+      let l:text = g:YASL_NotModified
+    endif
+  else
+    let l:text = g:YASL_NotModifiable
+  endif
+
+  return l:text
+
+endfunction
+
+" We only want to see if the file format is not unix.
+function! YASL_FileFormat()
+
+  if &fileformat == 'unix'
+    let l:text = ''
+  else
+    let l:text = '*' . &fileformat . '*'
+  endif
+
+  return l:text
+
+endfunction
+
+" We only want to see if the file encoding is not utf-8.
+function! YASL_FileEncoding()
+
+  if &fileencoding == 'utf-8' || &fileencoding == ''
+    let l:text = ''
+  else
+    let l:text = '*' . &fileencoding . '*'
+  endif
+
+  return l:text
+
+endfunction
+
+function! YASL_PasteMode()
+
+  if &paste
+    let l:text = g:YASL_PasteMode
+  else
+    let l:text = g:YASL_NoPasteMode
+  endif
+
+  return l:text
+
+endfunction
+
+function! YASL_Filetype()
+
+  if strlen( &filetype )
+    let l:text = &filetype
+  else
+    let l:text = g:YASL_NoneFiletype
+  endif
+
+  return l:text
+
 endfunction
