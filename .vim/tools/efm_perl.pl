@@ -41,6 +41,8 @@ my ( $perldoc, $efm, $err, $syserr, @checks );
 
 my $output_format = "%.1s:$file:%d:%s\n";
 
+printwarn( 1, qx/ps -o args= $$/ ) if $DEBUG;
+
 # Grab custom instructions for this file from the file.
 
 # Any line that begins with no spaces and looks like
