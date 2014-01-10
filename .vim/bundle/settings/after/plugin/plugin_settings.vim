@@ -146,7 +146,7 @@ hi ShowMarksHLm ctermfg=white ctermbg=black cterm=bold guifg=blue guibg=lightblu
 "  spacehi         https://github.com/jpalardy/spacehi.vim
 
 " Don't highlight spaces in these filetypes
-let blacklist = [ 'help', 'man' ]
+let blacklist = [ 'help', 'man', 'calendar' ]
 autocmd BufNewFile,BufReadPost,FilterReadPost,FileReadPost,Syntax * if index( blacklist, &ft ) < 0 | autocmd syntax * SpaceHi
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -218,6 +218,12 @@ hi SyntasticStyleWarningSign ctermfg=yellow ctermbg=lightred
 " See settings_vimwiki.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" calendar
+
+let g:calendar_google_calendar = 1
+let g:calendar_google_task     = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax plugins
 "  gitolite        https://github.com/tmatilai/gitolite.vim
 "  irssilog        https://github.com/vim-scripts/irssilog.vim
@@ -225,7 +231,6 @@ hi SyntasticStyleWarningSign ctermfg=yellow ctermbg=lightred
 "  ledger          https://github.com/vim-scripts/ledger.vim
 " Change *.ldg,*.ledger to whatever extension you have on your ledger files.
 au BufNewFile,BufRead *.ldg,*.ledger setf ledger
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins To Checkout
