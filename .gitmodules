@@ -134,3 +134,6 @@
   path = .vim/bundle/vim-lint
   url = https://github.com/dbakker/vim-lint.git
   ignore = untracked
+[submodule ".vim/bundle/calendar"]
+	path = .vim/bundle/calendar
+	url = https://github.com/itchyny/calendar.vim
