@@ -137,3 +137,9 @@
 [submodule ".vim/bundle/calendar"]
 	path = .vim/bundle/calendar
 	url = https://github.com/itchyny/calendar.vim
+[submodule ".vim/bundle/smeargle"]
+	path = .vim/bundle/smeargle
+	url = git@github.com:FriedSock/smeargle.git
+[submodule ".vim/bundle/ctrlpsimilar"]
+	path = .vim/bundle/ctrlpsimilar
+	url = git@github.com:FriedSock/ctrlpsimilar.git
