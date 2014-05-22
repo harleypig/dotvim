@@ -143,3 +143,6 @@
 [submodule ".vim/bundle/ctrlpsimilar"]
 	path = .vim/bundle/ctrlpsimilar
 	url = git@github.com:FriedSock/ctrlpsimilar.git
+[submodule ".vim/bundle/ctrlp"]
+	path = .vim/bundle/ctrlp
+	url = git@github.com:kien/ctrlp.vim.git
