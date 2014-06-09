@@ -140,9 +140,3 @@
 [submodule ".vim/bundle/smeargle"]
 	path = .vim/bundle/smeargle
 	url = git@github.com:FriedSock/smeargle.git
-[submodule ".vim/bundle/ctrlpsimilar"]
-	path = .vim/bundle/ctrlpsimilar
-	url = git@github.com:FriedSock/ctrlpsimilar.git
-[submodule ".vim/bundle/ctrlp"]
-	path = .vim/bundle/ctrlp
-	url = git@github.com:kien/ctrlp.vim.git
