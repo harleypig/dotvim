@@ -140,3 +140,6 @@
 [submodule ".vim/bundle/smeargle"]
 	path = .vim/bundle/smeargle
 	url = git@github.com:FriedSock/smeargle.git
+[submodule ".vim/bundle/perl-variable-highlighter"]
+	path = .vim/bundle/perl-variable-highlighter
+	url = git@github.com:mannih/vim-perl-variable-highlighter.git
