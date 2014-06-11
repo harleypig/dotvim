@@ -135,11 +135,8 @@
   url = https://github.com/dbakker/vim-lint.git
   ignore = untracked
 [submodule ".vim/bundle/calendar"]
-	path = .vim/bundle/calendar
-	url = https://github.com/itchyny/calendar.vim
-[submodule ".vim/bundle/smeargle"]
-	path = .vim/bundle/smeargle
-	url = git@github.com:FriedSock/smeargle.git
+  path = .vim/bundle/calendar
+  url = https://github.com/itchyny/calendar.vim
 [submodule ".vim/bundle/perl-variable-highlighter"]
-	path = .vim/bundle/perl-variable-highlighter
-	url = git@github.com:mannih/vim-perl-variable-highlighter.git
+  path = .vim/bundle/perl-variable-highlighter
+  url = git@github.com:mannih/vim-perl-variable-highlighter.git
