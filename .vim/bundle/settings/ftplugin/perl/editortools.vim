@@ -6,10 +6,10 @@ if exists("b:did_editortools_ftplugin")
 endif
 let b:did_editortools_ftplugin = 1
 
-map <buffer> ,pp :call EditorToolsMenu()<cr>
-map <buffer> ,pL :call RenameVariable()<cr>
-map <buffer> ,pP :call RenamePackageFromPath()<cr>
-map <buffer> ,pI :call IntroduceTemporaryVariable()<cr>
+map <buffer> <Leader>pp :call EditorToolsMenu()<cr>
+map <buffer> <Leader>pL :call RenameVariable()<cr>
+map <buffer> <Leader>pP :call RenamePackageFromPath()<cr>
+map <buffer> <Leader>pI :call IntroduceTemporaryVariable()<cr>
 
 function! EditorToolsMenu()
     let list = [ "RenameVariable", "RenamePackageFromPath", "IntroduceTemporaryVariable" ]

@@ -143,6 +143,13 @@ function! Perltidy_diff ()
     call delete(tidy_file)
 endfunction
 
+" Tidy the whole file
+nmap <leader>ptidy :call Perltidy_file()<CR>
+
+function! Perltidy_file ()
+  execute '%!perltidy'
+endfunction
+
 "" http://use.perl.org/~Ovid/journal/36929
 "" Only works for subs defined in current package
 "function! GotoSub(subname)
