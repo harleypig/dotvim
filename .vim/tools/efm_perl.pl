@@ -154,7 +154,7 @@ if ( ! $syserr ) {
 # Naive attempt to include working module libraries.
 my @includes = qw( -I ./lib -I ./lib/auto );
 
-my $cmd = [ 'perl', @includes, @checks, '-c', $file ];
+my $cmd = [ 'perl', @includes, @checks, @modules, '-c', $file ];
 
 run3( {
 

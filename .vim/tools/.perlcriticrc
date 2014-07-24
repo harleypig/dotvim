@@ -396,7 +396,7 @@ verbose = %m at %f line %l, near '%r' Severity: %s %p\n
 
 
 # explicit Perl version for features used
-[Compatibility::PerlMinimumVersionAndWhy]
+[-Compatibility::PerlMinimumVersionAndWhy]
 # set_themes                         = compatibility pulp
 # add_themes                         =
 # severity                           = 2
@@ -1119,7 +1119,7 @@ exclude_functions = print
 
 
 # Require a `use 5.006;' or similar.
-[Modules::RequirePerlVersion]
+[-Modules::RequirePerlVersion]
 # set_themes                         = compatibility more
 # add_themes                         =
 # severity                           = 1
@@ -2144,4 +2144,9 @@ exclude_functions = print
 # severity                           = 4
 # maximum_violations_per_document    = no_limit
 
-
+[-logicLAB::RequireSheBang]
+[-OTRS::ProhibitLowPrecedenceOps]
+[-OTRS::RequireCamelCase]
+[-RegularExpressions::RequireExtendedFormattingExceptForSplit]
+[-CodeLayout::TabIndentSpaceAlign]
+[-CodeLayout::ProhibitSpaceIndentation]
