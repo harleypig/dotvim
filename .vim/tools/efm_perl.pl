@@ -7,8 +7,6 @@
 #
 # https://github.com/Ovid/DB--Color.git for the 'circular::require' trick
 
-#use 5.008;
-
 use strict;
 use warnings FATAL => 'all';
 use autodie;
@@ -23,7 +21,7 @@ die "Too many arguments!\n"
 my $file = shift @ARGV
   or die "No filename to check!\n";
 
-my ( $perldoc, $efm, $err, $syserr, @checks );
+my ( $perldoc, $efm, $err, $syserr, @checks, @modules );
 
 # Grab custom instructions for this file from the file.
 
@@ -45,27 +43,44 @@ my %test; @test{ @tests } = ( 1 ) x @tests;
 
 ## efm debug
 
+# Any line that begins with
+#
+# ## efm modules
+#
+# will add the listed modules to the -c call. E.g.,
+#
+# ## efm modules Module::Name
+#
+# will add -MModule::Name to the -c call.
+
 ( $efm, $err, $syserr ) = run3( [ 'grep', '^## efm ', $file ] );
 
 my $DEBUG = 0;
 
-if ( ! $syserr ) { # 0 = success because we're dealing with the shell
+if ( ! $syserr ) {  # 0 = success because we're dealing with the shell
   for my $line ( split /\n+/, $efm ) {
 
     if ( $line =~ /^## efm\s+debug/ ) {
 
       $DEBUG++;
 
-    } else {
+    } elsif ( $line =~ s/^## efm\s+skip\s+// ) {
 
-      $line =~ s/^## efm\s+skip\s+//;
+      delete $test{ $_ } for split /\s+/, $line;
 
-      delete $test{ $_ }
-        for split /\s+/, $line;
+    } elsif ( $line =~ s/^## efm\s+modules\s+// ) {
+
+      push @modules, split /\s+/, $line;
 
     }
   }
-}
+
+  if ( @modules ) {
+
+    @modules = map { "-M$_" } @modules;
+
+  }
+} ## end if ( ! $syserr )
 
 # Error messages to be skipped.
 my @skip = (
@@ -94,10 +109,10 @@ if ( ! $syserr ) {
     push @checks, '-MB::Lint::StrictOO'
       if ! $syserr;
 
-#    ( undef, undef, $syserr ) = run3( [ @perldoc, 'B::LintSubs'  ] );
-#
-#    push @checks, '-MO=LintSubs'
-#      if ! $syserr;
+    #    ( undef, undef, $syserr ) = run3( [ @perldoc, 'B::LintSubs'  ] );
+    #
+    #    push @checks, '-MO=LintSubs'
+    #      if ! $syserr;
 
     push @checks, '-MO=Lint,none,magic-diamond,context,bare-subs,regexp-variables,oo';
 
@@ -135,10 +150,6 @@ if ( ! $syserr ) {
 
   }
 } ## end if ( ! $syserr )
-
-my $checks = join q{ }, @checks;
-
-my ( $message, $extracted_file, $lineno, $rest );
 
 # Naive attempt to include working module libraries.
 my @includes = qw( -I ./lib -I ./lib/auto );

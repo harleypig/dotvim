@@ -1018,7 +1018,7 @@ exclude_functions = print
 
 
 # Minimize complexity in code that is outside of subroutines.
-[Modules::ProhibitExcessMainComplexity]
+[-Modules::ProhibitExcessMainComplexity]
 # set_themes                         = complexity core maintenance
 # add_themes                         =
 # severity                           = 3
