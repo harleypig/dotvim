@@ -8,7 +8,7 @@ set nocompatible
 
 " Try to force editing of the called file to an already existing window
 " XXX: How well is this working?
-runtime macros/editexisting.vim
+"runtime macros/editexisting.vim
 
 " Ignore plugins by using directory name under .vim/bundle
 " let g:pathogen_disabled = [ 'abolish', 'autoclose', ... ]
@@ -38,7 +38,7 @@ execute pathogen#infect()
 execute pathogen#helptags()
 
 " XXX: How well is this working?
-runtime macros/justify.vim
+"runtime macros/justify.vim
 
 helptags ~/.vim/doc
 
@@ -51,5 +51,5 @@ syntax on
 " Automatically reload this file when it, or any sourced file, is saved.
 aug AutoloadVimrc
   au!
-  au BufWritePost $MYVIMRC      source $MYVIMRC
+  au BufWritePost $MYVIMRC source $MYVIMRC
 aug END

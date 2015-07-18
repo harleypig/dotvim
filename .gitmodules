@@ -137,6 +137,8 @@
 [submodule ".vim/bundle/calendar"]
   path = .vim/bundle/calendar
   url = https://github.com/itchyny/calendar.vim
+  ignore = untracked
 [submodule ".vim/bundle/perl-variable-highlighter"]
   path = .vim/bundle/perl-variable-highlighter
   url = git@github.com:mannih/vim-perl-variable-highlighter.git
+  ignore = untracked
