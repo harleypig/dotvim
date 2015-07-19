@@ -1,20 +1,25 @@
 " From vim-perl/syntax/perl.vim
-" defaults are commented
-let g:perl_include_pod=1
+" defaults are listed
+"
+" let g:perl_include_pod=1
 " unlet perl_no_scope_in_variables
 " unlet perl_no_extended_vars
-let perl_string_as_statement=1
+" unlet perl_string_as_statement
 " unlet perl_no_sync_on_sub
 " unlet perl_no_sync_on_global_var
 " let perl_sync_dist = 100
 " unlet perl_fold
-"let g:perl_fold=1
-"let g:perl_fold_blocks=1
-"let g:perl_nofold_subs=1
+" unlet perl_fold_blocks
+" unlet perl_nofold_packages
+" unlet perl_nofold_subs
+" unlet perl_fold_anonymous_subs
+" unlet perl_no_subprototype_error
+
+let perl_string_as_statement=1
 
 " Sets make and errorformat for perl (see $VIMRUNTIME/compiler/perl)
 " XXX: Is this redundant?
-compiler perl
+"compiler perl
 "setlocal shellpipe=2>&1\ >
 "setlocal makeef=errors.err
 
@@ -75,8 +80,9 @@ endfun
 
 " Better handling of for include files, courtesy of
 " https://github.com/thoughtstream/Damian-Conway-s-Vim-Setup
-set include=^\\s*use\\s\\+\\zs\\k\\+\\ze
-set includeexpr=substitute(v:fname,'::','/','g')
+" How is this better than what is in vim-perl?
+"set include=^\\s*use\\s\\+\\zs\\k\\+\\ze
+"set includeexpr=substitute(v:fname,'::','/','g')
 set suffixesadd=.pm
 execute 'set path+=' . substitute($PERL5LIB, ':', ',', 'g')
 
