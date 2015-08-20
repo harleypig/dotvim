@@ -146,3 +146,7 @@
   path = .vim/bundle/taskwiki
   url = git@github.com:tbabej/taskwiki.git
   ignore = untracked
+[submodule ".vim/bundle/tagbar"]
+  path = .vim/bundle/tagbar
+  url = git@github.com:majutsushi/tagbar.git
+  ignore = untracked
