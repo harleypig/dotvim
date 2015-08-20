@@ -142,3 +142,6 @@
   path = .vim/bundle/perl-variable-highlighter
   url = git@github.com:mannih/vim-perl-variable-highlighter.git
   ignore = untracked
+[submodule ".vim/bundle/taskwiki"]
+	path = .vim/bundle/taskwiki
+	url = git@github.com:tbabej/taskwiki.git
