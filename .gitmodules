@@ -150,3 +150,7 @@
   path = .vim/bundle/tagbar
   url = git@github.com:majutsushi/tagbar.git
   ignore = untracked
+[submodule ".vim/bundle/taskwarrior"]
+  path = .vim/bundle/taskwarrior
+  url = git@github.com:blindFS/vim-taskwarrior.git
+  ignore = untracked
