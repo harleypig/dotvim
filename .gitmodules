@@ -18,10 +18,6 @@
   path = .vim/bundle/pathogen
   url = git://github.com/tpope/vim-pathogen.git
   ignore = untracked
-[submodule ".vim/bundle/showmarks"]
-  path = .vim/bundle/showmarks
-  url = git@github.com:vim-scripts/ShowMarks.git
-  ignore = untracked
 [submodule ".vim/bundle/github"]
   path = .vim/bundle/github
   url = git://github.com/thinca/vim-github.git
