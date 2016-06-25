@@ -12,7 +12,7 @@ set nocompatible
 
 " Ignore plugins by using directory name under .vim/bundle
 " let g:pathogen_disabled = [ 'abolish', 'autoclose', ... ]
-let g:pathogen_disabled = [ 'abolish', 'cscope_macros', 'drawit', 'evervim', 'fugitive', 'gundo', 'speeddating' ]
+let g:pathogen_disabled = [ 'abolish', 'cscope_macros', 'drawit', 'evervim', 'fugitive', 'gundo', 'speeddating', 'taskwarrior' ]
 
 " gundo requires vim 7.3 or greater
 if v:version < '703' || !has('python')
