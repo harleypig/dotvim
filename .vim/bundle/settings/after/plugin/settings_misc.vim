@@ -155,3 +155,8 @@ hi def link  myTODO Todo
 "=====[ Highlight spelling errors on request ]===================
 "set spelllang=en_us
 "nmap <silent> ;s :setlocal invspell<CR>
+
+" Keep search matches in the middle of the screen
+" https://vimrcfu.com/snippet/175
+nnoremap n nzz
+nnoremap N Nzz
