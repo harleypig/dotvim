@@ -1,6 +1,9 @@
 " Why do I include settings that are defaults?
 " Because I don't want to get surprised by changes.
 
+" !!! See what you can rip off from vim-sensible!
+" https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
+
 " Sort this section by doing the following (it will ignore the 'set no' or
 " 'set   ' and sort by keywords :
 
