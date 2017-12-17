@@ -150,3 +150,6 @@
   path = .vim/bundle/taskwarrior
   url = git@github.com:blindFS/vim-taskwarrior.git
   ignore = untracked
+[submodule ".vim/bundle/showmarks"]
+	path = .vim/bundle/showmarks
+	url = gitea@harleydev.com:harleypig/showmarks.git
