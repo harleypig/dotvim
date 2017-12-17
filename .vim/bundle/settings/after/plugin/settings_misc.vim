@@ -61,7 +61,7 @@ autocmd FileType {vim,help} setlocal keywordprg=:help
 " Append modeline after last line in buffer.
 
 function! AppendModeline()
-  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d :", &tabstop, &shiftwidth, &textwidth)
+  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d %set :", &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
   let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
   call append(0, l:modeline)
 endfunction

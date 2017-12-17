@@ -25,5 +25,8 @@ let g:syntastic_perl_perlcritic_thres    = 0
 let g:syntastic_perl_perlcritic_post_args = '--verbose "\%s:\%f:\%l:\%c:\%p \%m\n"'
 "let g:syntastic_debug                   = 31
 
+" Shellcheck options
+let g:syntastic_sh_shellcheck_args       = '--external-sources --color=never'
+
 noremap <silent> <leader>lc :lclose<CR>
 noremap <silent> <leader>lo :Errors<CR>
