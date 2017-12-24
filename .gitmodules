@@ -162,6 +162,3 @@
 [submodule ".vim/bundle/nerdtree-git-plugin"]
 	path = .vim/bundle/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
-[submodule ".vim/bundle/nerdtree-diff-plugin"]
-	path = .vim/bundle/nerdtree-diff-plugin
-	url = https://github.com/deresmos/nerdtree-diff-plugin.git
