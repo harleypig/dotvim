@@ -165,3 +165,6 @@
 [submodule ".vim/bundle/jq"]
 	path = .vim/bundle/jq
 	url = https://github.com/vito-c/jq.vim.git
+[submodule ".vim/bundle/tmux"]
+	path = .vim/bundle/tmux
+	url = https://github.com/tmux-plugins/vim-tmux.git
