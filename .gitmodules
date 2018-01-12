@@ -168,3 +168,6 @@
 [submodule ".vim/bundle/tmux"]
 	path = .vim/bundle/tmux
 	url = https://github.com/tmux-plugins/vim-tmux.git
+[submodule "bundle/colorschemes"]
+	path = bundle/colorschemes
+	url = https://github.com/flazz/vim-colorschemes.git
