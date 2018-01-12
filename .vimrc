@@ -43,7 +43,7 @@ execute pathogen#helptags()
 helptags ~/.vim/doc
 
 " colorscheme desert
-colorscheme desert
+colorscheme blacklight
 
 filetype plugin indent on
 syntax on
