@@ -151,23 +151,23 @@
   url = git@github.com:blindFS/vim-taskwarrior.git
   ignore = untracked
 [submodule ".vim/bundle/showmarks"]
-	path = .vim/bundle/showmarks
-	url = gitea@harleydev.com:harleypig/showmarks.git
+  path = .vim/bundle/showmarks
+  url = gitea@harleydev.com:harleypig/showmarks.git
 [submodule ".vim/bundle/gitv"]
-	path = .vim/bundle/gitv
-	url = https://github.com/gregsexton/gitv
+  path = .vim/bundle/gitv
+  url = https://github.com/gregsexton/gitv
 [submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
+  path = .vim/bundle/nerdtree
+  url = https://github.com/scrooloose/nerdtree.git
 [submodule ".vim/bundle/nerdtree-git-plugin"]
-	path = .vim/bundle/nerdtree-git-plugin
-	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+  path = .vim/bundle/nerdtree-git-plugin
+  url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
 [submodule ".vim/bundle/jq"]
-	path = .vim/bundle/jq
-	url = https://github.com/vito-c/jq.vim.git
+  path = .vim/bundle/jq
+  url = https://github.com/vito-c/jq.vim.git
 [submodule ".vim/bundle/tmux"]
-	path = .vim/bundle/tmux
-	url = https://github.com/tmux-plugins/vim-tmux.git
-[submodule "bundle/colorschemes"]
-	path = bundle/colorschemes
+  path = .vim/bundle/tmux
+  url = https://github.com/tmux-plugins/vim-tmux.git
+[submodule ".vim/bundle/colorschemes"]
+	path = .vim/bundle/colorschemes
 	url = https://github.com/flazz/vim-colorschemes.git
