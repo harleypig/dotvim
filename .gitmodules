@@ -2,168 +2,219 @@
   path = .vim/bundle/vcscommand
   url = git://repo.or.cz/vcscommand.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/surround"]
   path = .vim/bundle/surround
   url = git://github.com/tpope/vim-surround.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/align"]
   path = .vim/bundle/align
   url = git://github.com/vim-scripts/Align.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/autoalign"]
   path = .vim/bundle/autoalign
   url = git://github.com/vim-scripts/AutoAlign.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/pathogen"]
   path = .vim/bundle/pathogen
   url = git://github.com/tpope/vim-pathogen.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/github"]
   path = .vim/bundle/github
   url = git://github.com/thinca/vim-github.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/irssilog"]
   path = .vim/bundle/irssilog
   url = git://github.com/vim-scripts/irssilog.vim.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/gitolite"]
   path = .vim/bundle/gitolite
   url = git://github.com/tmatilai/gitolite.vim.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/ledger"]
   path = .vim/bundle/ledger
   url = git://github.com/vim-scripts/ledger.vim.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/fugitive"]
   path = .vim/bundle/fugitive
   url = git://github.com/tpope/vim-fugitive.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/evervim"]
   path = .vim/bundle/evervim
   url = git://github.com/kakkyz81/evervim.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/spacehi"]
   path = .vim/bundle/spacehi
   url = git://github.com/jpalardy/spacehi.vim.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/eunuch"]
   path = .vim/bundle/eunuch
   url = git://github.com/tpope/vim-eunuch.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/unimpaired"]
   path = .vim/bundle/unimpaired
   url = git://github.com/tpope/vim-unimpaired.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/speeddating"]
   path = .vim/bundle/speeddating
   url = git://github.com/tpope/vim-speeddating.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/abolish"]
   path = .vim/bundle/abolish
   url = git://github.com/tpope/vim-abolish.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/indent-guides"]
   path = .vim/bundle/indent-guides
   url = git://github.com/nathanaelkane/vim-indent-guides.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/perlomni"]
   path = .vim/bundle/perlomni
   url = git://github.com/c9s/perlomni.vim.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/matchtag"]
   path = .vim/bundle/matchtag
   url = git://github.com/gregsexton/MatchTag.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/gundo"]
   path = .vim/bundle/gundo
   url = git://github.com/sjl/gundo.vim.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/autoclose"]
   path = .vim/bundle/autoclose
   url = git://github.com/Townk/vim-autoclose.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/taglist"]
   path = .vim/bundle/taglist
   url = git://github.com/vim-scripts/taglist.vim.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/cscope_macros"]
   path = .vim/bundle/cscope_macros
   url = git://github.com/vim-scripts/cscope_macros.vim.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/syntastic"]
   path = .vim/bundle/syntastic
   url = git://github.com/scrooloose/syntastic.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/vim-perl"]
   path = .vim/bundle/vim-perl
   url = git://github.com/vim-perl/vim-perl.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/vim-repeat"]
   path = .vim/bundle/vim-repeat
   url = git@github.com:tpope/vim-repeat.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/vim-commentary"]
   path = .vim/bundle/vim-commentary
   url = git@github.com:tpope/vim-commentary.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/vimwiki"]
   path = .vim/bundle/vimwiki
   url = git@github.com:vimwiki/vimwiki.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/vim-signify"]
   path = .vim/bundle/vim-signify
   url = git@github.com:mhinz/vim-signify.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/ansiesc"]
   path = .vim/bundle/ansiesc
   url = git@github.com:vim-scripts/AnsiEsc.vim.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/drawit"]
   path = .vim/bundle/drawit
   url = git@github.com:vim-scripts/DrawIt.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/supertab"]
   path = .vim/bundle/supertab
   url = git@github.com:ervandew/supertab.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/vim-lint"]
   path = .vim/bundle/vim-lint
   url = https://github.com/dbakker/vim-lint.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/calendar"]
   path = .vim/bundle/calendar
   url = https://github.com/itchyny/calendar.vim
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/perl-variable-highlighter"]
   path = .vim/bundle/perl-variable-highlighter
   url = git@github.com:mannih/vim-perl-variable-highlighter.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/taskwiki"]
   path = .vim/bundle/taskwiki
   url = git@github.com:tbabej/taskwiki.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/tagbar"]
   path = .vim/bundle/tagbar
   url = git@github.com:majutsushi/tagbar.git
   ignore = untracked
+  branch = master
 [submodule ".vim/bundle/showmarks"]
   path = .vim/bundle/showmarks
   url = gitea@harleydev.com:harleypig/showmarks.git
+  ignore = untracked
+  branch = master
 [submodule ".vim/bundle/gitv"]
   path = .vim/bundle/gitv
   url = https://github.com/gregsexton/gitv
+  ignore = untracked
+  branch = master
 [submodule ".vim/bundle/nerdtree"]
   path = .vim/bundle/nerdtree
   url = https://github.com/scrooloose/nerdtree.git
+  ignore = untracked
+  branch = master
 [submodule ".vim/bundle/nerdtree-git-plugin"]
   path = .vim/bundle/nerdtree-git-plugin
   url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+  ignore = untracked
+  branch = master
 [submodule ".vim/bundle/jq"]
   path = .vim/bundle/jq
   url = https://github.com/vito-c/jq.vim.git
+  ignore = untracked
+  branch = master
 [submodule ".vim/bundle/tmux"]
   path = .vim/bundle/tmux
   url = https://github.com/tmux-plugins/vim-tmux.git
+  ignore = untracked
+  branch = master
 [submodule ".vim/bundle/colorschemes"]
   path = .vim/bundle/colorschemes
   url = https://github.com/flazz/vim-colorschemes.git
+  ignore = untracked
+  branch = master
