@@ -73,11 +73,6 @@
   url = git://github.com/tpope/vim-speeddating.git
   ignore = untracked
   branch = master
-[submodule ".vim/bundle/abolish"]
-  path = .vim/bundle/abolish
-  url = git://github.com/tpope/vim-abolish.git
-  ignore = untracked
-  branch = master
 [submodule ".vim/bundle/indent-guides"]
   path = .vim/bundle/indent-guides
   url = git://github.com/nathanaelkane/vim-indent-guides.git
