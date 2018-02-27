@@ -213,3 +213,8 @@
   url = https://github.com/flazz/vim-colorschemes.git
   ignore = untracked
   branch = master
+[submodule ".vim/bundle/abolish"]
+	path = .vim/bundle/abolish
+	url = https://github.com/tpope/vim-abolish.git
+	branch = master
+	ignore = dirty
