@@ -21,18 +21,18 @@
 " there is more ...
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"  ansiesc         https://github.com/vim-scripts/AnsiEsc.vim
-"                  http://drchip.org/astronaut/vim/index.html#ANSIESC
-
-" There are no settings for this.  Just do :AnsiEsc when you have ansi codes
-" in your document.
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  autoalign       https://github.com/vim-scripts/AutoAlign
 "                  http://www.drchip.org/astronaut/vim/index.html#AUTOALIGN
 
 " This is used in conjunction with the align plugin above. There is no perl
 " specific file.  Look into creating one, possibly integrating with vim-perl.
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  ansiesc         https://github.com/vim-scripts/AnsiEsc.vim
+"                  http://drchip.org/astronaut/vim/index.html#ANSIESC
+
+" There are no settings for this.  Just do :AnsiEsc when you have ansi codes
+" in your document.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  autoclose       https://github.com/Townk/vim-autoclose
@@ -77,8 +77,6 @@
 "                  http://vimcasts.org/episodes/fugitive-vim-browsing-the-git-object-database/
 "                  http://vimcasts.org/episodes/fugitive-vim-exploring-the-history-of-a-git-repository/
 
-"  DISABLED until I can spend the time to learn how to use it.
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  github          https://github.com/thinca/vim-github
 
@@ -95,6 +93,8 @@
 "  indent-guides   https://github.com/nathanaelkane/vim-indent-guides
 
 let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size  = 1
+let g:indent_guides_start_level = 2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  justify         $VIMRUNTIME/macros/justify.vim
