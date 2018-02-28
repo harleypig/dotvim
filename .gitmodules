@@ -223,3 +223,8 @@
 	url = https://github.com/tweekmonster/helpful.vim.git
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/editorconfig"]
+	path = .vim/bundle/editorconfig
+	url = https://github.com/editorconfig/editorconfig-vim.git
+	branch = master
+	ignore = dirty
