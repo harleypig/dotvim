@@ -213,3 +213,5 @@
   url = https://github.com/flazz/vim-colorschemes.git
   ignore = untracked
   branch = master
+[submodule ".vim/bundle/"]
+	ignore = dirty
