@@ -213,8 +213,6 @@
   url = https://github.com/flazz/vim-colorschemes.git
   ignore = untracked
   branch = master
-[submodule ".vim/bundle/"]
-	ignore = dirty
 [submodule ".vim/bundle/man"]
 	path = .vim/bundle/man
 	url = https://github.com/vim-utils/vim-man.git
