@@ -228,3 +228,8 @@
 	url = https://github.com/editorconfig/editorconfig-vim.git
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/bats"]
+	path = .vim/bundle/bats
+	url = https://github.com/vim-scripts/bats.vim.git
+	branch = master
+	ignore = dirty
