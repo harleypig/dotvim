@@ -178,11 +178,6 @@
   url = git@github.com:majutsushi/tagbar.git
   ignore = untracked
   branch = master
-[submodule ".vim/bundle/showmarks"]
-  path = .vim/bundle/showmarks
-  url = gitea@harleydev.com:harleypig/showmarks.git
-  ignore = untracked
-  branch = master
 [submodule ".vim/bundle/gitv"]
   path = .vim/bundle/gitv
   url = https://github.com/gregsexton/gitv
