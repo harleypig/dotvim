@@ -228,3 +228,8 @@
 	url = https://github.com/vim-scripts/bats.vim.git
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/showmarks"]
+	path = .vim/bundle/showmarks
+	url = https://github.com/jacquesbh/vim-showmarks.git
+	branch = master
+	ignore = dirty
