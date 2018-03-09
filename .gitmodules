@@ -238,3 +238,8 @@
 	url = https://github.com/tpope/vim-db.git
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/dispatch"]
+	path = .vim/bundle/dispatch
+	url = https://github.com/tpope/vim-dispatch.git
+	branch = master
+	ignore = dirty
