@@ -233,3 +233,8 @@
 	url = https://github.com/jacquesbh/vim-showmarks.git
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/vim-db"]
+	path = .vim/bundle/vim-db
+	url = https://github.com/tpope/vim-db.git
+	branch = master
+	ignore = dirty
