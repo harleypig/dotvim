@@ -209,37 +209,37 @@
   ignore = untracked
   branch = master
 [submodule ".vim/bundle/man"]
-	path = .vim/bundle/man
-	url = https://github.com/vim-utils/vim-man.git
-	branch = master
-	ignore = dirty
+  path = .vim/bundle/man
+  url = https://github.com/vim-utils/vim-man.git
+  branch = master
+  ignore = dirty
 [submodule ".vim/bundle/helpful"]
-	path = .vim/bundle/helpful
-	url = https://github.com/tweekmonster/helpful.vim.git
-	branch = master
-	ignore = dirty
+  path = .vim/bundle/helpful
+  url = https://github.com/tweekmonster/helpful.vim.git
+  branch = master
+  ignore = dirty
 [submodule ".vim/bundle/editorconfig"]
-	path = .vim/bundle/editorconfig
-	url = https://github.com/editorconfig/editorconfig-vim.git
-	branch = master
-	ignore = dirty
+  path = .vim/bundle/editorconfig
+  url = https://github.com/editorconfig/editorconfig-vim.git
+  branch = master
+  ignore = dirty
 [submodule ".vim/bundle/bats"]
-	path = .vim/bundle/bats
-	url = https://github.com/vim-scripts/bats.vim.git
-	branch = master
-	ignore = dirty
+  path = .vim/bundle/bats
+  url = https://github.com/vim-scripts/bats.vim.git
+  branch = master
+  ignore = dirty
 [submodule ".vim/bundle/showmarks"]
-	path = .vim/bundle/showmarks
-	url = https://github.com/jacquesbh/vim-showmarks.git
-	branch = master
-	ignore = dirty
+  path = .vim/bundle/showmarks
+  url = https://github.com/jacquesbh/vim-showmarks.git
+  branch = master
+  ignore = dirty
 [submodule ".vim/bundle/vim-db"]
-	path = .vim/bundle/vim-db
-	url = https://github.com/tpope/vim-db.git
-	branch = master
-	ignore = dirty
+  path = .vim/bundle/vim-db
+  url = https://github.com/tpope/vim-db.git
+  branch = master
+  ignore = dirty
 [submodule ".vim/bundle/dispatch"]
-	path = .vim/bundle/dispatch
-	url = https://github.com/tpope/vim-dispatch.git
-	branch = master
-	ignore = dirty
+  path = .vim/bundle/dispatch
+  url = https://github.com/tpope/vim-dispatch.git
+  branch = master
+  ignore = dirty
