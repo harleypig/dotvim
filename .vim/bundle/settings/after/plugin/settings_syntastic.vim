@@ -28,5 +28,8 @@ let g:syntastic_perl_perlcritic_post_args = '--verbose "\%s:\%f:\%l:\%c:\%p \%m\
 " Shellcheck options
 let g:syntastic_sh_shellcheck_args       = '--external-sources --color=never'
 
+" Ignore bats files
+let g:syntastic_ignore_files = ['\.bats$']
+
 noremap <silent> <leader>lc :lclose<CR>
 noremap <silent> <leader>lo :Errors<CR>
