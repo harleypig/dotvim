@@ -26,7 +26,16 @@ let g:syntastic_perl_perlcritic_post_args = '--verbose "\%s:\%f:\%l:\%c:\%p \%m\
 "let g:syntastic_debug                   = 31
 
 " Shellcheck options
-let g:syntastic_sh_shellcheck_args       = '--external-sources --color=never'
+" Usage: shellcheck [OPTIONS...] FILES...
+"   -a                --check-sourced          Include warnings from sourced files
+"   -C[WHEN]          --color[=WHEN]           Use color (auto, always, never)
+"   -e CODE1,CODE2..  --exclude=CODE1,CODE2..  Exclude types of warnings
+"   -f FORMAT         --format=FORMAT          Output format (checkstyle, gcc, json, tty)
+"   -s SHELLNAME      --shell=SHELLNAME        Specify dialect (sh, bash, dash, ksh)
+"   -V                --version                Print version information
+"   -x                --external-sources       Allow 'source' outside of FILES
+
+let g:syntastic_sh_shellcheck_args       = '--external-sources --color=never --exclude=SC1091'
 
 " Ignore bats files
 let g:syntastic_ignore_files = ['\.bats$']

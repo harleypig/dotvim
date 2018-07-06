@@ -130,7 +130,7 @@ function! CommentCleanup()
 
 endfunction
 
-command -range=% Convert2Bash <line1>,<line2>call CommentCleanup() | execute '<line1>,<line2>!shfmt -s -i 2 -bn -ci'
+command -range=% Convert2Bash <line1>,<line2>call CommentCleanup() | execute '<line1>,<line2>!shfmt -s -i 2 -bn -ci -sr'
 
 " Gently lifted from http://mg.pov.lt/vim/vimrc
 " Show ↪ at the beginning of wrapped lines
