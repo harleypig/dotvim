@@ -12,13 +12,16 @@
 
 set laststatus=2
 
-" vim-yasl
+" vim-yasl (yet another statusline)
 
-hi StatusLine ctermbg=White ctermfg=Black
+"hi StatusLine ctermbg=White ctermfg=Black
+hi StatusLine ctermbg=black ctermfg=white
+"hi User1 ctermbg=White ctermfg=Red
+"hi WarningMsg ctermbg=White ctermfg=Red
 au CmdwinEnter * hi StatusLine ctermbg=Gray ctermfg=Red
-au CmdwinLeave * hi StatusLine ctermbg=Gray ctermfg=Black
-au InsertEnter * hi StatusLine ctermbg=Gray ctermfg=DarkBlue
-au InsertLeave * hi StatusLine ctermbg=Gray ctermfg=Black
+au CmdwinLeave * hi StatusLine ctermbg=White ctermfg=Black
+au InsertEnter * hi StatusLine ctermbg=Yellow ctermfg=Blue
+au InsertLeave * hi StatusLine ctermbg=White ctermfg=Black
 
 if !exists("g:YASL_NoneFiletype")
   let g:YASL_NoneFiletype = 'none'
@@ -67,6 +70,7 @@ set statusline+=%(\ %{YASL_IsModified()}%)
 set statusline+=]
 
 set statusline+=%#warningmsg#
+"set statusline+=%1*
 set statusline+=%(\ %{YASL_FileFormat()}%)
 set statusline+=%(\ %{YASL_FileEncoding()}%)
 set statusline+=%(\ %{YASL_MixedIndentWarning()}%)
@@ -75,11 +79,15 @@ set statusline+=%(\ %{YASL_PasteMode()}%)
 set statusline+=%*
 
 " Read the Syntastic docs.
-" XXX: Add check for Syntastic being installed
-set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%*
+set statusline+=%#warningmsg#%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}%*
+"set statusline+=%1*%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}%*
 
 " column and line # of total lines ; what percentage of the file are we at?
-set statusline+=[%c%V:%02l/%02L\ %p%%]
+" and what size is the file?
+set statusline+=[%c%V:%02l/%02L\ %p%%\ %{YASL_FileSize()}]
+" What size is the file?
+"set statusline+=%(\ %{YASL_FileSize()}%)
+
 
 " The ascii value under the cursor, human and hexadecimal formats.
 set statusline+=[%03b:%02B]
@@ -91,17 +99,14 @@ set statusline+=%(\ %{synIDattr(synID(line('.'),col('.'),1),'name')}%)
 set statusline+=%=
 
 " Version Control Information
-" XXX: What plugin is this? Add check for said plugin being installed
-set statusline+=%(\ %{VCSCommandGetStatusLine()}%)
+" XXX: Add check for Fugitive being installed
+set statusline+=%{FugitiveStatusline()}
 
 "Date time stamp for the current file.
 "set statusline+=%{strftime('%D\ %T',getftime(expand('%:p')))}
 
 " What are the permissions for the current file.
 set statusline+=%(\ %{getfperm(expand('%'))}%)
-
-" What size is the file?
-set statusline+=%(\ %{YASL_FileSize()}%)
 
 " What file are we editing?
 set statusline+=\ %-.20F
