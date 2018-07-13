@@ -35,7 +35,7 @@ let g:syntastic_perl_perlcritic_post_args = '--verbose "\%s:\%f:\%l:\%c:\%p \%m\
 "   -V                --version                Print version information
 "   -x                --external-sources       Allow 'source' outside of FILES
 
-let g:syntastic_sh_shellcheck_args       = '--external-sources --color=never --exclude=SC1091'
+let g:syntastic_sh_shellcheck_args       = '--external-sources --color=never --exclude=SC1090,SC1091'
 
 " Ignore bats files
 let g:syntastic_ignore_files = ['\.bats$']
