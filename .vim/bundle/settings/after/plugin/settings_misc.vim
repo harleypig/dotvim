@@ -114,24 +114,6 @@ nnoremap <Leader>nn :set <c-r>={'00':'','01':'r','10':'nor'}[&rnu.&nu]<CR>nu<CR>
 syn match myTODO "WTF:"
 hi def link  myTODO Todo
 
-" The CommentCleanup function, and the command Convert2Bash below, is used for
-" my job converting ksh files and poorly written bash scripts to modern bash.
-
-function! CommentCleanup()
-  for lineno in range(a:firstline, a:lastline)
-    let line = getline(lineno)
-    let line = substitute(line, '^#$', '', 'e')
-    let line = substitute(line, '^\s\+#$', '', 'e')
-    let line = substitute(line, '^\s\+#\s\+$', '', 'e')
-    let line = substitute(line, '#\s\+$', '', 'e')
-    let line = substitute(line, '\s\+$', '', 'e')
-    call setline(lineno, line)
-  endfor
-
-endfunction
-
-command -range=% Convert2Bash <line1>,<line2>call CommentCleanup() | execute '<line1>,<line2>!shfmt -s -i 2 -bn -ci -sr'
-
 " Gently lifted from http://mg.pov.lt/vim/vimrc
 " Show ↪ at the beginning of wrapped lines
 "if has("linebreak")
