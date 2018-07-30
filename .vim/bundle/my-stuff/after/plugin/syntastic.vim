@@ -21,6 +21,7 @@ let g:syntastic_check_on_wq              = 0
 let g:syntastic_echo_current_error       = 0
 let g:syntastic_enable_balloons          = 0
 let g:syntastic_error_symbol             = '!!'
+"let g:syntastic_mode                     = 'passive'
 let g:syntastic_stl_format               = '[%E{Err %fe (%e)}%B{, }%W{Warn %fw (%w)} Open \lo Close \lc]'
 let g:syntastic_style_error_symbol       = 'S!'
 let g:syntastic_style_warning_symbol     = 'S?'

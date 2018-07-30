@@ -10,10 +10,16 @@ let s:save_cpoptions = &cpoptions
 set cpoptions&vim
 
 function! s:errMsg(msg)
-    redraw
-    echohl ErrorMsg
-    echo a:msg
-    echohl None
+  redraw
+  echohl ErrorMsg
+
+  if type(msg) != type('')
+    echo 'msg must be a string'
+  else
+    echo msg
+  endif
+
+  echohl None
 endfunction
 
 function! s:scAddDirective(name,value)
