@@ -12,7 +12,7 @@ set cpoptions&vim
 
 let s:switches = join(['-w', '-s', '-i', '2', '-bn', '-ci', '-sr'])
 
-function! s:format_bash()
+function! s:shFormat()
   let l:filename = @%
   let l:end = line('$')
   let l:l = 1
@@ -36,9 +36,8 @@ function! s:format_bash()
 endfunction
 
 command Convert2Bash echoerr 'Use <LEADER>fb to format your file.'
-nnoremap <silent> <Leader>fb :call <SID>format_bash()<CR>
+nnoremap <silent> <Leader>fb :call <SID>shFormat()<CR>
 
 let &cpoptions = s:save_cpoptions
 
 let g:loaded_shfmt = 1
-

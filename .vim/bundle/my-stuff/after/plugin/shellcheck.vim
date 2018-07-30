@@ -9,13 +9,52 @@ endif
 let s:save_cpoptions = &cpoptions
 set cpoptions&vim
 
-function! s:shellcheck(sc)
-  let l:lineno = line('.') - 1
-  call append(l:lineno, '# shellcheck disable=SC'.a:sc)
+function! s:errMsg(msg)
+    redraw
+    echohl ErrorMsg
+    echo a:msg
+    echohl None
 endfunction
 
-command -nargs=1 ShellCheck :call s:shellcheck(<f-args>)
-nnoremap <silent> <Leader>sc :call <SID>shellcheck(input('shellcheck disable=SC'))<CR>
+function! s:scAddDirective(name,value)
+  let l:lineno = line('.') - 1
+  call append(l:lineno, '# shellcheck ' . a:name . '=' . a:value)
+endfunction
+
+function! s:scDisable(directive)
+  if a:directive =~ '\D'
+    call s:errMsg("'directive' must be an integer.'")
+    return 1
+  endif
+
+  if str2nr(a:directive) < 1000
+    call s:errMsg("'directive' must be greater than 999.")
+    return 1
+  endif
+
+  call s:scAddDirective('disable','SC' . a:directive)
+endfunction
+
+function! s:scSource(source)
+  " XXX: Does it make sense to check for existence of file here?
+
+  call s:scAddDirective('source',a:source)
+endfunction
+
+function! s:scShell(shell)
+  " XXX: Check for and allow only supported shells.
+  " XXX: Does it make sense to have this directive on any but the first line?
+
+  call s:scAddDirective('shell',a:shell)
+endfunction
+
+command -nargs=1 ShellCheckDisable :call s:scDisable(<f-args>)
+command -nargs=1 ShellCheckSource  :call s:scSource(<f-args>)
+command -nargs=1 ShellCheckShell   :call s:scShell(<f-args>)
+
+nnoremap <silent> <Leader>scd :call <SID>scDisable(input('shellcheck disable=SC'))<CR>
+nnoremap <silent> <Leader>scs :call <SID>scSource(input('shellcheck source='))<CR>
+nnoremap <silent> <Leader>sch :call <SID>scShell(input('shellcheck shell='))<CR>
 
 let &cpoptions = s:save_cpoptions
 
