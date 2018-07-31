@@ -1,0 +1,70 @@
+snippet basic_tests "description"
+#############################################################
+# Basic Tests for $1
+
+@test '$1 exists' {
+	assert_file_exist "$PWD/scripts/lib/$1"
+}
+
+#------------------------------------------------------------
+@test '$1 perms' {
+	run stat --printf '%A' "$PWD/scripts/lib/utility"
+	assert_output '-rwxr-xr-x'
+}
+
+#------------------------------------------------------------
+@test 'run $1 in a non-bash environment' {
+	run sh "$PWD/scripts/lib/$1"
+	assert_failure
+	assert_output '$1 is either not a bash script or is not being run in bash'
+}
+
+#------------------------------------------------------------
+@test '$1 no source' {
+	run "$PWD/scripts/lib/$1"
+	assert_failure
+	assert_output '$1 must only be sourced.'
+}
+endsnippet
+
+snippet source_utility "description"
+#############################################################################
+# Basic library startup checks
+
+if [ "$BASH" != '/bin/bash' ]; then
+	echo "$(basename "\$0") is either not a bash script or is not being run in bash" >&2
+	exit 1
+fi
+
+source utility
+
+[[ ${BASH_SOURCE[0]} == "\$0" ]] && die "$(basename "\$0") must only be sourced."
+
+endsnippet
+
+snippet func_exists "description"
+#------------------------------------------------------------
+# test $1
+
+@test '$1 function exists' {
+	run type -t $1
+	assert_success
+	assert_output 'function'
+}
+
+endsnippet
+
+snippet @test "description"
+@test '$1' {
+	$0
+}
+
+endsnippet
+
+snippet test_skip "description"
+@test '$1' {
+	skip 'test not written yet'
+}
+
+endsnippet
+
