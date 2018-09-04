@@ -8,7 +8,7 @@ endsnippet
 #############################################################
 # bats snippets
 
-snippet @func_exists "test if function exists"
+snippet _exists "test if function exists"
 #------------------------------------------------------------
 # test ${1:function}
 
@@ -103,6 +103,7 @@ endsnippet
 # POD template
 
 snippet @pod_header "POD default template"
+#############################################################
 : << POD
 =head1 NAME
 
@@ -130,12 +131,27 @@ endsnippet
 
 snippet @pod "basic pod template"
 : << POD
-=head${1:1}
+=head${1:1} ${2:func name}
 
-${2:${VISUAL:text goes here}}
+text goes here
 
 =cut
 POD
+endsnippet
+
+snippet @func "basic pod function template"
+#############################################################
+: << POD
+=head2 ${1:func name}
+
+XXX: description, synopsis, expects and output
+
+=cut
+POD
+
+function $1() {
+	echo '...'
+}
 endsnippet
 
 #############################################################
