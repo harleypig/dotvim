@@ -83,11 +83,6 @@
   url = git://github.com/gregsexton/MatchTag.git
   ignore = dirty
   branch = master
-[submodule ".vim/bundle/gundo"]
-  path = .vim/bundle/gundo
-  url = git://github.com/sjl/gundo.vim.git
-  ignore = dirty
-  branch = master
 [submodule ".vim/bundle/autoclose"]
   path = .vim/bundle/autoclose
   url = git://github.com/Townk/vim-autoclose.git
