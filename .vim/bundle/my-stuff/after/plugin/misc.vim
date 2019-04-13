@@ -160,3 +160,21 @@ hi def link  myTODO Todo
 " https://vimrcfu.com/snippet/175
 nnoremap n nzz
 nnoremap N Nzz
+
+" Infinite undo
+set undofile
+set undodir=~/.cache/vim/undo
+
+" Make if it doesn't exist
+"if !isdirectory($HOME . "/.cache/vim/undo")
+"  call mkdir($HOME . "/.cache/vim/undo", "p")
+"endif
+if !isdirectory(&undodir)
+  call mkdir(&undodir, "p")
+endif
+
+" Delete undos older than 90 days
+let s:undos = split(globpath(&undodir, '*'), "\n")
+call filter(s:undos, 'getftime(v:val) < localtime() - (60 * 60 * 24 * 90)')
+call map(s:undos, 'delete(v:val)')
+
