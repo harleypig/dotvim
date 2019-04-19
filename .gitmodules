@@ -243,3 +243,8 @@
   url = git://github.com/honza/vim-snippets.git
   branch = master
   ignore = dirty
+[submodule ".vim/bundle/markify"]
+	path = .vim/bundle/markify
+	url = https://github.com/dhruvasagar/vim-markify
+	branch = master
+	ignore = dirty
