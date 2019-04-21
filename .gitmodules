@@ -248,3 +248,8 @@
 	url = https://github.com/dhruvasagar/vim-markify
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/ExtractMatches"]
+	path = .vim/bundle/ExtractMatches
+	url = https://github.com/inkarkat/vim-ExtractMatches.git
+	branch = master
+	ignore = dirty
