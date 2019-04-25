@@ -253,3 +253,8 @@
 	url = https://github.com/inkarkat/vim-ExtractMatches.git
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/ansible"]
+	path = .vim/bundle/ansible
+	url = https://github.com/pearofducks/ansible-vim.git
+	branch = master
+	ignore = dirty
