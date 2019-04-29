@@ -258,3 +258,8 @@
   url = https://github.com/pearofducks/ansible-vim.git
   branch = master
   ignore = dirty
+[submodule ".vim/bundle/jsbeautify"]
+	path = .vim/bundle/jsbeautify
+	url = https://github.com/maksimr/vim-jsbeautify.git
+	branch = master
+	ignore = dirty
