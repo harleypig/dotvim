@@ -263,3 +263,8 @@
 	url = https://github.com/maksimr/vim-jsbeautify.git
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/healthcheck"]
+	path = .vim/bundle/healthcheck
+	url = https://github.com/rhysd/vim-healthcheck.git
+	branch = master
+	ignore = dirty
