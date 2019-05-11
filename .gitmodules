@@ -268,3 +268,8 @@
 	url = https://github.com/rhysd/vim-healthcheck.git
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/notes-cli"]
+	path = .vim/bundle/notes-cli
+	url = https://github.com/rhysd/vim-notes-cli.git
+	branch = master
+	ignore = dirty
