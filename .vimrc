@@ -49,6 +49,14 @@ colorscheme neon
 filetype plugin indent on
 syntax on
 
+" Use a different colorscheme when using vimdiff and turn off syntax
+" highlighting. This improves visibility mightily.
+
+if &diff
+  colorscheme vividchalk
+  syntax off
+endif
+
 " Automatically reload this file when it, or any sourced file, is saved.
 aug AutoloadVimrc
   au!
