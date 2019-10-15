@@ -14,6 +14,11 @@ set nocompatible
 " let g:pathogen_disabled = [ 'abolish', 'autoclose', ... ]
 let g:pathogen_disabled = [ 'abolish', 'cscope_macros', 'drawit', 'evervim', 'gundo', 'speeddating', 'taskwarrior' ]
 
+" vim-lsp requires vim 8.0 or greater
+if v:version < '800'
+  call add(g:pathogen_disable, 'vim-lisp')
+endif
+
 " gundo requires vim 7.3 or greater
 if v:version < '703' || !has('python')
   call add(g:pathogen_disabled, 'gundo')
