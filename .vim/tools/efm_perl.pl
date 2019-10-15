@@ -88,12 +88,10 @@ my ( $includes, $modules ) = get_directives();
 my $cmd = [ perl(), @$includes, @$modules, '-c', $file ];
 
 run3( {
-
     'cmd'    => $cmd,
     'stdout' => \my $err,
     'stderr' => \my @errors,
     'syserr' => \my $syserr,
-
 } );
 
 $DEBUG && warn "@$cmd at efm_perl.pl line 1\n";
@@ -101,7 +99,6 @@ $DEBUG && warn "@$cmd at efm_perl.pl line 1\n";
 my $skip = skip_error_messages();
 
 for my $error ( @errors ) {
-
   # Skip any errors reported that aren't in the file we're checking.
   next unless $error =~ /$file/;
 
@@ -109,14 +106,12 @@ for my $error ( @errors ) {
   next if $error =~ /$skip/;
 
   print "$error\n";
-
 }
 
 ##############################################################################
 
 # Make external call
 sub call {
-
   my ( $cmd ) = @_;
 
   my ( $result, $err, $syserr ) = run3( $cmd );
@@ -132,7 +127,6 @@ sub call {
   die $msg if $msg;
 
   return $result;
-
 } ## end sub call
 
 # Grab perldoc location.
@@ -149,7 +143,6 @@ sub call {
 
 # Check if module is installed
 sub module_installed {
-
   my ( $module ) = @_;
 
   try {
@@ -187,9 +180,7 @@ sub known_tests {
 ##############################################################################
 
 sub tests {
-
   return {
-
     circular       => '-circular::require',
     indirect       => '-indirect',
     lint           => 'B::Lint',
@@ -199,19 +190,15 @@ sub tests {
     regexrecompile => 'warnings::regex::compile',
     uninit         => 'uninit',
     unused         => 'warnings::unused',
-
   };
 }
 
 ##############################################################################
 
 sub lint_tests {
-
   my @lint_tests = qw(
-
     bare-subs context dollar-underscore implicit-read implicit-write
     magic-diamond oo private-names regexp-variables undefined-subs
-
   );
 
   @lint_tests = map { "lint-$_" } @lint_tests;
@@ -219,21 +206,16 @@ sub lint_tests {
   my %lint_test; @lint_test{ @lint_tests } = ( 1 ) x @lint_tests;
 
   return \%lint_test;
-
 }
 
 sub check_lint_tests {
-
   my ( $lint_module, $tests ) = @_;
 
   if ( module_installed( $lint_module ) ) {
-
     # If B::LintStrictOO is not installed, remove lint-oo from available tests.
     if ( exists $tests->{ 'lint-oo' } ) {
-
       delete $tests->{ 'lint-oo' }
         unless module_installed( 'B::LintStrictOO' );
-
     }
 
     my $use_oo = delete $tests->{ 'lint-oo' };
@@ -257,7 +239,6 @@ sub check_lint_tests {
     my $options = join ',', map { s/lint-//; $_ } sort keys %$tests;
 
     return "O=Lint,$options";
-
   } ## end if ( module_installed...)
 } ## end sub check_lint_tests
 
