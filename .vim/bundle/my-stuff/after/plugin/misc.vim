@@ -178,3 +178,9 @@ let s:undos = split(globpath(&undodir, '*'), "\n")
 call filter(s:undos, 'getftime(v:val) < localtime() - (60 * 60 * 24 * 90)')
 call map(s:undos, 'delete(v:val)')
 
+" Turn on cursor line when insert mode and when window is focused
+augroup cursorline_switch
+  autocmd!
+  autocmd InsertEnter,FocusGained * set cursorline
+  autocmd InsertLeave,FocusLost * set nocursorline
+augroup end
