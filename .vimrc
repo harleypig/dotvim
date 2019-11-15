@@ -12,7 +12,7 @@ set nocompatible
 
 " Ignore plugins by using directory name under .vim/bundle
 " let g:pathogen_disabled = [ 'abolish', 'autoclose', ... ]
-let g:pathogen_disabled = [ 'abolish', 'cscope_macros', 'drawit', 'evervim', 'gundo', 'speeddating', 'taskwarrior' ]
+let g:pathogen_disabled = [ 'abolish', 'cscope_macros', 'drawit', 'evervim', 'gundo', 'speeddating', 'taskwarrior', 'ultisnips' ]
 
 " vim-lsp requires vim 8.0 or greater
 if v:version < '800'
