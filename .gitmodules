@@ -295,3 +295,8 @@
 	url = https://github.com/PyCQA/pyflakes
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/snowball_py"]
+	path = .vim/bundle/snowball_py
+	url = https://github.com/diraol/snowball_py
+	branch = master
+	ignore = dirty
