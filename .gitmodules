@@ -280,3 +280,8 @@
 	url = https://github.com/PyCQA/pycodestyle
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/pydocstyle"]
+	path = .vim/bundle/pydocstyle
+	url = https://github.com/PyCQA/pydocstyle
+	branch = master
+	ignore = dirty
