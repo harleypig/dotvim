@@ -290,3 +290,8 @@
 	url = https://github.com/PyCQA/mccabe
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/pyflakes"]
+	path = .vim/bundle/pyflakes
+	url = https://github.com/PyCQA/pyflakes
+	branch = master
+	ignore = dirty
