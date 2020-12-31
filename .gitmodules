@@ -275,3 +275,8 @@
 	url = https://github.com/hhatto/autopep8
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/pycodestyle"]
+	path = .vim/bundle/pycodestyle
+	url = https://github.com/PyCQA/pycodestyle
+	branch = master
+	ignore = dirty
