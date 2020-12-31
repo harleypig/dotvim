@@ -315,3 +315,8 @@
 	url = https://github.com/PyCQA/astroid
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/pylama"]
+	path = .vim/bundle/pylama
+	url = https://github.com/klen/pylama
+	branch = master
+	ignore = dirty
