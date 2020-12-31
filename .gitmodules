@@ -310,3 +310,8 @@
 	url = https://github.com/python-rope/rope
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/astroid"]
+	path = .vim/bundle/astroid
+	url = https://github.com/PyCQA/astroid
+	branch = master
+	ignore = dirty
