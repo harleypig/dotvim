@@ -305,3 +305,8 @@
 	url = https://github.com/PyCQA/pylint
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/rope"]
+	path = .vim/bundle/rope
+	url = https://github.com/python-rope/rope
+	branch = master
+	ignore = dirty
