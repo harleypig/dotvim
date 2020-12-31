@@ -285,3 +285,8 @@
 	url = https://github.com/PyCQA/pydocstyle
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/mccabe"]
+	path = .vim/bundle/mccabe
+	url = https://github.com/PyCQA/mccabe
+	branch = master
+	ignore = dirty
