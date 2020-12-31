@@ -320,3 +320,8 @@
 	url = https://github.com/klen/pylama
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/toml"]
+	path = .vim/bundle/toml
+	url = https://github.com/uiri/toml.git
+	branch = master
+	ignore = dirty
