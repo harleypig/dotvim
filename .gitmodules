@@ -300,3 +300,8 @@
 	url = https://github.com/diraol/snowball_py
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/pylint"]
+	path = .vim/bundle/pylint
+	url = https://github.com/PyCQA/pylint
+	branch = master
+	ignore = dirty
