@@ -298,3 +298,8 @@
 	url = https://github.com/skanehira/docker-compose.vim
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/awk.vim"]
+	path = .vim/bundle/awk.vim
+	url = https://github.com/vim-scripts/awk.vim
+	branch = master
+	ignore = dirty
