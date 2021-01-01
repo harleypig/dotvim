@@ -284,3 +284,6 @@
 	ignore = dirty
 [submodule ".vim/bundle/YouCompleteMe"]
 	ignore = dirty
+	path = .vim/bundle/YouCompleteMe
+	url = https://github.com/ycm-core/YouCompleteMe
+	branch = master
