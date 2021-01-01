@@ -282,3 +282,5 @@
 	ignore = dirty
 [submodule ".vim/bundle/vim-python-virtualenv"]
 	ignore = dirty
+[submodule ".vim/bundle/YouCompleteMe"]
+	ignore = dirty
