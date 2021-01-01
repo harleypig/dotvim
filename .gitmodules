@@ -287,3 +287,8 @@
 	path = .vim/bundle/YouCompleteMe
 	url = https://github.com/ycm-core/YouCompleteMe
 	branch = master
+[submodule ".vim/bundle/nginx.vim"]
+	path = .vim/bundle/nginx.vim
+	url = https://github.com/chr4/nginx.vim
+	branch = master
+	ignore = dirty
