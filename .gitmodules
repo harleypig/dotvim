@@ -275,3 +275,8 @@
 	url = https://github.com/jupyter-vim/jupyter-vim
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/vimspector"]
+	path = .vim/bundle/vimspector
+	url = https://github.com/puremourning/vimspector.git
+	branch = master
+	ignore = dirty
