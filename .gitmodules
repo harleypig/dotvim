@@ -260,3 +260,8 @@
 	url = https://github.com/jmcantrell/vim-virtualenv
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/black"]
+	path = .vim/bundle/black
+	url = https://github.com/ambv/black
+	branch = master
+	ignore = dirty
