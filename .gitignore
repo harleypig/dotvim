@@ -1,2 +1,5 @@
 errors.err
 */doc/tags
+
+# This is for the vim black plugin.
+.vim/black/**
