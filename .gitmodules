@@ -242,16 +242,14 @@
 [submodule ".vim/bundle/toml"]
 	path = .vim/bundle/toml
 	url = https://github.com/uiri/toml.git
-
 [submodule ".vim/bundle/vim-flake8"]
 	path = .vim/bundle/vim-flake8
 	url = https://github.com/nvie/vim-flake8
-	branch = master
-	ignore = dirty
 [submodule ".vim/bundle/simpylfold"]
 	path = .vim/bundle/simpylfold
 	url = https://github.com/tmhedberg/simpylfold
+[submodule ".vim/bundle/vim-python-pep8-indent"]
+	path = .vim/bundle/vim-python-pep8-indent
+	url = https://github.com/hynek/vim-python-pep8-indent
 	branch = master
-	ignore = dirty
-[submodule ".vim/bundle/"]
 	ignore = dirty
