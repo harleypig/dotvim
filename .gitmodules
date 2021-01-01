@@ -243,3 +243,8 @@
 	path = .vim/bundle/toml
 	url = https://github.com/uiri/toml.git
 
+[submodule ".vim/bundle/vim-flake8"]
+	path = .vim/bundle/vim-flake8
+	url = https://github.com/nvie/vim-flake8
+	branch = master
+	ignore = dirty
