@@ -253,8 +253,6 @@
 	url = https://github.com/hynek/vim-python-pep8-indent
 	branch = master
 	ignore = dirty
-[submodule ".vim/bundle/virtualenv-vim"]
-	ignore = dirty
 [submodule ".vim/bundle/vim-virtualenv"]
 	path = .vim/bundle/vim-virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv
@@ -280,8 +278,6 @@
 	url = https://github.com/puremourning/vimspector.git
 	branch = master
 	ignore = dirty
-[submodule ".vim/bundle/vim-python-virtualenv"]
-	ignore = dirty
 [submodule ".vim/bundle/YouCompleteMe"]
 	ignore = dirty
 	path = .vim/bundle/YouCompleteMe
@@ -295,5 +291,10 @@
 [submodule ".vim/bundle/bats.vim"]
 	path = .vim/bundle/bats.vim
 	url = https://github.com/aliou/bats.vim
+	branch = master
+	ignore = dirty
+[submodule ".vim/bundle/docker-compose.vim"]
+	path = .vim/bundle/docker-compose.vim
+	url = https://github.com/skanehira/docker-compose.vim
 	branch = master
 	ignore = dirty
