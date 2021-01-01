@@ -253,3 +253,5 @@
 	url = https://github.com/tmhedberg/simpylfold
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/"]
+	ignore = dirty
