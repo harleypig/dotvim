@@ -265,3 +265,8 @@
 	url = https://github.com/ambv/black
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/yapf"]
+	path = .vim/bundle/yapf
+	url = https://github.com/google/yapf
+	branch = master
+	ignore = dirty
