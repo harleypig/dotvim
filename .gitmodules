@@ -280,3 +280,5 @@
 	url = https://github.com/puremourning/vimspector.git
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/vim-python-virtualenv"]
+	ignore = dirty
