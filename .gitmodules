@@ -270,3 +270,8 @@
 	url = https://github.com/google/yapf
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/jupyter-vim"]
+	path = .vim/bundle/jupyter-vim
+	url = https://github.com/jupyter-vim/jupyter-vim
+	branch = master
+	ignore = dirty
