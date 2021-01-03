@@ -318,3 +318,8 @@
 	url = https://github.com/stephpy/vim-yaml
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/nerdcommenter"]
+	path = .vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter
+	branch = master
+	ignore = dirty
