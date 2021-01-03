@@ -308,3 +308,8 @@
 	url = https://github.com/tkhren/vim-fake.git
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/vim-docker-tools"]
+	path = .vim/bundle/vim-docker-tools
+	url = https://github.com/kevinhui/vim-docker-tools
+	branch = master
+	ignore = dirty
