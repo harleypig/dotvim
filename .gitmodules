@@ -303,3 +303,8 @@
 	url = https://github.com/vim-scripts/awk.vim
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/vim-fake"]
+	path = .vim/bundle/vim-fake
+	url = https://github.com/tkhren/vim-fake.git
+	branch = master
+	ignore = dirty
