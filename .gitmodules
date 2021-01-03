@@ -323,3 +323,8 @@
 	url = https://github.com/scrooloose/nerdcommenter
 	branch = master
 	ignore = dirty
+[submodule ".vim/bundle/vim-autotag"]
+	path = .vim/bundle/vim-autotag
+	url = https://github.com/craigemery/vim-autotag
+	branch = master
+	ignore = dirty
