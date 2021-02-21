@@ -272,11 +272,6 @@
 	url = https://github.com/puremourning/vimspector.git
 	branch = master
 	ignore = dirty
-[submodule ".vim/bundle/YouCompleteMe"]
-	ignore = dirty
-	path = .vim/bundle/YouCompleteMe
-	url = https://github.com/ycm-core/YouCompleteMe
-	branch = master
 [submodule ".vim/bundle/nginx.vim"]
 	path = .vim/bundle/nginx.vim
 	url = https://github.com/chr4/nginx.vim
