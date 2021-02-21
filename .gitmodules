@@ -95,9 +95,6 @@
 [submodule ".vim/bundle/perl-variable-highlighter"]
   path = .vim/bundle/perl-variable-highlighter
   url = https://github.com/mannih/vim-perl-variable-highlighter.git
-[submodule ".vim/bundle/taskwiki"]
-  path = .vim/bundle/taskwiki
-  url = https://github.com/tbabej/taskwiki.git
 [submodule ".vim/bundle/tagbar"]
   path = .vim/bundle/tagbar
   url = https://github.com/majutsushi/tagbar.git
@@ -128,9 +125,6 @@
 [submodule ".vim/bundle/editorconfig"]
   path = .vim/bundle/editorconfig
   url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule ".vim/bundle/bats"]
-  path = .vim/bundle/bats
-  url = https://github.com/vim-scripts/bats.vim.git
 [submodule ".vim/bundle/showmarks"]
   path = .vim/bundle/showmarks
   url = https://github.com/jacquesbh/vim-showmarks.git
