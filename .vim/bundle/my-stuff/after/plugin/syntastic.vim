@@ -16,7 +16,7 @@ hi SyntasticStyleWarningSign ctermfg=yellow ctermbg=lightred
 let g:syntastic_aggregate_errors         = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 1
-let g:syntastic_check_on_open            = 0
+let g:syntastic_check_on_open            = 1
 let g:syntastic_check_on_wq              = 0
 let g:syntastic_echo_current_error       = 0
 let g:syntastic_enable_balloons          = 0
@@ -38,6 +38,15 @@ let g:syntastic_perl_perlcritic_post_args = '--verbose "\%s:\%f:\%l:\%c:\%p \%m\
 
 " ShellCheck
 let g:syntastic_sh_shellcheck_args       = '--external-sources --color=never --exclude=SC1090,SC1091'
+
+" Markdown
+" mdl and proselint
+let g:syntastic_markdown_mdl_exec = "markdownlint"
+let g:syntastic_markdown_mdl_args = ""
+let g:syntastic_markdown_checkers = ['mdl', 'proselint']
+
+" Include vimwiki in Markdown checks
+let g:syntastic_vimwiki_checkers = ['markdown/mdl', 'markdown/proselint']
 
 " Ignore bats files and executables
 let g:syntastic_ignore_files = ['\.bats$','/bats.*']
