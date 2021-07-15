@@ -8,4 +8,4 @@ let g:vimwiki_global_ext      = 0
 let g:vimwiki_listsyms        = ' _+X'
 
 " http://code.google.com/p/vimwiki/wiki/MultipleWikies
-let g:vimwiki_list = [{ 'path': '~/projects/sites/wiki.harleypig.com/pages', 'syntax': 'markdown', 'ext': 'md' }]
+let g:vimwiki_list = [{ 'path': '~/projects/sites/mywiki', 'syntax': 'markdown', 'ext': 'md' }]
