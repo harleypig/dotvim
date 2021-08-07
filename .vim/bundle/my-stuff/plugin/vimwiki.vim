@@ -11,5 +11,6 @@ let g:vimwiki_listsyms        = ' _+X'
 let g:vimwiki_list = [
       \ {'path': '~/projects/sites/mywiki/pages', 'syntax': 'markdown', 'ext': 'md'},
       \ {'path': '~/projects/sites/housewiki/pages', 'syntax': 'markdown', 'ext': 'md'},
-      \ {'path': '~/projects/sites/scripturestudy/pages', 'syntax': 'markdown', 'ext': 'md'}
+      \ {'path': '~/projects/sites/scripturestudy/pages', 'syntax': 'markdown', 'ext': 'md'},
+      \ {'path': '~/projects/sites/carrie/pages', 'syntax': 'markdown', 'ext': 'md'}
       \ ]
