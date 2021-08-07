@@ -371,7 +371,7 @@
 [submodule ".vim/bundle/pylint"]
   path = .vim/bundle/pylint
   url = https://github.com/PyCQA/pylint
-  branch = master
+  branch = main
   ignore = dirty
 [submodule ".vim/bundle/rope"]
   path = .vim/bundle/rope
@@ -416,12 +416,12 @@
 [submodule ".vim/bundle/black"]
   path = .vim/bundle/black
   url = https://github.com/ambv/black
-  branch = master
+  branch = main
   ignore = dirty
 [submodule ".vim/bundle/yapf"]
   path = .vim/bundle/yapf
   url = https://github.com/google/yapf
-  branch = master
+  branch = main
   ignore = dirty
 [submodule ".vim/bundle/jupyter-vim"]
   path = .vim/bundle/jupyter-vim
