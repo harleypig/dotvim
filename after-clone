@@ -1,6 +1,8 @@
 #!/bin/bash
 
+git submodule --init --recursive
 git config pull.rebase true
 git config rebase.autoStash true
 git config fetch.recurseSubmodules true
-git submodule update --init --recursive
+git config fetch.fsckobjects false
+git submodule update --checkout
