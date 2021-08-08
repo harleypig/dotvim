@@ -3,3 +3,4 @@
 git config pull.rebase true
 git config rebase.autoStash true
 git config fetch.recurseSubmodules true
+git submodule update --init --recursive
