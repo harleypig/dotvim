@@ -38,9 +38,9 @@ endif
 
 " https://github.com/tpope/vim-pathogen
 " docs in .vim/bundle/pathogen/README.markdown
-runtime bundle/pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-execute pathogen#helptags()
+"runtime bundle/pathogen/autoload/pathogen.vim
+"execute pathogen#infect()
+"execute pathogen#helptags()
 
 " XXX: How well is this working?
 "runtime macros/justify.vim

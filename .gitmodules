@@ -99,7 +99,7 @@
   branch = master
   ignore = dirty
 [submodule "syntastic"]
-  path = .vim/bundle/syntastic
+	path = .vim/pack/test/syntastic
   url = https://github.com/scrooloose/syntastic.git
   branch = master
   ignore = dirty
@@ -166,11 +166,6 @@
 [submodule "gitv"]
   path = .vim/bundle/gitv
   url = https://github.com/gregsexton/gitv
-  branch = master
-  ignore = dirty
-[submodule "nerdtree"]
-  path = .vim/bundle/nerdtree
-  url = https://github.com/scrooloose/nerdtree.git
   branch = master
   ignore = dirty
 [submodule "nerdtree-git-plugin"]
@@ -488,3 +483,9 @@
   url = https://github.com/editorconfig/editorconfig-vim.git
   branch = master
   ignore = dirty
+[submodule ".vim/pack/test/start/nerdtree"]
+	path = .vim/pack/test/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule ".vim/pack/test/start/ale"]
+	path = .vim/pack/test/start/ale
+	url = https://github.com/dense-analysis/ale.git
