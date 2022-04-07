@@ -169,7 +169,7 @@
   branch = master
   ignore = dirty
 [submodule "nerdtree-git-plugin"]
-  path = .vim/bundle/nerdtree-git-plugin
+	path = .vim/pack/test/start/nerdtree-git-plugin
   url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
   branch = master
   ignore = dirty
