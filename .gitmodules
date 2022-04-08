@@ -479,7 +479,7 @@
   branch = master
   ignore = dirty
 [submodule "editorconfig-vim"]
-  path = .vim/bundle/editorconfig-vim
+	path = .vim/pack/test/start/editorconfig-vim
   url = https://github.com/editorconfig/editorconfig-vim.git
   branch = master
   ignore = dirty
