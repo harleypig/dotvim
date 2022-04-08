@@ -198,11 +198,6 @@
   url = https://github.com/tweekmonster/helpful.vim.git
   branch = master
   ignore = dirty
-[submodule "editorconfig"]
-  path = .vim/bundle/editorconfig
-  url = https://github.com/editorconfig/editorconfig-vim.git
-  branch = master
-  ignore = dirty
 [submodule "showmarks"]
   path = .vim/bundle/showmarks
   url = https://github.com/jacquesbh/vim-showmarks.git
