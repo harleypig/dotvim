@@ -1,5 +1,5 @@
 [submodule "surround"]
-  path = .vim/bundle/surround
+	path = .vim/pack/active/start/vim-surround
   url = https://github.com/tpope/vim-surround.git
   branch = master
   ignore = dirty
@@ -54,17 +54,17 @@
   branch = master
   ignore = dirty
 [submodule "eunuch"]
-  path = .vim/bundle/eunuch
+	path = .vim/pack/active/start/vim-eunuch
   url = https://github.com/tpope/vim-eunuch.git
   branch = master
   ignore = dirty
 [submodule "unimpaired"]
-  path = .vim/bundle/unimpaired
+	path = .vim/pack/active/start/vim-unimpaired
   url = https://github.com/tpope/vim-unimpaired.git
   branch = master
   ignore = dirty
 [submodule "speeddating"]
-  path = .vim/bundle/speeddating
+	path = .vim/pack/test/start/vim-speeddating
   url = https://github.com/tpope/vim-speeddating.git
   branch = master
   ignore = dirty
@@ -109,12 +109,12 @@
   branch = master
   ignore = dirty
 [submodule "vim-repeat"]
-  path = .vim/bundle/vim-repeat
+	path = .vim/pack/active/start/vim-repeat
   url = https://github.com/tpope/vim-repeat.git
   branch = master
   ignore = dirty
 [submodule "vim-commentary"]
-  path = .vim/bundle/vim-commentary
+	path = .vim/2btested/vim-commentary
   url = https://github.com/tpope/vim-commentary.git
   branch = master
   ignore = dirty
@@ -514,3 +514,18 @@
 [submodule "vim-LanguageTool"]
   path = .vim/2btested/vim-LanguageTool
   url = https://github.com/dpelle/vim-LanguageTool.git
+[submodule ".vim/2btested/vim-sleuth"]
+	path = .vim/2btested/vim-sleuth
+	url = https://github.com/tpope/vim-sleuth.git
+[submodule ".vim/pack/active/start/vim-endwise"]
+	path = .vim/pack/active/start/vim-endwise
+	url = https://github.com/tpope/vim-endwise.git
+[submodule ".vim/pack/test/start/vim-jdaddy"]
+	path = .vim/pack/test/start/vim-jdaddy
+	url = https://github.com/tpope/vim-jdaddy.git
+[submodule ".vim/2btested/vim-dadbod"]
+	path = .vim/2btested/vim-dadbod
+	url = https://github.com/tpope/vim-dadbod.git
+[submodule ".vim/2btested/vim-rsi"]
+	path = .vim/2btested/vim-rsi
+	url = https://github.com/tpope/vim-rsi.git
