@@ -6,7 +6,6 @@
 "               https://github.com/honza/snipmate-snippets
 " Google Script https://github.com/dubenstein/vim-google-scribe
 " SVNDiff       http://www.vim.org/scripts/script.php?script_id=1881
-" NERDTree      https://github.com/scrooloose/nerdtree
 " ctrlp         https://github.com/kien/ctrlp.vim
 
 " Grammar Check

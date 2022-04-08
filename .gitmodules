@@ -289,12 +289,12 @@
   branch = master
   ignore = dirty
 [submodule "ctrlp"]
-  path = .vim/bundle/ctrlp
+	path = .vim/2btested/ctrlp
   url = https://github.com/ctrlpvim/ctrlp.vim
   branch = master
   ignore = dirty
 [submodule "ctrlp-funky"]
-  path = .vim/bundle/ctrlp-funky
+	path = .vim/2btested/ctrlp-funky
   url = https://github.com/tacahiroy/ctrlp-funky.git
   branch = master
   ignore = dirty
