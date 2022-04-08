@@ -1,7 +1,0 @@
-#!/bin/bash
-
-git config --global fetch.fsckobjects false
-git config pull.rebase true
-git config rebase.autoStash true
-git config fetch.recurseSubmodules true
-git submodule update --init
