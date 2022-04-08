@@ -459,7 +459,7 @@
   branch = master
   ignore = dirty
 [submodule "nerdcommenter"]
-  path = .vim/bundle/nerdcommenter
+	path = .vim/2btested/nerdcommenter
   url = https://github.com/scrooloose/nerdcommenter
   branch = master
   ignore = dirty
