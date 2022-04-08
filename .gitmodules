@@ -99,7 +99,7 @@
   branch = master
   ignore = dirty
 [submodule "syntastic"]
-	path = .vim/pack/test/syntastic
+  path = .vim/pack/test/syntastic
   url = https://github.com/scrooloose/syntastic.git
   branch = master
   ignore = dirty
@@ -169,7 +169,7 @@
   branch = master
   ignore = dirty
 [submodule "nerdtree-git-plugin"]
-	path = .vim/pack/test/start/nerdtree-git-plugin
+  path = .vim/pack/test/start/nerdtree-git-plugin
   url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
   branch = master
   ignore = dirty
@@ -474,43 +474,43 @@
   branch = master
   ignore = dirty
 [submodule "editorconfig-vim"]
-	path = .vim/pack/test/start/editorconfig-vim
+  path = .vim/pack/test/start/editorconfig-vim
   url = https://github.com/editorconfig/editorconfig-vim.git
   branch = master
   ignore = dirty
 [submodule ".vim/pack/test/start/nerdtree"]
-	path = .vim/pack/test/start/nerdtree
-	url = https://github.com/preservim/nerdtree.git
+  path = .vim/pack/test/start/nerdtree
+  url = https://github.com/preservim/nerdtree.git
 [submodule ".vim/pack/test/start/ale"]
-	path = .vim/pack/test/start/ale
-	url = https://github.com/dense-analysis/ale.git
+  path = .vim/pack/test/start/ale
+  url = https://github.com/dense-analysis/ale.git
 [submodule ".vim/2btested/vim-lsp-settings"]
-	path = .vim/2btested/vim-lsp-settings
-	url = https://github.com/mattn/vim-lsp-settings.git
+  path = .vim/2btested/vim-lsp-settings
+  url = https://github.com/mattn/vim-lsp-settings.git
 [submodule ".vim/2btested/vim-lsp-ale"]
-	path = .vim/2btested/vim-lsp-ale
-	url = https://github.com/rhysd/vim-lsp-ale.git
+  path = .vim/2btested/vim-lsp-ale
+  url = https://github.com/rhysd/vim-lsp-ale.git
 [submodule ".vim/2btested/asyncomplete-lsp"]
-	path = .vim/2btested/asyncomplete-lsp
-	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim.git
+  path = .vim/2btested/asyncomplete-lsp
+  url = https://github.com/prabirshrestha/asyncomplete-lsp.vim.git
 [submodule ".vim/2btested/asyncomplete"]
-	path = .vim/2btested/asyncomplete
-	url = https://github.com/prabirshrestha/asyncomplete.vim.git
+  path = .vim/2btested/asyncomplete
+  url = https://github.com/prabirshrestha/asyncomplete.vim.git
 [submodule ".vim/2btested/vimux"]
-	path = .vim/2btested/vimux
-	url = https://github.com/preservim/vimux.git
+  path = .vim/2btested/vimux
+  url = https://github.com/preservim/vimux.git
 [submodule ".vim/2btested/vim-markdown"]
-	path = .vim/2btested/vim-markdown
-	url = https://github.com/preservim/vim-markdown.git
+  path = .vim/2btested/vim-markdown
+  url = https://github.com/preservim/vim-markdown.git
 [submodule ".vim/2btested/tagbar"]
-	path = .vim/2btested/tagbar
-	url = https://github.com/preservim/tagbar.git
+  path = .vim/2btested/tagbar
+  url = https://github.com/preservim/tagbar.git
 [submodule ".vim/pack/test/start/vim-devicons"]
-	path = .vim/pack/test/start/vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons.git
+  path = .vim/pack/test/start/vim-devicons
+  url = https://github.com/ryanoasis/vim-devicons.git
 [submodule ".vim/2btested/nerdtree-project-plugin"]
-	path = .vim/2btested/nerdtree-project-plugin
-	url = https://github.com/scrooloose/nerdtree-project-plugin.git
+  path = .vim/2btested/nerdtree-project-plugin
+  url = https://github.com/scrooloose/nerdtree-project-plugin.git
 [submodule "vim-LanguageTool"]
-	path = .vim/2btested/vim-LanguageTool
-	url = https://github.com/dpelle/vim-LanguageTool.git
+  path = .vim/2btested/vim-LanguageTool
+  url = https://github.com/dpelle/vim-LanguageTool.git
