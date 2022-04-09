@@ -158,11 +158,6 @@
   url = https://github.com/mannih/vim-perl-variable-highlighter.git
   branch = master
   ignore = dirty
-[submodule "tagbar"]
-  path = .vim/bundle/tagbar
-  url = https://github.com/majutsushi/tagbar.git
-  branch = master
-  ignore = dirty
 [submodule "gitv"]
   path = .vim/bundle/gitv
   url = https://github.com/gregsexton/gitv

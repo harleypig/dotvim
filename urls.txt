@@ -2,4 +2,16 @@ https://www.reddit.com/r/vim/comments/b33lc1/a_guide_to_lsp_auto_completion_in_v
 
 https://www.reddit.com/r/vim/comments/7lnhrt/which_lsp_plugin_should_i_use/
 
+https://github.com/ryanoasis/nerd-fonts
 
+https://ncona.com/2018/12/spell-and-grammar-checking-on-vim/
+
+https://ncona.com/2021/12/setting-up-lsp-in-vim
+
+https://langserver.org/
+
+https://clangd.llvm.org/
+
+https://microsoft.github.io/language-server-protocol/overviews/lsp/overview/
+
+http://aliquote.org/post/vim-clangd/
