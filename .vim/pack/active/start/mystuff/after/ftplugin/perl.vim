@@ -17,6 +17,9 @@
 
 let perl_string_as_statement=1
 
+" http://use.perl.org/~Ovid/journal/36297
+autocmd FileType {vim,help} setlocal keywordprg=:help
+
 " Sets make and errorformat for perl (see $VIMRUNTIME/compiler/perl)
 " XXX: Is this redundant?
 "compiler perl

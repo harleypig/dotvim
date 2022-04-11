@@ -54,9 +54,6 @@ nmap <leader>b :ls<CR>:buffer<Space>
 " make Y consistent with D, C, A, etc.
 map Y y$
 
-" http://use.perl.org/~Ovid/journal/36297
-autocmd FileType {vim,help} setlocal keywordprg=:help
-
 " http://vim.wikia.com/wiki/Modeline_magic
 " Append modeline after last line in buffer.
 
