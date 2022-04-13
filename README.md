@@ -23,6 +23,18 @@ My configuration for various of the plugins that need it.
 XXX: Add notes/reminders about the directory structure and what should go
      where.
 
+### statusline
+
+My status line setup.
+
+XXX: Add notes about what is being done here (or maybe do that in the plugin?)
+
+### Syntax
+
+* vim-yaml
+
+### General
+
 * syntastic
 * tabular
 * vim-endwise
@@ -32,12 +44,6 @@ XXX: Add notes/reminders about the directory structure and what should go
 * vim-surround
 * vim-unimpaired
 * vimwiki
-
-### statusline
-
-My status line setup.
-
-XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 ## Being Tested
 
@@ -151,8 +157,11 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * vimspector
 * vim-superman
 * vim-virtualenv
-* vim-yaml
 * yapf
+
+### Rejected Modules
+
+* [vim-rsi](https://github.com/tpope/vim-rsi.git)
 
 ## Resources and Miscellaneous
 

@@ -449,7 +449,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-yaml"]
-  path = .vim/bundle/vim-yaml
+	path = .vim/pack/syntax/start/vim-yaml
   url = https://github.com/stephpy/vim-yaml
   branch = master
   ignore = dirty
@@ -521,6 +521,3 @@
 [submodule ".vim/2btested/vim-dadbod"]
   path = .vim/2btested/vim-dadbod
   url = https://github.com/tpope/vim-dadbod.git
-[submodule "vim-rsi"]
-  path = .vim/2btested/vim-rsi
-  url = https://github.com/tpope/vim-rsi.git
