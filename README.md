@@ -32,6 +32,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 ### Syntax
 
 * vim-yaml
+* markify
 
 ### General
 
@@ -71,19 +72,28 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * vim-lsp-ale
 * vim-lsp-settings
 * vim-nerdtree-syntax-highlight
-* vim-rsi
 * vim-sleuth
 * vimux
 
+## DrChip's Stuff
+
+* [ansiesc](https://www.drchip.org/astronaut/vim/index.html#ANSIESC)
+* [align](https://www.drchip.org/astronaut/vim/index.html#ALIGN)
+* [autoalign](https://www.drchip.org/astronaut/vim/index.html#AUTOALIGN)
+
+### Evaluate
+
+* [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
+
+## Syntax
+
+
 ## To Be Moved
 
-* align
 * ansible
-* ansiesc
 * apiblueprint
 * astroid
 * async
-* autoalign
 * autoclose
 * autopep8
 * awk.vim
@@ -112,7 +122,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * ledger
 * linediff
 * man
-* markify
 * matchit
 * matchtag
 * mccabe
@@ -159,7 +168,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * vim-virtualenv
 * yapf
 
-### Rejected Modules
+## Rejected Modules
 
 * [vim-rsi](https://github.com/tpope/vim-rsi.git)
 

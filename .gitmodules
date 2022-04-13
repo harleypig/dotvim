@@ -4,12 +4,12 @@
   branch = master
   ignore = dirty
 [submodule "align"]
-  path = .vim/bundle/align
+  path = .vim/pack/drchip/start/align
   url = https://github.com/vim-scripts/Align.git
   branch = master
   ignore = dirty
 [submodule "autoalign"]
-  path = .vim/bundle/autoalign
+  path = .vim/pack/drchip/start/autoalign
   url = https://github.com/vim-scripts/AutoAlign.git
   branch = master
   ignore = dirty
@@ -21,11 +21,6 @@
 [submodule "github"]
   path = .vim/bundle/github
   url = https://github.com/thinca/vim-github.git
-  branch = master
-  ignore = dirty
-[submodule "irssilog"]
-  path = .vim/bundle/irssilog
-  url = https://github.com/vim-scripts/irssilog.vim.git
   branch = master
   ignore = dirty
 [submodule "gitolite"]
@@ -129,7 +124,7 @@
   branch = master
   ignore = dirty
 [submodule "ansiesc"]
-  path = .vim/bundle/ansiesc
+  path = .vim/pack/drchip/start/ansiesc
   url = https://github.com/vim-scripts/AnsiEsc.vim.git
   branch = master
   ignore = dirty
@@ -449,7 +444,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-yaml"]
-	path = .vim/pack/syntax/start/vim-yaml
+  path = .vim/pack/syntax/start/vim-yaml
   url = https://github.com/stephpy/vim-yaml
   branch = master
   ignore = dirty
@@ -476,48 +471,68 @@
 [submodule ".vim/pack/test/start/nerdtree"]
   path = .vim/pack/test/start/nerdtree
   url = https://github.com/preservim/nerdtree.git
+  ignore = dirty
 [submodule ".vim/pack/test/start/ale"]
   path = .vim/pack/test/start/ale
   url = https://github.com/dense-analysis/ale.git
+  ignore = dirty
 [submodule ".vim/2btested/vim-lsp-settings"]
   path = .vim/2btested/vim-lsp-settings
   url = https://github.com/mattn/vim-lsp-settings.git
+  ignore = dirty
 [submodule ".vim/2btested/vim-lsp-ale"]
   path = .vim/2btested/vim-lsp-ale
   url = https://github.com/rhysd/vim-lsp-ale.git
+  ignore = dirty
 [submodule ".vim/2btested/asyncomplete-lsp"]
   path = .vim/2btested/asyncomplete-lsp
   url = https://github.com/prabirshrestha/asyncomplete-lsp.vim.git
+  ignore = dirty
 [submodule ".vim/2btested/asyncomplete"]
   path = .vim/2btested/asyncomplete
   url = https://github.com/prabirshrestha/asyncomplete.vim.git
+  ignore = dirty
 [submodule ".vim/2btested/vimux"]
   path = .vim/2btested/vimux
   url = https://github.com/preservim/vimux.git
+  ignore = dirty
 [submodule ".vim/2btested/vim-markdown"]
   path = .vim/pack/test/start/vim-markdown
   url = https://github.com/preservim/vim-markdown.git
+  ignore = dirty
 [submodule ".vim/2btested/tagbar"]
   path = .vim/2btested/tagbar
   url = https://github.com/preservim/tagbar.git
+  ignore = dirty
 [submodule ".vim/pack/test/start/vim-devicons"]
   path = .vim/pack/test/start/vim-devicons
   url = https://github.com/ryanoasis/vim-devicons.git
+  ignore = dirty
 [submodule ".vim/2btested/nerdtree-project-plugin"]
   path = .vim/2btested/nerdtree-project-plugin
   url = https://github.com/scrooloose/nerdtree-project-plugin.git
+  ignore = dirty
 [submodule "vim-LanguageTool"]
   path = .vim/2btested/vim-LanguageTool
   url = https://github.com/dpelle/vim-LanguageTool.git
+  ignore = dirty
 [submodule ".vim/2btested/vim-sleuth"]
   path = .vim/2btested/vim-sleuth
   url = https://github.com/tpope/vim-sleuth.git
+  ignore = dirty
 [submodule ".vim/pack/active/start/vim-endwise"]
   path = .vim/pack/active/start/vim-endwise
   url = https://github.com/tpope/vim-endwise.git
+  ignore = dirty
 [submodule ".vim/pack/test/start/vim-jdaddy"]
   path = .vim/pack/test/start/vim-jdaddy
   url = https://github.com/tpope/vim-jdaddy.git
+  ignore = dirty
 [submodule ".vim/2btested/vim-dadbod"]
   path = .vim/2btested/vim-dadbod
   url = https://github.com/tpope/vim-dadbod.git
+  ignore = dirty
+[submodule "vim-irssi-syntax"]
+  path = .vim/pack/linter/start/vim-irssi-syntax
+  url = https://github.com/isundil/vim-irssi-syntax.git
+  ignore = dirty
