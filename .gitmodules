@@ -521,6 +521,6 @@
 [submodule ".vim/2btested/vim-dadbod"]
   path = .vim/2btested/vim-dadbod
   url = https://github.com/tpope/vim-dadbod.git
-[submodule ".vim/2btested/vim-rsi"]
+[submodule "vim-rsi"]
   path = .vim/2btested/vim-rsi
   url = https://github.com/tpope/vim-rsi.git
