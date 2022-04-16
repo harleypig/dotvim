@@ -23,17 +23,18 @@ declare readme_tmpl
 readme_tmpl="$(< README.md.template)"
 
 # For envsubstitute, don't warn or replace non-existent variables.
-declare -x NO_WARN=1
+# Defaults to true
+declare NO_WARN="${NO_WARN:-1}"
+
+# Various environment variables that change output
+# Defaults to true
+declare SHOW_CATEGORIES="${SHOW_CATEGORIES:-1}"
+
+# XXX: DELETE ME
+SHOW_CATEGORIES=0
 
 #=============================================================================
 # Functions
-
-##-----------------------------------------------------------------------------
-#split_key() {
-#  local key="${1:-must pass key to split_key}"
-#
-#  printf '%s %s' "$mod" "$name"
-#}
 
 #-----------------------------------------------------------------------------
 get_bucket() {
@@ -67,8 +68,12 @@ get_name() {
   printf '%s' "$name"
 }
 
-#=============================================================================
 #-----------------------------------------------------------------------------
+get_existing_dirs() {
+  find .vim/pack/*/* .vim/{2btested,bundle} -maxdepth 1 -type d
+}
+
+#=============================================================================
 readarray -t lines < <(git config -f .gitmodules --get-regexp '.*')
 
 #-----------------------------------------------------------------------------
@@ -107,10 +112,12 @@ done
 #-----------------------------------------------------------------------------
 for mod in "${!vars[@]}"; do
   eval "$mod='$(echo "${vars[$mod]}" | sort -u)'"
-  categories+="$NL* $mod"
+  ((SHOW_CATEGORIES)) && categories+="$NL* $mod"
 done
 
-categories="$(echo "$categories" | sort -u)"
+((SHOW_CATEGORIES)) && categories="$(echo "$categories" | sort -u)"
+
+[[ -z $unexpected ]] && unexpected="$NL"
 
 #-----------------------------------------------------------------------------
 _envsubst "$readme_tmpl"

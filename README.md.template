@@ -42,16 +42,16 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * tobemoved
 * tobetested
 
-### General
+### General (Active)
 %active%
 
 ### Applications
 %app%
 
-## DrChip's Stuff
+### DrChip's Stuff
 %drchip%
 
-### Evaluate
+#### Evaluate
 
 * [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
 
@@ -76,8 +76,8 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [evervim](https://github.com/kakkyz81/evervim.git)
 * [gitolite](https://github.com/tmatilai/gitolite.vim.git)
 * [gitv](https://github.com/gregsexton/gitv)
-* [vim-github](https://github.com/thinca/vim-github.git) (rename)
-* [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides.git) (rename)
+* [vim-github](https://github.com/thinca/vim-github.git)
+* [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides.git)
 * [vim-rsi](https://github.com/tpope/vim-rsi.git)
 
 ## Resources and Miscellaneous
