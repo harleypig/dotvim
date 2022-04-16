@@ -181,3 +181,8 @@ augroup cursorline_switch
   autocmd InsertEnter,FocusGained * set cursorline
   autocmd InsertLeave,FocusLost * set nocursorline
 augroup end
+
+" https://github.com/chrisbra/vim-diff-enhanced/blob/master/README.md#update
+if has("patch-8.1.0360")
+  set diffopt+=internal,algorithm:patience
+endif

@@ -57,7 +57,12 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 ## Rejected Modules
 
+* [docker-compose](https://github.com/skanehira/docker-compose.vim)
 * [evervim](https://github.com/kakkyz81/evervim.git)
+* [gitolite](https://github.com/tmatilai/gitolite.vim.git)
+* [gitv](https://github.com/gregsexton/gitv)
+* [vim-github](https://github.com/thinca/vim-github.git) (rename)
+* [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides.git) (rename)
 * [vim-rsi](https://github.com/tpope/vim-rsi.git)
 
 ## Resources and Miscellaneous
