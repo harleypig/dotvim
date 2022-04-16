@@ -38,11 +38,6 @@
   url = https://github.com/tpope/vim-fugitive.git
   branch = master
   ignore = dirty
-[submodule "evervim"]
-  path = .vim/bundle/evervim
-  url = https://github.com/kakkyz81/evervim.git
-  branch = master
-  ignore = dirty
 [submodule "spacehi"]
   path = .vim/bundle/spacehi
   url = https://github.com/jpalardy/spacehi.vim.git

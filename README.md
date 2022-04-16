@@ -105,7 +105,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [delimitMate](https://github.com/Raimondi/delimitMate.git)
 * [docker-compose](https://github.com/skanehira/docker-compose.vim)
 * [DrawIt](https://github.com/vim-scripts/DrawIt.git) (rename)
-* [evervim](https://github.com/kakkyz81/evervim.git)
 * [gitolite](https://github.com/tmatilai/gitolite.vim.git)
 * [gitv](https://github.com/gregsexton/gitv)
 * [helpful](https://github.com/tweekmonster/helpful.vim.git)
@@ -168,6 +167,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 ## Rejected Modules
 
+* [evervim](https://github.com/kakkyz81/evervim.git)
 * [vim-rsi](https://github.com/tpope/vim-rsi.git)
 
 ## Resources and Miscellaneous
