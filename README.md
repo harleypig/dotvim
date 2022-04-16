@@ -31,8 +31,8 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 ### Syntax
 
-* vim-yaml
 * markify
+* vim-yaml
 
 ### General
 
@@ -59,8 +59,8 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 ## DrChip's Stuff
 
-* [ansiesc](https://www.drchip.org/astronaut/vim/index.html#ANSIESC)
 * [align](https://www.drchip.org/astronaut/vim/index.html#ALIGN)
+* [ansiesc](https://www.drchip.org/astronaut/vim/index.html#ANSIESC)
 * [autoalign](https://www.drchip.org/astronaut/vim/index.html#AUTOALIGN)
 
 ### Evaluate
