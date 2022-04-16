@@ -1,0 +1,72 @@
+# .vim Files
+
+This repo holds my vim dotfiles and plugins.
+
+To install, link **$HOME/.vim** and **$HOME/.vimrc** to this repository's
+files of the same name.
+
+I am currently migrating plugins from the pathogen **bundle** directory to
+vim's builtin **pack** method.
+%unexpected%
+
+## In Active Use
+
+Plugins that have earned permanent status. These are stored in
+**.vim/pack/active**.
+
+Any settings for plugins (with some very rare exceptions) will be in the
+**mystuff** plugin directory, wherever it's supposed to fit.
+
+### mystuff
+
+My configuration for various of the plugins that need it.
+
+XXX: Add notes/reminders about the directory structure and what should go
+     where.
+
+### statusline
+
+My status line setup.
+
+XXX: Add notes about what is being done here (or maybe do that in the plugin?)
+
+### Syntax
+%syntax%
+
+### Linter
+%linter%
+
+### General
+%active%
+
+## DrChip's Stuff
+%drchip%
+
+### Evaluate
+
+* [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
+
+## Being Tested
+%test%
+
+## To Be Tested
+%tobetested%
+
+## To Be Moved
+%tobemoved%
+
+## Rejected Modules
+
+* [vim-rsi](https://github.com/tpope/vim-rsi.git)
+
+## Resources and Miscellaneous
+
+* [vim-clangd](http://aliquote.org/post/vim-clangd/)
+* [clangd.llvm.org](https://clangd.llvm.org/)
+* [nerd fonts](https://github.com/ryanoasis/nerd-fonts)
+* [langserver.org](https://langserver.org/)
+* [overview](https://microsoft.github.io/language-server-protocol/overviews/lsp/overview/)
+* [spell-and-grammar-checking-on-vim](https://ncona.com/2018/12/spell-and-grammar-checking-on-vim/)
+* [setting up lsp in vim](https://ncona.com/2021/12/setting-up-lsp-in-vim)
+* [which_lsp_plugin_should_i_use](https://www.reddit.com/r/vim/comments/7lnhrt/which_lsp_plugin_should_i_use/)
+* [a_guide_to_lsp_auto_completion_in_vim](https://www.reddit.com/r/vim/comments/b33lc1/a_guide_to_lsp_auto_completion_in_vim/)

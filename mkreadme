@@ -1,0 +1,113 @@
+#!/bin/bash
+
+# shellcheck disable=SC2034
+
+# get .gitmodule entries
+# parse for path and url
+# get module name from last part of url
+# create markdown text link: [text](url)
+# put in proper bucket
+# dump buckets in md format
+
+#=============================================================================
+# Setup
+
+source envsubstitute
+
+declare -A submodule vars
+declare -x BUCKET URL URL_TEXT RENAME
+
+declare NL=$'\n'
+declare entry_tmpl='%BUCKET%|* [%URL_TEXT%](%URL%)%RENAME%'
+declare readme_tmpl
+readme_tmpl="$(< README.md.template)"
+
+# For envsubstitute, don't warn or replace non-existent variables.
+declare -x NO_WARN=1
+
+#=============================================================================
+# Functions
+
+##-----------------------------------------------------------------------------
+#split_key() {
+#  local key="${1:-must pass key to split_key}"
+#
+#  printf '%s %s' "$mod" "$name"
+#}
+
+#-----------------------------------------------------------------------------
+get_bucket() {
+  local bucket="${1:-must pass value to get_bucket}"
+
+  if [[ $bucket =~ ^.vim/2btested/ ]]; then
+    bucket='tobetested'
+
+  elif [[ $bucket =~ ^.vim/bundle/ ]]; then
+    bucket='tobemoved'
+
+  elif [[ $bucket =~ ^.vim/pack ]]; then
+    # path = .vim/pack/active/start/vim-surround
+    bucket="${bucket#.vim/pack/}"
+    bucket="${bucket%%/*}"
+
+  else
+    bucket='unexpected'
+  fi
+
+  printf '%s' "$bucket"
+}
+
+#-----------------------------------------------------------------------------
+get_name() {
+  local name="${1:-must pass something to get a name from}"
+  [[ $name == */ ]] && name="${name::-1}"
+  name="${name##*/}"
+  name="${name%\.git}"
+  name="${name%\.vim}"
+  printf '%s' "$name"
+}
+
+#=============================================================================
+#-----------------------------------------------------------------------------
+readarray -t lines < <(git config -f .gitmodules --get-regexp '.*')
+
+#-----------------------------------------------------------------------------
+for line in "${lines[@]}"; do
+  read -r key value <<< "$line"
+
+  key="${key#submodule.}"
+  mod="${key%.*}"
+  keyname="${key##*.}"
+
+  case "$keyname" in
+    path) BUCKET="$(get_bucket "$value")" ;;
+    url)
+      URL_TEXT="$(get_name "$value")"
+      URL="$value"
+      ;;
+  esac
+
+  RENAME=
+  [[ $mod != "$URL_TEXT" ]] && RENAME=' (rename)'
+
+  tmpl="$entry_tmpl"
+  [[ -v ${submodule[$mod]} ]] && tmpl="${submodule[$mod]}"
+
+  tmpl="$(_envsubst "$tmpl")"
+  submodule[$mod]="$tmpl"
+done
+
+#-----------------------------------------------------------------------------
+for mod in "${!submodule[@]}"; do
+  #printf '%s: %s\n' "$mod"  "${submodule[$mod]}"
+  IFS='|' read -r var text <<< "${submodule[$mod]}"
+  vars["$var"]+="$NL$text"
+done
+
+#-----------------------------------------------------------------------------
+for mod in "${!vars[@]}"; do
+  eval "$mod='$(echo "${vars[$mod]}" | sort -u)'"
+done
+
+#-----------------------------------------------------------------------------
+_envsubst "$readme_tmpl"
