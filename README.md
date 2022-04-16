@@ -36,12 +36,13 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-yaml](https://github.com/stephpy/vim-yaml)
 
 ### Linter
-%linter%
+
+* [syntastic](https://github.com/scrooloose/syntastic.git)
 
 ### General
 
 * [tabular](https://github.com/godlygeek/tabular.git)
-* [vim-endwise](https://github.com/tpope/vim-endwise.git) (rename)
+* [vim-endwise](https://github.com/tpope/vim-endwise.git)
 * [vim-eunuch](https://github.com/tpope/vim-eunuch.git) (rename)
 * [vim-fugitive](https://github.com/tpope/vim-fugitive.git) (rename)
 * [vim-repeat](https://github.com/tpope/vim-repeat.git)
@@ -61,32 +62,31 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 ## Being Tested
 
-* [ale](https://github.com/dense-analysis/ale.git) (rename)
+* [ale](https://github.com/dense-analysis/ale.git)
 * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim.git)
 * [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin.git)
-* [nerdtree](https://github.com/preservim/nerdtree.git) (rename)
-* [syntastic](https://github.com/scrooloose/syntastic.git)
-* [vim-devicons](https://github.com/ryanoasis/vim-devicons.git) (rename)
-* [vim-jdaddy](https://github.com/tpope/vim-jdaddy.git) (rename)
-* [vim-markdown](https://github.com/preservim/vim-markdown.git) (rename)
+* [nerdtree](https://github.com/preservim/nerdtree.git)
+* [vim-devicons](https://github.com/ryanoasis/vim-devicons.git)
+* [vim-jdaddy](https://github.com/tpope/vim-jdaddy.git)
+* [vim-markdown](https://github.com/preservim/vim-markdown.git)
 * [vim-speeddating](https://github.com/tpope/vim-speeddating.git) (rename)
 
 ## To Be Tested
 
-* [asyncomplete](https://github.com/prabirshrestha/asyncomplete.vim.git) (rename)
-* [asyncomplete-lsp](https://github.com/prabirshrestha/asyncomplete-lsp.vim.git) (rename)
+* [asyncomplete](https://github.com/prabirshrestha/asyncomplete.vim.git)
+* [asyncomplete-lsp](https://github.com/prabirshrestha/asyncomplete-lsp.vim.git)
 * [ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky.git)
 * [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
 * [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
-* [nerdtree-project-plugin](https://github.com/scrooloose/nerdtree-project-plugin.git) (rename)
-* [tagbar](https://github.com/preservim/tagbar.git) (rename)
+* [nerdtree-project-plugin](https://github.com/scrooloose/nerdtree-project-plugin.git)
+* [tagbar](https://github.com/preservim/tagbar.git)
 * [vim-commentary](https://github.com/tpope/vim-commentary.git)
-* [vim-dadbod](https://github.com/tpope/vim-dadbod.git) (rename)
+* [vim-dadbod](https://github.com/tpope/vim-dadbod.git)
 * [vim-LanguageTool](https://github.com/dpelle/vim-LanguageTool.git)
-* [vim-lsp-ale](https://github.com/rhysd/vim-lsp-ale.git) (rename)
-* [vim-lsp-settings](https://github.com/mattn/vim-lsp-settings.git) (rename)
-* [vim-sleuth](https://github.com/tpope/vim-sleuth.git) (rename)
-* [vimux](https://github.com/preservim/vimux.git) (rename)
+* [vim-lsp-ale](https://github.com/rhysd/vim-lsp-ale.git)
+* [vim-lsp-settings](https://github.com/mattn/vim-lsp-settings.git)
+* [vim-sleuth](https://github.com/tpope/vim-sleuth.git)
+* [vimux](https://github.com/preservim/vimux.git)
 
 ## To Be Moved
 
