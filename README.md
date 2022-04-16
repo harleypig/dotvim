@@ -32,11 +32,11 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 ### Syntax
 
+* [vim-irssi-syntax](https://github.com/isundil/vim-irssi-syntax.git)
 * [vim-yaml](https://github.com/stephpy/vim-yaml)
 
 ### Linter
-
-* [vim-irssi-syntax](https://github.com/isundil/vim-irssi-syntax.git)
+%linter%
 
 ### General
 

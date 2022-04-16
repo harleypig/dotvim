@@ -533,6 +533,6 @@
   url = https://github.com/tpope/vim-dadbod.git
   ignore = dirty
 [submodule "vim-irssi-syntax"]
-  path = .vim/pack/linter/start/vim-irssi-syntax
+	path = .vim/pack/syntax/start/vim-irssi-syntax
   url = https://github.com/isundil/vim-irssi-syntax.git
   ignore = dirty
