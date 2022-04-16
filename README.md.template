@@ -9,7 +9,7 @@ I am currently migrating plugins from the pathogen **bundle** directory to
 vim's builtin **pack** method.
 %unexpected%
 
-## In Active Use
+## Plugins
 
 Plugins that have earned permanent status. These are stored in
 **.vim/pack/active**.
@@ -30,14 +30,23 @@ My status line setup.
 
 XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
-### Syntax
-%syntax%
+### Categories
+%categories%
 
-### Linter
-%linter%
+* active
+* app
+* drchip
+* linter
+* syntax
+* test
+* tobemoved
+* tobetested
 
 ### General
 %active%
+
+### Applications
+%app%
 
 ## DrChip's Stuff
 %drchip%
@@ -46,14 +55,20 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 * [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
 
+### Linter
+%linter%
+
+### Syntax
+%syntax%
+
 ## Being Tested
 %test%
 
-## To Be Tested
-%tobetested%
-
 ## To Be Moved
 %tobemoved%
+
+## To Be Tested
+%tobetested%
 
 ## Rejected Modules
 

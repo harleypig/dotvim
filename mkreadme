@@ -15,10 +15,10 @@
 source envsubstitute
 
 declare -A submodule vars
-declare -x BUCKET URL URL_TEXT RENAME
+declare bucket url url_text RENAME categories
 
 declare NL=$'\n'
-declare entry_tmpl='%BUCKET%|* [%URL_TEXT%](%URL%)%RENAME%'
+declare entry_tmpl='%bucket%|* [%url_text%](%url%)%RENAME%'
 declare readme_tmpl
 readme_tmpl="$(< README.md.template)"
 
@@ -80,15 +80,15 @@ for line in "${lines[@]}"; do
   keyname="${key##*.}"
 
   case "$keyname" in
-    path) BUCKET="$(get_bucket "$value")" ;;
+    path) bucket="$(get_bucket "$value")" ;;
     url)
-      URL_TEXT="$(get_name "$value")"
-      URL="$value"
+      url_text="$(get_name "$value")"
+      url="$value"
       ;;
   esac
 
   RENAME=
-  [[ $mod != "$URL_TEXT" ]] && RENAME=' (rename)'
+  [[ $mod != "$url_text" ]] && RENAME=' (rename)'
 
   tmpl="$entry_tmpl"
   [[ -v ${submodule[$mod]} ]] && tmpl="${submodule[$mod]}"
@@ -107,7 +107,10 @@ done
 #-----------------------------------------------------------------------------
 for mod in "${!vars[@]}"; do
   eval "$mod='$(echo "${vars[$mod]}" | sort -u)'"
+  categories+="$NL* $mod"
 done
+
+categories="$(echo "$categories" | sort -u)"
 
 #-----------------------------------------------------------------------------
 _envsubst "$readme_tmpl"

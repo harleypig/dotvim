@@ -9,7 +9,7 @@ I am currently migrating plugins from the pathogen **bundle** directory to
 vim's builtin **pack** method.
 %unexpected%
 
-## In Active Use
+## Plugins
 
 Plugins that have earned permanent status. These are stored in
 **.vim/pack/active**.
@@ -30,6 +30,64 @@ My status line setup.
 
 XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
+### Categories
+
+* active
+* app
+* drchip
+* linter
+* syntax
+* test
+* tobemoved
+* tobetested
+
+* active
+* app
+* drchip
+* linter
+* syntax
+* test
+* tobemoved
+* tobetested
+
+### General
+
+* [helpful](https://github.com/tweekmonster/helpful.vim.git)
+* [linediff](https://github.com/AndrewRadev/linediff.vim.git)
+* [tabular](https://github.com/godlygeek/tabular.git)
+* [vim-endwise](https://github.com/tpope/vim-endwise.git)
+* [vim-eunuch](https://github.com/tpope/vim-eunuch.git) (rename)
+* [vim-repeat](https://github.com/tpope/vim-repeat.git)
+* [vim-surround](https://github.com/tpope/vim-surround.git) (rename)
+* [vim-unimpaired](https://github.com/tpope/vim-unimpaired.git) (rename)
+
+### Applications
+
+* [jupyter-vim](https://github.com/jupyter-vim/jupyter-vim)
+* [vim-fake](https://github.com/tkhren/vim-fake.git)
+* [vim-fugitive](https://github.com/tpope/vim-fugitive.git) (rename)
+* [vim-healthcheck](https://github.com/rhysd/vim-healthcheck.git)
+* [vim-man](https://github.com/vim-utils/vim-man.git)
+* [vimwiki](https://github.com/vimwiki/vimwiki.git)
+
+## DrChip's Stuff
+
+* [Align](https://github.com/vim-scripts/Align.git) (rename)
+* [AnsiEsc](https://github.com/vim-scripts/AnsiEsc.vim.git) (rename)
+* [AutoAlign](https://github.com/vim-scripts/AutoAlign.git) (rename)
+
+### Evaluate
+
+* [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
+
+### Linter
+
+* [mccabe](https://github.com/PyCQA/mccabe)
+* [syntastic](https://github.com/scrooloose/syntastic.git)
+* [vim-flake8](https://github.com/nvie/vim-flake8)
+* [vim-lint](https://github.com/dbakker/vim-lint.git)
+* [vim-sleuth](https://github.com/tpope/vim-sleuth.git)
+
 ### Syntax
 
 * [apiblueprint](https://github.com/kylef/apiblueprint.vim.git)
@@ -43,35 +101,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-irssi-syntax](https://github.com/isundil/vim-irssi-syntax.git)
 * [vim-yaml](https://github.com/stephpy/vim-yaml)
 
-### Linter
-
-* [mccabe](https://github.com/PyCQA/mccabe)
-* [syntastic](https://github.com/scrooloose/syntastic.git)
-* [vim-flake8](https://github.com/nvie/vim-flake8)
-* [vim-lint](https://github.com/dbakker/vim-lint.git)
-* [vim-sleuth](https://github.com/tpope/vim-sleuth.git)
-
-### General
-
-* [helpful](https://github.com/tweekmonster/helpful.vim.git)
-* [linediff](https://github.com/AndrewRadev/linediff.vim.git)
-* [tabular](https://github.com/godlygeek/tabular.git)
-* [vim-endwise](https://github.com/tpope/vim-endwise.git)
-* [vim-eunuch](https://github.com/tpope/vim-eunuch.git) (rename)
-* [vim-repeat](https://github.com/tpope/vim-repeat.git)
-* [vim-surround](https://github.com/tpope/vim-surround.git) (rename)
-* [vim-unimpaired](https://github.com/tpope/vim-unimpaired.git) (rename)
-
-## DrChip's Stuff
-
-* [Align](https://github.com/vim-scripts/Align.git) (rename)
-* [AnsiEsc](https://github.com/vim-scripts/AnsiEsc.vim.git) (rename)
-* [AutoAlign](https://github.com/vim-scripts/AutoAlign.git) (rename)
-
-### Evaluate
-
-* [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
-
 ## Being Tested
 
 * [ale](https://github.com/dense-analysis/ale.git)
@@ -83,37 +112,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-jdaddy](https://github.com/tpope/vim-jdaddy.git)
 * [vim-markdown](https://github.com/preservim/vim-markdown.git)
 * [vim-speeddating](https://github.com/tpope/vim-speeddating.git) (rename)
-
-## To Be Tested
-
-* [asyncomplete](https://github.com/prabirshrestha/asyncomplete.vim.git)
-* [asyncomplete-lsp](https://github.com/prabirshrestha/asyncomplete-lsp.vim.git)
-* [ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky.git)
-* [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
-* [delimitMate](https://github.com/Raimondi/delimitMate.git)
-* [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
-* [nerdtree-project-plugin](https://github.com/scrooloose/nerdtree-project-plugin.git)
-* [onestatus](https://github.com/narajaon/onestatus.git)
-* [rope](https://github.com/python-rope/rope)
-* [tagbar](https://github.com/preservim/tagbar.git)
-* [taglist](https://github.com/vim-scripts/taglist.vim.git)
-* [traces](https://github.com/markonm/traces.vim.git)
-* [vim-asterisk](https://github.com/haya14busa/vim-asterisk.git)
-* [vim-commentary](https://github.com/tpope/vim-commentary.git)
-* [vim-dadbod](https://github.com/tpope/vim-dadbod.git)
-* [vim-diff-enhanced](https://github.com/chrisbra/vim-diff-enhanced.git)
-* [vim-dispatch](https://github.com/tpope/vim-dispatch.git)
-* [vim-docker-tools](https://github.com/kevinhui/vim-docker-tools)
-* [vim-ExtractMatches](https://github.com/inkarkat/vim-ExtractMatches.git)
-* [vim-jsbeautify](https://github.com/maksimr/vim-jsbeautify.git)
-* [vim-LanguageTool](https://github.com/dpelle/vim-LanguageTool.git)
-* [vim-lsp-ale](https://github.com/rhysd/vim-lsp-ale.git)
-* [vim-lsp-settings](https://github.com/mattn/vim-lsp-settings.git)
-* [vim-markify](https://github.com/dhruvasagar/vim-markify)
-* [vim-showmarks](https://github.com/jacquesbh/vim-showmarks.git)
-* [vim-signify](https://github.com/mhinz/vim-signify.git)
-* [vimux](https://github.com/preservim/vimux.git)
-* [yapf](https://github.com/google/yapf)
 
 ## To Be Moved
 
@@ -154,6 +152,37 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-superman](https://github.com/jez/vim-superman.git)
 * [vim-tmux](https://github.com/tmux-plugins/vim-tmux.git) (rename)
 * [vim-virtualenv](https://github.com/jmcantrell/vim-virtualenv)
+
+## To Be Tested
+
+* [asyncomplete](https://github.com/prabirshrestha/asyncomplete.vim.git)
+* [asyncomplete-lsp](https://github.com/prabirshrestha/asyncomplete-lsp.vim.git)
+* [ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky.git)
+* [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
+* [delimitMate](https://github.com/Raimondi/delimitMate.git)
+* [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
+* [nerdtree-project-plugin](https://github.com/scrooloose/nerdtree-project-plugin.git)
+* [onestatus](https://github.com/narajaon/onestatus.git)
+* [rope](https://github.com/python-rope/rope)
+* [tagbar](https://github.com/preservim/tagbar.git)
+* [taglist](https://github.com/vim-scripts/taglist.vim.git)
+* [traces](https://github.com/markonm/traces.vim.git)
+* [vim-asterisk](https://github.com/haya14busa/vim-asterisk.git)
+* [vim-commentary](https://github.com/tpope/vim-commentary.git)
+* [vim-dadbod](https://github.com/tpope/vim-dadbod.git)
+* [vim-diff-enhanced](https://github.com/chrisbra/vim-diff-enhanced.git)
+* [vim-dispatch](https://github.com/tpope/vim-dispatch.git)
+* [vim-docker-tools](https://github.com/kevinhui/vim-docker-tools)
+* [vim-ExtractMatches](https://github.com/inkarkat/vim-ExtractMatches.git)
+* [vim-jsbeautify](https://github.com/maksimr/vim-jsbeautify.git)
+* [vim-LanguageTool](https://github.com/dpelle/vim-LanguageTool.git)
+* [vim-lsp-ale](https://github.com/rhysd/vim-lsp-ale.git)
+* [vim-lsp-settings](https://github.com/mattn/vim-lsp-settings.git)
+* [vim-markify](https://github.com/dhruvasagar/vim-markify)
+* [vim-showmarks](https://github.com/jacquesbh/vim-showmarks.git)
+* [vim-signify](https://github.com/mhinz/vim-signify.git)
+* [vimux](https://github.com/preservim/vimux.git)
+* [yapf](https://github.com/google/yapf)
 
 ## Rejected Modules
 
