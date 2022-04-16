@@ -57,7 +57,17 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * vim-markdown
 * vim-speeddating
 
-## To Be Tested
+## DrChip's Stuff
+
+* [ansiesc](https://www.drchip.org/astronaut/vim/index.html#ANSIESC)
+* [align](https://www.drchip.org/astronaut/vim/index.html#ALIGN)
+* [autoalign](https://www.drchip.org/astronaut/vim/index.html#AUTOALIGN)
+
+### Evaluate
+
+* [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
+
+## Testing
 
 * asyncomplete
 * asyncomplete-lsp
@@ -74,19 +84,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * vim-nerdtree-syntax-highlight
 * vim-sleuth
 * vimux
-
-## DrChip's Stuff
-
-* [ansiesc](https://www.drchip.org/astronaut/vim/index.html#ANSIESC)
-* [align](https://www.drchip.org/astronaut/vim/index.html#ALIGN)
-* [autoalign](https://www.drchip.org/astronaut/vim/index.html#AUTOALIGN)
-
-### Evaluate
-
-* [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
-
-## Syntax
-
 
 ## To Be Moved
 
