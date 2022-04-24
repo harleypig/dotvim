@@ -108,11 +108,6 @@
   url = https://github.com/vim-scripts/AnsiEsc.vim.git
   branch = master
   ignore = dirty
-[submodule "drawit"]
-  path = .vim/bundle/drawit
-  url = https://github.com/vim-scripts/DrawIt.git
-  branch = master
-  ignore = dirty
 [submodule "supertab"]
   path = .vim/bundle/supertab
   url = https://github.com/ervandew/supertab.git
