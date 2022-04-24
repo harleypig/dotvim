@@ -14,3 +14,5 @@ _add() {
 for u in "$@"; do
   _add "$u"
 done
+
+mkreadme > README.md

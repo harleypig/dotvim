@@ -32,3 +32,5 @@ _mv() {
 }
 
 _mv "$@"
+
+mkreadme > README.md
