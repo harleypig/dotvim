@@ -14,11 +14,10 @@
 
 source envsubstitute
 
-declare -A submodule vars
+declare -A submodule vars check_dirs
 declare bucket url url_text RENAME categories
 
 declare NL=$'\n'
-declare entry_tmpl='%bucket%|* [%url_text%](%url%)%RENAME%'
 declare readme_tmpl
 readme_tmpl="$(< README.md.template)"
 
@@ -70,54 +69,94 @@ get_name() {
 
 #-----------------------------------------------------------------------------
 get_existing_dirs() {
-  find .vim/pack/*/* .vim/{2btested,bundle} -maxdepth 1 -type d
+  local -a dirs fopts
+
+  # find opts
+  fopts+=('-maxdepth' '0')
+  fopts+=('-type' 'd')
+
+  readarray -t dirs < <(find .vim/pack/*/*/* .vim/{2btested,bundle}/* "${fopts[@]}" |& sort -u)
+
+  for d in "${dirs[@]}"; do
+    check_dirs["$d"]='find'
+  done
+}
+
+#-----------------------------------------------------------------------------
+get_existing_submodules() {
+  get_existing_dirs
+
+  local -a lines
+  local key mod keyname bucket url_text url
+
+  local entry_tmpl='%bucket%|* [%url_text%](%url%)%renameflag%'
+
+  readarray -t lines < <(git config -f .gitmodules --get-regexp '.*')
+
+  #---------------------------------------------------------------------------
+  for line in "${lines[@]}"; do
+    read -r key value <<< "$line"
+
+    key="${key#submodule.}"
+    mod="${key%.*}"
+    keyname="${key##*.}"
+
+    case "$keyname" in
+      path)
+        bucket="$(get_bucket "$value")"
+
+        if [[ -v check_dirs[$value] ]]; then
+          unset "check_dirs[$value]"
+
+        else
+          check_dirs[$value]='submodule'
+        fi
+        ;;
+
+      url)
+        url_text="$(get_name "$value")"
+        url="$value"
+        renameflag=
+        [[ $mod != "$url_text" ]] && renameflag=' (rename)'
+        ;;
+
+      *) continue ;;
+    esac
+
+    tmpl="$entry_tmpl"
+    [[ -v ${submodule[$mod]} ]] && tmpl="${submodule[$mod]}"
+
+    tmpl="$(_envsubst "$tmpl")"
+    submodule[$mod]="$tmpl"
+  done
+
+  #---------------------------------------------------------------------------
+  for mod in "${!submodule[@]}"; do
+    IFS='|' read -r var text <<< "${submodule[$mod]}"
+    vars["$var"]+="$NL$text"
+  done
+
+  #---------------------------------------------------------------------------
+  for mod in "${!vars[@]}"; do
+    eval "$mod='$(echo "${vars[$mod]}" | sort -u)'"
+    ((SHOW_CATEGORIES)) && categories+="$NL* $mod"
+  done
+
+  ((SHOW_CATEGORIES)) && categories="$(echo "$categories" | sort -u)"
+
+  #---------------------------------------------------------------------------
+  if [[ ${#check_dirs[@]} -gt 0 ]]; then
+    unexpected+="$NL!!! Fix these:$NL"
+
+    for u in "${!check_dirs[@]}"; do
+      unexpected+="$NL* $u: ${check_dirs[$u]}"
+    done
+  fi
 }
 
 #=============================================================================
-readarray -t lines < <(git config -f .gitmodules --get-regexp '.*')
-
-#-----------------------------------------------------------------------------
-for line in "${lines[@]}"; do
-  read -r key value <<< "$line"
-
-  key="${key#submodule.}"
-  mod="${key%.*}"
-  keyname="${key##*.}"
-
-  case "$keyname" in
-    path) bucket="$(get_bucket "$value")" ;;
-    url)
-      url_text="$(get_name "$value")"
-      url="$value"
-      ;;
-  esac
-
-  RENAME=
-  [[ $mod != "$url_text" ]] && RENAME=' (rename)'
-
-  tmpl="$entry_tmpl"
-  [[ -v ${submodule[$mod]} ]] && tmpl="${submodule[$mod]}"
-
-  tmpl="$(_envsubst "$tmpl")"
-  submodule[$mod]="$tmpl"
-done
-
-#-----------------------------------------------------------------------------
-for mod in "${!submodule[@]}"; do
-  #printf '%s: %s\n' "$mod"  "${submodule[$mod]}"
-  IFS='|' read -r var text <<< "${submodule[$mod]}"
-  vars["$var"]+="$NL$text"
-done
-
-#-----------------------------------------------------------------------------
-for mod in "${!vars[@]}"; do
-  eval "$mod='$(echo "${vars[$mod]}" | sort -u)'"
-  ((SHOW_CATEGORIES)) && categories+="$NL* $mod"
-done
-
-((SHOW_CATEGORIES)) && categories="$(echo "$categories" | sort -u)"
+get_existing_submodules
 
 [[ -z $unexpected ]] && unexpected="$NL"
 
-#-----------------------------------------------------------------------------
 _envsubst "$readme_tmpl"

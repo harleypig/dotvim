@@ -7,7 +7,15 @@ files of the same name.
 
 I am currently migrating plugins from the pathogen **bundle** directory to
 vim's builtin **pack** method.
-%unexpected%
+
+!!! Fix these:
+
+* .vim/pack/active/start/mystuff: find
+* .vim/bundle/sshconfig: find
+* .vim/pack/active/start/statusline: find
+* .vim/bundle/timestamp: find
+* .vim/bundle/cscope_macros: submodule
+* .vim/bundle/matchit: find
 
 ## Plugins
 
@@ -31,6 +39,7 @@ My status line setup.
 XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 ### Categories
+%categories%
 
 * active
 * app
@@ -41,16 +50,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * tobemoved
 * tobetested
 
-* active
-* app
-* drchip
-* linter
-* syntax
-* test
-* tobemoved
-* tobetested
-
-### General
+### General (Active)
 
 * [helpful](https://github.com/tweekmonster/helpful.vim.git)
 * [linediff](https://github.com/AndrewRadev/linediff.vim.git)
@@ -70,13 +70,13 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-man](https://github.com/vim-utils/vim-man.git)
 * [vimwiki](https://github.com/vimwiki/vimwiki.git)
 
-## DrChip's Stuff
+### DrChip's Stuff
 
 * [Align](https://github.com/vim-scripts/Align.git) (rename)
 * [AnsiEsc](https://github.com/vim-scripts/AnsiEsc.vim.git) (rename)
 * [AutoAlign](https://github.com/vim-scripts/AutoAlign.git) (rename)
 
-### Evaluate
+#### Evaluate
 
 * [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
 
@@ -157,12 +157,15 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 * [asyncomplete](https://github.com/prabirshrestha/asyncomplete.vim.git)
 * [asyncomplete-lsp](https://github.com/prabirshrestha/asyncomplete-lsp.vim.git)
+* [csv](https://github.com/chrisbra/csv.vim.git)
 * [ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky.git)
 * [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
 * [delimitMate](https://github.com/Raimondi/delimitMate.git)
+* [indentLine](https://github.com/Yggdroot/indentLine.git)
 * [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 * [nerdtree-project-plugin](https://github.com/scrooloose/nerdtree-project-plugin.git)
 * [onestatus](https://github.com/narajaon/onestatus.git)
+* [rainbow](https://github.com/luochen1990/rainbow.git)
 * [rope](https://github.com/python-rope/rope)
 * [tagbar](https://github.com/preservim/tagbar.git)
 * [taglist](https://github.com/vim-scripts/taglist.vim.git)
@@ -174,11 +177,14 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-dispatch](https://github.com/tpope/vim-dispatch.git)
 * [vim-docker-tools](https://github.com/kevinhui/vim-docker-tools)
 * [vim-ExtractMatches](https://github.com/inkarkat/vim-ExtractMatches.git)
+* [vim-indent-rainbow](https://github.com/adi/vim-indent-rainbow.git)
+* [vim-ingo-library](https://github.com/inkarkat/vim-ingo-library.git)
 * [vim-jsbeautify](https://github.com/maksimr/vim-jsbeautify.git)
 * [vim-LanguageTool](https://github.com/dpelle/vim-LanguageTool.git)
 * [vim-lsp-ale](https://github.com/rhysd/vim-lsp-ale.git)
 * [vim-lsp-settings](https://github.com/mattn/vim-lsp-settings.git)
 * [vim-markify](https://github.com/dhruvasagar/vim-markify)
+* [vim-OnSyntaxChange](https://github.com/inkarkat/vim-OnSyntaxChange.git)
 * [vim-showmarks](https://github.com/jacquesbh/vim-showmarks.git)
 * [vim-signify](https://github.com/mhinz/vim-signify.git)
 * [vimux](https://github.com/preservim/vimux.git)
@@ -190,8 +196,8 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [evervim](https://github.com/kakkyz81/evervim.git)
 * [gitolite](https://github.com/tmatilai/gitolite.vim.git)
 * [gitv](https://github.com/gregsexton/gitv)
-* [vim-github](https://github.com/thinca/vim-github.git) (rename)
-* [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides.git) (rename)
+* [vim-github](https://github.com/thinca/vim-github.git)
+* [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides.git)
 * [vim-rsi](https://github.com/tpope/vim-rsi.git)
 
 ## Resources and Miscellaneous
