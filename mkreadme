@@ -2,6 +2,9 @@
 
 # shellcheck disable=SC2034
 
+# XXX: DELETE ME
+SHOW_CATEGORIES=0
+
 # get .gitmodule entries
 # parse for path and url
 # get module name from last part of url
@@ -29,8 +32,12 @@ declare NO_WARN="${NO_WARN:-1}"
 # Defaults to true
 declare SHOW_CATEGORIES="${SHOW_CATEGORIES:-1}"
 
-# XXX: DELETE ME
-SHOW_CATEGORIES=0
+# Skip checking these directories if they exist
+declare -a skip_existing_dirs
+
+skip_existing_dirs+=('mystuff')
+skip_existing_dirs+=('statusline')
+skip_existing_dirs+=('matchit')
 
 #=============================================================================
 # Functions
@@ -71,13 +78,19 @@ get_name() {
 get_existing_dirs() {
   local -a dirs fopts
 
+  # skip these dirs if they exist
+  local skip_rx
+  printf -v skip_rx '%s|' "${skip_existing_dirs[@]}"
+  skip_rx="${skip_rx%?}"
+
   # find opts
   fopts+=('-maxdepth' '0')
   fopts+=('-type' 'd')
 
-  readarray -t dirs < <(find .vim/pack/*/*/* .vim/{2btested,bundle}/* "${fopts[@]}" |& sort -u)
+  readarray -t dirs < <(find .vim/pack/*/*/* .vim/{2btested,bundle}/* "${fopts[@]}")
 
   for d in "${dirs[@]}"; do
+    [[ $d =~ $skip_rx$ ]] && continue
     check_dirs["$d"]='find'
   done
 }

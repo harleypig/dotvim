@@ -10,12 +10,9 @@ vim's builtin **pack** method.
 
 !!! Fix these:
 
-* .vim/pack/active/start/mystuff: find
 * .vim/bundle/sshconfig: find
-* .vim/pack/active/start/statusline: find
 * .vim/bundle/timestamp: find
 * .vim/bundle/cscope_macros: submodule
-* .vim/bundle/matchit: find
 
 ## Plugins
 
@@ -58,8 +55,8 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-endwise](https://github.com/tpope/vim-endwise.git)
 * [vim-eunuch](https://github.com/tpope/vim-eunuch.git) (rename)
 * [vim-repeat](https://github.com/tpope/vim-repeat.git)
-* [vim-surround](https://github.com/tpope/vim-surround.git) (rename)
-* [vim-unimpaired](https://github.com/tpope/vim-unimpaired.git) (rename)
+* [vim-surround](https://github.com/tpope/vim-surround.git)
+* [vim-unimpaired](https://github.com/tpope/vim-unimpaired.git)
 
 ### Applications
 
@@ -106,8 +103,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [ale](https://github.com/dense-analysis/ale.git)
 * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim.git)
 * [FastFold](https://github.com/Konfekt/FastFold.git)
-* [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin.git)
-* [nerdtree](https://github.com/preservim/nerdtree.git)
 * [vim-devicons](https://github.com/ryanoasis/vim-devicons.git)
 * [vim-jdaddy](https://github.com/tpope/vim-jdaddy.git)
 * [vim-markdown](https://github.com/preservim/vim-markdown.git)
@@ -163,30 +158,46 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [delimitMate](https://github.com/Raimondi/delimitMate.git)
 * [indentLine](https://github.com/Yggdroot/indentLine.git)
 * [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
+* [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin.git)
+* [nerdtree](https://github.com/preservim/nerdtree.git)
 * [nerdtree-project-plugin](https://github.com/scrooloose/nerdtree-project-plugin.git)
 * [onestatus](https://github.com/narajaon/onestatus.git)
 * [rainbow](https://github.com/luochen1990/rainbow.git)
 * [rope](https://github.com/python-rope/rope)
 * [tagbar](https://github.com/preservim/tagbar.git)
 * [taglist](https://github.com/vim-scripts/taglist.vim.git)
+* [targets](https://github.com/wellle/targets.vim.git)
 * [traces](https://github.com/markonm/traces.vim.git)
+* [ttags_vim](https://github.com/tomtom/ttags_vim.git)
+* [undotree](https://github.com/mbbill/undotree.git)
+* [vim-abolish](https://github.com/tpope/vim-abolish.git)
 * [vim-asterisk](https://github.com/haya14busa/vim-asterisk.git)
+* [vim-characterize](https://github.com/tpope/vim-characterize.git)
 * [vim-commentary](https://github.com/tpope/vim-commentary.git)
+* [VimCompletesMe](https://github.com/ackyshake/VimCompletesMe.git)
 * [vim-dadbod](https://github.com/tpope/vim-dadbod.git)
 * [vim-diff-enhanced](https://github.com/chrisbra/vim-diff-enhanced.git)
+* [vim-dirvish](https://github.com/justinmk/vim-dirvish.git)
 * [vim-dispatch](https://github.com/tpope/vim-dispatch.git)
 * [vim-docker-tools](https://github.com/kevinhui/vim-docker-tools)
 * [vim-ExtractMatches](https://github.com/inkarkat/vim-ExtractMatches.git)
+* [vim-gutentags](https://github.com/ludovicchabant/vim-gutentags.git)
 * [vim-indent-rainbow](https://github.com/adi/vim-indent-rainbow.git)
 * [vim-ingo-library](https://github.com/inkarkat/vim-ingo-library.git)
 * [vim-jsbeautify](https://github.com/maksimr/vim-jsbeautify.git)
 * [vim-LanguageTool](https://github.com/dpelle/vim-LanguageTool.git)
+* [vim-lion](https://github.com/tommcdo/vim-lion.git)
 * [vim-lsp-ale](https://github.com/rhysd/vim-lsp-ale.git)
 * [vim-lsp-settings](https://github.com/mattn/vim-lsp-settings.git)
 * [vim-markify](https://github.com/dhruvasagar/vim-markify)
 * [vim-OnSyntaxChange](https://github.com/inkarkat/vim-OnSyntaxChange.git)
+* [vim-qf](https://github.com/romainl/vim-qf.git)
+* [vim-qlist](https://github.com/romainl/vim-qlist.git)
+* [vim-rsi](https://github.com/tpope/vim-rsi.git)
+* [vim-sensible](https://github.com/tpope/vim-sensible.git)
 * [vim-showmarks](https://github.com/jacquesbh/vim-showmarks.git)
 * [vim-signify](https://github.com/mhinz/vim-signify.git)
+* [vim-sneak](https://github.com/justinmk/vim-sneak.git)
 * [vimux](https://github.com/preservim/vimux.git)
 * [yapf](https://github.com/google/yapf)
 
