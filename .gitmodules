@@ -23,7 +23,7 @@
   url = https://github.com/vim-scripts/ledger.vim.git
   branch = master
   ignore = dirty
-[submodule "fugitive"]
+[submodule "vim-fugitive"]
   path = .vim/pack/app/start/vim-fugitive
   url = https://github.com/tpope/vim-fugitive.git
   branch = master
@@ -33,7 +33,7 @@
   url = https://github.com/jpalardy/spacehi.vim.git
   branch = master
   ignore = dirty
-[submodule "eunuch"]
+[submodule "vim-eunuch"]
   path = .vim/pack/active/start/vim-eunuch
   url = https://github.com/tpope/vim-eunuch.git
   branch = master
@@ -354,7 +354,7 @@
   branch = master
   ignore = dirty
 [submodule "SimpylFold"]
-  path = .vim/pack/syntax/start/SimplyFold
+	path = .vim/pack/syntax/start/SimpylFold
   url = https://github.com/tmhedberg/simpylfold
   branch = master
   ignore = dirty

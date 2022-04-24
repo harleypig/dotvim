@@ -22,20 +22,20 @@ Plugins that have earned permanent status. These are stored in
 Any settings for plugins (with some very rare exceptions) will be in the
 **mystuff** plugin directory, wherever it's supposed to fit.
 
-#### mystuff
+### mystuff
 
 My configuration for various of the plugins that need it.
 
 XXX: Add notes/reminders about the directory structure and what should go
      where.
 
-#### statusline
+### statusline
 
 My status line setup.
 
 XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
-#### How do I ...
+### How do I ...
 
 * toggle between no line numbers, relative line numbers and plain line numbers?
 
@@ -57,7 +57,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [linediff](https://github.com/AndrewRadev/linediff.vim.git)
 * [tabular](https://github.com/godlygeek/tabular.git)
 * [vim-endwise](https://github.com/tpope/vim-endwise.git)
-* [vim-eunuch](https://github.com/tpope/vim-eunuch.git) (rename)
+* [vim-eunuch](https://github.com/tpope/vim-eunuch.git)
 * [vim-repeat](https://github.com/tpope/vim-repeat.git)
 * [vim-surround](https://github.com/tpope/vim-surround.git)
 * [vim-unimpaired](https://github.com/tpope/vim-unimpaired.git)
@@ -66,16 +66,16 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 * [jupyter-vim](https://github.com/jupyter-vim/jupyter-vim)
 * [vim-fake](https://github.com/tkhren/vim-fake.git)
-* [vim-fugitive](https://github.com/tpope/vim-fugitive.git) (rename)
+* [vim-fugitive](https://github.com/tpope/vim-fugitive.git)
 * [vim-healthcheck](https://github.com/rhysd/vim-healthcheck.git)
 * [vim-man](https://github.com/vim-utils/vim-man.git)
 * [vimwiki](https://github.com/vimwiki/vimwiki.git)
 
 #### DrChip's Stuff
 
-* [Align](https://github.com/vim-scripts/Align.git) (rename)
-* [AnsiEsc](https://github.com/vim-scripts/AnsiEsc.vim.git) (rename)
-* [AutoAlign](https://github.com/vim-scripts/AutoAlign.git) (rename)
+* [Align](https://github.com/vim-scripts/Align.git)
+* [AnsiEsc](https://github.com/vim-scripts/AnsiEsc.vim.git)
+* [AutoAlign](https://github.com/vim-scripts/AutoAlign.git)
 
 ##### Evaluate
 
@@ -96,7 +96,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [jq](https://github.com/vito-c/jq.vim.git)
 * [MatchTag](https://github.com/gregsexton/MatchTag.git)
 * [nginx](https://github.com/chr4/nginx.vim)
-* [simpylfold](https://github.com/tmhedberg/simpylfold) (rename)
+* [simpylfold](https://github.com/tmhedberg/simpylfold)
 * [spacehi](https://github.com/jpalardy/spacehi.vim.git)
 * [vim-colorschemes](https://github.com/flazz/vim-colorschemes.git)
 * [vim-irssi-syntax](https://github.com/isundil/vim-irssi-syntax.git)
@@ -124,7 +124,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [bufferize](https://github.com/AndrewRadev/bufferize.vim.git)
 * [calendar](https://github.com/itchyny/calendar.vim)
 * [cscope_macros](https://github.com/vim-scripts/cscope_macros.vim.git)
-* [DrawIt](https://github.com/vim-scripts/DrawIt.git) (rename)
+* [DrawIt](https://github.com/vim-scripts/DrawIt.git)
 * [gitv](https://github.com/gregsexton/gitv)
 * [ledger](https://github.com/vim-scripts/ledger.vim.git)
 * [perlomni](https://github.com/c9s/perlomni.vim.git)

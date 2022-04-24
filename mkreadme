@@ -130,7 +130,7 @@ get_existing_submodules() {
         url_text="$(get_name "$value")"
         url="$value"
         renameflag=
-        [[ $mod != "$url_text" ]] && renameflag=' (rename)'
+        [[ "${mod,,}" != "${url_text,,}" ]] && renameflag=' (rename)'
         ;;
 
       *) continue ;;
