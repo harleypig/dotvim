@@ -17,25 +17,25 @@ vim's builtin **pack** method.
 ## Plugins
 
 Plugins that have earned permanent status. These are stored in
-**.vim/pack/active**.
+**.vim/pack/<category>/<plugin>/start**.
 
 Any settings for plugins (with some very rare exceptions) will be in the
-**mystuff** plugin directory, wherever it's supposed to fit.
+**.vim/pack/active/mystuff/start** plugin directory, wherever it's supposed to fit.
 
-### mystuff
+#### mystuff
 
 My configuration for various of the plugins that need it.
 
 XXX: Add notes/reminders about the directory structure and what should go
      where.
 
-### statusline
+#### statusline
 
 My status line setup.
 
 XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
-### How do I ...
+#### How do I ...
 
 * toggle between no line numbers, relative line numbers and plain line numbers?
 
@@ -110,11 +110,10 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-devicons](https://github.com/ryanoasis/vim-devicons.git)
 * [vim-jdaddy](https://github.com/tpope/vim-jdaddy.git)
 * [vim-markdown](https://github.com/preservim/vim-markdown.git)
-* [vim-speeddating](https://github.com/tpope/vim-speeddating.git) (rename)
+* [vim-speeddating](https://github.com/tpope/vim-speeddating.git)
 
 ### To Be Moved
 
-* [ansible-vim](https://github.com/pearofducks/ansible-vim.git) (rename)
 * [astroid](https://github.com/PyCQA/astroid)
 * [async](https://github.com/prabirshrestha/async.vim.git)
 * [autopep8](https://github.com/hhatto/autopep8)
@@ -154,6 +153,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 ### To Be Tested
 
+* [ansible-vim](https://github.com/pearofducks/ansible-vim.git)
 * [asyncomplete](https://github.com/prabirshrestha/asyncomplete.vim.git)
 * [asyncomplete-lsp](https://github.com/prabirshrestha/asyncomplete-lsp.vim.git)
 * [csv](https://github.com/chrisbra/csv.vim.git)
