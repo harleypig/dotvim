@@ -38,7 +38,7 @@
   url = https://github.com/tpope/vim-eunuch.git
   branch = master
   ignore = dirty
-[submodule "unimpaired"]
+[submodule "vim-unimpaired"]
   path = .vim/pack/active/start/vim-unimpaired
   url = https://github.com/tpope/vim-unimpaired.git
   branch = master
@@ -99,7 +99,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-signify"]
-	path = .vim/2btested/vim-signify
+  path = .vim/2btested/vim-signify
   url = https://github.com/mhinz/vim-signify.git
   branch = master
   ignore = dirty
@@ -134,7 +134,7 @@
   branch = master
   ignore = dirty
 [submodule "nerdtree-git-plugin"]
-  path = .vim/pack/test/start/nerdtree-git-plugin
+  path = .vim/2btested/nerdtree-git-plugin
   url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
   branch = master
   ignore = dirty
@@ -309,7 +309,7 @@
   branch = master
   ignore = dirty
 [submodule "mccabe"]
-	path = .vim/pack/linter/start/mccabe
+  path = .vim/pack/linter/start/mccabe
   url = https://github.com/PyCQA/mccabe
   branch = master
   ignore = dirty
@@ -349,7 +349,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-flake8"]
-	path = .vim/pack/linter/start/vim-flake8
+  path = .vim/pack/linter/start/vim-flake8
   url = https://github.com/nvie/vim-flake8
   branch = master
   ignore = dirty
@@ -374,7 +374,7 @@
   branch = main
   ignore = dirty
 [submodule "yapf"]
-	path = .vim/2btested/yapf
+  path = .vim/2btested/yapf
   url = https://github.com/google/yapf
   branch = main
   ignore = dirty
@@ -439,7 +439,7 @@
   branch = master
   ignore = dirty
 [submodule "nerdtree"]
-  path = .vim/pack/test/start/nerdtree
+  path = .vim/2btested/nerdtree
   url = https://github.com/preservim/nerdtree.git
   ignore = dirty
 [submodule "ale"]
@@ -510,50 +510,62 @@
   path = .vim/pack/test/start/FastFold
   url = https://github.com/Konfekt/FastFold.git
 [submodule "csv"]
-	path = .vim/2btested/csv
-	url = https://github.com/chrisbra/csv.vim.git
+  path = .vim/2btested/csv
+  url = https://github.com/chrisbra/csv.vim.git
 [submodule "indentLine"]
-	path = .vim/2btested/indentLine
-	url = https://github.com/Yggdroot/indentLine.git
+  path = .vim/2btested/indentLine
+  url = https://github.com/Yggdroot/indentLine.git
 [submodule "vim-indent-rainbow"]
-	path = .vim/2btested/vim-indent-rainbow
-	url = https://github.com/adi/vim-indent-rainbow.git
+  path = .vim/2btested/vim-indent-rainbow
+  url = https://github.com/adi/vim-indent-rainbow.git
 [submodule "rainbow"]
-	path = .vim/2btested/rainbow
-	url = https://github.com/luochen1990/rainbow.git
+  path = .vim/2btested/rainbow
+  url = https://github.com/luochen1990/rainbow.git
 [submodule "vim-OnSyntaxChange"]
-	path = .vim/2btested/vim-OnSyntaxChange
-	url = https://github.com/inkarkat/vim-OnSyntaxChange.git
+  path = .vim/2btested/vim-OnSyntaxChange
+  url = https://github.com/inkarkat/vim-OnSyntaxChange.git
 [submodule "vim-ingo-library"]
-	path = .vim/2btested/vim-ingo-library
-	url = https://github.com/inkarkat/vim-ingo-library.git
+  path = .vim/2btested/vim-ingo-library
+  url = https://github.com/inkarkat/vim-ingo-library.git
 [submodule "vim-qlist"]
-	path = .vim/2btested/vim-qlist
-	url = https://github.com/romainl/vim-qlist.git
+  path = .vim/2btested/vim-qlist
+  url = https://github.com/romainl/vim-qlist.git
 [submodule "vim-abolish"]
-	path = .vim/2btested/vim-abolish
-	url = https://github.com/tpope/vim-abolish.git
+  path = .vim/2btested/vim-abolish
+  url = https://github.com/tpope/vim-abolish.git
 [submodule "vim-characterize"]
-	path = .vim/2btested/vim-characterize
-	url = https://github.com/tpope/vim-characterize.git
+  path = .vim/2btested/vim-characterize
+  url = https://github.com/tpope/vim-characterize.git
 [submodule "vim-dirvish"]
-	path = .vim/2btested/vim-dirvish
-	url = https://github.com/justinmk/vim-dirvish.git
+  path = .vim/2btested/vim-dirvish
+  url = https://github.com/justinmk/vim-dirvish.git
 [submodule "vim-gutentags"]
-	path = .vim/2btested/vim-gutentags
-	url = https://github.com/ludovicchabant/vim-gutentags.git
+  path = .vim/2btested/vim-gutentags
+  url = https://github.com/ludovicchabant/vim-gutentags.git
 [submodule "vim-lion"]
-	path = .vim/2btested/vim-lion
-	url = https://github.com/tommcdo/vim-lion.git
+  path = .vim/2btested/vim-lion
+  url = https://github.com/tommcdo/vim-lion.git
 [submodule "vim-qf"]
-	path = .vim/2btested/vim-qf
-	url = https://github.com/romainl/vim-qf.git
+  path = .vim/2btested/vim-qf
+  url = https://github.com/romainl/vim-qf.git
 [submodule "vim-rsi"]
-	path = .vim/2btested/vim-rsi
-	url = https://github.com/tpope/vim-rsi.git
+  path = .vim/2btested/vim-rsi
+  url = https://github.com/tpope/vim-rsi.git
 [submodule "vim-sensible"]
-	path = .vim/2btested/vim-sensible
-	url = https://github.com/tpope/vim-sensible.git
+  path = .vim/2btested/vim-sensible
+  url = https://github.com/tpope/vim-sensible.git
 [submodule "vim-sneak"]
-	path = .vim/2btested/vim-sneak
-	url = https://github.com/justinmk/vim-sneak.git
+  path = .vim/2btested/vim-sneak
+  url = https://github.com/justinmk/vim-sneak.git
+[submodule "targets"]
+  path = .vim/2btested/targets
+  url = https://github.com/wellle/targets.vim.git
+[submodule "ttags_vim"]
+  path = .vim/2btested/ttags_vim
+  url = https://github.com/tomtom/ttags_vim.git
+[submodule "undotree"]
+  path = .vim/2btested/undotree
+  url = https://github.com/mbbill/undotree.git
+[submodule "VimCompletesMe"]
+  path = .vim/2btested/VimCompletesMe
+  url = https://github.com/ackyshake/VimCompletesMe.git

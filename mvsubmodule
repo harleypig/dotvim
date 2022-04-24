@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# git config -f .gitmodules --get-regexp vim-abolish.path
+
+_mv() {
+  local name="${1:?must pass name}"
+  local newpath="${2:?must pass new path}"
+  local oldpath
+
+  # shellcheck disable=SC2034
+  read -r junk oldpath < <(git config -f .gitmodules --get-regexp "${name}.path")
+
+  [[ -z $oldpath ]] && {
+    echo "$name not found in .gitmodules"
+    exit 1
+  }
+
+  if [[ $newpath == '2btested' ]]; then
+    newpath='.vim/2btested'
+
+  else
+    newpath=".vim/pack/$newpath/start"
+
+  fi
+
+  [[ $oldpath == "$newpath" ]] && {
+    echo "$name is already in $newpath"
+    exit 0
+  }
+
+  git mv "$oldpath" "$newpath/$name"
+}
+
+_mv "$@"

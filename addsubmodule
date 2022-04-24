@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _add() {
-  local url="$1"
+  local url="${1:?must pass url to add}"
   local name="${url##*/}"
   name="${name%\.git}"
   name="${name%\.vim}"
@@ -11,4 +11,6 @@ _add() {
   git submodule add --name "$name" "$url" ".vim/2btested/$name"
 }
 
-_add "$@"
+for u in "$@"; do
+  _add "$u"
+done
