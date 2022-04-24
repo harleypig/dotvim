@@ -199,7 +199,7 @@
   branch = master
   ignore = dirty
 [submodule "ansible-vim"]
-	path = .vim/2btested/ansible-vim
+  path = .vim/2btested/ansible-vim
   url = https://github.com/pearofducks/ansible-vim.git
   branch = master
   ignore = dirty
@@ -354,8 +354,8 @@
   branch = master
   ignore = dirty
 [submodule "SimpylFold"]
-	path = .vim/pack/syntax/start/SimpylFold
-  url = https://github.com/tmhedberg/simpylfold
+  path = .vim/pack/syntax/start/SimpylFold
+  url = https://github.com/tmhedberg/SimpylFold.git
   branch = master
   ignore = dirty
 [submodule "vim-python-pep8-indent"]
