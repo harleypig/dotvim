@@ -43,7 +43,7 @@
   url = https://github.com/tpope/vim-unimpaired.git
   branch = master
   ignore = dirty
-[submodule "speeddating"]
+[submodule "vim-speeddating"]
   path = .vim/pack/test/start/vim-speeddating
   url = https://github.com/tpope/vim-speeddating.git
   branch = master
@@ -198,8 +198,8 @@
   url = https://github.com/inkarkat/vim-ExtractMatches.git
   branch = master
   ignore = dirty
-[submodule "ansible"]
-  path = .vim/bundle/ansible
+[submodule "ansible-vim"]
+	path = .vim/2btested/ansible-vim
   url = https://github.com/pearofducks/ansible-vim.git
   branch = master
   ignore = dirty
