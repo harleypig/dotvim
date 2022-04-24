@@ -1,4 +1,4 @@
-[submodule "surround"]
+[submodule "vim-surround"]
   path = .vim/pack/active/start/vim-surround
   url = https://github.com/tpope/vim-surround.git
   branch = master
@@ -527,3 +527,33 @@
 [submodule "vim-ingo-library"]
 	path = .vim/2btested/vim-ingo-library
 	url = https://github.com/inkarkat/vim-ingo-library.git
+[submodule "vim-qlist"]
+	path = .vim/2btested/vim-qlist
+	url = https://github.com/romainl/vim-qlist.git
+[submodule "vim-abolish"]
+	path = .vim/2btested/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git
+[submodule "vim-characterize"]
+	path = .vim/2btested/vim-characterize
+	url = https://github.com/tpope/vim-characterize.git
+[submodule "vim-dirvish"]
+	path = .vim/2btested/vim-dirvish
+	url = https://github.com/justinmk/vim-dirvish.git
+[submodule "vim-gutentags"]
+	path = .vim/2btested/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "vim-lion"]
+	path = .vim/2btested/vim-lion
+	url = https://github.com/tommcdo/vim-lion.git
+[submodule "vim-qf"]
+	path = .vim/2btested/vim-qf
+	url = https://github.com/romainl/vim-qf.git
+[submodule "vim-rsi"]
+	path = .vim/2btested/vim-rsi
+	url = https://github.com/tpope/vim-rsi.git
+[submodule "vim-sensible"]
+	path = .vim/2btested/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
+[submodule "vim-sneak"]
+	path = .vim/2btested/vim-sneak
+	url = https://github.com/justinmk/vim-sneak.git

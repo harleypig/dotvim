@@ -1,0 +1,14 @@
+#!/bin/bash
+
+_add() {
+  local url="$1"
+  local name="${url##*/}"
+  name="${name%\.git}"
+  name="${name%\.vim}"
+
+  grep "$name" .gitmodules && exit 0
+
+  git submodule add --name "$name" "$url" ".vim/2btested/$name"
+}
+
+_add "$@"
