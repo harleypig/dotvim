@@ -40,7 +40,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * toggle between no line numbers, relative line numbers and plain line numbers?
 
 ### Categories
-%categories%
 
 * active
 * app
@@ -96,7 +95,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [jq](https://github.com/vito-c/jq.vim.git)
 * [MatchTag](https://github.com/gregsexton/MatchTag.git)
 * [nginx](https://github.com/chr4/nginx.vim)
-* [simpylfold](https://github.com/tmhedberg/simpylfold)
+* [simpylfold](https://github.com/tmhedberg/simpylfold) (rename)
 * [spacehi](https://github.com/jpalardy/spacehi.vim.git)
 * [vim-colorschemes](https://github.com/flazz/vim-colorschemes.git)
 * [vim-irssi-syntax](https://github.com/isundil/vim-irssi-syntax.git)
@@ -123,7 +122,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [bufferize](https://github.com/AndrewRadev/bufferize.vim.git)
 * [calendar](https://github.com/itchyny/calendar.vim)
 * [cscope_macros](https://github.com/vim-scripts/cscope_macros.vim.git)
-* [DrawIt](https://github.com/vim-scripts/DrawIt.git)
+* [DrawIt](https://github.com/vim-scripts/DrawIt.git) (rename)
 * [gitv](https://github.com/gregsexton/gitv)
 * [ledger](https://github.com/vim-scripts/ledger.vim.git)
 * [perlomni](https://github.com/c9s/perlomni.vim.git)

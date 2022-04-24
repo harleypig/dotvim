@@ -3,7 +3,7 @@
 # shellcheck disable=SC2034
 
 # XXX: DELETE ME
-SHOW_CATEGORIES=0
+#SHOW_CATEGORIES=0
 
 # get .gitmodule entries
 # parse for path and url
@@ -130,7 +130,7 @@ get_existing_submodules() {
         url_text="$(get_name "$value")"
         url="$value"
         renameflag=
-        [[ "${mod,,}" != "${url_text,,}" ]] && renameflag=' (rename)'
+        [[ $mod != "$url_text" ]] && renameflag=' (rename)'
         ;;
 
       *) continue ;;

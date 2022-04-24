@@ -3,12 +3,12 @@
   url = https://github.com/tpope/vim-surround.git
   branch = master
   ignore = dirty
-[submodule "align"]
+[submodule "Align"]
   path = .vim/pack/drchip/start/align
   url = https://github.com/vim-scripts/Align.git
   branch = master
   ignore = dirty
-[submodule "autoalign"]
+[submodule "AutoAlign"]
   path = .vim/pack/drchip/start/autoalign
   url = https://github.com/vim-scripts/AutoAlign.git
   branch = master
@@ -103,7 +103,7 @@
   url = https://github.com/mhinz/vim-signify.git
   branch = master
   ignore = dirty
-[submodule "ansiesc"]
+[submodule "AnsiEsc"]
   path = .vim/pack/drchip/start/ansiesc
   url = https://github.com/vim-scripts/AnsiEsc.vim.git
   branch = master
