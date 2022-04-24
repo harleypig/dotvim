@@ -309,7 +309,7 @@
   branch = master
   ignore = dirty
 [submodule "mccabe"]
-  path = .vim/pack/linter/mccabe
+	path = .vim/pack/linter/start/mccabe
   url = https://github.com/PyCQA/mccabe
   branch = master
   ignore = dirty
@@ -349,7 +349,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-flake8"]
-  path = .vim/pack/linter/vim-flake8
+	path = .vim/pack/linter/start/vim-flake8
   url = https://github.com/nvie/vim-flake8
   branch = master
   ignore = dirty
@@ -509,3 +509,21 @@
 [submodule "FastFold"]
   path = .vim/pack/test/start/FastFold
   url = https://github.com/Konfekt/FastFold.git
+[submodule "csv"]
+	path = .vim/2btested/csv
+	url = https://github.com/chrisbra/csv.vim.git
+[submodule "indentLine"]
+	path = .vim/2btested/indentLine
+	url = https://github.com/Yggdroot/indentLine.git
+[submodule "vim-indent-rainbow"]
+	path = .vim/2btested/vim-indent-rainbow
+	url = https://github.com/adi/vim-indent-rainbow.git
+[submodule "rainbow"]
+	path = .vim/2btested/rainbow
+	url = https://github.com/luochen1990/rainbow.git
+[submodule "vim-OnSyntaxChange"]
+	path = .vim/2btested/vim-OnSyntaxChange
+	url = https://github.com/inkarkat/vim-OnSyntaxChange.git
+[submodule "vim-ingo-library"]
+	path = .vim/2btested/vim-ingo-library
+	url = https://github.com/inkarkat/vim-ingo-library.git
