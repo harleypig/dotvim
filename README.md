@@ -22,18 +22,22 @@ Plugins that have earned permanent status. These are stored in
 Any settings for plugins (with some very rare exceptions) will be in the
 **mystuff** plugin directory, wherever it's supposed to fit.
 
-### mystuff
+#### mystuff
 
 My configuration for various of the plugins that need it.
 
 XXX: Add notes/reminders about the directory structure and what should go
      where.
 
-### statusline
+#### statusline
 
 My status line setup.
 
 XXX: Add notes about what is being done here (or maybe do that in the plugin?)
+
+#### How do I ...
+
+* toggle between no line numbers, relative line numbers and plain line numbers?
 
 ### Categories
 %categories%
@@ -47,7 +51,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * tobemoved
 * tobetested
 
-### General (Active)
+#### General (Active)
 
 * [helpful](https://github.com/tweekmonster/helpful.vim.git)
 * [linediff](https://github.com/AndrewRadev/linediff.vim.git)
@@ -58,7 +62,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-surround](https://github.com/tpope/vim-surround.git)
 * [vim-unimpaired](https://github.com/tpope/vim-unimpaired.git)
 
-### Applications
+#### Applications
 
 * [jupyter-vim](https://github.com/jupyter-vim/jupyter-vim)
 * [vim-fake](https://github.com/tkhren/vim-fake.git)
@@ -67,17 +71,17 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-man](https://github.com/vim-utils/vim-man.git)
 * [vimwiki](https://github.com/vimwiki/vimwiki.git)
 
-### DrChip's Stuff
+#### DrChip's Stuff
 
 * [Align](https://github.com/vim-scripts/Align.git) (rename)
 * [AnsiEsc](https://github.com/vim-scripts/AnsiEsc.vim.git) (rename)
 * [AutoAlign](https://github.com/vim-scripts/AutoAlign.git) (rename)
 
-#### Evaluate
+##### Evaluate
 
 * [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
 
-### Linter
+#### Linter
 
 * [mccabe](https://github.com/PyCQA/mccabe)
 * [syntastic](https://github.com/scrooloose/syntastic.git)
@@ -85,7 +89,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-lint](https://github.com/dbakker/vim-lint.git)
 * [vim-sleuth](https://github.com/tpope/vim-sleuth.git)
 
-### Syntax
+#### Syntax
 
 * [apiblueprint](https://github.com/kylef/apiblueprint.vim.git)
 * [awk](https://github.com/vim-scripts/awk.vim)
@@ -98,7 +102,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-irssi-syntax](https://github.com/isundil/vim-irssi-syntax.git)
 * [vim-yaml](https://github.com/stephpy/vim-yaml)
 
-## Being Tested
+### Being Tested
 
 * [ale](https://github.com/dense-analysis/ale.git)
 * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim.git)
@@ -108,7 +112,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-markdown](https://github.com/preservim/vim-markdown.git)
 * [vim-speeddating](https://github.com/tpope/vim-speeddating.git) (rename)
 
-## To Be Moved
+### To Be Moved
 
 * [ansible-vim](https://github.com/pearofducks/ansible-vim.git) (rename)
 * [astroid](https://github.com/PyCQA/astroid)
@@ -148,7 +152,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-tmux](https://github.com/tmux-plugins/vim-tmux.git) (rename)
 * [vim-virtualenv](https://github.com/jmcantrell/vim-virtualenv)
 
-## To Be Tested
+### To Be Tested
 
 * [asyncomplete](https://github.com/prabirshrestha/asyncomplete.vim.git)
 * [asyncomplete-lsp](https://github.com/prabirshrestha/asyncomplete-lsp.vim.git)
@@ -201,7 +205,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vimux](https://github.com/preservim/vimux.git)
 * [yapf](https://github.com/google/yapf)
 
-## Rejected Modules
+### Rejected
 
 * [docker-compose](https://github.com/skanehira/docker-compose.vim)
 * [evervim](https://github.com/kakkyz81/evervim.git)

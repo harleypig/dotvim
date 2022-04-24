@@ -17,18 +17,22 @@ Plugins that have earned permanent status. These are stored in
 Any settings for plugins (with some very rare exceptions) will be in the
 **mystuff** plugin directory, wherever it's supposed to fit.
 
-### mystuff
+#### mystuff
 
 My configuration for various of the plugins that need it.
 
 XXX: Add notes/reminders about the directory structure and what should go
      where.
 
-### statusline
+#### statusline
 
 My status line setup.
 
 XXX: Add notes about what is being done here (or maybe do that in the plugin?)
+
+#### How do I ...
+
+* toggle between no line numbers, relative line numbers and plain line numbers?
 
 ### Categories
 %categories%
@@ -42,35 +46,35 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * tobemoved
 * tobetested
 
-### General (Active)
+#### General (Active)
 %active%
 
-### Applications
+#### Applications
 %app%
 
-### DrChip's Stuff
+#### DrChip's Stuff
 %drchip%
 
-#### Evaluate
+##### Evaluate
 
 * [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
 
-### Linter
+#### Linter
 %linter%
 
-### Syntax
+#### Syntax
 %syntax%
 
-## Being Tested
+### Being Tested
 %test%
 
-## To Be Moved
+### To Be Moved
 %tobemoved%
 
-## To Be Tested
+### To Be Tested
 %tobetested%
 
-## Rejected Modules
+### Rejected
 
 * [docker-compose](https://github.com/skanehira/docker-compose.vim)
 * [evervim](https://github.com/kakkyz81/evervim.git)
