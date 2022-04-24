@@ -13,7 +13,7 @@
   url = https://github.com/vim-scripts/AutoAlign.git
   branch = master
   ignore = dirty
-[submodule "pathogen"]
+[submodule "vim-pathogen"]
   path = .vim/bundle/pathogen
   url = https://github.com/tpope/vim-pathogen.git
   branch = master
@@ -58,7 +58,7 @@
   url = https://github.com/gregsexton/MatchTag.git
   branch = master
   ignore = dirty
-[submodule "autoclose"]
+[submodule "vim-autoclose"]
   path = .vim/bundle/autoclose
   url = https://github.com/Townk/vim-autoclose.git
   branch = master
@@ -143,7 +143,7 @@
   url = https://github.com/vito-c/jq.vim.git
   branch = master
   ignore = dirty
-[submodule "tmux"]
+[submodule "vim-tmux"]
   path = .vim/bundle/tmux
   url = https://github.com/tmux-plugins/vim-tmux.git
   branch = master
@@ -213,7 +213,7 @@
   url = https://github.com/rhysd/vim-healthcheck.git
   branch = master
   ignore = dirty
-[submodule "notes-cli"]
+[submodule "vim-notes-cli"]
   path = .vim/bundle/notes-cli
   url = https://github.com/rhysd/vim-notes-cli.git
   branch = master
