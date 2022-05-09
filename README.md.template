@@ -35,7 +35,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * toggle between no line numbers, relative line numbers and plain line numbers?
 
 ### Categories
-%categories%
 
 #### General (Active)
 %active%
@@ -76,14 +75,23 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-rsi](https://github.com/tpope/vim-rsi.git)
 * [DrawIt](https://github.com/vim-scripts/DrawIt.git)
 
-## Resources and Miscellaneous
+## Resources
+
+### Github
+
+* [nerd fonts](https://github.com/ryanoasis/nerd-fonts)
+* [overview](https://microsoft.github.io/language-server-protocol/overviews/lsp/overview/)
+
+### Reddit
+
+* [which_lsp_plugin_should_i_use](https://www.reddit.com/r/vim/comments/7lnhrt/which_lsp_plugin_should_i_use/)
+* [a_guide_to_lsp_auto_completion_in_vim](https://www.reddit.com/r/vim/comments/b33lc1/a_guide_to_lsp_auto_completion_in_vim/)
+* [must have?](https://www.reddit.com/r/vim/comments/ulphgp/what_are_your_musthave_vimnvim_extensions/)
+
+### Miscellaneous
 
 * [vim-clangd](http://aliquote.org/post/vim-clangd/)
 * [clangd.llvm.org](https://clangd.llvm.org/)
-* [nerd fonts](https://github.com/ryanoasis/nerd-fonts)
 * [langserver.org](https://langserver.org/)
-* [overview](https://microsoft.github.io/language-server-protocol/overviews/lsp/overview/)
 * [spell-and-grammar-checking-on-vim](https://ncona.com/2018/12/spell-and-grammar-checking-on-vim/)
 * [setting up lsp in vim](https://ncona.com/2021/12/setting-up-lsp-in-vim)
-* [which_lsp_plugin_should_i_use](https://www.reddit.com/r/vim/comments/7lnhrt/which_lsp_plugin_should_i_use/)
-* [a_guide_to_lsp_auto_completion_in_vim](https://www.reddit.com/r/vim/comments/b33lc1/a_guide_to_lsp_auto_completion_in_vim/)
