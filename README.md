@@ -1,4 +1,4 @@
-# .vim Files
+# VIm Dotfiles
 
 This repo holds my vim dotfiles and plugins.
 
@@ -14,34 +14,34 @@ vim's builtin **pack** method.
 * .vim/bundle/timestamp: find
 * .vim/bundle/cscope_macros: submodule
 
+## How do I?
+
+* toggle between no line numbers, relative line numbers and plain line numbers?
+
 ## Plugins
 
 Plugins that have earned permanent status. These are stored in
-**.vim/pack/&gt;category&lt;/<plugin>/start**.
+**.vim/pack/&lt;category&gt;/&lt;plugin&gt;/start**.
 
 Any settings for plugins (with some very rare exceptions) will be in the
 **.vim/pack/active/mystuff/start** plugin directory, wherever it's supposed to fit.
 
-#### mystuff
+### mystuff
 
 My configuration for various of the plugins that need it.
 
 XXX: Add notes/reminders about the directory structure and what should go
      where.
 
-#### statusline
+### statusline
 
 My status line setup.
 
 XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
-#### How do I ...
+## Categories
 
-* toggle between no line numbers, relative line numbers and plain line numbers?
-
-### Categories
-
-#### General (Active)
+### General (Active)
 
 * [helpful](https://github.com/tweekmonster/helpful.vim.git)
 * [linediff](https://github.com/AndrewRadev/linediff.vim.git)
@@ -52,7 +52,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-surround](https://github.com/tpope/vim-surround.git)
 * [vim-unimpaired](https://github.com/tpope/vim-unimpaired.git)
 
-#### Applications
+### Applications
 
 * [jupyter-vim](https://github.com/jupyter-vim/jupyter-vim)
 * [vim-fake](https://github.com/tkhren/vim-fake.git)
@@ -61,17 +61,17 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-man](https://github.com/vim-utils/vim-man.git)
 * [vimwiki](https://github.com/vimwiki/vimwiki.git)
 
-#### DrChip's Stuff
+### DrChip's Stuff
 
 * [Align](https://github.com/vim-scripts/Align.git)
 * [AnsiEsc](https://github.com/vim-scripts/AnsiEsc.vim.git)
 * [AutoAlign](https://github.com/vim-scripts/AutoAlign.git)
 
-##### Evaluate
+#### Evaluate
 
 * [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
 
-#### Linter
+### Linter
 
 * [mccabe](https://github.com/PyCQA/mccabe)
 * [syntastic](https://github.com/scrooloose/syntastic.git)
@@ -79,7 +79,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-lint](https://github.com/dbakker/vim-lint.git)
 * [vim-sleuth](https://github.com/tpope/vim-sleuth.git)
 
-#### Syntax
+### Syntax
 
 * [apiblueprint](https://github.com/kylef/apiblueprint.vim.git)
 * [awk](https://github.com/vim-scripts/awk.vim)

@@ -1,4 +1,4 @@
-# .vim Files
+# VIm Dotfiles
 
 This repo holds my vim dotfiles and plugins.
 
@@ -9,50 +9,50 @@ I am currently migrating plugins from the pathogen **bundle** directory to
 vim's builtin **pack** method.
 %unexpected%
 
+## How do I?
+
+* toggle between no line numbers, relative line numbers and plain line numbers?
+
 ## Plugins
 
 Plugins that have earned permanent status. These are stored in
-**.vim/pack/&gt;category&lt;/<plugin>/start**.
+**.vim/pack/&lt;category&gt;/&lt;plugin&gt;/start**.
 
 Any settings for plugins (with some very rare exceptions) will be in the
 **.vim/pack/active/mystuff/start** plugin directory, wherever it's supposed to fit.
 
-#### mystuff
+### mystuff
 
 My configuration for various of the plugins that need it.
 
 XXX: Add notes/reminders about the directory structure and what should go
      where.
 
-#### statusline
+### statusline
 
 My status line setup.
 
 XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
-#### How do I ...
+## Categories
 
-* toggle between no line numbers, relative line numbers and plain line numbers?
-
-### Categories
-
-#### General (Active)
+### General (Active)
 %active%
 
-#### Applications
+### Applications
 %app%
 
-#### DrChip's Stuff
+### DrChip's Stuff
 %drchip%
 
-##### Evaluate
+#### Evaluate
 
 * [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
 
-#### Linter
+### Linter
 %linter%
 
-#### Syntax
+### Syntax
 %syntax%
 
 ### Being Tested
