@@ -34,37 +34,37 @@ My status line setup.
 
 XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
-## Categories
+### Categories
 
-### General (Active)
+#### General (Active)
 %active%
 
-### Applications
+#### Applications
 %app%
 
-### DrChip's Stuff
+#### DrChip's Stuff
 %drchip%
 
-#### Evaluate
+##### Evaluate
 
 * [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
 
-### Linter
+#### Linter
 %linter%
 
-### Syntax
+#### Syntax
 %syntax%
 
-### Being Tested
+#### Being Tested
 %test%
 
-### To Be Moved
+#### To Be Moved
 %tobemoved%
 
-### To Be Tested
+#### To Be Tested
 %tobetested%
 
-### Rejected
+#### Rejected
 
 * [docker-compose](https://github.com/skanehira/docker-compose.vim)
 * [evervim](https://github.com/kakkyz81/evervim.git)
@@ -76,6 +76,14 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [DrawIt](https://github.com/vim-scripts/DrawIt.git)
 
 ## Resources
+
+### VIm
+
+* [VIm Homepage](https://www.vim.org/)
+* [VIm Help](https://www.vimhelp.org/)
+* [VIm Script Search](https://www.vim.org/scripts/script_search_results.php)
+* [VIm Wiki](https://vim.fandom.com/wiki/Vim_Tips_Wiki)
+* [VIm FAQ](https://github.com/chrisbra/vim_faq/)
 
 ### Github
 

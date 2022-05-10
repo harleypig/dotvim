@@ -274,7 +274,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-superman"]
-  path = .vim/bundle/vim-superman
+	path = .vim/2btested/vim-superman
   url = https://github.com/jez/vim-superman.git
   branch = master
   ignore = dirty

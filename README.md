@@ -136,7 +136,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-python-pep8-indent](https://github.com/hynek/vim-python-pep8-indent)
 * [vim-snippets](https://github.com/honza/vim-snippets.git)
 * [vimspector](https://github.com/puremourning/vimspector.git)
-* [vim-superman](https://github.com/jez/vim-superman.git)
 * [vim-tmux](https://github.com/tmux-plugins/vim-tmux.git)
 * [vim-virtualenv](https://github.com/jmcantrell/vim-virtualenv)
 
@@ -191,6 +190,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-showmarks](https://github.com/jacquesbh/vim-showmarks.git)
 * [vim-signify](https://github.com/mhinz/vim-signify.git)
 * [vim-sneak](https://github.com/justinmk/vim-sneak.git)
+* [vim-superman](https://github.com/jez/vim-superman.git)
 * [vimux](https://github.com/preservim/vimux.git)
 * [yapf](https://github.com/google/yapf)
 
@@ -206,6 +206,14 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [DrawIt](https://github.com/vim-scripts/DrawIt.git)
 
 ## Resources
+
+### VIm
+
+* [VIm Homepage](https://www.vim.org/)
+* [VIm Help](https://www.vimhelp.org/)
+* [VIm Script Search](https://www.vim.org/scripts/script_search_results.php)
+* [VIm Wiki](https://vim.fandom.com/wiki/Vim_Tips_Wiki)
+* [VIm FAQ](https://github.com/chrisbra/vim_faq/)
 
 ### Github
 
