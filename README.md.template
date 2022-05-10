@@ -12,7 +12,7 @@ vim's builtin **pack** method.
 ## Plugins
 
 Plugins that have earned permanent status. These are stored in
-**.vim/pack/<category>/<plugin>/start**.
+**.vim/pack/&gt;category&lt;/<plugin>/start**.
 
 Any settings for plugins (with some very rare exceptions) will be in the
 **.vim/pack/active/mystuff/start** plugin directory, wherever it's supposed to fit.
