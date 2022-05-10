@@ -567,3 +567,18 @@
 [submodule "vim-gitgutter"]
 	path = .vim/2btested/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "tmuxline"]
+	path = .vim/2btested/tmuxline
+	url = https://github.com/edkolev/tmuxline.vim.git
+[submodule "vim-easytags"]
+	path = .vim/2btested/vim-easytags
+	url = https://github.com/xolox/vim-easytags.git
+[submodule "vim-misc"]
+	path = .vim/2btested/vim-misc
+	url = https://github.com/xolox/vim-misc.git
+[submodule "vim-pythonsense"]
+	path = .vim/2btested/vim-pythonsense
+	url = https://github.com/jeetsukumaran/vim-pythonsense.git
+[submodule "vim-visual-multi"]
+	path = .vim/2btested/vim-visual-multi
+	url = https://github.com/mg979/vim-visual-multi

@@ -6,7 +6,7 @@ _add() {
   name="${name%\.git}"
   name="${name%\.vim}"
 
-  grep "$name" .gitmodules && exit 0
+  grep "$name" .gitmodules && return 0
 
   git submodule add --name "$name" "$url" ".vim/2btested/$name"
 }
