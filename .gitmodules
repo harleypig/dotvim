@@ -564,3 +564,6 @@
 [submodule "VimCompletesMe"]
   path = .vim/2btested/VimCompletesMe
   url = https://github.com/ackyshake/VimCompletesMe.git
+[submodule "vim-gitgutter"]
+	path = .vim/2btested/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git

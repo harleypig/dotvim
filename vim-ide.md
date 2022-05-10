@@ -2,6 +2,9 @@
 
 * colorscheme
 * gutter
+* code review
+* lint
+* diff
 
 ## Syntax
 
@@ -53,3 +56,4 @@ set tags=tagfile
 ## Resources
 
 * [TutorialsPoint - Learn VIm](https://www.tutorialspoint.com/vim/)
+* [jez.io Blog](https://blog.jez.io/)
