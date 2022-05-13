@@ -85,3 +85,4 @@ Ideas and code ripped off from:
 * [Navigate long wrapped lines like normal
     lines](https://github.com/jez/dotfiles/blob/eba0202443de6bcc171dbe6bc133fa9fe02357f7/vimrc#L100-L106)
 * cabbrev help tab help
+* [Tiny keymap that can replace a lot](https://www.reddit.com/r/vim/comments/umo2kt/tiny_keymap_that_can_replace_a_lot/)
