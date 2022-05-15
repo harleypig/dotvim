@@ -14,19 +14,21 @@
 * snippets
 * tab (also, project management)
 
-## Syntax
+## Settings
 
-### Syntax Highlighting
+### Syntax
+
+#### Syntax Highlighting
 
 ```vim
 syntax on|off
 ```
 
-### Syntax Checking
+#### Syntax Checking
 
 * Syntastic
 
-## Indentation
+#### Indentation
 
 ```vim
 set autoindent
@@ -35,17 +37,21 @@ set cindent
 set smartindent
 ```
 
-## Bounce Between Start/End Points
+#### Bounce Between Start/End Points
 
 TBD
 
 See matchit plugin
 
-## Shell
+#### Autocomplete/Autosuggest
 
-TBD
+* `Ctl+x Ctl+N` word completion
+* `Ctl+x Ctl+L` line completion
+* `Ctl+x Ctl+F` filename completion
 
-## Tags
+??? Is `Ctl+[NLF]` above really `Ctl+Shift+[NLF]`?
+
+### Tags
 
 ctags/cscope for language other than c?
 
@@ -56,15 +62,11 @@ set tags=tagfile
 * `Ctl+]` goes to function defintion
 * `Ctl+t` returns to previous location
 
-## Autocomplete/Autosuggest
+### Shell
 
-* `Ctl+x Ctl+N` word completion
-* `Ctl+x Ctl+L` line completion
-* `Ctl+x Ctl+F` filename completion
+TBD
 
-??? Is `Ctl+[NLF]` above really `Ctl+Shift+[NLF]`?
-
-## Resources
+### Resources
 
 Ideas and code ripped off from:
 
@@ -74,13 +76,13 @@ Ideas and code ripped off from:
 * [Vim as IDE (1)](https://vim.fandom.com/wiki/Using_vim_as_an_IDE_all_in_one)
 * [Vim as IDE (2)](https://vim.fandom.com/wiki/Use_Vim_like_an_IDE)
 
-### Whole Enchilada
+#### Whole Enchilada
 
 * [Vista](https://github.com/liuchengxu/vista.vim/)
 * [Janus](https://github.com/carlhuda/janus.git/)
 * [spf133](https://github.com/spf13/spf13-vim.git/)
 
-### Try
+#### Try
 
 * [Navigate long wrapped lines like normal
     lines](https://github.com/jez/dotfiles/blob/eba0202443de6bcc171dbe6bc133fa9fe02357f7/vimrc#L100-L106)
