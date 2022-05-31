@@ -582,3 +582,6 @@
 [submodule "vim-visual-multi"]
 	path = .vim/2btested/vim-visual-multi
 	url = https://github.com/mg979/vim-visual-multi
+[submodule "vim-table-mode"]
+	path = .vim/pack/utility/start/vim-table-mode
+	url = https://github.com/dhruvasagar/vim-table-mode

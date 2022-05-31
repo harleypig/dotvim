@@ -1,7 +1,11 @@
 " Excellent HTML formatted copy of the VIm documentation at
 " http://vimdoc.sourceforge.net/htmldoc/
 
-set nocompatible
+" This is set by default
+" set nocompatible
+
+" Load all plugins in .vim/pack/*/start directories
+packloadall!
 
 "profile start /home/harleypig/work/vim.profile
 "profile! file *
