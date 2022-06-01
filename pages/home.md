@@ -1,41 +1,61 @@
 # VIm as IDE
 
+There are 10s of books, 100s of tutorials, 1000s of guides for setting up,
+manageing and otherwise configuring vim.
+
+This isn't one of those. Though, you might conceivably call this a guide, it's
+mainly a way for me to organize my vim configuration.
+
+## Topics
+
+### To Do
+
 * abbreviations
-* autoformatting (pretty code)
+* auto commands (autocmd)
+* auto completion
+* auto formatting (pretty code)
+* buffer/window/tab details
 * code review
 * colorscheme
+* commenting
 * debugging
 * diff
 * file browser
 * gutter
-* lint
+* [indenting](indenting)
+* linting
 * make
 * marks
+* matching/pairs (matchit)
 * snippets
+* splits
+* surrounding (surround)
 * tab (also, project management)
+* [syntax](syntax)
 
-## Settings
+### Modes
 
-### Syntax
+### Buffer
 
-#### Syntax Highlighting
+### Window
 
-```vim
-syntax on|off
-```
+### Tab
 
-#### Syntax Checking
+### Gutter
 
-* Syntastic
+### Statusline
 
-#### Indentation
+### Help
 
-```vim
-set autoindent
-set breakindent
-set cindent
-set smartindent
-```
+### Undo
+
+## Notes
+
+Notes about various ... things. Improve me!
+
+* [Filesystem](filesystem)
+* [Environment](environment)
+* ???
 
 #### Bounce Between Start/End Points
 

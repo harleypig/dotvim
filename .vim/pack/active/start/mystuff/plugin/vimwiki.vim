@@ -23,9 +23,11 @@ let defaults       = {
       \ 'syntax': 'markdown'
       \}
 
-let mywiki         = extend(copy(defaults), { 'path': '~/projects/sites/mywiki/pages' })
-let housewiki      = extend(copy(defaults), { 'path': '~/projects/sites/housewiki/pages' })
-let scripturestudy = extend(copy(defaults), { 'path': '~/projects/sites/scripturestudy/pages' })
 let carrie         = extend(copy(defaults), { 'path': '~/projects/sites/carrie/pages' })
+let housewiki      = extend(copy(defaults), { 'path': '~/projects/sites/housewiki/pages' })
+let mywiki         = extend(copy(defaults), { 'path': '~/projects/sites/mywiki/pages' })
+let scripturestudy = extend(copy(defaults), { 'path': '~/projects/sites/scripturestudy/pages' })
 
-let g:vimwiki_list = [mywiki, housewiki, scripturestudy, carrie]
+let dotvim         = extend(copy(defaults), { 'path': '~/projects/dotvim/pages' })
+
+let g:vimwiki_list = [mywiki, housewiki, scripturestudy, carrie, dotvim]

@@ -269,7 +269,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-superman"]
-	path = .vim/2btested/vim-superman
+  path = .vim/2btested/vim-superman
   url = https://github.com/jez/vim-superman.git
   branch = master
   ignore = dirty
@@ -560,23 +560,26 @@
   path = .vim/2btested/VimCompletesMe
   url = https://github.com/ackyshake/VimCompletesMe.git
 [submodule "vim-gitgutter"]
-	path = .vim/2btested/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
+  path = .vim/2btested/vim-gitgutter
+  url = https://github.com/airblade/vim-gitgutter.git
 [submodule "tmuxline"]
-	path = .vim/2btested/tmuxline
-	url = https://github.com/edkolev/tmuxline.vim.git
+  path = .vim/2btested/tmuxline
+  url = https://github.com/edkolev/tmuxline.vim.git
 [submodule "vim-easytags"]
-	path = .vim/2btested/vim-easytags
-	url = https://github.com/xolox/vim-easytags.git
+  path = .vim/2btested/vim-easytags
+  url = https://github.com/xolox/vim-easytags.git
 [submodule "vim-misc"]
-	path = .vim/2btested/vim-misc
-	url = https://github.com/xolox/vim-misc.git
+  path = .vim/2btested/vim-misc
+  url = https://github.com/xolox/vim-misc.git
 [submodule "vim-pythonsense"]
-	path = .vim/2btested/vim-pythonsense
-	url = https://github.com/jeetsukumaran/vim-pythonsense.git
+  path = .vim/2btested/vim-pythonsense
+  url = https://github.com/jeetsukumaran/vim-pythonsense.git
 [submodule "vim-visual-multi"]
-	path = .vim/2btested/vim-visual-multi
-	url = https://github.com/mg979/vim-visual-multi
+  path = .vim/2btested/vim-visual-multi
+  url = https://github.com/mg979/vim-visual-multi
 [submodule "vim-table-mode"]
-	path = .vim/pack/utility/start/vim-table-mode
-	url = https://github.com/dhruvasagar/vim-table-mode
+  path = .vim/pack/utility/start/vim-table-mode
+  url = https://github.com/dhruvasagar/vim-table-mode
+[submodule "hledger-vim"]
+  path = .vim/2btested/hledger-vim
+  url = https://github.com/anekos/hledger-vim.git
