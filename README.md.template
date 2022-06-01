@@ -48,6 +48,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 ##### Evaluate
 
 * [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
+* [AutoAlign](https://www.drchip.org/astronaut/vim/index.html#AUTOALIGN)
 
 #### Linter
 %linter%
