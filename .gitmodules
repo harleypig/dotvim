@@ -499,87 +499,116 @@
 [submodule "FastFold"]
   path = .vim/pack/test/start/FastFold
   url = https://github.com/Konfekt/FastFold.git
+  ignore = dirty
 [submodule "csv"]
   path = .vim/2btested/csv
   url = https://github.com/chrisbra/csv.vim.git
+  ignore = dirty
 [submodule "indentLine"]
   path = .vim/2btested/indentLine
   url = https://github.com/Yggdroot/indentLine.git
+  ignore = dirty
 [submodule "vim-indent-rainbow"]
   path = .vim/2btested/vim-indent-rainbow
   url = https://github.com/adi/vim-indent-rainbow.git
+  ignore = dirty
 [submodule "rainbow"]
   path = .vim/2btested/rainbow
   url = https://github.com/luochen1990/rainbow.git
+  ignore = dirty
 [submodule "vim-OnSyntaxChange"]
   path = .vim/2btested/vim-OnSyntaxChange
   url = https://github.com/inkarkat/vim-OnSyntaxChange.git
+  ignore = dirty
 [submodule "vim-ingo-library"]
   path = .vim/2btested/vim-ingo-library
   url = https://github.com/inkarkat/vim-ingo-library.git
+  ignore = dirty
 [submodule "vim-qlist"]
   path = .vim/2btested/vim-qlist
   url = https://github.com/romainl/vim-qlist.git
+  ignore = dirty
 [submodule "vim-abolish"]
   path = .vim/2btested/vim-abolish
   url = https://github.com/tpope/vim-abolish.git
+  ignore = dirty
 [submodule "vim-characterize"]
   path = .vim/2btested/vim-characterize
   url = https://github.com/tpope/vim-characterize.git
+  ignore = dirty
 [submodule "vim-dirvish"]
   path = .vim/2btested/vim-dirvish
   url = https://github.com/justinmk/vim-dirvish.git
+  ignore = dirty
 [submodule "vim-gutentags"]
   path = .vim/2btested/vim-gutentags
   url = https://github.com/ludovicchabant/vim-gutentags.git
+  ignore = dirty
 [submodule "vim-lion"]
   path = .vim/2btested/vim-lion
   url = https://github.com/tommcdo/vim-lion.git
+  ignore = dirty
 [submodule "vim-qf"]
   path = .vim/2btested/vim-qf
   url = https://github.com/romainl/vim-qf.git
+  ignore = dirty
 [submodule "vim-rsi"]
   path = .vim/2btested/vim-rsi
   url = https://github.com/tpope/vim-rsi.git
+  ignore = dirty
 [submodule "vim-sensible"]
   path = .vim/2btested/vim-sensible
   url = https://github.com/tpope/vim-sensible.git
+  ignore = dirty
 [submodule "vim-sneak"]
   path = .vim/2btested/vim-sneak
   url = https://github.com/justinmk/vim-sneak.git
+  ignore = dirty
 [submodule "targets"]
   path = .vim/2btested/targets
   url = https://github.com/wellle/targets.vim.git
+  ignore = dirty
 [submodule "ttags_vim"]
   path = .vim/2btested/ttags_vim
   url = https://github.com/tomtom/ttags_vim.git
+  ignore = dirty
 [submodule "undotree"]
   path = .vim/2btested/undotree
   url = https://github.com/mbbill/undotree.git
+  ignore = dirty
 [submodule "VimCompletesMe"]
   path = .vim/2btested/VimCompletesMe
   url = https://github.com/ackyshake/VimCompletesMe.git
+  ignore = dirty
 [submodule "vim-gitgutter"]
   path = .vim/2btested/vim-gitgutter
   url = https://github.com/airblade/vim-gitgutter.git
+  ignore = dirty
 [submodule "tmuxline"]
   path = .vim/2btested/tmuxline
   url = https://github.com/edkolev/tmuxline.vim.git
+  ignore = dirty
 [submodule "vim-easytags"]
   path = .vim/2btested/vim-easytags
   url = https://github.com/xolox/vim-easytags.git
+  ignore = dirty
 [submodule "vim-misc"]
   path = .vim/2btested/vim-misc
   url = https://github.com/xolox/vim-misc.git
+  ignore = dirty
 [submodule "vim-pythonsense"]
   path = .vim/2btested/vim-pythonsense
   url = https://github.com/jeetsukumaran/vim-pythonsense.git
+  ignore = dirty
 [submodule "vim-visual-multi"]
   path = .vim/2btested/vim-visual-multi
   url = https://github.com/mg979/vim-visual-multi
+  ignore = dirty
 [submodule "vim-table-mode"]
   path = .vim/pack/utility/start/vim-table-mode
   url = https://github.com/dhruvasagar/vim-table-mode
+  ignore = dirty
 [submodule "hledger-vim"]
   path = .vim/2btested/hledger-vim
   url = https://github.com/anekos/hledger-vim.git
+  ignore = dirty

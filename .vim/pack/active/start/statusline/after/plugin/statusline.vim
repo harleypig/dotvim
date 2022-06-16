@@ -100,7 +100,7 @@ set statusline+=%=
 
 " Version Control Information
 " XXX: Add check for Fugitive being installed
-set statusline+=%{FugitiveStatusline()}
+"set statusline+=%{FugitiveStatusline()}
 
 "Date time stamp for the current file.
 "set statusline+=%{strftime('%D\ %T',getftime(expand('%:p')))}
