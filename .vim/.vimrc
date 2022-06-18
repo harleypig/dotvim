@@ -71,3 +71,6 @@ aug AutoloadVimrc
   au!
   au BufWritePost $MYVIMRC source $MYVIMRC
 aug END
+
+" XXX: Move me!
+set shellcmdflag=-ic

@@ -2,6 +2,6 @@ from archlinux
 
 maintainer docker@harleypig.com
 
-RUN pacman -Syu --noconfirm
+run pacman -Syu --noconfirm && pacman -S gvim --noconfirm
 
-ENTRYPOINT ["/bin/bash"]
+entrypoint ["/usr/bin/gvim"]
