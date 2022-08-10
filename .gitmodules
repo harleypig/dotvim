@@ -612,3 +612,7 @@
   path = .vim/2btested/hledger-vim
   url = https://github.com/anekos/hledger-vim.git
   ignore = dirty
+[submodule "coc.nvim"]
+	path = .vim/pack/app/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
+  branch = release
