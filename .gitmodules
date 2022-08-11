@@ -616,3 +616,9 @@
 	path = .vim/pack/app/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
   branch = release
+[submodule "jsonc"]
+	path = .vim/pack/utility/start/jsonc
+	url = https://github.com/neoclide/jsonc.vim.git
+[submodule "vim-terraform"]
+	path = .vim/pack/syntax/start/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git
