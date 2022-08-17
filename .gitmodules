@@ -79,7 +79,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-repeat"]
-  path = .vim/pack/active/start/vim-repeat
+	path = .vim/pack/utility/start/vim-repeat
   url = https://github.com/tpope/vim-repeat.git
   branch = master
   ignore = dirty
