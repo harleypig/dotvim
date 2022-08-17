@@ -264,7 +264,7 @@
   branch = master
   ignore = dirty
 [submodule "linediff"]
-  path = .vim/pack/active/start/linediff
+	path = .vim/pack/utility/start/linediff
   url = https://github.com/AndrewRadev/linediff.vim.git
   branch = master
   ignore = dirty

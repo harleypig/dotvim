@@ -28,6 +28,7 @@ _mv() {
     exit 0
   }
 
+  echo git mv "$oldpath" "$newpath/$name"
   git mv "$oldpath" "$newpath/$name"
 }
 

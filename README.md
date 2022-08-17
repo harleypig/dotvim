@@ -11,8 +11,6 @@ vim's builtin **pack** method.
 !!! Fix these:
 
 * .vim/bundle/cscope_macros: submodule
-* .vim/bundle/bats: find
-* .vim/bundle/timestamp: find
 
 ## How do I?
 
@@ -43,8 +41,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 #### General (Active)
 
-* [helpful](https://github.com/tweekmonster/helpful.vim.git)
-* [linediff](https://github.com/AndrewRadev/linediff.vim.git)
 * [tabular](https://github.com/godlygeek/tabular.git)
 * [vim-endwise](https://github.com/tpope/vim-endwise.git)
 * [vim-eunuch](https://github.com/tpope/vim-eunuch.git)
@@ -106,7 +102,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 #### To Be Moved
 
-* [bufferize](https://github.com/AndrewRadev/bufferize.vim.git)
 * [cscope_macros](https://github.com/vim-scripts/cscope_macros.vim.git)
 
 #### To Be Tested
@@ -117,8 +112,10 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [asyncomplete](https://github.com/prabirshrestha/asyncomplete.vim.git)
 * [asyncomplete-lsp](https://github.com/prabirshrestha/asyncomplete-lsp.vim.git)
 * [autopep8](https://github.com/hhatto/autopep8)
+* [bats](https://github.com/aliou/bats.vim)
 * [black](https://github.com/ambv/black)
 * [bufexplorer](https://github.com/jlanzarotta/bufexplorer.git)
+* [bufferize](https://github.com/AndrewRadev/bufferize.vim.git)
 * [calendar](https://github.com/itchyny/calendar.vim)
 * [csv](https://github.com/chrisbra/csv.vim.git)
 * [ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky.git)
