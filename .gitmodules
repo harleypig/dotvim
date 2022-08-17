@@ -274,7 +274,7 @@
   branch = master
   ignore = dirty
 [submodule "tabular"]
-  path = .vim/pack/active/start/tabular
+	path = .vim/pack/utility/start/tabular
   url = https://github.com/godlygeek/tabular.git
   branch = master
   ignore = dirty
