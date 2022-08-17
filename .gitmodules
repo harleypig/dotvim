@@ -620,7 +620,7 @@
   path = .vim/pack/syntax/start/vim-terraform
   url = https://github.com/hashivim/vim-terraform.git
   ignore = dirty
-[submodule "bats2"]
+[submodule "bats"]
   path = .vim/2btested/bats
   url = https://github.com/aliou/bats.vim
   ignore = dirty
