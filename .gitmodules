@@ -462,7 +462,7 @@
   url = https://github.com/dpelle/vim-LanguageTool.git
   ignore = dirty
 [submodule "vim-sleuth"]
-  path = .vim/pack/linter/start/vim-sleuth
+	path = .vim/pack/utility/start/vim-sleuth
   url = https://github.com/tpope/vim-sleuth.git
   ignore = dirty
 [submodule "vim-endwise"]
