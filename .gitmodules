@@ -3,16 +3,6 @@
   url = https://github.com/tpope/vim-surround.git
   branch = master
   ignore = dirty
-[submodule "Align"]
-  path = .vim/pack/drchip/start/align
-  url = https://github.com/vim-scripts/Align.git
-  branch = master
-  ignore = dirty
-[submodule "AutoAlign"]
-  path = .vim/pack/drchip/start/autoalign
-  url = https://github.com/vim-scripts/AutoAlign.git
-  branch = master
-  ignore = dirty
 [submodule "vim-pathogen"]
   path = .vim/2btested/pathogen
   url = https://github.com/tpope/vim-pathogen.git
