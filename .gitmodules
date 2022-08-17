@@ -476,7 +476,7 @@
   url = https://github.com/tpope/vim-sleuth.git
   ignore = dirty
 [submodule "vim-endwise"]
-  path = .vim/pack/active/start/vim-endwise
+	path = .vim/pack/utility/start/vim-endwise
   url = https://github.com/tpope/vim-endwise.git
   ignore = dirty
 [submodule "vim-jdaddy"]
