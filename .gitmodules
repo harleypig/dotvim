@@ -29,7 +29,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-speeddating"]
-  path = .vim/pack/test/start/vim-speeddating
+	path = .vim/pack/utility/start/vim-speeddating
   url = https://github.com/tpope/vim-speeddating.git
   branch = master
   ignore = dirty
