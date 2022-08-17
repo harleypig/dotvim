@@ -34,7 +34,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-unimpaired"]
-  path = .vim/pack/active/start/vim-unimpaired
+	path = .vim/pack/utility/start/vim-unimpaired
   url = https://github.com/tpope/vim-unimpaired.git
   branch = master
   ignore = dirty
