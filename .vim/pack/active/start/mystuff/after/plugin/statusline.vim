@@ -108,6 +108,11 @@ set statusline+=%=
 " What are the permissions for the current file.
 set statusline+=%(\ %{getfperm(expand('%'))}%)
 
+" coc info
+if exists("g:did_coc_loaded")
+  set statusline+=%(\ %{coc#status()}%)
+endif
+
 " What file are we editing?
 set statusline+=\ %-.20F
 
