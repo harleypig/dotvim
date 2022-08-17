@@ -29,7 +29,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-eunuch"]
-  path = .vim/pack/active/start/vim-eunuch
+	path = .vim/pack/utility/start/vim-eunuch
   url = https://github.com/tpope/vim-eunuch.git
   branch = master
   ignore = dirty
