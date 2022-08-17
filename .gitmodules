@@ -1,5 +1,5 @@
 [submodule "vim-surround"]
-  path = .vim/pack/active/start/vim-surround
+	path = .vim/pack/utility/start/vim-surround
   url = https://github.com/tpope/vim-surround.git
   branch = master
   ignore = dirty
