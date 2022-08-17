@@ -2,10 +2,9 @@
 
 This repo holds my vim dotfiles and plugins.
 
-To install, link **$HOME/.vim** and **$HOME/.vimrc** to this repository's
-files of the same name.
+To install, link **$HOME/.vim** to this repository's files of the same name.
 
-I am currently migrating plugins from the pathogen **bundle** directory to
+I am currently evaluating plugins from the pathogen **bundle** directory to
 vim's builtin **pack** method.
 %unexpected%
 
@@ -16,7 +15,7 @@ vim's builtin **pack** method.
 ## Plugins
 
 Plugins that have earned permanent status. These are stored in
-**.vim/pack/&lt;category&gt;/&lt;plugin&gt;/start**.
+**.vim/pack/&lt;category&gt;/start/&lt;plugin&gt;**.
 
 Any settings for plugins (with some very rare exceptions) will be in the
 **.vim/pack/active/mystuff/start** plugin directory, wherever it's supposed to fit.
@@ -48,7 +47,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 ##### Evaluate
 
 * [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
-* [AutoAlign](https://www.drchip.org/astronaut/vim/index.html#AUTOALIGN)
 
 #### Linter
 %linter%
@@ -58,9 +56,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 #### Being Tested
 %test%
-
-#### To Be Moved
-%tobemoved%
 
 #### To Be Tested
 %tobetested%
@@ -75,6 +70,9 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides.git)
 * [vim-rsi](https://github.com/tpope/vim-rsi.git)
 * [DrawIt](https://github.com/vim-scripts/DrawIt.git)
+* [Align](https://github.com/vim-scripts/Align.git)
+* [AutoAlign](https://www.drchip.org/astronaut/vim/index.html#AUTOALIGN)
+  + In favor of Tabular
 
 ## Resources
 

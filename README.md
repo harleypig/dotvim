@@ -8,6 +8,7 @@ files of the same name.
 I am currently migrating plugins from the pathogen **bundle** directory to
 vim's builtin **pack** method.
 
+* [cscope_macros](https://github.com/vim-scripts/cscope_macros.vim.git)
 !!! Fix these:
 
 * .vim/bundle/cscope_macros: submodule
@@ -40,13 +41,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 ### Categories
 
 #### General (Active)
-
-* [tabular](https://github.com/godlygeek/tabular.git)
-* [vim-endwise](https://github.com/tpope/vim-endwise.git)
-* [vim-eunuch](https://github.com/tpope/vim-eunuch.git)
-* [vim-repeat](https://github.com/tpope/vim-repeat.git)
-* [vim-surround](https://github.com/tpope/vim-surround.git)
-* [vim-unimpaired](https://github.com/tpope/vim-unimpaired.git)
+%active%
 
 #### Applications
 
@@ -60,14 +55,11 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 #### DrChip's Stuff
 
-* [Align](https://github.com/vim-scripts/Align.git)
 * [AnsiEsc](https://github.com/vim-scripts/AnsiEsc.vim.git)
-* [AutoAlign](https://github.com/vim-scripts/AutoAlign.git)
 
 ##### Evaluate
 
 * [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
-* [AutoAlign](https://www.drchip.org/astronaut/vim/index.html#AUTOALIGN)
 
 #### Linter
 
@@ -101,8 +93,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-speeddating](https://github.com/tpope/vim-speeddating.git)
 
 #### To Be Moved
-
-* [cscope_macros](https://github.com/vim-scripts/cscope_macros.vim.git)
+%tobemoved%
 
 #### To Be Tested
 
@@ -209,6 +200,9 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides.git)
 * [vim-rsi](https://github.com/tpope/vim-rsi.git)
 * [DrawIt](https://github.com/vim-scripts/DrawIt.git)
+* [Align](https://github.com/vim-scripts/Align.git)
+* [AutoAlign](https://www.drchip.org/astronaut/vim/index.html#AUTOALIGN)
+  + In favor of Tabular
 
 ## Resources
 

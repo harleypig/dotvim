@@ -49,9 +49,6 @@ get_bucket() {
   if [[ $bucket =~ ^.vim/2btested/ ]]; then
     bucket='tobetested'
 
-  elif [[ $bucket =~ ^.vim/bundle/ ]]; then
-    bucket='tobemoved'
-
   elif [[ $bucket =~ ^.vim/pack ]]; then
     # path = .vim/pack/active/start/vim-surround
     bucket="${bucket#.vim/pack/}"
@@ -87,7 +84,7 @@ get_existing_dirs() {
   fopts+=('-maxdepth' '0')
   fopts+=('-type' 'd')
 
-  readarray -t dirs < <(find .vim/pack/*/*/* .vim/{2btested,bundle}/* "${fopts[@]}")
+  readarray -t dirs < <(find .vim/pack/*/*/* .vim/2btested/* "${fopts[@]}")
 
   for d in "${dirs[@]}"; do
     [[ $d =~ $skip_rx$ ]] && continue
