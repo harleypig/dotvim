@@ -289,7 +289,7 @@
   branch = master
   ignore = dirty
 [submodule "mccabe"]
-  path = .vim/pack/linter/start/mccabe
+	path = .vim/pack/python/start/mccabe
   url = https://github.com/PyCQA/mccabe
   branch = master
   ignore = dirty
