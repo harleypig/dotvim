@@ -8,6 +8,7 @@ _add() {
 
   grep "$name" .gitmodules && return 0
 
+  echo git submodule add --name "$name" "$url" ".vim/2btested/$name"
   git submodule add --name "$name" "$url" ".vim/2btested/$name"
 }
 
