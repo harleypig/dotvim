@@ -442,7 +442,7 @@
   url = https://github.com/preservim/vimux.git
   ignore = dirty
 [submodule "vim-markdown"]
-  path = .vim/pack/test/start/vim-markdown
+	path = .vim/pack/markdown/start/vim-markdown
   url = https://github.com/preservim/vim-markdown.git
   ignore = dirty
 [submodule "tagbar"]
