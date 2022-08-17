@@ -286,7 +286,7 @@
 [submodule "autopep8"]
   path = .vim/bundle/autopep8
   url = https://github.com/hhatto/autopep8
-  branch = master
+  branch = main
   ignore = dirty
 [submodule "pycodestyle"]
   path = .vim/bundle/pycodestyle
