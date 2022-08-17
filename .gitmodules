@@ -234,7 +234,7 @@
   branch = master
   ignore = dirty
 [submodule "bufferize"]
-  path = .vim/bundle/bufferize
+	path = .vim/2btested/bufferize
   url = https://github.com/AndrewRadev/bufferize.vim.git
   branch = master
   ignore = dirty
