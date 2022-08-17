@@ -418,7 +418,7 @@
   url = https://github.com/preservim/nerdtree.git
   ignore = dirty
 [submodule "ale"]
-  path = .vim/pack/test/start/ale
+	path = .vim/pack/async/start/ale
   url = https://github.com/dense-analysis/ale.git
   ignore = dirty
 [submodule "vim-lsp-settings"]
