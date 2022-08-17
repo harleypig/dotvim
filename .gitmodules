@@ -149,7 +149,7 @@
   branch = master
   ignore = dirty
 [submodule "helpful"]
-  path = .vim/pack/active/start/helpful
+  path = .vim/pack/utility/start/helpful
   url = https://github.com/tweekmonster/helpful.vim.git
   branch = master
   ignore = dirty
@@ -234,7 +234,7 @@
   branch = master
   ignore = dirty
 [submodule "bufferize"]
-	path = .vim/2btested/bufferize
+  path = .vim/2btested/bufferize
   url = https://github.com/AndrewRadev/bufferize.vim.git
   branch = master
   ignore = dirty

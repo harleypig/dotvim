@@ -33,4 +33,4 @@ _mv() {
 
 _mv "$@"
 
-#mkreadme > README.md
+mkreadme > README.md
