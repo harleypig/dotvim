@@ -2,16 +2,22 @@
 
 This repo holds my vim dotfiles and plugins.
 
-To install, link **$HOME/.vim** and **$HOME/.vimrc** to this repository's
-files of the same name.
+To install, link **$HOME/.vim** to this repository's files of the same name.
 
-I am currently migrating plugins from the pathogen **bundle** directory to
+I am currently evaluating plugins from the pathogen **bundle** directory to
 vim's builtin **pack** method.
 
 * [cscope_macros](https://github.com/vim-scripts/cscope_macros.vim.git)
 !!! Fix these:
 
+* .vim/2btested/taglist: submodule
+* .vim/pack/linter/start/syntastic: submodule
+* .vim/pack/test/start/editorconfig-vim: submodule
+* .vim/pack/utility/start/editorconfig-vim: find
+* .vim/2btested/nerdtree-git-plugin: submodule
 * .vim/bundle/cscope_macros: submodule
+* .vim/pack/local/start/local: find
+* .vim/pack/utility/start/syntastic: find
 
 ## How do I?
 
@@ -20,7 +26,7 @@ vim's builtin **pack** method.
 ## Plugins
 
 Plugins that have earned permanent status. These are stored in
-**.vim/pack/&lt;category&gt;/&lt;plugin&gt;/start**.
+**.vim/pack/&lt;category&gt;/start/&lt;plugin&gt;**.
 
 Any settings for plugins (with some very rare exceptions) will be in the
 **.vim/pack/active/mystuff/start** plugin directory, wherever it's supposed to fit.
@@ -45,10 +51,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 #### Applications
 
-* [coc.nvim](https://github.com/neoclide/coc.nvim.git)
-* [jupyter-vim](https://github.com/jupyter-vim/jupyter-vim)
 * [vim-fake](https://github.com/tkhren/vim-fake.git)
-* [vim-fugitive](https://github.com/tpope/vim-fugitive.git)
 * [vim-healthcheck](https://github.com/rhysd/vim-healthcheck.git)
 * [vim-man](https://github.com/vim-utils/vim-man.git)
 * [vimwiki](https://github.com/vimwiki/vimwiki.git)
@@ -63,47 +66,33 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 #### Linter
 
-* [mccabe](https://github.com/PyCQA/mccabe)
 * [syntastic](https://github.com/scrooloose/syntastic.git)
-* [vim-flake8](https://github.com/nvie/vim-flake8)
-* [vim-lint](https://github.com/dbakker/vim-lint.git)
-* [vim-sleuth](https://github.com/tpope/vim-sleuth.git)
 
 #### Syntax
 
-* [apiblueprint](https://github.com/kylef/apiblueprint.vim.git)
 * [awk](https://github.com/vim-scripts/awk.vim)
 * [jq](https://github.com/vito-c/jq.vim.git)
 * [MatchTag](https://github.com/gregsexton/MatchTag.git)
 * [nginx](https://github.com/chr4/nginx.vim)
 * [SimpylFold](https://github.com/tmhedberg/SimpylFold.git)
 * [vim-colorschemes](https://github.com/flazz/vim-colorschemes.git)
+* [vim-devicons](https://github.com/ryanoasis/vim-devicons.git)
 * [vim-irssi-syntax](https://github.com/isundil/vim-irssi-syntax.git)
-* [vim-terraform](https://github.com/hashivim/vim-terraform.git)
 * [vim-yaml](https://github.com/stephpy/vim-yaml)
 
 #### Being Tested
 
-* [ale](https://github.com/dense-analysis/ale.git)
 * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim.git)
 * [FastFold](https://github.com/Konfekt/FastFold.git)
-* [vim-devicons](https://github.com/ryanoasis/vim-devicons.git)
-* [vim-jdaddy](https://github.com/tpope/vim-jdaddy.git)
-* [vim-markdown](https://github.com/preservim/vim-markdown.git)
-* [vim-speeddating](https://github.com/tpope/vim-speeddating.git)
-
-#### To Be Moved
-%tobemoved%
 
 #### To Be Tested
 
-* [ansible-vim](https://github.com/pearofducks/ansible-vim.git)
+* [apiblueprint](https://github.com/kylef/apiblueprint.vim.git)
 * [astroid](https://github.com/PyCQA/astroid)
 * [async](https://github.com/prabirshrestha/async.vim.git)
 * [asyncomplete](https://github.com/prabirshrestha/asyncomplete.vim.git)
 * [asyncomplete-lsp](https://github.com/prabirshrestha/asyncomplete-lsp.vim.git)
 * [autopep8](https://github.com/hhatto/autopep8)
-* [bats](https://github.com/aliou/bats.vim)
 * [black](https://github.com/ambv/black)
 * [bufexplorer](https://github.com/jlanzarotta/bufexplorer.git)
 * [bufferize](https://github.com/AndrewRadev/bufferize.vim.git)
@@ -115,11 +104,9 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [gitv](https://github.com/gregsexton/gitv)
 * [hledger-vim](https://github.com/anekos/hledger-vim.git)
 * [indentLine](https://github.com/Yggdroot/indentLine.git)
+* [jupyter-vim](https://github.com/jupyter-vim/jupyter-vim)
 * [ledger](https://github.com/vim-scripts/ledger.vim.git)
-* [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 * [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin.git)
-* [nerdtree](https://github.com/preservim/nerdtree.git)
-* [nerdtree-project-plugin](https://github.com/scrooloose/nerdtree-project-plugin.git)
 * [onestatus](https://github.com/narajaon/onestatus.git)
 * [perlomni](https://github.com/c9s/perlomni.vim.git)
 * [pycodestyle](https://github.com/PyCQA/pycodestyle)
@@ -142,10 +129,8 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [undotree](https://github.com/mbbill/undotree.git)
 * [vim-abolish](https://github.com/tpope/vim-abolish.git)
 * [vim-asterisk](https://github.com/haya14busa/vim-asterisk.git)
-* [vim-autoclose](https://github.com/Townk/vim-autoclose.git)
 * [vim-autotag](https://github.com/craigemery/vim-autotag)
 * [vim-characterize](https://github.com/tpope/vim-characterize.git)
-* [vim-commentary](https://github.com/tpope/vim-commentary.git)
 * [VimCompletesMe](https://github.com/ackyshake/VimCompletesMe.git)
 * [vim-conflicted](https://github.com/christoomey/vim-conflicted.git)
 * [vim-dadbod](https://github.com/tpope/vim-dadbod.git)
@@ -176,8 +161,8 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-pythonsense](https://github.com/jeetsukumaran/vim-pythonsense.git)
 * [vim-qf](https://github.com/romainl/vim-qf.git)
 * [vim-qlist](https://github.com/romainl/vim-qlist.git)
-* [vim-rsi](https://github.com/tpope/vim-rsi.git)
-* [vim-sensible](https://github.com/tpope/vim-sensible.git)
+* [vim-shellcheck](https://github.com/itspriddle/vim-shellcheck.git)
+* [vim-shfmt](https://github.com/z0mbix/vim-shfmt.git)
 * [vim-showmarks](https://github.com/jacquesbh/vim-showmarks.git)
 * [vim-signify](https://github.com/mhinz/vim-signify.git)
 * [vim-sneak](https://github.com/justinmk/vim-sneak.git)
@@ -186,9 +171,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-superman](https://github.com/jez/vim-superman.git)
 * [vim-tmux](https://github.com/tmux-plugins/vim-tmux.git)
 * [vimux](https://github.com/preservim/vimux.git)
-* [vim-virtualenv](https://github.com/jmcantrell/vim-virtualenv)
 * [vim-visual-multi](https://github.com/mg979/vim-visual-multi)
-* [yapf](https://github.com/google/yapf)
 
 #### Rejected
 
