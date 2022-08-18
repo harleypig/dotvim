@@ -470,7 +470,7 @@
   url = https://github.com/tpope/vim-endwise.git
   ignore = dirty
 [submodule "vim-jdaddy"]
-  path = .vim/pack/test/start/vim-jdaddy
+	path = .vim/pack/utility/start/vim-jdaddy
   url = https://github.com/tpope/vim-jdaddy.git
   ignore = dirty
 [submodule "vim-dadbod"]
@@ -621,3 +621,4 @@
 [submodule "vim-vaultproject"]
 	path = .vim/2btested/vim-vaultproject
 	url = https://github.com/hashivim/vim-vaultproject.git
+	ignore = dirty
