@@ -446,8 +446,8 @@
   path = .vim/2btested/csv
   url = https://github.com/chrisbra/csv.vim.git
   ignore = dirty
-[submodule "indentLine"]
-  path = .vim/2btested/indentLine
+[submodule "indentline"]
+	path = .vim/pack/utility/start/indentline
   url = https://github.com/Yggdroot/indentLine.git
   ignore = dirty
 [submodule "vim-indent-rainbow"]
