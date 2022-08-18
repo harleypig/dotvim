@@ -4,19 +4,15 @@ This repo holds my vim dotfiles and plugins.
 
 To install, link **$HOME/.vim** to this repository's files of the same name.
 
-I am currently evaluating plugins from the pathogen **bundle** directory to
-vim's builtin **pack** method.
 
 * [cscope_macros](https://github.com/vim-scripts/cscope_macros.vim.git)
 !!! Fix these:
 
 * .vim/2btested/taglist: submodule
-* .vim/pack/linter/start/syntastic: submodule
 * .vim/pack/test/start/editorconfig-vim: submodule
 * .vim/pack/utility/start/editorconfig-vim: find
 * .vim/bundle/cscope_macros: submodule
 * .vim/pack/local/start/local: find
-* .vim/pack/utility/start/syntastic: find
 
 ## How do I?
 
@@ -64,8 +60,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
 
 #### Linter
-
-* [syntastic](https://github.com/scrooloose/syntastic.git)
+%linter%
 
 #### Syntax
 

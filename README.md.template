@@ -4,8 +4,6 @@ This repo holds my vim dotfiles and plugins.
 
 To install, link **$HOME/.vim** to this repository's files of the same name.
 
-I am currently evaluating plugins from the pathogen **bundle** directory to
-vim's builtin **pack** method.
 %unexpected%
 
 ## How do I?

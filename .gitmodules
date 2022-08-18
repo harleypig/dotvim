@@ -54,7 +54,7 @@
   branch = master
   ignore = dirty
 [submodule "syntastic"]
-  path = .vim/pack/linter/start/syntastic
+  path = .vim/pack/utility/start/syntastic
   url = https://github.com/scrooloose/syntastic.git
   branch = master
   ignore = dirty
