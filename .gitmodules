@@ -368,11 +368,6 @@
   url = https://github.com/craigemery/vim-autotag
   branch = master
   ignore = dirty
-[submodule "onestatus"]
-  path = .vim/2btested/onestatus
-  url = https://github.com/narajaon/onestatus.git
-  branch = master
-  ignore = dirty
 [submodule "editorconfig-vim"]
   path = .vim/pack/utility/start/editorconfig-vim
   url = https://github.com/editorconfig/editorconfig-vim.git
