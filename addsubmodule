@@ -20,3 +20,4 @@ for u in "$@"; do
 done
 
 mkreadme > README.md
+git commit -m "updated readme after adding $name" README.md

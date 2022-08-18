@@ -32,9 +32,8 @@ _mv() {
 
   #echo git mv "$oldpath" "$newpath/$name"
   git mv "$oldpath" "$newpath/$name"
-  git commit -m "moved $name to $location"
+  mkreadme > README.md
+  git commit -m "moved $name to $location and updated readme" .gitmodules README.md
 }
 
 _mv "$@"
-
-mkreadme > README.md
