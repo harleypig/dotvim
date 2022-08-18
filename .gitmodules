@@ -14,7 +14,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-fugitive"]
-	path = .vim/pack/git/start/vim-fugitive
+  path = .vim/pack/git/start/vim-fugitive
   url = https://github.com/tpope/vim-fugitive.git
   branch = master
   ignore = dirty
@@ -59,7 +59,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-commentary"]
-	path = .vim/pack/utility/start/vim-commentary
+  path = .vim/pack/utility/start/vim-commentary
   url = https://github.com/tpope/vim-commentary.git
   branch = master
   ignore = dirty
@@ -154,7 +154,7 @@
   branch = master
   ignore = dirty
 [submodule "ansible-vim"]
-	path = .vim/pack/ansible/start/ansible-vim
+  path = .vim/pack/ansible/start/ansible-vim
   url = https://github.com/pearofducks/ansible-vim.git
   branch = master
   ignore = dirty
@@ -184,7 +184,7 @@
   branch = master
   ignore = dirty
 [submodule "apiblueprint"]
-	path = .vim/2btested/apiblueprint
+  path = .vim/2btested/apiblueprint
   url = https://github.com/kylef/apiblueprint.vim.git
   branch = master
   ignore = dirty
@@ -319,7 +319,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-virtualenv"]
-	path = .vim/pack/python/start/vim-virtualenv
+  path = .vim/pack/python/start/vim-virtualenv
   url = https://github.com/jmcantrell/vim-virtualenv
   branch = master
   ignore = dirty
@@ -329,7 +329,7 @@
   branch = main
   ignore = dirty
 [submodule "jupyter-vim"]
-	path = .vim/2btested/jupyter-vim
+  path = .vim/2btested/jupyter-vim
   url = https://github.com/jupyter-vim/jupyter-vim
   branch = master
   ignore = dirty
@@ -406,7 +406,7 @@
   url = https://github.com/preservim/tagbar.git
   ignore = dirty
 [submodule "vim-devicons"]
-	path = .vim/pack/syntax/start/vim-devicons
+  path = .vim/pack/syntax/start/vim-devicons
   url = https://github.com/ryanoasis/vim-devicons.git
   ignore = dirty
 [submodule "vim-LanguageTool"]
@@ -422,7 +422,7 @@
   url = https://github.com/tpope/vim-endwise.git
   ignore = dirty
 [submodule "vim-jdaddy"]
-	path = .vim/pack/utility/start/vim-jdaddy
+  path = .vim/pack/utility/start/vim-jdaddy
   url = https://github.com/tpope/vim-jdaddy.git
   ignore = dirty
 [submodule "vim-dadbod"]
@@ -442,11 +442,11 @@
   url = https://github.com/chrisbra/csv.vim.git
   ignore = dirty
 [submodule "indentline"]
-	path = .vim/pack/utility/start/indentline
+  path = .vim/pack/utility/start/indentline
   url = https://github.com/Yggdroot/indentLine.git
   ignore = dirty
 [submodule "rainbow"]
-  path = .vim/2btested/rainbow
+  path = .vim/pack/utility/rainbow
   url = https://github.com/luochen1990/rainbow.git
   ignore = dirty
 [submodule "vim-OnSyntaxChange"]
@@ -547,26 +547,26 @@
   url = https://github.com/neoclide/jsonc.vim.git
   ignore = dirty
 [submodule "vim-terraform"]
-	path = .vim/pack/hashicorp/start/vim-terraform
+  path = .vim/pack/hashicorp/start/vim-terraform
   url = https://github.com/hashivim/vim-terraform.git
   ignore = dirty
 [submodule "bats"]
-	path = .vim/pack/shell/start/bats
+  path = .vim/pack/shell/start/bats
   url = https://github.com/aliou/bats.vim
   ignore = dirty
 [submodule "vim-packer"]
-	path = .vim/pack/hashicorp/start/vim-packer
-	url = https://github.com/hashivim/vim-packer.git
-	ignore = dirty
+  path = .vim/pack/hashicorp/start/vim-packer
+  url = https://github.com/hashivim/vim-packer.git
+  ignore = dirty
 [submodule "vim-vaultproject"]
-	path = .vim/pack/hashicorp/start/vim-vaultproject
-	url = https://github.com/hashivim/vim-vaultproject.git
-	ignore = dirty
+  path = .vim/pack/hashicorp/start/vim-vaultproject
+  url = https://github.com/hashivim/vim-vaultproject.git
+  ignore = dirty
 [submodule "vim-shellcheck"]
-	path = .vim/2btested/vim-shellcheck
-	url = https://github.com/itspriddle/vim-shellcheck.git
-	ignore = dirty
+  path = .vim/2btested/vim-shellcheck
+  url = https://github.com/itspriddle/vim-shellcheck.git
+  ignore = dirty
 [submodule "vim-shfmt"]
-	path = .vim/2btested/vim-shfmt
-	url = https://github.com/z0mbix/vim-shfmt.git
-	ignore = dirty
+  path = .vim/2btested/vim-shfmt
+  url = https://github.com/z0mbix/vim-shfmt.git
+  ignore = dirty

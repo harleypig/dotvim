@@ -9,8 +9,7 @@ _mv() {
 
   location="$newpath"
 
-  # shellcheck disable=SC2034
-  read -r junk oldpath < <(git config -f .gitmodules --get "submodule.${name}.path")
+  read -r oldpath < <(git config -f .gitmodules --get "submodule.${name}.path")
 
   [[ -z $oldpath ]] && {
     echo "$name not found in .gitmodules"
