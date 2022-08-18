@@ -614,3 +614,6 @@
   path = .vim/2btested/bats
   url = https://github.com/aliou/bats.vim
   ignore = dirty
+[submodule "vim-packer"]
+	path = .vim/2btested/vim-packer
+	url = https://github.com/hashivim/vim-packer.git
