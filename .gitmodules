@@ -593,6 +593,6 @@
 	url = https://github.com/hashivim/vim-packer.git
 	ignore = dirty
 [submodule "vim-vaultproject"]
-	path = .vim/2btested/vim-vaultproject
+	path = .vim/pack/hashicorp/start/vim-vaultproject
 	url = https://github.com/hashivim/vim-vaultproject.git
 	ignore = dirty
