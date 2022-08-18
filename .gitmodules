@@ -450,7 +450,7 @@
   url = https://github.com/preservim/tagbar.git
   ignore = dirty
 [submodule "vim-devicons"]
-  path = .vim/pack/test/start/vim-devicons
+	path = .vim/pack/syntax/start/vim-devicons
   url = https://github.com/ryanoasis/vim-devicons.git
   ignore = dirty
 [submodule "nerdtree-project-plugin"]
