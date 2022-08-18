@@ -393,11 +393,6 @@
   url = https://github.com/stephpy/vim-yaml
   branch = master
   ignore = dirty
-[submodule "nerdcommenter"]
-  path = .vim/2btested/nerdcommenter
-  url = https://github.com/scrooloose/nerdcommenter
-  branch = master
-  ignore = dirty
 [submodule "vim-autotag"]
   path = .vim/2btested/vim-autotag
   url = https://github.com/craigemery/vim-autotag
@@ -412,10 +407,6 @@
   path = .vim/pack/test/start/editorconfig-vim
   url = https://github.com/editorconfig/editorconfig-vim.git
   branch = master
-  ignore = dirty
-[submodule "nerdtree"]
-  path = .vim/2btested/nerdtree
-  url = https://github.com/preservim/nerdtree.git
   ignore = dirty
 [submodule "ale"]
   path = .vim/pack/async/start/ale
@@ -452,10 +443,6 @@
 [submodule "vim-devicons"]
 	path = .vim/pack/syntax/start/vim-devicons
   url = https://github.com/ryanoasis/vim-devicons.git
-  ignore = dirty
-[submodule "nerdtree-project-plugin"]
-  path = .vim/2btested/nerdtree-project-plugin
-  url = https://github.com/scrooloose/nerdtree-project-plugin.git
   ignore = dirty
 [submodule "vim-LanguageTool"]
   path = .vim/2btested/vim-LanguageTool
@@ -536,10 +523,6 @@
 [submodule "vim-qf"]
   path = .vim/2btested/vim-qf
   url = https://github.com/romainl/vim-qf.git
-  ignore = dirty
-[submodule "vim-rsi"]
-  path = .vim/2btested/vim-rsi
-  url = https://github.com/tpope/vim-rsi.git
   ignore = dirty
 [submodule "vim-sneak"]
   path = .vim/2btested/vim-sneak
