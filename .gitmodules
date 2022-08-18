@@ -359,7 +359,7 @@
   branch = main
   ignore = dirty
 [submodule "jupyter-vim"]
-  path = .vim/pack/app/start/jupyter-vim
+	path = .vim/2btested/jupyter-vim
   url = https://github.com/jupyter-vim/jupyter-vim
   branch = master
   ignore = dirty
