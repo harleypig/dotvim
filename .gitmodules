@@ -344,18 +344,13 @@
   branch = master
   ignore = dirty
 [submodule "vim-virtualenv"]
-  path = .vim/2btested/vim-virtualenv
+	path = .vim/pack/python/start/vim-virtualenv
   url = https://github.com/jmcantrell/vim-virtualenv
   branch = master
   ignore = dirty
 [submodule "black"]
   path = .vim/2btested/black
   url = https://github.com/ambv/black
-  branch = main
-  ignore = dirty
-[submodule "yapf"]
-  path = .vim/2btested/yapf
-  url = https://github.com/google/yapf
   branch = main
   ignore = dirty
 [submodule "jupyter-vim"]
