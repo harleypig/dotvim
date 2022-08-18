@@ -74,7 +74,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-commentary"]
-  path = .vim/2btested/vim-commentary
+	path = .vim/pack/utility/start/vim-commentary
   url = https://github.com/tpope/vim-commentary.git
   branch = master
   ignore = dirty
