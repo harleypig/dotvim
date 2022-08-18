@@ -43,11 +43,6 @@
   url = https://github.com/gregsexton/MatchTag.git
   branch = master
   ignore = dirty
-[submodule "vim-autoclose"]
-  path = .vim/2btested/autoclose
-  url = https://github.com/Townk/vim-autoclose.git
-  branch = master
-  ignore = dirty
 [submodule "taglist"]
   path = .vim/2btested/taglist
   url = https://github.com/vim-scripts/taglist.vim.git
