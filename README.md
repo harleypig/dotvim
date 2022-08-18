@@ -14,7 +14,6 @@ vim's builtin **pack** method.
 * .vim/pack/linter/start/syntastic: submodule
 * .vim/pack/test/start/editorconfig-vim: submodule
 * .vim/pack/utility/start/editorconfig-vim: find
-* .vim/2btested/nerdtree-git-plugin: submodule
 * .vim/bundle/cscope_macros: submodule
 * .vim/pack/local/start/local: find
 * .vim/pack/utility/start/syntastic: find
@@ -106,7 +105,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [indentLine](https://github.com/Yggdroot/indentLine.git)
 * [jupyter-vim](https://github.com/jupyter-vim/jupyter-vim)
 * [ledger](https://github.com/vim-scripts/ledger.vim.git)
-* [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin.git)
 * [onestatus](https://github.com/narajaon/onestatus.git)
 * [perlomni](https://github.com/c9s/perlomni.vim.git)
 * [pycodestyle](https://github.com/PyCQA/pycodestyle)
