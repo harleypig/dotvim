@@ -607,7 +607,7 @@
   url = https://github.com/neoclide/jsonc.vim.git
   ignore = dirty
 [submodule "vim-terraform"]
-  path = .vim/pack/syntax/start/vim-terraform
+	path = .vim/pack/terraform/start/vim-terraform
   url = https://github.com/hashivim/vim-terraform.git
   ignore = dirty
 [submodule "bats"]
