@@ -580,7 +580,7 @@
   url = https://github.com/hashivim/vim-terraform.git
   ignore = dirty
 [submodule "bats"]
-  path = .vim/2btested/bats
+	path = .vim/pack/shell/start/bats
   url = https://github.com/aliou/bats.vim
   ignore = dirty
 [submodule "vim-packer"]
