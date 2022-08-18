@@ -1,0 +1,26 @@
+#!/bin/bash
+
+(($#)) || {
+  echo 'Must pass submodule to be removed.' >&2
+  exit 1
+}
+
+name="$1"
+
+# shellcheck disable=SC2034
+read -r junk path < <(git config -f .gitmodules --get-regexp "${name}.path")
+
+[[ -z $path ]] && {
+  echo "$1 is not a submodule" >&2
+  exit 1
+}
+
+git rm "$path" || {
+  echo "Problem removing $name" >&2
+  exit 1
+}
+
+git commit "removed $name"
+rm -fr ".git/modules/${path##*/}"
+git config --remove-section "submodule.$name"
+mkreadme > README.md
