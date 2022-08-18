@@ -14,7 +14,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-fugitive"]
-  path = .vim/pack/app/start/vim-fugitive
+	path = .vim/pack/git/start/vim-fugitive
   url = https://github.com/tpope/vim-fugitive.git
   branch = master
   ignore = dirty
