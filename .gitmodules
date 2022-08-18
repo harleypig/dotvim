@@ -108,11 +108,6 @@
   url = https://github.com/gregsexton/gitv
   branch = master
   ignore = dirty
-[submodule "nerdtree-git-plugin"]
-  path = .vim/2btested/nerdtree-git-plugin
-  url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
-  branch = master
-  ignore = dirty
 [submodule "jq"]
   path = .vim/pack/syntax/start/jq
   url = https://github.com/vito-c/jq.vim.git
