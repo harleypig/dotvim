@@ -5,13 +5,8 @@ This repo holds my vim dotfiles and plugins.
 To install, link **$HOME/.vim** to this repository's files of the same name.
 
 
-* [cscope_macros](https://github.com/vim-scripts/cscope_macros.vim.git)
 !!! Fix these:
 
-* .vim/2btested/taglist: submodule
-* .vim/pack/test/start/editorconfig-vim: submodule
-* .vim/pack/utility/start/editorconfig-vim: find
-* .vim/bundle/cscope_macros: submodule
 * .vim/pack/local/start/local: find
 
 ## How do I?
@@ -76,7 +71,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 #### Being Tested
 
-* [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim.git)
 * [FastFold](https://github.com/Konfekt/FastFold.git)
 
 #### To Be Tested
@@ -111,7 +105,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [snowball_py](https://github.com/diraol/snowball_py)
 * [supertab](https://github.com/ervandew/supertab.git)
 * [tagbar](https://github.com/preservim/tagbar.git)
-* [taglist](https://github.com/vim-scripts/taglist.vim.git)
 * [targets](https://github.com/wellle/targets.vim.git)
 * [tmuxline](https://github.com/edkolev/tmuxline.vim.git)
 * [toml](https://github.com/uiri/toml.git)

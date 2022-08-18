@@ -43,16 +43,6 @@
   url = https://github.com/gregsexton/MatchTag.git
   branch = master
   ignore = dirty
-[submodule "taglist"]
-  path = .vim/2btested/taglist
-  url = https://github.com/vim-scripts/taglist.vim.git
-  branch = master
-  ignore = dirty
-[submodule "cscope_macros"]
-  path = .vim/bundle/cscope_macros
-  url = https://github.com/vim-scripts/cscope_macros.vim.git
-  branch = master
-  ignore = dirty
 [submodule "syntastic"]
   path = .vim/pack/utility/start/syntastic
   url = https://github.com/scrooloose/syntastic.git
@@ -384,7 +374,7 @@
   branch = master
   ignore = dirty
 [submodule "editorconfig-vim"]
-  path = .vim/pack/test/start/editorconfig-vim
+  path = .vim/pack/utility/start/editorconfig-vim
   url = https://github.com/editorconfig/editorconfig-vim.git
   branch = master
   ignore = dirty
