@@ -179,7 +179,7 @@
   branch = master
   ignore = dirty
 [submodule "ansible-vim"]
-  path = .vim/2btested/ansible-vim
+	path = .vim/pack/ansible/start/ansible-vim
   url = https://github.com/pearofducks/ansible-vim.git
   branch = master
   ignore = dirty
