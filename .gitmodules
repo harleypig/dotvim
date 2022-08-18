@@ -541,10 +541,6 @@
   path = .vim/2btested/vim-rsi
   url = https://github.com/tpope/vim-rsi.git
   ignore = dirty
-[submodule "vim-sensible"]
-  path = .vim/2btested/vim-sensible
-  url = https://github.com/tpope/vim-sensible.git
-  ignore = dirty
 [submodule "vim-sneak"]
   path = .vim/2btested/vim-sneak
   url = https://github.com/justinmk/vim-sneak.git
