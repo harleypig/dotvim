@@ -5,9 +5,7 @@ This repo holds my vim dotfiles and plugins.
 To install, link **$HOME/.vim** to this repository's files of the same name.
 
 
-!!! Fix these:
 
-* .vim/pack/local/start/local: find
 
 ## How do I?
 

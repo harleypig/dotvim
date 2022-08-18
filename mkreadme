@@ -35,9 +35,9 @@ declare SHOW_CATEGORIES="${SHOW_CATEGORIES:-1}"
 # Skip checking these directories if they exist
 declare -a skip_existing_dirs
 
-skip_existing_dirs+=('mystuff')
-skip_existing_dirs+=('statusline')
-skip_existing_dirs+=('matchit')
+skip_existing_dirs+=('local')
+#skip_existing_dirs+=('statusline')
+#skip_existing_dirs+=('matchit')
 
 #=============================================================================
 # Functions
