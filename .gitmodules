@@ -445,10 +445,6 @@
 	path = .vim/pack/utility/start/indentline
   url = https://github.com/Yggdroot/indentLine.git
   ignore = dirty
-[submodule "vim-indent-rainbow"]
-	path = .vim/pack/utility/start/rainbow
-  url = https://github.com/adi/vim-indent-rainbow.git
-  ignore = dirty
 [submodule "rainbow"]
   path = .vim/2btested/rainbow
   url = https://github.com/luochen1990/rainbow.git
