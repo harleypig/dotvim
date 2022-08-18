@@ -617,3 +617,7 @@
 [submodule "vim-packer"]
 	path = .vim/2btested/vim-packer
 	url = https://github.com/hashivim/vim-packer.git
+	ignore = dirty
+[submodule "vim-vaultproject"]
+	path = .vim/2btested/vim-vaultproject
+	url = https://github.com/hashivim/vim-vaultproject.git
