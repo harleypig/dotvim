@@ -209,7 +209,7 @@
   branch = master
   ignore = dirty
 [submodule "apiblueprint"]
-  path = .vim/pack/syntax/start/apiblueprint
+	path = .vim/2btested/apiblueprint
   url = https://github.com/kylef/apiblueprint.vim.git
   branch = master
   ignore = dirty
