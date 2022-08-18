@@ -594,3 +594,7 @@
 [submodule "vim-shellcheck"]
 	path = .vim/2btested/vim-shellcheck
 	url = https://github.com/itspriddle/vim-shellcheck.git
+	ignore = dirty
+[submodule "vim-shfmt"]
+	path = .vim/2btested/vim-shfmt
+	url = https://github.com/z0mbix/vim-shfmt.git
