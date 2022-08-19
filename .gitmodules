@@ -253,11 +253,6 @@
   url = https://github.com/PyCQA/pyflakes
   branch = master
   ignore = dirty
-[submodule "snowball_py"]
-  path = .vim/2btested/snowball_py
-  url = https://github.com/diraol/snowball_py
-  branch = master
-  ignore = dirty
 [submodule "pylint"]
   path = .vim/2btested/pylint
   url = https://github.com/PyCQA/pylint
