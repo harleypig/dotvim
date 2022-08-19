@@ -193,11 +193,6 @@
   url = https://github.com/haya14busa/vim-asterisk.git
   branch = master
   ignore = dirty
-[submodule "bufexplorer"]
-  path = .vim/2btested/bufexplorer
-  url = https://github.com/jlanzarotta/bufexplorer.git
-  branch = master
-  ignore = dirty
 [submodule "bufferize"]
   path = .vim/2btested/bufferize
   url = https://github.com/AndrewRadev/bufferize.vim.git
