@@ -4,7 +4,7 @@
 #is_executable md2vim || die 'md2vim is required'
 
 infile='LEARNING.md'
-outfile='learning.txt'
+outfile='.vim/doc/learning.txt'
 
 declare -a mopts
 
@@ -12,7 +12,7 @@ declare -a mopts
 #mopts+=('-cols' '#')
 
 # short description of the help file
-mopts+=('-desc' 'Stuff I Am Learning')
+mopts+=('-desc' 'Vim Stuff I Am Learning')
 
 # do not generate horizontal rules above headings
 #mopts+=('-norules'
@@ -21,7 +21,7 @@ mopts+=('-desc' 'Stuff I Am Learning')
 #mopts+=('-notoc')
 
 # use PascalCase for abbreviating tags
-#mopts+=('-pascal')
+mopts+=('-pascal')
 
 # tab width specified in number of spaces (default 4)
 #mopts+=('-tabs' 2)
