@@ -559,7 +559,7 @@
   ignore = dirty
   branch = master
 [submodule "vim-shfmt"]
-  path = .vim/2btested/vim-shfmt
+	path = .vim/pack/shell/start/vim-shfmt
   url = https://github.com/z0mbix/vim-shfmt.git
   ignore = dirty
   branch = master
