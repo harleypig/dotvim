@@ -224,7 +224,7 @@
   branch = master
   ignore = dirty
 [submodule "traces"]
-  path = .vim/2btested/traces
+	path = .vim/pack/utility/start/traces
   url = https://github.com/markonm/traces.vim.git
   branch = master
   ignore = dirty
