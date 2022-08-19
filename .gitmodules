@@ -488,11 +488,6 @@
   url = https://github.com/wellle/targets.vim.git
   ignore = dirty
   branch = master
-[submodule "ttags_vim"]
-  path = .vim/2btested/ttags_vim
-  url = https://github.com/tomtom/ttags_vim.git
-  ignore = dirty
-  branch = master
 [submodule "undotree"]
   path = .vim/2btested/undotree
   url = https://github.com/mbbill/undotree.git
