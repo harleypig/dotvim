@@ -14,7 +14,7 @@ _add() {
   git submodule add --name "$name" "$url" ".vim/2btested/$name"
   git config -f .gitmodules submodule."$name".ignore dirty
   mkreadme > README.md
-  git commit -m "updated readme after adding $name" README.md .gitmodules
+  git commit -m "updated readme after adding $name"
 }
 
 for u in "$@"; do
