@@ -1,0 +1,31 @@
+#!/bin/bash
+
+readarray -t submodules < <(grep '^\[submodule' .gitmodules | cut -d '"' -f 2)
+
+oldpwd="$PWD"
+
+for s in "${submodules[@]}"; do 
+  read -r branch < <(git config -f .gitmodules --get "submodule.$s.branch")
+  [[ -n $branch ]] && continue
+
+  read -r path < <(git config -f .gitmodules --get "submodule.$s.path")
+
+  cd "$path" || {
+    echo "error changing to $path, ignoring $s"
+    continue
+  }
+
+  read -r default < <(git remote show origin | grep HEAD | rev | cut -d ' ' -f 1 | rev)
+
+  [[ -z $default ]] && {
+    echo "fatal error: no default branch found for $s"
+    exit 1
+  }
+
+  git checkout "$default"
+
+  # shellcheck disable=SC2164
+  cd "$oldpwd"
+
+  git config -f .gitmodules --add "submodule.$s.branch" "$default"
+done

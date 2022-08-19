@@ -377,166 +377,202 @@
   path = .vim/pack/async/start/ale
   url = https://github.com/dense-analysis/ale.git
   ignore = dirty
+  branch = master
 [submodule "vim-lsp-settings"]
   path = .vim/2btested/vim-lsp-settings
   url = https://github.com/mattn/vim-lsp-settings.git
   ignore = dirty
+  branch = master
 [submodule "vim-lsp-ale"]
   path = .vim/2btested/vim-lsp-ale
   url = https://github.com/rhysd/vim-lsp-ale.git
   ignore = dirty
+  branch = master
 [submodule "asyncomplete-lsp"]
   path = .vim/2btested/asyncomplete-lsp
   url = https://github.com/prabirshrestha/asyncomplete-lsp.vim.git
   ignore = dirty
+  branch = master
 [submodule "asyncomplete"]
   path = .vim/2btested/asyncomplete
   url = https://github.com/prabirshrestha/asyncomplete.vim.git
   ignore = dirty
+  branch = master
 [submodule "vimux"]
   path = .vim/2btested/vimux
   url = https://github.com/preservim/vimux.git
   ignore = dirty
+  branch = master
 [submodule "vim-markdown"]
   path = .vim/pack/markdown/start/vim-markdown
   url = https://github.com/preservim/vim-markdown.git
   ignore = dirty
+  branch = master
 [submodule "tagbar"]
   path = .vim/2btested/tagbar
   url = https://github.com/preservim/tagbar.git
   ignore = dirty
+  branch = master
 [submodule "vim-devicons"]
   path = .vim/pack/syntax/start/vim-devicons
   url = https://github.com/ryanoasis/vim-devicons.git
   ignore = dirty
+  branch = master
 [submodule "vim-LanguageTool"]
   path = .vim/2btested/vim-LanguageTool
   url = https://github.com/dpelle/vim-LanguageTool.git
   ignore = dirty
+  branch = master
 [submodule "vim-sleuth"]
   path = .vim/pack/utility/start/vim-sleuth
   url = https://github.com/tpope/vim-sleuth.git
   ignore = dirty
+  branch = master
 [submodule "vim-endwise"]
   path = .vim/pack/utility/start/vim-endwise
   url = https://github.com/tpope/vim-endwise.git
   ignore = dirty
+  branch = master
 [submodule "vim-jdaddy"]
   path = .vim/pack/utility/start/vim-jdaddy
   url = https://github.com/tpope/vim-jdaddy.git
   ignore = dirty
+  branch = master
 [submodule "vim-dadbod"]
   path = .vim/2btested/vim-dadbod
   url = https://github.com/tpope/vim-dadbod.git
   ignore = dirty
+  branch = master
 [submodule "vim-irssi-syntax"]
   path = .vim/pack/syntax/start/vim-irssi-syntax
   url = https://github.com/isundil/vim-irssi-syntax.git
   ignore = dirty
+  branch = master
 [submodule "FastFold"]
   path = .vim/pack/test/start/FastFold
   url = https://github.com/Konfekt/FastFold.git
   ignore = dirty
+  branch = master
 [submodule "csv"]
   path = .vim/2btested/csv
   url = https://github.com/chrisbra/csv.vim.git
   ignore = dirty
+  branch = master
 [submodule "indentline"]
   path = .vim/pack/utility/start/indentline
   url = https://github.com/Yggdroot/indentLine.git
   ignore = dirty
-[submodule "rainbow"]
-  path = .vim/pack/utility/rainbow
-  url = https://github.com/luochen1990/rainbow.git
-  ignore = dirty
+  branch = master
 [submodule "vim-OnSyntaxChange"]
   path = .vim/2btested/vim-OnSyntaxChange
   url = https://github.com/inkarkat/vim-OnSyntaxChange.git
   ignore = dirty
+  branch = master
 [submodule "vim-ingo-library"]
   path = .vim/2btested/vim-ingo-library
   url = https://github.com/inkarkat/vim-ingo-library.git
   ignore = dirty
+  branch = master
 [submodule "vim-qlist"]
   path = .vim/2btested/vim-qlist
   url = https://github.com/romainl/vim-qlist.git
   ignore = dirty
+  branch = master
 [submodule "vim-abolish"]
   path = .vim/2btested/vim-abolish
   url = https://github.com/tpope/vim-abolish.git
   ignore = dirty
+  branch = master
 [submodule "vim-characterize"]
   path = .vim/2btested/vim-characterize
   url = https://github.com/tpope/vim-characterize.git
   ignore = dirty
+  branch = master
 [submodule "vim-dirvish"]
   path = .vim/2btested/vim-dirvish
   url = https://github.com/justinmk/vim-dirvish.git
   ignore = dirty
+  branch = master
 [submodule "vim-gutentags"]
   path = .vim/2btested/vim-gutentags
   url = https://github.com/ludovicchabant/vim-gutentags.git
   ignore = dirty
+  branch = master
 [submodule "vim-lion"]
   path = .vim/2btested/vim-lion
   url = https://github.com/tommcdo/vim-lion.git
   ignore = dirty
+  branch = master
 [submodule "vim-qf"]
   path = .vim/2btested/vim-qf
   url = https://github.com/romainl/vim-qf.git
   ignore = dirty
+  branch = master
 [submodule "vim-sneak"]
   path = .vim/2btested/vim-sneak
   url = https://github.com/justinmk/vim-sneak.git
   ignore = dirty
+  branch = master
 [submodule "targets"]
   path = .vim/2btested/targets
   url = https://github.com/wellle/targets.vim.git
   ignore = dirty
+  branch = master
 [submodule "ttags_vim"]
   path = .vim/2btested/ttags_vim
   url = https://github.com/tomtom/ttags_vim.git
   ignore = dirty
+  branch = master
 [submodule "undotree"]
   path = .vim/2btested/undotree
   url = https://github.com/mbbill/undotree.git
   ignore = dirty
+  branch = master
 [submodule "VimCompletesMe"]
   path = .vim/2btested/VimCompletesMe
   url = https://github.com/ackyshake/VimCompletesMe.git
   ignore = dirty
+  branch = master
 [submodule "vim-gitgutter"]
   path = .vim/2btested/vim-gitgutter
   url = https://github.com/airblade/vim-gitgutter.git
   ignore = dirty
+  branch = master
 [submodule "tmuxline"]
   path = .vim/2btested/tmuxline
   url = https://github.com/edkolev/tmuxline.vim.git
   ignore = dirty
+  branch = master
 [submodule "vim-easytags"]
   path = .vim/2btested/vim-easytags
   url = https://github.com/xolox/vim-easytags.git
   ignore = dirty
+  branch = master
 [submodule "vim-misc"]
   path = .vim/2btested/vim-misc
   url = https://github.com/xolox/vim-misc.git
   ignore = dirty
+  branch = master
 [submodule "vim-pythonsense"]
   path = .vim/2btested/vim-pythonsense
   url = https://github.com/jeetsukumaran/vim-pythonsense.git
   ignore = dirty
+  branch = master
 [submodule "vim-visual-multi"]
   path = .vim/2btested/vim-visual-multi
   url = https://github.com/mg979/vim-visual-multi
   ignore = dirty
+  branch = master
 [submodule "vim-table-mode"]
   path = .vim/pack/utility/start/vim-table-mode
   url = https://github.com/dhruvasagar/vim-table-mode
   ignore = dirty
+  branch = master
 [submodule "hledger-vim"]
   path = .vim/2btested/hledger-vim
   url = https://github.com/anekos/hledger-vim.git
   ignore = dirty
+  branch = master
 [submodule "coc"]
   path = .vim/pack/async/start/coc
   url = https://github.com/neoclide/coc.nvim.git
@@ -546,27 +582,34 @@
   path = .vim/pack/utility/start/jsonc
   url = https://github.com/neoclide/jsonc.vim.git
   ignore = dirty
+  branch = master
 [submodule "vim-terraform"]
   path = .vim/pack/hashicorp/start/vim-terraform
   url = https://github.com/hashivim/vim-terraform.git
   ignore = dirty
+  branch = master
 [submodule "bats"]
   path = .vim/pack/shell/start/bats
   url = https://github.com/aliou/bats.vim
   ignore = dirty
+  branch = master
 [submodule "vim-packer"]
   path = .vim/pack/hashicorp/start/vim-packer
   url = https://github.com/hashivim/vim-packer.git
   ignore = dirty
+  branch = master
 [submodule "vim-vaultproject"]
   path = .vim/pack/hashicorp/start/vim-vaultproject
   url = https://github.com/hashivim/vim-vaultproject.git
   ignore = dirty
+  branch = master
 [submodule "vim-shellcheck"]
   path = .vim/2btested/vim-shellcheck
   url = https://github.com/itspriddle/vim-shellcheck.git
   ignore = dirty
+  branch = master
 [submodule "vim-shfmt"]
   path = .vim/2btested/vim-shfmt
   url = https://github.com/z0mbix/vim-shfmt.git
   ignore = dirty
+  branch = master
