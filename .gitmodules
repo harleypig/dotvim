@@ -233,11 +233,6 @@
   url = https://github.com/AndrewRadev/linediff.vim.git
   branch = master
   ignore = dirty
-[submodule "vim-superman"]
-  path = .vim/2btested/vim-superman
-  url = https://github.com/jez/vim-superman.git
-  branch = master
-  ignore = dirty
 [submodule "tabular"]
   path = .vim/pack/utility/start/tabular
   url = https://github.com/godlygeek/tabular.git
