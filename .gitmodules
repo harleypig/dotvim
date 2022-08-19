@@ -9,7 +9,7 @@
   branch = master
   ignore = dirty
 [submodule "ledger"]
-  path = .vim/2btested/ledger
+	path = .vim/pack/hledger/start/ledger
   url = https://github.com/vim-scripts/ledger.vim.git
   branch = master
   ignore = dirty
