@@ -273,11 +273,6 @@
   url = https://github.com/klen/pylama
   branch = master
   ignore = dirty
-[submodule "toml"]
-  path = .vim/2btested/toml
-  url = https://github.com/uiri/toml.git
-  branch = master
-  ignore = dirty
 [submodule "vim-flake8"]
   path = .vim/pack/python/start/vim-flake8
   url = https://github.com/nvie/vim-flake8
