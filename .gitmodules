@@ -549,7 +549,7 @@
   ignore = dirty
   branch = master
 [submodule "hledger-vim"]
-  path = .vim/2btested/hledger-vim
+	path = .vim/pack/hledger/start/hledger-vim
   url = https://github.com/anekos/hledger-vim.git
   ignore = dirty
   branch = master
