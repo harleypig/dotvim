@@ -41,6 +41,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 #### app
 
 * [vim-fake](https://github.com/tkhren/vim-fake.git) 
+* [vim-fugitive](https://github.com/tpope/vim-fugitive.git) 
 * [vim-healthcheck](https://github.com/rhysd/vim-healthcheck.git) 
 * [vim-man](https://github.com/vim-utils/vim-man.git) 
 * [vimwiki](https://github.com/vimwiki/vimwiki.git) 
@@ -53,10 +54,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 #### drchip
 
 * [AnsiEsc](https://github.com/vim-scripts/AnsiEsc.vim.git) 
-
-#### git
-
-* [vim-fugitive](https://github.com/tpope/vim-fugitive.git) 
 
 #### hashicorp
 
