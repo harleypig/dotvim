@@ -231,7 +231,7 @@
 [submodule "pycodestyle"]
   path = .vim/2btested/pycodestyle
   url = https://github.com/PyCQA/pycodestyle
-  branch = master
+  branch = main
   ignore = dirty
 [submodule "pydocstyle"]
   path = .vim/2btested/pydocstyle
