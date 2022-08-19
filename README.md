@@ -140,7 +140,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [FastFold](https://github.com/Konfekt/FastFold.git) 
 * [jupyter-vim](https://github.com/jupyter-vim/jupyter-vim) 
 * [perlomni](https://github.com/c9s/perlomni.vim.git) 
-* [pycodestyle](https://github.com/PyCQA/pycodestyle) 
+* [pycodestyle](https://github.com/PyCQA/pycodestyle) branch: main
 * [pydocstyle](https://github.com/PyCQA/pydocstyle) 
 * [pyflakes](https://github.com/PyCQA/pyflakes) 
 * [pylama](https://github.com/klen/pylama) 
