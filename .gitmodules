@@ -8,11 +8,6 @@
   url = https://github.com/tpope/vim-pathogen.git
   branch = master
   ignore = dirty
-[submodule "ledger"]
-	path = .vim/pack/hledger/start/ledger
-  url = https://github.com/vim-scripts/ledger.vim.git
-  branch = master
-  ignore = dirty
 [submodule "vim-fugitive"]
   path = .vim/pack/git/start/vim-fugitive
   url = https://github.com/tpope/vim-fugitive.git
