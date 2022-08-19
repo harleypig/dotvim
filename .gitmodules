@@ -418,7 +418,7 @@
   url = https://github.com/Konfekt/FastFold.git
   ignore = dirty
   branch = master
-[submodule "indentline"]
+[submodule "indentLine"]
   path = .vim/pack/utility/start/indentline
   url = https://github.com/Yggdroot/indentLine.git
   ignore = dirty
