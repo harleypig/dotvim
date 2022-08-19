@@ -48,7 +48,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 #### async
 
 * [ale](https://github.com/dense-analysis/ale.git) 
-* [coc.nvim](https://github.com/neoclide/coc.nvim.git) branch: release (rename)
+* [coc](https://github.com/neoclide/coc.nvim.git) branch: release
 
 #### drchip
 

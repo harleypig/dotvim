@@ -65,6 +65,7 @@ get_name() {
   name="${name##*/}"
   name="${name%\.git}"
   name="${name%\.vim}"
+  name="${name%\.nvim}"
   printf '%s' "$name"
 }
 
