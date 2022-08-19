@@ -68,8 +68,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-yaml](https://github.com/stephpy/vim-yaml)
 
 #### Being Tested
-
-* [FastFold](https://github.com/Konfekt/FastFold.git)
+%test%
 
 #### To Be Tested
 
@@ -84,6 +83,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky.git)
 * [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
 * [delimitMate](https://github.com/Raimondi/delimitMate.git)
+* [FastFold](https://github.com/Konfekt/FastFold.git)
 * [jupyter-vim](https://github.com/jupyter-vim/jupyter-vim)
 * [perlomni](https://github.com/c9s/perlomni.vim.git)
 * [pycodestyle](https://github.com/PyCQA/pycodestyle)

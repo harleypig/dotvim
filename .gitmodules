@@ -419,7 +419,7 @@
   ignore = dirty
   branch = master
 [submodule "FastFold"]
-  path = .vim/pack/test/start/FastFold
+	path = .vim/2btested/FastFold
   url = https://github.com/Konfekt/FastFold.git
   ignore = dirty
   branch = master
