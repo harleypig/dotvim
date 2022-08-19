@@ -40,6 +40,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 #### app
 
+* [fugitive-azure-devops](https://github.com/cedarbaum/fugitive-azure-devops.vim.git) 
 * [vim-fake](https://github.com/tkhren/vim-fake.git) 
 * [vim-fugitive](https://github.com/tpope/vim-fugitive.git) 
 * [vim-healthcheck](https://github.com/rhysd/vim-healthcheck.git) 
@@ -134,7 +135,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [ctrlp](https://github.com/ctrlpvim/ctrlp.vim) 
 * [delimitMate](https://github.com/Raimondi/delimitMate.git) 
 * [FastFold](https://github.com/Konfekt/FastFold.git) 
-* [fugitive-azure-devops](https://github.com/cedarbaum/fugitive-azure-devops.vim.git) 
 * [jupyter-vim](https://github.com/jupyter-vim/jupyter-vim) 
 * [perlomni](https://github.com/c9s/perlomni.vim.git) 
 * [pycodestyle](https://github.com/PyCQA/pycodestyle) branch: main

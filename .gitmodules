@@ -568,6 +568,6 @@
   url = https://github.com/luochen1990/rainbow.git
   ignore = dirty
 [submodule "fugitive-azure-devops"]
-	path = .vim/2btested/fugitive-azure-devops
+	path = .vim/pack/app/start/fugitive-azure-devops
 	url = https://github.com/cedarbaum/fugitive-azure-devops.vim.git
 	ignore = dirty
