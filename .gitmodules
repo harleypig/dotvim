@@ -613,3 +613,7 @@
   url = https://github.com/z0mbix/vim-shfmt.git
   ignore = dirty
   branch = master
+[submodule "rainbow"]
+	path = .vim/2btested/rainbow
+	url = https://github.com/luochen1990/rainbow.git
+	ignore = dirty
