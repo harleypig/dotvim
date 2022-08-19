@@ -59,7 +59,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-signify"]
-  path = .vim/2btested/vim-signify
+	path = .vim/pack/utility/start/vim-signify
   url = https://github.com/mhinz/vim-signify.git
   branch = master
   ignore = dirty
