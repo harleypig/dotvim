@@ -33,44 +33,11 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 ### Categories
 
-#### General (Active)
-%active%
+%categories%
 
-#### Applications
-%app%
-
-#### DrChip's Stuff
-%drchip%
-
-##### Evaluate
+## Check these out
 
 * [WhereFrom](https://www.drchip.org/astronaut/vim/index.html#WHEREFROM)
-
-#### Linter
-%linter%
-
-#### Syntax
-%syntax%
-
-#### Being Tested
-%test%
-
-#### To Be Tested
-%tobetested%
-
-#### Rejected
-
-* [docker-compose](https://github.com/skanehira/docker-compose.vim)
-* [evervim](https://github.com/kakkyz81/evervim.git)
-* [gitolite](https://github.com/tmatilai/gitolite.vim.git)
-* [gitv](https://github.com/gregsexton/gitv)
-* [vim-github](https://github.com/thinca/vim-github.git)
-* [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides.git)
-* [vim-rsi](https://github.com/tpope/vim-rsi.git)
-* [DrawIt](https://github.com/vim-scripts/DrawIt.git)
-* [Align](https://github.com/vim-scripts/Align.git)
-* [AutoAlign](https://www.drchip.org/astronaut/vim/index.html#AUTOALIGN)
-  + In favor of Tabular
 
 ## Resources
 

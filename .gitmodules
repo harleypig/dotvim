@@ -59,7 +59,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-signify"]
-	path = .vim/pack/utility/start/vim-signify
+  path = .vim/pack/utility/start/vim-signify
   url = https://github.com/mhinz/vim-signify.git
   branch = master
   ignore = dirty
@@ -219,7 +219,7 @@
   branch = master
   ignore = dirty
 [submodule "traces"]
-	path = .vim/pack/utility/start/traces
+  path = .vim/pack/utility/start/traces
   url = https://github.com/markonm/traces.vim.git
   branch = master
   ignore = dirty
@@ -414,7 +414,7 @@
   ignore = dirty
   branch = master
 [submodule "FastFold"]
-	path = .vim/2btested/FastFold
+  path = .vim/2btested/FastFold
   url = https://github.com/Konfekt/FastFold.git
   ignore = dirty
   branch = master
@@ -444,7 +444,7 @@
   ignore = dirty
   branch = master
 [submodule "vim-dirvish"]
-	path = .vim/pack/utility/start/vim-dirvish
+  path = .vim/pack/utility/start/vim-dirvish
   url = https://github.com/justinmk/vim-dirvish.git
   ignore = dirty
   branch = master
@@ -519,7 +519,7 @@
   ignore = dirty
   branch = master
 [submodule "hledger-vim"]
-	path = .vim/pack/hledger/start/hledger-vim
+  path = .vim/pack/hledger/start/hledger-vim
   url = https://github.com/anekos/hledger-vim.git
   ignore = dirty
   branch = master
@@ -554,16 +554,16 @@
   ignore = dirty
   branch = master
 [submodule "vim-shellcheck"]
-	path = .vim/pack/shell/start/vim-shellcheck
+  path = .vim/pack/shell/start/vim-shellcheck
   url = https://github.com/itspriddle/vim-shellcheck.git
   ignore = dirty
   branch = master
 [submodule "vim-shfmt"]
-	path = .vim/pack/shell/start/vim-shfmt
+  path = .vim/pack/shell/start/vim-shfmt
   url = https://github.com/z0mbix/vim-shfmt.git
   ignore = dirty
   branch = master
 [submodule "rainbow"]
-	path = .vim/pack/utility/start/rainbow
-	url = https://github.com/luochen1990/rainbow.git
-	ignore = dirty
+  path = .vim/pack/utility/start/rainbow
+  url = https://github.com/luochen1990/rainbow.git
+  ignore = dirty

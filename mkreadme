@@ -18,6 +18,7 @@
 source envsubstitute
 
 declare -A submodule vars check_dirs
+declare -a submodule_order
 declare bucket url url_text RENAME categories
 
 declare NL=$'\n'
@@ -27,10 +28,6 @@ readme_tmpl="$(< README.md.template)"
 # For envsubstitute, don't warn or replace non-existent variables.
 # Defaults to true
 declare NO_WARN="${NO_WARN:-1}"
-
-# Various environment variables that change output
-# Defaults to true
-declare SHOW_CATEGORIES="${SHOW_CATEGORIES:-1}"
 
 # Skip checking these directories if they exist
 declare -a skip_existing_dirs
@@ -97,9 +94,9 @@ get_existing_submodules() {
   get_existing_dirs
 
   local -a lines
-  local key mod keyname bucket url_text url
+  local key mod keyname bucket url_text url branch ignore ignore_flag
 
-  local entry_tmpl='%bucket%|* [%url_text%](%url%)%renameflag%'
+  local entry_tmpl='%bucket%|* [%url_text%](%url%) %branch_name%%ignore_flag%%renameflag%'
 
   readarray -t lines < <(git config -f .gitmodules --get-regexp '.*')
 
@@ -130,6 +127,16 @@ get_existing_submodules() {
         [[ $mod != "$url_text" ]] && renameflag=' (rename)'
         ;;
 
+      ignore)
+        ignore_flag=
+        [[ $value != 'dirty' ]] && ignore_flag=" ignore: >${value}<"
+        ;;
+
+      branch)
+        branch_name=
+        [[ $value != 'master' ]] && branch_name="branch: $value"
+        ;;
+
       *) continue ;;
     esac
 
@@ -147,14 +154,6 @@ get_existing_submodules() {
   done
 
   #---------------------------------------------------------------------------
-  for mod in "${!vars[@]}"; do
-    eval "$mod='$(echo "${vars[$mod]}" | sort -u)'"
-    ((SHOW_CATEGORIES)) && categories+="$NL* $mod"
-  done
-
-  ((SHOW_CATEGORIES)) && categories="$(echo "$categories" | sort -u)"
-
-  #---------------------------------------------------------------------------
   if [[ ${#check_dirs[@]} -gt 0 ]]; then
     unexpected+="$NL!!! Fix these:$NL"
 
@@ -162,6 +161,27 @@ get_existing_submodules() {
       unexpected+="$NL* $u: ${check_dirs[$u]}"
     done
   fi
+
+  #---------------------------------------------------------------------------
+  local -a sorted_category
+  local sorted_plugins
+
+  # shellcheck disable=SC2207
+  IFS=$'\n' sorted_category=($(sort <<< "${!vars[@]}"))
+
+  for c in "${sorted_category[@]}"; do
+    [[ $c == 'tobetested' ]] && continue
+
+    # shellcheck disable=SC2207
+    IFS=$'\n' sorted_plugins="$(sort <<< "${vars[$c]}")"
+
+    categories+="#### $c$NL$sorted_plugins$NL$NL"
+  done
+
+  # shellcheck disable=SC2207
+  IFS=$'\n' sorted_plugins="$(sort <<< "${vars['tobetested']}")"
+
+  categories+="#### To Be Tested$NL$sorted_plugins"
 }
 
 #=============================================================================
