@@ -554,7 +554,7 @@
   ignore = dirty
   branch = master
 [submodule "vim-shellcheck"]
-  path = .vim/2btested/vim-shellcheck
+	path = .vim/pack/shell/start/vim-shellcheck
   url = https://github.com/itspriddle/vim-shellcheck.git
   ignore = dirty
   branch = master
