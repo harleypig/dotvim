@@ -438,11 +438,6 @@
   url = https://github.com/Konfekt/FastFold.git
   ignore = dirty
   branch = master
-[submodule "csv"]
-  path = .vim/2btested/csv
-  url = https://github.com/chrisbra/csv.vim.git
-  ignore = dirty
-  branch = master
 [submodule "indentline"]
   path = .vim/pack/utility/start/indentline
   url = https://github.com/Yggdroot/indentLine.git
