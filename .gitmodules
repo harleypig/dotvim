@@ -614,6 +614,6 @@
   ignore = dirty
   branch = master
 [submodule "rainbow"]
-	path = .vim/2btested/rainbow
+	path = .vim/pack/utility/start/rainbow
 	url = https://github.com/luochen1990/rainbow.git
 	ignore = dirty
