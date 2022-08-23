@@ -11,8 +11,6 @@ let g:coc_disable_startup_warning = 1
 " Load all plugins in .vim/pack/*/start directories
 packloadall!
 
-helptags ALL
-
 colorscheme desert
 "colorscheme blacklight
 "colorscheme neon
@@ -38,5 +36,3 @@ aug END
 
 " XXX: Move me!
 set shellcmdflag=-ic
-
-echo "HELLO"
