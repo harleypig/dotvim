@@ -268,11 +268,6 @@
   url = https://github.com/tmhedberg/SimpylFold.git
   branch = master
   ignore = dirty
-[submodule "vim-python-pep8-indent"]
-  path = .vim/2btested/vim-python-pep8-indent
-  url = https://github.com/hynek/vim-python-pep8-indent
-  branch = master
-  ignore = dirty
 [submodule "black"]
   path = .vim/2btested/black
   url = https://github.com/ambv/black
