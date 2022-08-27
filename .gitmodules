@@ -493,6 +493,6 @@
 	url = https://github.com/lmintmate/blue-mood-vim.git
 	ignore = dirty
 [submodule "vim-frign"]
-	path = .vim/2btested/vim-frign
+	path = .vim/pack/syntax/start/vim-frign
 	url = https://github.com/KimNorgaard/vim-frign.git
 	ignore = dirty
