@@ -39,7 +39,6 @@ To install, link **$HOME/.vim** to this repository's files of the same name.
 * .vim/2btested/vim-sensible: find
 * .vim/2btested/nerdtree-project-plugin: find
 * .vim/2btested/autoclose: find
-* .vim/pack/syntax/start/vim-terraform: find
 * .vim/2btested/rainbow: find
 * .vim/pack/utility/start/syntastic: submodule
 * .vim/2btested/vim-commentary: find
@@ -164,6 +163,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [async](https://github.com/prabirshrestha/async.vim.git) 
 * [asyncomplete](https://github.com/prabirshrestha/asyncomplete.vim.git) 
 * [asyncomplete-lsp](https://github.com/prabirshrestha/asyncomplete-lsp.vim.git) 
+* [blue-mood-vim](https://github.com/lmintmate/blue-mood-vim.git) 
 * [calendar](https://github.com/itchyny/calendar.vim) 
 * [ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky.git) 
 * [ctrlp](https://github.com/ctrlpvim/ctrlp.vim) 

@@ -488,3 +488,7 @@
 	path = .vim/pack/python/start/pylama
 	url = https://github.com/klen/pylama.git
 	ignore = dirty
+[submodule "blue-mood-vim"]
+	path = .vim/2btested/blue-mood-vim
+	url = https://github.com/lmintmate/blue-mood-vim.git
+	ignore = dirty
