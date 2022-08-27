@@ -4,7 +4,7 @@
   branch = master
   ignore = dirty
 [submodule "vim-fugitive"]
-	path = .vim/pack/app/start/vim-fugitive
+  path = .vim/pack/app/start/vim-fugitive
   url = https://github.com/tpope/vim-fugitive.git
   branch = master
   ignore = dirty
@@ -493,6 +493,9 @@
   url = https://github.com/luochen1990/rainbow.git
   ignore = dirty
 [submodule "fugitive-azure-devops"]
-	path = .vim/pack/app/start/fugitive-azure-devops
-	url = https://github.com/cedarbaum/fugitive-azure-devops.vim.git
-	ignore = dirty
+  path = .vim/pack/app/start/fugitive-azure-devops
+  url = https://github.com/cedarbaum/fugitive-azure-devops.vim.git
+  ignore = dirty
+[submodule "python-mode"]
+	path = .vim/2btested/python-mode
+	url = https://github.com/python-mode/python-mode.git
