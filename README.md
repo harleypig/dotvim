@@ -110,7 +110,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 #### python
 
-* [vim-flake8](https://github.com/nvie/vim-flake8) 
 * [vim-virtualenv](https://github.com/jmcantrell/vim-virtualenv) 
 
 #### shell

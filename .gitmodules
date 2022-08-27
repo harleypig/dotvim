@@ -263,11 +263,6 @@
   url = https://github.com/klen/pylama
   branch = master
   ignore = dirty
-[submodule "vim-flake8"]
-  path = .vim/pack/python/start/vim-flake8
-  url = https://github.com/nvie/vim-flake8
-  branch = master
-  ignore = dirty
 [submodule "SimpylFold"]
 	path = .vim/2btested/SimpylFold
   url = https://github.com/tmhedberg/SimpylFold.git
