@@ -106,6 +106,10 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 * [vim-markdown](https://github.com/preservim/vim-markdown.git) 
 
+#### python
+
+* [rope](https://github.com/python-rope/rope.git) 
+
 #### shell
 
 * [bats](https://github.com/aliou/bats.vim) 
@@ -165,7 +169,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [FastFold](https://github.com/Konfekt/FastFold.git) 
 * [jupyter-vim](https://github.com/jupyter-vim/jupyter-vim) 
 * [perlomni](https://github.com/c9s/perlomni.vim.git) 
-* [rope](https://github.com/python-rope/rope.git) 
 * [supertab](https://github.com/ervandew/supertab.git) 
 * [tagbar](https://github.com/preservim/tagbar.git) 
 * [targets](https://github.com/wellle/targets.vim.git) 
