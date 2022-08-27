@@ -496,7 +496,3 @@
   path = .vim/pack/app/start/fugitive-azure-devops
   url = https://github.com/cedarbaum/fugitive-azure-devops.vim.git
   ignore = dirty
-[submodule "python-mode"]
-	path = .vim/2btested/python-mode
-	url = https://github.com/python-mode/python-mode.git
-	ignore = dirty
