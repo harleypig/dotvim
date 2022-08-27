@@ -268,11 +268,6 @@
   url = https://github.com/dense-analysis/ale.git
   ignore = dirty
   branch = master
-[submodule "vim-lsp-settings"]
-  path = .vim/2btested/vim-lsp-settings
-  url = https://github.com/mattn/vim-lsp-settings.git
-  ignore = dirty
-  branch = master
 [submodule "asyncomplete-lsp"]
   path = .vim/2btested/asyncomplete-lsp
   url = https://github.com/prabirshrestha/asyncomplete-lsp.vim.git
