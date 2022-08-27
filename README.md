@@ -108,10 +108,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 * [vim-markdown](https://github.com/preservim/vim-markdown.git) 
 
-#### python
-
-* [vim-virtualenv](https://github.com/jmcantrell/vim-virtualenv) 
-
 #### shell
 
 * [bats](https://github.com/aliou/bats.vim) 

@@ -273,11 +273,6 @@
   url = https://github.com/hynek/vim-python-pep8-indent
   branch = master
   ignore = dirty
-[submodule "vim-virtualenv"]
-  path = .vim/pack/python/start/vim-virtualenv
-  url = https://github.com/jmcantrell/vim-virtualenv
-  branch = master
-  ignore = dirty
 [submodule "black"]
   path = .vim/2btested/black
   url = https://github.com/ambv/black
