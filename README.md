@@ -20,7 +20,6 @@ To install, link **$HOME/.vim** to this repository's files of the same name.
 * .vim/pack/syntax/start/apiblueprint: find
 * .vim/2btested/bufferize: find
 * .vim/2btested/pathogen: find
-* .vim/pack/syntax/start/SimpylFold: find
 * .vim/2btested/indentLine: find
 * .vim/2btested/vim-superman: find
 * .vim/2btested/vim-dirvish: find
@@ -180,7 +179,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-dadbod](https://github.com/tpope/vim-dadbod.git) 
 * [vim-db](https://github.com/tpope/vim-db.git) 
 * [vim-diff-enhanced](https://github.com/chrisbra/vim-diff-enhanced.git) 
-* [vim-dispatch](https://github.com/tpope/vim-dispatch.git) 
 * [vim-docker-tools](https://github.com/kevinhui/vim-docker-tools) 
 * [vim-easytags](https://github.com/xolox/vim-easytags.git) 
 * [vim-ExtractMatches](https://github.com/inkarkat/vim-ExtractMatches.git) 

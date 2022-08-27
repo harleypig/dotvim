@@ -118,11 +118,6 @@
   url = https://github.com/tpope/vim-db.git
   branch = master
   ignore = dirty
-[submodule "vim-dispatch"]
-  path = .vim/2btested/vim-dispatch
-  url = https://github.com/tpope/vim-dispatch.git
-  branch = master
-  ignore = dirty
 [submodule "ultisnips"]
   path = .vim/2btested/ultisnips
   url = https://github.com/SirVer/ultisnips.git
