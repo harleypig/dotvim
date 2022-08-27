@@ -14,7 +14,7 @@ read -r path < <(git config -f .gitmodules --get "submodule.${name}.path")
   exit 1
 }
 
-git rm "$path" || {
+git rm -r "$path" || {
   echo "Problem removing $name" >&2
   exit 1
 }
