@@ -496,3 +496,7 @@
 	path = .vim/pack/syntax/start/vim-frign
 	url = https://github.com/KimNorgaard/vim-frign.git
 	ignore = dirty
+[submodule "vim-blueper"]
+	path = .vim/2btested/vim-blueper
+	url = https://github.com/whonore/vim-blueper.git
+	ignore = dirty
