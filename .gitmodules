@@ -483,11 +483,6 @@
   url = https://github.com/xolox/vim-misc.git
   ignore = dirty
   branch = master
-[submodule "vim-pythonsense"]
-  path = .vim/2btested/vim-pythonsense
-  url = https://github.com/jeetsukumaran/vim-pythonsense.git
-  ignore = dirty
-  branch = master
 [submodule "vim-visual-multi"]
   path = .vim/2btested/vim-visual-multi
   url = https://github.com/mg979/vim-visual-multi
