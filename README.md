@@ -5,7 +5,45 @@ This repo holds my vim dotfiles and plugins.
 To install, link **$HOME/.vim** to this repository's files of the same name.
 
 
+!!! Fix these:
 
+* .vim/pack/test/start/vim-devicons: find
+* .vim/2btested/gitv: find
+* .vim/2btested/taglist: find
+* .vim/2btested/yapf: find
+* .vim/2btested/vim-abolish: find
+* .vim/2btested/nerdtree: find
+* .vim/2btested/ansible-vim: find
+* .vim/2btested/traces: find
+* .vim/2btested/ttags_vim: find
+* .vim/pack/test/start/FastFold: find
+* .vim/pack/syntax/start/apiblueprint: find
+* .vim/2btested/bufferize: find
+* .vim/2btested/pathogen: find
+* .vim/pack/syntax/start/SimpylFold: find
+* .vim/2btested/indentLine: find
+* .vim/2btested/vim-superman: find
+* .vim/2btested/vim-dirvish: find
+* .vim/pack/test/start/vim-jdaddy: find
+* .vim/2btested/vim-indent-rainbow: find
+* .vim/2btested/vim-rsi: find
+* .vim/2btested/onestatus: find
+* .vim/2btested/csv: find
+* .vim/2btested/toml: find
+* .vim/2btested/hledger-vim: find
+* .vim/pack/app/start/jupyter-vim: find
+* .vim/2btested/nerdcommenter: find
+* .vim/2btested/bufexplorer: find
+* .vim/2btested/bats: find
+* .vim/2btested/vim-signify: find
+* .vim/2btested/snowball_py: find
+* .vim/2btested/vim-sensible: find
+* .vim/2btested/nerdtree-project-plugin: find
+* .vim/2btested/vim-virtualenv: find
+* .vim/2btested/autoclose: find
+* .vim/pack/syntax/start/vim-terraform: find
+* .vim/2btested/rainbow: find
+* .vim/2btested/vim-commentary: find
 
 ## How do I?
 
@@ -72,7 +110,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 #### python
 
-* [mccabe](https://github.com/PyCQA/mccabe) 
 * [vim-flake8](https://github.com/nvie/vim-flake8) 
 * [vim-virtualenv](https://github.com/jmcantrell/vim-virtualenv) 
 

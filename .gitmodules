@@ -238,11 +238,6 @@
   url = https://github.com/PyCQA/pydocstyle
   branch = master
   ignore = dirty
-[submodule "mccabe"]
-  path = .vim/pack/python/start/mccabe
-  url = https://github.com/PyCQA/mccabe
-  branch = master
-  ignore = dirty
 [submodule "pyflakes"]
   path = .vim/2btested/pyflakes
   url = https://github.com/PyCQA/pyflakes
