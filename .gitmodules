@@ -228,11 +228,6 @@
   url = https://github.com/PyCQA/astroid
   branch = main
   ignore = dirty
-[submodule "SimpylFold"]
-	path = .vim/2btested/SimpylFold
-  url = https://github.com/tmhedberg/SimpylFold.git
-  branch = master
-  ignore = dirty
 [submodule "jupyter-vim"]
   path = .vim/2btested/jupyter-vim
   url = https://github.com/jupyter-vim/jupyter-vim
