@@ -238,11 +238,6 @@
   url = https://github.com/PyCQA/astroid
   branch = main
   ignore = dirty
-[submodule "pylama"]
-  path = .vim/2btested/pylama
-  url = https://github.com/klen/pylama
-  branch = master
-  ignore = dirty
 [submodule "SimpylFold"]
 	path = .vim/2btested/SimpylFold
   url = https://github.com/tmhedberg/SimpylFold.git
