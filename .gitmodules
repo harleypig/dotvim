@@ -443,11 +443,6 @@
   url = https://github.com/neoclide/jsonc.vim.git
   ignore = dirty
   branch = master
-[submodule "vim-terraform"]
-  path = .vim/pack/hashicorp/start/vim-terraform
-  url = https://github.com/hashivim/vim-terraform.git
-  ignore = dirty
-  branch = master
 [submodule "bats"]
   path = .vim/pack/shell/start/bats
   url = https://github.com/aliou/bats.vim

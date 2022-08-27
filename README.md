@@ -96,7 +96,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 #### hashicorp
 
 * [vim-packer](https://github.com/hashivim/vim-packer.git) 
-* [vim-terraform](https://github.com/hashivim/vim-terraform.git) 
 * [vim-vaultproject](https://github.com/hashivim/vim-vaultproject.git) 
 
 #### hledger
