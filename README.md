@@ -39,7 +39,6 @@ To install, link **$HOME/.vim** to this repository's files of the same name.
 * .vim/2btested/snowball_py: find
 * .vim/2btested/vim-sensible: find
 * .vim/2btested/nerdtree-project-plugin: find
-* .vim/2btested/vim-virtualenv: find
 * .vim/2btested/autoclose: find
 * .vim/pack/syntax/start/vim-terraform: find
 * .vim/2btested/rainbow: find
@@ -160,7 +159,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [async](https://github.com/prabirshrestha/async.vim.git) 
 * [asyncomplete](https://github.com/prabirshrestha/asyncomplete.vim.git) 
 * [asyncomplete-lsp](https://github.com/prabirshrestha/asyncomplete-lsp.vim.git) 
-* [autopep8](https://github.com/hhatto/autopep8) branch: main
 * [black](https://github.com/ambv/black) branch: main
 * [calendar](https://github.com/itchyny/calendar.vim) 
 * [ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky.git) 

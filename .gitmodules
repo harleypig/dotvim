@@ -223,11 +223,6 @@
   url = https://github.com/markonm/traces.vim.git
   branch = master
   ignore = dirty
-[submodule "autopep8"]
-  path = .vim/2btested/autopep8
-  url = https://github.com/hhatto/autopep8
-  branch = main
-  ignore = dirty
 [submodule "pycodestyle"]
   path = .vim/2btested/pycodestyle
   url = https://github.com/PyCQA/pycodestyle
