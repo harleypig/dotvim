@@ -223,11 +223,6 @@
   url = https://github.com/markonm/traces.vim.git
   branch = master
   ignore = dirty
-[submodule "pyflakes"]
-  path = .vim/2btested/pyflakes
-  url = https://github.com/PyCQA/pyflakes
-  branch = master
-  ignore = dirty
 [submodule "pylint"]
   path = .vim/2btested/pylint
   url = https://github.com/PyCQA/pylint

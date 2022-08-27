@@ -166,7 +166,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [FastFold](https://github.com/Konfekt/FastFold.git) 
 * [jupyter-vim](https://github.com/jupyter-vim/jupyter-vim) 
 * [perlomni](https://github.com/c9s/perlomni.vim.git) 
-* [pyflakes](https://github.com/PyCQA/pyflakes) 
 * [pylama](https://github.com/klen/pylama) 
 * [pylint](https://github.com/PyCQA/pylint) branch: main
 * [rope](https://github.com/python-rope/rope) 
