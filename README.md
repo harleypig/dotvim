@@ -41,6 +41,7 @@ To install, link **$HOME/.vim** to this repository's files of the same name.
 * .vim/2btested/autoclose: find
 * .vim/pack/syntax/start/vim-terraform: find
 * .vim/2btested/rainbow: find
+* .vim/pack/utility/start/syntastic: submodule
 * .vim/2btested/vim-commentary: find
 
 ## How do I?
@@ -195,7 +196,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-LanguageTool](https://github.com/dpelle/vim-LanguageTool.git) 
 * [vim-lion](https://github.com/tommcdo/vim-lion.git) 
 * [vim-lsp-ale](https://github.com/rhysd/vim-lsp-ale.git) 
-* [vim-lsp](https://github.com/prabirshrestha/vim-lsp.git) 
 * [vim-lsp-settings](https://github.com/mattn/vim-lsp-settings.git) 
 * [vim-markify](https://github.com/dhruvasagar/vim-markify) 
 * [vim-misc](https://github.com/xolox/vim-misc.git) 

@@ -158,11 +158,6 @@
   url = https://github.com/rhysd/vim-notes-cli.git
   branch = master
   ignore = dirty
-[submodule "vim-lsp"]
-  path = .vim/2btested/vim-lsp
-  url = https://github.com/prabirshrestha/vim-lsp.git
-  branch = master
-  ignore = dirty
 [submodule "async"]
   path = .vim/2btested/async
   url = https://github.com/prabirshrestha/async.vim.git
