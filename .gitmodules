@@ -223,11 +223,6 @@
   url = https://github.com/markonm/traces.vim.git
   branch = master
   ignore = dirty
-[submodule "pylint"]
-  path = .vim/2btested/pylint
-  url = https://github.com/PyCQA/pylint
-  branch = main
-  ignore = dirty
 [submodule "rope"]
   path = .vim/2btested/rope
   url = https://github.com/python-rope/rope
