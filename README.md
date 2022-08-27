@@ -159,7 +159,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [async](https://github.com/prabirshrestha/async.vim.git) 
 * [asyncomplete](https://github.com/prabirshrestha/asyncomplete.vim.git) 
 * [asyncomplete-lsp](https://github.com/prabirshrestha/asyncomplete-lsp.vim.git) 
-* [black](https://github.com/ambv/black) branch: main
 * [calendar](https://github.com/itchyny/calendar.vim) 
 * [ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky.git) 
 * [ctrlp](https://github.com/ctrlpvim/ctrlp.vim) 
