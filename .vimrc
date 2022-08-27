@@ -1,8 +1,6 @@
 " Excellent HTML formatted copy of the VIm documentation at
-" http://vimdoc.sourceforge.net/htmldoc/
-
-" This is set by default
-" set nocompatible
+" https://vimhelp.org
+" Deprecated: http://vimdoc.sourceforge.net/htmldoc/
 
 " Use coc for lsp functions, not ale
 let g:ale_disable_lsp = 1
@@ -18,9 +16,9 @@ colorscheme desert
 filetype plugin indent on
 syntax on
 
+" XXX: Move this to mystuff?
 " Use a different colorscheme when using vimdiff and turn off syntax
 " highlighting. This improves visibility mightily.
-
 
 if &diff
   colorscheme vividchalk

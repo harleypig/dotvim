@@ -1,5 +1,4 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Set the statusline
 "
 " look into replacing this with https://github.com/Lokaltog/vim-powerline
@@ -12,8 +11,7 @@
 
 set laststatus=2
 
-" vim-yasl (yet another statusline)
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "hi StatusLine ctermbg=White ctermfg=Black
 hi StatusLine ctermbg=black ctermfg=white
 "hi User1 ctermbg=White ctermfg=Red
@@ -23,6 +21,7 @@ au CmdwinLeave * hi StatusLine ctermbg=White ctermfg=Black
 au InsertEnter * hi StatusLine ctermbg=Yellow ctermfg=Blue
 au InsertLeave * hi StatusLine ctermbg=White ctermfg=Black
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if !exists("g:YASL_NoneFiletype")
   let g:YASL_NoneFiletype = 'none'
 endif
@@ -60,6 +59,21 @@ if !exists("g:YASL_NoPasteMode")
   let g:YASL_NoPasteMode = ''
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+    \   '%dW %dE',
+    \   all_non_errors,
+    \   all_errors
+    \)
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Make sure the status line is empty before we start.
 set statusline=
 
@@ -79,8 +93,9 @@ set statusline+=%(\ %{YASL_PasteMode()}%)
 set statusline+=%*
 
 " Read the Syntastic docs.
-set statusline+=%#warningmsg#%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}%*
+"set statusline+=%#warningmsg#%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}%*
 "set statusline+=%1*%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}%*
+set statusline+=[%{LinterStatus()}]
 
 " column and line # of total lines ; what percentage of the file are we at?
 " and what size is the file?
