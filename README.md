@@ -108,6 +108,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 #### python
 
+* [pylama](https://github.com/klen/pylama.git) 
 * [rope](https://github.com/python-rope/rope.git) 
 * [ropevim](https://github.com/python-rope/ropevim.git) 
 
@@ -170,7 +171,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [FastFold](https://github.com/Konfekt/FastFold.git) 
 * [jupyter-vim](https://github.com/jupyter-vim/jupyter-vim) 
 * [perlomni](https://github.com/c9s/perlomni.vim.git) 
-* [pylama](https://github.com/klen/pylama.git) 
 * [supertab](https://github.com/ervandew/supertab.git) 
 * [tagbar](https://github.com/preservim/tagbar.git) 
 * [targets](https://github.com/wellle/targets.vim.git) 
