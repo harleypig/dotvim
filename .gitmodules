@@ -477,7 +477,7 @@
   url = https://github.com/cedarbaum/fugitive-azure-devops.vim.git
   ignore = dirty
 [submodule "rope"]
-	path = .vim/pack/python/start/rope
+	path = .vim/2btested/rope
 	url = https://github.com/python-rope/rope.git
 	ignore = dirty
 [submodule "ropevim"]
