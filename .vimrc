@@ -9,9 +9,7 @@ let g:coc_disable_startup_warning = 1
 " Load all plugins in .vim/pack/*/start directories
 packloadall!
 
-colorscheme desert
-"colorscheme blacklight
-"colorscheme neon
+colorscheme norwaytoday
 
 filetype plugin indent on
 syntax on
