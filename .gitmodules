@@ -485,7 +485,7 @@
 	url = https://github.com/python-rope/ropevim.git
 	ignore = dirty
 [submodule "pylama"]
-	path = .vim/pack/python/start/pylama
+	path = .vim/2btested/pylama
 	url = https://github.com/klen/pylama.git
 	ignore = dirty
 [submodule "blue-mood-vim"]
