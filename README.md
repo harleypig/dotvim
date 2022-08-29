@@ -101,6 +101,10 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 * [hledger-vim](https://github.com/anekos/hledger-vim.git) 
 
+#### markdown
+
+* [vim-markdown](https://github.com/preservim/vim-markdown.git) 
+
 #### shell
 
 * [bats](https://github.com/aliou/bats.vim) 
@@ -189,7 +193,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [vim-jsbeautify](https://github.com/maksimr/vim-jsbeautify.git) 
 * [vim-LanguageTool](https://github.com/dpelle/vim-LanguageTool.git) 
 * [vim-lion](https://github.com/tommcdo/vim-lion.git) 
-* [vim-markdown](https://github.com/preservim/vim-markdown.git) 
 * [vim-markify](https://github.com/dhruvasagar/vim-markify) 
 * [vim-misc](https://github.com/xolox/vim-misc.git) 
 * [vim-notes-cli](https://github.com/rhysd/vim-notes-cli.git) 
