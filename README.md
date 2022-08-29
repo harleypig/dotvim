@@ -129,7 +129,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim.git) 
 * [helpful](https://github.com/tweekmonster/helpful.vim.git) 
-* [indentLine](https://github.com/Yggdroot/indentLine.git) 
 * [jsonc](https://github.com/neoclide/jsonc.vim.git) 
 * [linediff](https://github.com/AndrewRadev/linediff.vim.git) 
 * [rainbow](https://github.com/luochen1990/rainbow.git) 
