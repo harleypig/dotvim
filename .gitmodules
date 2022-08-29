@@ -284,7 +284,7 @@
   ignore = dirty
   branch = master
 [submodule "vim-markdown"]
-  path = .vim/pack/markdown/start/vim-markdown
+	path = .vim/2btested/vim-markdown
   url = https://github.com/preservim/vim-markdown.git
   ignore = dirty
   branch = master
