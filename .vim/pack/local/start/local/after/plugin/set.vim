@@ -94,6 +94,7 @@ set   scrolloff=999999 " number of screen lines to show around the cursor
 set   wrap  " long lines wrap
 set   linebreak  " wrap long lines at a character in 'breakat'
 set   display=uhex,lastline " include "lastline" to show the last line even if it doesn't fit
+set   concealcursor=nc
 "fillchars  characters to use for the status line, folds and filler lines
 "   set fcs=vert:\|,fold:-
 "cmdheight  number of lines used for the command-line

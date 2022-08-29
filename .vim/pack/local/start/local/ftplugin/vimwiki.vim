@@ -6,3 +6,4 @@
 
 " Change working directory to file location so markdownlint will work correctly
 setlocal autochdir
+"set concealcursor=nc

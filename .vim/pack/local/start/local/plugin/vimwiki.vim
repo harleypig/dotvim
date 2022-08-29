@@ -2,6 +2,8 @@
 
 " Global options
 
+set concealcursor=nc
+
 let g:vimwiki_auto_checkbox   = 1
 let g:vimwiki_auto_chdir      = 1
 "let g:vimwiki_customwiki2html = '~/.vim/tools/vimwiki2html.sh'

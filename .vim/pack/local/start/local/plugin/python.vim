@@ -12,4 +12,4 @@ let g:ale_linters = {'python': ['pylint']}
 
 let g:ale_fix_on_save = 1
 "let g:ale_fixers = {'python': []}
-let g:ale_fixers = {'python': ['add_blank_lines_for_python_control_statements','autoflake','autoimport','autopep8','black','isort','pyflyby','remove_trailing_lines','reorder-python-imports','trim_whitespace','yapf']}
+let g:ale_fixers = {'python': ['autoflake','autopep8','black','isort','pyflyby','remove_trailing_lines','reorder-python-imports','trim_whitespace','yapf']}
