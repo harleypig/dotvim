@@ -62,7 +62,7 @@ nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 set   formatoptions=tcroq1
 set   wrapmargin=2
 set   backspace=indent,eol,start
-set   textwidth=132
+set   textwidth=78
 
 " Indenting
 set   autoindent
