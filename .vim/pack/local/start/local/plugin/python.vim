@@ -11,5 +11,12 @@
 let g:ale_linters = {'python': ['pylint']}
 
 let g:ale_fix_on_save = 1
-"let g:ale_fixers = {'python': []}
-let g:ale_fixers = {'python': ['autoflake','autopep8','black','isort','pyflyby','remove_trailing_lines','reorder-python-imports','trim_whitespace','yapf']}
+
+" Do I need both isort and reorder-python-imports?
+" pyflyby is similar to isort and reorder-python-imports.
+" yapf is a formatter, using something else
+" autoflake manages imports, using something else
+
+let g:ale_fixers = {'python': ['autopep8','isort','remove_trailing_lines','trim_whitespace']}
+
+"let g:ale_fixers = {'python': ['black']}
