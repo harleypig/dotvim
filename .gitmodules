@@ -26,3 +26,7 @@
 	path = .vim/pack/testing/start/vimspector
 	url = https://github.com/puremourning/vimspector
 	ignore = dirty
+[submodule "asynctasks"]
+	path = .vim/pack/testing/start/asynctasks
+	url = https://github.com/skywind3000/asynctasks.vim.git
+	ignore = dirty
