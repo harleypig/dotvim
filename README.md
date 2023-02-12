@@ -40,13 +40,16 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 * [vim-colorschemes](https://github.com/EvitanRelta/vim-colorschemes.git) %branch_name%
 
+#### intellisense
+
+* [coc](https://github.com/neoclide/coc.nvim.git) %branch_name%
+
 #### syntax
 
 * [vim-polyglot](https://github.com/sheerun/vim-polyglot.git) %branch_name%
 
 #### testing
 
-* [coc](https://github.com/neoclide/coc.nvim.git) %branch_name%
 * [vim-dadbod](https://github.com/tpope/vim-dadbod.git) %branch_name%
 
 #### To Be Tested
