@@ -10,3 +10,7 @@
 	path = .vim/pack/testing/start/coc
 	url = https://github.com/neoclide/coc.nvim.git
 	ignore = dirty
+[submodule "vim-dadbod"]
+	path = .vim/pack/testing/start/vim-dadbod
+	url = https://github.com/tpope/vim-dadbod.git
+	ignore = dirty
