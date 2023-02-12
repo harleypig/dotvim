@@ -16,11 +16,14 @@ declare -A known
 declare self
 
 known['add']='_add'
-known['a']='_add'
 known['move']='_mv'
-known['m']='_mv'
 known['remove']='_rm'
+known['update']='_update'
+
+known['a']='_add'
+known['m']='_mv'
 known['r']='_rm'
+known['u']='_update'
 
 self="${0##*\/git-plugin-}"
 
@@ -35,7 +38,7 @@ _mkreadme() {
   commit_msg="$1"
   mkreadme > README.md
   git add README.md
-  git commit -m "$commit_msg"
+  git commit -m "Updated README.md; $commit_msg" README.md
 }
 
 #-----------------------------------------------------------------------------
@@ -48,6 +51,16 @@ _get_path() {
 }
 
 ##############################################################################
+#-----------------------------------------------------------------------------
+_udpate() {
+  [[ -z $1 ]] && die 'must pass name of submodule to update'
+  local name="$1"
+
+  path="$(_get_path "$name")"
+  [[ -z $path ]] && die "$name is not a submodule"
+  git submodule update --init --recursive "$path"
+}
+
 #-----------------------------------------------------------------------------
 _add() {
   [[ -z $1 ]] && die 'must pass git url of submodule to add'
@@ -67,6 +80,9 @@ _add() {
   git submodule add --name "$name" "$url" "$modpath"
   git config -f .gitmodules "submodule.${name}.ignore" 'dirty'
   git add .gitmodules
+  git commit -m "auto commit of .gitmodules after adding $name"
+
+  _update $name
 
   _mkreadme "added $name"
 }
@@ -90,6 +106,7 @@ _mv() {
   git mv "$oldpath" "$newpath/$name"
   # needed?
   git add "$newpath/$name"
+  git commit -m "auto commit of moved files for $name"
 
   _mkreadme "moved $name to $newloc"
 }
@@ -105,8 +122,9 @@ _rm() {
   git rm -r "$path" || die "Problem removing $name"
   rm -fr ".git/modules/${path##*/}"
   git config --remove-section "submodule.$name"
+  git commit -m "auto commit of removed files for $name"
 
-  _mkreadme "removed $name and updated readme"
+  _mkreadme "removed $name"
 }
 
 #-----------------------------------------------------------------------------
