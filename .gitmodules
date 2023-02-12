@@ -3,6 +3,6 @@
 	url = https://github.com/sheerun/vim-polyglot.git
 	ignore = dirty
 [submodule "vim-colorschemes"]
-	path = .vim/pack/testing/start/vim-colorschemes
+	path = .vim/pack/colorschemes/start/vim-colorschemes
 	url = https://github.com/EvitanRelta/vim-colorschemes.git
 	ignore = dirty
