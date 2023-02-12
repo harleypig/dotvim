@@ -53,6 +53,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 * [jsonc](https://github.com/neoclide/jsonc.vim.git) %branch_name%
 * [vim-dadbod](https://github.com/tpope/vim-dadbod.git) %branch_name%
 * [vim-fugitive](https://github.com/tpope/vim-fugitive.git) %branch_name%
+* [vimspector](https://github.com/puremourning/vimspector) %branch_name%
 
 #### To Be Tested
 
