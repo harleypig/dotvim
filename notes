@@ -1,0 +1,12 @@
+coc
+
+prereqs
+* must have node installed
+* must have yarn installed
+* in directory coc is install run
+  + yarn install
+
+
+* add a way to dump cocinfo to README
+* look for extensions here
+  + https://www.npmjs.com/search?q=keywords%3Acoc.nvim
