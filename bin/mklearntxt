@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#source utility
+#is_executable md2vim || die 'md2vim is required'
+
+infile='LEARNING.md'
+outfile='.vim/doc/learning.txt'
+
+declare -a mopts
+
+# number of columns to use for layout (default 80)
+#mopts+=('-cols' '#')
+
+# short description of the help file
+mopts+=('-desc' 'Vim Stuff I Am Learning')
+
+# do not generate horizontal rules above headings
+#mopts+=('-norules'
+
+# do not generate table of contents for headings
+#mopts+=('-notoc')
+
+# use PascalCase for abbreviating tags
+mopts+=('-pascal')
+
+# tab width specified in number of spaces (default 4)
+#mopts+=('-tabs' 2)
+
+md2vim "${mopts[@]}" $infile $outfile

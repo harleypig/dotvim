@@ -52,13 +52,14 @@ _get_path() {
 
 ##############################################################################
 #-----------------------------------------------------------------------------
-_udpate() {
+_update() {
   [[ -z $1 ]] && die 'must pass name of submodule to update'
   local name="$1"
 
   path="$(_get_path "$name")"
   [[ -z $path ]] && die "$name is not a submodule"
   git submodule update --init --recursive "$path"
+  _mkreadme "updated $name"
 }
 
 #-----------------------------------------------------------------------------
