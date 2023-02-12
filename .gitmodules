@@ -1,3 +1,4 @@
 [submodule "vim-polyglot"]
 	path = .vim/plugins/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
+	ignore = dirty
