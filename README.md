@@ -2,10 +2,12 @@
 
 This repo holds my vim dotfiles and plugins.
 
-To install, link **$HOME/.vim** to this repository's files of the same name.
+To install, link `$HOME/.vim` to this repository's files of the same name.
 
 
+!!! Fix these:
 
+* .vim/pack/settings/start/ftplugin: find
 
 ## How do I?
 
@@ -41,6 +43,10 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 #### syntax
 
 * [vim-polyglot](https://github.com/sheerun/vim-polyglot.git) %branch_name%
+
+#### testing
+
+* [coc](https://github.com/neoclide/coc.nvim.git) %branch_name%
 
 #### To Be Tested
 
