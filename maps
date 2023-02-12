@@ -1,0 +1,1058 @@
+
+
+o  %           * v:<C-U>call <SNR>52_Match_wrapper('',1,'o') <CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/matchit.vim line 54
+v  %           * :<C-U>call <SNR>52_Match_wrapper('',1,'v') <CR>m'gv``
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/matchit.vim line 52
+n  %           * :<C-U>call <SNR>52_Match_wrapper('',1,'n') <CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/matchit.vim line 50
+n  -             <Plug>(dirvish_up)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-dirvish/plugin/dirvish.vim line 35
+n  .           * .`[
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/misc.vim line 69
+n  <p            <Plug>(unimpaired-put-below-leftward)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 439
+n  <P            <Plug>(unimpaired-put-above-leftward)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 438
+n  <s<Esc>     & <Nop>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 370
+n  <s            <Plug>(unimpaired-enable)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 367
+n  =p            <Plug>(unimpaired-put-below-reformat)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 441
+n  =P            <Plug>(unimpaired-put-above-reformat)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 440
+n  =s<Esc>     & <Nop>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 369
+n  =s            <Plug>(unimpaired-toggle)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 366
+n  >p            <Plug>(unimpaired-put-below-rightward)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 437
+n  >P            <Plug>(unimpaired-put-above-rightward)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 436
+n  >s<Esc>     & <Nop>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 371
+n  >s            <Plug>(unimpaired-disable)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 368
+n  N           * Nzz
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/misc.vim line 159
+noxQ             gq
+	Last set from /usr/share/vim/vim90/defaults.vim line 69
+n  S             :%s//g<Left><Left>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/misc.vim line 43
+v  S             :s//g<Left><Left>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/misc.vim line 44
+   Y             y$
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/misc.vim line 55
+n  [xx           <Plug>(unimpaired-xml-encode-line)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 609
+x  [x            <Plug>(unimpaired-xml-encode)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 608
+n  [x            <Plug>(unimpaired-xml-encode)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 607
+n  [uu           <Plug>(unimpaired-url-encode-line)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 609
+x  [u            <Plug>(unimpaired-url-encode)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 608
+n  [u            <Plug>(unimpaired-url-encode)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 607
+n  [CC           <Plug>(unimpaired-string-encode-line)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 609
+x  [C            <Plug>(unimpaired-string-encode)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 608
+n  [yy           <Plug>(unimpaired-string-encode-line)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 609
+x  [y            <Plug>(unimpaired-string-encode)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 608
+n  [y            <Plug>(unimpaired-string-encode)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 607
+n  [P            <Plug>(unimpaired-put-above)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 433
+n  [p            <Plug>(unimpaired-put-above)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 431
+n  [o<Esc>     & <Nop>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 364
+n  [o            <Plug>(unimpaired-enable)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 361
+x  [e            <Plug>(unimpaired-move-selection-up)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 294
+n  [e            <Plug>(unimpaired-move-up)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 292
+n  [<Space>      <Plug>(unimpaired-blank-up)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 252
+o  [n            <Plug>(unimpaired-context-previous)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 184
+x  [n            <Plug>(unimpaired-context-previous)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 182
+n  [n            <Plug>(unimpaired-context-previous)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 180
+n  [f            <Plug>(unimpaired-directory-previous)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 169
+n  [<C-T>        <Plug>(unimpaired-ptprevious)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 67
+n  [T            <Plug>(unimpaired-tfirst)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 53
+n  [t            <Plug>(unimpaired-tprevious)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 51
+n  [<C-Q>        <Plug>(unimpaired-cpfile)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 60
+n  [Q            <Plug>(unimpaired-cfirst)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 53
+n  [q            <Plug>(unimpaired-cprevious)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 51
+n  [<C-L>        <Plug>(unimpaired-lpfile)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 60
+n  [L            <Plug>(unimpaired-lfirst)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 53
+n  [l            <Plug>(unimpaired-lprevious)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 51
+n  [B            <Plug>(unimpaired-bfirst)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 53
+n  [b            <Plug>(unimpaired-bprevious)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 51
+n  [A            <Plug>(unimpaired-first)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 53
+n  [a            <Plug>(unimpaired-previous)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 51
+n  [C            9999[c
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-signify/plugin/signify.vim line 50
+n  [c            <Plug>(signify-prev-hunk)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-signify/plugin/signify.vim line 48
+o  [%          * v:<C-U>call <SNR>52_MultiMatch("bW", "o") <CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/matchit.vim line 64
+v  [%            <Esc>[%m'gv``
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/matchit.vim line 60
+n  [%          * :<C-U>call <SNR>52_MultiMatch("bW", "n") <CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/matchit.vim line 58
+   \lo         * :Errors<CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/syntastic.vim line 55
+   \lc         * :lclose<CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/syntastic.vim line 54
+n  \fb         * :call <SNR>117_shFormat()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/shfmt.vim line 39
+n  \sch        * :call <SNR>116_scShell(input('shellcheck shell='))<CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/shellcheck.vim line 63
+n  \scs        * :call <SNR>116_scSource(input('shellcheck source='))<CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/shellcheck.vim line 62
+n  \scd        * :call <SNR>116_scDisable(input('shellcheck disable=SC'))<CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/shellcheck.vim line 61
+n  \nn         * :set <C-R>={'00':'','01':'r','10':'nor'}[&rnu.&nu]<CR>nu<CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/misc.vim line 108
+n  \ml         * :call AppendModeline()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/misc.vim line 65
+n  \b            :ls<CR>:buffer<Space>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/misc.vim line 51
+n  \y            : if exists("syntax_on") | syntax off | else | syntax enable | endif<CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/misc.vim line 47
+   \o            :<C-U>call append(line("."), repeat([''], v:count1))<CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/misc.vim line 39
+   \O            :<C-U>call append(line(".") -1, repeat([''], v:count1))<CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/misc.vim line 38
+x  \T            <Plug>(table-mode-tableize-delimiter)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 120
+x  \tt           <Plug>(table-mode-tableize)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 116
+n  \tt           <Plug>(table-mode-tableize)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 115
+n  \tm         * :<C-U>call tablemode#Toggle()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 67
+n  \qf           <Plug>(coc-fix-current)
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/coc.vim line 31
+n  \f            <Plug>(coc-format-selected)
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/coc.vim line 28
+x  \f            <Plug>(coc-format-selected)
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/coc.vim line 27
+   \rwp          <Plug>RestoreWinPosn
+	Last set from ~/projects/dotvim/.vim/pack/drchip/start/ansiesc/plugin/cecutil.vim line 52
+   \swp          <Plug>SaveWinPosn
+	Last set from ~/projects/dotvim/.vim/pack/drchip/start/ansiesc/plugin/cecutil.vim line 49
+n  \w\m          <Plug>VimwikiMakeTomorrowDiaryNote
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/autoload/vimwiki/u.vim line 105
+n  \w\y          <Plug>VimwikiMakeYesterdayDiaryNote
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/autoload/vimwiki/u.vim line 105
+n  \w\t          <Plug>VimwikiTabMakeDiaryNote
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/autoload/vimwiki/u.vim line 105
+n  \w\w          <Plug>VimwikiMakeDiaryNote
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/autoload/vimwiki/u.vim line 105
+n  \w\i          <Plug>VimwikiDiaryGenerateLinks
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/autoload/vimwiki/u.vim line 105
+n  \wi           <Plug>VimwikiDiaryIndex
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/autoload/vimwiki/u.vim line 105
+n  \ws           <Plug>VimwikiUISelect
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/autoload/vimwiki/u.vim line 105
+n  \wt           <Plug>VimwikiTabIndex
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/autoload/vimwiki/u.vim line 105
+n  \ww           <Plug>VimwikiIndex
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/autoload/vimwiki/u.vim line 105
+n  ]xx           <Plug>(unimpaired-xml-decode-line)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 609
+x  ]x            <Plug>(unimpaired-xml-decode)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 608
+n  ]x            <Plug>(unimpaired-xml-decode)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 607
+n  ]uu           <Plug>(unimpaired-url-decode-line)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 609
+x  ]u            <Plug>(unimpaired-url-decode)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 608
+n  ]u            <Plug>(unimpaired-url-decode)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 607
+n  ]CC           <Plug>(unimpaired-string-decode-line)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 609
+x  ]C            <Plug>(unimpaired-string-decode)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 608
+n  ]yy           <Plug>(unimpaired-string-decode-line)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 609
+x  ]y            <Plug>(unimpaired-string-decode)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 608
+n  ]y            <Plug>(unimpaired-string-decode)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 607
+n  ]P            <Plug>(unimpaired-put-below)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 434
+n  ]p            <Plug>(unimpaired-put-below)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 432
+n  ]o<Esc>     & <Nop>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 365
+n  ]o            <Plug>(unimpaired-disable)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 362
+x  ]e            <Plug>(unimpaired-move-selection-down)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 295
+n  ]e            <Plug>(unimpaired-move-down)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 293
+n  ]<Space>      <Plug>(unimpaired-blank-down)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 253
+o  ]n            <Plug>(unimpaired-context-next)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 185
+x  ]n            <Plug>(unimpaired-context-next)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 183
+n  ]n            <Plug>(unimpaired-context-next)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 181
+n  ]f            <Plug>(unimpaired-directory-next)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 168
+n  ]<C-T>        <Plug>(unimpaired-ptnext)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 68
+n  ]T            <Plug>(unimpaired-tlast)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 54
+n  ]t            <Plug>(unimpaired-tnext)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 52
+n  ]<C-Q>        <Plug>(unimpaired-cnfile)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 61
+n  ]Q            <Plug>(unimpaired-clast)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 54
+n  ]q            <Plug>(unimpaired-cnext)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 52
+n  ]<C-L>        <Plug>(unimpaired-lnfile)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 61
+n  ]L            <Plug>(unimpaired-llast)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 54
+n  ]l            <Plug>(unimpaired-lnext)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 52
+n  ]B            <Plug>(unimpaired-blast)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 54
+n  ]b            <Plug>(unimpaired-bnext)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 52
+n  ]A            <Plug>(unimpaired-last)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 54
+n  ]a            <Plug>(unimpaired-next)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 52
+n  ]C            9999]c
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-signify/plugin/signify.vim line 44
+n  ]c            <Plug>(signify-next-hunk)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-signify/plugin/signify.vim line 42
+o  ]%          * v:<C-U>call <SNR>52_MultiMatch("W",  "o") <CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/matchit.vim line 65
+v  ]%            <Esc>]%m'gv``
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/matchit.vim line 61
+n  ]%          * :<C-U>call <SNR>52_MultiMatch("W",  "n") <CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/matchit.vim line 59
+o  aj          * :normal vaj<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-jdaddy/plugin/jdaddy.vim line 12
+x  aj          * jdaddy#outer_movement(v:count1)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-jdaddy/plugin/jdaddy.vim line 11
+v  a%            <Esc>[%v]%
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/matchit.vim line 68
+n  cS            <Plug>CSurround
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 613
+n  cs            <Plug>Csurround
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 612
+n  ds            <Plug>Dsurround
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 611
+n  d<C-X>        <Plug>SpeedDatingNowLocal
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-speeddating/plugin/speeddating.vim line 67
+n  d<C-A>        <Plug>SpeedDatingNowUTC
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-speeddating/plugin/speeddating.vim line 66
+x  gS            <Plug>VgSurround
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 620
+n  gwaj        * :exe jdaddy#reformat('jdaddy#outer_pos', v:count1, v:register)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-jdaddy/plugin/jdaddy.vim line 17
+n  gwij        * :exe jdaddy#reformat('jdaddy#inner_pos', v:count1, v:register)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-jdaddy/plugin/jdaddy.vim line 16
+n  gqaj        * :exe jdaddy#reformat('jdaddy#outer_pos', v:count1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-jdaddy/plugin/jdaddy.vim line 15
+n  gqij        * :exe jdaddy#reformat('jdaddy#inner_pos', v:count1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-jdaddy/plugin/jdaddy.vim line 14
+n  gcu           <Plug>Commentary<Plug>Commentary
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-commentary/plugin/commentary.vim line 118
+n  gcc           <Plug>CommentaryLine
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-commentary/plugin/commentary.vim line 117
+o  gc            <Plug>Commentary
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-commentary/plugin/commentary.vim line 116
+n  gc            <Plug>Commentary
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-commentary/plugin/commentary.vim line 115
+x  gc            <Plug>Commentary
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-commentary/plugin/commentary.vim line 114
+o  g%          * v:<C-U>call <SNR>52_Match_wrapper('',0,'o') <CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/matchit.vim line 55
+v  g%          * :<C-U>call <SNR>52_Match_wrapper('',0,'v') <CR>m'gv``
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/matchit.vim line 53
+n  g%          * :<C-U>call <SNR>52_Match_wrapper('',0,'n') <CR>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/matchit.vim line 51
+n  gr            <Plug>(coc-references)
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/coc.vim line 24
+n  gi            <Plug>(coc-implementation)
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/coc.vim line 23
+n  gy            <Plug>(coc-type-definition)
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/coc.vim line 22
+n  gd            <Plug>(coc-definition)
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/plugin/coc.vim line 21
+x  gx            <Plug>NetrwBrowseXVis
+	Last set from /usr/share/vim/vim90/plugin/netrwPlugin.vim line 88
+n  gx            <Plug>NetrwBrowseX
+	Last set from /usr/share/vim/vim90/plugin/netrwPlugin.vim line 82
+o  ij          * :normal vij<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-jdaddy/plugin/jdaddy.vim line 10
+x  ij          * jdaddy#inner_movement(v:count1)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-jdaddy/plugin/jdaddy.vim line 9
+n  n           * nzz
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/misc.vim line 158
+n  yo<Esc>     & <Nop>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 363
+n  yo            <Plug>(unimpaired-toggle)
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 360
+n  ySS           <Plug>YSsurround
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 618
+n  ySs           <Plug>YSsurround
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 617
+n  yss           <Plug>Yssurround
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 616
+n  yS            <Plug>YSurround
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 615
+n  ys            <Plug>Ysurround
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 614
+n  y<C-G>      & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vim-fugitive/plugin/fugitive.vim line 746
+n  <C-L>       * :nohlsearch<CR><C-L>
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/set.vim line 59
+v  <F2>        * d:execute 'normal i' . join(sort(split(getreg('"'))), ' ')<CR>"'))))'
+	Last set from ~/projects/dotvim/.vim/pack/local/start/local/after/plugin/misc.vim line 34
+n  <Plug>(unimpaired-xml-decode-line) * <SNR>94_TransformSetup("xml_decode")."_"
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 606
+x  <Plug>(unimpaired-xml-decode) * <SNR>94_TransformSetup("xml_decode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 605
+n  <Plug>(unimpaired-xml-decode) * <SNR>94_TransformSetup("xml_decode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 604
+n  <Plug>unimpaired_line_xml_decode * <SNR>94_TransformSetup("xml_decode")."_"
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 603
+x  <Plug>unimpaired_xml_decode * <SNR>94_TransformSetup("xml_decode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 602
+n  <Plug>unimpaired_xml_decode * <SNR>94_TransformSetup("xml_decode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 601
+n  <Plug>(unimpaired-xml-encode-line) * <SNR>94_TransformSetup("xml_encode")."_"
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 606
+x  <Plug>(unimpaired-xml-encode) * <SNR>94_TransformSetup("xml_encode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 605
+n  <Plug>(unimpaired-xml-encode) * <SNR>94_TransformSetup("xml_encode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 604
+n  <Plug>unimpaired_line_xml_encode * <SNR>94_TransformSetup("xml_encode")."_"
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 603
+x  <Plug>unimpaired_xml_encode * <SNR>94_TransformSetup("xml_encode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 602
+n  <Plug>unimpaired_xml_encode * <SNR>94_TransformSetup("xml_encode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 601
+n  <Plug>(unimpaired-url-decode-line) * <SNR>94_TransformSetup("url_decode")."_"
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 606
+x  <Plug>(unimpaired-url-decode) * <SNR>94_TransformSetup("url_decode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 605
+n  <Plug>(unimpaired-url-decode) * <SNR>94_TransformSetup("url_decode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 604
+n  <Plug>unimpaired_line_url_decode * <SNR>94_TransformSetup("url_decode")."_"
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 603
+x  <Plug>unimpaired_url_decode * <SNR>94_TransformSetup("url_decode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 602
+n  <Plug>unimpaired_url_decode * <SNR>94_TransformSetup("url_decode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 601
+n  <Plug>(unimpaired-url-encode-line) * <SNR>94_TransformSetup("url_encode")."_"
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 606
+x  <Plug>(unimpaired-url-encode) * <SNR>94_TransformSetup("url_encode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 605
+n  <Plug>(unimpaired-url-encode) * <SNR>94_TransformSetup("url_encode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 604
+n  <Plug>unimpaired_line_url_encode * <SNR>94_TransformSetup("url_encode")."_"
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 603
+x  <Plug>unimpaired_url_encode * <SNR>94_TransformSetup("url_encode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 602
+n  <Plug>unimpaired_url_encode * <SNR>94_TransformSetup("url_encode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 601
+n  <Plug>(unimpaired-string-decode-line) * <SNR>94_TransformSetup("string_decode")."_"
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 606
+x  <Plug>(unimpaired-string-decode) * <SNR>94_TransformSetup("string_decode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 605
+n  <Plug>(unimpaired-string-decode) * <SNR>94_TransformSetup("string_decode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 604
+n  <Plug>unimpaired_line_string_decode * <SNR>94_TransformSetup("string_decode")."_"
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 603
+x  <Plug>unimpaired_string_decode * <SNR>94_TransformSetup("string_decode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 602
+n  <Plug>unimpaired_string_decode * <SNR>94_TransformSetup("string_decode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 601
+n  <Plug>(unimpaired-string-encode-line) * <SNR>94_TransformSetup("string_encode")."_"
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 606
+x  <Plug>(unimpaired-string-encode) * <SNR>94_TransformSetup("string_encode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 605
+n  <Plug>(unimpaired-string-encode) * <SNR>94_TransformSetup("string_encode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 604
+n  <Plug>unimpaired_line_string_encode * <SNR>94_TransformSetup("string_encode")."_"
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 603
+x  <Plug>unimpaired_string_encode * <SNR>94_TransformSetup("string_encode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 602
+n  <Plug>unimpaired_string_encode * <SNR>94_TransformSetup("string_encode")
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 601
+n  <Plug>unimpairedPutBelow * :call <SNR>94_putline(']p', 'below')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 429
+n  <Plug>unimpairedPutAbove * :call <SNR>94_putline('[p', 'above')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 428
+n  <Plug>(unimpaired-put-below-reformat) * :<C-U>call <SNR>94_putline(v:count1 . ']p', 'Below')<CR>=']
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 427
+n  <Plug>(unimpaired-put-above-reformat) * :<C-U>call <SNR>94_putline(v:count1 . '[p', 'Above')<CR>=']
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 426
+n  <Plug>(unimpaired-put-below-leftward) * :<C-U>call <SNR>94_putline(v:count1 . ']p', 'Below')<CR><']
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 425
+n  <Plug>(unimpaired-put-above-leftward) * :<C-U>call <SNR>94_putline(v:count1 . '[p', 'Above')<CR><']
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 424
+n  <Plug>(unimpaired-put-below-rightward) * :<C-U>call <SNR>94_putline(v:count1 . ']p', 'Below')<CR>>']
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 423
+n  <Plug>(unimpaired-put-above-rightward) * :<C-U>call <SNR>94_putline(v:count1 . '[p', 'Above')<CR>>']
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 422
+n  <Plug>(unimpaired-put-below) * :call <SNR>94_putline(']p', 'below')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 421
+n  <Plug>(unimpaired-put-above) * :call <SNR>94_putline('[p', 'above')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 420
+n  <Plug>(unimpaired-toggle)p & :<C-U>call <SNR>94_SetupPaste()<CR>0C
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 404
+n  <Plug>(unimpaired-disable)p & :<C-U>call <SNR>94_SetupPaste()<CR>o
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 403
+n  <Plug>(unimpaired-enable)p & :<C-U>call <SNR>94_SetupPaste()<CR>O
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 402
+n  <Plug>(unimpaired-paste) & :<C-U>call <SNR>94_SetupPaste()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 400
+n  <Plug>unimpairedPaste * :call <SNR>94_SetupPaste()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 399
+n  <Plug>(unimpaired-toggle)t & :<C-U>set colorcolumn=<C-R>=<SNR>94_ColorColumn(!empty(&cc))<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 358
+n  <Plug>(unimpaired-disable)t & :<C-U>set colorcolumn=<C-R>=<SNR>94_ColorColumn(1)<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 357
+n  <Plug>(unimpaired-enable)t & :<C-U>set colorcolumn=<C-R>=<SNR>94_ColorColumn(0)<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 356
+n  <Plug>(unimpaired-toggle)+ & :<C-U>set <C-R>=<SNR>94_CursorOptions()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 348
+n  <Plug>(unimpaired-disable)+ & :<C-U>set nocursorline nocursorcolumn<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 347
+n  <Plug>(unimpaired-enable)+ & :<C-U>set cursorline cursorcolumn<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 346
+n  <Plug>(unimpaired-toggle)x & :<C-U>set <C-R>=<SNR>94_CursorOptions()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 345
+n  <Plug>(unimpaired-disable)x & :<C-U>set nocursorline nocursorcolumn<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 344
+n  <Plug>(unimpaired-enable)x & :<C-U>set cursorline cursorcolumn<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 343
+n  <Plug>(unimpaired-toggle)v & :<C-U>set <C-R>=(&virtualedit =~# "all") ? "virtualedit-=all" : "virtualedit+=all"<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 342
+n  <Plug>(unimpaired-disable)v & :<C-U>set virtualedit-=all<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 341
+n  <Plug>(unimpaired-enable)v & :<C-U>set virtualedit+=all<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 340
+n  <Plug>(unimpaired-toggle)z & :<C-U>setlocal <C-R>=<SNR>94_Toggle("spell")<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 316
+n  <Plug>(unimpaired-disable)z & :<C-U>setlocal nospell<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 315
+n  <Plug>(unimpaired-enable)z & :<C-U>setlocal spell<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 314
+n  <Plug>(unimpaired-toggle)w & :<C-U>setlocal <C-R>=<SNR>94_Toggle("wrap")<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 316
+n  <Plug>(unimpaired-disable)w & :<C-U>setlocal nowrap<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 315
+n  <Plug>(unimpaired-enable)w & :<C-U>setlocal wrap<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 314
+n  <Plug>(unimpaired-toggle)s & :<C-U>setlocal <C-R>=<SNR>94_Toggle("spell")<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 316
+n  <Plug>(unimpaired-disable)s & :<C-U>setlocal nospell<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 315
+n  <Plug>(unimpaired-enable)s & :<C-U>setlocal spell<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 314
+n  <Plug>(unimpaired-toggle)r & :<C-U>setlocal <C-R>=<SNR>94_Toggle("relativenumber")<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 316
+n  <Plug>(unimpaired-disable)r & :<C-U>setlocal norelativenumber<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 315
+n  <Plug>(unimpaired-enable)r & :<C-U>setlocal relativenumber<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 314
+n  <Plug>(unimpaired-toggle)n & :<C-U>setlocal <C-R>=<SNR>94_Toggle("number")<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 316
+n  <Plug>(unimpaired-disable)n & :<C-U>setlocal nonumber<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 315
+n  <Plug>(unimpaired-enable)n & :<C-U>setlocal number<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 314
+n  <Plug>(unimpaired-toggle)l & :<C-U>setlocal <C-R>=<SNR>94_Toggle("list")<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 316
+n  <Plug>(unimpaired-disable)l & :<C-U>setlocal nolist<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 315
+n  <Plug>(unimpaired-enable)l & :<C-U>setlocal list<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 314
+n  <Plug>(unimpaired-toggle)i & :<C-U>set <C-R>=<SNR>94_Toggle("ignorecase")<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 316
+n  <Plug>(unimpaired-disable)i & :<C-U>set noignorecase<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 315
+n  <Plug>(unimpaired-enable)i & :<C-U>set ignorecase<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 314
+n  <Plug>(unimpaired-toggle)h & :<C-U>set <C-R>=<SNR>94_Toggle("hlsearch")<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 316
+n  <Plug>(unimpaired-disable)h & :<C-U>set nohlsearch<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 315
+n  <Plug>(unimpaired-enable)h & :<C-U>set hlsearch<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 314
+n  <Plug>(unimpaired-toggle)d & :<C-U><C-R>=&diff ? "diffoff" : "diffthis"<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 329
+n  <Plug>(unimpaired-disable)d & :<C-U>diffoff<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 328
+n  <Plug>(unimpaired-enable)d & :<C-U>diffthis<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 327
+n  <Plug>(unimpaired-toggle)| & :<C-U>setlocal <C-R>=<SNR>94_Toggle("cursorcolumn")<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 316
+n  <Plug>(unimpaired-disable)| & :<C-U>setlocal nocursorcolumn<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 315
+n  <Plug>(unimpaired-enable)| & :<C-U>setlocal cursorcolumn<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 314
+n  <Plug>(unimpaired-toggle)u & :<C-U>setlocal <C-R>=<SNR>94_Toggle("cursorcolumn")<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 316
+n  <Plug>(unimpaired-disable)u & :<C-U>setlocal nocursorcolumn<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 315
+n  <Plug>(unimpaired-enable)u & :<C-U>setlocal cursorcolumn<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 314
+n  <Plug>(unimpaired-toggle)_ & :<C-U>setlocal <C-R>=<SNR>94_Toggle("cursorline")<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 316
+n  <Plug>(unimpaired-disable)_ & :<C-U>setlocal nocursorline<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 315
+n  <Plug>(unimpaired-enable)_ & :<C-U>setlocal cursorline<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 314
+n  <Plug>(unimpaired-toggle)- & :<C-U>setlocal <C-R>=<SNR>94_Toggle("cursorline")<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 316
+n  <Plug>(unimpaired-disable)- & :<C-U>setlocal nocursorline<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 315
+n  <Plug>(unimpaired-enable)- & :<C-U>setlocal cursorline<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 314
+n  <Plug>(unimpaired-toggle)c & :<C-U>setlocal <C-R>=<SNR>94_Toggle("cursorline")<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 316
+n  <Plug>(unimpaired-disable)c & :<C-U>setlocal nocursorline<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 315
+n  <Plug>(unimpaired-enable)c & :<C-U>setlocal cursorline<C-R>=<SNR>94_StatuslineRefresh()<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 314
+n  <Plug>(unimpaired-toggle)b & :<C-U>set background=<C-R>=&background == "dark" ? "light" : "dark"<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 321
+n  <Plug>(unimpaired-disable)b & :<C-U>set background=dark<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 320
+n  <Plug>(unimpaired-enable)b & :<C-U>set background=light<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 319
+   <Plug>unimpairedMoveSelectionDown * :<C-U>call <SNR>94_MoveSelectionDown(v:count1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 290
+   <Plug>unimpairedMoveSelectionUp * :<C-U>call <SNR>94_MoveSelectionUp(v:count1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 289
+n  <Plug>unimpairedMoveDown * :<C-U>call <SNR>94_Move('+',v:count1,'down')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 288
+n  <Plug>unimpairedMoveUp * :<C-U>call <SNR>94_Move('--',v:count1,'up')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 287
+   <Plug>(unimpaired-move-selection-down) * :<C-U>call <SNR>94_MoveSelectionDown(v:count1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 286
+   <Plug>(unimpaired-move-selection-up) * :<C-U>call <SNR>94_MoveSelectionUp(v:count1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 285
+n  <Plug>(unimpaired-move-down) * :<C-U>call <SNR>94_Move('+',v:count1,'down')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 284
+n  <Plug>(unimpaired-move-up) * :<C-U>call <SNR>94_Move('--',v:count1,'up')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 283
+n  <Plug>unimpairedBlankDown * :<C-U>exe <SNR>94_BlankDown()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 250
+n  <Plug>unimpairedBlankUp * :<C-U>exe <SNR>94_BlankUp()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 249
+n  <Plug>(unimpaired-blank-down) * :<C-U>exe <SNR>94_BlankDown()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 247
+n  <Plug>(unimpaired-blank-up) * :<C-U>exe <SNR>94_BlankUp()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 246
+o  <Plug>unimpairedContextNext * :<C-U>call <SNR>94_ContextMotion(0)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 192
+o  <Plug>unimpairedContextPrevious * :<C-U>call <SNR>94_ContextMotion(1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 191
+x  <Plug>unimpairedContextNext * :<C-U>exe 'normal! gv'|call <SNR>94_Context(0)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 190
+x  <Plug>unimpairedContextPrevious * :<C-U>exe 'normal! gv'|call <SNR>94_Context(1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 189
+n  <Plug>unimpairedContextNext * :<C-U>call <SNR>94_Context(0)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 188
+n  <Plug>unimpairedContextPrevious * :<C-U>call <SNR>94_Context(1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 187
+o  <Plug>(unimpaired-context-next) * :<C-U>call <SNR>94_ContextMotion(0)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 178
+o  <Plug>(unimpaired-context-previous) * :<C-U>call <SNR>94_ContextMotion(1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 177
+v  <Plug>(unimpaired-context-next) * :<C-U>exe 'normal! gv'|call <SNR>94_Context(0)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 176
+v  <Plug>(unimpaired-context-previous) * :<C-U>exe 'normal! gv'|call <SNR>94_Context(1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 175
+n  <Plug>(unimpaired-context-next) * :<C-U>call <SNR>94_Context(0)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 174
+n  <Plug>(unimpaired-context-previous) * :<C-U>call <SNR>94_Context(1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 173
+n  <Plug>unimpairedDirectoryPrevious * :<C-U>execute <SNR>94_PreviousFileEntry(v:count1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 167
+n  <Plug>unimpairedDirectoryNext * :<C-U>execute <SNR>94_NextFileEntry(v:count1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 166
+n  <Plug>(unimpaired-directory-previous) * :<C-U>execute <SNR>94_PreviousFileEntry(v:count1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 165
+n  <Plug>(unimpaired-directory-next) * :<C-U>execute <SNR>94_NextFileEntry(v:count1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 164
+n  <Plug>unimpairedTPNext * :<C-U>exe "p".(v:count ? v:count : "")."tnext"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 66
+n  <Plug>unimpairedTPPrevious * :<C-U>exe "p".(v:count ? v:count : "")."tprevious"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 65
+n  <Plug>(unimpaired-ptnext) * :<C-U>exe v:count1 . "ptnext"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 64
+n  <Plug>(unimpaired-ptprevious) * :<C-U>exe v:count1 . "ptprevious"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 63
+n  <Plug>unimpairedTLast * :<C-U>exe "".(v:count ? v:count : "")."tlast"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 50
+n  <Plug>unimpairedTFirst * :<C-U>exe "".(v:count ? v:count : "")."tfirst"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 49
+n  <Plug>unimpairedTNext * :<C-U>exe "".(v:count ? v:count : "")."tnext"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 48
+n  <Plug>unimpairedTPrevious * :<C-U>exe "".(v:count ? v:count : "")."tprevious"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 47
+n  <Plug>(unimpaired-tlast) * :<C-U><C-R>=v:count ? v:count . "trewind" : "tlast"<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 46
+n  <Plug>(unimpaired-tfirst) * :<C-U><C-R>=v:count ? v:count . "trewind" : "tfirst"<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 45
+n  <Plug>(unimpaired-tnext) * :<C-U>exe "".(v:count ? v:count : "")."tnext"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 44
+n  <Plug>(unimpaired-tprevious) * :<C-U>exe "".(v:count ? v:count : "")."tprevious"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 43
+n  <Plug>unimpairedQNFile * :<C-U>exe "".(v:count ? v:count : "")."cnfile"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 59
+n  <Plug>unimpairedQPFile * :<C-U>exe "".(v:count ? v:count : "")."cpfile"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 58
+n  <Plug>(unimpaired-cnfile) * :<C-U>exe "".(v:count ? v:count : "")."cnfile"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 57
+n  <Plug>(unimpaired-cpfile) * :<C-U>exe "".(v:count ? v:count : "")."cpfile"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 56
+n  <Plug>unimpairedQLast * :<C-U>exe "".(v:count ? v:count : "")."clast"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 50
+n  <Plug>unimpairedQFirst * :<C-U>exe "".(v:count ? v:count : "")."cfirst"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 49
+n  <Plug>unimpairedQNext * :<C-U>exe "".(v:count ? v:count : "")."cnext"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 48
+n  <Plug>unimpairedQPrevious * :<C-U>exe "".(v:count ? v:count : "")."cprevious"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 47
+n  <Plug>(unimpaired-clast) * :<C-U><C-R>=v:count ? v:count . "cc" : "clast"<CR><CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 46
+n  <Plug>(unimpaired-cfirst) * :<C-U><C-R>=v:count ? v:count . "cc" : "cfirst"<CR><CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 45
+n  <Plug>(unimpaired-cnext) * :<C-U>exe "".(v:count ? v:count : "")."cnext"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 44
+n  <Plug>(unimpaired-cprevious) * :<C-U>exe "".(v:count ? v:count : "")."cprevious"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 43
+n  <Plug>unimpairedLNFile * :<C-U>exe "".(v:count ? v:count : "")."lnfile"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 59
+n  <Plug>unimpairedLPFile * :<C-U>exe "".(v:count ? v:count : "")."lpfile"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 58
+n  <Plug>(unimpaired-lnfile) * :<C-U>exe "".(v:count ? v:count : "")."lnfile"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 57
+n  <Plug>(unimpaired-lpfile) * :<C-U>exe "".(v:count ? v:count : "")."lpfile"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 56
+n  <Plug>unimpairedLLast * :<C-U>exe "".(v:count ? v:count : "")."llast"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 50
+n  <Plug>unimpairedLFirst * :<C-U>exe "".(v:count ? v:count : "")."lfirst"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 49
+n  <Plug>unimpairedLNext * :<C-U>exe "".(v:count ? v:count : "")."lnext"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 48
+n  <Plug>unimpairedLPrevious * :<C-U>exe "".(v:count ? v:count : "")."lprevious"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 47
+n  <Plug>(unimpaired-llast) * :<C-U><C-R>=v:count ? v:count . "ll" : "llast"<CR><CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 46
+n  <Plug>(unimpaired-lfirst) * :<C-U><C-R>=v:count ? v:count . "ll" : "lfirst"<CR><CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 45
+n  <Plug>(unimpaired-lnext) * :<C-U>exe "".(v:count ? v:count : "")."lnext"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 44
+n  <Plug>(unimpaired-lprevious) * :<C-U>exe "".(v:count ? v:count : "")."lprevious"<CR>zv
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 43
+n  <Plug>unimpairedBLast * :<C-U>exe "".(v:count ? v:count : "")."blast"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 50
+n  <Plug>unimpairedBFirst * :<C-U>exe "".(v:count ? v:count : "")."bfirst"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 49
+n  <Plug>unimpairedBNext * :<C-U>exe "".(v:count ? v:count : "")."bnext"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 48
+n  <Plug>unimpairedBPrevious * :<C-U>exe "".(v:count ? v:count : "")."bprevious"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 47
+n  <Plug>(unimpaired-blast) * :<C-U><C-R>=v:count ? v:count . "buffer" : "blast"<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 46
+n  <Plug>(unimpaired-bfirst) * :<C-U><C-R>=v:count ? v:count . "buffer" : "bfirst"<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 45
+n  <Plug>(unimpaired-bnext) * :<C-U>exe "".(v:count ? v:count : "")."bnext"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 44
+n  <Plug>(unimpaired-bprevious) * :<C-U>exe "".(v:count ? v:count : "")."bprevious"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 43
+n  <Plug>unimpairedALast * :<C-U>exe "".(v:count ? v:count : "")."last"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 50
+n  <Plug>unimpairedAFirst * :<C-U>exe "".(v:count ? v:count : "")."first"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 49
+n  <Plug>unimpairedANext * :<C-U>exe "".(v:count ? v:count : "")."next"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 48
+n  <Plug>unimpairedAPrevious * :<C-U>exe "".(v:count ? v:count : "")."previous"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 47
+n  <Plug>(unimpaired-last) * :<C-U><C-R>=v:count ? v:count . "argument" : "last"<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 46
+n  <Plug>(unimpaired-first) * :<C-U><C-R>=v:count ? v:count . "argument" : "first"<CR><CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 45
+n  <Plug>(unimpaired-next) * :<C-U>exe "".(v:count ? v:count : "")."next"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 44
+n  <Plug>(unimpaired-previous) * :<C-U>exe "".(v:count ? v:count : "")."previous"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-unimpaired/plugin/unimpaired.vim line 43
+n  <Plug>(table-mode-sort) * :call tablemode#spreadsheet#Sort('')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 111
+n  <Plug>(table-mode-echo-cell) * :call tablemode#spreadsheet#EchoCell()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 109
+n  <Plug>(table-mode-eval-formula) * :call tablemode#spreadsheet#formula#EvaluateFormulaLine()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 107
+n  <Plug>(table-mode-add-formula) * :call tablemode#spreadsheet#formula#Add()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 106
+n  <Plug>(table-mode-insert-column-after) * :<C-U>call tablemode#spreadsheet#InsertColumn(1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 104
+n  <Plug>(table-mode-insert-column-before) * :<C-U>call tablemode#spreadsheet#InsertColumn(0)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 103
+n  <Plug>(table-mode-delete-column) * :<C-U>call tablemode#spreadsheet#DeleteColumn()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 102
+n  <Plug>(table-mode-delete-row) * :<C-U>call tablemode#spreadsheet#DeleteRow()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 101
+x  <Plug>(table-mode-cell-text-object-i) * :<C-U>call tablemode#spreadsheet#cell#TextObject(1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 99
+x  <Plug>(table-mode-cell-text-object-a) * :<C-U>call tablemode#spreadsheet#cell#TextObject(0)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 98
+o  <Plug>(table-mode-cell-text-object-i) * :<C-U>call tablemode#spreadsheet#cell#TextObject(1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 97
+o  <Plug>(table-mode-cell-text-object-a) * :<C-U>call tablemode#spreadsheet#cell#TextObject(0)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 96
+n  <Plug>(table-mode-motion-right) * :<C-U>call tablemode#spreadsheet#cell#Motion('l')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 94
+n  <Plug>(table-mode-motion-left) * :<C-U>call tablemode#spreadsheet#cell#Motion('h')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 93
+n  <Plug>(table-mode-motion-down) * :<C-U>call tablemode#spreadsheet#cell#Motion('j')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 92
+n  <Plug>(table-mode-motion-up) * :<C-U>call tablemode#spreadsheet#cell#Motion('k')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 91
+n  <Plug>(table-mode-realign) * :call tablemode#table#Realign('.')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 89
+x  <Plug>(table-mode-tableize-delimiter) * :<C-U>call tablemode#TableizeByDelimiter()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 87
+x  <Plug>(table-mode-tableize) * :Tableize<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 86
+n  <Plug>(table-mode-tableize) * :Tableize<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-table-mode/plugin/table-mode.vim line 85
+v  <Plug>VgSurround * :<C-U>call <SNR>92_opfunc(visualmode(),visualmode() ==# 'V' ? 0 : 1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 606
+v  <Plug>VSurround * :<C-U>call <SNR>92_opfunc(visualmode(),visualmode() ==# 'V' ? 1 : 0)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 605
+n  <Plug>YSurround * <SNR>92_opfunc2('setup')
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 604
+n  <Plug>Ysurround * <SNR>92_opfunc('setup')
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 603
+n  <Plug>YSsurround * <SNR>92_opfunc2('setup').'_'
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 602
+n  <Plug>Yssurround * '^'.v:count1.<SNR>92_opfunc('setup').'g_'
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 601
+n  <Plug>CSurround * :<C-U>call <SNR>92_changesurround(1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 600
+n  <Plug>Csurround * :<C-U>call <SNR>92_changesurround()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 599
+n  <Plug>Dsurround * :<C-U>call <SNR>92_dosurround(<SNR>92_inputtarget())<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 598
+n  <Plug>SurroundRepeat * .
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-surround/plugin/surround.vim line 597
+x  <C-X>         <Plug>SpeedDatingDown
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-speeddating/plugin/speeddating.vim line 65
+x  <C-A>         <Plug>SpeedDatingUp
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-speeddating/plugin/speeddating.vim line 64
+n  <C-X>         <Plug>SpeedDatingDown
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-speeddating/plugin/speeddating.vim line 63
+n  <C-A>         <Plug>SpeedDatingUp
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-speeddating/plugin/speeddating.vim line 62
+n  <Plug>SpeedDatingFallbackDown * <C-X>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-speeddating/plugin/speeddating.vim line 55
+n  <Plug>SpeedDatingFallbackUp * <C-A>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-speeddating/plugin/speeddating.vim line 55
+n  <Plug>SpeedDatingNowUTC * :<C-U>call speeddating#timestamp(1,v:count)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-speeddating/plugin/speeddating.vim line 48
+n  <Plug>SpeedDatingNowLocal * :<C-U>call speeddating#timestamp(0,v:count)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-speeddating/plugin/speeddating.vim line 47
+x  <Plug>SpeedDatingDown * :<C-U>call speeddating#incrementvisual(-v:count1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-speeddating/plugin/speeddating.vim line 46
+x  <Plug>SpeedDatingUp * :<C-U>call speeddating#incrementvisual(v:count1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-speeddating/plugin/speeddating.vim line 45
+n  <Plug>SpeedDatingDown * :<C-U>call speeddating#increment(-v:count1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-speeddating/plugin/speeddating.vim line 44
+n  <Plug>SpeedDatingUp * :<C-U>call speeddating#increment(v:count1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-speeddating/plugin/speeddating.vim line 43
+x  <Plug>(signify-motion-outer-visual) * :<C-U>call sy#util#hunk_text_object(1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-signify/plugin/signify.vim line 58
+o  <Plug>(signify-motion-outer-pending) * :<C-U>call sy#util#hunk_text_object(1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-signify/plugin/signify.vim line 57
+x  <Plug>(signify-motion-inner-visual) * :<C-U>call sy#util#hunk_text_object(0)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-signify/plugin/signify.vim line 56
+o  <Plug>(signify-motion-inner-pending) * :<C-U>call sy#util#hunk_text_object(0)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-signify/plugin/signify.vim line 55
+n  <Plug>(signify-prev-hunk) * &diff ? '[c' : ":\<C-U>call sy#jump#prev_hunk(v:count1)\<CR>"
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-signify/plugin/signify.vim line 37
+n  <Plug>(signify-next-hunk) * &diff ? ']c' : ":\<C-U>call sy#jump#next_hunk(v:count1)\<CR>"
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-signify/plugin/signify.vim line 34
+n  <Plug>(dirvish_vsplit_up) * :<C-U>vsplit|exe 'Dirvish' fnameescape(fnamemodify(@%, ':p'.(@%[-1:]=~'[\\/]'?':h':'').repeat(':h',v:count1)))<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-dirvish/plugin/dirvish.vim line 28
+n  <Plug>(dirvish_split_up) * :<C-U>split|exe 'Dirvish' fnameescape(fnamemodify(@%, ':p'.(@%[-1:]=~'[\\/]'?':h':'').repeat(':h',v:count1)))<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-dirvish/plugin/dirvish.vim line 27
+n  <Plug>(dirvish_up) * :<C-U>exe 'Dirvish' fnameescape(fnamemodify(@%, ':p'.(@%[-1:]=~'[\\/]'?':h':'').repeat(':h',v:count1)))<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-dirvish/plugin/dirvish.vim line 26
+n  <Plug>CommentaryUndo   :echoerr "Change your <Plug>CommentaryUndo map to <Plug>Commentary<Plug>Commentary"<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-commentary/plugin/commentary.vim line 111
+n  <Plug>ChangeCommentary * c:<C-U>call <SNR>84_textobject(1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-commentary/plugin/commentary.vim line 110
+o  <Plug>Commentary * :<C-U>call <SNR>84_textobject(get(v:, 'operator', '') ==# 'c')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-commentary/plugin/commentary.vim line 109
+n  <Plug>CommentaryLine * <SNR>84_go() . '_'
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-commentary/plugin/commentary.vim line 108
+n  <Plug>Commentary * <SNR>84_go()
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-commentary/plugin/commentary.vim line 107
+x  <Plug>Commentary * <SNR>84_go()
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/vim-commentary/plugin/commentary.vim line 106
+n  <Plug>(linediff-last-operator) * :<C-U>set operatorfunc=<SNR>68_linediff_last_op<CR>g@
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/linediff/plugin/linediff.vim line 62
+n  <Plug>(linediff-add-operator) * :<C-U>set operatorfunc=<SNR>68_linediff_add_op<CR>g@
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/linediff/plugin/linediff.vim line 60
+n  <Plug>(linediff-operator) * :<C-U>set operatorfunc=<SNR>68_linediff_op<CR>g@
+	Last set from ~/projects/dotvim/.vim/pack/utility/start/linediff/plugin/linediff.vim line 58
+n  <Plug>(hledger-go-next) * hledger#buffer#go_next()
+	Last set from ~/projects/dotvim/.vim/pack/hledger/start/hledger-vim/plugin/hledger.vim line 13
+n  <Plug>(hledger-unite-transactions) * :<C-U>call hledger#command#unite_transactions()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/hledger/start/hledger-vim/plugin/hledger.vim line 12
+n  <Plug>(hledger-clone-transaction) * :<C-U>call hledger#command#clone_transaction()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/hledger/start/hledger-vim/plugin/hledger.vim line 11
+n  <Plug>RestoreWinPosn   :call RestoreWinPosn()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/drchip/start/ansiesc/plugin/cecutil.vim line 55
+n  <Plug>SaveWinPosn   :call SaveWinPosn()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/drchip/start/ansiesc/plugin/cecutil.vim line 54
+o  <Plug>(coc-classobj-a) * :<C-U>call CocAction('selectSymbolRange', v:false, '', ['Interface', 'Struct', 'Class'])<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 705
+o  <Plug>(coc-classobj-i) * :<C-U>call CocAction('selectSymbolRange', v:true, '', ['Interface', 'Struct', 'Class'])<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 704
+v  <Plug>(coc-classobj-a) * :<C-U>call CocAction('selectSymbolRange', v:false, visualmode(), ['Interface', 'Struct', 'Class'])<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 703
+v  <Plug>(coc-classobj-i) * :<C-U>call CocAction('selectSymbolRange', v:true, visualmode(), ['Interface', 'Struct', 'Class'])<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 702
+o  <Plug>(coc-funcobj-a) * :<C-U>call CocAction('selectSymbolRange', v:false, '', ['Method', 'Function'])<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 700
+o  <Plug>(coc-funcobj-i) * :<C-U>call CocAction('selectSymbolRange', v:true, '', ['Method', 'Function'])<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 699
+v  <Plug>(coc-funcobj-a) * :<C-U>call CocAction('selectSymbolRange', v:false, visualmode(), ['Method', 'Function'])<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 698
+v  <Plug>(coc-funcobj-i) * :<C-U>call CocAction('selectSymbolRange', v:true, visualmode(), ['Method', 'Function'])<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 697
+n  <Plug>(coc-cursors-position) * :<C-U>call CocAction('cursorsSelect', bufnr('%'), 'position', 'n')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 695
+n  <Plug>(coc-cursors-word) * :<C-U>call CocAction('cursorsSelect', bufnr('%'), 'word', 'n')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 694
+v  <Plug>(coc-cursors-range) * :<C-U>call CocAction('cursorsSelect', bufnr('%'), 'range', visualmode())<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 693
+n  <Plug>(coc-cursors-operator) * :<C-U>set operatorfunc=<SNR>37_CursorRangeFromSelected<CR>g@
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 692
+n  <Plug>(coc-refactor) * :<C-U>call       CocActionAsync('refactor')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 690
+n  <Plug>(coc-command-repeat) * :<C-U>call       CocAction('repeatCommand')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 689
+n  <Plug>(coc-float-jump) * :<C-U>call       coc#float#jump()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 688
+n  <Plug>(coc-float-hide) * :<C-U>call       coc#float#close_all()<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 687
+n  <Plug>(coc-fix-current) * :<C-U>call       CocActionAsync('doQuickfix')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 686
+n  <Plug>(coc-openlink) * :<C-U>call       CocActionAsync('openLink')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 685
+n  <Plug>(coc-references-used) * :<C-U>call       CocActionAsync('jumpUsed')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 684
+n  <Plug>(coc-references) * :<C-U>call       CocActionAsync('jumpReferences')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 683
+n  <Plug>(coc-type-definition) * :<C-U>call       CocActionAsync('jumpTypeDefinition')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 682
+n  <Plug>(coc-implementation) * :<C-U>call       CocActionAsync('jumpImplementation')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 681
+n  <Plug>(coc-declaration) * :<C-U>call       CocActionAsync('jumpDeclaration')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 680
+n  <Plug>(coc-definition) * :<C-U>call       CocActionAsync('jumpDefinition')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 679
+n  <Plug>(coc-diagnostic-prev-error) * :<C-U>call       CocActionAsync('diagnosticPrevious', 'error')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 678
+n  <Plug>(coc-diagnostic-next-error) * :<C-U>call       CocActionAsync('diagnosticNext',     'error')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 677
+n  <Plug>(coc-diagnostic-prev) * :<C-U>call       CocActionAsync('diagnosticPrevious')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 676
+n  <Plug>(coc-diagnostic-next) * :<C-U>call       CocActionAsync('diagnosticNext')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 675
+n  <Plug>(coc-diagnostic-info) * :<C-U>call       CocActionAsync('diagnosticInfo')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 674
+n  <Plug>(coc-format) * :<C-U>call       CocActionAsync('format')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 673
+n  <Plug>(coc-format-selected) * :<C-U>set        operatorfunc=<SNR>37_FormatFromSelected<CR>g@
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 672
+n  <Plug>(coc-rename) * :<C-U>call       CocActionAsync('rename')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 671
+n  <Plug>(coc-codeaction-cursor) * :<C-U>call       CocActionAsync('codeAction',         'cursor')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 670
+n  <Plug>(coc-codeaction-line) * :<C-U>call       CocActionAsync('codeAction',         'line')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 669
+n  <Plug>(coc-codeaction) * :<C-U>call       CocActionAsync('codeAction',         '')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 668
+n  <Plug>(coc-codeaction-selected) * :<C-U>set        operatorfunc=<SNR>37_CodeActionFromSelected<CR>g@
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 667
+v  <Plug>(coc-codeaction-selected) * :<C-U>call       CocActionAsync('codeAction',         visualmode())<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 666
+v  <Plug>(coc-format-selected) * :<C-U>call       CocActionAsync('formatSelected',     visualmode())<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 665
+n  <Plug>(coc-codelens-action) * :<C-U>call       CocActionAsync('codeLensAction')<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 664
+n  <Plug>(coc-range-select) * :<C-U>call       CocActionAsync('rangeSelect',     '', v:true)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 663
+v  <Plug>(coc-range-select-backward) * :<C-U>call       CocActionAsync('rangeSelect',     visualmode(), v:false)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 662
+v  <Plug>(coc-range-select) * :<C-U>call       CocActionAsync('rangeSelect',     visualmode(), v:true)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/coc/plugin/coc.vim line 661
+n  <Plug>(ale_repeat_selection) * :ALERepeatSelection<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 337
+n  <Plug>(ale_code_action) * :ALECodeAction<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 336
+n  <Plug>(ale_filerename) * :ALEFileRename<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 335
+n  <Plug>(ale_rename) * :ALERename<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 334
+n  <Plug>(ale_import) * :ALEImport<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 333
+n  <Plug>(ale_documentation) * :ALEDocumentation<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 331
+n  <Plug>(ale_hover) * :ALEHover<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 330
+n  <Plug>(ale_find_references) * :ALEFindReferences<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 329
+n  <Plug>(ale_go_to_implementation_in_vsplit) * :ALEGoToImplementation -vsplit<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 328
+n  <Plug>(ale_go_to_implementation_in_split) * :ALEGoToImplementation -split<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 327
+n  <Plug>(ale_go_to_implementation_in_tab) * :ALEGoToImplementation -tab<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 326
+n  <Plug>(ale_go_to_type_definition_in_vsplit) * :ALEGoToTypeDefinitionIn -vsplit<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 325
+n  <Plug>(ale_go_to_type_definition_in_split) * :ALEGoToTypeDefinition -split<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 324
+n  <Plug>(ale_go_to_type_definition_in_tab) * :ALEGoToTypeDefinition -tab<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 323
+n  <Plug>(ale_go_to_type_definition) * :ALEGoToTypeDefinition<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 322
+n  <Plug>(ale_go_to_definition_in_vsplit) * :ALEGoToDefinition -vsplit<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 321
+n  <Plug>(ale_go_to_definition_in_split) * :ALEGoToDefinition -split<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 320
+n  <Plug>(ale_go_to_definition_in_tab) * :ALEGoToDefinition -tab<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 319
+n  <Plug>(ale_go_to_definition) * :ALEGoToDefinition<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 318
+n  <Plug>(ale_fix) * :ALEFix<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 317
+n  <Plug>(ale_detail) * :ALEDetail<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 316
+n  <Plug>(ale_lint) * :ALELint<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 315
+n  <Plug>(ale_reset_buffer) * :ALEResetBuffer<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 314
+n  <Plug>(ale_disable_buffer) * :ALEDisableBuffer<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 313
+n  <Plug>(ale_enable_buffer) * :ALEEnableBuffer<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 312
+n  <Plug>(ale_toggle_buffer) * :ALEToggleBuffer<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 311
+n  <Plug>(ale_reset) * :ALEReset<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 310
+n  <Plug>(ale_disable) * :ALEDisable<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 309
+n  <Plug>(ale_enable) * :ALEEnable<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 308
+n  <Plug>(ale_toggle) * :ALEToggle<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 307
+n  <Plug>(ale_last) * :ALELast<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 306
+n  <Plug>(ale_first) * :ALEFirst<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 305
+n  <Plug>(ale_next_wrap_warning) * :ALENext -wrap -warning<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 304
+n  <Plug>(ale_next_warning) * :ALENext -warning<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 303
+n  <Plug>(ale_next_wrap_error) * :ALENext -wrap -error<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 302
+n  <Plug>(ale_next_error) * :ALENext -error<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 301
+n  <Plug>(ale_next_wrap) * :ALENextWrap<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 300
+n  <Plug>(ale_next) * :ALENext<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 299
+n  <Plug>(ale_previous_wrap_warning) * :ALEPrevious -wrap -warning<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 298
+n  <Plug>(ale_previous_warning) * :ALEPrevious -warning<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 297
+n  <Plug>(ale_previous_wrap_error) * :ALEPrevious -wrap -error<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 296
+n  <Plug>(ale_previous_error) * :ALEPrevious -error<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 295
+n  <Plug>(ale_previous_wrap) * :ALEPreviousWrap<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 294
+n  <Plug>(ale_previous) * :ALEPrevious<CR>
+	Last set from ~/projects/dotvim/.vim/pack/async/start/ale/plugin/ale.vim line 293
+n  <Plug>VimwikiMakeTomorrowDiaryNote & :<C-U>call vimwiki#diary#make_note(v:count, 0, vimwiki#diary#diary_date_link(localtime() + 60*60*24))<CR>
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/plugin/vimwiki.vim line 396
+n  <Plug>VimwikiMakeYesterdayDiaryNote & :<C-U>call vimwiki#diary#make_note(v:count, 0, vimwiki#diary#diary_date_link(localtime() - 60*60*24))<CR>
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/plugin/vimwiki.vim line 393
+n  <Plug>VimwikiTabMakeDiaryNote & :<C-U>call vimwiki#diary#make_note(v:count, 1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/plugin/vimwiki.vim line 391
+n  <Plug>VimwikiMakeDiaryNote & :<C-U>call vimwiki#diary#make_note(v:count)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/plugin/vimwiki.vim line 389
+n  <Plug>VimwikiDiaryGenerateLinks & :VimwikiDiaryGenerateLinks<CR>
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/plugin/vimwiki.vim line 387
+n  <Plug>VimwikiDiaryIndex & :<C-U>call vimwiki#diary#goto_diary_index(v:count)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/plugin/vimwiki.vim line 385
+n  <Plug>VimwikiUISelect & :VimwikiUISelect<CR>
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/plugin/vimwiki.vim line 383
+n  <Plug>VimwikiTabIndex & :<C-U>call vimwiki#base#goto_index(v:count, 1)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/plugin/vimwiki.vim line 381
+n  <Plug>VimwikiIndex & :<C-U>call vimwiki#base#goto_index(v:count)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vimwiki/plugin/vimwiki.vim line 379
+n  <Plug>(Tman) * :<C-U>call man#get_page_from_cword('tab',        v:count)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vim-man/plugin/man.vim line 24
+n  <Plug>(Vman) * :<C-U>call man#get_page_from_cword('vertical',   v:count)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vim-man/plugin/man.vim line 23
+n  <Plug>(Sman) * :<C-U>call man#get_page_from_cword('horizontal', v:count)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vim-man/plugin/man.vim line 22
+n  <Plug>(Man) * :<C-U>call man#get_page_from_cword('horizontal', v:count)<CR>
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vim-man/plugin/man.vim line 21
+n  <Plug>fugitive: & <Nop>
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vim-fugitive/plugin/fugitive.vim line 721
+n  <Plug>fugitive:y<C-G> & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
+	Last set from ~/projects/dotvim/.vim/pack/app/start/vim-fugitive/plugin/fugitive.vim line 720
+x  <Plug>NetrwBrowseXVis * :<C-U>call netrw#BrowseXVis()<CR>
+	Last set from /usr/share/vim/vim90/plugin/netrwPlugin.vim line 90
+n  <Plug>NetrwBrowseX * :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))<CR>
+	Last set from /usr/share/vim/vim90/plugin/netrwPlugin.vim line 84
