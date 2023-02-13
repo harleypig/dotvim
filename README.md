@@ -7,8 +7,7 @@ To install, link `$HOME/.vim` to this repository's files of the same name.
 
 !!! Fix these:
 
-* .vim/pack/settings/start/plugin: find
-* .vim/pack/settings/start/ftplugin: find
+* .vim/pack/settings/start/settings: find
 
 ## How do I?
 
@@ -51,6 +50,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 #### testing
 
+* [ale](https://github.com/dense-analysis/ale.git) %branch_name%
 * [asynctasks](https://github.com/skywind3000/asynctasks.vim.git) %branch_name%
 * [jsonc](https://github.com/neoclide/jsonc.vim.git) %branch_name%
 * [vim-dadbod](https://github.com/tpope/vim-dadbod.git) %branch_name%
