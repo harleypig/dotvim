@@ -31,6 +31,6 @@
 	url = https://github.com/skywind3000/asynctasks.vim.git
 	ignore = dirty
 [submodule "ale"]
-	path = .vim/pack/testing/start/ale
+	path = .vim/pack/intellisense/start/ale
 	url = https://github.com/dense-analysis/ale.git
 	ignore = dirty
