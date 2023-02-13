@@ -36,10 +36,7 @@ skip_existing_dirs+=('local')
 get_bucket() {
   local bucket="${1:-must pass value to get_bucket}"
 
-  if [[ $bucket =~ ^.vim/2btested/ ]]; then
-    bucket='tobetested'
-
-  elif [[ $bucket =~ ^.vim/pack ]]; then
+  if [[ $bucket =~ ^.vim/pack ]]; then
     # path = .vim/pack/active/start/vim-surround
     bucket="${bucket#.vim/pack/}"
     bucket="${bucket%%/*}"
@@ -75,7 +72,7 @@ get_existing_dirs() {
   fopts+=('-maxdepth' '0')
   fopts+=('-type' 'd')
 
-  readarray -t dirs < <(find .vim/pack/*/*/* .vim/2btested/* "${fopts[@]}")
+  readarray -t dirs < <(find .vim/pack/*/*/* "${fopts[@]}")
 
   for d in "${dirs[@]}"; do
     [[ $d =~ $skip_rx$ ]] && continue

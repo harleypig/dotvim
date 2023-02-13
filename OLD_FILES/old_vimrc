@@ -1,0 +1,18 @@
+" XXX: Move this to mystuff?
+" Use a different colorscheme when using vimdiff and turn off syntax
+" highlighting. This improves visibility mightily.
+
+if &diff
+  colorscheme vividchalk
+  syntax off
+endif
+
+" XXX: Move this to mystuff?
+" Automatically reload this file when it, or any sourced file, is saved.
+aug AutoloadVimrc
+  au!
+  au BufWritePost $MYVIMRC source $MYVIMRC
+aug END
+
+" XXX: Move me!
+set shellcmdflag=-ic

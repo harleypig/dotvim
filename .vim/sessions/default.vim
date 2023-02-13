@@ -14,11 +14,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 .vim/sessions/default.vim
+badd +0 settings/plugin/lightline.vim
 argglobal
 %argdel
-$argadd .vim/sessions/default.vim
-edit .vim/sessions/default.vim
+$argadd settings/plugin/lightline.vim
+edit settings/plugin/lightline.vim
 argglobal
 setlocal fdm=manual
 setlocal fde=0

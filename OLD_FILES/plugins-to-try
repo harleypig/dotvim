@@ -1,0 +1,303 @@
+vim-surround:
+  url: https://github.com/tpope/vim-surround.git
+
+vim-fugitive:
+  url: https://github.com/tpope/vim-fugitive.git
+
+vim-eunuch:
+  url: https://github.com/tpope/vim-eunuch.git
+
+vim-unimpaired:
+  url: https://github.com/tpope/vim-unimpaired.git
+
+vim-speeddating:
+  url: https://github.com/tpope/vim-speeddating.git
+
+perlomni:
+  url: https://github.com/c9s/perlomni.vim.git
+
+MatchTag:
+  url: https://github.com/gregsexton/MatchTag.git
+
+syntastic:
+  url: https://github.com/scrooloose/syntastic.git
+
+vim-perl:
+  url: https://github.com/vim-perl/vim-perl.git
+
+vim-repeat:
+  url: https://github.com/tpope/vim-repeat.git
+
+vim-commentary:
+  url: https://github.com/tpope/vim-commentary.git
+
+vimwiki:
+  url: https://github.com/vimwiki/vimwiki.git
+
+vim-signify:
+  url: https://github.com/mhinz/vim-signify.git
+
+AnsiEsc:
+  url: https://github.com/vim-scripts/AnsiEsc.vim.git
+
+supertab:
+  url: https://github.com/ervandew/supertab.git
+
+vim-lint:
+  url: https://github.com/dbakker/vim-lint.git
+
+calendar:
+  url: https://github.com/itchyny/calendar.vim
+
+jq:
+  url: https://github.com/vito-c/jq.vim.git
+
+vim-tmux:
+  url: https://github.com/tmux-plugins/vim-tmux.git
+
+vim-colorschemes:
+  url: https://github.com/flazz/vim-colorschemes.git
+
+vim-man:
+  url: https://github.com/vim-utils/vim-man.git
+
+helpful:
+  url: https://github.com/tweekmonster/helpful.vim.git
+
+vim-showmarks:
+  url: https://github.com/jacquesbh/vim-showmarks.git
+
+vim-db:
+  url: https://github.com/tpope/vim-db.git
+
+ultisnips:
+  url: https://github.com/SirVer/ultisnips.git
+
+vim-snippets:
+  url: https://github.com/honza/vim-snippets.git
+
+vim-markify:
+  url: https://github.com/dhruvasagar/vim-markify
+
+vim-ExtractMatches:
+  url: https://github.com/inkarkat/vim-ExtractMatches.git
+
+ansible-vim:
+  url: https://github.com/pearofducks/ansible-vim.git
+
+vim-jsbeautify:
+  url: https://github.com/maksimr/vim-jsbeautify.git
+
+vim-healthcheck:
+  url: https://github.com/rhysd/vim-healthcheck.git
+
+vim-notes-cli:
+  url: https://github.com/rhysd/vim-notes-cli.git
+
+async:
+  url: https://github.com/prabirshrestha/async.vim.git
+
+apiblueprint:
+  url: https://github.com/kylef/apiblueprint.vim.git
+
+vim-asterisk:
+  url: https://github.com/haya14busa/vim-asterisk.git
+
+vim-conflicted:
+  url: https://github.com/christoomey/vim-conflicted.git
+
+ctrlp:
+  url: https://github.com/ctrlpvim/ctrlp.vim
+
+ctrlp-funky:
+  url: https://github.com/tacahiroy/ctrlp-funky.git
+
+delimitMate:
+  url: https://github.com/Raimondi/delimitMate.git
+
+vim-diff-enhanced:
+  url: https://github.com/chrisbra/vim-diff-enhanced.git
+
+linediff:
+  url: https://github.com/AndrewRadev/linediff.vim.git
+
+tabular:
+  url: https://github.com/godlygeek/tabular.git
+
+traces:
+  url: https://github.com/markonm/traces.vim.git
+
+astroid:
+  url: https://github.com/PyCQA/astroid
+
+jupyter-vim:
+  url: https://github.com/jupyter-vim/jupyter-vim
+
+vimspector:
+  url: https://github.com/puremourning/vimspector.git
+
+nginx:
+  url: https://github.com/chr4/nginx.vim
+
+awk:
+  url: https://github.com/vim-scripts/awk.vim
+
+vim-fake:
+  url: https://github.com/tkhren/vim-fake.git
+
+vim-docker-tools:
+  url: https://github.com/kevinhui/vim-docker-tools
+
+vim-yaml:
+  url: https://github.com/stephpy/vim-yaml
+
+vim-autotag:
+  url: https://github.com/craigemery/vim-autotag
+
+editorconfig-vim:
+  url: https://github.com/editorconfig/editorconfig-vim.git
+
+ale:
+  url: https://github.com/dense-analysis/ale.git
+
+asyncomplete-lsp:
+  url: https://github.com/prabirshrestha/asyncomplete-lsp.vim.git
+
+asyncomplete:
+  url: https://github.com/prabirshrestha/asyncomplete.vim.git
+
+vimux:
+  url: https://github.com/preservim/vimux.git
+
+vim-markdown:
+  url: https://github.com/preservim/vim-markdown.git
+
+tagbar:
+  url: https://github.com/preservim/tagbar.git
+
+vim-devicons:
+  url: https://github.com/ryanoasis/vim-devicons.git
+
+vim-LanguageTool:
+  url: https://github.com/dpelle/vim-LanguageTool.git
+
+vim-sleuth:
+  url: https://github.com/tpope/vim-sleuth.git
+
+vim-endwise:
+  url: https://github.com/tpope/vim-endwise.git
+
+vim-jdaddy:
+  url: https://github.com/tpope/vim-jdaddy.git
+
+vim-dadbod:
+  url: https://github.com/tpope/vim-dadbod.git
+
+vim-irssi-syntax:
+  url: https://github.com/isundil/vim-irssi-syntax.git
+
+FastFold:
+  url: https://github.com/Konfekt/FastFold.git
+
+vim-OnSyntaxChange:
+  url: https://github.com/inkarkat/vim-OnSyntaxChange.git
+
+vim-ingo-library:
+  url: https://github.com/inkarkat/vim-ingo-library.git
+
+vim-qlist:
+  url: https://github.com/romainl/vim-qlist.git
+
+vim-characterize:
+  url: https://github.com/tpope/vim-characterize.git
+
+vim-dirvish:
+  url: https://github.com/justinmk/vim-dirvish.git
+
+vim-gutentags:
+  url: https://github.com/ludovicchabant/vim-gutentags.git
+
+vim-lion:
+  url: https://github.com/tommcdo/vim-lion.git
+
+vim-qf:
+  url: https://github.com/romainl/vim-qf.git
+
+vim-sneak:
+  url: https://github.com/justinmk/vim-sneak.git
+
+targets:
+  url: https://github.com/wellle/targets.vim.git
+
+undotree:
+  url: https://github.com/mbbill/undotree.git
+
+VimCompletesMe:
+  url: https://github.com/ackyshake/VimCompletesMe.git
+
+vim-gitgutter:
+  url: https://github.com/airblade/vim-gitgutter.git
+
+tmuxline:
+  url: https://github.com/edkolev/tmuxline.vim.git
+
+vim-easytags:
+  url: https://github.com/xolox/vim-easytags.git
+
+vim-misc:
+  url: https://github.com/xolox/vim-misc.git
+
+vim-visual-multi:
+  url: https://github.com/mg979/vim-visual-multi
+
+vim-table-mode:
+  url: https://github.com/dhruvasagar/vim-table-mode
+
+hledger-vim:
+  url: https://github.com/anekos/hledger-vim.git
+
+coc:
+  url: https://github.com/neoclide/coc.nvim.git
+  branch = release
+
+jsonc:
+  url: https://github.com/neoclide/jsonc.vim.git
+
+bats:
+  url: https://github.com/aliou/bats.vim
+
+vim-packer:
+  url: https://github.com/hashivim/vim-packer.git
+
+vim-vaultproject:
+  url: https://github.com/hashivim/vim-vaultproject.git
+
+vim-shellcheck:
+  url: https://github.com/itspriddle/vim-shellcheck.git
+
+vim-shfmt:
+  url: https://github.com/z0mbix/vim-shfmt.git
+
+rainbow:
+  url: https://github.com/luochen1990/rainbow.git
+
+fugitive-azure-devops:
+  url: https://github.com/cedarbaum/fugitive-azure-devops.vim.git
+
+rope:
+	url: https://github.com/python-rope/rope.git
+
+ropevim:
+	url: https://github.com/python-rope/ropevim.git
+
+pylama:
+	url: https://github.com/klen/pylama.git
+
+blue-mood-vim:
+	url: https://github.com/lmintmate/blue-mood-vim.git
+
+vim-frign:
+	url: https://github.com/KimNorgaard/vim-frign.git
+
+vim-blueper:
+	url: https://github.com/whonore/vim-blueper.git
