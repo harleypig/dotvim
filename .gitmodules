@@ -30,7 +30,3 @@
 	path = .vim/pack/testing/start/asynctasks
 	url = https://github.com/skywind3000/asynctasks.vim.git
 	ignore = dirty
-[submodule "lightline"]
-	path = .vim/pack/testing/start/lightline
-	url = https://github.com/itchyny/lightline.vim.git
-	ignore = dirty
