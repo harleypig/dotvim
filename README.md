@@ -42,6 +42,7 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 #### intellisense
 
+* [ale](https://github.com/dense-analysis/ale.git) %branch_name%
 * [coc](https://github.com/neoclide/coc.nvim.git) %branch_name%
 
 #### syntax
@@ -50,7 +51,6 @@ XXX: Add notes about what is being done here (or maybe do that in the plugin?)
 
 #### testing
 
-* [ale](https://github.com/dense-analysis/ale.git) %branch_name%
 * [asynctasks](https://github.com/skywind3000/asynctasks.vim.git) %branch_name%
 * [jsonc](https://github.com/neoclide/jsonc.vim.git) %branch_name%
 * [vim-dadbod](https://github.com/tpope/vim-dadbod.git) %branch_name%
