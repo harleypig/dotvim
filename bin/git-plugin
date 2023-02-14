@@ -20,6 +20,9 @@ known['move']='_mv'
 known['remove']='_rm'
 known['update']='_update'
 
+known['mv']='_mv'
+known['rm']='_rm'
+
 known['a']='_add'
 known['m']='_mv'
 known['r']='_rm'
