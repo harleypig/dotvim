@@ -38,3 +38,7 @@
 	path = .vim/pack/testing/start/vim-clap
 	url = https://github.com/liuchengxu/vim-clap.git
 	ignore = dirty
+[submodule "todoist"]
+	path = .vim/pack/testing/start/todoist
+	url = https://github.com/romgrk/todoist.nvim.git
+	ignore = dirty
