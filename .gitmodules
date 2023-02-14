@@ -34,7 +34,3 @@
 	path = .vim/pack/intellisense/start/ale
 	url = https://github.com/dense-analysis/ale.git
 	ignore = dirty
-[submodule "vim-clap"]
-	path = .vim/pack/testing/start/vim-clap
-	url = https://github.com/liuchengxu/vim-clap.git
-	ignore = dirty
