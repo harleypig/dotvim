@@ -1,11 +1,9 @@
-
-" !!! See what you can rip off from vim-sensible!
-" https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
-
-" Sort this section by doing the following (it will ignore the 'set no' or
-" 'set   ' and sort by keywords :
-
-" <range>!perl -ne 'push@a,$_}{print$_ for sort{substr($a,6)cmp substr$b,6}@a'
+" If you are having issues with some language servers, add the following to
+" either this file or, preferably, the ftplugin for that filetype.
+" See https://github.com/neoclide/coc.nvim/issues/649
+"
+" set nobackup
+" set nowritebackup
 
 set   autoread
 set nocursorline
@@ -19,8 +17,6 @@ set   terse
 set   title
 set   wildmenu
 "set   spell
-
-" <range>!perl -ne 'push@a,$_}{print$_ for sort{substr($a,4)cmp substr$b,4}@a'
 
 set   background=dark
 set   backupdir=/tmp,~/tmp

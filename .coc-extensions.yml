@@ -2,153 +2,157 @@
 coc-extensions:
   coc-lists:
     url: https://github.com/neoclide/coc-lists
-    status: installed
-  
+    status: install
+
   coc-pairs:
     url: https://github.com/neoclide/coc-pairs
-    status: installed
-  
+    status: install
+    config: none
+
   coc-sql:
     url: https://github.com/fannheyward/coc-sql
-    status: installed
-  
+    status: install
+    requires:
+      - https://github.com/joe-re/sql-language-server
+    install:
+      archlinux: pacman -S sql-language-server
+
   coc-toml:
     url: https://github.com/kkiyama117/coc-toml
-    status: installed
-  
+    status: install
+
   coc-smartf:
     url: https://github.com/neoclide/coc-smartf
-    status: installed
-  
+    status: install
+
   coc-yaml:
     url: https://github.com/neoclide/coc-yaml
-    status: installed
-  
+    status: install
+
   coc-markdownlint:
     url: https://github.com/fannheyward/coc-markdownlint
-    status: installed
-  
+    status: install
+
   coc-dictd:
     url: https://github.com/jeewangue/coc-dictd
-    status: installed
-  
+    status: install
+
   coc-vimnlsp:
     url: https://github.com/iamcco/coc-vimlsp
-    status: installed
-  
-  coc-nginx:
-    url: https://github.com/yaegassy/coc-nginx
-    status: installed
-  
+    status: install
+
   coc-pydocstring:
     url: https://github.com/yaegassy/coc-pydocstring
-    status: installed
-  
+    status: install
+
   coc-coverage:
     url: https://github.com/ruanyl/coc-coverage
-    status: installed
-  
+    status: install
+
   coc-terminal:
     url: https://github.com/fannheyward/coc-terminal
-    status: installed
-  
+    status: install
+
   coc-ansible:
     url: https://github.com/yaegassy/coc-ansible
-    status: installed
-    install: @yaegassy/coc-ansible
+    status: install
+    install: '@yaegassy/coc-ansible'
     requires:
       - https://github.com/sheerun/vim-polyglot
-  
+
   coc-db:
     url: https://github.com/kristijanhusak/vim-dadbod-completion
-    status: installed
+    status: install
     requires:
       - https://github.com/tpope/vim-dadbod.git
-  
+
   coc-docker:
     url: https://github.com/josa42/coc-docker
-    status: installed
+    status: install
     requires:
       https://github.com/rcjsuen/dockerfile-language-server-nodejs
-  
+
   coc-git:
     url: https://github.com/neoclide/coc-git
-    status: installed
-    recommends: 
+    status: install
+    recommends:
       https://github.com/tpope/vim-fugitive.git
-  
+
   coc-grammarly:
     url: https://github.com/gianarb/coc-grammarly
-    status: installed
+    status: install
     requires:
      - https://github.com/znck/grammarly
-  
+
   coc-json:
     url: https://github.com/neoclide/coc-json
-    status: installed
+    status: install
     recommends:
       - https://github.com/neoclide/jsonc.vim.git
-  
+
   coc-prettier:
     url: https://github.com/neoclide/coc-prettier
-    status: installed
+    status: install
     requires: https://prettier.io/
-  
+
   coc-pyright:
     url: https://github.com/fannheyward/coc-pyright
-    status: installed
-  
+    status: install
+
   coc-sh:
     url: https://github.com/josa42/coc-sh
-    status: installed
+    status: install
     requires:
       - https://github.com/bash-lsp/bash-language-server
+    installation:
+        archlinux: pacman -S bash-language-server
+        nopackage: npm i -g bash-language-server
     recommended:
       - https://github.com/koalaman/shellcheck
       - https://github.com/idank/explainshell
-  
+
   coc-tasks:
     url: https://github.com/voldikss/coc-tasks
-    status: installed
+    status: install
     requires:
       - https://github.com/skywind3000/asynctasks.vim
-  
+
   coc-nginx:
     url: https://github.com/yaegassy/coc-nginx
     status: not working
-  
+
   coc-cucumber:
     url: https://github.com/yaegassy/coc-cucumber
     status: not working
-  
+
   coc-todolist:
     url: https://github.com/voldikss/coc-todolist
     status: evaluate
-  
+
   coc-yank:
     url: https://github.com/neoclide/coc-yank
     status: evaluate
-  
+
   coc-webview:
     url: https://github.com/weirongxu/coc-webview
     status: evaluate
-  
+
   coc-markdown-preview-enhanced:
     url: https://github.com/weirongxu/coc-markdown-preview-enhanced
     status: evaluate
-  
+
   coc-snippets:
     url: https://github.com/neoclide/coc-snippets
     status: evaluate
-  
+
   coc-diagnostic:
     url: https://github.com/iamcco/coc-diagnostic
     status: evaluate
-  
+
   coc-calc:
     url: https://github.com/weirongxu/coc-calc
     status: evaluate
-  
+
   coc-format-json:
     url: https://github.com/gera2ld/coc-format-json
     status: evaluate
