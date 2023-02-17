@@ -58,3 +58,10 @@ prereqs
       install:
         archlinux: pacman -S terraform-ls
 
+* modules
+  + click: https://click.palletsprojects.com/
+  + click plugins: https://github.com/orgs/click-contrib/repositories
+  + click-params: https://click-params.readthedocs.io/en/latest/usage/domain/#url
+  + click-aliases: https://github.com/click-contrib/click-aliases
+  + click-option-group: https://click-option-group.readthedocs.io/en/stable/index.html
+  + click-completion: https://github.com/click-contrib/click-completion

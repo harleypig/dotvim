@@ -1,4 +1,4 @@
 **/doc/tags
 .vim/sessions
-
 .netrwhist
+venv/**
