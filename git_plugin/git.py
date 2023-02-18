@@ -1,11 +1,11 @@
 def validate_plugin_url(ctx, param, value):
-    pass
+    return f"{param}/{value}"
 
 def validate_name(ctx, param, value):
-    pass
+    return f"{param}/{value}"
 
 def validate_dir(ctx, param, value):
-    pass
+    return f"{param}/{value}"
 
 def add_plugin(url):
     print(f"Adding plugin: {url}")

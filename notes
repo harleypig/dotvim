@@ -67,3 +67,18 @@ prereqs
   + click-completion: https://github.com/click-contrib/click-completion
 
 * bash completion https://click.palletsprojects.com/en/8.1.x/shell-completion/
+
+* Possibly use the following text in the readme:
+
+Welcome to the Git Plugin Manager command-line tool. This tool allows you to
+manage your VIm plugins using Git submodules. You can use this tool to add,
+move, and remove plugins, as well as view information about your plugins using
+the `readme` and `learning` commands.
+
+To use this tool, make sure you have Python and Git installed on your system,
+and activate the virtual environment using `source venv/bin/activate`. You can
+then run the tool using the `git-plugin` command, followed by a command and
+any necessary arguments.
+
+For more information on how to use this tool, please refer to the command help
+pages by running `git-plugin --help` or `git-plugin <command> --help`.
