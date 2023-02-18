@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# Detect if venv (and other files?) have been setup
-
-[[ -d venv ]] || python -m venv --upgrade-deps venv 
