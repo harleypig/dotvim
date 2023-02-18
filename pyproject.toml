@@ -1,0 +1,23 @@
+[build-syste]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name='git-plugin'
+version='0.0.1'
+description='Manage vim plugins'
+dependencies = [
+    'click',
+    'click-params'
+]
+
+[project.scripts]
+git-plugin = 'git_plugin.cli:cli'
+git-plugin-add = 'git_plugin.cli:add'
+git-plugin-move = 'git_plugin.cli:move'
+git-plugin-remove = 'git_plugin.cli:remove'
+git-plugin-readme = 'git_plugin.cli:readme'
+git-plugin-learner = 'git_plugin.cli:learner'
+
+[tool.setuptools.packages]
+find = {}

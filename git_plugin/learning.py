@@ -1,0 +1,2 @@
+def learning():
+    print('learning...')

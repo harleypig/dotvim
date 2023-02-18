@@ -2,3 +2,5 @@
 .vim/sessions
 .netrwhist
 venv/**
+git_plugin.egg-info/**
+**/__pycache__/**
