@@ -65,6 +65,8 @@ prereqs
   + click-aliases: https://github.com/click-contrib/click-aliases
   + click-option-group: https://click-option-group.readthedocs.io/en/stable/index.html
   + click-completion: https://github.com/click-contrib/click-completion
+  + click-configfile: https://github.com/click-contrib/click-configfile
+  + click-help-colors: https://github.com/click-contrib/click-help-colors
 
 * bash completion https://click.palletsprojects.com/en/8.1.x/shell-completion/
 

@@ -8,7 +8,8 @@ version='0.0.1'
 description='Manage vim plugins'
 dependencies = [
     'click',
-    'gitpython'
+    'gitpython',
+    'giturlparse'
 ]
 
 [project.scripts]
