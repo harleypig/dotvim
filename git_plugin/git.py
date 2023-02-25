@@ -1,14 +1,14 @@
-import pathlib
+import click
 import git
 import giturlparse
+import pathlib
 import pudb
 
 ##############################################################################
 # ----------------------------------------------------------------------------
-def repo():
+def get_repo():
     """Check for a Git repository and return a git.Repo instance."""
 
-    pudb.set_trace()
     try:
         r = git.Repo()
 
@@ -16,33 +16,56 @@ def repo():
         print('git-plugin can only run in a git repository')
         exit(1)
 
-    if r.bare():
+    if r.bare:
         print('git-plugin cannot work in a bare repository')
         exit(1)
 
     return r
 
 # ----------------------------------------------------------------------------
-def validate_plugin_name(ctx, param, value):
+def get_submodule(sm):
+    """Get the submodule"""
+
+    if isinstance(sm, git.Submodule):
+        return sm
+
+    elif not isinstance(sm, str):
+        return None
+
+    name = sm
+
+    r = get_repo()
+
+    try:
+        sm = r.submodules(name)
+        return sm
+
+    except:
+        return None
+
+# ----------------------------------------------------------------------------
+def validate_plugin_name(ctx, param, name):
     """Validate a string is a submodule in the .gitmodules file."""
 
-    sm = get_repo().submodule(name)
+    sm = get_submodule(name)
 
     if sm is not None:
         return sm
 
-    return False
+    if ctx is None:
+        return False
+    else:
+        raise click.BadParameter('not a known submodule')
+
 
 # ----------------------------------------------------------------------------
-#def validate_plugin_url(ctx, param, url):
-def validate_plugin_url(param, url):
+def validate_plugin_url(ctx, param, url):
     """Validate a string is a valid git URL."""
 
-    pudb.set_trace()
     parsed_url = giturlparse.parse(url)
 
     if not parsed_url.valid:
-        return False
+        raise click.BadParameter('not a valid url')
 
     return parsed_url
 
@@ -56,21 +79,6 @@ def validate_pack_directory(packdir):
         return pack_dir
 
     return False
-
-# ----------------------------------------------------------------------------
-def get_submodule(sm):
-    if isinstance(sm, str):
-        name = sm
-        sm = validate_plugin_name(sm)
-        if not sm:
-            print(f"{name} is not a known submodule")
-            exit(1)
-
-    elif not isinstance(sm, git.Submodule):
-        print('move_plugin accepts either a valid submodule name or a git.Submodule object')
-        exit(1)
-
-    return sm
 
 
 ##############################################################################
@@ -88,20 +96,29 @@ def add_plugin(url):
         print('add_plugin accepts either a valid url string or a giturlparse object')
         exit(1)
 
-    packdir = valid_pack_directory('testing')
+    packdir = validate_pack_directory('testing')
     if not packdir:
         print('why are you seeing this? bad .vim/pack/testing/start directory')
         exit(1)
 
     name = url.name.rstrip('.vim').rstrip('.nvim')
+    pudb.set_trace()
+    if get_submodule(name) is not None:
+        print(f"a submodule with the name '{name}' already exists")
+        exit(1)
 
     r = get_repo()
 
     try:
-        r.create_submodule(
+        sm = r.create_submodule(
             name = name,
             path = packdir,
             url  = url.url2https,
+        )
+
+        sm.update(
+            recursive = True,
+            init = True
         )
 
     except:

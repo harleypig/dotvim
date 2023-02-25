@@ -1,6 +1,5 @@
 import click
 from . import readme, learning, git, util
-import pudb
 
 # ----------------------------------------------------------------------------
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
@@ -20,12 +19,11 @@ def cli():
 # ----------------------------------------------------------------------------
 @cli.command()
 @click.argument('url',
-    type=git.validate_plugin_url,
+    callback=git.validate_plugin_url,
     metavar='<url>'
 )
 def add(url):
     """Adds the vim plugin found at 'url' as a submodule."""
-    pudb.set_trace()
     git.add_plugin(url)
 
 # ----------------------------------------------------------------------------
