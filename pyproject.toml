@@ -9,7 +9,8 @@ description='Manage vim plugins'
 dependencies = [
     'click',
     'gitpython',
-    'giturlparse'
+    'giturlparse',
+    'jinja2',
 ]
 
 [project.scripts]

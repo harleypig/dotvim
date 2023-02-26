@@ -7,20 +7,26 @@ import pudb
 ##############################################################################
 # ----------------------------------------------------------------------------
 def get_repo():
-    """Check for a Git repository and return a git.Repo instance."""
+    """Get the git repo, change the working directory to the repo root, and
+    return the repo."""
+
+    if isinstance(repo, git.Repo):
+        return repo
 
     try:
-        r = git.Repo()
+        r = git.Repo(search_parent_directories = True)
+        if r.bare:
+            raise Exception('bare repo')
+
+        pathlib.Path.chdir(r.working_dir)
+
+        return r
 
     except:
-        print('git-plugin can only run in a git repository')
+        print('git-plugin can only run in a non-bare git repository')
         exit(1)
 
-    if r.bare:
-        print('git-plugin cannot work in a bare repository')
-        exit(1)
-
-    return r
+repo = get_repo()
 
 # ----------------------------------------------------------------------------
 def get_submodule(sm):
@@ -32,16 +38,48 @@ def get_submodule(sm):
     elif not isinstance(sm, str):
         return None
 
-    name = sm
-
     r = get_repo()
 
     try:
-        sm = r.submodules(name)
+        sm = r.submodule(sm)
         return sm
 
     except:
         return None
+
+# ----------------------------------------------------------------------------
+def get_packdir(packdir, name=None):
+    """Get the pack directory."""
+
+    pudb.set_trace()
+
+    if not isinstance(packdir, (str, pathlib.Path)):
+        return None
+
+    elif isinstance(packdir, str):
+        packdir = pathlib.Path('.vim').joinpath('pack', packdir, 'start')
+
+    if name is not None:
+        if not packdir.exists():
+            return None
+
+        packdir = packdir.joinpath(name)
+
+    return packdir
+
+# ----------------------------------------------------------------------------
+def get_url(url):
+    """Get the url."""
+
+    if isinstance(url, giturlparse.result.GitUrlParsed):
+        return url
+
+    elif not isinstance(url, str):
+        return None
+
+    url = giturlparse.parse(url)
+
+    return url
 
 # ----------------------------------------------------------------------------
 def validate_plugin_name(ctx, param, name):
@@ -52,59 +90,66 @@ def validate_plugin_name(ctx, param, name):
     if sm is not None:
         return sm
 
-    if ctx is None:
-        return False
-    else:
-        raise click.BadParameter('not a known submodule')
-
+    raise click.BadParameter('not a known submodule')
 
 # ----------------------------------------------------------------------------
 def validate_plugin_url(ctx, param, url):
     """Validate a string is a valid git URL."""
 
-    parsed_url = giturlparse.parse(url)
+    parsed_url = get_url(url)
 
-    if not parsed_url.valid:
+    if parsed_url is None or not parsed_url.valid:
         raise click.BadParameter('not a valid url')
 
     return parsed_url
 
 # ----------------------------------------------------------------------------
-def validate_pack_directory(packdir):
+def validate_pack_directory(ctx, param, packdir):
     """Validate a string is a directory in the .vim/pack directory."""
 
-    pack_dir = pathlib.Path('.vim').joinpath('pack', packdir, 'start')
+    pudb.set_trace()
 
-    if pack_dir.is_dir() and pack_dir.exists():
-        return pack_dir
+    pd = get_packdir(packdir)
 
-    return False
+    if pd is None or not pd.exists():
+        raise click.BadParameter(f'{packdir} is not a valid pack directory')
 
+    name = ctx.params['name'].name if ctx.params['name'] else None
+
+    pd = pd.joinpath(name)
+
+    if pd.exists() and any(pd.iterdir()):
+        raise click.BadParameter(f'{packdir} exists and is not empty')
+
+    return packdir
 
 ##############################################################################
 # ----------------------------------------------------------------------------
 def add_plugin(url):
     """Add a git submodule to the .vim/pack/testing directory."""
 
-    if isinstance(url, str):
-        url = validate_plugin_url(url)
-        if not url:
-            print('invalud url')
-            exit(1)
+    url = get_url(url)
 
-    elif not isinstance(url, giturlparse.result.GitUrlParsed):
-        print('add_plugin accepts either a valid url string or a giturlparse object')
-        exit(1)
-
-    packdir = validate_pack_directory('testing')
-    if not packdir:
-        print('why are you seeing this? bad .vim/pack/testing/start directory')
+    if url is None or not url.valid:
+        print(f'{url} is not a valid url')
         exit(1)
 
     name = url.name.rstrip('.vim').rstrip('.nvim')
-    pudb.set_trace()
+
     if get_submodule(name) is not None:
         print(f"a submodule with the name '{name}' already exists")
+        exit(1)
+
+    packdir = get_packdir('testing')
+
+    if packdir is None or not packdir.exists():
+        print(f'{packdir.as_posix()} does not exist')
+        exit(1)
+
+    packdir = packdir.joinpath(name)
+
+    if packdir.exists() and any(packdir.iterdir()):
+        print(f'{packdir.as_posix} exists and is not empty')
         exit(1)
 
     r = get_repo()
@@ -112,7 +157,7 @@ def add_plugin(url):
     try:
         sm = r.create_submodule(
             name = name,
-            path = packdir,
+            path = packdir.as_posix(),
             url  = url.url2https,
         )
 
@@ -121,39 +166,42 @@ def add_plugin(url):
             init = True
         )
 
-    except:
+        r.index.commit(f'auto add {name} submodule by git-plugin')
+
+    except Exception as e:
         print('error adding submodule, repo may not be in a clean state')
         exit(1)
+
+    print(f'{name} added')
+    exit(0)
 
 # ----------------------------------------------------------------------------
 def move_plugin(sm, packdir):
     """Move named plugin from its current location to the specified pack directory."""
 
+    pudb.set_trace()
+
     sm = get_submodule(sm)
-
-    if isinstance(packdir, str):
-        dirname = packdir
-        packdir = validate_plugin_directory(packdir)
-        if not packdir:
-            print(f"{dirname} does not exist in the vim pack directory")
-            exit(1)
-
-    elif not isinstance(packdir, pathlib):
-        print('move_plugin accepts either a valid vim pack name or a pathlib object')
+    if sm is None:
+        print(f"{sm} is not a known submodule")
         exit(1)
 
-    newdir = packdir.joinpath(sm.name)
+    packdir = get_packdir(packdir, sm.name)
+    if packdir is None:
+        print(f"{packdir} is not a valid pack directory")
+        exit(1)
 
-    # newdir should not exist, or at least be empty
-    if newdir.exists() and any(newdir).iterdir():
-        print(f"{newdir} already exists and is not empty")
+    elif packdir.exists() and any(packdir).iterdir():
+        print(f"{packdir} already exists and is not empty")
         exit(1)
 
     try:
-        sm.move(newdir)
+        sm.move(packdir.as_posix())
 
     except ValueError:
         print(f"error moving {sm.name} to {newdir}, repo may not in a clean state")
+
+    print(f"{sm.name} moved to {packdir.as_posix()}")
 
 # ----------------------------------------------------------------------------
 def remove_plugin(sm):

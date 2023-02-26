@@ -1,5 +1,5 @@
 import click
-from . import readme, learning, git, util
+from . import git
 
 # ----------------------------------------------------------------------------
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
@@ -38,7 +38,7 @@ def add(url):
 )
 def move(name, pack):
     """Moves the named submodule to the specified pack location."""
-    git.move_plugin(name)
+    git.move_plugin(name, pack)
 
 # ----------------------------------------------------------------------------
 @cli.command()
@@ -51,13 +51,13 @@ def remove(name):
     git.remove_plugin(name)
 
 # ----------------------------------------------------------------------------
-@cli.command()
-def learning():
-    """Generates a vim help formatted learning.txt."""
-    learning.learning()
+#@cli.command()
+#def learning():
+#    """Generates a vim help formatted learning.txt."""
+#    learning.learning()
 
 # ----------------------------------------------------------------------------
-@cli.command()
-def readme():
-    """Generates a readme.md."""
-    readme.readme()
+#@cli.command()
+#def readme():
+#    """Generates a readme.md."""
+#    readme.readme()

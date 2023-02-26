@@ -1,1 +1,1 @@
-from . import cli, readme, learning, git
+from . import cli, git
