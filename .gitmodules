@@ -34,3 +34,6 @@
 	path = .vim/pack/intellisense/start/ale
 	url = https://github.com/dense-analysis/ale.git
 	ignore = dirty
+[submodule "copilot"]
+	url = https://github.com/github/copilot.vim.git
+	path = .vim/pack/testing/start/copilot
