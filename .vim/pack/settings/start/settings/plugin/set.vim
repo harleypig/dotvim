@@ -13,6 +13,7 @@ set   list
 set   number
 set   showcmd
 set   showmatch
+set   termguicolors
 set   terse
 set   title
 set   wildmenu

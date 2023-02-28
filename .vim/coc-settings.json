@@ -1,13 +1,24 @@
 {
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+  "coc.preferences.extensionUpdateCheck": "weekly",
+  "coc.preferences.formatOnSave": true,
+  "coc.preferences.useQuickfixForLocations": true,
+
+  "colors.enable": true,
+
+  "list.alignColumns": true,
+
+  "notification.statusLineProgress": true,
+
   "diagnostic.displayByAle": true,
 
   "diagnostic-languageserver.filetypes": {
-    "text": [ "proselint" ]
+    "text": ["proselint"]
   },
 
   "diagnostic-languageserver.linters": {
     "proselint": {
-      "args": [ "-" ],
+      "args": ["-"],
       "command": "proselint",
       "debounce": 100,
       "formatLines": 1,
@@ -33,22 +44,22 @@
 
   "languageserver": {
     "bash": {
-      "args": [ "start" ],
+      "args": ["start"],
       "command": "bash-language-server",
-      "filetypes": [ "sh" ],
-      "ignoredRootPaths": [ "~" ]
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
     },
 
     "dockerfile": {
-      "args": [ "--stdio" ],
+      "args": ["--stdio"],
       "command": "docker-langserver",
-      "filetypes": [ "dockerfile" ]
+      "filetypes": ["dockerfile"]
     },
 
     "terraform": {
-      "args": [ "serve" ],
+      "args": ["serve"],
       "command": "terraform-ls",
-      "filetypes": [ "terraform", "tf" ],
+      "filetypes": ["terraform", "tf"],
       "initializationOptions": {},
       "settings": {}
     }

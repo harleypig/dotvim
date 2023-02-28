@@ -110,6 +110,11 @@ set statusline+=[%03b:%02B]
 " What does vim think is under the cursor?
 set statusline+=%(\ %{synIDattr(synID(line('.'),col('.'),1),'name')}%)
 
+" CoC info
+if exists("g:did_coc_loaded")
+  set statusline+=%(\ %{coc#status()}%)
+endif
+
 " End of left justified, begin right justified.
 set statusline+=%=
 

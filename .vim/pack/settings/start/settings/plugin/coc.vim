@@ -1,3 +1,4 @@
+" Maybe: https://github.com/rstacruz/vim-coc-settings/blob/master/after/plugin/coc.vim
 "let g:coc_disable_startup_warning = 1
 
 " use <tab> for trigger completion and navigate to the next complete item
