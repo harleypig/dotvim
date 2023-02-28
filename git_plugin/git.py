@@ -120,6 +120,7 @@ def validate_pack_directory(ctx, param, packdir):
 def add_plugin(url):
     """Add a git submodule to the .vim/pack/testing directory."""
 
+    pudb.set_trace()
     url = get_url(url)
 
     if url is None or not url.valid:
@@ -144,6 +145,8 @@ def add_plugin(url):
         print(f'{packdir.as_posix} exists and is not empty')
         exit(1)
 
+    r = get_repo()
+
     try:
         sm = r.create_submodule(
             name = name,
@@ -156,14 +159,12 @@ def add_plugin(url):
             init = True
         )
 
-        get_repo().index.commit(f'auto add {name} submodule by git-plugin')
+        r.index.commit(f'auto add {name} submodule by git-plugin')
+        print(f'{name} added')
 
     except Exception as e:
         print('error adding submodule, repo may not be in a clean state')
         exit(1)
-
-    print(f'{name} added')
-    exit(0)
 
 # ----------------------------------------------------------------------------
 def move_plugin(sm, packdir):
@@ -185,7 +186,8 @@ def move_plugin(sm, packdir):
 
     try:
         sm.move(packdir.as_posix())
-        get_repo().index.commit(f'moved {name} submodule to {packdir.as_posix()} by git-plugin')
+        r = get_repo()
+        r.index.commit(f'moved {name} submodule to {packdir.as_posix()} by git-plugin')
         print(f"{sm.name} moved to {packdir.as_posix()}")
 
     except ValueError:
@@ -211,7 +213,8 @@ def remove_plugin(sm):
 
     try:
         sm.remove()
-        get_repo().index.commit(f'removed {name} submodule by git-plugin')
+        r = get_repo()
+        r.index.commit(f'removed {name} submodule by git-plugin')
 
     except:
         print(f"error removing {sm.name}, repo may not be in a clean state")

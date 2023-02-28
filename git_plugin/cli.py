@@ -49,7 +49,6 @@ def move(name, pack):
 )
 def remove(name):
     """Removes the named submodule."""
-    pudb.set_trace()
     git.remove_plugin(name)
 
 # ----------------------------------------------------------------------------
