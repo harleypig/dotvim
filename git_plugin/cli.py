@@ -1,5 +1,6 @@
 import click
 from . import git
+import pudb
 
 # ----------------------------------------------------------------------------
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
@@ -48,6 +49,7 @@ def move(name, pack):
 )
 def remove(name):
     """Removes the named submodule."""
+    pudb.set_trace()
     git.remove_plugin(name)
 
 # ----------------------------------------------------------------------------

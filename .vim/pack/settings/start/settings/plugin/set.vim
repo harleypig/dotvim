@@ -9,7 +9,7 @@ set   autoread
 set nocursorline
 set   expandtab
 set nohidden
-"set   list " This overrides SpaceHi, so don't set it.
+set   list
 set   number
 set   showcmd
 set   showmatch
@@ -24,19 +24,21 @@ set   clipboard+=unnamed
 set   directory=/tmp,~/tmp
 set   encoding=utf-8
 set   history=1000
-"set   listchars=
+set   listchars=
 set   matchpairs+=<:>
 set   mouse=
 set   numberwidth=5
 set   pastetoggle=<Leader>paste
 set   path=.,$HOME
 set   report=1
+set   shellcmdflag=-ic
 set   shortmess=a
+set   signcolumn=number
 set   softtabstop=2
 set   tabstop=2
 set   undolevels=1000
 set   updatecount=10
-set   updatetime=3000
+set   updatetime=1000
 set   viminfo=h,%10,'50,s1000,/1000,:1000
 set   virtualedit=block
 set   wildignore+=*/.git/

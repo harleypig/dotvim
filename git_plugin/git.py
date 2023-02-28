@@ -3,6 +3,7 @@ import git
 import giturlparse
 import pathlib
 import pudb
+import os
 
 ##############################################################################
 # ----------------------------------------------------------------------------
@@ -10,23 +11,18 @@ def get_repo():
     """Get the git repo, change the working directory to the repo root, and
     return the repo."""
 
-    if isinstance(repo, git.Repo):
-        return repo
-
     try:
         r = git.Repo(search_parent_directories = True)
         if r.bare:
             raise Exception('bare repo')
 
-        pathlib.Path.chdir(r.working_dir)
+        os.chdir(r.working_dir)
 
         return r
 
-    except:
+    except Exception as e:
         print('git-plugin can only run in a non-bare git repository')
         exit(1)
-
-repo = get_repo()
 
 # ----------------------------------------------------------------------------
 def get_submodule(sm):
@@ -50,8 +46,6 @@ def get_submodule(sm):
 # ----------------------------------------------------------------------------
 def get_packdir(packdir, name=None):
     """Get the pack directory."""
-
-    pudb.set_trace()
 
     if not isinstance(packdir, (str, pathlib.Path)):
         return None
@@ -107,8 +101,6 @@ def validate_plugin_url(ctx, param, url):
 def validate_pack_directory(ctx, param, packdir):
     """Validate a string is a directory in the .vim/pack directory."""
 
-    pudb.set_trace()
-
     pd = get_packdir(packdir)
 
     if pd is None or not pd.exists():
@@ -152,8 +144,6 @@ def add_plugin(url):
         print(f'{packdir.as_posix} exists and is not empty')
         exit(1)
 
-    r = get_repo()
-
     try:
         sm = r.create_submodule(
             name = name,
@@ -166,7 +156,7 @@ def add_plugin(url):
             init = True
         )
 
-        r.index.commit(f'auto add {name} submodule by git-plugin')
+        get_repo().index.commit(f'auto add {name} submodule by git-plugin')
 
     except Exception as e:
         print('error adding submodule, repo may not be in a clean state')
@@ -178,8 +168,6 @@ def add_plugin(url):
 # ----------------------------------------------------------------------------
 def move_plugin(sm, packdir):
     """Move named plugin from its current location to the specified pack directory."""
-
-    pudb.set_trace()
 
     sm = get_submodule(sm)
     if sm is None:
@@ -197,17 +185,22 @@ def move_plugin(sm, packdir):
 
     try:
         sm.move(packdir.as_posix())
+        get_repo().index.commit(f'moved {name} submodule to {packdir.as_posix()} by git-plugin')
+        print(f"{sm.name} moved to {packdir.as_posix()}")
 
     except ValueError:
         print(f"error moving {sm.name} to {newdir}, repo may not in a clean state")
-
-    print(f"{sm.name} moved to {packdir.as_posix()}")
 
 # ----------------------------------------------------------------------------
 def remove_plugin(sm):
     """Remove named plugin."""
 
+    pudb.set_trace()
+
     sm = get_submodule(sm)
+    if sm is None:
+        print(f"{sm} is not a known submodule")
+        exit(1)
 
     try:
         sm.remove(dry_run = True)
@@ -218,6 +211,7 @@ def remove_plugin(sm):
 
     try:
         sm.remove()
+        get_repo().index.commit(f'removed {name} submodule by git-plugin')
 
     except:
         print(f"error removing {sm.name}, repo may not be in a clean state")
