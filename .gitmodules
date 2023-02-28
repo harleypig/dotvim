@@ -36,4 +36,4 @@
 	ignore = dirty
 [submodule "copilot"]
 	url = https://github.com/github/copilot.vim.git
-	path = .vim/pack/testing/start/copilot
+	path = .vim/pack/intellisense/start/copilot
