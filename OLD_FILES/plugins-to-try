@@ -157,9 +157,6 @@ vim-autotag:
 editorconfig-vim:
   url: https://github.com/editorconfig/editorconfig-vim.git
 
-ale:
-  url: https://github.com/dense-analysis/ale.git
-
 asyncomplete-lsp:
   url: https://github.com/prabirshrestha/asyncomplete-lsp.vim.git
 

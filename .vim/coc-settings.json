@@ -1,6 +1,7 @@
 {
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
   "coc.preferences.extensionUpdateCheck": "weekly",
+  // XXX: How does this work with ale's ale_fix_on_save?
   "coc.preferences.formatOnSave": true,
   "coc.preferences.useQuickfixForLocations": true,
 
@@ -16,6 +17,7 @@
     "text": ["proselint"]
   },
 
+  // Requires proselint to be installed
   "diagnostic-languageserver.linters": {
     "proselint": {
       "args": ["-"],
@@ -43,6 +45,7 @@
   },
 
   "languageserver": {
+    // Requires bash-language-server to be installed
     "bash": {
       "args": ["start"],
       "command": "bash-language-server",
@@ -50,12 +53,14 @@
       "ignoredRootPaths": ["~"]
     },
 
+    // Requires docker-langserver to be installed
     "dockerfile": {
       "args": ["--stdio"],
       "command": "docker-langserver",
       "filetypes": ["dockerfile"]
     },
 
+    // Requires terraform-ls to be installed
     "terraform": {
       "args": ["serve"],
       "command": "terraform-ls",

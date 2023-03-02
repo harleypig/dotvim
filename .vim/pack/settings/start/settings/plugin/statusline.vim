@@ -74,6 +74,27 @@ function! LinterStatus() abort
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! StatusDiagnostic() abort
+  let info = get(b:, 'coc_diagnostic_info', {})
+
+  if empty(info)
+    return ''
+  endif
+
+  let msgs = []
+
+  if get(info, 'error', 0)
+    call add(msgs, printf('E:%d', info.error))
+  endif
+
+  if get(info, 'warning', 0)
+    call add(msgs, printf('W:%d', info.warning))
+  endif
+
+  return join(msgs, ' ') . ' ' . get(g:, 'coc_status', '')
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Make sure the status line is empty before we start.
 set statusline=
 
@@ -112,7 +133,7 @@ set statusline+=%(\ %{synIDattr(synID(line('.'),col('.'),1),'name')}%)
 
 " CoC info
 if exists("g:did_coc_loaded")
-  set statusline+=%(\ %{coc#status()}%)
+  set statusline+=%(\ %{StatusDiagnostic()}%)
 endif
 
 " End of left justified, begin right justified.
