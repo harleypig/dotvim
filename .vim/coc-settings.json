@@ -18,10 +18,10 @@
     "text": ["proselint"]
   },
 
-  // Requires proselint to be installed
+  // Requires proselint be installed
   "diagnostic-languageserver.linters": {
     "proselint": {
-      "args": ["-"],
+      "args": ["--config", "$HOME/.vim/.proselint-config.json", "-"],
       "command": "proselint",
       "debounce": 100,
       "formatLines": 1,
@@ -46,7 +46,7 @@
   },
 
   "languageserver": {
-    // Requires bash-language-server to be installed
+    // Requires bash-language-server be installed
     "bash": {
       "args": ["start"],
       "command": "bash-language-server",
@@ -54,14 +54,14 @@
       "ignoredRootPaths": ["~"]
     },
 
-    // Requires docker-langserver to be installed
+    // Requires docker-langserver be installed
     "dockerfile": {
       "args": ["--stdio"],
       "command": "docker-langserver",
       "filetypes": ["dockerfile"]
     },
 
-    // Requires terraform-ls to be installed
+    // Requires terraform-ls be installed
     "terraform": {
       "args": ["serve"],
       "command": "terraform-ls",
@@ -69,5 +69,10 @@
       "initializationOptions": {},
       "settings": {}
     }
+  },
+
+  "markdownlint.config": {
+    "default": true,
+    "line-length": false
   }
 }

@@ -39,4 +39,4 @@
 	path = .vim/pack/intellisense/start/copilot
 [submodule "jq"]
 	url = https://github.com/vito-c/jq.vim.git
-	path = .vim/pack/testing/start/jq
+	path = .vim/pack/syntax/start/jq

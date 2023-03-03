@@ -23,9 +23,13 @@ syntax on
 
 " XXX: Figure out a way to update this list automatically, or at least on
 " demand.
+"
+" A list of installed extensions can be found in
+" ~/.config/coc/extensions/package.json
+
 let g:coc_global_extensions = [
     \ '@yaegassy/coc-ansible', 'coc-coverage', 'coc-diagnostic',
-    \ 'coc-db', 'coc-dictd', 'coc-docker', 'coc-git', 'coc-grammarly',
+    \ 'coc-db', 'coc-dictd', 'coc-docker', 'coc-git',
     \ 'coc-json', 'coc-lists', 'coc-markdownlint', 'coc-pairs',
     \ 'coc-prettier', 'coc-pydocstring', 'coc-sh', 'coc-smartf', 'coc-sql',
     \ 'coc-tasks', 'coc-terminal', 'coc-toml', 'coc-vimlsp', 'coc-yaml'

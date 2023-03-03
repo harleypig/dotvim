@@ -40,19 +40,19 @@ if !exists("g:YASL_NotModified")
 endif
 
 if !exists("g:YASL_MixedIndentText")
-  let g:YASL_MixedIndentText = 'mixed indenting'
+  let g:YASL_MixedIndentText = '[mixed indenting]'
 endif
 
 if !exists("g:YASL_ExpandTabText")
-  let g:YASL_ExpandTabText = '&et'
+  let g:YASL_ExpandTabText = '[&et]'
 endif
 
 if !exists("g:YASL_TrailingSpaceText")
-  let g:YASL_TrailingSpaceText = 'trailing space'
+  let g:YASL_TrailingSpaceText = '[trailing space]'
 endif
 
 if !exists("g:YASL_PasteMode")
-  let g:YASL_PasteMode = 'PASTE'
+  let g:YASL_PasteMode = '[PASTE]'
 endif
 
 if !exists("g:YASL_NoPasteMode")
@@ -67,16 +67,16 @@ function! LinterStatus() abort
     let l:all_errors = l:counts.error + l:counts.style_error
     let l:all_non_errors = l:counts.total - l:all_errors
 
-    return l:counts.total == 0 ? 'OK' : printf(
-    \   '%dW %dE',
-    \   all_non_errors,
-    \   all_errors
-    \)
+    return l:counts.total == 0 ? '' : printf('[%dW %dE', all_non_errors, all_errors, ']')
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " What non-ale information can I put here?
 function! StatusDiagnostic() abort
+  if ! exists("g:did_coc_loaded")
+    return ''
+  endif
+
   let info = get(b:, 'coc_diagnostic_info', {})
 
   if empty(info)
@@ -108,35 +108,25 @@ set statusline+=]
 
 set statusline+=%#warningmsg#
 "set statusline+=%1*
-set statusline+=%(\ %{YASL_FileFormat()}%)
-set statusline+=%(\ %{YASL_FileEncoding()}%)
-set statusline+=%(\ %{YASL_MixedIndentWarning()}%)
-set statusline+=%(\ %{YASL_TrailingSpaceWarning()}%)
-set statusline+=%(\ %{YASL_PasteMode()}%)
+set statusline+=%(%{YASL_FileFormat()}%)
+set statusline+=%(%{YASL_FileEncoding()}%)
+set statusline+=%(%{YASL_MixedIndentWarning()}%)
+set statusline+=%(%{YASL_TrailingSpaceWarning()}%)
+set statusline+=%(%{YASL_PasteMode()}%)
+set statusline+=%(%{LinterStatus()}%)
+set statusline+=%(%{StatusDiagnostic()}%)
+" end warningmsg
 set statusline+=%*
-
-" Read the Syntastic docs.
-"set statusline+=%#warningmsg#%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}%*
-"set statusline+=%1*%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}%*
-set statusline+=[%{LinterStatus()}]
 
 " column and line # of total lines ; what percentage of the file are we at?
 " and what size is the file?
 set statusline+=[%c%V:%02l/%02L\ %p%%\ %{YASL_FileSize()}]
-" What size is the file?
-"set statusline+=%(\ %{YASL_FileSize()}%)
-
 
 " The ascii value under the cursor, human and hexadecimal formats.
 set statusline+=[%03b:%02B]
 
 " What does vim think is under the cursor?
 set statusline+=%(\ %{synIDattr(synID(line('.'),col('.'),1),'name')}%)
-
-" CoC info
-if exists("g:did_coc_loaded")
-  set statusline+=%(\ %{StatusDiagnostic()}%)
-endif
 
 " End of left justified, begin right justified.
 set statusline+=%=

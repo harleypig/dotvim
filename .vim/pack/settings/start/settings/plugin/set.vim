@@ -5,6 +5,9 @@
 " set nobackup
 " set nowritebackup
 
+" I don't need the -i, apparently my aliases are being loaded now.
+"set   shellcmdflag=-ic
+
 set   autoread
 set nocursorline
 set   expandtab
@@ -32,7 +35,6 @@ set   numberwidth=5
 set   pastetoggle=<Leader>paste
 set   path=.,$HOME
 set   report=1
-set   shellcmdflag=-ic
 set   shortmess=a
 set   signcolumn=number
 set   softtabstop=2
@@ -55,6 +57,9 @@ set   hlsearch
 " highlighting: ... pydave Feb 23 at 19:04
 nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 
+"===========================================================================================
+" Refactor starts here
+
 " Wrapping
 set   formatoptions=tcroq1
 set   wrapmargin=2
@@ -70,9 +75,6 @@ set   shiftwidth=2
 " See http://www.shallowsky.com/linux/noaltscreen.html for an explanation of set t_ti= t_te=
 set   t_te=
 set   t_ti=
-
-"===========================================================================================
-" Refactor starts here
 
 " Movement
 

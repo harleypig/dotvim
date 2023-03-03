@@ -55,9 +55,6 @@ jq:
 vim-tmux:
   url: https://github.com/tmux-plugins/vim-tmux.git
 
-vim-colorschemes:
-  url: https://github.com/flazz/vim-colorschemes.git
-
 vim-man:
   url: https://github.com/vim-utils/vim-man.git
 
@@ -253,13 +250,6 @@ vim-table-mode:
 hledger-vim:
   url: https://github.com/anekos/hledger-vim.git
 
-coc:
-  url: https://github.com/neoclide/coc.nvim.git
-  branch = release
-
-jsonc:
-  url: https://github.com/neoclide/jsonc.vim.git
-
 bats:
   url: https://github.com/aliou/bats.vim
 
@@ -282,19 +272,19 @@ fugitive-azure-devops:
   url: https://github.com/cedarbaum/fugitive-azure-devops.vim.git
 
 rope:
-	url: https://github.com/python-rope/rope.git
+  url: https://github.com/python-rope/rope.git
 
 ropevim:
-	url: https://github.com/python-rope/ropevim.git
+  url: https://github.com/python-rope/ropevim.git
 
 pylama:
-	url: https://github.com/klen/pylama.git
+  url: https://github.com/klen/pylama.git
 
 blue-mood-vim:
-	url: https://github.com/lmintmate/blue-mood-vim.git
+  url: https://github.com/lmintmate/blue-mood-vim.git
 
 vim-frign:
-	url: https://github.com/KimNorgaard/vim-frign.git
+  url: https://github.com/KimNorgaard/vim-frign.git
 
 vim-blueper:
-	url: https://github.com/whonore/vim-blueper.git
+  url: https://github.com/whonore/vim-blueper.git
