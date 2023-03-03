@@ -19,7 +19,7 @@
 	url = https://github.com/tpope/vim-fugitive.git
 	ignore = dirty
 [submodule "jsonc"]
-	path = .vim/pack/testing/start/jsonc
+	path = .vim/pack/intellisense/start/jsonc
 	url = https://github.com/neoclide/jsonc.vim.git
 	ignore = dirty
 [submodule "vimspector"]
