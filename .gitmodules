@@ -40,3 +40,6 @@
 [submodule "jq"]
 	url = https://github.com/vito-c/jq.vim.git
 	path = .vim/pack/syntax/start/jq
+[submodule "coc-terminal"]
+	url = https://github.com/fannheyward/coc-terminal.git
+	path = .vim/pack/testing/start/coc-terminal
