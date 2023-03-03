@@ -16,7 +16,13 @@ syntax on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Install these extensions if they aren't already.
 " This list has to exist before coc is loaded.
-"
+
+" This is a hack to get coc to install the extensions.  It's not documented
+" anywhere, but it works.  The extensions are installed asynchronously, so
+" it's not a big deal if they aren't installed immediately.
+
+" XXX: Figure out a way to update this list automatically, or at least on
+" demand.
 let g:coc_global_extensions = [
     \ '@yaegassy/coc-ansible', 'coc-coverage', 'coc-diagnostic',
     \ 'coc-db', 'coc-dictd', 'coc-docker', 'coc-git', 'coc-grammarly',

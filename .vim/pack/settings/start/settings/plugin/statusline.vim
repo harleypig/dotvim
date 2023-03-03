@@ -60,6 +60,7 @@ if !exists("g:YASL_NoPasteMode")
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ale info for statusline
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
 
@@ -74,6 +75,7 @@ function! LinterStatus() abort
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" What non-ale information can I put here?
 function! StatusDiagnostic() abort
   let info = get(b:, 'coc_diagnostic_info', {})
 

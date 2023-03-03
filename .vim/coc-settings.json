@@ -1,4 +1,7 @@
 {
+  // Let ALE handle formatting
+  "diagnostic.displayByAle": true,
+
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
   "coc.preferences.extensionUpdateCheck": "weekly",
   // XXX: How does this work with ale's ale_fix_on_save?
@@ -10,8 +13,6 @@
   "list.alignColumns": true,
 
   "notification.statusLineProgress": true,
-
-  "diagnostic.displayByAle": true,
 
   "diagnostic-languageserver.filetypes": {
     "text": ["proselint"]
