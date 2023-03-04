@@ -1,0 +1,9 @@
+#!/bin/bash
+
+gtl
+source venv/bin/activate || {
+  echo "Can't activate venv."
+  exit 1
+}
+
+venv/bin/git-plugin "$@"
