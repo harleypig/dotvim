@@ -1,9 +1,12 @@
 #!/bin/bash
 
 gtl
+
 source venv/bin/activate || {
   echo "Can't activate venv."
   exit 1
 }
+
+pip install -e .
 
 venv/bin/git-plugin "$@"
