@@ -42,4 +42,4 @@
 	path = .vim/pack/syntax/start/jq
 [submodule "coc-terminal"]
 	url = https://github.com/fannheyward/coc-terminal.git
-	path = .vim/pack/testing/start/coc-terminal
+	path = .vim/pack/util/start/coc-terminal
