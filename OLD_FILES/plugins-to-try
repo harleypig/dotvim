@@ -49,9 +49,6 @@ vim-lint:
 calendar:
   url: https://github.com/itchyny/calendar.vim
 
-jq:
-  url: https://github.com/vito-c/jq.vim.git
-
 vim-tmux:
   url: https://github.com/tmux-plugins/vim-tmux.git
 
