@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = 'git-plugin'
 version = '0.0.1'
 description = 'Manage vim plugins'
-dependencies = ['click', 'gitpython', 'giturlparse', 'jinja2', 'pyvim']
+dependencies = ['click', 'gitpython', 'giturlparse', 'jinja2']
 
 [project.scripts]
 git-plugin = 'git_plugin.cli:cli'

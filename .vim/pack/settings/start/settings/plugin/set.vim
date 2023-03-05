@@ -32,7 +32,6 @@ set   listchars=
 set   matchpairs+=<:>
 set   mouse=
 set   numberwidth=5
-set   pastetoggle=<Leader>paste
 set   path=.,$HOME
 set   report=1
 set   shortmess=a
