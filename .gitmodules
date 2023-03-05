@@ -14,10 +14,6 @@
 	path = .vim/pack/testing/start/vim-dadbod
 	url = https://github.com/tpope/vim-dadbod.git
 	ignore = dirty
-[submodule "vim-fugitive"]
-	path = .vim/pack/testing/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-	ignore = dirty
 [submodule "jsonc"]
 	path = .vim/pack/intellisense/start/jsonc
 	url = https://github.com/neoclide/jsonc.vim.git
