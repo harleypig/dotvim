@@ -13,6 +13,18 @@
 * terraform
 * yaml
 
+## Setup script
+
+* run update stuff first
+* coc branch needs to be manually checked out to the release branch
+  + submodule tracking checks out the hash as a detached head which doesn't
+      seem to work
+
+## Update
+
+* git submodule update --init --recursive --remote
+    + need to fix coc branch?
+
 ## COPY mode
 
 Steal
