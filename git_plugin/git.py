@@ -2,7 +2,7 @@ import click
 import git
 import giturlparse
 import pathlib
-import pudb
+#import pudb
 import os
 
 ##############################################################################
@@ -120,7 +120,6 @@ def validate_pack_directory(ctx, param, packdir):
 def add_plugin(url):
     """Add a git submodule to the .vim/pack/testing directory."""
 
-    pudb.set_trace()
     url = get_url(url)
 
     if url is None or not url.valid:
@@ -197,8 +196,6 @@ def move_plugin(sm, packdir):
 def remove_plugin(sm):
     """Remove named plugin."""
 
-    pudb.set_trace()
-
     sm = get_submodule(sm)
     if sm is None:
         print(f"{sm} is not a known submodule")
@@ -218,3 +215,38 @@ def remove_plugin(sm):
 
     except:
         print(f"error removing {sm.name}, repo may not be in a clean state")
+
+# ----------------------------------------------------------------------------
+def list_plugins():
+    """List all plugins."""
+
+    r = get_repo()
+
+    #submodules = sorted(r.submodules, key = lambda sm: sm.name)
+
+    groups = {}
+
+    for sm in r.submodules:
+        path = pathlib.PurePath(sm.path)
+        group_name = path.parts[2]
+        dir_name = path.parts[4]
+        name = sm.name
+
+        if name != dir_name:
+            name = f'{name} ({dir_name})'
+
+        if group_name not in groups:
+            groups[group_name] = []
+
+        groups[group_name].append(name)
+
+
+    sorted_groups = sorted(groups)
+
+    for group in sorted_groups:
+        groups[group].sort()
+
+        print(f"\n{group}:")
+
+        for name in groups[group]:
+            print(f'    {name}')

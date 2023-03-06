@@ -52,6 +52,12 @@ def remove(name):
     git.remove_plugin(name)
 
 # ----------------------------------------------------------------------------
+@cli.command()
+def list():
+    """Lists the current plugins."""
+    git.list_plugins()
+
+# ----------------------------------------------------------------------------
 #@cli.command()
 #def learning():
 #    """Generates a vim help formatted learning.txt."""

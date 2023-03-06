@@ -27,17 +27,6 @@ def capture():
     return clean.split('\n\n')
 
 #-----------------------------------------------------------------------------
-#def parse_definition(defline):
-#    parts = defline.split(None, 3)
-#
-#    # :h map-listin
-#    if len(parts) == 3 and parts[2].startswith(('*', '&', '@')):
-#        work = parts.pop(2)
-#        parts.extend(work.split('', 1))
-#
-#    return parts
-
-#-----------------------------------------------------------------------------
 def parse_last_set(value, lastline):
     parts = lastline.split(None)
     value.extend([parts[3], parts[5]])
@@ -56,7 +45,6 @@ def parse_definitions():
             values[-1] = parse_last_set(values[-1], l)
 
         else:
-            #values.append(parse_definition(l))
             values.append(l.split(None, 3))
 
     return values
@@ -85,5 +73,15 @@ def parse():
     return mappings
 
 #-----------------------------------------------------------------------------
-que = parse()
-print('done?')
+definitions = parse()
+
+for definition in definitions:
+    print(definition)
+
+    sorted_line_nos = sorted(definitions[definition].keys())
+
+    for line_no in sorted_line_nos:
+        for mapping in definitions[definition][line_no]:
+            print('    ', ' '.join(mapping), f' (line {line_no})')
+
+    print()
