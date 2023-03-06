@@ -8,6 +8,23 @@
 map <Leader>tt :CocCommand terminal.Toggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Toggle between showing signs and not showing signs
+
+function! ToggleSigns()
+  if (&signcolumn == "yes" || &signcolumn == "number")
+    set signcolumn=no
+  else
+    if (&number == 1 || &relativenumber == 1)
+      set signcolumn=number
+    else
+      set signcolumn=yes
+    endif
+  endif
+endfunction
+
+map <leader>signs :call ToggleSigns()<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle between the various ways of line numbering
 
 function! ToggleLineNumbers()

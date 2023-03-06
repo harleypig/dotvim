@@ -37,5 +37,4 @@ Add a statusline notifier.
 ### sign/number 
 
 * What is available to be in the gutter?
-* toggle git changes notification
 
