@@ -37,10 +37,6 @@ syntax on
 
 " @yaegassy/coc-ansible'
 
-let g:coc_global_extensions = [
-      \ 'coc-terminal'
-      \]
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load all plugins in .vim/pack/*/start
 packloadall!

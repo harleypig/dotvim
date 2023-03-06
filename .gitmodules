@@ -10,6 +10,7 @@
 	path = .vim/pack/intellisense/start/coc
 	url = https://github.com/neoclide/coc.nvim.git
 	ignore = dirty
+	branch = release
 [submodule "jsonc"]
 	path = .vim/pack/intellisense/start/jsonc
 	url = https://github.com/neoclide/jsonc.vim.git
@@ -32,8 +33,3 @@
 [submodule "jq"]
 	url = https://github.com/vito-c/jq.vim.git
 	path = .vim/pack/syntax/start/jq
-[submodule "coc-terminal"]
-	url = https://github.com/fannheyward/coc-terminal.git
-	path = .vim/pack/util/start/coc-terminal
-[submodule ".vim/pack/intellisense/start/coc/"]
-	branch = release

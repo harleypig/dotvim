@@ -3,12 +3,11 @@
 " a mapping.
 "set   pastetoggle=<Leader>pp
 
-" coc-terminal
-" https://github.com/fannheyward/coc-terminal
-map <Leader>tt :CocCommand terminal.Toggle<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>tt :terminal<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Toggle between showing signs and not showing signs
+" BEGIN README: coc-terminal
 
 function! ToggleSigns()
   if (&signcolumn == "yes" || &signcolumn == "number")
@@ -22,7 +21,10 @@ function! ToggleSigns()
   endif
 endfunction
 
+" Toggle showing of signs
 map <leader>signs :call ToggleSigns()<CR>
+
+" END README
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Toggle between the various ways of line numbering
