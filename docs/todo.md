@@ -31,3 +31,11 @@ Steal
 [this](https://github.com/timakro/vim-copytoggle/blob/master/plugin/copytoggle.vim).
 
 Add a statusline notifier.
+
+## Toggles
+
+### sign/number 
+
+* What is available to be in the gutter?
+* toggle git changes notification
+
