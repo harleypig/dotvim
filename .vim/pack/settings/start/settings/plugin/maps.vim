@@ -6,3 +6,6 @@
 " coc-terminal
 " https://github.com/fannheyward/coc-terminal
 map <Leader>tt :CocCommand terminal.Toggle<CR>
+
+" Toggle relative line numbering
+map <leader>rnu :set rnu!<CR>
