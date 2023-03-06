@@ -1,4 +1,4 @@
-" Excellent HTML formatted copy of the VIm documentation at
+" Exmellent HTML formatted copy of the VIm documentation at
 " https://vimhelp.org
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -27,15 +27,19 @@ syntax on
 " A list of installed extensions can be found in
 " ~/.config/coc/extensions/package.json
 
-let g:coc_global_extensions = [
-    \ '@yaegassy/coc-ansible', 'coc-coverage', 'coc-diagnostic',
-    \ 'coc-db', 'coc-dictd', 'coc-docker', 'coc-git',
-    \ 'coc-json', 'coc-lists', 'coc-markdownlint', 'coc-pairs',
-    \ 'coc-prettier', 'coc-pydocstring', 'coc-sh', 'coc-smartf', 'coc-sql',
-    \ 'coc-tasks', 'coc-terminal', 'coc-toml', 'coc-vimlsp', 'coc-yaml'
-    \]
+"let g:coc_global_extensions = [
+"    \ '@yaegassy/coc-ansible', 'coc-coverage', 'coc-diagnostic',
+"    \ 'coc-db', 'coc-dictd', 'coc-docker', 'coc-git',
+"    \ 'coc-json', 'coc-lists', 'coc-markdownlint', 'coc-pairs',
+"    \ 'coc-prettier', 'coc-pydocstring', 'coc-sh', 'coc-smartf', 'coc-sql',
+"    \ 'coc-tasks', 'coc-terminal', 'coc-toml', 'coc-vimlsp', 'coc-yaml'
+"    \]
 
 " @yaegassy/coc-ansible'
+
+let g:coc_global_extensions = [
+      \ 'coc-terminal'
+      \]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load all plugins in .vim/pack/*/start
