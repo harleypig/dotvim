@@ -35,3 +35,5 @@
 [submodule "coc-terminal"]
 	url = https://github.com/fannheyward/coc-terminal.git
 	path = .vim/pack/util/start/coc-terminal
+[submodule ".vim/pack/intellisense/start/coc/"]
+	branch = release
