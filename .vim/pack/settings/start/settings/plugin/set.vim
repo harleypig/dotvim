@@ -1,4 +1,4 @@
-" If you are having issues with some language servers, add the following to
+" iF you are having issues with some language servers, add the following to
 " either this file or, preferably, the ftplugin for that filetype.
 " See https://github.com/neoclide/coc.nvim/issues/649
 "
@@ -33,6 +33,7 @@ set   matchpairs+=<:>
 set   mouse=
 set   numberwidth=5
 set   path=.,$HOME
+"set   pastetoggle=<leader>pt
 set   report=1
 set   shortmess=a
 set   signcolumn=number

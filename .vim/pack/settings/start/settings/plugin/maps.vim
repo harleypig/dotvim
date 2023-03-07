@@ -4,7 +4,12 @@
 "set   pastetoggle=<Leader>pp
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>tt :terminal<CR>
+" README: Open terminal in a new window below the current window. Will not be
+" included in a sessions file.
+map <leader>tt :botright terminal ++norestore<CR>
+
+" README: Toggle paste mode.
+map <leader>pp :set paste!<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BEGIN README: coc-terminal
