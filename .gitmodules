@@ -35,4 +35,4 @@
 	path = .vim/pack/syntax/start/jq
 [submodule "vim-eunuch"]
 	url = https://github.com/tpope/vim-eunuch.git
-	path = .vim/pack/testing/start/vim-eunuch
+	path = .vim/pack/plugins/start/vim-eunuch
