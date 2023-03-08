@@ -33,3 +33,6 @@
 [submodule "jq"]
 	url = https://github.com/vito-c/jq.vim.git
 	path = .vim/pack/syntax/start/jq
+[submodule "vim-eunuch"]
+	url = https://github.com/tpope/vim-eunuch.git
+	path = .vim/pack/testing/start/vim-eunuch
