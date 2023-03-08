@@ -12,6 +12,15 @@ map <leader>tt :botright terminal ++norestore<CR>
 map <leader>pp :set paste!<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Requires vim-eunuch.
+if exists('g:loaded_eunuch')
+  " Use Sudowrite instead of write.
+  cmap w!! :call Sudowrite()
+else
+  cmap w!! %!sudo tee > /dev/null %
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BEGIN README: coc-terminal
 
 function! ToggleSigns()
