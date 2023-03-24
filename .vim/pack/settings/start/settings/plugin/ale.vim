@@ -12,3 +12,5 @@ let g:ale_fixers = {
 
 " Map ALEFix
 map <leader>fb :ALEFix<CR>
+
+let g:ale_virtualtext_cursor = 'disabled'

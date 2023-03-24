@@ -1,6 +1,7 @@
 {
   // Let ALE handle formatting
   "diagnostic.displayByAle": true,
+  "diagnostic.virtualText": false,
 
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
   "coc.preferences.extensionUpdateCheck": "weekly",
