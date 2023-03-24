@@ -36,3 +36,6 @@
 [submodule "vim-eunuch"]
 	url = https://github.com/tpope/vim-eunuch.git
 	path = .vim/pack/plugins/start/vim-eunuch
+[submodule "vim-surround"]
+	url = https://github.com/tpope/vim-surround.git
+	path = .vim/pack/testing/start/vim-surround
