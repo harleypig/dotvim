@@ -1,0 +1,93 @@
+#!/bin/bash
+
+# :shfmt -w -s -i 2 -bn -ci -sr %
+
+# Load release information
+source /etc/os-release
+
+##############################################################################
+#-----------------------------------------------------------------------------
+warn() { printf '%s\n' "$@" >&2; }
+die() {
+  (($#)) && warn "$@"
+  exit 1
+}
+
+warn "Figure out a way to use docker instead of installing all the linters and lsps ..."
+
+#-----------------------------------------------------------------------------
+exeutable() {
+  [[ -x "$(command -v "$1")" ]] && return 0
+  return 1
+}
+
+#-----------------------------------------------------------------------------
+install_msg() {
+  pkgname="$1"
+
+  if [[ $2 == http* ]]; then
+    osinstall="unknown package name - for $NAME"
+    pkg="see $2"
+
+  else
+    osinstall="(Unknown OS: $NAME)"
+    [[ $NAME == "Arch Linux" ]] && osinstall='trizen -S'
+    [[ $NAME == "Ubuntu" ]] && osinstall='apt install'
+    pkg="$2"
+  fi
+
+  printf -v msg '%s not installed: %s %s' "$pkgname" "$osinstall" "$pkg"
+  warn "$msg"
+}
+
+#-----------------------------------------------------------------------------
+declare -A checks
+
+##############################################################################
+# Ansible
+
+check_ansible() {
+  executable 'ansible' || return 0
+
+  executable 'ansible-lint' || install_msg 'ansible-lint' 'ansible-lint'
+
+  if ! executable 'ansible-language-server'; then
+    [[ $NAME == "Arch Linux" ]] && pkgname='ansible-language-server'
+    [[ $NAME == "Ubuntu" ]] && pkgname='https://als.readthedocs.io'
+    install_msg 'ansible-language-server' "$pkgname"
+  fi
+
+  warn "ansible also depends on yamllint"
+}
+
+checks[ansible]='check_ansible'
+
+##############################################################################
+# Docker
+
+check_docker() {
+  executable 'docker' || return 0
+
+  if ! executable 'docker_lint'; then
+    [[ $NAME == "Arch Linux" ]] && pkgname='docker-lint'
+    [[ $NAME == "Ubuntu" ]] && pkgname='https://github.com/projectatomic/dockerfile_lint'
+    install_msg 'docker_lint' "$pkgname"
+  fi
+
+  if ! executable 'hadolint'; then
+    [[ $NAME == "Arch Linux" ]] && pkgname='hadolint'
+    [[ $NAME == "Ubuntu" ]] && pkgname='https://github.com/hadolint/hadolint'
+    install_msg 'hadolint' "$pkgname"
+  fi
+}
+
+checks[docker]='check_docker'
+
+##############################################################################
+# Run checks
+
+sorted=("$(printf '%s\n' "${!checks[@]}" | sort)")
+
+for check in "${sorted[@]}"; do
+  "${checks[$check]}"
+done

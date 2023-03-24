@@ -12,6 +12,13 @@ map <leader>tt :botright terminal ++norestore<CR>
 map <leader>pp :set paste!<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/95139#95139
+" Comment to this answer: Instead of manually typing nohlsearch, try mapping
+" it. Ctrl-L already redraws the screen, so I make it also and remove search
+" highlighting: ... pydave Feb 23 at 19:04
+nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Requires vim-eunuch.
 if exists('g:loaded_eunuch')
   " Use Sudowrite instead of write.
