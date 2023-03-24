@@ -41,4 +41,4 @@
 	path = .vim/pack/plugins/start/vim-surround
 [submodule "vim-repeat"]
 	url = https://github.com/tpope/vim-repeat.git
-	path = .vim/pack/testing/start/vim-repeat
+	path = .vim/pack/plugins/start/vim-repeat
