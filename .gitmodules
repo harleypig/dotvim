@@ -12,7 +12,7 @@
 	ignore = dirty
 	branch = release
 [submodule "jsonc"]
-	path = .vim/pack/intellisense/start/jsonc
+	path = .vim/pack/plugins/start/jsonc
 	url = https://github.com/neoclide/jsonc.vim.git
 	ignore = dirty
 [submodule "vimspector"]
@@ -38,4 +38,7 @@
 	path = .vim/pack/plugins/start/vim-eunuch
 [submodule "vim-surround"]
 	url = https://github.com/tpope/vim-surround.git
-	path = .vim/pack/testing/start/vim-surround
+	path = .vim/pack/plugins/start/vim-surround
+[submodule "vim-repeat"]
+	url = https://github.com/tpope/vim-repeat.git
+	path = .vim/pack/testing/start/vim-repeat
