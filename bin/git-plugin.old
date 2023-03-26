@@ -119,10 +119,10 @@ _mv() {
 _rm() {
   [[ -z $1 ]] && die 'must pass name of submodule to be removed'
   local name="$1"
-  
+
   path="$(_get_path "$name")"
   [[ -z $path ]] && die "$name is not a submodule"
-  
+
   git rm -r "$path" || die "Problem removing $name"
   rm -fr ".git/modules/${path##*/}"
   git config --remove-section "submodule.$name"

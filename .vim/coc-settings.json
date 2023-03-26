@@ -5,7 +5,6 @@
 
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
   "coc.preferences.extensionUpdateCheck": "weekly",
-  // XXX: How does this work with ale's ale_fix_on_save?
   "coc.preferences.formatOnSave": true,
   "coc.preferences.useQuickfixForLocations": true,
 
@@ -18,6 +17,78 @@
   "diagnostic-languageserver.filetypes": {
     "text": ["proselint"]
   },
+
+  // coc-sh settings
+  "bashIde.enableSourceErrorDiagnostic": true,
+
+  // coc-spell-checker settings
+  // https://github.com/iamcco/coc-spell-checker
+
+  "cSpell.enabled": true,
+  "cSpell.showStatus": true,
+  "cSpell.enabledLanguageIds": [
+    "asciidoc",
+    "bash",
+    "c",
+    "cpp",
+    "csharp",
+    "css",
+    "dockerfile",
+    "go",
+    "haskell",
+    "html",
+    "java",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "latex",
+    "less",
+    "lua",
+    "markdown",
+    "php",
+    "plaintext",
+    "python",
+    "r",
+    "ruby",
+    "rust",
+    "scss",
+    "sh",
+    "sql",
+    "swift",
+    "tex",
+    "typescript",
+    "typescriptreact",
+    "vim",
+    "vue",
+    "xml",
+    "yaml"
+  ],
+
+  "cSpell.languageSettings": [
+    // Python
+    {
+      "languageId": "python",
+      "includeRegExpList": [
+        "strings",
+        "comments",
+      ]
+    },
+
+    // Shell
+    {
+      "languageId": "sh",
+      "includeRegExpList": [
+        "/#.*/",
+        "strings",
+      ]
+    },
+  ],
+
+  // Pyright settings
+  // https://github.com/fannheyward/coc-pyright
+  // https://github.com/microsoft/pyright
+  // https://microsoft.github.io/pyright
+  // look in pyrightconfig.json or pyproject.toml for more settings
 
   // Requires proselint be installed
   "diagnostic-languageserver.linters": {
@@ -47,14 +118,6 @@
   },
 
   "languageserver": {
-    // Requires bash-language-server be installed
-    "bash": {
-      "args": ["start"],
-      "command": "bash-language-server",
-      "filetypes": ["sh"],
-      "ignoredRootPaths": ["~"]
-    },
-
     // Requires docker-langserver be installed
     "dockerfile": {
       "args": ["--stdio"],

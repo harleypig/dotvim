@@ -52,7 +52,7 @@ if s:firstline =~# '-[^ ]*T'
   let s:flags .= 'T'
 endif
 
-" If 
+" If
 if exists('g:perl_compiler_force_warnings') && g:perl_compiler_force_warnings == 0
 	let s:warnopt = 'w'
 else

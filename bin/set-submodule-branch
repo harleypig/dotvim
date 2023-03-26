@@ -4,7 +4,7 @@ readarray -t submodules < <(grep '^\[submodule' .gitmodules | cut -d '"' -f 2)
 
 oldpwd="$PWD"
 
-for s in "${submodules[@]}"; do 
+for s in "${submodules[@]}"; do
   read -r branch < <(git config -f .gitmodules --get "submodule.$s.branch")
   [[ -n $branch ]] && continue
 

@@ -1,4 +1,3 @@
-" Maybe: https://github.com/rstacruz/vim-coc-settings/blob/master/after/plugin/coc.vim
 "let g:coc_disable_startup_warning = 1
 
 " use <tab> for trigger completion and navigate to the next complete item
@@ -9,14 +8,15 @@ endfunction
 
 inoremap <silent><expr> <Tab>
       \ coc#pum#visible() ? coc#pum#next(1) :
+      \ exists('b:_copilot') ? copilot#Accept("\<CR>") :
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 
 " select the first completion item and confirm the completion when no item has been selected
-inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+"inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 " Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-@> coc#refresh()
+"inoremap <silent><expr> <c-@> coc#refresh()
 
 " GoTo code navigation.
 "nmap <silent> gd <Plug>(coc-definition)

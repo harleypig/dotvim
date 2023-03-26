@@ -29,4 +29,3 @@ nmap <leader>f  <Plug>(coc-format-selected)
 
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
-

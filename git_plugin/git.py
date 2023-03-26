@@ -1,9 +1,12 @@
-import click
-import git
-import giturlparse
-import pathlib
 #import pudb
 import os
+import pathlib
+
+import click
+import giturlparse
+
+import git
+
 
 ##############################################################################
 # ----------------------------------------------------------------------------

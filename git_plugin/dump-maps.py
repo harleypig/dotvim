@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-import subprocess
 import re
+import subprocess
 
 # See ':h map-table'
 # See ':h map-listing'

@@ -126,7 +126,10 @@ set statusline+=[%c%V:%02l/%02L\ %p%%\ %{YASL_FileSize()}]
 set statusline+=[%03b:%02B]
 
 " What does vim think is under the cursor?
-set statusline+=%(\ %{synIDattr(synID(line('.'),col('.'),1),'name')}%)
+set statusline+=%([%{synIDattr(synID(line('.'),col('.'),1),'name')}]%)
+
+" XXX: This doesn't update reliably
+"set statusline+=%([%{get(b:,'coc_current_function','')}]%)
 
 " End of left justified, begin right justified.
 set statusline+=%=

@@ -18,3 +18,19 @@ git-plugin-learner = 'git_plugin.cli:learner'
 
 [tool.setuptools.packages]
 find = {}
+
+[tool.poetry]
+
+[tool.isort]
+import_heading_future = "Future Imports"
+import_heading_stdlib = "Standard Library Imports"
+import_heading_thirdparty = "Third Party Imports"
+import_heading_firstparty = "First Party Imports"
+import_heading_localfolder = "Local Imports"
+length_sort=1
+skip_gitignore=1
+
+[tool.pyright]
+venv = "venv"
+reportMissingImports = true
+disableOrganizeImports = true

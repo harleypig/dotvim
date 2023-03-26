@@ -8,10 +8,7 @@ source /etc/os-release
 ##############################################################################
 #-----------------------------------------------------------------------------
 warn() { printf '%s\n' "$@" >&2; }
-die() {
-  (($#)) && warn "$@"
-  exit 1
-}
+die() { (($#)) && warn "$@"; exit 1; }
 
 warn "Figure out a way to use docker instead of installing all the linters and lsps ..."
 

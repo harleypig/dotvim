@@ -27,13 +27,15 @@ syntax on
 " A list of installed extensions can be found in
 " ~/.config/coc/extensions/package.json
 
-"let g:coc_global_extensions = [
+let g:coc_global_extensions = [
+     \ 'coc-sh', 'coc-spell-checker', 'coc-pyright'
+     \]
+
 "    \ '@yaegassy/coc-ansible', 'coc-coverage', 'coc-diagnostic',
 "    \ 'coc-db', 'coc-dictd', 'coc-docker', 'coc-git',
 "    \ 'coc-json', 'coc-lists', 'coc-markdownlint', 'coc-pairs',
-"    \ 'coc-prettier', 'coc-pydocstring', 'coc-sh', 'coc-smartf', 'coc-sql',
+"    \ 'coc-prettier', 'coc-pydocstring', 'coc-smartf', 'coc-sql',
 "    \ 'coc-tasks', 'coc-terminal', 'coc-toml', 'coc-vimlsp', 'coc-yaml'
-"    \]
 
 " @yaegassy/coc-ansible'
 

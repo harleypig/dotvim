@@ -1,7 +1,10 @@
-import git
-import jinja2
 import os
 import pathlib
+
+import jinja2
+
+import git
+
 
 ##############################################################################
 # ----------------------------------------------------------------------------
@@ -34,4 +37,3 @@ def mk_submodule_doc(name):
     if submodule is None:
         print(f"Submodule {name} not found")
         exit(1)
-
