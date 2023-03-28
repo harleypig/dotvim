@@ -1,6 +1,10 @@
-[build-syste]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+#[build-syste]
+#requires = ["setuptools"]
+#build-backend = "setuptools.build_meta"
+#
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 
 [project]
 name = 'git-plugin'
@@ -19,8 +23,6 @@ git-plugin-learner = 'git_plugin.cli:learner'
 [tool.setuptools.packages]
 find = {}
 
-[tool.poetry]
-
 [tool.isort]
 import_heading_future = "Future Imports"
 import_heading_stdlib = "Standard Library Imports"
@@ -32,5 +34,24 @@ skip_gitignore=1
 
 [tool.pyright]
 venv = "venv"
+venvPath = "./venv"
 reportMissingImports = true
 disableOrganizeImports = true
+
+[tool.poetry]
+name = "git-plugin"
+version = "0.0.1"
+description = "Manage submodules for your repository"
+authors = ["Alan Young <harleypig@harleypig.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "git_plugin"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.28.2"
+
+[tool.poetry.group.dev.dependencies]
+pyright = "^1.1.300"
+pytest = "^7.2.2"
+pytest-pyright = "^0.0.3"

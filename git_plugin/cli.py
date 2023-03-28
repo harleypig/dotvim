@@ -1,6 +1,6 @@
-import click
 
 from . import git
+import click
 
 # import pudb
 
@@ -26,10 +26,7 @@ def cli():
 
 
 @cli.command()
-@click.argument('url',
-                callback=git.validate_plugin_url,
-                metavar='<url>'
-                )
+@click.argument('url', callback=git.validate_plugin_url, metavar='<url>')
 def add(url):
     """Adds the vim plugin found at 'url' as a submodule."""
     git.add_plugin(url)

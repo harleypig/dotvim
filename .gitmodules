@@ -29,7 +29,7 @@
 	ignore = dirty
 [submodule "copilot"]
 	url = https://github.com/github/copilot.vim.git
-	path = .vim/pack/intellisense/start/copilot
+	path = .vim/pack/intellisense/opt/copilot
 [submodule "jq"]
 	url = https://github.com/vito-c/jq.vim.git
 	path = .vim/pack/syntax/start/jq

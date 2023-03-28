@@ -23,12 +23,14 @@ syntax on
 
 " XXX: Figure out a way to update this list automatically, or at least on
 " demand.
+" https://github.com/neoclide/coc.nvim/issues/2857
 "
 " A list of installed extensions can be found in
 " ~/.config/coc/extensions/package.json
 
 let g:coc_global_extensions = [
-     \ 'coc-sh', 'coc-spell-checker', 'coc-pyright'
+     \ 'coc-sh', 'coc-spell-checker', 'coc-pyright', 'coc-docker',
+     \ 'coc-json', 'coc-toml'
      \]
 
 "    \ '@yaegassy/coc-ansible', 'coc-coverage', 'coc-diagnostic',
@@ -41,7 +43,8 @@ let g:coc_global_extensions = [
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load all plugins in .vim/pack/*/start
-packloadall!
+" This is done by default, it's not needed.
+"packloadall!
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Compile the help tags for all plugins

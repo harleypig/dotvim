@@ -1,11 +1,13 @@
 {
   // Let ALE handle formatting
   "diagnostic.displayByAle": true,
-  "diagnostic.virtualText": false,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": true,
+  "diagnostic.virtualTextFormat": " >>> %severity: %message {%source}",
 
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
   "coc.preferences.extensionUpdateCheck": "weekly",
-  "coc.preferences.formatOnSave": true,
+  "coc.preferences.formatOnSave": false,
   "coc.preferences.useQuickfixForLocations": true,
 
   "colors.enable": true,
@@ -13,6 +15,8 @@
   "list.alignColumns": true,
 
   "notification.statusLineProgress": true,
+
+  "signature.enable": false,
 
   "diagnostic-languageserver.filetypes": {
     "text": ["proselint"]
