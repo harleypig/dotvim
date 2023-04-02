@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "git-submodule-manager"
-version = "0.0.1"
+version = "0.0.2"
 description = "An intuitive Python CLI tool for streamlined Git submodule management, enabling users to add, move, and rename submodules with ease."
 authors = ["Alan Young <harleypig@harleypig.com>"]
 license = "MIT"
