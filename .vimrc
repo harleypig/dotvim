@@ -29,8 +29,8 @@ syntax on
 " ~/.config/coc/extensions/package.json
 
 let g:coc_global_extensions = [
-     \ 'coc-sh', 'coc-spell-checker', 'coc-pyright', 'coc-docker',
-     \ 'coc-json', 'coc-toml'
+     \ 'coc-sh', 'coc-pyright', 'coc-docker',
+     \ 'coc-json', 'coc-toml', 'coc-diagnostic'
      \]
 
 "    \ '@yaegassy/coc-ansible', 'coc-coverage', 'coc-diagnostic',
