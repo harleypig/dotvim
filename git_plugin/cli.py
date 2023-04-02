@@ -1,9 +1,10 @@
 
-from . import git
+from .git import GitPluginManager
 import click
 
 # import pudb
 
+manager = GitPluginManager()
 
 # ----------------------------------------------------------------------------
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
@@ -26,38 +27,38 @@ def cli():
 
 
 @cli.command()
-@click.argument('url', callback=git.validate_plugin_url, metavar='<url>')
+@click.argument('url', callback=manager.validate_plugin_url, metavar='<url>')
 def add(url):
     """Adds the vim plugin found at 'url' as a submodule."""
-    git.add_plugin(url)
+    manager.add_plugin(url)
 
 # ----------------------------------------------------------------------------
 
 
 @cli.command()
 @click.argument('name',
-                callback=git.validate_plugin_name,
+                callback=manager.validate_plugin_name,
                 metavar='<name>'
                 )
 @click.argument('pack',
-                callback=git.validate_pack_directory,
+                callback=manager.validate_pack_directory,
                 metavar='<pack>'
                 )
 def move(name, pack):
     """Moves the named submodule to the specified pack location."""
-    git.move_plugin(name, pack)
+    manager.move_plugin(name, pack)
 
 # ----------------------------------------------------------------------------
 
 
 @cli.command()
 @click.argument('name',
-                callback=git.validate_plugin_name,
+                callback=manager.validate_plugin_name,
                 metavar='<name>'
                 )
 def remove(name):
     """Removes the named submodule."""
-    git.remove_plugin(name)
+    manager.remove_plugin(name)
 
 # ----------------------------------------------------------------------------
 
@@ -65,7 +66,7 @@ def remove(name):
 @cli.command()
 def list():
     """Lists the current plugins."""
-    git.list_plugins()
+    manager.list_plugins()
 
 # ----------------------------------------------------------------------------
 # @cli.command()
