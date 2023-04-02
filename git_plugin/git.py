@@ -8,6 +8,7 @@ import giturlparse
 import git
 
 from typing import Optional, Union
+from util import eprint
 
 ##############################################################################
 # ----------------------------------------------------------------------------
