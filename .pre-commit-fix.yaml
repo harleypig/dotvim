@@ -1,0 +1,39 @@
+##############################################################################
+# ----------------------------------------------------------------------------
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.4.0
+  hooks:
+  - id: check-json
+  - id: check-xml
+  - id: check-builtin-literals
+  - id: check-ast
+  - id: debug-statements
+  - id: trailing-whitespace
+  - id: end-of-file-fixer
+  - id: check-yaml
+  - id: check-merge-conflict
+
+# ----------------------------------------------------------------------------
+- repo: https://github.com/psf/black
+  rev: 22.1.0
+  hooks:
+  - id: black
+
+# ----------------------------------------------------------------------------
+- repo: https://github.com/pycqa/isort
+  rev: 5.12.2
+  hooks:
+  - id: isort
+
+# ----------------------------------------------------------------------------
+- repo: https://github.com/pappasam/toml-sort-hook
+  rev: 0.18.0
+  hooks:
+  - id: toml-sort
+
+# ----------------------------------------------------------------------------
+- repo: https://github.com/hukkin/tomli
+  rev: 1.2.2
+  hooks:
+  - id: tomli-check
