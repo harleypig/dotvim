@@ -8,7 +8,7 @@ import giturlparse
 import git
 
 from typing import Optional, Union
-from util import eprint
+from .util import eprint
 
 ##############################################################################
 # ----------------------------------------------------------------------------
@@ -97,8 +97,8 @@ class GitPluginManager:
         return packdir
 
     # ------------------------------------------------------------------------
-    def url(self,
-            url: Union[str, giturlparse.result.GitUrlParsed]) -> Optional[giturlparse.result.GitUrlParsed]:
+    def parse_url(self,
+                  url: Union[str, giturlparse.result.GitUrlParsed]) -> Optional[giturlparse.result.GitUrlParsed]:
         """
         Get the parsed URL object for the given URL.
 
@@ -168,7 +168,7 @@ class GitPluginManager:
             click.BadParameter: If the URL is not valid.
         """
 
-        parsed_url = url(url)
+        parsed_url = self.parse_url(url)
 
         if parsed_url is None or not parsed_url.valid:
             raise click.BadParameter("not a valid url")
