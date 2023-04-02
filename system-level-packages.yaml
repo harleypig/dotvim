@@ -1,11 +1,18 @@
 ---
 black:
+  filename:
+    - .black.toml
   ArchLinux: python-black
 
 isort:
+  filename:
+    - .isort.cfg
   ArchLinux: python-isort
 
 pre-commit:
+  filename:
+    - .pre-commit-config.yaml
+    - .pre-commit-fix.yaml
   ArchLinux: python-pre-commit
 
 pycodestyle:
@@ -21,7 +28,14 @@ toml-sort:
   ArchLinux: python-toml-sort
 
 flake8:
+  filename:
+    - .flake8
   ArchLinux: python-flake8
 
 bandit:
   ArchLinux: python-bandit
+
+bump2version:
+  filename:
+    - .bumpversion.cfg
+  ArchLinux: python-bump2version
