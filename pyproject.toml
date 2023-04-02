@@ -14,11 +14,14 @@ click = "^8.1.3"
 giturlparse = "^0.10.0"
 
 [tool.poetry.group.dev.dependencies]
-ignsort = "^5.12.0"
+isort = "^5.12.0"
 pytest = "^7.2.2"
 pylint = "^2.17.1"
 pytest-cov = "^4.0.0"
+pre-commit = "^2.16.0"
+toml = "^0.10.2"
+toml-sort = "^0.18.0"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"

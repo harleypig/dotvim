@@ -5,6 +5,21 @@ import subprocess
 # Change this to the directory you're installing your virtual environment in.
 VENV='venv'
 
+##############################################################################
+# ----------------------------------------------------------------------------
+def eprint(*msgs) -> None:
+    """Print to STDERR """
+    print(*msgs, sep="\n", end=None, file=sys.stderr)
+
+# ----------------------------------------------------------------------------
+def eexit(*msgs, exit_code=1) -> None:
+    """Print to STDERR if a message exists, then exit with exit_code."""
+    if msgs:
+        eprint(msgs)
+
+    sys.exit(exit_code)
+
+# ----------------------------------------------------------------------------
 def activate_virtualenv():
     # If we're already in a virtual environment, do nothing
     if hasattr(sys, 'real_prefix') \
