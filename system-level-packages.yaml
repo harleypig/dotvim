@@ -1,0 +1,27 @@
+---
+black:
+  ArchLinux: python-black
+
+isort:
+  ArchLinux: python-isort
+
+pre-commit:
+  ArchLinux: python-pre-commit
+
+pycodestyle:
+  ArchLinux: python-pycodestyle
+
+pylint:
+  ArchLinux: python-pylint
+
+toml:
+  ArchLinux: python-toml
+
+toml-sort:
+  ArchLinux: python-toml-sort
+
+flake8:
+  ArchLinux: python-flake8
+
+bandit:
+  ArchLinux: python-bandit

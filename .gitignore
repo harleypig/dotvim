@@ -1,8 +1,10 @@
 **/__pycache__/**
 **/doc/tags
+
 build/**
-venv/**
+dist/**
 git_plugin.egg-info/**
+venv/**
 
 .netrwhist
 .vim/sessions
