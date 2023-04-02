@@ -5,7 +5,7 @@ description = "An intuitive Python CLI tool for streamlined Git submodule manage
 authors = ["Alan Young <harleypig@harleypig.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "git_submodule_manager"}]
+packages = [{include = "git_plugin"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"

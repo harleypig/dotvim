@@ -37,3 +37,13 @@ repos:
   rev: 1.2.2
   hooks:
   - id: tomli-check
+
+# ----------------------------------------------------------------------------
+repos:
+  - repo: https://github.com/pycqa/flake8
+    rev: 4.1.1
+    hooks:
+    - id: flake8
+      name: Fix Flake8
+      args: [--config=.flake8]
+
