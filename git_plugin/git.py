@@ -221,7 +221,7 @@ class GitPluginManager:
             url (Union[str, giturlparse.result.GitUrlParsed]): The URL string or GitUrlParsed object.
         """
 
-        url = self.url(url)
+        url = self.parse_url(url)
 
         if url is None or not url.valid:
             raise ValueError(f"{url} is not a valid url")
