@@ -142,5 +142,6 @@
   "markdownlint.config": {
     "default": true,
     "line-length": false
-  }
+  },
+  "toml.toml.": ""
 }
