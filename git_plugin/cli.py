@@ -1,6 +1,6 @@
-
 from .git import GitPluginManager
 import click
+from . import __version__
 
 # import pudb
 
@@ -10,8 +10,6 @@ manager = GitPluginManager()
 CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 
 # ----------------------------------------------------------------------------
-
-
 @click.group(context_settings=CONTEXT_SETTINGS)
 def cli():
     """git-plugin is a command-line tool for managing your VIm plugins using
@@ -24,8 +22,14 @@ def cli():
     pass
 
 # ----------------------------------------------------------------------------
+@click.command()
+def version():
+    """Prints the version number."""
+    click.echo(f"git-plugin version {__version__}")
 
+cli.add_command(version)
 
+# ----------------------------------------------------------------------------
 @cli.command()
 @click.argument('url', callback=manager.validate_plugin_url, metavar='<url>')
 def add(url):
@@ -33,8 +37,6 @@ def add(url):
     manager.add_plugin(url)
 
 # ----------------------------------------------------------------------------
-
-
 @cli.command()
 @click.argument('name',
                 callback=manager.validate_plugin_name,
@@ -49,8 +51,6 @@ def move(name, pack):
     manager.move_plugin(name, pack)
 
 # ----------------------------------------------------------------------------
-
-
 @cli.command()
 @click.argument('name',
                 callback=manager.validate_plugin_name,
@@ -61,8 +61,6 @@ def remove(name):
     manager.remove_plugin(name)
 
 # ----------------------------------------------------------------------------
-
-
 @cli.command()
 def list():
     """Lists the current plugins."""
