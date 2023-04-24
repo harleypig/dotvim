@@ -94,6 +94,13 @@
   // https://microsoft.github.io/pyright
   // look in pyrightconfig.json or pyproject.toml for more settings
 
+  "pyright.inlayHints.functionReturnTypes": false,
+  "pyright.inlayHints.variableTypes": false,
+
+  // coc-pyright flake8
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Stdin": true,
+
   // Requires proselint be installed
   "diagnostic-languageserver.linters": {
     "proselint": {
@@ -143,5 +150,4 @@
     "default": true,
     "line-length": false
   },
-  "toml.toml.": ""
 }
