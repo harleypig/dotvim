@@ -15,10 +15,6 @@
 	path = .vim/pack/plugins/start/jsonc
 	url = https://github.com/neoclide/jsonc.vim.git
 	ignore = dirty
-[submodule "vimspector"]
-	path = .vim/pack/testing/start/vimspector
-	url = https://github.com/puremourning/vimspector
-	ignore = dirty
 [submodule "asynctasks"]
 	path = .vim/pack/testing/start/asynctasks
 	url = https://github.com/skywind3000/asynctasks.vim.git
