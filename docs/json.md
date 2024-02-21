@@ -28,3 +28,13 @@ Note: While `jsonc.vim` provides syntax highlighting for JSONC files, full
 language support features such as schema validation and auto-completion are
 provided by the `coc-json` extension in conjunction with CoC. This ensures
 a comprehensive editing experience for JSONC within Vim.
+
+### JSON Configuration Locations
+
+The configuration for JSON handling is spread across different files depending on the tool:
+
+- **ALE Configuration**: The ALE linter settings for JSON are located in `.vim/pack/settings/start/settings/ftplugin/json.vim`. This file specifies which linters and fixers ALE should use for JSON files.
+
+- **CoC Configuration**: CoC settings for JSON, including language server settings, are found in `.vim/coc-settings.json`. This file contains the configuration for the `coc-json` extension and other language-specific settings.
+
+- **Vim Plugin Configuration**: Vim plugin settings, such as those for `jsonc.vim` and `vim-jq`, are typically set in the plugin's own documentation or help files. For `jsonc.vim`, the relevant settings are in the plugin's repository README or within the plugin's Vim help tags.
