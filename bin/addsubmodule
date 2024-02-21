@@ -1,0 +1,23 @@
+#!/bin/bash
+
+_add() {
+  local url="${1:?must pass url to add}"
+  local name="${url##*/}"
+  name="${name,,}"
+  name="${name%\.git}"
+  name="${name%\.vim}"
+  name="${name%\.nvim}"
+
+  grep "$name" .gitmodules && return 0
+
+  #echo git submodule add --name "$name" "$url" ".vim/2btested/$name"
+  git submodule add --name "$name" "$url" ".vim/2btested/$name"
+  git config -f .gitmodules submodule."$name".ignore dirty
+  mkreadme > README.md
+  git add .gitmodules README.md
+  git commit -m "updated readme after adding $name"
+}
+
+for u in "$@"; do
+  _add "$u"
+done

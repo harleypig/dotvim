@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# git config -f .gitmodules --get-regexp vim-abolish.path
+
+_mv() {
+  local name="${1:?must pass name}"
+  local newpath="${2:?must pass new path}"
+  local oldpath location
+
+  location="$newpath"
+
+  read -r oldpath < <(git config -f .gitmodules --get "submodule.${name}.path")
+
+  [[ -z $oldpath ]] && {
+    echo "$name not found in .gitmodules"
+    exit 1
+  }
+
+  if [[ $newpath == '2btested' ]]; then
+    newpath='.vim/2btested'
+
+  else
+    newpath=".vim/pack/$newpath/start"
+
+  fi
+
+  [[ $oldpath == "$newpath" ]] && {
+    echo "$name is already in $newpath"
+    exit 0
+  }
+
+  #echo git mv "$oldpath" "$newpath/$name"
+  git mv "$oldpath" "$newpath/$name"
+  mkreadme > README.md
+  git add "$newpath/$name" README.md
+  git commit -m "moved $name to $location and updated readme"
+}
+
+_mv "$@"
