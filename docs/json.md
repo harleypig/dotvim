@@ -63,3 +63,20 @@ The `jq` tool is configured as a fixer in ALE to format JSON files. This is set 
 ### Code Folding
 
 Code folding for JSON files is managed by Vim's built-in `foldmethod` setting, which is set to `syntax` for JSON files in the `.vim/pack/settings/start/settings/ftplugin/json.vim` file. This allows for folding based on the JSON syntax structure.
+### Plugins Used
+
+The following plugins are used for JSON support in this development environment:
+
+- **coc-json**: Provides JSON language support including schema validation, auto-completion, and more. It is a CoC extension and can be installed via the CoC extensions marketplace.
+  - Type: CoC extension
+  - [Repository](https://github.com/neoclide/coc-json)
+
+- **vim-jq**: Provides syntax highlighting for JSON and integration with the `jq` tool.
+  - Type: Vim plugin
+  - [Repository](https://github.com/vito-c/jq.vim)
+
+- **jsonc.vim**: Sets the filetype to `jsonc` for `.jsonc` files and provides syntax highlighting for JSON with comments.
+  - Type: Vim plugin
+  - [Repository](https://github.com/neoclide/jsonc.vim)
+
+These plugins are integrated with Vim and CoC to provide a comprehensive JSON editing experience, including features like linting, formatting, and auto-completion.
