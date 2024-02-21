@@ -12,11 +12,11 @@ inoremap <silent><expr> <Tab>
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 
-" select the first completion item and confirm the completion when no item has been selected
-"inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+" Use <cr> to confirm completion, <c-g>u to break undo chain.
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
-" Use <c-space> to trigger completion.
-"inoremap <silent><expr> <c-@> coc#refresh()
+" Use <c-space> to trigger completion if not using copilot.
+inoremap <silent><expr> <c-@> exists('b:_copilot') ? "\<C-@>" : coc#refresh()
 
 " GoTo code navigation.
 "nmap <silent> gd <Plug>(coc-definition)
