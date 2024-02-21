@@ -4,13 +4,11 @@ ALE (Asynchronous Lint Engine) and CoC (Conqueror of Completion) are both essent
 
 ## Required Packages for CoC and ALE
 
-To use CoC and ALE as configured in this repository, the following packages and tools must be installed:
+To use CoC and ALE as they are configured in this repository, the following packages must be installed:
 
-- **Node.js**: Required for CoC extension host.
-- **npm** or **yarn**: Package managers to install CoC extensions.
-- **Language servers**: Specific to the programming languages you are using, such as `coc-pyright` for Python or `coc-tsserver` for TypeScript/JavaScript.
-- **Linters and formatters**: Tools like `eslint` for JavaScript, `flake8` for Python, and `prettier` for code formatting.
-- **ALE fixers**: For auto-fixing issues reported by linters, such as `isort` for Python import sorting.
-- **Vim plugins**: Additional Vim plugins that integrate with ALE or CoC, such as `vim-ale-coc` for disabling ALE linting where CoC provides diagnostics.
+- **Node.js**: Required for running the CoC extension host.
+- **npm** or **yarn**: Used to install CoC extensions.
+
+Ensure that Node.js and a package manager like npm or yarn are installed and properly configured in your environment to fully utilize the capabilities of ALE and CoC in Vim.
 
 Ensure that these tools are installed and properly configured in your environment to fully utilize the capabilities of ALE and CoC in Vim.
