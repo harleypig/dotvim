@@ -1,3 +1,6 @@
+.aider.*
+!.aider.conf.yml
+
 **/__pycache__/**
 **/doc/tags
 
