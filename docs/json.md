@@ -19,3 +19,5 @@ The following Vim plugins are used for enhanced JSON editing:
 
 - `vim-jq`: Provides syntax highlighting for JSON and integration with the `jq` tool.
 - `jsonc.vim`: Sets the filetype to `jsonc` for `.jsonc` files and provides syntax highlighting for JSON with comments.
+
+Note: While `jsonc.vim` provides syntax highlighting for JSONC files, full language support features such as schema validation and auto-completion are provided by the `coc-json` extension in conjunction with CoC. This ensures a comprehensive editing experience for JSONC within Vim.
