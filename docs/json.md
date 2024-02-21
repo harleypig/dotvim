@@ -45,18 +45,16 @@ on the tool:
     `.vim/pack/settings/start/settings/ftplugin/json.vim`. This file specifies
     which linters and fixers ALE should use for JSON files.
 
-- **CoC Configuration**: CoC settings for JSON, including language server
-    settings, are found in `.vim/coc-settings.json`. This file contains the
-    configuration for the `coc-json` extension and other language-specific
-    settings.
-
 - **Vim Plugin Configuration**: Vim plugin settings, such as those for
     `jsonc.vim` and `vim-jq`, are typically set in the plugin's own
     documentation or help files. For `jsonc.vim`, the relevant settings are in
     the plugin's repository README or within the plugin's Vim help tags.
+
 ### Linting and Static Analysis
 
-Linting for JSON files is performed by `eslint`, which is configured in the ALE settings within the `.vim/pack/settings/start/settings/ftplugin/json.vim` file.
+Linting for JSON files is performed by `eslint`, which is configured in the
+ALE settings within the `.vim/pack/settings/start/settings/ftplugin/json.vim`
+file.
 
 ### Formatting and Beautification
 
