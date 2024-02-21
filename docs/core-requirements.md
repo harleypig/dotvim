@@ -1,3 +1,5 @@
+When creating new documentation files, use the hash (#) style of Markdown for headings. Each new file should start with a level 2 heading (##) to maintain consistency and structure within the documentation.
+
 Language or Configuration Format Documentation Template
 
 Use this template as a guide when documenting support for a language or
