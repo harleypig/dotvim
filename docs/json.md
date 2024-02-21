@@ -9,6 +9,13 @@ These packages are used by the ALE plugin for linting and formatting JSON files 
 
 ### CoC Extensions Required for JSON
 
-The current configuration requires the following CoC extensions to be installed for JSON support:
+The current configuration requires the following CoC extensions and Vim plugins to be installed for JSON support:
 
 - `coc-json`: For JSON language support and features like schema validation and auto-completion.
+
+### Vim Plugins for JSON
+
+The following Vim plugins are used for enhanced JSON editing:
+
+- `vim-jq`: Provides syntax highlighting for JSON and integration with the `jq` tool.
+- `jsonc.vim`: Sets the filetype to `jsonc` for `.jsonc` files and provides syntax highlighting for JSON with comments.
