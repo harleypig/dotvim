@@ -22,9 +22,15 @@ These instructions are for the AI:
   * The location of configuration files (if any) that hold this information.
   * Any additional notes or considerations relevant to the setup or usage of the feature.
 
+* For the plugins used section, include the name of the plugin, the type (ale,
+    coc, vim plugin or builtin), a link to documentation and repository if
+    available.
+
 Core Requirements:
 
 * Required External Packages
+* Plugins Used
+* Language Server
 * Syntax Highlighting
 * Linting and Static Analysis
 * Auto Completion
