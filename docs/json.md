@@ -1,5 +1,7 @@
 ## JSON
 
+### Required External Packages
+
 For working with JSON files in this repository, the following external
 packages are configured and need to be installed:
 
@@ -12,12 +14,16 @@ files as specified in the
 
 ### CoC Extensions Required for JSON
 
+### Auto Completion
+
 The current configuration requires the following CoC extensions and Vim
 plugins to be installed for JSON support:
 
 - `coc-json`: For JSON language support and features like schema validation and auto-completion.
 
 ### Vim Plugins for JSON
+
+### Syntax Highlighting
 
 The following Vim plugins are used for enhanced JSON editing:
 
@@ -30,6 +36,8 @@ provided by the `coc-json` extension in conjunction with CoC. This ensures
 a comprehensive editing experience for JSONC within Vim.
 
 ### JSON Configuration Locations
+
+### Schema or Contract Validation
 
 The configuration for JSON handling is spread across different files depending
 on the tool:
