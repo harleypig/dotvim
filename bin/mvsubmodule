@@ -3,8 +3,8 @@
 # git config -f .gitmodules --get-regexp vim-abolish.path
 
 _mv() {
-  local name="${1:?must pass name}"
-  local newpath="${2:?must pass new path}"
+  local name="${1:?must pass name of submodule as it appears in .gitmodules}"
+  local newpath="${2:?must pass new path '.vim/pack/NEWPATH/start'}"
   local oldpath location
 
   location="$newpath"
@@ -21,7 +21,10 @@ _mv() {
 
   else
     newpath=".vim/pack/$newpath/start"
-
+    mkdir -p "$newpath" || {
+      echo "Unable to create $newpath, exiting."
+      exit 1
+    }
   fi
 
   [[ $oldpath == "$newpath" ]] && {
@@ -31,8 +34,9 @@ _mv() {
 
   #echo git mv "$oldpath" "$newpath/$name"
   git mv "$oldpath" "$newpath/$name"
-  mkreadme > README.md
-  git add "$newpath/$name" README.md
+  #mkreadme > README.md
+  #git add "$newpath/$name" README.md
+  git add "$newpath/$name"
   git commit -m "moved $name to $location and updated readme"
 }
 
