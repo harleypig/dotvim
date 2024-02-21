@@ -12,6 +12,9 @@ These packages are used by the ALE plugin for linting and formatting JSON
 files as specified in the
 `.vim/pack/settings/start/settings/ftplugin/json.vim` configuration file.
 
+For linting JSON files, `eslint` is used to identify and report on patterns in JSON.
+For formatting JSON files, `jq` is used as a lightweight and flexible command-line JSON processor.
+
 ### Auto Completion
 
 The current configuration requires the following CoC extensions and Vim
@@ -31,6 +34,8 @@ language support features such as schema validation and auto-completion are
 provided by the `coc-json` extension in conjunction with CoC. This ensures
 a comprehensive editing experience for JSONC within Vim.
 
+The `vim-jq` plugin provides syntax highlighting for JSON and integration with the `jq` tool.
+
 ### Schema or Contract Validation
 
 The configuration for JSON handling is spread across different files depending
@@ -49,3 +54,14 @@ on the tool:
     `jsonc.vim` and `vim-jq`, are typically set in the plugin's own
     documentation or help files. For `jsonc.vim`, the relevant settings are in
     the plugin's repository README or within the plugin's Vim help tags.
+### Linting and Static Analysis
+
+Linting for JSON files is performed by `eslint`, which is configured in the ALE settings within the `.vim/pack/settings/start/settings/ftplugin/json.vim` file.
+
+### Formatting and Beautification
+
+The `jq` tool is configured as a fixer in ALE to format JSON files. This is set up in the `.vim/pack/settings/start/settings/ftplugin/json.vim` file.
+
+### Code Folding
+
+Code folding for JSON files is managed by Vim's built-in `foldmethod` setting, which is set to `syntax` for JSON files in the `.vim/pack/settings/start/settings/ftplugin/json.vim` file. This allows for folding based on the JSON syntax structure.
