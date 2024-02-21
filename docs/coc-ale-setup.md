@@ -9,6 +9,14 @@ To use CoC and ALE as they are configured in this repository, the following pack
 - **Node.js**: Required for running the CoC extension host.
 - **npm** or **yarn**: Used to install CoC extensions.
 
+### Node.js Installation Options
+
+For installing Node.js, you can either:
+
+- Use **nvm** (Node Version Manager) to install and manage multiple Node.js versions.
+- Use the **nodesource** repository to install a specific version of Node.js.
+- **npm** or **yarn**: Used to install CoC extensions.
+
 Ensure that Node.js and a package manager like npm or yarn are installed and properly configured in your environment to fully utilize the capabilities of ALE and CoC in Vim.
 
 Ensure that these tools are installed and properly configured in your environment to fully utilize the capabilities of ALE and CoC in Vim.
