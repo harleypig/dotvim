@@ -91,6 +91,11 @@
 "
 " * eslint
 " * disabled by default
+let g:ale_linters = {
+      \ 'json': ['eslint'],
+      \ 'jsonc': ['eslint'],
+      \ 'json5': ['eslint'],
+      \}
 
 let g:ale_fixers.json = ['jq']
 let g:ale_fixers.jsonc = ['jq']
