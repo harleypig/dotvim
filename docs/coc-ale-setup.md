@@ -19,4 +19,16 @@ For installing Node.js, you can either:
 
 Ensure that Node.js and a package manager like npm or yarn are installed and properly configured in your environment to fully utilize the capabilities of ALE and CoC in Vim.
 
+## ALE and CoC Configuration Settings
+
+The settings for ALE and CoC are distributed across several files within this repository. Here is a broad overview of the configuration:
+
+- **ALE Settings**: ALE settings are primarily located in `.vim/pack/settings/start/settings/plugin/ale.vim`. This file contains ALE-specific Vimscript settings such as disabling linting when CoC is active, setting linting behaviors, and defining ALE fixers.
+
+- **CoC Settings**: CoC's main configuration is found in `.vim/coc-settings.json`, which is a JSON file that dictates the behavior of CoC features, including diagnostics display, formatting, and language server configurations.
+
+- **Filetype-specific Settings**: Both ALE and CoC can have filetype-specific settings. These are located in files within the `.vim/pack/settings/start/settings/ftplugin/` directory, where each file corresponds to a particular filetype and contains settings and fixers relevant to that filetype.
+
+These configuration files are designed to work together to provide a seamless experience when using ALE and CoC in Vim. They can be customized further to fit the needs of individual development environments.
+
 Ensure that these tools are installed and properly configured in your environment to fully utilize the capabilities of ALE and CoC in Vim.
