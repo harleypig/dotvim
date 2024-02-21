@@ -62,10 +62,10 @@
 "
 " * [source](https://github.com/rhysd/fixjson)
 "
- " #### jq - JSON formatter
+" #### jq - JSON formatter
 "
 " * [home](https://stedolan.github.io/jq/)
- " * enabled as a fixer for autoformatting JSON files.
+" * enabled as a fixer for autoformatting JSON files.
 " #### jq
 "
 " * [home](https://stedolan.github.io/jq/)
@@ -95,13 +95,10 @@
 let g:ale_fixers.json = ['jq']
 let g:ale_fixers.jsonc = ['jq']
 
-
 let g:ale_linters = {
       \ 'json': ['jq'],
       \ 'jsonc': ['eslint'],
       \ 'json5': ['eslint'],
       \}
-
-" let g:ale_fixers = {}
 
 set foldmethod=syntax
