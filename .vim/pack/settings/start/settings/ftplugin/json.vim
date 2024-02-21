@@ -62,6 +62,10 @@
 "
 " * [source](https://github.com/rhysd/fixjson)
 "
+ " #### jq - JSON formatter
+"
+" * [home](https://stedolan.github.io/jq/)
+ " * enabled as a fixer for autoformatting JSON files.
 " #### jq
 "
 " * [home](https://stedolan.github.io/jq/)
@@ -87,6 +91,9 @@
 "
 " * eslint
 " * disabled by default
+
+let g:ale_fixers.json = ['jq']
+let g:ale_fixers.jsonc = ['jq']
 
 
 let g:ale_linters = {
