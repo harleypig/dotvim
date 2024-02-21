@@ -16,6 +16,8 @@ or setup section, provide the following information:
 Include only the bullet points that need to be documented for the specific
 language or configuration format.
 
+If a feature or setting is not specifically configured or altered in ALE, CoC, or within the settings directory, it does not require documentation. Only document settings that have been explicitly set or modified.
+
 Core Requirements:
 * Required External Packages
 * Syntax Highlighting
