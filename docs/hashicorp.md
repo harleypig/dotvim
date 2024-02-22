@@ -20,15 +20,15 @@ For working with HashiCorp tools, the following external packages are used:
 
 ### Plugins and Extensions Used
 
-XXX: TBD
+`coc` is the only plugin used.
 
 ### Configuration Files Used
 
-XXX: TBD
+`.vim/coc-settings.json` in the languageserver section.
 
 ### Language Server
 
-XXX: TBD
+`terraform-ls`
 
 ### Syntax Highlighting
 
