@@ -23,70 +23,70 @@
   },
 
   // coc-sh settings
-  "bashIde.enableSourceErrorDiagnostic": true,
+  //"bashIde.enableSourceErrorDiagnostic": true,
 
   // coc-spell-checker settings
   // https://github.com/iamcco/coc-spell-checker
 
-  "cSpell.enabled": true,
-  "cSpell.showStatus": true,
-  "cSpell.enabledLanguageIds": [
-    "asciidoc",
-    "bash",
-    "c",
-    "cpp",
-    "csharp",
-    "css",
-    "dockerfile",
-    "go",
-    "haskell",
-    "html",
-    "java",
-    "javascript",
-    "javascriptreact",
-    "json",
-    "latex",
-    "less",
-    "lua",
-    "markdown",
-    "php",
-    "plaintext",
-    "python",
-    "r",
-    "ruby",
-    "rust",
-    "scss",
-    "sh",
-    "sql",
-    "swift",
-    "tex",
-    "typescript",
-    "typescriptreact",
-    "vim",
-    "vue",
-    "xml",
-    "yaml"
-  ],
-
-  "cSpell.languageSettings": [
-    // Python
-    {
-      "languageId": "python",
-      "includeRegExpList": [
-        "strings",
-        "comments",
-      ]
-    },
-
-    // Shell
-    {
-      "languageId": "sh",
-      "includeRegExpList": [
-        "/#.*/",
-        "strings",
-      ]
-    },
-  ],
+//  "cSpell.enabled": true,
+//  "cSpell.showStatus": true,
+//  "cSpell.enabledLanguageIds": [
+//    "asciidoc",
+//    "bash",
+//    "c",
+//    "cpp",
+//    "csharp",
+//    "css",
+//    "dockerfile",
+//    "go",
+//    "haskell",
+//    "html",
+//    "java",
+//    "javascript",
+//    "javascriptreact",
+//    "json",
+//    "latex",
+//    "less",
+//    "lua",
+//    "markdown",
+//    "php",
+//    "plaintext",
+//    "python",
+//    "r",
+//    "ruby",
+//    "rust",
+//    "scss",
+//    "sh",
+//    "sql",
+//    "swift",
+//    "tex",
+//    "typescript",
+//    "typescriptreact",
+//    "vim",
+//    "vue",
+//    "xml",
+//    "yaml"
+//  ],
+//
+//  "cSpell.languageSettings": [
+//    // Python
+//    {
+//      "languageId": "python",
+//      "includeRegExpList": [
+//        "strings",
+//        "comments",
+//      ]
+//    },
+//
+//    // Shell
+//    {
+//      "languageId": "sh",
+//      "includeRegExpList": [
+//        "/#.*/",
+//        "strings",
+//      ]
+//    },
+//  ],
 
   // Pyright settings
   // https://github.com/fannheyward/coc-pyright
@@ -129,29 +129,29 @@
   },
 
   "languageserver": {
-  "vimls": {
-    "command": "vim-language-server",
-    "args": ["--stdio"],
-    "filetypes": ["vim"],
-    "initializationOptions": {
-      "iskeyword": "@,48-57,_,192-255,-#",
-      "vimruntime": "",
-      "runtimepath": "",
-      "diagnostic": {
-        "enable": true
-      },
-      "indexes": {
-        "runtimepath": true,
-        "gap": 100,
-        "count": 3,
-        "projectRootPatterns": ["runtime", "nvim", ".git", "autoload", "plugin"]
-      },
-      "suggest": {
-        "fromVimruntime": true,
-        "fromRuntimepath": false
-      }
-    }
-  },
+    "vimls": {
+      "command": "vim-language-server",
+      "args": ["--stdio"],
+      "filetypes": ["vim"],
+//      "initializationOptions": {
+//        "iskeyword": "@,48-57,_,192-255,-#",
+//        "vimruntime": "",
+//        "runtimepath": "",
+//        "diagnostic": {
+//          "enable": true
+//        },
+//        "indexes": {
+//          "runtimepath": true,
+//          "gap": 100,
+//          "count": 3,
+//          "projectRootPatterns": ["runtime", "nvim", ".git", "autoload", "plugin"]
+//        },
+//        "suggest": {
+//          "fromVimruntime": true,
+//          "fromRuntimepath": false
+//        }
+//      }
+    },
     // Requires docker-langserver be installed
     "dockerfile": {
       "args": ["--stdio"],
@@ -169,8 +169,8 @@
     }
   },
 
-  "markdownlint.config": {
-    "default": true,
-    "line-length": false
-  },
+//  "markdownlint.config": {
+//    "default": true,
+//    "line-length": false
+//  },
 }

@@ -3,11 +3,11 @@
 
 let g:ale_disable_lsp = 1
 let g:ale_linters_explicit = 1
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_text_changed = 'never'
 "let g:ale_list_vertical = 1
 "let g:ale_open_list = 1
 "let g:ale_sign_column_always = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 0
 let g:ale_virtualtext_cursor = 'disabled'
 
 " XXX: How does this work with coc's formatOnSave?
