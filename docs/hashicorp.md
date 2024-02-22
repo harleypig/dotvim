@@ -8,9 +8,11 @@ Packer, and the Terraform testing framework.
 
 For working with HashiCorp tools, the following external packages are used:
 
+- **terraform-ls**: Provides language server support for Terraform files, offering features like auto-completion, document formatting, and diagnostics.
 - **Terraform**: Provides infrastructure as code to define and provision data center infrastructure.
 - **Packer**: Enables the creation of machine and container images for multiple platforms from a single source configuration.
 
+These packages are used for linting, formatting, and potentially fixing infrastructure as code files.
 ### Plugins and Extensions Used
 
 XXX: TBD
