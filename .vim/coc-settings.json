@@ -166,6 +166,7 @@
       "filetypes": ["terraform", "tf"],
       "initializationOptions": {},
       "settings": {
+        "indexing.ignorePaths": [".aider.*"],
         // "terraform.logFilePath": "/path/to/logfile",
         // "terraform.timeout": "30s",
         // "terraform.path": "/path/to/terraform",
