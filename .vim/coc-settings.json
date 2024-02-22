@@ -165,7 +165,18 @@
       "command": "terraform-ls",
       "filetypes": ["terraform", "tf"],
       "initializationOptions": {},
-      "settings": {}
+      "settings": {
+        // "terraform.logFilePath": "/path/to/logfile",
+        // "terraform.timeout": "30s",
+        // "terraform.path": "/path/to/terraform",
+        // "indexing.ignorePaths": ["path/to/ignore"],
+        // "indexing.ignoreDirectoryNames": ["dir1", "dir2"],
+        // "commandPrefix": "string",
+        // "ignoreSingleFileWarning": true,
+        // "experimentalFeatures.validateOnSave": true,
+        // "experimentalFeatures.prefillRequiredFields": true,
+        // "validation.enableEnhancedValidation": true
+      }
     }
   },
 
