@@ -19,7 +19,7 @@ JSON.
 For formatting JSON files, `jq` is used as a lightweight and flexible
 command-line JSON processor.
 
-### Plugins Used
+### Plugins and Extensions Used
 
 The following plugins are used for JSON support in this development environment:
 
