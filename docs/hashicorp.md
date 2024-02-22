@@ -20,7 +20,11 @@ For working with HashiCorp tools, the following external packages are used:
 
 ### Plugins and Extensions Used
 
-`coc` is the only plugin used.
+The following plugins and extensions are used for HashiCorp tooling support:
+
+- **vim-terraform**: Provides syntax highlighting, formatting, and other features for Terraform files.
+- **ALE (Asynchronous Lint Engine)**: Used for linting Terraform files with `tflint`.
+- **CoC (Conqueror of Completion)**: Provides auto-completion and language server integration for Terraform via `coc-terraform`.
 
 ### Language Server
 
