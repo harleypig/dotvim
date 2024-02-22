@@ -5,11 +5,11 @@
 ##        vim -c 'source install-coc-extensions.vim'
 
 # Extract the list of extensions from package.json
-EXTENSIONS=$(jq -r '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json | sed "s/.*/'&',/")
+EXTENSIONS=$(jq -r '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json | sed "s/.*/'&',/" | tr '\n' ' ')
 
 echo "let g:coc_global_extensions = [" > install-coc-extensions.vim
 echo "$EXTENSIONS" >> install-coc-extensions.vim
 echo "]" >> install-coc-extensions.vim
 
-# Update .vimrc with the new list of extensions, ensuring proper escaping of the sed delimiter
-sed -i.bak -e "/let g:coc_global_extensions = \[/,/\]/c\let g:coc_global_extensions = [\n$EXTENSIONS\n]" .vimrc
+# Update .vimrc with the new list of extensions
+sed -i.bak -e "/let g:coc_global_extensions = \[/,/\]/c\let g:coc_global_extensions = [$EXTENSIONS]" .vimrc
