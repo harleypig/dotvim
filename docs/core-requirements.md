@@ -24,7 +24,9 @@ These instructions are for the AI:
 
 * For the plugins used section, include the name of the plugin, the type (ale,
     coc, vim plugin or builtin), a link to documentation and repository if
-    available.
+    available. Use the following format:
+
+[plugin name](link to documentation) (plugin type) (additional links, if any)
 
 Core Requirements:
 
