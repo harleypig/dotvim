@@ -22,9 +22,13 @@ For working with HashiCorp tools, the following external packages are used:
 
 `coc` is the only plugin used.
 
-### Configuration Files Used
+### Language Server
 
-`.vim/coc-settings.json` in the languageserver section.
+`terraform-ls`
+
+### Syntax Highlighting
+
+XXX: TBD
 
 ### Language Server
 
@@ -42,7 +46,7 @@ XXX: TBD
 
 XXX: TBD
 
-### Formatting and Beautification
+### Linting and Static Analysis
 
 XXX: TBD
 
@@ -54,7 +58,7 @@ XXX: TBD
 
 XXX: TBD
 
-### Snippets
+### Formatting and Beautification
 
 XXX: TBD
 
@@ -66,7 +70,7 @@ XXX: TBD
 
 XXX: TBD
 
-### Comment Support
+### Snippets
 
 XXX: TBD
 
