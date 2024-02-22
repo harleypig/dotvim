@@ -34,6 +34,11 @@ highlighting for JSON and integration with the `jq` tool.
 filetype to `jsonc` for `.jsonc` files and provides syntax highlighting for
 JSON with comments.
 
+### Language Server
+
+The `coc-json` extension is the JSON language server. The defaults for this
+extension are fine, so there are no settings to be documented.
+
 ### Auto Completion
 
 The current configuration requires the following CoC extensions and Vim
@@ -90,23 +95,3 @@ Code folding for JSON files is managed by Vim's built-in `foldmethod` setting,
 which is set to `syntax` for JSON files in the
 `.vim/pack/settings/start/settings/ftplugin/json.vim` file. This allows for
 folding based on the JSON syntax structure.
-### Language Server
-
-The JSON language server used in this development environment is provided by the `coc-json` extension, which utilizes the `vscode-json-languageserver`. The language server offers features such as schema validation, intelligent code completion, hover information, and document formatting. It is configured in the `.vim/coc-settings.json` file under the `languageserver` section.
-
-Here is an example of the relevant configuration snippet from `.vim/coc-settings.json`:
-
-```json
-"languageserver": {
-  "json": {
-    "command": "vscode-json-languageserver",
-    "args": ["--stdio"],
-    "filetypes": ["json", "jsonc"],
-    "initializationOptions": {
-      "provideFormatter": true
-    }
-  }
-}
-```
-
-This configuration ensures that JSON files are handled with the full capabilities of the language server, providing a rich editing experience within Vim.
