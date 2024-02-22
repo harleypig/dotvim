@@ -5,7 +5,7 @@
 ##        vim -c 'source install-coc-extensions.vim'
 
 # Extract the list of extensions from package.json
-EXTENSIONS=$(jq -r '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json | sed "s/.*/  \\'&',/")
+EXTENSIONS=$(jq -r '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json | sed "s/.*/    \\'&',/")
 
 printf '%s' "$EXTENSIONS"
 
