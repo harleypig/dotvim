@@ -1,6 +1,8 @@
 ## HashiCorp Configuration
 
-This document outlines the setup and configuration for HashiCorp tools used within this development environment, specifically focusing on Terraform, Packer, and the Terraform testing framework.
+This document outlines the setup and configuration for HashiCorp tools used
+within this development environment, specifically focusing on Terraform,
+Packer, and the Terraform testing framework.
 
 ### External Packages Used
 
