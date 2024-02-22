@@ -3,6 +3,12 @@
 This document outlines the plugins, extensions, and settings used specifically
 for editing Vim configuration files within this development environment.
 
+### Required External Packages
+
+For Vim file editing, the following external package is used:
+
+- **vim-language-server**: Provides language server support for Vim script files.
+
 ### Plugins and Extensions Used
 
 coc-vimlsp
