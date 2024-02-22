@@ -29,21 +29,31 @@ syntax on
 " ~/.config/coc/extensions/package.json
 
 let g:coc_global_extensions = [
-    \ 'coc-sh',
-    \ 'coc-pyright',
+    \ 'coc-diagnostic',
     \ 'coc-docker',
     \ 'coc-json',
+    \ 'coc-pyright',
+    \ 'coc-sh',
     \ 'coc-toml',
-    \ 'coc-diagnostic',
-     \]
+    \ 'coc-vimlsp',
+    \]
 
-"    \ '@yaegassy/coc-ansible', 'coc-coverage', 'coc-diagnostic',
-"    \ 'coc-db', 'coc-dictd', 'coc-docker', 'coc-git',
-"    \ 'coc-json', 'coc-lists', 'coc-markdownlint', 'coc-pairs',
-"    \ 'coc-prettier', 'coc-pydocstring', 'coc-smartf', 'coc-sql',
-"    \ 'coc-tasks', 'coc-terminal', 'coc-toml', 'coc-vimlsp', 'coc-yaml'
-
-" @yaegassy/coc-ansible'
+" coc-coverage
+" coc-db
+" coc-dictd
+" coc-git
+" coc-lists
+" coc-markdownlint
+" coc-pairs
+" coc-prettier
+" coc-pydocstring
+" coc-smartf
+" coc-sql
+" coc-tasks
+" coc-terminal
+" coc-toml
+" coc-yaml
+" @yaegassy/coc-ansible
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load all plugins in .vim/pack/*/start

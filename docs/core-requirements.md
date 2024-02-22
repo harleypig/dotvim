@@ -1,7 +1,5 @@
 Language or Configuration Format Documentation Template
 
-These instructions are for the AI:
-
 * When creating new documentation files, use the hash (#) style of Markdown
     for headings. Each new file should start with a level 2 heading (##) to
     maintain consistency and structure within the documentation.
@@ -30,8 +28,9 @@ These instructions are for the AI:
 
 Core Requirements:
 
-* Required External Packages
+* External Packages Used
 * Plugins and Extensions Used
+* Configuration Files Used
 * Language Server
 * Syntax Highlighting
 * Linting and Static Analysis

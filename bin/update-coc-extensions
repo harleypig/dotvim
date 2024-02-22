@@ -1,13 +1,22 @@
 #!/usr/bin/env bash
 
-## script that creates a file `install-coc-extensions.vim`
-## Use this command to install it (coc.nvim plugin required):
-##        vim -c 'source install-coc-extensions.vim'
+# Found on vi.stackexchange
+# https://vi.stackexchange.com/questions/39382/how-can-i-export-a-list-of-coc-extensions-and-install-it-on-another-machine
+
+NL=$'\n'
 
 # Extract the list of extensions from package.json
-EXTENSIONS=$(jq -r '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json | sed "s/.*/    \\'&',/")
+read -r -d '' UPDATE_EXTENSIONS << EOF
+let g:coc_global_extensions = \[
+$(jq -r '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json | sed "s#^#    \\\\\\\\ '#;s/$/',/")
+    \\\]
 
-printf '%s' "$EXTENSIONS"
+EOF
+
+#printf '%s' "$UPDATE_EXTENSIONS"
 
 # Update .vimrc with the new list of extensions
-sed -i.bak -e "/let g:coc_global_extensions = \[/,/\]/c\let g:coc_global_extensions = [\n$EXTENSIONS\n]" .vimrc
+#sed -e "\#let g:coc_global_extensions = \[#, \#\\\]# c\let g:coc_global_extensions = [\n$EXTENSIONS\n\\\]/" .vimrc
+#sed -e "\#let g:coc_global_extensions = \[#, \#    \\\]# c\
+#$UPDATE_EXTENSIONS" .vimrc
+perl -i -pe "BEGIN{undef $/;} s/let g:coc_global_extensions = \[.*\]/$UPDATE_EXTENSIONS/s" .vimrc
