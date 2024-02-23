@@ -1,1 +1,1 @@
-{"author":{"id":"c373ea69c8683d4c5bef3e20f056a769282e6a75847071082a5a9f80d72ebdfe"},"ops":[{"type":1,"timestamp":1708657305,"nonce":"Ob3VgVPo115PUTQoGuIurSBdh3U=","title":"add yaml support","message":"","files":null}]}
+{"author":{"id":"c373ea69c8683d4c5bef3e20f056a769282e6a75847071082a5a9f80d72ebdfe"},"ops":[{"type":5,"timestamp":1708657305,"nonce":"VmmojDtL1HzAMp1VkdnzwmlhNgo=","added":["setup"],"removed":null}]}
