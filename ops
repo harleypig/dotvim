@@ -1,1 +1,1 @@
-{"author":{"id":"c373ea69c8683d4c5bef3e20f056a769282e6a75847071082a5a9f80d72ebdfe"},"ops":[{"type":1,"timestamp":1708657304,"nonce":"xEUal96t9Nu3tQ3zDlF7nJs5uyc=","title":"add markdown support","message":"","files":null}]}
+{"author":{"id":"c373ea69c8683d4c5bef3e20f056a769282e6a75847071082a5a9f80d72ebdfe"},"ops":[{"type":5,"timestamp":1708657304,"nonce":"hmM+T4wtKBPXbCCK3U69KOy+bys=","added":["setup"],"removed":null}]}
