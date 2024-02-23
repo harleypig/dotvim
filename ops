@@ -1,1 +1,1 @@
-{"author":{"id":"c373ea69c8683d4c5bef3e20f056a769282e6a75847071082a5a9f80d72ebdfe"},"ops":[{"type":1,"timestamp":1708657166,"nonce":"PgYswI8AFpsvTJiiaFLy5mRV7mg=","title":"add ansible support","message":"","files":null}]}
+{"author":{"id":"c373ea69c8683d4c5bef3e20f056a769282e6a75847071082a5a9f80d72ebdfe"},"ops":[{"type":5,"timestamp":1708657405,"nonce":"ZkKSdUp792h58Jvj0GMB31cz8Qo=","added":["setup"],"removed":null}]}
