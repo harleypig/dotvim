@@ -1,1 +1,1 @@
-{"author":{"id":"c373ea69c8683d4c5bef3e20f056a769282e6a75847071082a5a9f80d72ebdfe"},"ops":[{"type":1,"timestamp":1708657305,"nonce":"3ciNhg1rg6dyfLS2B7gB2H/+ZOM=","title":"add toml support","message":"","files":null}]}
+{"author":{"id":"c373ea69c8683d4c5bef3e20f056a769282e6a75847071082a5a9f80d72ebdfe"},"ops":[{"type":5,"timestamp":1708657305,"nonce":"TLv+kDqKLWpavdQyyDB7dUpjEgM=","added":["setup"],"removed":null}]}
