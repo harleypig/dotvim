@@ -36,6 +36,7 @@ let g:coc_global_extensions = [
     \ 'coc-sh',
     \ 'coc-toml',
     \ 'coc-vimlsp',
+    \ '@yaegassy/coc-ansible'
     \]
 
 " coc-coverage
@@ -53,7 +54,6 @@ let g:coc_global_extensions = [
 " coc-terminal
 " coc-toml
 " coc-yaml
-" @yaegassy/coc-ansible
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Load all plugins in .vim/pack/*/start

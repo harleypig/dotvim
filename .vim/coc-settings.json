@@ -6,7 +6,7 @@
   "diagnostic.virtualTextFormat": " >>> %severity: %message {%source}",
 
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
-  "coc.preferences.extensionUpdateCheck": "weekly",
+  "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.formatOnSave": false,
   "coc.preferences.useQuickfixForLocations": true,
 
