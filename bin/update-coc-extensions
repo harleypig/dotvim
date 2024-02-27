@@ -13,4 +13,4 @@ EOF
 
 printf '%s' "$UPDATE_EXTENSIONS" && exit
 
-perl -i -pe "BEGIN{undef $/;} s#let g:coc_global_extensions = \[.*\]#$UPDATE_EXTENSIONS#s" .vimrc
+perl -i -pe "BEGIN{undef $/;} s#let g:coc_global_extensions = \[.*?\]#$UPDATE_EXTENSIONS#s" .vimrc
