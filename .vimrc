@@ -21,12 +21,7 @@ syntax on
 " anywhere, but it works.  The extensions are installed asynchronously, so
 " it's not a big deal if they aren't installed immediately.
 
-" XXX: Figure out a way to update this list automatically, or at least on
-" demand.
-" https://github.com/neoclide/coc.nvim/issues/2857
-"
-" A list of installed extensions can be found in
-" ~/.config/coc/extensions/package.json
+" Run bin/update-coc-extensions to make sure this is setup correctly.
 
 " This list has to exist before coc is loaded.
 let g:coc_global_extensions = [
@@ -58,19 +53,8 @@ let g:coc_global_extensions = [
 " coc-yaml
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Load all plugins in .vim/pack/*/start
-" This is done by default, it's not needed.
-"packloadall!
-
-" Map yaml.ansible filetype to ansible for coc-ansible extension
-let g:coc_filetype_map = {
-    \ 'yaml.ansible': 'ansible',
-    \}
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Compile the help tags for all plugins
 helptags ALL
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme norwaytoday
