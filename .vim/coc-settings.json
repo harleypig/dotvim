@@ -10,6 +10,11 @@
   "coc.preferences.formatOnSave": false,
   "coc.preferences.useQuickfixForLocations": true,
 
+  "ansible.enable": true,
+  "ansible.ansible.useFullyQualifiedCollectionNames": true,
+  "ansible.validation.enabled": true,
+  "ansible.validation.lint.enabled": true,
+
   "colors.enable": true,
 
   "list.alignColumns": true,

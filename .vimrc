@@ -28,6 +28,7 @@ syntax on
 " A list of installed extensions can be found in
 " ~/.config/coc/extensions/package.json
 
+" This list has to exist before coc is loaded.
 let g:coc_global_extensions = [
     \ 'coc-diagnostic',
     \ 'coc-docker',
@@ -36,6 +37,7 @@ let g:coc_global_extensions = [
     \ 'coc-sh',
     \ 'coc-toml',
     \ 'coc-vimlsp',
+    \ '@yaegassy/coc-ansible',
     \ '@yaegassy/coc-ansible'
     \]
 
@@ -59,6 +61,11 @@ let g:coc_global_extensions = [
 " Load all plugins in .vim/pack/*/start
 " This is done by default, it's not needed.
 "packloadall!
+
+" Map yaml.ansible filetype to ansible for coc-ansible extension
+let g:coc_filetype_map = {
+    \ 'yaml.ansible': 'ansible',
+    \}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Compile the help tags for all plugins
