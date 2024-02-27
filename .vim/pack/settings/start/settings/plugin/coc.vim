@@ -31,13 +31,11 @@ inoremap <silent><expr> <c-@> exists('b:_copilot') ? "\<C-@>" : coc#refresh()
 " Apply AutoFix to problem on the current line.
 "nmap <leader>qf  <Plug>(coc-fix-current)
 
-function! ShowLanguageServer()
-  let l:info = coc#rpc#request('workspace/showOutput', 'languageserver')
-  if l:info == v:null
-    echo "No language server is active for the current buffer."
-  else
-    echo l:info
-  endif
+function! ShowLanguageServer() abort
+  redir => l:output
+  silent CocList services
+  redir END
+  echo l:output
 endfunction
 
 command! LanguageServer call ShowLanguageServer()
