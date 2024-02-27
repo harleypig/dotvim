@@ -24,7 +24,7 @@ This document outlines the support for Ansible development within the Vim enviro
 
 ### Syntax Highlighting
 
-- Enabled by the vim-ansible plugin.
+- Enabled by the vim-polyglot plugin, which includes support for Ansible syntax highlighting.
 
 ### Linting and Static Analysis
 
