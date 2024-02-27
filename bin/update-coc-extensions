@@ -6,11 +6,11 @@
 # Extract the list of extensions from package.json
 read -r -d '' UPDATE_EXTENSIONS << EOF
 let g:coc_global_extensions = \[
-$(jq -r '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json | sed "s#^#    \\\\\\\\ '#;s/$/',/")
+$(jq -Sr '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json | sed "s#^#    \\\\\\\\ '#;s/$/',/")
     \\\]
 
 EOF
 
-printf '%s' "$UPDATE_EXTENSIONS" && exit
+#printf '%s' "$UPDATE_EXTENSIONS" && exit
 
-perl -i -pe "BEGIN{undef $/;} s#let g:coc_global_extensions = \[.*?\]#$UPDATE_EXTENSIONS#s" .vimrc
+perl -i -pe "BEGIN{undef $/;} s#let g:coc_global_extensions = \[.*?\]#\Q$UPDATE_EXTENSIONS#s" .vimrc
