@@ -11,6 +11,9 @@ $(jq -Sr '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json | se
 
 EOF
 
+readarray -t INSTALLED_EXTENSIONS < <(jq -Sr '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json)
+
+printf '%s' "$INSTALLED_EXTENSIONS" && exit
 #printf '%s' "$UPDATE_EXTENSIONS" && exit
 
 perl -i -pe "BEGIN{undef $/;} s#let g:coc_global_extensions = \[.*?\]#\Q$UPDATE_EXTENSIONS\E#s" .vimrc
