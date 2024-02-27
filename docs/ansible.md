@@ -9,7 +9,7 @@ This document outlines the support for Ansible development within the developmen
 
 ### Plugins and Extensions Used
 
-* [vim-ansible](https://github.com/pearofducks/ansible-vim) (vim plugin) - Provides Ansible syntax highlighting and sets the `yaml.ansible` filetype.
+* [vim-ansible](https://github.com/pearofducks/ansible-vim) (vim plugin) - Provides Ansible syntax highlighting and sets the `yaml.ansible` filetype, which is required by `coc-ansible`.
 * [coc-ansible](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions) (coc extension) - Offers auto-completion and other language features for Ansible.
 
 ### Configuration Files Used
@@ -78,6 +78,22 @@ This document outlines the support for Ansible development within the developmen
 * Vim automatically detects .yml and .yaml files. The `vim-ansible` plugin sets the `yaml.ansible` filetype, which is required by `coc-ansible`.
 
 This setup ensures a robust development environment for Ansible within Vim, leveraging the power of plugins and extensions to provide a rich set of features.
+### Built-in Installation
+
+* `coc-ansible` provides a built-in installation option for `ansible`, `ansible-lint`, and optionally `yamllint` within an extension-only virtual environment. This can be triggered manually with the `:CocCommand ansible.builtin.installRequirementsTools` command or will prompt on first use if these tools are not detected.
+
+### Commands
+
+* `coc-ansible` adds several commands to manage the Ansible development environment, such as restarting the language server, showing metadata, resyncing inventory, and displaying plugin information with `ansible-doc`.
+
+### Configuration Options
+
+* `coc-ansible` offers various configuration options to customize the behavior of the Ansible language server and related tools. These options can be set in the `.vim/coc-settings.json` file.
+
+### Code Actions
+
+* `coc-ansible` provides code actions that can be invoked with a mapped key in Vim. These actions include ignoring linting rules for the current line and showing web documentation for specific rules.
+
 ### Built-in Installation
 
 * `coc-ansible` provides a built-in installation option for `ansible`, `ansible-lint`, and optionally `yamllint` within an extension-only virtual environment. This can be triggered manually with the `:CocCommand ansible.builtin.installRequirementsTools` command or will prompt on first use if these tools are not detected.
