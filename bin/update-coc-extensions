@@ -11,12 +11,11 @@
 #
 #EOF
 
-readarray -t INSTALLED_EXTENSIONS < <(jq -Sr '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json)
-#INSTALLED_EXTENSIONS="${INSTALLED_EXTENSIONS[@]/#/    \\\\ }"
+readarray -t INSTALLED_EXTENSIONS < <(jq -Sr '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json | perl -pe 's/([@{}])/\\\\$1/g')
 
 read -r -d '' UPDATE_EXTENSIONS << EOF
 let g:coc_global_extensions = \[
-$(printf '    \\ %s\n' ${INSTALLED_EXTENSIONS[@]})
+$(printf '    \\ %s\n' "${INSTALLED_EXTENSIONS[@]}")
     \\\]
 
 EOF
@@ -24,4 +23,5 @@ EOF
 #printf '%s\n' "${INSTALLED_EXTENSIONS[@]}" && exit
 #printf '%s\n' "$UPDATE_EXTENSIONS" && exit
 
+echo "B0rked!" && exit 1
 perl -i -pe "BEGIN{undef $/;} s#let g:coc_global_extensions = \[.*?\]#$UPDATE_EXTENSIONS#s" .vimrc
