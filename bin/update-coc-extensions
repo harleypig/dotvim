@@ -11,7 +11,7 @@ $(jq -Sr '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json | se
 
 EOF
 
-mapfile -t INSTALLED_EXTENSIONS < <(jq -Sr '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json)
+readarray -t INSTALLED_EXTENSIONS < <(jq -Sr '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json)
 
 printf '%s\n' "${INSTALLED_EXTENSIONS[@]}" && exit
 #printf '%s' "$UPDATE_EXTENSIONS" && exit
