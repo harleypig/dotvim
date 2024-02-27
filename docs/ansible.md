@@ -1,6 +1,6 @@
 ## Ansible
 
-This document outlines the support for Ansible development within the Vim environment.
+This document outlines the support for Ansible development within the development environment.
 
 ### External Packages Used
 - ansible
@@ -9,15 +9,16 @@ This document outlines the support for Ansible development within the Vim enviro
 
 ### Plugins and Extensions Used
 
-* [coc-ansible](https://github.com/yaegassy/coc-ansible)
-    (coc extension) - Offers auto-completion and other language features for
-    Ansible.
+* [vim-ansible](https://github.com/pearofducks/ansible-vim) (vim plugin) - Provides Ansible syntax highlighting.
+* [coc-ansible](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions) (coc extension) - Offers auto-completion and other language features for Ansible.
 
 ### Configuration Files Used
 
 - .vim/pack/settings/start/settings/ftplugin/yaml.vim - Configures Vim to recognize YAML files, which are commonly used by Ansible.
 
 ### Language Server
+
+* No specific language server for Ansible, but YAML language servers can provide additional features.
 
 - No specific language server for Ansible, but YAML language servers can be used to enhance development experience.
 
@@ -27,6 +28,8 @@ This document outlines the support for Ansible development within the Vim enviro
 
 ### Linting and Static Analysis
 
+* ansible-lint and yamllint can be integrated using ALE or CoC.
+
 - ansible-lint and yamllint can be integrated with Vim using ALE or CoC to provide linting and static analysis.
 
 ### Auto Completion
@@ -34,6 +37,8 @@ This document outlines the support for Ansible development within the Vim enviro
 - Provided by the coc-ansible extension through CoC.
 
 ### Formatting and Beautification
+
+* None specific for Ansible, but YAML formatting tools can be used.
 
 - No specific formatter for Ansible, but YAML formatters can be used to format Ansible playbooks and roles.
 
@@ -43,6 +48,8 @@ This document outlines the support for Ansible development within the Vim enviro
 
 ### Code Folding
 
+* Built-in Vim settings can be used for folding YAML structures.
+
 - Vim's built-in code folding can be used to fold YAML structures in Ansible playbooks.
 
 ### Snippets
@@ -50,6 +57,8 @@ This document outlines the support for Ansible development within the Vim enviro
 - Snippets for Ansible tasks can be added to UltiSnips or a similar snippet plugin.
 
 ### Schema or Contract Validation
+
+* None specific for Ansible, but YAML schemas can be validated using a YAML language server.
 
 - No specific schema validation for Ansible, but YAML schemas can be validated using a YAML language server.
 
@@ -59,8 +68,13 @@ This document outlines the support for Ansible development within the Vim enviro
 
 ### Comment Support
 
+* Built-in Vim settings for YAML files provide comment support.
+
 - Vim's built-in comment support for YAML files applies to Ansible playbooks as well.
 
 ### Filetype Detection
 
 - Vim automatically detects .yml and .yaml files. Additional configuration can be added for Ansible-specific file types.
+* Vim automatically detects .yml and .yaml files. Additional configuration can be added for Ansible-specific file types.
+
+This setup ensures a robust development environment for Ansible within Vim, leveraging the power of plugins and extensions to provide a rich set of features.
