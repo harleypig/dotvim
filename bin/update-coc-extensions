@@ -4,16 +4,24 @@
 # https://vi.stackexchange.com/questions/39382/how-can-i-export-a-list-of-coc-extensions-and-install-it-on-another-machine
 
 # Extract the list of extensions from package.json
+#read -r -d '' UPDATE_EXTENSIONS << EOF
+#let g:coc_global_extensions = \[
+#$(jq -Sr '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json | sed "s#^#    \\\\\\\\ '#;s/$/',/")
+#    \\\]
+#
+#EOF
+
+readarray -t INSTALLED_EXTENSIONS < <(jq -Sr '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json)
+INSTALLED_EXTENSIONS="${INSTALLED_EXTENSIONS[@]/#/    \\\\ }"
+
 read -r -d '' UPDATE_EXTENSIONS << EOF
 let g:coc_global_extensions = \[
-$(jq -Sr '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json | sed "s#^#    \\\\\\\\ '#;s/$/',/")
+${INSTALLED_EXTENSIONS[@]}
     \\\]
 
 EOF
 
-readarray -t INSTALLED_EXTENSIONS < <(jq -Sr '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json)
-
-printf '%s\n' "${INSTALLED_EXTENSIONS[@]}" && exit
-printf '%s\n' "${INSTALLED_EXTENSIONS[@]/#/    \\\\ }" && exit
+#printf '%s\n' "${INSTALLED_EXTENSIONS[@]}" && exit
+printf '%s\n' "$UPDATE_EXTENSIONS" && exit
 
 #perl -i -pe "BEGIN{undef $/;} s#let g:coc_global_extensions = \[.*?\]#\Q$UPDATE_EXTENSIONS\E#s" .vimrc
