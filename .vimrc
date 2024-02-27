@@ -71,16 +71,6 @@ let g:coc_filetype_map = {
 " Compile the help tags for all plugins
 helptags ALL
 
-function! ShowLanguageServer()
-  let l:info = coc#rpc#request('workspace/showOutput', 'languageserver')
-  if l:info == v:null
-    echo "No language server is active for the current buffer."
-  else
-    echo l:info
-  endif
-endfunction
-
-command! LanguageServer call ShowLanguageServer()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme norwaytoday
