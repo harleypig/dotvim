@@ -88,10 +88,5 @@
 let g:ale_fixers.json = ['jq']
 let g:ale_fixers.jsonc = ['jq']
 
-let g:ale_linters = {
-      \ 'json': [],
-      \ 'jsonc': [],
-      \ 'json5': [],
-      \}
 
 set foldmethod=syntax
