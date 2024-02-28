@@ -49,11 +49,6 @@ The `coc-ansible` extension, which uses `ansible-language-server`, provides
 auto-completion features for Ansible.
 
 
-### Formatting and Beautification
-
-Ansible YAML files can be formatted using tools like `prettier` or specific rules from `ansible-lint`. These tools ensure that the code adheres to best practices and is presented in a clean and consistent format. Configuration for formatting tools can be specified in the `.vim/coc-settings.json` file or the respective tool's configuration file.
-
-
 
 
 ### filler
