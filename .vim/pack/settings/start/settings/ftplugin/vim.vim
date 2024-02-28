@@ -1,14 +1,8 @@
 " Configure ALE to use vim-language-server for Vimscript
-let b:ale_fixers = []
-
-let b:ale_fixers = []
-
-let b:ale_fixers = []
-
-let b:ale_fixers = []
+"let b:ale_fixers = []
 
 " Add vint as an ALE linter for Vimscript
-let b:ale_fixers = []
+"let b:ale_fixers = []
 
 let b:ale_linters = ['vint', 'vimls']
 

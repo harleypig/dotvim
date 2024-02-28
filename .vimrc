@@ -52,6 +52,5 @@ let g:coc_global_extensions = [
 " Compile the help tags for all plugins
 helptags ALL
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme norwaytoday
