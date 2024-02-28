@@ -20,7 +20,7 @@ This document outlines the support for Ansible development within the Vim enviro
 
 ### Configuration Files Used
 
-* .vim/pack/settings/start/settings/ftplugin/yaml.vim - Configures Vim to recognize YAML files, which are commonly used by Ansible.
+* [.vim/pack/settings/start/settings/ftplugin/yaml.vim](/.vim/pack/settings/start/settings/ftplugin/yaml.vim) - Configures Vim to recognize YAML files, which are commonly used by Ansible.
 
 ### Language Server and Linting
 
