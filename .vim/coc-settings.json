@@ -116,7 +116,7 @@
   //-------------------------------------------------------------------------
   // eslint settings
   // Requires coc-eslint extension to be installed
-  "eslint.enable": true,
+  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "eslint.packageManager": "npm",
   "eslint.autoFixOnSave": true,
 
