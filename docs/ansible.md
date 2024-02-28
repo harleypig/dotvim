@@ -4,9 +4,9 @@ This document outlines the support for Ansible development within the Vim enviro
 
 ### External Packages Used
 
-- ansible
-- ansible-lint
-- yamllint
+- [ansible](https://www.ansible.com/) - An open-source automation tool for software provisioning, configuration management, and application deployment.
+- [ansible-lint](https://github.com/ansible-community/ansible-lint) - A command-line tool for linting playbooks to identify practices and behaviour that could potentially be improved.
+- [yamllint](https://github.com/adrienverge/yamllint) - A linter for YAML files, ensuring that they adhere to a consistent format and structure.
 
 ### Plugins and Extensions Used
 
