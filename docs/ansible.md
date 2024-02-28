@@ -20,7 +20,8 @@ This document outlines the support for Ansible development within the Vim enviro
 
 ### Configuration Files Used
 
-* [yaml.vim](/vim/pack/settings/start/settings/ftplugin/yaml.vim) - Configures Vim to recognize YAML files, which are commonly used by Ansible.
+* [yaml.vim](/vim/pack/settings/start/settings/ftplugin/yaml.vim) - Configures
+    Vim to recognize YAML files, which are commonly used by Ansible.
 * `coc-settings` - Use `:CocConfig` to edit this file.
 
 ### Language Server and Linting
