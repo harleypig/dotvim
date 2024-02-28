@@ -18,6 +18,8 @@ which are clearly marked as such.
 
 ## General Documentation Rules
 
+* Avoid including generic information that does not add value to the document. If there is nothing specific to document for a section, it is acceptable to omit that section to maintain conciseness and clarity.
+
 A link for a plugin or extensions should only appear in the 'Plugins and
 Extensions Used' section. Other links are allowed as necessary, but each URL
 should only be mentioned once.
