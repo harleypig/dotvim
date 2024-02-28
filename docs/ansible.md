@@ -32,6 +32,5 @@ functionality.
 
 ### Syntax Highlighting
 
-Ansible syntax is highlighted through the
-[vim-polyglot](https://github.com/sheerun/vim-polyglot) plugin.
+Ansible syntax is highlighted through the vim-polyglot plugin.
 
