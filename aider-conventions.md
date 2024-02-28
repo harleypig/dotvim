@@ -19,6 +19,7 @@ Language or Configuration Format Documentation Template
 Core Requirements:
 
 * External Packages Used
+  * Include the package name, a markdown link to the home page, and a brief description.
 * Plugins and Extensions Used
 * Configuration Files Used
 * Language Server
