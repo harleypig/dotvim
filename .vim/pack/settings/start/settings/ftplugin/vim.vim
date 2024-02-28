@@ -6,6 +6,8 @@ let b:ale_fixers = ['vimls']
 let b:ale_fixers = ['vimls']
 
 " Add vint as an ALE linter for Vimscript
+let b:ale_fixers = ['vimls']
+
 let b:ale_linters = ['vint', 'vimls']
 
 let b:ale_vim_vimls_executable = 'vim-language-server'
