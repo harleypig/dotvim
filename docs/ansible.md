@@ -6,9 +6,9 @@ functionality.
 
 ### External Packages Used
 
-* [ansible](https://www.ansible.com/) - Open-source automation tool for software provisioning, configuration management, and application deployment.
-* [ansible-lint](https://github.com/ansible-community/ansible-lint) - Command-line tool for linting Ansible playbooks.
-* [yamllint](https://github.com/adrienverge/yamllint) - Linter for YAML files, ensuring consistent format and structure.
+* [ansible](https://www.ansible.com/) - Automation tool for provisioning, configuration management, and deployment.
+* [ansible-lint](https://github.com/ansible-community/ansible-lint) - Lints Ansible playbooks for best practices and potential errors.
+* [yamllint](https://github.com/adrienverge/yamllint) - Linter for YAML files to ensure consistent formatting.
 
 ### Plugins and Extensions Used
 
