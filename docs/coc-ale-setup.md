@@ -38,9 +38,18 @@ Configuration for ALE and CoC is managed through the following files:
 
 ### Syntax Highlighting
 
-Syntax highlighting in Vim is typically handled by the editor's built-in features and is enhanced by various plugins. CoC can also provide additional syntax highlighting through its extensions, which may offer more advanced features like semantic highlighting based on language server information.
+Syntax highlighting in Vim is typically handled by the editor's built-in
+features and is enhanced by various plugins. CoC can also provide additional
+syntax highlighting through its extensions, which may offer more advanced
+features like semantic highlighting based on language server information.
 
-For languages supported by CoC extensions, syntax highlighting is automatically managed and updated as you type, reflecting the real-time understanding of the code structure by the language server.
+For languages supported by CoC extensions, syntax highlighting is
+automatically managed and updated as you type, reflecting the real-time
+understanding of the code structure by the language server.
 
-In this setup, no additional Vim plugins are specifically dedicated to syntax highlighting, as the default Vim syntax highlighting and CoC extensions are deemed sufficient. If any language-specific plugins are used for syntax highlighting, they would be documented in the respective `ftplugin` files for each language.
+In this setup, no additional Vim plugins are specifically dedicated to syntax
+highlighting, as the default Vim syntax highlighting and CoC extensions are
+deemed sufficient. If any language-specific plugins are used for syntax
+highlighting, they would be documented in the respective `ftplugin` files for
+each language.
 
