@@ -1,4 +1,5 @@
 {
+  //-------------------------------------------------------------------------
   // Let ALE handle formatting
   // Diagnostics are displayed by ALE instead of CoC.
   "diagnostic.displayByAle": true,
@@ -30,13 +31,16 @@
   // Disables signature help.
   "signature.enable": false,
 
+  //-------------------------------------------------------------------------
   // Configuration for ansible-lint
   // https://ansible.readthedocs.io/projects/language-server/settings/
   "ansible.ansible.useFullyQualifiedCollectionNames": false,
 
+  //-------------------------------------------------------------------------
   // coc-sh settings
   //"bashIde.enableSourceErrorDiagnostic": true,
 
+  //-------------------------------------------------------------------------
   // coc-spell-checker settings
   // https://github.com/iamcco/coc-spell-checker
 
@@ -109,13 +113,12 @@
   "pyright.inlayHints.functionReturnTypes": false,
   "pyright.inlayHints.variableTypes": false,
 
+  //-------------------------------------------------------------------------
   // eslint settings
   // Requires coc-eslint extension to be installed
   "eslint.enable": true,
   "eslint.packageManager": "npm",
   "eslint.autoFixOnSave": true,
-  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "html"],
-
 
   // coc-pyright flake8
   "python.linting.flake8Enabled": true,
