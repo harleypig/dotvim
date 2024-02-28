@@ -2,18 +2,11 @@
 
 ### External Packages Used
 
-For linting JavaScript and related languages, [ESLint](https://eslint.org/) is used. It is a pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript.
+* [ESLint](https://eslint.org/): A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript and related languages.
 
-For working with JSON files in this repository, the following external
-packages are configured and need to be installed:
+* [jq](https://stedolan.github.io/jq/): A lightweight and flexible command-line JSON processor that is used for formatting JSON files.
 
-* [jq](https://stedolan.github.io/jq/): A lightweight and flexible command-line JSON processor used for formatting JSON files.
-
-The `jq` tool is used by the ALE plugin for formatting JSON files as specified in the
-`.vim/pack/settings/start/settings/ftplugin/json.vim` configuration file.
-
-For formatting JSON files, `jq` is used as a lightweight and flexible
-command-line JSON processor.
+The `jq` tool is configured in the `.vim/pack/settings/start/settings/ftplugin/json.vim` file to format JSON files.
 
 ### Plugins and Extensions Used
 
