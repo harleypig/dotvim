@@ -49,6 +49,9 @@ Configuration for ALE and CoC is managed through the following files:
 
 #### Settings for CoC.vim
 
+#### Settings for ALE
+
+The ALE settings in the `.vim/pack/settings/start/settings/plugin/ale.vim` file are grouped to optimize the plugin's behavior and integration with CoC. LSP features are disabled to prevent conflicts with CoC's LSP capabilities. Linters are not run automatically and must be explicitly defined, which allows for more controlled linting behavior. Linting upon leaving insert mode or when text changes is turned off to minimize distractions. Virtual text for inline error messages is disabled for a cleaner editing interface, while automatic fixing on file save is enabled to ensure code quality. ALE fixers are set up to clean up whitespace and other formatting issues across various file types, and a key mapping is provided for triggering fixes manually. These settings collectively aim to streamline the development workflow within Vim.
 The `coc.vim` file configures key mappings and behaviors for using CoC
 (Conquer of Completion) effectively within Vim. Here's a breakdown of the
 settings:
