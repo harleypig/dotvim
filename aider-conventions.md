@@ -2,8 +2,10 @@ Language or Configuration Format Documentation Template
 
 * For new documentation documents, start with a level 2 heading (##) using hash (#) Markdown style.
 * Document only non-default settings; default behaviors should not be included.
-* If sections are unaltered and handled by defaults, state this collectively at the end.
+* If sections are unaltered and handled by defaults, or are not applicable, state this collectively at the end.
 
+
+XXX: need to add key combos
 
   * A brief description of the feature or setting.
   * Whether this is a built-in Vim setting, or configured via ALE, CoC, or a plugin.
