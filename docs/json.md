@@ -37,4 +37,11 @@ The following configuration files are used for JSON support in this development 
     configuration for linting JavaScript and related languages, including
     JSON.
 
+### Linting and Static Analysis
+
+Linting JSON files in this development environment is managed by the following tools:
+
+* [`coc-eslint`](https://github.com/neoclide/coc-eslint) (CoC Extension): Integrates ESLint into Vim, providing linting for JavaScript and related languages within the CoC framework. It can be extended to support JSON files through plugins.
+* [`ale.vim`](.vim/pack/settings/start/settings/plugin/ale.vim): Specifies ALE fixers and linters for various file types, including JSON. ALE can be configured to use different linters for JSON files.
+
 ### filler
