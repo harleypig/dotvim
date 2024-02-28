@@ -18,7 +18,6 @@ which are clearly marked as such.
 
 ## General Documentation Rules
 
-External packages need only be documented if Vim requires specific configuration files for their use.
 Use asterisks (*) as bullet point indicators in lists.
 
 For new documentation documents, start with a level 2 heading (##) using hash
@@ -44,6 +43,8 @@ state this collectively at the end.
 * Only include this section if there is information to document.
 * Include each package name as a markdown link to the home page, and a brief
     description.
+* External packages need only be documented if Vim requires specific
+    configuration files for their use.
 
 ### Plugins and Extensions Used
 
