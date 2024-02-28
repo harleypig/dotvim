@@ -23,6 +23,13 @@ For installing Node.js, you can either:
 
 ### ALE and CoC Configuration Settings
 
+### Plugins and Extensions Used
+
+The following plugins and extensions are utilized by ALE and CoC within this repository:
+
+* [ALE](https://github.com/dense-analysis/ale) - An Asynchronous Lint Engine for Vim and Neovim.
+* [CoC](https://github.com/neoclide/coc.nvim) - Conquer of Completion, an intellisense engine for Vim/Neovim with LSP support.
+
 The settings for ALE and CoC are distributed across several files within this
 repository.
 
