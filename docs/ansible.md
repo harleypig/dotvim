@@ -24,6 +24,10 @@ functionality.
     - A collection of language packs for Vim, which includes support for
     Ansible syntax highlighting and filetype detection.
 
+### Syntax Highlighting
+
+* Ansible syntax is highlighted through the [vim-polyglot](https://github.com/sheerun/vim-polyglot) plugin, which includes language packs for a variety of programming languages, including Ansible.
+
 ### Configuration Files Used
 
 * [yaml.vim](/vim/pack/settings/start/settings/ftplugin/yaml.vim) - Configures
