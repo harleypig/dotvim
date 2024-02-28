@@ -13,6 +13,7 @@ XXX: need to add key combos
   * Any additional notes or considerations relevant to the setup or usage of the feature.
 
 * For the plugins and extensions used section, include the name of the plugin,
+  * Only include this section if there is information to document.
     the type (ale, coc, vim plugin or builtin), a link to documentation and
     repository if available. Use the following format:
 
