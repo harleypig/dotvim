@@ -1,6 +1,8 @@
 ## Ansible
 
-This document outlines the support for Ansible development within the Vim environment, integrating the `coc-ansible` extension for enhanced functionality.
+This document outlines the support for Ansible development within the Vim
+environment, integrating the `coc-ansible` extension for enhanced
+functionality.
 
 ### External Packages Used
 
