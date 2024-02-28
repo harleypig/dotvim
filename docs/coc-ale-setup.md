@@ -1,13 +1,5 @@
 ## ALE and CoC Setup
 
-ALE (Asynchronous Lint Engine) and CoC (Conqueror of Completion) are both
-essential plugins for Vim that enhance the coding experience by providing
-linting and intelligent code completion features. While ALE focuses on
-asynchronous linting, allowing you to see errors and warnings in your code
-without blocking the editor, CoC provides an Intellisense engine that powers
-features like auto-completion, code navigation, and more. They differ in their
-primary focus but can be configured to work together harmoniously within Vim.
-
 ### Required Packages for CoC and ALE
 
 To use CoC and ALE as they are configured in this repository, the following
