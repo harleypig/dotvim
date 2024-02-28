@@ -22,9 +22,6 @@
 [submodule "copilot"]
 	url = https://github.com/github/copilot.vim.git
 	path = .vim/pack/intellisense/opt/copilot
-[submodule "jq"]
-	url = https://github.com/vito-c/jq.vim.git
-	path = .vim/pack/syntax/start/jq
 [submodule "vim-eunuch"]
 	url = https://github.com/tpope/vim-eunuch.git
 	path = .vim/pack/plugins/start/vim-eunuch
