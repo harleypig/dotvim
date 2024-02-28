@@ -4,6 +4,8 @@ Language or Configuration Format Documentation Template
     for headings. Each new file should start with a level 2 heading (##) to
     maintain consistency and structure within the documentation.
 
+ * For new documents, start with a level 2 heading (##) using hash (#) Markdown style.
+
 * Include only the bullet points that need to be documented for the specific
     language or configuration format.
 
