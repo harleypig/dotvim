@@ -2,6 +2,13 @@
 
 This document lists utility plugins that enhance the Vim experience by providing specific functionalities. These utilities are documented here because they are more specific in their application compared to global plugins that affect the entire Vim environment.
 
+# Utility Plugins
+
+## TODO
+
+- Create conventions in the aider-conventions.md document for documenting utility plugins.
+- Split the documented utility plugins into their own sections for more detailed information.
+
 ## Existing Utility Plugins
 
 The following utility plugins are already installed and configured in this Vim environment:
