@@ -13,14 +13,18 @@ ensure accuracy and precision in your documentation:
 * [Vim Polyglot](https://github.com/sheerun/vim-polyglot) - A collection of
     language packs for Vim.
 
-Unless specifically noted, ALE (Asynchronous Lint Engine) does not manage linting within the Vim environment. Configuration should not enable ALE for linting purposes by default.
+Unless specifically noted, ALE (Asynchronous Lint Engine) does not manage
+linting within the Vim environment. Configuration should not enable ALE for
+linting purposes by default.
 
 You refrain from using fabricated data, except for illustrative examples,
 which are clearly marked as such.
 
 ## General Documentation Rules
 
-* Avoid including generic information that does not add value to the document. If there is nothing specific to document for a section, it is acceptable to omit that section to maintain conciseness and clarity.
+Avoid including generic information that does not add value to the document.
+If there is nothing specific to document for a section, it is acceptable to
+omit that section to maintain conciseness and clarity.
 
 A link for a plugin or extensions should only appear in the 'Plugins and
 Extensions Used' section. Other links are allowed as necessary, but each URL

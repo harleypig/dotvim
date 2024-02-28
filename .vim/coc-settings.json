@@ -19,6 +19,7 @@
   "signature.enable": false,
 
   // Configuration for ansible-lint
+  // https://ansible.readthedocs.io/projects/language-server/settings/
   "ansible.ansible.useFullyQualifiedCollectionNames": false,
 
   // coc-sh settings
