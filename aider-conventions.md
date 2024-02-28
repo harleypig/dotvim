@@ -52,7 +52,6 @@ a separate section.
 
 ### External Packages Used
 
-* Only include this section if there is information to document.
 * Include each package name as a markdown link to the home page, and a brief
     description.
 * External packages need only be documented if Vim requires specific
@@ -60,7 +59,6 @@ a separate section.
 
 ### Plugins and Extensions Used
 
-* Only include this section if there is information to document.
 * Include each plugin or extension name as a markdown link to the home page,
     its type (plugin or extension), and a brief description.
 * Note if a plugin or extension supports multiple languages or tasks (e.g.,
@@ -68,7 +66,6 @@ a separate section.
 
 ### Configuration Files Used
 
-* Only include this section if there is information to document.
 * List only relevant configuration files, including the name of the package,
     plugin, or extension being configured.
 * List any files as a markdown link to the path relative to the top level of
