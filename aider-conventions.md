@@ -35,7 +35,8 @@ fugitive by adding them as markdown links to their homepages in
 
 ## Possible Sections for Language and Configuration Documentation
 
-In documentation, only the following sections are allowed at the header 3 level (###):
+In documentation, only the following sections are allowed at the header
+3 level (###).
 
 If sections are unaltered and handled by defaults, or are not applicable,
 state this collectively at the end.
