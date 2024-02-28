@@ -74,8 +74,9 @@ state this collectively at the end.
 * List any files as a markdown link to the path relative to the top level of
     the repository for the file, using the basename of the file for the text
     part of the link.
-
-* For `coc-settings.json`, instead of a markdown link, include the blurb: 'Use `:CocConfig` to edit this file.' as its presence indicates it is being utilized.
+* For `coc-settings.json`, instead of a markdown link, include the blurb: 'Use
+    `:CocConfig` to edit this file.' as its presence indicates it is being
+    utilized.
 
 ### Remaining Possible Sections
 
