@@ -1,12 +1,9 @@
 Language or Configuration Format Documentation Template
 
-* When creating new documentation files, use the hash (#) style of Markdown
-    for headings. Each new file should start with a level 2 heading (##) to
-    maintain consistency and structure within the documentation.
+* For new documentation documents, start with a level 2 heading (##) using
+    hash (#) Markdown style.
 
- * For new documents, start with a level 2 heading (##) using hash (#) Markdown style.
-
-* Include only the bullet points that need to be documented for the specific
+* Include only the sections that need to be documented for the specific
     language or configuration format.
 
 * If a feature or setting is not specifically configured or altered in ALE,
