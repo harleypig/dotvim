@@ -24,6 +24,7 @@ Core Requirements:
   * Include each plugin or extension name as a markdown link to the home page, its type (plugin or extension), and a brief description.
   * Note if a plugin or extension supports multiple languages or tasks (e.g., language server, autoformatting, linting).
 * Configuration Files Used
+  * List only relevant configuration files, including the name of the package, plugin, or extension being configured.
 * Language Server
 * Syntax Highlighting
 * Linting and Static Analysis
