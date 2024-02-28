@@ -1,6 +1,6 @@
 ## ALE and CoC Setup
 
-### Required Packages for CoC and ALE
+### External Packages Used
 
 To use CoC and ALE as they are configured in this repository, the following
 packages must be installed before attempting use these features:
