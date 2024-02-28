@@ -36,6 +36,10 @@ Ansible syntax is highlighted through the `vim-polyglot` plugin.
 
 ### Linting and Static Analysis
 
-* `ansible-lint` is integrated through the `coc-ansible` extension and provides automated, as-you-type linting for Ansible playbooks, enforcing best practices and identifying potential errors.
-* `yamllint` is included as part of the `ansible-lint` checks, ensuring YAML files adhere to consistent formatting standards.
+`ansible-lint` is integrated through the `coc-ansible` extension and provides
+automated, as-you-type linting for Ansible playbooks, enforcing best practices
+and identifying potential errors.
+
+`yamllint` is included as part of the `ansible-lint` checks, ensuring YAML
+files adhere to consistent formatting standards.
 
