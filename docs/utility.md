@@ -9,7 +9,8 @@ that affect the entire Vim environment.
 
 * Document utility plugins by providing:
   - A brief description of the plugin's functionality.
-  - Instructions for installation and configuration.
+  - Any external requirements.
+  - FIX (already installed): Instructions for installation and configuration.
   - Key mappings and commands, if applicable.
   - Links to official documentation or the plugin's homepage.
 
