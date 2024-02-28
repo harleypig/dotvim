@@ -6,10 +6,14 @@ functionality.
 
 ### External Packages Used
 
-* [ansible](https://www.ansible.com/) - Automation tool for provisioning, configuration management, and deployment.
-* [ansible-lint](https://github.com/ansible-community/ansible-lint) - Lints Ansible playbooks for best practices and potential errors.
-* [yamllint](https://github.com/adrienverge/yamllint) - Linter for YAML files to ensure consistent formatting.
-* [ansible-language-server](https://github.com/ansible/ansible-language-server) - Provides language features like auto-completion and linting for Ansible.
+* [ansible](https://www.ansible.com/) - Automation tool for provisioning,
+    configuration management, and deployment.
+* [ansible-lint](https://github.com/ansible-community/ansible-lint) - Lints
+    Ansible playbooks for best practices and potential errors.
+* [yamllint](https://github.com/adrienverge/yamllint) - Linter for YAML files
+    to ensure consistent formatting.
+* [ansible-language-server](https://github.com/ansible/ansible-language-server)
+    - Provides language features like auto-completion and linting for Ansible.
 
 ### Plugins and Extensions Used
 
@@ -25,9 +29,4 @@ functionality.
 * [yaml.vim](/vim/pack/settings/start/settings/ftplugin/yaml.vim) - Configures
     Vim to recognize YAML files, which are commonly used by Ansible.
 * `coc-settings` - Use `:CocConfig` to edit this file.
-
-### Linting and Static Analysis
-
-* [ansible-lint](https://github.com/ansible-community/ansible-lint) - Lints Ansible playbooks, detecting errors and suggesting improvements for your code.
-* [yamllint](https://github.com/adrienverge/yamllint) - Ensures that YAML files, commonly used in Ansible playbooks, adhere to a consistent format and structure.
 
