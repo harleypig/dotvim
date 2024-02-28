@@ -24,18 +24,6 @@ inoremap <silent><expr> <c-@> exists('b:_copilot') ? "\<C-@>" : coc#refresh()
 "nmap <silent> gi <Plug>(coc-implementation)
 "nmap <silent> gr <Plug>(coc-references)
 
-" Formatting selected code.
-"xmap <leader>f  <Plug>(coc-format-selected)
-"nmap <leader>f  <Plug>(coc-format-selected)
 
-" Apply AutoFix to problem on the current line.
-"nmap <leader>qf  <Plug>(coc-fix-current)
 
-function! ShowLanguageServer() abort
-  redir => l:output
-  silent CocList services
-  redir END
-  echo l:output
-endfunction
 
-command! LanguageServer call ShowLanguageServer()
