@@ -13,6 +13,8 @@ ensure accuracy and precision in your documentation:
 * [Vim Polyglot](https://github.com/sheerun/vim-polyglot) - A collection of
     language packs for Vim.
 
+Unless specifically noted, ALE (Asynchronous Lint Engine) does not manage linting within the Vim environment. Configuration should not enable ALE for linting purposes by default.
+
 You refrain from using fabricated data, except for illustrative examples,
 which are clearly marked as such.
 
