@@ -40,10 +40,16 @@ Ansible syntax is highlighted through the `vim-polyglot` plugin.
 automated, as-you-type linting for Ansible playbooks, enforcing best practices
 and identifying potential errors.
 
-### Auto Completion
-
-The `coc-ansible` extension provides auto-completion features for Ansible, which include suggestions for modules, roles, variables, and more as you type. This enhances the efficiency of writing Ansible playbooks by reducing the need to refer to external documentation and by helping to avoid syntax errors.
-
 `yamllint` is included as part of the `ansible-lint` checks, ensuring YAML
 files adhere to consistent formatting standards.
 
+### Auto Completion
+
+The `coc-ansible` extension provides auto-completion features for Ansible,
+which include suggestions for modules, roles, variables, and more as you type.
+This enhances the efficiency of writing Ansible playbooks by reducing the need
+to refer to external documentation and by helping to avoid syntax errors.
+
+
+
+### filler

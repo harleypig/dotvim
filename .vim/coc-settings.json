@@ -10,12 +10,6 @@
   "coc.preferences.formatOnSave": false,
   "coc.preferences.useQuickfixForLocations": true,
 
-  // Configuration for ansible-lint
-  "ansible.enable": true,
-  "ansible.ansible.useFullyQualifiedCollectionNames": true,
-  "ansible.validation.enabled": true,
-  "ansible.validation.lint.enabled": true,
-
   "colors.enable": true,
 
   "list.alignColumns": true,
@@ -24,9 +18,8 @@
 
   "signature.enable": false,
 
-  "diagnostic-languageserver.filetypes": {
-    "text": ["proselint"]
-  },
+  // Configuration for ansible-lint
+  "ansible.ansible.useFullyQualifiedCollectionNames": false,
 
   // coc-sh settings
   //"bashIde.enableSourceErrorDiagnostic": true,
@@ -132,6 +125,10 @@
       },
       "sourceName": "proselint"
     }
+  },
+
+  "diagnostic-languageserver.filetypes": {
+    "text": ["proselint"]
   },
 
   "languageserver": {
