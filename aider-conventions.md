@@ -1,21 +1,9 @@
 Language or Configuration Format Documentation Template
 
-* For new documentation documents, start with a level 2 heading (##) using
-    hash (#) Markdown style.
-
-* Include only the sections that need to be documented for the specific
-    language or configuration format.
-
-* Document only non-default settings; default behaviors need not be included.
+* For new documentation documents, start with a level 2 heading (##) using hash (#) Markdown style.
+* Document only non-default settings; default behaviors should not be included.
 * If sections are unaltered and handled by defaults, state this collectively at the end.
 
-* If a feature or setting is not specifically configured or altered in ALE,
-    CoC, or within the settings directory, it does not require documentation.
-    Only document settings that have been explicitly set or modified.
-
-* Use this template as a guide when documenting support for a language or
-    configuration format in the development environment. For each core
-    requirement or setup section, provide the following information:
 
   * A brief description of the feature or setting.
   * Whether this is a built-in Vim setting, or configured via ALE, CoC, or a plugin.
