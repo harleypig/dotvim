@@ -29,18 +29,10 @@ The following plugins and extensions are utilized by ALE and CoC within this rep
 
 ### Configuration Files Used
 
-The settings for ALE and CoC are distributed across several files within this
-repository.
+The configuration for ALE and CoC is defined in the following files within this repository:
 
-Here is a broad overview of the configuration for ALE and CoC.
+* `ale.vim` - ALE settings are located in `.vim/pack/settings/start/settings/plugin/ale.vim`. This file contains ALE-specific Vimscript settings such as disabling linting when CoC is active, setting linting behaviors, and defining ALE fixers.
 
 
-* ALE Settings: ALE settings are primarily located in
-    `.vim/pack/settings/start/settings/plugin/ale.vim`. This file contains
-    ALE-specific Vimscript settings such as disabling linting when CoC is
-    active, setting linting behaviors, and defining ALE fixers.
+* `coc-settings.json` - CoC's main configuration is found in `.vim/coc-settings.json`, which is a JSON file that dictates the behavior of CoC features, including diagnostics display, formatting, and language server configurations. Use `:CocConfig` to edit this file.
 
-* CoC Settings: CoC's main configuration is found in
-    `.vim/coc-settings.json`, which is a JSON file that dictates the behavior
-    of CoC features, including diagnostics display, formatting, and language
-    server configurations.
