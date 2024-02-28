@@ -44,9 +44,11 @@ fugitive by adding them as markdown links to their homepages in
 
 ## Possible Sections for Language and Configuration Documentation
 
-In documentation, only include the following sections at the header 3 level (###) if there is information to document. If sections are unaltered and handled by defaults, or are not applicable, do not include them in the document. Instead, mention this collectively at the end of the document as a separate section.
-
-### External Packages Used
+In documentation, only include the following sections at the header 3 level
+(###) if there is information to document. If sections are unaltered and
+handled by defaults, or are not applicable, do not include them in the
+document. Instead, mention this collectively at the end of the document as
+a separate section.
 
 ### External Packages Used
 
@@ -83,9 +85,6 @@ document. For each, include relevant key combinations with a short description
 of their purpose if applicable, and detail the specific configurations and
 tools used:
 
-### Default or Inapplicable Sections
-
-* Include this section at the end of the document to collectively mention any sections that are handled by defaults, do not contain any information, or are not applicable to the current documentation context.
 * Language Server
 * Syntax Highlighting
 * Linting and Static Analysis
@@ -98,3 +97,9 @@ tools used:
 * Version Control Integration
 * Comment Support
 * Filetype Detection
+
+### Default or Inapplicable Sections
+
+Include this section at the end of the document to collectively mention any
+sections that are handled by defaults, do not contain any information, or are
+not applicable to the current documentation context.
