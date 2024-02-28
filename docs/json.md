@@ -8,6 +8,8 @@
 
 The `jq` tool is configured in the `.vim/pack/settings/start/settings/ftplugin/json.vim` file to format JSON files.
 
+### Configuraiton Files Used
+
 ### Plugins and Extensions Used
 
 The following plugins are used for JSON support in this development environment:
