@@ -16,16 +16,16 @@ The following configuration files are used for JSON support in this development 
 
 ### Plugins and Extensions Used
 
-The following plugins are used for JSON support in this development environment:
+The following plugins and extensions are used for JSON support in this development environment:
 
-[coc-json](https://github.com/neoclide/coc-json) (CoC Extension) Provides JSON
+* [`coc-json`](https://github.com/neoclide/coc-json) (CoC Extension): Provides JSON
 language support including schema validation, auto-completion, and more. It is
 a CoC extension and can be installed via the CoC extensions marketplace.
 
-[vim-jq](https://github.com/vito-c/jq.vim) (Vim Plugin) Provides syntax
+* [`vim-jq`](https://github.com/vito-c/jq.vim) (Vim Plugin): Provides syntax
 highlighting for JSON and integration with the `jq` tool.
 
-[jsonc.vim](https://github.com/neoclide/jsonc.vim) (Vim Plugin) Sets the
+* [`jsonc.vim`](https://github.com/neoclide/jsonc.vim) (Vim Plugin): Sets the
 filetype to `jsonc` for `.jsonc` files and provides syntax highlighting for
 JSON with comments.
 
