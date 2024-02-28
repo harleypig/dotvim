@@ -6,6 +6,9 @@ Language or Configuration Format Documentation Template
 * Include only the sections that need to be documented for the specific
     language or configuration format.
 
+* Document only non-default settings; default behaviors need not be included.
+* If sections are unaltered and handled by defaults, state this collectively at the end.
+
 * If a feature or setting is not specifically configured or altered in ALE,
     CoC, or within the settings directory, it does not require documentation.
     Only document settings that have been explicitly set or modified.
