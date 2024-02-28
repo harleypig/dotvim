@@ -21,7 +21,8 @@ Core Requirements:
 * External Packages Used
   * Include each package name as a markdown link to the home page, and a brief description.
 * Plugins and Extensions Used
-  * Include each plugin or extension name as a markdown link to the home page, and a brief description.
+  * Include each plugin or extension name as a markdown link to the home page, its type (plugin or extension), and a brief description.
+  * Note if a plugin or extension supports multiple languages or tasks (e.g., language server, autoformatting, linting).
 * Configuration Files Used
 * Language Server
 * Syntax Highlighting
