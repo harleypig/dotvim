@@ -109,6 +109,14 @@
   "pyright.inlayHints.functionReturnTypes": false,
   "pyright.inlayHints.variableTypes": false,
 
+  // eslint settings
+  // Requires coc-eslint extension to be installed
+  "eslint.enable": true,
+  "eslint.packageManager": "npm",
+  "eslint.autoFixOnSave": true,
+  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "html"],
+
+
   // coc-pyright flake8
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Stdin": true,
