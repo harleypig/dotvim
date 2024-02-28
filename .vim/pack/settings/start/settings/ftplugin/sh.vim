@@ -3,6 +3,9 @@
 
 let g:ale_fixers = { 'sh' : [ 'shfmt' ] }
 
+
+let b:ale_fixers = ['shfmt']
+
 let g:ale_sh_shfmt_options =
       \ '--indent 2 ' .
       \ '--binary-next-line ' .
