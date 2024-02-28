@@ -22,7 +22,8 @@ A link for a plugin or extensions should only appear in the 'Plugins and
 Extensions Used' section. Other links are allowed as necessary, but each URL
 should only be mentioned once.
 
-Use asterisks (*) as bullet point indicators in lists.
+Use asterisks (*) as bullet point indicators in lists. When making changes to
+lists that use another character as an indicator, change it.
 
 For new documentation documents, start with a level 2 heading (##) using hash
 (#) Markdown style.
@@ -70,6 +71,7 @@ state this collectively at the end.
 * Only include this section if there is information to document.
 * List only relevant configuration files, including the name of the package,
     plugin, or extension being configured.
+* List any files as a markdown link to the local path for the file.
 
 ### Remaining Possible Sections
 
