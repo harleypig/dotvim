@@ -24,8 +24,7 @@ Document only non-default settings; default behaviors should not be included.
 Add global plugins and extensions like CoC, ALE, or vim-polyglot to the
 Expertise Declaration section when encountered as pre-installed.
 
-Document specific utility plugins like gitgutter, fzf, and fugitive in
-`docs/utility.md` when encountered as pre-installed.
+Document specific utility plugins by adding them as markdown links to their homepages in `docs/utility.md` when encountered as pre-installed.
 
 ## Possible Sections
 
