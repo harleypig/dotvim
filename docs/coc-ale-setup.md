@@ -32,8 +32,9 @@ The following plugins and extensions are utilized by ALE and CoC within this rep
 Configuration for ALE and CoC is managed through the following files:
 
 * [`ale.vim`](.vim/pack/settings/start/settings/plugin/ale.vim) - Contains
-    ALE-specific Vimscript settings, such as disabling linting when CoC is
-    active, setting linting behaviors, and defining ALE fixers.
+    ALE-specific Vimscript settings.
+* [`coc.vim`](.vim/pack/settings/start/settings/plugin/coc.vim) - Contains
+    CoC-specific Vimscript settings.
 * `coc-settings` - Use `:CocConfig` to edit this file.
 
 #### Settings for CoC
