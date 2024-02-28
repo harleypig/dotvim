@@ -1,21 +1,33 @@
 {
   // Let ALE handle formatting
+  // Diagnostics are displayed by ALE instead of CoC.
   "diagnostic.displayByAle": true,
+  // Enables virtual text diagnostics.
   "diagnostic.virtualText": true,
+  // Shows virtual text diagnostics only on the current line.
   "diagnostic.virtualTextCurrentLineOnly": true,
+  // Sets the format for virtual text diagnostics.
   "diagnostic.virtualTextFormat": " >>> %severity: %message {%source}",
 
+  // Enables auto-update of the current function symbol.
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+  // Sets the extension update check to daily.
   "coc.preferences.extensionUpdateCheck": "daily",
+  // Disables automatic formatting on save.
   "coc.preferences.formatOnSave": false,
+  // Uses quickfix for locations.
   "coc.preferences.useQuickfixForLocations": true,
 
+  // Enables colors.
   "colors.enable": true,
 
+  // Aligns columns in lists.
   "list.alignColumns": true,
 
+  // Enables status line progress notifications.
   "notification.statusLineProgress": true,
 
+  // Disables signature help.
   "signature.enable": false,
 
   // Configuration for ansible-lint
