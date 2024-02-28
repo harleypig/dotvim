@@ -47,6 +47,10 @@ files adhere to consistent formatting standards.
 The `coc-ansible` extension, which uses `ansible-language-server`, provides
 auto-completion features for Ansible.
 
+### Formatting and Beautification
+
+Formatting and beautification for Ansible files can be achieved using tools like `ansible-lint` with specific rules for code style, or other YAML formatters that ensure consistent formatting across Ansible playbooks. These tools can be integrated into the Vim environment and can be run manually or automatically on file save, depending on user configuration.
+
 
 
 ### filler
