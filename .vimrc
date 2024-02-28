@@ -6,10 +6,6 @@
 let g:ale_disable_lsp = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Disable syntax highlighting with vim-polyglot before loading the plugin.
-" let g:polyglot_disable = ['filetype', 'filetype']
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin indent on
 syntax on
 
