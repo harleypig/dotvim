@@ -32,7 +32,7 @@ functionality.
 
 ### Syntax Highlighting
 
-Ansible syntax is highlighted through the vim-polyglot plugin.
+Ansible syntax is highlighted through the `vim-polyglot` plugin.
 
 ### Linting and Static Analysis
 
