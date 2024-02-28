@@ -25,9 +25,6 @@ functionality.
     Vim to recognize YAML files, which are commonly used by Ansible.
 * `coc-settings` - Use `:CocConfig` to edit this file.
 
-### Language Server
-
-
 ### Linting and Static Analysis
 
 * [ansible-lint](https://github.com/ansible-community/ansible-lint) - Lints Ansible playbooks, detecting errors and suggesting improvements for your code.
