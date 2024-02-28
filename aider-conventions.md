@@ -28,9 +28,9 @@ the tools that significantly influence the development workflow.
 For utilities that enhance the Vim experience but are more specific in their
 application, such as gitgutter, fzf, and fugitive, that you encounter as
 already installed and configured during the documentation process, suggest
-documenting them in a separate utilities document called docs/utility.md. This
-distinction helps in organizing the documentation for better clarity and focus
-on the specific roles of these tools.
+documenting them in a separate utilities document called `docs/utility.md`.
+This distinction helps in organizing the documentation for better clarity and
+focus on the specific roles of these tools.
 
 ## Possible Sections
 
