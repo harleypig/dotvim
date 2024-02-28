@@ -2,10 +2,14 @@
 
 ### External Packages Used
 
-To utilize CoC and ALE as configured in this repository, the following external packages must be installed:
+To utilize CoC and ALE as configured in this repository, the following
+external packages must be installed:
 
-* [Node.js](https://nodejs.org/) - A JavaScript runtime built on Chrome's V8 JavaScript engine, required for running the CoC extension host.
-* [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) - Package managers for JavaScript, used to install CoC extensions.
+* [Node.js](https://nodejs.org/) - A JavaScript runtime built on Chrome's V8
+    JavaScript engine, required for running the CoC extension host.
+
+* [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) - Package
+    managers for JavaScript, used to install CoC extensions.
 
 #### Node.js Installation Options
 
@@ -14,6 +18,8 @@ For installing Node.js, you can either:
 * Use nvm (Node Version Manager) to install and manage multiple Node.js versions.
 * Use the nodesource repository to install a specific version of Node.js.
 * npm or yarn: Used to install CoC extensions.
+
+
 
 ### ALE and CoC Configuration Settings
 
