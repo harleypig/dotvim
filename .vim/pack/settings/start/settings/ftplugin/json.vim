@@ -66,13 +66,6 @@
 "
 " * [home](https://stedolan.github.io/jq/)
 " * enabled as a fixer for autoformatting JSON files.
-" #### jq
-"
-" * [home](https://stedolan.github.io/jq/)
-" * disbled by default
-" * since I have this installd nearly everywhere, I'm going to use this as the
-"   primary linter for JSON files.
-"
 " #### jsonlint
 "
 " * [home](https://github.com/zaach/jsonlint)
@@ -96,9 +89,9 @@ let g:ale_fixers.json = ['jq']
 let g:ale_fixers.jsonc = ['jq']
 
 let g:ale_linters = {
-      \ 'json': ['eslint'],
-      \ 'jsonc': ['eslint'],
-      \ 'json5': ['eslint'],
+      \ 'json': [],
+      \ 'jsonc': [],
+      \ 'json5': [],
       \}
 
 set foldmethod=syntax
