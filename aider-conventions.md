@@ -18,7 +18,10 @@ which are clearly marked as such.
 
 ## General Documentation Rules
 
-* A plugin or extension should be mentioned only once with a markdown link in the documentation. The link should appear in the 'Plugins and Extensions Used' section. Other links are allowed as necessary, but each URL should only be mentioned once.
+A link for a plugin or extensions should only appear in the 'Plugins and
+Extensions Used' section. Other links are allowed as necessary, but each URL
+should only be mentioned once.
+
 Use asterisks (*) as bullet point indicators in lists.
 
 For new documentation documents, start with a level 2 heading (##) using hash
