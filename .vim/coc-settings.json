@@ -10,6 +10,7 @@
   "coc.preferences.formatOnSave": false,
   "coc.preferences.useQuickfixForLocations": true,
 
+  // Configuration for ansible-lint
   "ansible.enable": true,
   "ansible.ansible.useFullyQualifiedCollectionNames": true,
   "ansible.validation.enabled": true,
