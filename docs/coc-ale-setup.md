@@ -29,17 +29,6 @@ The following plugins and extensions are utilized by ALE and CoC within this rep
 
 ### Configuration Files Used
 
-#### Settings for CoC
-
-The `coc.vim` file configures key mappings and behaviors for using CoC (Conquer of Completion) effectively within Vim. Here's a breakdown of the settings:
-
-- `<Tab>` key in insert mode: This key is used for multiple purposes based on the context. If the completion popup is visible, it navigates to the next item. If Copilot suggestions are available, it accepts the suggestion. Otherwise, it either inserts a tab character or triggers the completion depending on whether the cursor is at the start of a line or not.
-- `<CR>` (Enter key) in insert mode: This key confirms the selected completion item from the popup if it's visible. If not, it simply inserts a new line.
-- `<C-Space>` in insert mode: This keybinding is used to manually trigger the completion popup, but only if Copilot is not active.
-- `gd`, `gy`, `gi`, `gr` in normal mode: These mappings are shortcuts for "go to" commands provided by CoC, allowing quick navigation to definitions, type definitions, implementations, and references of the symbol under the cursor, respectively.
-
-These settings are designed to streamline the coding experience by integrating intelligent code completion, navigation, and suggestion features directly into the normal editing workflow in Vim.
-
 Configuration for ALE and CoC is managed through the following files:
 
 * [`ale.vim`](.vim/pack/settings/start/settings/plugin/ale.vim) - Contains
@@ -57,3 +46,23 @@ Configuration for ALE and CoC is managed through the following files:
     signature help is disabled.
 * Visual enhancements include enabling colors and aligning columns in lists,
     as well as enabling status line progress notifications.
+
+#### Settings for CoC.vim
+
+The `coc.vim` file configures key mappings and behaviors for using CoC
+(Conquer of Completion) effectively within Vim. Here's a breakdown of the
+settings:
+
+* `<Tab>` key in insert mode: This key is used for multiple purposes based on
+    the context. If the completion popup is visible, it navigates to the next
+    item. If Copilot suggestions are available, it accepts the suggestion.
+    Otherwise, it either inserts a tab character or triggers the completion
+    depending on whether the cursor is at the start of a line or not.
+* `<CR>` (Enter key) in insert mode: This key confirms the selected completion
+    item from the popup if it's visible. If not, it simply inserts a new line.
+* `<C-Space>` in insert mode: This keybinding is used to manually trigger the
+    completion popup, but only if Copilot is not active.
+* `gd`, `gy`, `gi`, `gr` in normal mode: These mappings are shortcuts for "go
+    to" commands provided by CoC, allowing quick navigation to definitions,
+    type definitions, implementations, and references of the symbol under the
+    cursor, respectively.
