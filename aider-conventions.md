@@ -28,14 +28,26 @@ Core Requirements:
 * Configuration Files Used
   * List only relevant configuration files, including the name of the package, plugin, or extension being configured.
 * Language Server
+  * Describe the configured language server, its setup via ALE, CoC, or config files, and any pertinent details.
 * Syntax Highlighting
+  * Detail the syntax highlighting configuration, including the tool (ALE, CoC, vim file) and any notable aspects.
 * Linting and Static Analysis
+  * Specify linters and static analysis tools used, their configuration method, and any additional relevant information.
 * Auto Completion
+  * Document the auto-completion setup, the tool configured (ALE, CoC), and any special considerations.
 * Formatting and Beautification
+  * Outline the formatter(s) used, configuration via ALE, CoC, vim file, or config file, and any exceptions or extras.
 * Error Highlighting
+  * Describe error highlighting configuration, the tool used (ALE, CoC), and any unique settings.
 * Code Folding
+  * Explain code folding settings, including the method of configuration and any non-standard behavior.
 * Snippets
+  * List snippet tools and sources, how they're configured, and any custom snippet collections.
 * Schema or Contract Validation
+  * Detail schema or contract validation tools, their configuration, and any specific schemas or contracts set up.
 * Version Control Integration
+  * Describe version control integrations, configuration via plugins or settings, and any additional features enabled.
 * Comment Support
+  * Document comment handling, including tools and configurations for generating or formatting comments.
 * Filetype Detection
+  * Explain any custom filetype detection settings, including the method of configuration and filetypes involved.
