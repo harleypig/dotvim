@@ -5,16 +5,10 @@
 For working with JSON files in this repository, the following external
 packages are configured and need to be installed:
 
-* jq: A lightweight and flexible command-line JSON processor.
-* eslint: A pluggable and configurable linter tool for identifying and
-    reporting on patterns in JavaScript.
+* [jq](https://stedolan.github.io/jq/): A lightweight and flexible command-line JSON processor used for formatting JSON files.
 
-These packages are used by the ALE plugin for linting and formatting JSON
-files as specified in the
+The `jq` tool is used by the ALE plugin for formatting JSON files as specified in the
 `.vim/pack/settings/start/settings/ftplugin/json.vim` configuration file.
-
-For linting JSON files, `eslint` is used to identify and report on patterns in
-JSON.
 
 For formatting JSON files, `jq` is used as a lightweight and flexible
 command-line JSON processor.
