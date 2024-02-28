@@ -19,9 +19,6 @@ The following plugins and extensions are used for JSON support in this developme
     more.
 * [`vim-jq`](https://github.com/vito-c/jq.vim) (Vim Plugin): Provides syntax
     highlighting for JSON and integration with the `jq` tool.
-* [`jsonc.vim`](https://github.com/neoclide/jsonc.vim) (Vim Plugin): Sets the
-    filetype to `jsonc` for `.jsonc` files and provides syntax highlighting
-    for JSON with comments.
 * [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin):
     A collection of language packs for Vim that includes syntax highlighting
     for JSON among many other languages.
