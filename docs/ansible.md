@@ -34,3 +34,8 @@ functionality.
 
 Ansible syntax is highlighted through the vim-polyglot plugin.
 
+### Linting and Static Analysis
+
+* `ansible-lint` is used to lint Ansible playbooks, helping to enforce best practices and identify potential errors.
+* `yamllint` is used to lint YAML files, ensuring that they adhere to consistent formatting standards.
+
