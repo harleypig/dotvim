@@ -11,6 +11,8 @@
 
 The following plugins and extensions are used for JSON support in this development environment:
 
+* [`coc-eslint`](https://github.com/neoclide/coc-eslint) (CoC Extension): Integrates ESLint into Vim, providing linting for JavaScript and related languages within the CoC framework.
+*
 * [`coc-json`](https://github.com/neoclide/coc-json) (CoC Extension): Provides JSON
 language support including schema validation, auto-completion, and more. It is
 a CoC extension and can be installed via the CoC extensions marketplace.
