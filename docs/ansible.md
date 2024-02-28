@@ -82,63 +82,55 @@ This setup ensures a robust development environment for Ansible within Vim, leve
 
 ### Built-in Installation
 
-* `coc-ansible` provides a built-in installation option for `ansible`, `ansible-lint`, and optionally `yamllint` within an extension-only virtual environment. This can be triggered manually with the `:CocCommand ansible.builtin.installRequirementsTools` command or will prompt on first use if these tools are not detected.
-
 ### Commands
-
-* `coc-ansible` adds several commands to manage the Ansible development environment, such as restarting the language server, showing metadata, resyncing inventory, and displaying plugin information with `ansible-doc`.
 
 ### Configuration Options
 
-* `coc-ansible` offers various configuration options to customize the behavior of the Ansible language server and related tools. These options can be set in the `.vim/coc-settings.json` file.
-
 ### Code Actions
 
-* `coc-ansible` provides code actions that can be invoked with a mapped key in Vim. These actions include ignoring linting rules for the current line and showing web documentation for specific rules.
+* `coc-ansible` provides several features to manage the Ansible development environment:
+  - Built-in installation of `ansible`, `ansible-lint`, and optionally `yamllint` within an extension-only virtual environment, which can be triggered with `:CocCommand ansible.builtin.installRequirementsTools`.
+  - Commands for restarting the language server, showing metadata, resyncing inventory, and displaying plugin information with `ansible-doc`.
+  - Configuration options to customize the behavior of the Ansible language server and related tools, which can be set in the `.vim/coc-settings.json` file.
+  - Code actions that can be invoked with a mapped key in Vim, including ignoring linting rules for the current line and showing web documentation for specific rules.
 ### Built-in Installation
 
-* `coc-ansible` provides a built-in installation option for `ansible`, `ansible-lint`, and optionally `yamllint` within an extension-only virtual environment. This can be triggered manually with the `:CocCommand ansible.builtin.installRequirementsTools` command or will prompt on first use if these tools are not detected.
-
 ### Commands
-
-* `coc-ansible` adds several commands to manage the Ansible development environment, such as restarting the language server, showing metadata, resyncing inventory, and displaying plugin information with `ansible-doc`.
 
 ### Configuration Options
 
-* `coc-ansible` offers various configuration options to customize the behavior of the Ansible language server and related tools. These options can be set in the `.vim/coc-settings.json` file.
-
 ### Code Actions
 
-* `coc-ansible` provides code actions that can be invoked with a mapped key in Vim. These actions include ignoring linting rules for the current line and showing web documentation for specific rules.
+* `coc-ansible` provides several features to manage the Ansible development environment:
+  - Built-in installation of `ansible`, `ansible-lint`, and optionally `yamllint` within an extension-only virtual environment, which can be triggered with `:CocCommand ansible.builtin.installRequirementsTools`.
+  - Commands for restarting the language server, showing metadata, resyncing inventory, and displaying plugin information with `ansible-doc`.
+  - Configuration options to customize the behavior of the Ansible language server and related tools, which can be set in the `.vim/coc-settings.json` file.
+  - Code actions that can be invoked with a mapped key in Vim, including ignoring linting rules for the current line and showing web documentation for specific rules.
 
 ### Built-in Installation
 
-* `coc-ansible` provides a built-in installation option for `ansible`, `ansible-lint`, and optionally `yamllint` within an extension-only virtual environment. This can be triggered manually with the `:CocCommand ansible.builtin.installRequirementsTools` command or will prompt on first use if these tools are not detected.
-
 ### Commands
-
-* `coc-ansible` adds several commands to manage the Ansible development environment, such as restarting the language server, showing metadata, resyncing inventory, and displaying plugin information with `ansible-doc`.
 
 ### Configuration Options
 
-* `coc-ansible` offers various configuration options to customize the behavior of the Ansible language server and related tools. These options can be set in the `.vim/coc-settings.json` file.
-
 ### Code Actions
 
-* `coc-ansible` provides code actions that can be invoked with a mapped key in Vim. These actions include ignoring linting rules for the current line and showing web documentation for specific rules.
+* `coc-ansible` provides several features to manage the Ansible development environment:
+  - Built-in installation of `ansible`, `ansible-lint`, and optionally `yamllint` within an extension-only virtual environment, which can be triggered with `:CocCommand ansible.builtin.installRequirementsTools`.
+  - Commands for restarting the language server, showing metadata, resyncing inventory, and displaying plugin information with `ansible-doc`.
+  - Configuration options to customize the behavior of the Ansible language server and related tools, which can be set in the `.vim/coc-settings.json` file.
+  - Code actions that can be invoked with a mapped key in Vim, including ignoring linting rules for the current line and showing web documentation for specific rules.
 
 ### Built-in Installation
 
-* `coc-ansible` provides a built-in installation option for `ansible`, `ansible-lint`, and optionally `yamllint` within an extension-only virtual environment. This can be triggered manually with the `:CocCommand ansible.builtin.installRequirementsTools` command or will prompt on first use if these tools are not detected.
-
 ### Commands
-
-* `coc-ansible` adds several commands to manage the Ansible development environment, such as restarting the language server, showing metadata, resyncing inventory, and displaying plugin information with `ansible-doc`.
 
 ### Configuration Options
 
-* `coc-ansible` offers various configuration options to customize the behavior of the Ansible language server and related tools. These options can be set in the `.vim/coc-settings.json` file.
-
 ### Code Actions
 
-* `coc-ansible` provides code actions that can be invoked with a mapped key in Vim. These actions include ignoring linting rules for the current line and showing web documentation for specific rules.
+* `coc-ansible` provides several features to manage the Ansible development environment:
+  - Built-in installation of `ansible`, `ansible-lint`, and optionally `yamllint` within an extension-only virtual environment, which can be triggered with `:CocCommand ansible.builtin.installRequirementsTools`.
+  - Commands for restarting the language server, showing metadata, resyncing inventory, and displaying plugin information with `ansible-doc`.
+  - Configuration options to customize the behavior of the Ansible language server and related tools, which can be set in the `.vim/coc-settings.json` file.
+  - Code actions that can be invoked with a mapped key in Vim, including ignoring linting rules for the current line and showing web documentation for specific rules.
