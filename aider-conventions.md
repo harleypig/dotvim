@@ -45,21 +45,28 @@ fugitive by adding them as markdown links to their homepages in
 ## Possible Sections for Language and Configuration Documentation
 
 In documentation, only include information relevant to each specific section
-at the header 3 level (###). If a plugin or extension covers multiple aspects
-such as language server, linting, syntax, or formatting, mention only the
-relevant part in each respective section. For example, if a plugin provides
-both language server and linting features, include information about the
-language server in the "Language Server" section and refer back to the
-language server when discussing linting in the "Linting and Static Analysis"
-section. Keep the information concise and focused on the aspect relevant to
-the current section. If sections are unaltered and handled by defaults, or are
-not applicable, do not include them in the document. Instead, collectively
-mention this at the end of the document as a separate section.
+at the header 3 level (###).
+
+If a plugin or extension covers multiple aspects such as linting, syntax, or
+formatting, mention only the relevant part in each respective section.
+
+For example, if a plugin provides both linting features and syntax
+highlighting, include information about the linting features in the "Linting
+and Static Analysis" and syntax highlighting info in the syntax section. In
+both cases you would refer back to the language server in the external package
+section.
+
+Keep the information concise and focused on the aspect relevant to the current
+section.
+
+If sections are unaltered and handled by defaults, or are not applicable, do
+not include them in the document. Instead, collectively mention this at the
+end of the document as a separate section.
 
 ### External Packages Used
 
 * Include each package name as a markdown link to the home page, and a brief
-    description.
+    description. Note: A language server is an external package.
 * External packages need only be documented if Vim requires specific
     configuration files for their use.
 
@@ -88,7 +95,6 @@ document. For each, include relevant key combinations with a short description
 of their purpose if applicable, and detail the specific configurations and
 tools used:
 
-* Language Server
 * Syntax Highlighting
 * Linting and Static Analysis
 * Auto Completion
