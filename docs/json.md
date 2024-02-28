@@ -2,17 +2,10 @@
 
 ### External Packages Used
 
-* [ESLint](https://eslint.org/): A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript and related languages.
-
-* [jq](https://stedolan.github.io/jq/): A lightweight and flexible command-line JSON processor that is used for formatting JSON files.
-
-### Configuraiton Files Used
-
-The following configuration files are used for JSON support in this development environment:
-
-* [`coc-settings.json`](../.vim/coc-settings.json): This file contains the configuration for CoC extensions, including `coc-json` for JSON language support.
-* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim): Specifies ALE fixers and linters for various file types, including JSON.
-* [`json.vim`](../.vim/pack/settings/start/settings/ftplugin/json.vim): Configures ALE to use `jq` as a fixer for JSON files and sets up Vim folding for JSON syntax.
+* [ESLint](https://eslint.org/): A pluggable and configurable linter tool for
+    identifying and reporting on patterns in JavaScript and related languages.
+* [jq](https://stedolan.github.io/jq/): A lightweight and flexible
+    command-line JSON processor that is used for formatting JSON files.
 
 ### Plugins and Extensions Used
 
@@ -28,6 +21,14 @@ highlighting for JSON and integration with the `jq` tool.
 * [`jsonc.vim`](https://github.com/neoclide/jsonc.vim) (Vim Plugin): Sets the
 filetype to `jsonc` for `.jsonc` files and provides syntax highlighting for
 JSON with comments.
+
+### Configuraiton Files Used
+
+The following configuration files are used for JSON support in this development environment:
+
+* [`coc-settings.json`](../.vim/coc-settings.json): This file contains the configuration for CoC extensions, including `coc-json` for JSON language support.
+* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim): Specifies ALE fixers and linters for various file types, including JSON.
+* [`json.vim`](../.vim/pack/settings/start/settings/ftplugin/json.vim): Configures ALE to use `jq` as a fixer for JSON files and sets up Vim folding for JSON syntax.
 
 ### Language Server
 
@@ -85,4 +86,3 @@ The `jq` tool is configured as a fixer in ALE to format JSON files. This is
 set up in the `.vim/pack/settings/start/settings/ftplugin/json.vim` file.
 
 ### Code Folding
-
