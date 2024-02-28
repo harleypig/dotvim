@@ -71,7 +71,11 @@ state this collectively at the end.
 * Only include this section if there is information to document.
 * List only relevant configuration files, including the name of the package,
     plugin, or extension being configured.
-* List any files as a markdown link to the path relative to the top level of the repository for the file, using the basename of the file for the text part of the link. The `coc-settings.json` file, when included, does not require an explanation; its presence indicates it is being utilized.
+* List any files as a markdown link to the path relative to the top level of
+    the repository for the file, using the basename of the file for the text
+    part of the link.
+
+* The `coc-settings.json` file, when included, does not require an explanation; its presence indicates it is being utilized.
 
 ### Remaining Possible Sections
 
