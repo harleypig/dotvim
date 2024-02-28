@@ -18,6 +18,7 @@ which are clearly marked as such.
 
 ## General Documentation Rules
 
+External packages need only be documented if Vim requires specific configuration files for their use.
 Use asterisks (*) as bullet point indicators in lists.
 
 For new documentation documents, start with a level 2 heading (##) using hash
