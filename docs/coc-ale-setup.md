@@ -36,6 +36,16 @@ Configuration for ALE and CoC is managed through the following files:
     active, setting linting behaviors, and defining ALE fixers.
 * `coc-settings` - Use `:CocConfig` to edit this file.
 
+#### Settings for CoC
+
+The `coc-settings.json` file contains a variety of settings that customize the behavior of CoC:
+
+- Diagnostic settings are configured to integrate with ALE, enabling virtual text diagnostics and customizing their appearance and behavior.
+- Preferences for CoC are set to disable automatic formatting on save, check for extension updates daily, and use quickfix for navigation. Additionally, auto-updating of the current function symbol is enabled, and signature help is disabled.
+- Visual enhancements include enabling colors and aligning columns in lists, as well as enabling status line progress notifications.
+
+These settings ensure that CoC works seamlessly with ALE and provides a tailored user experience in Vim.
+
 ### Syntax Highlighting
 
 Syntax highlighting in Vim is typically handled by the editor's built-in
