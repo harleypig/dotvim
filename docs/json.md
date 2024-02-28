@@ -2,6 +2,8 @@
 
 ### External Packages Used
 
+For linting JavaScript and related languages, [ESLint](https://eslint.org/) is used. It is a pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript.
+
 For working with JSON files in this repository, the following external
 packages are configured and need to be installed:
 
