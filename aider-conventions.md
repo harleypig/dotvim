@@ -75,7 +75,7 @@ state this collectively at the end.
     the repository for the file, using the basename of the file for the text
     part of the link.
 
-* The `coc-settings.json` file, when included, does not require an explanation; its presence indicates it is being utilized.
+* For `coc-settings.json`, instead of a markdown link, include the blurb: 'Use `:CocConfig` to edit this file.' as its presence indicates it is being utilized.
 
 ### Remaining Possible Sections
 
