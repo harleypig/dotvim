@@ -7,10 +7,13 @@ that affect the entire Vim environment.
 
 ## TODO
 
-* Create conventions in the aider-conventions.md document for documenting
-    utility plugins.
-* Split the documented utility plugins into their own sections for more
-    detailed information.
+* Document utility plugins by providing:
+  - A brief description of the plugin's functionality.
+  - Instructions for installation and configuration.
+  - Key mappings and commands, if applicable.
+  - Links to official documentation or the plugin's homepage.
+
+* Organize utility plugins into individual sections for clarity and detailed information.
 
 ## Existing Utility Plugins
 
