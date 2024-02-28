@@ -83,6 +83,9 @@ document. For each, include relevant key combinations with a short description
 of their purpose if applicable, and detail the specific configurations and
 tools used:
 
+### Default or Inapplicable Sections
+
+* Include this section at the end of the document to collectively mention any sections that are handled by defaults, do not contain any information, or are not applicable to the current documentation context.
 * Language Server
 * Syntax Highlighting
 * Linting and Static Analysis
