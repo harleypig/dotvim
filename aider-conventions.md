@@ -52,6 +52,8 @@ fugitive by adding them as markdown links to their homepages in
 
 ## Possible Sections for Language and Configuration Documentation
 
+When adding a new section, place it after the content of the previous section, not just after the previous section header. This ensures a logical and contiguous flow of information.
+
 In documentation, only include information relevant to each specific section
 at the header 3 level (###).
 
