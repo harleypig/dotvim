@@ -16,7 +16,7 @@ This document outlines the support for Ansible development within the Vim enviro
 ### Plugins and Extensions Used
 
 * [coc-ansible](https://github.com/yaegassy/coc-ansible) (CoC Extension) - Provides auto-completion, linting, and other language features for Ansible.
-* [vim-ansible](https://github.com/pearofducks/ansible-vim) (Vim Plugin) - Provides Ansible syntax highlighting and sets the `yaml.ansible` filetype, which is required by `coc-ansible`.
+* [vim-polyglot](https://github.com/sheerun/vim-polyglot) (Vim Plugin) - A collection of language packs for Vim, which includes support for Ansible syntax highlighting and filetype detection.
 
 ### Configuration Files Used
 
