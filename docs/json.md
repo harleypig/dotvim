@@ -6,9 +6,13 @@
 
 * [jq](https://stedolan.github.io/jq/): A lightweight and flexible command-line JSON processor that is used for formatting JSON files.
 
-The `jq` tool is configured in the `.vim/pack/settings/start/settings/ftplugin/json.vim` file to format JSON files.
-
 ### Configuraiton Files Used
+
+The following configuration files are used for JSON support in this development environment:
+
+* [`coc-settings.json`](../.vim/coc-settings.json): This file contains the configuration for CoC extensions, including `coc-json` for JSON language support.
+* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim): Specifies ALE fixers and linters for various file types, including JSON.
+* [`json.vim`](../.vim/pack/settings/start/settings/ftplugin/json.vim): Configures ALE to use `jq` as a fixer for JSON files and sets up Vim folding for JSON syntax.
 
 ### Plugins and Extensions Used
 
@@ -82,7 +86,3 @@ set up in the `.vim/pack/settings/start/settings/ftplugin/json.vim` file.
 
 ### Code Folding
 
-Code folding for JSON files is managed by Vim's built-in `foldmethod` setting,
-which is set to `syntax` for JSON files in the
-`.vim/pack/settings/start/settings/ftplugin/json.vim` file. This allows for
-folding based on the JSON syntax structure.
