@@ -28,38 +28,38 @@ Core Requirements:
 * Configuration Files Used
   * List only relevant configuration files, including the name of the package, plugin, or extension being configured.
 * Language Server
-  * Include relevant key combinations if applicable.
+  * Include relevant key combinations with a short description of their purpose if applicable.
   * Describe the configured language server, its setup via ALE, CoC, or config files, and any pertinent details.
 * Syntax Highlighting
-  * Include relevant key combinations if applicable.
+  * Include relevant key combinations with a short description of their purpose if applicable.
   * Detail the syntax highlighting configuration, including the tool (ALE, CoC, vim file) and any notable aspects.
 * Linting and Static Analysis
-  * Include relevant key combinations if applicable.
+  * Include relevant key combinations with a short description of their purpose if applicable.
   * Specify linters and static analysis tools used, their configuration method, and any additional relevant information.
 * Auto Completion
-  * Include relevant key combinations if applicable.
+  * Include relevant key combinations with a short description of their purpose if applicable.
   * Document the auto-completion setup, the tool configured (ALE, CoC), and any special considerations.
 * Formatting and Beautification
-  * Include relevant key combinations if applicable.
+  * Include relevant key combinations with a short description of their purpose if applicable.
   * Outline the formatter(s) used, configuration via ALE, CoC, vim file, or config file, and any exceptions or extras.
 * Error Highlighting
-  * Include relevant key combinations if applicable.
+  * Include relevant key combinations with a short description of their purpose if applicable.
   * Describe error highlighting configuration, the tool used (ALE, CoC), and any unique settings.
 * Code Folding
-  * Include relevant key combinations if applicable.
+  * Include relevant key combinations with a short description of their purpose if applicable.
   * Explain code folding settings, including the method of configuration and any non-standard behavior.
 * Snippets
-  * Include relevant key combinations if applicable.
+  * Include relevant key combinations with a short description of their purpose if applicable.
   * List snippet tools and sources, how they're configured, and any custom snippet collections.
 * Schema or Contract Validation
-  * Include relevant key combinations if applicable.
+  * Include relevant key combinations with a short description of their purpose if applicable.
   * Detail schema or contract validation tools, their configuration, and any specific schemas or contracts set up.
 * Version Control Integration
-  * Include relevant key combinations if applicable.
+  * Include relevant key combinations with a short description of their purpose if applicable.
   * Describe version control integrations, configuration via plugins or settings, and any additional features enabled.
 * Comment Support
-  * Include relevant key combinations if applicable.
+  * Include relevant key combinations with a short description of their purpose if applicable.
   * Document comment handling, including tools and configurations for generating or formatting comments.
 * Filetype Detection
-  * Include relevant key combinations if applicable.
+  * Include relevant key combinations with a short description of their purpose if applicable.
   * Explain any custom filetype detection settings, including the method of configuration and filetypes involved.
