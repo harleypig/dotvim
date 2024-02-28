@@ -50,11 +50,9 @@ at the header 3 level (###).
 If a plugin or extension covers multiple aspects such as linting, syntax, or
 formatting, mention only the relevant part in each respective section.
 
-For example, if a plugin provides both linting features and syntax
-highlighting, include information about the linting features in the "Linting
-and Static Analysis" and syntax highlighting info in the syntax section. In
-both cases you would refer back to the language server in the external package
-section.
+For example, document a plugin's linting features under "Linting and Static
+Analysis" and its syntax highlighting under "Syntax Highlighting." Reference
+the language server in the "External Packages Used" section as needed.
 
 Keep the information concise and focused on the aspect relevant to the current
 section.
