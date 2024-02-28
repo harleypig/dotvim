@@ -3,13 +3,17 @@
 This document outlines the support for Ansible development within the Vim environment, integrating the `coc-ansible` extension for enhanced functionality.
 
 ### External Packages Used
+
 - ansible
 - ansible-lint
 - yamllint
 
 ### Plugins and Extensions Used
+
 * [coc-ansible](https://github.com/yaegassy/coc-ansible) (coc extension) - Provides auto-completion, linting, and other language features for Ansible.
 * [vim-ansible](https://github.com/pearofducks/ansible-vim) (vim plugin) - Provides Ansible syntax highlighting and sets the `yaml.ansible` filetype, which is required by `coc-ansible`.
+
+### Configuration Files Used
 
 - .vim/pack/settings/start/settings/ftplugin/yaml.vim - Configures Vim to recognize YAML files, which are commonly used by Ansible.
 
@@ -30,6 +34,7 @@ This document outlines the support for Ansible development within the Vim enviro
 - ansible-lint and yamllint can be integrated with Vim using ALE or CoC to provide linting and static analysis.
 
 ### Auto Completion
+
 * Auto-completion for Ansible is provided by `coc-ansible`, which utilizes the `ansible-language-server`.
 - Provided by the coc-ansible extension through CoC.
 
@@ -89,6 +94,7 @@ This setup ensures a robust development environment for Ansible within Vim, leve
   - Commands for restarting the language server, showing metadata, resyncing inventory, and displaying plugin information with `ansible-doc`.
   - Configuration options to customize the behavior of the Ansible language server and related tools, which can be set in the `.vim/coc-settings.json` file.
   - Code actions that can be invoked with a mapped key in Vim, including ignoring linting rules for the current line and showing web documentation for specific rules.
+
 ### Built-in Installation
 
 ### Commands
