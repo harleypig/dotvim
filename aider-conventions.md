@@ -29,6 +29,8 @@ For new documentation documents, start with a level 2 heading (##) using hash
 
 Document only non-default settings; default behaviors should not be included.
 
+All documentation must be written in valid Markdown format. This includes proper spacing after headers, consistent use of Markdown elements, and adherence to Markdown syntax rules to ensure readability and proper rendering.
+
 Add global plugins and extensions like CoC, ALE, or vim-polyglot to the
 Expertise Declaration section as markdown links to their homepages when
 encountered as pre-installed.
