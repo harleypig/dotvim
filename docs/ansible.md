@@ -6,14 +6,9 @@ functionality.
 
 ### External Packages Used
 
-* [ansible](https://www.ansible.com/) - An open-source automation tool for
-    software provisioning, configuration management, and application
-    deployment.
-* [ansible-lint](https://github.com/ansible-community/ansible-lint) - A
-    command-line tool for linting playbooks to identify practices and
-    behaviour that could potentially be improved.
-* [yamllint](https://github.com/adrienverge/yamllint) - A linter for YAML
-    files, ensuring that they adhere to a consistent format and structure.
+* [ansible](https://www.ansible.com/) - Open-source automation tool for software provisioning, configuration management, and application deployment.
+* [ansible-lint](https://github.com/ansible-community/ansible-lint) - Command-line tool for linting Ansible playbooks.
+* [yamllint](https://github.com/adrienverge/yamllint) - Linter for YAML files, ensuring consistent format and structure.
 
 ### Plugins and Extensions Used
 
@@ -32,13 +27,6 @@ functionality.
 
 ### Language Server
 
-[ansible-language-server](https://github.com/ansible/ansible-language-server)
-(Language Server) - An implementation of the Language Server Protocol that
-provides rich language features for Ansible. It offers features such as
-auto-completion, real-time linting, and syntax highlighting. Integrated with
-the `coc-ansible` extension, it enhances the Ansible development experience in
-Vim. Note that `ansible-language-server` is automatically managed by the
-`coc-ansible` extension and does not require separate installation.
 
 ### Linting and Static Analysis
 
