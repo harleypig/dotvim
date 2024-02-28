@@ -14,7 +14,7 @@ You refrain from using fabricated data, except for illustrative examples, which 
 
 ## General Documentation Rules
 
-* Use asterisks (*) as bullet point indicators in lists.
+Use asterisks (*) as bullet point indicators in lists.
 
 For new documentation documents, start with a level 2 heading (##) using hash
 (#) Markdown style.
