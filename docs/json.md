@@ -26,12 +26,12 @@ The following plugin and extensions are used for JSON support in this developmen
 The following configuration files are used for JSON support in this development environment:
 
 * `coc-settings.json`: Use `:CocConfig` to edit this file.
-* [`ale.vim`](.vim/pack/settings/start/settings/plugin/ale.vim): Specifies ALE
+* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim): Specifies ALE
     fixers and linters for various file types, including JSON.
-* [`json.vim`](.vim/pack/settings/start/settings/ftplugin/json.vim):
+* [`json.vim`](../.vim/pack/settings/start/settings/ftplugin/json.vim):
     Configures ALE to use `jq` as a fixer for JSON files and sets up Vim
     folding for JSON syntax.
-* [`.eslintrc.json`](.eslintrc.json): Contains the ESLint
+* [`.eslintrc.json`](../.eslintrc.json): Contains the ESLint
     configuration for linting JavaScript and related languages, including
     JSON.
 
