@@ -17,11 +17,6 @@ let g:ale_virtualtext_cursor = 'disabled'
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \}
-
-let g:ale_yaml_yamllint_executable = 'yamllint'
-let g:ale_yaml_yamllint_options = '-d "{extends: default, rules: {line-length: {max: 120}}}"'
-
-let g:ale_linters = {
 \   'yaml': ['yamllint'],
 \}
 
