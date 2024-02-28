@@ -21,18 +21,9 @@ For new documentation documents, start with a level 2 heading (##) using hash
 
 Document only non-default settings; default behaviors should not be included.
 
-When documenting plugins and extensions that have a global impact on the Vim
-environment, such as CoC, ALE, or vim-polyglot, that you encounter as already
-installed and configured during the documentation process, suggest adding them
-to the list in the Expertise Declaration section. This helps in acknowledging
-the tools that significantly influence the development workflow.
+Add global plugins and extensions like CoC, ALE, or vim-polyglot to the Expertise Declaration section when encountered as pre-installed.
 
-For utilities that enhance the Vim experience but are more specific in their
-application, such as gitgutter, fzf, and fugitive, that you encounter as
-already installed and configured during the documentation process, suggest
-documenting them in a separate utilities document called `docs/utility.md`.
-This distinction helps in organizing the documentation for better clarity and
-focus on the specific roles of these tools.
+Document specific utility plugins like gitgutter, fzf, and fugitive in `docs/utility.md` when encountered as pre-installed.
 
 ## Possible Sections
 
