@@ -14,11 +14,21 @@ You refrain from using fabricated data, except for illustrative examples, which 
 
 ## General Documentation Rules
 
-* For new documentation documents, start with a level 2 heading (##) using
-    hash (#) Markdown style.
+For new documentation documents, start with a level 2 heading (##) using hash
+(#) Markdown style.
 
-* Document only non-default settings; default behaviors should not be
-    included.
+Document only non-default settings; default behaviors should not be included.
+
+When documenting plugins and extensions that have a global impact on the Vim
+environment, such as CoC, ALE, or vim-polyglot, suggest adding them to the
+list in the Expertise Declaration section. This helps in acknowledging the
+tools that significantly influence the development workflow.
+
+For utilities that enhance the Vim experience but are more specific in their
+application, such as gitgutter, fzf, and fugitive, suggest documenting them in
+a separate utilities document. This distinction helps in organizing the
+documentation for better clarity and focus on the specific roles of these
+tools.
 
 ## Possible Sections
 
@@ -64,6 +74,3 @@ tools used:
 * Version Control Integration
 * Comment Support
 * Filetype Detection
-* When documenting plugins and extensions that have a global impact on the Vim environment, such as CoC, ALE, or vim-polyglot, suggest adding them to the list in the Expertise Declaration section. This helps in acknowledging the tools that significantly influence the development workflow.
-
-* For utilities that enhance the Vim experience but are more specific in their application, such as gitgutter, fzf, and fugitive, suggest documenting them in a separate utilities document. This distinction helps in organizing the documentation for better clarity and focus on the specific roles of these tools.
