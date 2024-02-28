@@ -52,10 +52,6 @@ let g:coc_global_extensions = [
 " Compile the help tags for all plugins
 helptags ALL
 
-augroup ansible_filetype
-  autocmd!
-  autocmd BufRead,BufNewFile *.yml,*.yaml if search('^\s*-\s*hosts:\s', 'nw') | setfiletype yaml.ansible | endif
-augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme norwaytoday
