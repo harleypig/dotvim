@@ -39,9 +39,8 @@ The following configuration files are used for JSON support in this development 
 
 ### Linting and Static Analysis
 
-Linting JSON files in this development environment utilizes non-default configurations for the following tools:
+Linting JSON files in this development environment is configured with specific settings:
 
-* `coc-eslint`: Extended to support JSON files through additional plugins.
-* `ale.vim`: Configured with specific fixers and linters for JSON files, as defined in `.vim/pack/settings/start/settings/ftplugin/json.vim`.
+* Custom linting rules are applied to ensure code quality and consistency.
 
 ### filler
