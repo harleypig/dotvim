@@ -9,7 +9,7 @@
 
 ### Plugins and Extensions Used
 
-The following plugins and extensions are used for JSON support in this development environment:
+The following plugin and extensions are used for JSON support in this development environment:
 
 * [`coc-eslint`](https://github.com/neoclide/coc-eslint) (CoC Extension):
     Integrates ESLint into Vim, providing linting for JavaScript and related
@@ -17,8 +17,6 @@ The following plugins and extensions are used for JSON support in this developme
 * [`coc-json`](https://github.com/neoclide/coc-json) (CoC Extension): Provides
     JSON language support including schema validation, auto-completion, and
     more.
-* [`vim-jq`](https://github.com/vito-c/jq.vim) (Vim Plugin): Provides syntax
-    highlighting for JSON and integration with the `jq` tool.
 * [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin):
     A collection of language packs for Vim that includes syntax highlighting
     for JSON among many other languages.
