@@ -17,8 +17,7 @@ Avoid fabricated data except for clearly marked illustrative examples.
 ## General Documentation Rules
 
 Avoid including generic information that does not add value to the document.
-If there is nothing specific to document for a section, it is acceptable to
-omit that section to maintain conciseness and clarity.
+Refer to `GLOBAL.md` for details on global defaults and plugin configurations.
 
 Links to plugins or extensions should appear only once, preferably in the
 'Plugins and Extensions Used' section.
@@ -36,8 +35,7 @@ adherence to Markdown syntax rules to ensure readability and proper rendering.
 Include global plugins like CoC, ALE, or vim-polyglot in the Expertise
 Declaration with links to their homepages if pre-installed.
 
-Add utility plugins like gitgutter, fzf, and fugitive to `docs/utility.md`
-with links if pre-installed.
+For information on utility plugins like gitgutter, fzf, and fugitive, see `docs/utility.md`.
 
 ## Possible Sections for Language and Configuration Documentation
 
