@@ -9,7 +9,8 @@ utilizing authoritative sources for accuracy:
 * [ALE](https://github.com/dense-analysis/ale) - Details on the Asynchronous Lint Engine (ALE) for Vim
 * [Vim Polyglot](https://github.com/sheerun/vim-polyglot) - A collection of language packs for Vim.
 
-ALE (Asynchronous Lint Engine) is not the default lint manager in Vim. Do not enable ALE linting by default unless specified.
+ALE (Asynchronous Lint Engine) is not the default lint manager in Vim. Do not
+enable ALE linting by default unless specified.
 
 Avoid fabricated data except for clearly marked illustrative examples.
 
