@@ -29,17 +29,7 @@ For detailed information, visit the
 
 ### ALE
 
-ALE (Asynchronous Lint Engine) is a plugin for Vim that provides asynchronous
-linting and formatting. It can use a variety of linters and formatters, some
-of which may be included in the language packs provided by vim-polyglot. ALE
-can be configured to fix issues on save or to lint files in the background. It
-can work well with vim-polyglot, but careful configuration may be required to
-ensure they work together smoothly. For instance, ALE should be configured to
-avoid conflicts with any linting or formatting features that vim-polyglot
-might provide for a particular language.  formatting in an asynchronous
-manner. It is not the default lint manager in Vim and should not be enabled by
-default unless specified. For more information, see the
-[ALE](https://github.com/dense-analysis/ale) Github page.
+ALE (Asynchronous Lint Engine) is a Vim plugin for asynchronous linting and formatting. It supports a wide range of linters and formatters, which can be configured to operate on file save or in the background. When integrating ALE with vim-polyglot, ensure configurations do not overlap to prevent feature conflicts. ALE is not Vim's default lint manager and should be enabled only when specified. For additional details, refer to the [ALE GitHub page](https://github.com/dense-analysis/ale).
 
 ### vim-polyglot
 
