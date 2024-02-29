@@ -8,15 +8,9 @@ documentation.
 
 ## Plugins
 
-As a general rule, if a setting is already set via a Vim setting (see [Vim
-Help](https://vimhelp.org)), or can be set that way, that method should be
-preferred. If a plugin is installed for other reasons (see vim-polyglot below)
-and manages that setting that is acceptable.
+Plugins enhance Vim's functionality. Where possible, native Vim settings are preferred. If a plugin offers additional features or manages settings for convenience, it can be used.
 
-As a general rule, CoC handles 'as you type' configuration (such as linting,
-syntax errors, etc.), while ALE handles autofixing (e.g., 'format on save')
-configuration. As you make changes, make sure this is not altered unless
-absolutely necessary.
+CoC provides real-time features like linting and auto-completion, while ALE focuses on asynchronous linting and auto-fixing tasks such as 'format on save'. Ensure changes maintain this distinction.
 
 ### CoC
 
