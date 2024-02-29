@@ -15,7 +15,7 @@ for its use.
 
 CoC provides real-time, or 'as you type', features like linting and
 auto-completion, while ALE focuses on asynchronous linting and auto-fixing
-tasks such as 'format on save'. Ensure changes maintain this distinction.
+tasks such as 'format on save'. Ensure changes maintain this distinction and avoid feature overlap to ensure seamless integration.
 
 ### CoC
 
