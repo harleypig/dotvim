@@ -13,9 +13,7 @@ additional features beyond native Vim capabilities. If a plugin also manages
 Vim settings for convenience, that is acceptable but not the primary reason
 for its use.
 
-CoC provides real-time, or 'as you type', features like linting and
-auto-completion, while ALE focuses on asynchronous linting and auto-fixing
-tasks such as 'format on save'. Ensure changes maintain this distinction and avoid feature overlap to ensure seamless integration.
+CoC provides real-time, or 'as you type', features like linting and auto-completion, while ALE focuses on asynchronous linting and auto-fixing tasks such as 'format on save'. In cases where other plugins may conflict or override CoC or ALE functionalities, it should be documented in the language-specific sections. Indicate whether CoC and/or ALE was used and if the overlapping plugin features were disabled, or vice versa, to maintain clear and intended behavior.
 
 ### CoC
 
