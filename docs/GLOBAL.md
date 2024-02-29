@@ -13,27 +13,38 @@ additional features beyond native Vim capabilities. If a plugin also manages
 Vim settings for convenience, that is acceptable but not the primary reason
 for its use.
 
-CoC provides real-time, or 'as you type', features like linting and auto-completion, while ALE focuses on asynchronous linting and auto-fixing tasks such as 'format on save'. In cases where other plugins may conflict or override CoC or ALE functionalities, it should be documented in the language-specific sections. Indicate whether CoC and/or ALE was used and if the overlapping plugin features were disabled, or vice versa, to maintain clear and intended behavior.
+CoC provides real-time, or 'as you type', features like linting and
+auto-completion, while ALE focuses on asynchronous linting and auto-fixing
+tasks such as 'format on save'. In cases where other plugins may conflict or
+override CoC or ALE functionalities, it should be documented in the
+language-specific sections. Indicate whether CoC and/or ALE was used and if
+the overlapping plugin features were disabled, or vice versa, to maintain
+clear and intended behavior.
 
 ### CoC
 
-`CoC` (Conquer of Completion) is a Vim plugin that offers an intellisense
-engine with features like linting and auto-completion. It leverages language
-servers for these capabilities and should be configured to avoid overlapping
-with vim-polyglot's features. Careful setup is required to prevent conflicts,
-especially if vim-polyglot provides similar functionalities for a language.
-For detailed information, visit the
-[CoC](https://github.com/neoclide/coc.nvim) Github page.
+[CoC](https://github.com/neoclide/coc.nvim) (Conquer of Completion) is a Vim
+plugin that offers an `intellisense engine` with real-time, or 'as you type',
+features like linting and auto-completion. It leverages language servers for
+these capabilities.
+
+Settings for this plugin should be in
+[coc.vim](../.vim/pack/settings/start/settings/plugin/coc.vim) and settings
+for extensions should be in `coc-settings` (use `:CocConfig` to edit this
+file).
 
 ### ALE
 
-`ALE` (Asynchronous Lint Engine) is a Vim plugin for asynchronous linting and
-formatting. It supports a wide range of linters and formatters, which can be
-configured to operate on file save or in the background. When integrating ALE
-with vim-polyglot, ensure configurations do not overlap to prevent feature
-conflicts. ALE is not Vim's default lint manager and should be enabled only
-when specified. For additional details, refer to the
-[ALE](https://github.com/dense-analysis/ale) Github page.
+[ALE](https://github.com/dense-analysis/ale) (Asynchronous Lint Engine) is
+a Vim plugin for asynchronous linting and formatting. It supports a wide range
+of linters and formatters, which can be configured to operate on file save or
+in the background.
+
+Settings for this plugin should be in
+[ale.vim](../.vim/pack/settings/start/settings/plugin/ale.vim). Settings for
+a specific file type should be in
+`.vim/pack/settings/start/settings/ftplugin/filetype.vim` (where
+`filetype.vim` is `json.vim` for json, etc.).
 
 ### vim-polyglot
 
