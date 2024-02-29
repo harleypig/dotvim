@@ -25,11 +25,17 @@ for these capabilities and should be configured to avoid overlapping with
 vim-polyglot's features. Careful setup is required to prevent conflicts,
 especially if vim-polyglot provides similar functionalities for a language.
 For detailed information, visit the
-[CoC](https://github.com/neoclide/coc.nvim).
+[CoC](https://github.com/neoclide/coc.nvim) Github page.
 
 ### ALE
 
-ALE (Asynchronous Lint Engine) is a Vim plugin for asynchronous linting and formatting. It supports a wide range of linters and formatters, which can be configured to operate on file save or in the background. When integrating ALE with vim-polyglot, ensure configurations do not overlap to prevent feature conflicts. ALE is not Vim's default lint manager and should be enabled only when specified. For additional details, refer to the [ALE GitHub page](https://github.com/dense-analysis/ale).
+ALE (Asynchronous Lint Engine) is a Vim plugin for asynchronous linting and
+formatting. It supports a wide range of linters and formatters, which can be
+configured to operate on file save or in the background. When integrating ALE
+with vim-polyglot, ensure configurations do not overlap to prevent feature
+conflicts. ALE is not Vim's default lint manager and should be enabled only
+when specified. For additional details, refer to the
+[ALE](https://github.com/dense-analysis/ale) Github page.
 
 ### vim-polyglot
 
