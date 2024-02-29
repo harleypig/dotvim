@@ -50,8 +50,4 @@ let g:coc_global_extensions = [
 " coc-yaml
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Compile the help tags for all plugins
-helptags ALL
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme norwaytoday

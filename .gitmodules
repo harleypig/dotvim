@@ -1,6 +1,8 @@
 [submodule "vim-polyglot"]
 	path = .vim/pack/syntax/start/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot.git
+	#url = https://github.com/sheerun/vim-polyglot.git
+	url = https://github.com/harleypig/vim-polyglot.git
+	branch = working
 	ignore = dirty
 [submodule "vim-colorschemes"]
 	path = .vim/pack/colorschemes/start/vim-colorschemes
