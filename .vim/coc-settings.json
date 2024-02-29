@@ -2,8 +2,7 @@
   //-------------------------------------------------------------------------
   // Let ALE handle formatting
   // Diagnostics are displayed by ALE instead of CoC.
-   "diagnostic.displayByAle": true,
-  "diagnostic.displayByAle": false,
+  "diagnostic.displayByAle": true,
   // Enables virtual text diagnostics.
   "diagnostic.virtualText": true,
   // Shows virtual text diagnostics only on the current line.
@@ -17,8 +16,7 @@
   "coc.preferences.extensionUpdateCheck": "daily",
   // Disables automatic formatting on save.
   "coc.preferences.formatOnSave": false,
-  // Uses quickfix for locations.
-  "coc.preferences.useQuickfixForLocations": false,
+  // Don't use quickfix for locations.
   "coc.preferences.useQuickfixForLocations": false,
 
   // Enables colors.
@@ -106,6 +104,7 @@
 //    },
 //  ],
 
+  //-------------------------------------------------------------------------
   // Pyright settings
   // https://github.com/fannheyward/coc-pyright
   // https://github.com/microsoft/pyright
@@ -116,16 +115,11 @@
   "pyright.inlayHints.variableTypes": false,
 
   //-------------------------------------------------------------------------
-  // eslint settings
-  // Requires coc-eslint extension to be installed
-  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
-  "eslint.packageManager": "npm",
-  "eslint.autoFixOnSave": true,
-
   // coc-pyright flake8
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Stdin": true,
 
+  //-------------------------------------------------------------------------
   // Requires proselint be installed
   "diagnostic-languageserver.linters": {
     "proselint": {
@@ -157,6 +151,7 @@
     "text": ["proselint"]
   },
 
+  //-------------------------------------------------------------------------
   "languageserver": {
     "vimls": {
       "command": "vim-language-server",
@@ -208,10 +203,11 @@
         // "validation.enableEnhancedValidation": true
       }
     }
+//   },
+//
+//   "markdownlint.config": {
+//     "default": true,
+//     "line-length": false
+//   }
   },
-
-//  "markdownlint.config": {
-//    "default": true,
-//    "line-length": false
-//  },
 }
