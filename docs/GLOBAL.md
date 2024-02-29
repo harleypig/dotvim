@@ -19,17 +19,17 @@ tasks such as 'format on save'. Ensure changes maintain this distinction.
 
 ### CoC
 
-CoC (Conquer of Completion) is a Vim plugin that offers an intellisense engine
-with features like linting and auto-completion. It leverages language servers
-for these capabilities and should be configured to avoid overlapping with
-vim-polyglot's features. Careful setup is required to prevent conflicts,
+`CoC` (Conquer of Completion) is a Vim plugin that offers an intellisense
+engine with features like linting and auto-completion. It leverages language
+servers for these capabilities and should be configured to avoid overlapping
+with vim-polyglot's features. Careful setup is required to prevent conflicts,
 especially if vim-polyglot provides similar functionalities for a language.
 For detailed information, visit the
 [CoC](https://github.com/neoclide/coc.nvim) Github page.
 
 ### ALE
 
-ALE (Asynchronous Lint Engine) is a Vim plugin for asynchronous linting and
+`ALE` (Asynchronous Lint Engine) is a Vim plugin for asynchronous linting and
 formatting. It supports a wide range of linters and formatters, which can be
 configured to operate on file save or in the background. When integrating ALE
 with vim-polyglot, ensure configurations do not overlap to prevent feature
@@ -39,7 +39,11 @@ when specified. For additional details, refer to the
 
 ### vim-polyglot
 
-vim-polyglot aggregates language-specific Vim plugins into a single package for enhanced syntax highlighting, indentation, and more. It's optimized for performance, loading only needed plugins. Care should be taken to avoid feature overlap with plugins like CoC and ALE. For details, visit the [vim-polyglot GitHub page](https://github.com/sheerun/vim-polyglot).
+`vim-polyglot` aggregates language-specific Vim plugins into a single package
+for enhanced syntax highlighting, indentation, and more. It's optimized for
+performance, loading only needed plugins. Care should be taken to avoid
+feature overlap with plugins like CoC and ALE. For details, visit the
+[vim-polyglot](https://github.com/sheerun/vim-polyglot) Github page.
 
 ## Special Windows
 
