@@ -48,9 +48,10 @@ a specific file type should be in
 
 ### vim-polyglot
 
-`vim-polyglot` is a Vim plugin that aggregates various language packs for
-enhanced syntax highlighting, indentation, and more. It is optimized for
-performance by loading only the necessary plugins for a given file type.
+[vim-polyglot](https://github.com/sheerun/vim-polyglot) is a Vim plugin that
+aggregates various language packs for enhanced syntax highlighting,
+indentation, and more. It is optimized for performance by loading only the
+necessary plugins for a given file type.
 
 Settings for this plugin should be managed in a way that avoids conflicts with
 other plugins providing similar features, such as CoC and ALE. Ensure that

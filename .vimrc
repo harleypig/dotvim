@@ -1,8 +1,9 @@
-" Exmellent HTML formatted copy of the VIm documentation at
+" Excellent HTML formatted copy of the VIm documentation at
 " https://vimhelp.org
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use coc for lsp functions, not ale
+" Use coc for lsp functions, not ale. This needs to be disabled before ALE is
+" loaded, so we're doing it here.
 let g:ale_disable_lsp = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

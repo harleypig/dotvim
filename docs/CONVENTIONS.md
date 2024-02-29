@@ -4,23 +4,17 @@ Expertise in Vim, its plugins, and extensions, including configuration of Vim
 and CoC ecosystem, is assumed. Documentation should be clear and concise,
 utilizing authoritative sources for accuracy:
 
-* [Vim Help](https://vimhelp.org) - Vim's official documentation
-* [CoC](https://github.com/neoclide/coc.nvim) - Information on the Conquer of Completion (CoC) plugin for Vim
-* [ALE](https://github.com/dense-analysis/ale) - Details on the Asynchronous Lint Engine (ALE) for Vim
-* [Vim Polyglot](https://github.com/sheerun/vim-polyglot) - A collection of language packs for Vim.
-
-ALE (Asynchronous Lint Engine) is not the default lint manager in Vim. Do not
-enable ALE linting by default unless specified.
+* [Vim Help](https://vimhelp.org), Vim's official documentation
+* [CoC](https://github.com/neoclide/coc.nvim) docs
+* [ALE](https://github.com/dense-analysis/ale) docs
+* [Vim Polyglot](https://github.com/sheerun/vim-polyglot) docs
 
 Avoid fabricated data except for clearly marked illustrative examples.
 
+Refer to `GLOBAL.md` for rules regarding global defaults and other
+considerations.
+
 ## General Documentation Rules
-
-Avoid including generic information that does not add value to the document.
-Refer to `GLOBAL.md` for details on global defaults and plugin configurations.
-
-Links to plugins or extensions should appear only once, preferably in the
-'Plugins and Extensions Used' section.
 
 Use asterisks (*) for bullet points in lists.
 
@@ -28,14 +22,23 @@ Start new documents with a level 2 heading (##) in Markdown.
 
 Document only non-default settings; omit default behaviors.
 
+Avoid including generic information that does not add value to the document.
+
+Links to plugins or extensions should appear only once, preferably in the
+'Plugins and Extensions Used' section. If text refers to documentation later
+in the file (such as 'see XXX below') then it is ok to leave that as is.
+
 All documentation must be written in valid Markdown format. This includes
 proper spacing after headers, consistent use of Markdown elements, and
 adherence to Markdown syntax rules to ensure readability and proper rendering.
 
-Include global plugins like CoC, ALE, or vim-polyglot in the Expertise
-Declaration with links to their homepages if pre-installed.
+Suggest including global plugins similar in scope to CoC, ALE, or vim-polyglot
+in the `Expertise Declaration` with links to their homepages if discovered to
+be installed during documentation and configuration.
 
-For information on utility plugins like gitgutter, fzf, and fugitive, see `docs/utility.md`.
+Suggest including utility plugins similar in scope to gitgutter, fzf, or
+fugitive, to `utility.md` with links to their homepages if discovered to be
+installed during documentation and configuration.
 
 ## Possible Sections for Language and Configuration Documentation
 
