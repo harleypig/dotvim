@@ -18,7 +18,7 @@
   // Disables automatic formatting on save.
   "coc.preferences.formatOnSave": false,
   // Uses quickfix for locations.
-  "coc.preferences.useQuickfixForLocations": true,
+  "coc.preferences.useQuickfixForLocations": false,
   "coc.preferences.useQuickfixForLocations": false,
 
   // Enables colors.
