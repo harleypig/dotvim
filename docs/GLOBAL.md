@@ -39,16 +39,7 @@ when specified. For additional details, refer to the
 
 ### vim-polyglot
 
-vim-polyglot is a collection of language packs for Vim, providing
-a comprehensive suite of language-specific features such as syntax
-highlighting, indentation, and other editor enhancements. It aggregates
-various language-specific Vim plugins into a single package, making it easier
-to manage and install support for multiple languages. vim-polyglot is designed
-to be lightweight and loads only the necessary plugins for the files you are
-working on, which helps to keep Vim's performance optimized. When using
-vim-polyglot with other plugins like CoC and ALE, ensure that there is no
-overlap in functionality that could lead to conflicts. For more information,
-see the [vim-polyglot](https://github.com/sheerun/vim-polyglot) Github page.
+vim-polyglot aggregates language-specific Vim plugins into a single package for enhanced syntax highlighting, indentation, and more. It's optimized for performance, loading only needed plugins. Care should be taken to avoid feature overlap with plugins like CoC and ALE. For details, visit the [vim-polyglot GitHub page](https://github.com/sheerun/vim-polyglot).
 
 ## Special Windows
 
