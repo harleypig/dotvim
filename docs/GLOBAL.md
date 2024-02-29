@@ -19,7 +19,13 @@ tasks such as 'format on save'. Ensure changes maintain this distinction.
 
 ### CoC
 
-CoC (Conquer of Completion) is a Vim plugin that offers an intellisense engine with features like linting and auto-completion. It leverages language servers for these capabilities and should be configured to avoid overlapping with vim-polyglot's features. Careful setup is required to prevent conflicts, especially if vim-polyglot provides similar functionalities for a language. For detailed information, visit the [CoC GitHub page](https://github.com/neoclide/coc.nvim).
+CoC (Conquer of Completion) is a Vim plugin that offers an intellisense engine
+with features like linting and auto-completion. It leverages language servers
+for these capabilities and should be configured to avoid overlapping with
+vim-polyglot's features. Careful setup is required to prevent conflicts,
+especially if vim-polyglot provides similar functionalities for a language.
+For detailed information, visit the
+[CoC](https://github.com/neoclide/coc.nvim).
 
 ### ALE
 
