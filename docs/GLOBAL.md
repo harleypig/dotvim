@@ -20,14 +20,14 @@ absolutely necessary.
 
 ### CoC
 
-* CoC (Conquer of Completion) is a plugin for Vim that provides an
+* CoC (Conquer of Completion) is a plugin for Vim that provides an intellisense engine for Vim, which includes features like linting, auto-completion, and more. It uses language servers to provide these features, and it can work alongside the syntax highlighting and indentation provided by vim-polyglot. CoC can be configured to respect the settings provided by vim-polyglot for specific languages. However, it's important to ensure that there are no conflicts between the settings and features provided by vim-polyglot and those provided by CoC. For example, if vim-polyglot provides its own linting or auto-completion for a language, you may need to disable those features in CoC for that specific language to avoid duplication or conflicts.
     intellisense engine for Vim. It manages linting, auto-completion, and
     more.  For more information, see the [CoC GitHub
     page](https://github.com/neoclide/coc.nvim).
 
 ### ALE
 
-* ALE (Asynchronous Lint Engine) is a plugin for Vim that provides linting and
+* ALE (Asynchronous Lint Engine) is a plugin for Vim that provides asynchronous linting and formatting. It can use a variety of linters and formatters, some of which may be included in the language packs provided by vim-polyglot. ALE can be configured to fix issues on save or to lint files in the background. It can work well with vim-polyglot, but careful configuration may be required to ensure they work together smoothly. For instance, ALE should be configured to avoid conflicts with any linting or formatting features that vim-polyglot might provide for a particular language.
     formatting in an asynchronous manner. It is not the default lint manager
     in Vim and should not be enabled by default unless specified. For more
     information, see the [ALE GitHub
