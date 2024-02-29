@@ -8,9 +8,14 @@ documentation.
 
 ## Plugins
 
-Plugins enhance Vim's functionality. They should be considered for their additional features beyond native Vim capabilities. If a plugin also manages Vim settings for convenience, that is acceptable but not the primary reason for its use.
+Plugins enhance Vim's functionality. They should be considered for their
+additional features beyond native Vim capabilities. If a plugin also manages
+Vim settings for convenience, that is acceptable but not the primary reason
+for its use.
 
-CoC provides real-time features like linting and auto-completion, while ALE focuses on asynchronous linting and auto-fixing tasks such as 'format on save'. Ensure changes maintain this distinction.
+CoC provides real-time, or 'as you type', features like linting and
+auto-completion, while ALE focuses on asynchronous linting and auto-fixing
+tasks such as 'format on save'. Ensure changes maintain this distinction.
 
 ### CoC
 
