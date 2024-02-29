@@ -2,7 +2,7 @@
   //-------------------------------------------------------------------------
   // Let ALE handle formatting
   // Diagnostics are displayed by ALE instead of CoC.
-  "diagnostic.displayByAle": true,
+   "diagnostic.displayByAle": true,
   // Enables virtual text diagnostics.
   "diagnostic.virtualText": true,
   // Shows virtual text diagnostics only on the current line.
