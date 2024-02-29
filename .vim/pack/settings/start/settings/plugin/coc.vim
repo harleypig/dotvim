@@ -24,6 +24,10 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Navigate through issues using quickfix list
+nmap <silent> c[ :cprevious<CR>
+nmap <silent> c] :cnext<CR>
+
 
 
 

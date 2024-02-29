@@ -3,6 +3,7 @@
   // Let ALE handle formatting
   // Diagnostics are displayed by ALE instead of CoC.
    "diagnostic.displayByAle": true,
+  "diagnostic.displayByAle": false,
   // Enables virtual text diagnostics.
   "diagnostic.virtualText": true,
   // Shows virtual text diagnostics only on the current line.
@@ -18,6 +19,7 @@
   "coc.preferences.formatOnSave": false,
   // Uses quickfix for locations.
   "coc.preferences.useQuickfixForLocations": true,
+  "coc.preferences.useQuickfixForLocations": false,
 
   // Enables colors.
   "colors.enable": true,
