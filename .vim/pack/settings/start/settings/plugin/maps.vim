@@ -69,7 +69,7 @@ map <leader>ln :call ToggleLineNumbers()<CR>
 " bottom, running aider.
 if exists(':Aider')
   function! OpenAiderTerminal()
-    execute 'botright 20split | terminal ++norestore'
+    execute 'botright 20split | terminal ++norestore aider'
   endfunction
 
   nnoremap <silent> <leader>aid :call OpenAiderTerminal()<CR>
