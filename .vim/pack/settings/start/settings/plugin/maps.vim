@@ -84,7 +84,7 @@ if executable('aider')
       execute 'lcd ' . l:repo_root
     endif
 
-    #execute 'botright terminal aider ++close ++norestore aider ' . l:relative_file_path
+    "execute 'botright terminal aider ++close ++norestore aider ' . l:relative_file_path
     execute 'botright terminal ++bufname=aider ++close ++norestore aider'
   endfunction
 
