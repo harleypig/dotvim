@@ -70,6 +70,11 @@ map <leader>ln :call ToggleLineNumbers()<CR>
 "
 if executable('aider')
   function! OpenAiderTerminal()
+    let l:repo_root = system('git rev-parse --show-toplevel')
+    let l:repo_root = substitute(l:repo_root, '\n\+$', '', '')
+    if v:shell_error == 0 && !empty(l:repo_root)
+      execute 'lcd ' . l:repo_root
+    endif
     execute 'botright terminal ++close ++norestore aider'
   endfunction
 
