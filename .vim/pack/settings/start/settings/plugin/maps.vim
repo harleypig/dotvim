@@ -72,9 +72,12 @@ if executable('aider')
   function! OpenAiderTerminal()
     let l:repo_root = system('git rev-parse --show-toplevel')
     let l:repo_root = substitute(l:repo_root, '\n\+$', '', '')
-    let l:current_file = expand('%')
-    let l:relative_file_path = l:current_file != '' ? system('git ls-files --full-name ' . shellescape(l:current_file)) : ''
-    let l:relative_file_path = substitute(l:relative_file_path, '\n\+$', '', '')
+    let l:current_file = expand('%:p')
+    if l:current_file != '' && l:repo_root != ''
+      let l:relative_file_path = l:current_file[l:repo_root != '/' ? len(l:repo_root) + 1 : len(l:repo_root):]
+    else
+      let l:relative_file_path = ''
+    endif
 
     if v:shell_error == 0 && !empty(l:repo_root)
       execute 'lcd ' . l:repo_root
