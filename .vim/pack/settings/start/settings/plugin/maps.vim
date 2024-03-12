@@ -71,5 +71,6 @@ if exists(':Aider')
   function! OpenAiderTerminal()
     execute 'botright 20split | terminal ++norestore'
   endfunction
+
   nnoremap <silent> <leader>aid :call OpenAiderTerminal()<CR>
 endif
