@@ -65,9 +65,7 @@ endfunction
 map <leader>ln :call ToggleLineNumbers()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" If Aider is installed, then map <leader>aid to open a terminal window at the
-" bottom, running aider.
-if exists(':Aider')
+if executable('aider')
   function! OpenAiderTerminal()
     execute 'botright 20split | terminal ++norestore aider'
   endfunction
