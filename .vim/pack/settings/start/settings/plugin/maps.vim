@@ -63,3 +63,7 @@ function! ToggleLineNumbers()
 endfunction
 
 map <leader>ln :call ToggleLineNumbers()<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" If Aider is installed, then map <leader>aid to open a terminal window at the
+" bottom, running aider.
