@@ -72,12 +72,19 @@ if executable('aider')
   function! OpenAiderTerminal()
     let l:repo_root = system('git rev-parse --show-toplevel')
     let l:repo_root = substitute(l:repo_root, '\n\+$', '', '')
+    let l:current_file = expand('%')
+    let l:relative_file_path = l:current_file != '' ? system('git ls-files --full-name ' . shellescape(l:current_file)) : ''
+    let l:relative_file_path = substitute(l:relative_file_path, '\n\+$', '', '')
 
     if v:shell_error == 0 && !empty(l:repo_root)
       execute 'lcd ' . l:repo_root
     endif
 
-    execute 'botright terminal ++close ++norestore aider'
+    let l:aider_command = 'aider'
+    if l:relative_file_path != ''
+      let l:aider_command .= ' ' . l:relative_file_path
+    endif
+    execute 'botright terminal ++close ++norestore ' . l:aider_command
   endfunction
 
   nnoremap <silent> <leader>adr :call OpenAiderTerminal()<CR>
