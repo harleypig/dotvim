@@ -85,7 +85,7 @@ if executable('aider')
     endif
 
     "execute 'botright terminal aider ++close ++norestore aider ' . l:relative_file_path
-    execute 'botright terminal ++bufname=aider ++close ++norestore aider'
+    execute 'botright terminal ++close ++norestore aider'
   endfunction
 
   nnoremap <silent> <leader>adr :call OpenAiderTerminal()<CR>
