@@ -153,6 +153,15 @@
 
   //-------------------------------------------------------------------------
   "languageserver": {
+    "html": {
+      "command": "vscode-html-languageserver",
+      "args": ["--stdio"],
+      "filetypes": ["html", "mustache"],
+      "initializationOptions": {
+        "provideFormatter": true
+      },
+      "settings": {}
+    },
     "vimls": {
       "command": "vim-language-server",
       "args": ["--stdio"],
