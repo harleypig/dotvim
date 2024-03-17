@@ -154,7 +154,7 @@
   //-------------------------------------------------------------------------
   "languageserver": {
     "html": {
-      "command": "vscode-html-languageserver",
+      "command": "vscode-html-languageservice",
       "args": ["--stdio"],
       "filetypes": ["html", "mustache"],
       "initializationOptions": {
