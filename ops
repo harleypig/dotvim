@@ -1,1 +1,1 @@
-{"author":{"id":"c9407c85a250e941c5c3aea55bcba0dd6cc6205f459075818d33c8c1a9c58ddd"},"ops":[{"type":1,"timestamp":1710695592,"nonce":"28pW+c7EHFlGVAKbg2lYNNJAf4Q=","title":"detect shellcheck shell=bash as bash filetype","message":"","files":null}]}
+{"author":{"id":"c9407c85a250e941c5c3aea55bcba0dd6cc6205f459075818d33c8c1a9c58ddd"},"ops":[{"type":5,"timestamp":1710695592,"nonce":"lx6lY+fkq3w2uNT6QvWeBxbeLOE=","added":["enhancement"],"removed":null}]}
