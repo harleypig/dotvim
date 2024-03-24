@@ -219,4 +219,5 @@
 //     "line-length": false
 //   }
   },
+  "toml.toml.": "",
 }

@@ -1,6 +1,10 @@
 " Configure isort if it's available.
 " https://pycqa.github.io/isort
 
+setlocal shiftwidth=2
+setlocal softtabstop=2
+setlocal expandtab
+
 let g:ale_fixers = {}
 
 if executable('isort')
