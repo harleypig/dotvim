@@ -9,6 +9,10 @@ function! ShellcheckFileType() abort
 
     if !empty(l:matches)
         let l:filetype = l:matches[0]
-        execute 'setfiletype ' . l:filetype
+        if l:filetype ==# 'dash' || l:filetype ==# 'busybox'
+            execute 'setfiletype sh'
+        elseif l:filetype ==# 'bash' || l:filetype ==# 'sh' || l:filetype ==# 'ksh'
+            execute 'setfiletype ' . l:filetype
+        endif
     endif
 endfunction
