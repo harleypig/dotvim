@@ -32,6 +32,7 @@ set   writebackup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set viminfofile=$XDG_STATE_HOME/vim/viminfo
 set viminfo=%10,'50,s1000,/1000,:1000
+call CleanOldFiles($XDG_STATE_HOME.'/vim', 'viminfo', 180)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set undodir=$XDG_STATE_HOME/vim/undo     | call mkdir(&undodir,   'p')
