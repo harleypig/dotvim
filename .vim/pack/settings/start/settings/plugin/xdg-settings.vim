@@ -5,6 +5,16 @@
 " https://wiki.archlinux.org/title/Vim#Workaround_for_XDG_Base_Directory_specification
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! CleanOldFiles(directory, pattern, days) abort
+    let l:current_time = localtime()
+    let l:target_time = l:current_time - (a:days * 24 * 60 * 60)
+    let l:files = split(globpath(a:directory, a:pattern), "\n")
+    call filter(l:files, 'getftime(v:val) < l:target_time')
+    call map(l:files, 'delete(v:val)')
+endfunction
+
+call CleanOldFiles($XDG_STATE_HOME.'/vim/undo', '*', 90)
+
 set backupdir=$XDG_STATE_HOME/vim/backup | call mkdir(&backupdir, 'p')
 
 " see :h backup-table
