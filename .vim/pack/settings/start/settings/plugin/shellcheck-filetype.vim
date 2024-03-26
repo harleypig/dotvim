@@ -1,4 +1,4 @@
-augroup shellcheck-filetype
+augroup shellcheckfiletype
     autocmd!
     autocmd BufRead,BufNewFile * call ShellcheckFileType()
 augroup END
