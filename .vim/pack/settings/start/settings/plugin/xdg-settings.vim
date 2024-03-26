@@ -1,0 +1,45 @@
+<<add function here>>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use the XDG setup (to keep the home directory as clean as possible)
+" https://wiki.archlinux.org/title/Vim#Workaround_for_XDG_Base_Directory_specification
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set backupdir=$XDG_STATE_HOME/vim/backup | call mkdir(&backupdir, 'p')
+
+" see :h backup-table
+" backup writebackup  action
+" ----------------------------------
+" off    off          no backup made
+" off    on           backup current file, deleted afterwards (default)
+" on     off          delete old backup, backup current file
+" on     on           delete old backup, backup current file
+
+" If you are having issues with some language servers, set nowritebackup
+" either in this file or, preferably, the ftplugin for that filetype. See
+" https://github.com/neoclide/coc.nvim/issues/649
+
+set nobackup
+set   writebackup
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if !has('nvim')
+  set viminfofile=$XDG_STATE_HOME/vim/viminfo
+endif
+
+set viminfo=%10,'50,s1000,/1000,:1000
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set undodir=$XDG_STATE_HOME/vim/undo     | call mkdir(&undodir,   'p')
+
+" Delete undos older than 90 days
+let s:undos = split(globpath(&undodir, '*'), "\n")
+call filter(s:undos, 'getftime(v:val) < localtime() - (60 * 60 * 24 * 90)')
+call map(s:undos, 'delete(v:val)')
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:netrw_home = $XDG_DATA_HOME.'/vim'
+call mkdir($XDG_DATA_HOME.'/vim/spell', 'p')
+
+set directory=$XDG_STATE_HOME/vim/swap   | call mkdir(&directory, 'p')
+set viewdir=$XDG_STATE_HOME/vim/view     | call mkdir(&viewdir,   'p')
