@@ -1,10 +1,3 @@
-" iF you are having issues with some language servers, add the following to
-" either this file or, preferably, the ftplugin for that filetype.
-" See https://github.com/neoclide/coc.nvim/issues/649
-"
-" set nobackup
-" set nowritebackup
-
 " I don't need the -i, apparently my aliases are being loaded now.
 "set   shellcmdflag=-ic
 
@@ -23,9 +16,7 @@ set   wildmenu
 "set   spell
 
 set   background=dark
-set   backupdir=/tmp,~/tmp
 set   clipboard+=unnamed
-set   directory=/tmp,~/tmp
 set   encoding=utf-8
 set   history=1000
 set   listchars=
@@ -42,7 +33,6 @@ set   tabstop=2
 set   undolevels=1000
 set   updatecount=10
 set   updatetime=1000
-set   viminfo=h,%10,'50,s1000,/1000,:1000
 set   virtualedit=block
 set   wildignore+=*/.git/
 set   wildignore+=*/CVS/

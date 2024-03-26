@@ -35,7 +35,7 @@ set viminfo=%10,'50,s1000,/1000,:1000
 call CleanOldFiles($XDG_STATE_HOME.'/vim', 'viminfo', 180)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set undodir=$XDG_STATE_HOME/vim/undo     | call mkdir(&undodir,   'p')
+set undodir=$XDG_STATE_HOME/vim/undo | call mkdir(&undodir,   'p')
 call CleanOldFiles(&undodir, '*', 90)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -43,4 +43,7 @@ let g:netrw_home = $XDG_DATA_HOME.'/vim'
 call mkdir($XDG_DATA_HOME.'/vim/spell', 'p')
 
 set directory=$XDG_STATE_HOME/vim/swap   | call mkdir(&directory, 'p')
+call CleanOldFiles(&directory, '*', 90)
+
 set viewdir=$XDG_STATE_HOME/vim/view     | call mkdir(&viewdir,   'p')
+call CleanOldFiles(&viewdir, '*', 90)

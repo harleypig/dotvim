@@ -8,19 +8,12 @@
 " Because I've got my vim setup in a different repository, I need to make some
 " modifications. Anything that would go under $XDG_CONFIG_HOME would have to
 " go under $HOME/projects/dotvim instead.
+"
+" Put the required settings here, and the remainder in the xdg-settings.vim
+" file in the settings/plugin directory.
 
 set runtimepath^=$XDG_DOTVIM/.vim
 set packpath^=$XDG_DOTVIM/.vim
-
-let g:netrw_home = '$XDG_DATA_HOME/vim'
-call mkdir('$XDG_DATA_HOME/vim/spell', 'p')
-
-set backupdir=$XDG_STATE_HOME/vim/backup | call mkdir(&backupdir, 'p')
-set directory=$XDG_STATE_HOME/vim/swap   | call mkdir(&directory, 'p')
-set undodir=$XDG_STATE_HOME/vim/undo     | call mkdir(&undodir,   'p')
-set viewdir=$XDG_STATE_HOME/vim/view     | call mkdir(&viewdir,   'p')
-
-if !has('nvim') | set viminfofile=$XDG_STATE_HOME/vim/viminfo | endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use coc for lsp functions, not ale. This needs to be disabled before ALE is
