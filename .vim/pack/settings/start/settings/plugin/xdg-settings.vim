@@ -13,7 +13,6 @@ endfunction
 
 set backupdir=$XDG_STATE_HOME/vim/backup | call mkdir(&backupdir, 'p')
 call CleanOldFiles(&backupdir, '*', 90)
-call CleanOldFiles(&backupdir, '*', 30)
 
 " see :h backup-table
 " backup writebackup  action
@@ -31,15 +30,12 @@ set nobackup
 set   writebackup
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if !has('nvim')
-  set viminfofile=$XDG_STATE_HOME/vim/viminfo
-endif
-
+set viminfofile=$XDG_STATE_HOME/vim/viminfo
 set viminfo=%10,'50,s1000,/1000,:1000
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set undodir=$XDG_STATE_HOME/vim/undo     | call mkdir(&undodir,   'p')
-call CleanOldFiles(&undodir, '*', 30)
+call CleanOldFiles(&undodir, '*', 90)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:netrw_home = $XDG_DATA_HOME.'/vim'
