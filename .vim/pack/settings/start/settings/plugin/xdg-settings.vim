@@ -13,6 +13,7 @@ endfunction
 
 set backupdir=$XDG_STATE_HOME/vim/backup | call mkdir(&backupdir, 'p')
 call CleanOldFiles(&backupdir, '*', 90)
+call CleanOldFiles(&backupdir, '*', 90)
 
 " see :h backup-table
 " backup writebackup  action
