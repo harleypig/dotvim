@@ -7,19 +7,10 @@
 " Define a function to determine the filetype based on the shellcheck directive
 function! ShellcheckFileType() abort
     let l:first_line = getline(1)
-
-    if l:first_line =~ '#\s*shellcheck\s*shell=bash'
-        return 'bash'
-    elseif l:first_line =~ '#\s*shellcheck\s*shell=sh'
-        return 'sh'
-    elseif l:first_line =~ '#\s*shellcheck\s*shell=dash'
-        return 'sh'
-    elseif l:first_line =~ '#\s*shellcheck\s*shell=ksh'
-        return 'ksh'
-    elseif l:first_line =~ '#\s*shellcheck\s*shell=busybox'
-        return 'sh'
-    else
-        return ''
+    let l:matches = matchlist(l:first_line, '#\s*shellcheck\s*shell=\zs\w\+\ze')
+    if !empty(l:matches)
+        let l:filetype = l:matches[0]
+        execute 'setfiletype ' . l:filetype
     endif
 endfunction
 
