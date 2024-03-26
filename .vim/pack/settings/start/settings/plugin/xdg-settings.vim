@@ -1,9 +1,3 @@
-<<add function here>>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use the XDG setup (to keep the home directory as clean as possible)
-" https://wiki.archlinux.org/title/Vim#Workaround_for_XDG_Base_Directory_specification
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! CleanOldFiles(directory, pattern, days) abort
     let l:current_time = localtime()
@@ -13,9 +7,12 @@ function! CleanOldFiles(directory, pattern, days) abort
     call map(l:files, 'delete(v:val)')
 endfunction
 
-call CleanOldFiles($XDG_STATE_HOME.'/vim/undo', '*', 90)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use the XDG setup (to keep the home directory as clean as possible)
+" https://wiki.archlinux.org/title/Vim#Workaround_for_XDG_Base_Directory_specification
 
 set backupdir=$XDG_STATE_HOME/vim/backup | call mkdir(&backupdir, 'p')
+call CleanOldFiles(&backupdir, '*', 90)
 
 " see :h backup-table
 " backup writebackup  action
@@ -41,11 +38,7 @@ set viminfo=%10,'50,s1000,/1000,:1000
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set undodir=$XDG_STATE_HOME/vim/undo     | call mkdir(&undodir,   'p')
-
-" Delete undos older than 90 days
-let s:undos = split(globpath(&undodir, '*'), "\n")
-call filter(s:undos, 'getftime(v:val) < localtime() - (60 * 60 * 24 * 90)')
-call map(s:undos, 'delete(v:val)')
+call CleanOldFiles(&undodir, '*', 90)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:netrw_home = $XDG_DATA_HOME.'/vim'
