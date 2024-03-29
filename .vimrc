@@ -38,6 +38,7 @@ syntax on
 let g:coc_global_extensions = [
     \ 'coc-diagnostic',
     \ 'coc-docker',
+    \ 'coc-git',
     \ 'coc-json',
     \ 'coc-pyright',
     \ 'coc-sh',
@@ -50,7 +51,6 @@ let g:coc_global_extensions = [
 " coc-coverage
 " coc-db
 " coc-dictd
-" coc-git
 " coc-lists
 " coc-markdownlint
 " coc-pairs
