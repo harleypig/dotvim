@@ -1,9 +1,7 @@
-"let g:coc_disable_startup_warning = 1
-
 " use <tab> for trigger completion and navigate to the next complete item
 function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+  let l:col = l:col('.') - 1
+  return !l:col || getline('.')[l:col - 1]  =~# '\s'
 endfunction
 
 inoremap <silent><expr> <Tab>
@@ -27,7 +25,3 @@ nmap <silent> gr <Plug>(coc-references)
 " Navigate through issues using quickfix list
 nmap <silent> c[ :cprevious<CR>
 nmap <silent> c] :cnext<CR>
-
-
-
-

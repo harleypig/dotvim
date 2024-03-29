@@ -8,7 +8,6 @@ function! CheckFiletype() abort
     let l:shellcheck_directive = getline(2)
     let l:matches_shebang = matchlist(l:shebang, '^#!\s*\zs.*/\(ba\?sh\)\ze')
     let l:matches_directive = matchlist(l:shellcheck_directive, '#\s*shellcheck\s+shell=\zs\w\+\ze')
-    let l:matches_directive = matchlist(l:shellcheck_directive, '#\s*shellcheck\s+shell=\zs\w\+\ze')
 
     if !empty(l:matches_shebang)
         let l:filetype = l:matches_shebang[1]
