@@ -10,6 +10,8 @@ setlocal smartindent
 let b:ale_fixers = ['shfmt']
 
 let g:ale_sh_shfmt_options =
+      \ '--write ' .
+      \ '--simplify ' .
       \ '--indent 2 ' .
       \ '--binary-next-line ' .
       \ '--case-indent ' .
