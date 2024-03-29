@@ -28,6 +28,10 @@ set   path=.,$HOME
 set   report=1
 set   shortmess=a
 set   signcolumn=auto
+" Sign column coloring settings:
+" highlight SignColumn ctermbg=NONE guibg=NONE - Use NONE to match the normal background
+" highlight SignColumn ctermbg=<color> guibg=<color> - Replace <color> with a specific color code or name
+" Note: These settings affect the entire sign column. Vim does not support conditional coloring for individual sign column cells.
 set   softtabstop=2
 set   tabstop=2
 set   undolevels=1000
