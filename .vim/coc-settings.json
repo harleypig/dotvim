@@ -44,6 +44,16 @@
   // coc-spell-checker settings
   // https://github.com/iamcco/coc-spell-checker
 
+  //-------------------------------------------------------------------------
+  // coc-git settings
+  //"git.changedSign.hlGroup": "DiffChange",
+  //"git.addedSign.hlGroup": "DiffAdd",
+  //"git.removedSign.hlGroup": "DiffDelete",
+  //"git.topRemovedSign.hlGroup": "DiffDelete",
+  //"git.changeRemovedSign.hlGroup": "DiffChange",
+  //"git.conflict.current.hlGroup": "DiffChange",
+  //"git.conflict.incoming.hlGroup": "DiffAdd",
+
 //  "cSpell.enabled": true,
 //  "cSpell.showStatus": true,
 //  "cSpell.enabledLanguageIds": [
@@ -219,5 +229,4 @@
 //     "line-length": false
 //   }
   },
-  "toml.toml.": "",
 }
