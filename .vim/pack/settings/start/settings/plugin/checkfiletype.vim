@@ -1,7 +1,7 @@
-augroup checkfiletype
-    autocmd!
-    autocmd BufRead,BufNewFile * call CheckFiletype()
-augroup END
+"augroup checkfiletype
+"    autocmd!
+"    autocmd BufRead,BufNewFile * call CheckFiletype()
+"augroup END
 
 function! CheckFiletype() abort
     let l:shebang = getline(1)
@@ -16,7 +16,8 @@ function! CheckFiletype() abort
     elseif !empty(l:matches_directive)
         let l:filetype = l:matches_directive[0]
 
-        if l:filetype ==# 'dash' || l:filetype ==# 'busybox'
+        "if l:filetype ==# 'dash' || l:filetype ==# 'busybox'
+        if l:filetype ==# 'bash' || l:filetype ==# 'dash' || l:filetype ==# 'busybox'
             execute 'setfiletype sh'
 
         elseif l:filetype ==# 'bash' || l:filetype ==# 'sh'
