@@ -1,1 +1,1 @@
-{"author":{"id":"c9407c85a250e941c5c3aea55bcba0dd6cc6205f459075818d33c8c1a9c58ddd"},"ops":[{"type":1,"timestamp":1714399346,"nonce":"dm2FLZGIaE6P3qM6kS0t/hdZ1gY=","title":"add or maybe fork and update https://github.com/DanilaMihailov/vim-tips-wiki","message":"","files":null}]}
+{"author":{"id":"c9407c85a250e941c5c3aea55bcba0dd6cc6205f459075818d33c8c1a9c58ddd"},"ops":[{"type":5,"timestamp":1714399346,"nonce":"nNzgNLp6YPqXVERllFp7VUNaD8w=","added":["todo"],"removed":null}]}
