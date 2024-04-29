@@ -1,1 +1,1 @@
-{"author":{"id":"c9407c85a250e941c5c3aea55bcba0dd6cc6205f459075818d33c8c1a9c58ddd"},"ops":[{"type":1,"timestamp":1714398247,"nonce":"vOeWV9aKMuhhGtkGhSacNwcsXqE=","title":"install and configure https://github.com/whiteinge/diffconflicts","message":"","files":null}]}
+{"author":{"id":"c9407c85a250e941c5c3aea55bcba0dd6cc6205f459075818d33c8c1a9c58ddd"},"ops":[{"type":5,"timestamp":1714398247,"nonce":"RzVlkQGQraFBO4JtE5KZx4++Kxw=","added":["todo"],"removed":null}]}
