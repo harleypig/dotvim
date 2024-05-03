@@ -1,0 +1,9 @@
+highlight DiffAdd ctermfg=15 ctermbg=22 gui=none guifg=white guibg=green
+highlight DiffChange ctermfg=15 ctermbg=17 gui=none guifg=white guibg=blue
+highlight DiffDelete ctermfg=15 ctermbg=88 gui=none guifg=white guibg=red
+highlight DiffText ctermfg=15 ctermbg=220 gui=none guifg=white guibg=yellow
+highlight DiffAdded ctermfg=15 ctermbg=24 gui=none guifg=white guibg=cyan
+highlight DiffRemoved ctermfg=15 ctermbg=210 gui=none guifg=white guibg=orange
+highlight DiffFile ctermfg=15 ctermbg=236 gui=none guifg=white guibg=grey
+highlight DiffLine ctermfg=15 ctermbg=130 gui=none guifg=white guibg=purple
+highlight DiffSubname ctermfg=15 ctermbg=236 gui=none guifg=white guibg=grey
