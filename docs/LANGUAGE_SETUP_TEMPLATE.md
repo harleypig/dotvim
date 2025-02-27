@@ -18,9 +18,9 @@ document why the change was made.
 ### Language Server
 
 - [ ] Tool/Package:
-  - [ ] Name and Link:
-  - [ ] Installation method:
-  - [ ] Version tested:
+  - [ ] Name and Link: [name and link to official documentation/repository]
+  - [ ] Installation method: [package manager, manual build, etc.]
+  - [ ] Version tested: [specific version number tested with this configuration]
 
 - [ ] Configuration Location(s):
   - [ ] Internal (vim): [path to relevant .vim files]
@@ -33,8 +33,8 @@ document why the change was made.
   - [ ] Other:
 
 - [ ] Usage:
-  - [ ] Basic commands:
-  - [ ] Key mappings:
+  - [ ] Basic commands: [list of essential commands]
+  - [ ] Key mappings: [list of configured key mappings]
   - [ ] Common operations:
 
 ### Syntax Checker
@@ -45,9 +45,9 @@ document why the change was made.
   - [ ] Version tested:
 
 - [ ] Configuration Location(s):
-  - [ ] Internal (vim):
-  - [ ] External:
-  - [ ] Project-specific:
+  - [ ] Internal (vim): [path to relevant .vim files]
+  - [ ] External: [path to config files]
+  - [ ] Project-specific: [path relative to project root]
 
 - [ ] Integration Method:
   - [ ] ALE:
