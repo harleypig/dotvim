@@ -32,11 +32,13 @@ Additional configuration files:
 ### Configured Features
 
 Document only features requiring specific configuration. Each feature should include:
+
 * Tools/plugins used
 * Configuration details
 * Usage instructions (if not obvious)
 
 Common features to document if configured:
+
 * Syntax Highlighting
 * Linting and Static Analysis
 * Auto Completion
@@ -52,6 +54,7 @@ Common features to document if configured:
 ### Default or Inapplicable Sections
 
 List features that:
+
 * Use default settings without modification
 * Are not applicable to this language/environment
 * Are handled by listed plugins/extensions without additional configuration
