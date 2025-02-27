@@ -8,19 +8,18 @@ tool selection or changes if multiple solutions were evaluated.
 
 ### External Packages Used
 
-- [ ] List required external tools/packages with links and brief descriptions:
-  * [package-name](link) - Description
+* [package-name](link) - Brief description of the package and its purpose in
+    the development workflow.
 
 ### Plugins and Extensions Used
 
-- [ ] List Vim plugins and extensions with links and descriptions:
-  * [plugin-name](link) (Plugin/Extension type) - Description
+* [plugin-name](link) (Plugin/Extension type) - Brief description including
+    supported features (e.g., linting, completion, syntax).
 
 ### Configuration Files Used
 
-- [ ] List configuration files:
-  * [filename](/path/to/file) - Purpose
-  * `coc-settings` - Use `:CocConfig` to edit this file.
+* [filename](/path/to/file) - Purpose and scope of the configuration
+* `coc-settings` - Use `:CocConfig` to edit this file.
 
 ## Core Development Tools
 
