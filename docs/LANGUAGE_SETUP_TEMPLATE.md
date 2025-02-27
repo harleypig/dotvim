@@ -16,84 +16,221 @@ document why the change was made.
 ## Core Development Tools
 
 ### Language Server
-
-- [ ] Package: [name and link]
-- [ ] Installation method:
-- [ ] Vim/CoC configuration required:
+- [ ] Tool/Package:
+  - [ ] Name and Link:
+  - [ ] Installation method:
+  - [ ] Version tested:
+- [ ] Configuration Location(s):
+  - [ ] Internal (vim): [path to relevant .vim files]
+  - [ ] External: [path to config files]
+  - [ ] Project-specific: [path relative to project root]
+- [ ] Integration Method:
+  - [ ] CoC Extension:
+  - [ ] Direct LSP:
+  - [ ] Other:
+- [ ] Usage:
+  - [ ] Basic commands:
+  - [ ] Key mappings:
+  - [ ] Common operations:
 
 ### Syntax Checker
-
-- [ ] Package: [name and link]
-- [ ] Installation method:
-- [ ] Integration method (ALE/CoC):
+- [ ] Tool/Package:
+  - [ ] Name and Link:
+  - [ ] Installation method:
+  - [ ] Version tested:
+- [ ] Configuration Location(s):
+  - [ ] Internal (vim):
+  - [ ] External:
+  - [ ] Project-specific:
+- [ ] Integration Method:
+  - [ ] ALE:
+  - [ ] CoC:
+  - [ ] Other:
+- [ ] Usage:
+  - [ ] Basic commands:
+  - [ ] Key mappings:
+  - [ ] Common operations:
 
 ### Linter
-
-- [ ] Package: [name and link]
-- [ ] Installation method:
-- [ ] ALE/CoC configuration required:
+- [ ] Tool/Package:
+  - [ ] Name and Link:
+  - [ ] Installation method:
+  - [ ] Version tested:
+- [ ] Configuration Location(s):
+  - [ ] Internal (vim):
+  - [ ] External:
+  - [ ] Project-specific:
+- [ ] Integration Method:
+  - [ ] ALE:
+  - [ ] CoC:
+  - [ ] Other:
+- [ ] Usage:
+  - [ ] Basic commands:
+  - [ ] Key mappings:
+  - [ ] Common operations:
+- [ ] Rules/Standards:
+  - [ ] Default ruleset:
+  - [ ] Custom rules:
 
 ### Formatter
-
-- [ ] Package: [name and link]
-- [ ] Installation method:
-- [ ] Integration configuration:
+- [ ] Tool/Package:
+  - [ ] Name and Link:
+  - [ ] Installation method:
+  - [ ] Version tested:
+- [ ] Configuration Location(s):
+  - [ ] Internal (vim):
+  - [ ] External:
+  - [ ] Project-specific:
+- [ ] Integration Method:
+  - [ ] ALE:
+  - [ ] CoC:
+  - [ ] Other:
+- [ ] Usage:
+  - [ ] Basic commands:
+  - [ ] Key mappings:
+  - [ ] Format on save:
+- [ ] Style Guide:
+  - [ ] Link to guide:
+  - [ ] Custom rules:
 
 ## Code Understanding & Navigation
 
 ### Code Navigation
-
-- [ ] Tags generator: [name and link]
-- [ ] Symbol search configuration:
-- [ ] Jump-to-definition setup:
+- [ ] Tool/Package:
+  - [ ] Name and Link:
+  - [ ] Installation method:
+  - [ ] Version tested:
+- [ ] Configuration Location(s):
+  - [ ] Internal (vim):
+  - [ ] External:
+- [ ] Features:
+  - [ ] Tags generation:
+  - [ ] Symbol search:
+  - [ ] Jump-to-definition:
+- [ ] Usage:
+  - [ ] Basic commands:
+  - [ ] Key mappings:
 
 ### Documentation Tools
-
-- [ ] Documentation generator: [name and link]
-- [ ] Integration with completion/hover:
-- [ ] Preview configuration:
+- [ ] Tool/Package:
+  - [ ] Name and Link:
+  - [ ] Installation method:
+  - [ ] Version tested:
+- [ ] Configuration Location(s):
+  - [ ] Internal (vim):
+  - [ ] External:
+  - [ ] Project-specific:
+- [ ] Features:
+  - [ ] Documentation generation:
+  - [ ] Preview:
+  - [ ] Integration with completion/hover:
+- [ ] Usage:
+  - [ ] Basic commands:
+  - [ ] Key mappings:
 
 ### Snippets
-
-- [ ] Snippet source/package:
-- [ ] Custom snippets location:
-- [ ] Integration method:
+- [ ] Tool/Package:
+  - [ ] Name and Link:
+  - [ ] Installation method:
+- [ ] Configuration Location(s):
+  - [ ] Internal (vim):
+  - [ ] Custom snippets:
+- [ ] Integration Method:
+  - [ ] CoC:
+  - [ ] UltiSnips:
+  - [ ] Other:
+- [ ] Usage:
+  - [ ] Basic commands:
+  - [ ] Key mappings:
 
 ## Testing & Debugging
 
 ### Debugger
-
-- [ ] Package: [name and link]
-- [ ] Installation method:
-- [ ] Integration configuration:
+- [ ] Tool/Package:
+  - [ ] Name and Link:
+  - [ ] Installation method:
+  - [ ] Version tested:
+- [ ] Configuration Location(s):
+  - [ ] Internal (vim):
+  - [ ] External:
+  - [ ] Project-specific:
+- [ ] Features:
+  - [ ] Breakpoints:
+  - [ ] Variable inspection:
+  - [ ] Step debugging:
+- [ ] Usage:
+  - [ ] Basic commands:
+  - [ ] Key mappings:
 
 ### Test Runner
-
-- [ ] Package: [name and link]
-- [ ] Installation method:
-- [ ] Integration configuration:
+- [ ] Tool/Package:
+  - [ ] Name and Link:
+  - [ ] Installation method:
+  - [ ] Version tested:
+- [ ] Configuration Location(s):
+  - [ ] Internal (vim):
+  - [ ] External:
+  - [ ] Project-specific:
+- [ ] Features:
+  - [ ] Test discovery:
+  - [ ] Run single test:
+  - [ ] Run test suite:
+- [ ] Usage:
+  - [ ] Basic commands:
+  - [ ] Key mappings:
 
 ## Environment & Security
 
 ### Version/Environment Management
-
-- [ ] Version manager: [name and link]
-- [ ] Environment isolation tool:
-- [ ] Integration with vim/tools:
+- [ ] Tool/Package:
+  - [ ] Name and Link:
+  - [ ] Installation method:
+  - [ ] Version tested:
+- [ ] Configuration Location(s):
+  - [ ] Internal (vim):
+  - [ ] External:
+  - [ ] Project-specific:
+- [ ] Features:
+  - [ ] Version management:
+  - [ ] Environment isolation:
+  - [ ] Dependencies:
+- [ ] Usage:
+  - [ ] Basic commands:
+  - [ ] Integration with tools:
 
 ### Configuration Files
-
-- [ ] List any required config files
+- [ ] Required Files:
+  - [ ] Internal (vim):
+  - [ ] External:
+  - [ ] Project-specific:
+- [ ] Template Files:
+  - [ ] Location:
+  - [ ] Usage:
+- [ ] Documentation:
+  - [ ] File purpose:
+  - [ ] Configuration options:
 
 ### Security Scanning
-
-- [ ] Security scanner: [name and link]
-- [ ] Configuration:
-- [ ] Integration method:
+- [ ] Tool/Package:
+  - [ ] Name and Link:
+  - [ ] Installation method:
+  - [ ] Version tested:
+- [ ] Configuration Location(s):
+  - [ ] Internal (vim):
+  - [ ] External:
+  - [ ] Project-specific:
+- [ ] Features:
+  - [ ] Severity levels:
+  - [ ] Ignore patterns:
+  - [ ] CI integration:
+- [ ] Usage:
+  - [ ] Basic commands:
+  - [ ] Key mappings:
 
 ## Additional Information
 
 ### Notes
-
-- Add any special considerations or dependencies
-- Document any known issues or limitations
+- [ ] Special considerations:
+- [ ] Known issues:
+- [ ] Limitations:
+- [ ] Future improvements:
