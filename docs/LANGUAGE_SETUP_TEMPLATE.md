@@ -88,28 +88,28 @@ document why the change was made.
 ### Formatter
 
 - [ ] Tool/Package:
-  - [ ] Name and Link:
-  - [ ] Installation method:
-  - [ ] Version tested:
+  - [ ] Name and Link: [name and link to official documentation/repository]
+  - [ ] Installation method: [package manager, manual build, etc.]
+  - [ ] Version tested: [specific version number tested with this configuration]
 
 - [ ] Configuration Location(s):
-  - [ ] Internal (vim):
-  - [ ] External:
-  - [ ] Project-specific:
+  - [ ] Internal (vim): [path to relevant .vim files]
+  - [ ] External: [path to config files]
+  - [ ] Project-specific: [path relative to project root]
 
 - [ ] Integration Method:
-  - [ ] ALE:
-  - [ ] CoC:
-  - [ ] Other:
+  - [ ] ALE: [configuration details if using ALE]
+  - [ ] CoC: [configuration details if using CoC]
+  - [ ] Other: [specify other integration method]
 
 - [ ] Usage:
-  - [ ] Basic commands:
-  - [ ] Key mappings:
-  - [ ] Format on save:
+  - [ ] Basic commands: [list of essential commands]
+  - [ ] Key mappings: [list of configured key mappings]
+  - [ ] Format on save: [configuration for automatic formatting]
 
 - [ ] Style Guide:
-  - [ ] Link to guide:
-  - [ ] Custom rules:
+  - [ ] Link to guide: [link to style guide documentation]
+  - [ ] Custom rules: [location and description of custom formatting rules]
 
 ## Code Understanding & Navigation
 
