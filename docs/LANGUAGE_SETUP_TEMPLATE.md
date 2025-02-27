@@ -1,12 +1,26 @@
-# Language/Environment [NAME]
+## [NAME]
 
-A checklist template for setting up language-specific development tools in Vim.
-
-Brief description of this language/environment and its primary use cases.
+This document outlines the support for [NAME] development within the Vim environment.
 
 Note: Prefer Vim's built-in functionality when available. Document why external
 tools were chosen over built-in options when applicable. Include rationale for
 tool selection or changes if multiple solutions were evaluated.
+
+### External Packages Used
+
+- [ ] List required external tools/packages with links and brief descriptions:
+  * [package-name](link) - Description
+
+### Plugins and Extensions Used
+
+- [ ] List Vim plugins and extensions with links and descriptions:
+  * [plugin-name](link) (Plugin/Extension type) - Description
+
+### Configuration Files Used
+
+- [ ] List configuration files:
+  * [filename](/path/to/file) - Purpose
+  * `coc-settings` - Use `:CocConfig` to edit this file.
 
 ## Core Development Tools
 
