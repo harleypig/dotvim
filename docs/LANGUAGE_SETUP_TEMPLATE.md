@@ -116,22 +116,22 @@ document why the change was made.
 ### Code Navigation
 
 - [ ] Tool/Package:
-  - [ ] Name and Link:
-  - [ ] Installation method:
-  - [ ] Version tested:
+  - [ ] Name and Link: [name and link to official documentation/repository]
+  - [ ] Installation method: [package manager, manual build, etc.]
+  - [ ] Version tested: [specific version number tested with this configuration]
 
 - [ ] Configuration Location(s):
-  - [ ] Internal (vim):
-  - [ ] External:
+  - [ ] Internal (vim): [path to relevant .vim files]
+  - [ ] External: [path to config files]
 
 - [ ] Features:
-  - [ ] Tags generation:
-  - [ ] Symbol search:
-  - [ ] Jump-to-definition:
+  - [ ] Tags generation: [ctags/gtags configuration and usage]
+  - [ ] Symbol search: [configuration for symbol search functionality]
+  - [ ] Jump-to-definition: [setup for code navigation features]
 
 - [ ] Usage:
-  - [ ] Basic commands:
-  - [ ] Key mappings:
+  - [ ] Basic commands: [list of essential commands]
+  - [ ] Key mappings: [list of configured key mappings]
 
 ### Documentation Tools
 
