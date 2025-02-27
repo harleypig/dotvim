@@ -62,28 +62,28 @@ document why the change was made.
 ### Linter
 
 - [ ] Tool/Package:
-  - [ ] Name and Link:
-  - [ ] Installation method:
-  - [ ] Version tested:
+  - [ ] Name and Link: [name and link to official documentation/repository]
+  - [ ] Installation method: [package manager, manual build, etc.]
+  - [ ] Version tested: [specific version number tested with this configuration]
 
 - [ ] Configuration Location(s):
-  - [ ] Internal (vim):
-  - [ ] External:
-  - [ ] Project-specific:
+  - [ ] Internal (vim): [path to relevant .vim files]
+  - [ ] External: [path to config files]
+  - [ ] Project-specific: [path relative to project root]
 
 - [ ] Integration Method:
-  - [ ] ALE:
-  - [ ] CoC:
-  - [ ] Other:
+  - [ ] ALE: [configuration details if using ALE]
+  - [ ] CoC: [configuration details if using CoC]
+  - [ ] Other: [specify other integration method]
 
 - [ ] Usage:
-  - [ ] Basic commands:
-  - [ ] Key mappings:
-  - [ ] Common operations:
+  - [ ] Basic commands: [list of essential commands]
+  - [ ] Key mappings: [list of configured key mappings]
+  - [ ] Common operations: [frequently used operations and workflows]
 
 - [ ] Rules/Standards:
-  - [ ] Default ruleset:
-  - [ ] Custom rules:
+  - [ ] Default ruleset: [link to or description of default rules]
+  - [ ] Custom rules: [location and description of custom rule configurations]
 
 ### Formatter
 
