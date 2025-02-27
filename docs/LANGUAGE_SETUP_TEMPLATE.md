@@ -1,8 +1,9 @@
-# Language/Environment Setup Template
+# Language/Environment [NAME]
 
-This template provides a checklist for setting up development tools for a specific programming language or environment.
+This template provides a checklist for setting up development tools for
+a specific programming language or environment.
 
-## Language/Environment: [NAME]
+Create a short description this language or environment.
 
 ### Language Server
 
