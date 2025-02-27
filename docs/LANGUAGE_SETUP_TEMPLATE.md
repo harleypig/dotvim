@@ -1,17 +1,12 @@
 # Language/Environment [NAME]
 
-This template provides a checklist for setting up development tools for
-a specific programming language or environment.
+A checklist template for setting up language-specific development tools in Vim.
 
-Create a short description this language or environment.
+Brief description of this language/environment and its primary use cases.
 
-Wherever possible, use vim builtin settings/configuration options. If it's
-possible to use a setting but a third-party solution is selected, document the
-possible setting or configuration and explain why the third-part solution was
-chosen.
-
-If multiple third-party solutions were evaluated, or a solution was changed,
-document why the change was made.
+Note: Prefer Vim's built-in functionality when available. Document why external
+tools were chosen over built-in options when applicable. Include rationale for
+tool selection or changes if multiple solutions were evaluated.
 
 ## Core Development Tools
 
