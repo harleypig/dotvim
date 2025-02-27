@@ -6,6 +6,8 @@ Note: Prefer Vim's built-in functionality when available. Document why external
 tools were chosen over built-in options when applicable. Include rationale for
 tool selection or changes if multiple solutions were evaluated.
 
+Where pip is an installation tool, use pipx if possible.
+
 ### External Packages Used
 
 * [package-name](link) - Brief description of the package and its purpose in
@@ -27,18 +29,23 @@ Document only configured features. Remove sections that use default settings or
 are not applicable.
 
 #### Syntax Highlighting
+
 [Document non-default syntax highlighting configuration]
 
 #### Linting and Static Analysis
+
 [Document linting tools and configuration]
 
 #### Auto Completion
+
 [Document completion setup beyond defaults]
 
 #### Formatting
+
 [Document any formatting tools and settings]
 
 #### Additional Features
+
 Document any other configured features such as:
 * Error Highlighting
 * Code Folding
