@@ -40,9 +40,9 @@ document why the change was made.
 ### Syntax Checker
 
 - [ ] Tool/Package:
-  - [ ] Name and Link:
-  - [ ] Installation method:
-  - [ ] Version tested:
+  - [ ] Name and Link: [name and link to official documentation/repository]
+  - [ ] Installation method: [package manager, manual build, etc.]
+  - [ ] Version tested: [specific version number tested with this configuration]
 
 - [ ] Configuration Location(s):
   - [ ] Internal (vim): [path to relevant .vim files]
@@ -50,14 +50,14 @@ document why the change was made.
   - [ ] Project-specific: [path relative to project root]
 
 - [ ] Integration Method:
-  - [ ] ALE:
-  - [ ] CoC:
-  - [ ] Other:
+  - [ ] ALE: [configuration details if using ALE]
+  - [ ] CoC: [configuration details if using CoC]
+  - [ ] Other: [specify other integration method]
 
 - [ ] Usage:
-  - [ ] Basic commands:
-  - [ ] Key mappings:
-  - [ ] Common operations:
+  - [ ] Basic commands: [list of essential commands]
+  - [ ] Key mappings: [list of configured key mappings]
+  - [ ] Common operations: [frequently used operations and workflows]
 
 ### Linter
 
