@@ -21,6 +21,41 @@ tool selection or changes if multiple solutions were evaluated.
 * [filename](/path/to/file) - Purpose and scope of the configuration
 * `coc-settings` - Use `:CocConfig` to edit this file.
 
+### Features
+
+Document only configured features. Remove sections that use default settings or
+are not applicable.
+
+#### Syntax Highlighting
+[Document non-default syntax highlighting configuration]
+
+#### Linting and Static Analysis
+[Document linting tools and configuration]
+
+#### Auto Completion
+[Document completion setup beyond defaults]
+
+#### Formatting
+[Document any formatting tools and settings]
+
+#### Additional Features
+Document any other configured features such as:
+* Error Highlighting
+* Code Folding
+* Snippets
+* Schema Validation
+* Version Control Integration
+* Documentation Tools
+* Debugging Support
+* Testing Tools
+
+### Default or Inapplicable Sections
+
+List features that:
+* Use default settings without modification
+* Are not applicable to this language/environment
+* Are handled by listed plugins/extensions without additional configuration
+
 ## Core Development Tools
 
 ### Language Server
