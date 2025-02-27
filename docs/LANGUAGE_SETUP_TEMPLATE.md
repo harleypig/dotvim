@@ -157,21 +157,21 @@ document why the change was made.
 ### Snippets
 
 - [ ] Tool/Package:
-  - [ ] Name and Link:
-  - [ ] Installation method:
+  - [ ] Name and Link: [name and link to official documentation/repository]
+  - [ ] Installation method: [package manager, manual build, etc.]
 
 - [ ] Configuration Location(s):
-  - [ ] Internal (vim):
-  - [ ] Custom snippets:
+  - [ ] Internal (vim): [path to relevant .vim files]
+  - [ ] Custom snippets: [path to custom snippet definitions]
 
 - [ ] Integration Method:
-  - [ ] CoC:
-  - [ ] UltiSnips:
-  - [ ] Other:
+  - [ ] CoC: [configuration details if using CoC]
+  - [ ] UltiSnips: [configuration details if using UltiSnips]
+  - [ ] Other: [specify other snippet engine]
 
 - [ ] Usage:
-  - [ ] Basic commands:
-  - [ ] Key mappings:
+  - [ ] Basic commands: [list of essential commands]
+  - [ ] Key mappings: [list of configured key mappings]
 
 ## Testing & Debugging
 
