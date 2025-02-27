@@ -18,9 +18,16 @@ tool selection or changes if multiple solutions were evaluated.
 
 ### Configuration Files Used
 
-* [filename](/path/to/file) - Purpose and scope of the configuration
+For CoC-based configuration:
 * `coc-settings` - Use `:CocConfig` to edit this file.
-* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim) - ALE configuration for linting and fixing
+* [coc-extension-name](link) - Install with `:CocInstall coc-extension-name`
+
+For ALE-based configuration:
+* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim) - Global ALE configuration
+* [`filetype.vim`](../.vim/pack/settings/start/settings/ftplugin/filetype.vim) - Language-specific ALE settings
+
+Additional configuration files:
+* [filename](/path/to/file) - Purpose and scope of the configuration
 
 ### Configured Features
 
