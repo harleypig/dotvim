@@ -20,6 +20,7 @@ tool selection or changes if multiple solutions were evaluated.
 
 * [filename](/path/to/file) - Purpose and scope of the configuration
 * `coc-settings` - Use `:CocConfig` to edit this file.
+* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim) - ALE configuration for linting and fixing
 
 ### Configured Features
 
