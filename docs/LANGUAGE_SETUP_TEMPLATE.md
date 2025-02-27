@@ -243,17 +243,17 @@ document why the change was made.
 ### Configuration Files
 
 - [ ] Required Files:
-  - [ ] Internal (vim):
-  - [ ] External:
-  - [ ] Project-specific:
+  - [ ] Internal (vim): [path to vim configuration files]
+  - [ ] External: [path to external tool configuration files]
+  - [ ] Project-specific: [path to project-level configuration]
 
 - [ ] Template Files:
-  - [ ] Location:
-  - [ ] Usage:
+  - [ ] Location: [path to template configuration files]
+  - [ ] Usage: [how to apply/customize templates]
 
 - [ ] Documentation:
-  - [ ] File purpose:
-  - [ ] Configuration options:
+  - [ ] File purpose: [description of each configuration file's purpose]
+  - [ ] Configuration options: [list of important configuration options]
 
 ### Security Scanning
 
@@ -280,7 +280,7 @@ document why the change was made.
 
 ### Notes
 
-- [ ] Special considerations:
-- [ ] Known issues:
-- [ ] Limitations:
-- [ ] Future improvements:
+- [ ] Special considerations: [important setup or usage considerations]
+- [ ] Known issues: [documented bugs or limitations]
+- [ ] Limitations: [intentional restrictions or constraints]
+- [ ] Future improvements: [planned enhancements or changes]
