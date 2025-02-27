@@ -258,23 +258,23 @@ document why the change was made.
 ### Security Scanning
 
 - [ ] Tool/Package:
-  - [ ] Name and Link:
-  - [ ] Installation method:
-  - [ ] Version tested:
+  - [ ] Name and Link: [name and link to official documentation/repository]
+  - [ ] Installation method: [package manager, manual build, etc.]
+  - [ ] Version tested: [specific version number tested with this configuration]
 
 - [ ] Configuration Location(s):
-  - [ ] Internal (vim):
-  - [ ] External:
-  - [ ] Project-specific:
+  - [ ] Internal (vim): [path to relevant .vim files]
+  - [ ] External: [path to config files]
+  - [ ] Project-specific: [path relative to project root]
 
 - [ ] Features:
-  - [ ] Severity levels:
-  - [ ] Ignore patterns:
-  - [ ] CI integration:
+  - [ ] Severity levels: [configuration for security severity levels]
+  - [ ] Ignore patterns: [setup for security scan exclusions]
+  - [ ] CI integration: [configuration for continuous integration]
 
 - [ ] Usage:
-  - [ ] Basic commands:
-  - [ ] Key mappings:
+  - [ ] Basic commands: [list of essential commands]
+  - [ ] Key mappings: [list of configured key mappings]
 
 ## Additional Information
 
