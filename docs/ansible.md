@@ -57,6 +57,7 @@ auto-completion features for Ansible.
 Features such as Error Highlighting, Code Folding, Snippets, Schema or
 Contract Validation, Version Control Integration, Comment Support, and
 Filetype Detection are handled by the default settings of Vim, the
-`coc-ansible` extension, and the `vim-polyglot` plugin. No additional
-configuration is documented here as these features are provided out of the box
-by the aforementioned tools and extensions.
+`coc-ansible` extension, and the `vim-polyglot` plugin.
+
+No additional configuration is documented here as these features are provided
+out of the box by the aforementioned tools and extensions.

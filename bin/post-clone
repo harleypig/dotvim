@@ -67,6 +67,7 @@ fi
 # Install npm packages
 section "Installing npm packages"
 npm_packages=(
+  "ansible-language-server"
   "dockerfile-language-server-nodejs"
   "eslint"
   "vim-language-server"
@@ -84,7 +85,6 @@ section "Checking for pipx installation"
 
 pipx_packages=(
   "ansible"
-  "ansible-language-server"
   "proselint"
   "vint"
 )
