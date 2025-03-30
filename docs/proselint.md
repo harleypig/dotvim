@@ -9,10 +9,13 @@ Note: Proselint was chosen over built-in options for its comprehensive prose che
 Install via `pipx`:
 * [`proselint`](https://github.com/amperser/proselint) - A linter for prose that identifies errors in style, usage, and consistency in writing.
 
+Install via `npm`:
+* [`diagnostic-languageserver`](https://github.com/iamcco/diagnostic-languageserver)
+  (Language Server) - Provides a bridge between Proselint and CoC. Install via npm.
+
 ### Plugins and Extensions Used
 
 * [`coc.nvim`](https://github.com/neoclide/coc.nvim) (Vim Plugin) - Integrates with diagnostic-languageserver to provide Proselint functionality.
-* [`diagnostic-languageserver`](https://github.com/iamcco/diagnostic-languageserver) (Language Server) - Provides a bridge between Proselint and CoC. Install via npm.
 
 ### Configuration Files Used
 
