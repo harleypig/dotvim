@@ -12,7 +12,7 @@ Install via `pipx`:
 ### Plugins and Extensions Used
 
 * [`coc.nvim`](https://github.com/neoclide/coc.nvim) (Vim Plugin) - Integrates with diagnostic-languageserver to provide Proselint functionality.
-* [`diagnostic-languageserver`](https://github.com/iamcco/diagnostic-languageserver) (Language Server) - Provides a bridge between Proselint and CoC.
+* [`diagnostic-languageserver`](https://github.com/iamcco/diagnostic-languageserver) (Language Server) - Provides a bridge between Proselint and CoC. Installed via npm.
 
 ### Configuration Files Used
 
