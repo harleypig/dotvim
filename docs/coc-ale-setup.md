@@ -56,9 +56,9 @@ npm install -g yarn
 yarn --version
 ```
 
-### Plugins and Extensions Used
+### VIm Plugins Used
 
-The following plugins and extensions are utilized by ALE and CoC within this repository:
+The following plugins are utilized by ALE and CoC within this repository:
 
 * [`ALE`](https://github.com/dense-analysis/ale) - An Asynchronous Lint Engine
     for Vim and Neovim.
@@ -69,9 +69,9 @@ The following plugins and extensions are utilized by ALE and CoC within this rep
 
 Configuration for ALE and CoC is managed through the following files:
 
-* [`ale.vim`](.vim/pack/settings/start/settings/plugin/ale.vim) - Contains
+* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim) - Contains
     ALE-specific Vimscript settings.
-* [`coc.vim`](.vim/pack/settings/start/settings/plugin/coc.vim) - Contains
+* [`coc.vim`](../.vim/pack/settings/start/settings/plugin/coc.vim) - Contains
     CoC-specific Vimscript settings.
 * `coc-settings` - Use `:CocConfig` to edit this file.
 
