@@ -15,16 +15,17 @@
 ## Required packages
 
 ### npm install:
-* vim-language-server - Required for Vim script language support in CoC
-* dockerfile-language-server-nodejs - Required for Dockerfile language support
-* eslint - Required for JavaScript/JSON linting
-* diagnostic-languageserver - Required for Proselint integration with CoC
-* bash-language-server - Required for Bash/Shell script language support
+* `vim-language-server` - Required for Vim script language support in `CoC`
+* `dockerfile-language-server-nodejs` - Required for Dockerfile language support
+* `eslint` - Required for JavaScript/JSON linting
+* `diagnostic-languageserver` - Required for Proselint integration with `CoC`
+* `bash-language-server` - Required for Bash/Shell script language support
+* `pyright` - Required for Python language server support
 
 ### other packages:
-* shellcheck - Required for shell script linting
-* jq - Required for JSON formatting
-* terraform-ls - Required for Terraform language support
+* `shellcheck` - Required for shell script linting
+* `jq` - Required for JSON formatting
+* `terraform-ls` - Required for Terraform language support
 
 ## Toggles
 
