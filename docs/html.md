@@ -12,8 +12,11 @@ Install via npm:
 ### Plugins and Extensions Used
 
 * [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin) - Provides enhanced syntax highlighting for HTML files.
-* [`coc.nvim`](https://github.com/neoclide/coc.nvim) (Vim Plugin) - Intellisense engine that integrates with vscode-html-languageservice for language server features.
 * [`vim-mustache-handlebars`](https://github.com/mustache/vim-mustache-handlebars) (Vim Plugin) - Provides syntax highlighting and indentation for Mustache and Handlebars templates.
+
+### CoC Extensions Used
+
+* No specific CoC extension is used for HTML, but the HTML language server is configured directly in CoC settings.
 
 ### Configuration Files Used
 
@@ -42,5 +45,8 @@ The following features use default settings without additional configuration:
 * Code Folding (uses Vim's default folding mechanisms)
 * Snippets (not configured specifically for HTML)
 * Schema Validation (not applicable for HTML)
+* Documentation Tools (not configured specifically for HTML)
+* Debugging Support (not configured specifically for HTML)
+* Testing Tools (not applicable for HTML)
 * Version Control Integration (uses global Git integration)
 * Filetype Detection (handled by vim-polyglot)

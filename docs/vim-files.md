@@ -14,9 +14,11 @@ Install via pipx:
 
 ### Plugins and Extensions Used
 
-* [`coc.nvim`](https://github.com/neoclide/coc.nvim) (Vim Plugin) - Intellisense engine that integrates with vim-language-server.
-* [`coc-vimlsp`](https://github.com/iamcco/coc-vimlsp) (CoC Extension) - CoC extension that provides Vim script language server support.
 * [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for linting Vim script files with vint.
+
+### CoC Extensions Used
+
+* [`coc-vimlsp`](https://github.com/iamcco/coc-vimlsp) (CoC Extension) - CoC extension that provides Vim script language server support.
 
 ### Configuration Files Used
 
@@ -49,5 +51,9 @@ Provided by Vim's built-in syntax highlighting for Vim script files.
 The following features use default settings without additional configuration:
 * Code Folding (uses Vim's default folding mechanisms)
 * Snippets (not configured specifically for Vim script)
+* Schema Validation (not applicable for Vim script)
+* Documentation Tools (not configured specifically for Vim script)
+* Debugging Support (not configured specifically for Vim script)
+* Testing Tools (not configured specifically for Vim script)
 * Version Control Integration (uses global Git integration)
 * Formatting (not configured specifically for Vim script)

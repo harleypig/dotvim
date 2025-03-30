@@ -12,7 +12,10 @@ Install via npm:
 ### Plugins and Extensions Used
 
 * [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin) - Provides enhanced syntax highlighting for Dockerfiles.
-* [`coc.nvim`](https://github.com/neoclide/coc.nvim) (Vim Plugin) - Intellisense engine that integrates with dockerfile-language-server for language server features.
+
+### CoC Extensions Used
+
+* [`coc-docker`](https://github.com/josa42/coc-docker) (CoC Extension) - Provides Docker integration for CoC.
 
 ### Configuration Files Used
 
@@ -40,5 +43,9 @@ The following features use default settings without additional configuration:
 * Code Folding (uses Vim's default folding mechanisms)
 * Formatting (not specifically configured for Dockerfiles)
 * Snippets (not configured specifically for Dockerfiles)
+* Schema Validation (not applicable for Dockerfiles)
+* Documentation Tools (not configured specifically for Dockerfiles)
+* Debugging Support (not configured specifically for Dockerfiles)
+* Testing Tools (not applicable for Dockerfiles)
 * Version Control Integration (uses global Git integration)
 * Filetype Detection (handled by vim-polyglot)
