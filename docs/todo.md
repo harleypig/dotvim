@@ -23,7 +23,9 @@
 ### Language servers
 
 npm install:
-* vim-language-server
+* vim-language-server - Required for Vim script language support in CoC
+* docker-langserver - Required for Dockerfile language support
+* terraform-ls - Required for Terraform language support
 
 ## Update
 
