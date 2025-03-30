@@ -21,9 +21,6 @@
 	path = .vim/pack/intellisense/start/ale
 	url = https://github.com/dense-analysis/ale.git
 	ignore = dirty
-[submodule "copilot"]
-	url = https://github.com/github/copilot.vim.git
-	path = .vim/pack/intellisense/opt/copilot
 [submodule "vim-eunuch"]
 	url = https://github.com/tpope/vim-eunuch.git
 	path = .vim/pack/plugins/start/vim-eunuch
