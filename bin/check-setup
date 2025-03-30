@@ -3,6 +3,7 @@
 # :shfmt -w -s -i 2 -bn -ci -sr %
 
 # Load release information
+# shellcheck disable=SC1091
 source /etc/os-release
 
 ##############################################################################
@@ -10,10 +11,11 @@ source /etc/os-release
 warn() { printf '%s\n' "$@" >&2; }
 die() { (($#)) && warn "$@"; exit 1; }
 
-warn "Figure out a way to use docker instead of installing all the linters and lsps ..."
+# XXX: Figure out a way to use docker instead of installing all the linters
+#      and lsps ...
 
 #-----------------------------------------------------------------------------
-exeutable() {
+executable() {
   [[ -x "$(command -v "$1")" ]] && return 0
   return 1
 }
