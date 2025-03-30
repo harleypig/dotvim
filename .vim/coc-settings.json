@@ -2,18 +2,18 @@
   //=========================================================================
   // GENERAL SETTINGS
   //=========================================================================
-  
+
   // Diagnostic Settings
   "diagnostic.displayByAle": true,
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": true,
   "diagnostic.virtualTextFormat": " >>> %severity: %message {%source}",
-  
+
   // UI and Visual Settings
   "colors.enable": true,
   "list.alignColumns": true,
   "notification.statusLineProgress": true,
-  
+
   // Behavior Preferences
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
   "coc.preferences.extensionUpdateCheck": "daily",
@@ -31,7 +31,7 @@
   // look in pyrightconfig.json or pyproject.toml for more settings
   "pyright.inlayHints.functionReturnTypes": false,
   "pyright.inlayHints.variableTypes": false,
-  
+
   // Flake8 integration
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Stdin": true,
@@ -193,7 +193,7 @@
       },
       "settings": {}
     },
-    
+
     // Vim Language Server
     "vimls": {
       "command": "vim-language-server",
@@ -219,7 +219,7 @@
       //  }
       //}
     },
-    
+
     // Docker Language Server
     "dockerfile": {
       "args": ["--stdio"],
