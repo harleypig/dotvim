@@ -16,6 +16,7 @@ npm_packages=(
   "diagnostic-languageserver"
   "dockerfile-language-server-nodejs"
   "eslint"
+  "pyright"
   "vim-language-server"
   "yarn"
 )
@@ -24,6 +25,8 @@ pipx_packages=(
   "ansible"
   "proselint"
   "vint"
+  "isort"
+  "flake8"
 )
 
 system_packages=(
