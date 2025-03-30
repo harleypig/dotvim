@@ -33,8 +33,8 @@ sudo install -m 755 tflint /usr/local/bin/
 
 Verification (recommended):
 ```bash
-# Using GitHub CLI
-gh attestation verify checksums.txt -R terraform-linters/tflint
+# Verify checksums
+curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/checksums.txt -o checksums.txt
 sha256sum --ignore-missing -c checksums.txt
 ```
 
