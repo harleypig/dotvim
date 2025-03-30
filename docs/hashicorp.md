@@ -34,14 +34,6 @@ The following plugins and extensions are used for HashiCorp tooling support:
 
 XXX: TBD
 
-### Language Server
-
-`terraform-ls`
-
-### Syntax Highlighting
-
-XXX: TBD
-
 ### Linting and Static Analysis
 
 XXX: TBD
