@@ -1,39 +1,53 @@
-## Vim Files Configuration
+## Vim Files
 
-This document outlines the plugins, extensions, and settings used specifically
-for editing Vim configuration files within this development environment.
+This document outlines the support for Vim script development within the Vim environment.
 
-### Required External Packages
+Note: While Vim has built-in support for its own scripting language, external tools are used to provide enhanced functionality like linting and intelligent code completion.
 
-For Vim file editing, the following external package is used:
+### External Packages Used
 
-- **`vim-language-server`**: Provides language server support for Vim script files.
+Install via npm:
+* [`vim-language-server`](https://github.com/iamcco/vim-language-server) - Language server that provides intelligent code completion, go to definition, and other language features for Vim script files.
+
+Install via pipx:
+* [`vint`](https://github.com/Vimjas/vint) - A linter for Vim script that checks for style issues and potential errors.
 
 ### Plugins and Extensions Used
 
-`coc-vimlsp`
+* [`coc.nvim`](https://github.com/neoclide/coc.nvim) (Vim Plugin) - Intellisense engine that integrates with vim-language-server.
+* [`coc-vimlsp`](https://github.com/iamcco/coc-vimlsp) (CoC Extension) - CoC extension that provides Vim script language server support.
+* [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for linting Vim script files with vint.
 
 ### Configuration Files Used
 
-The following settings are specific to Vim script files and are set in the
-`.vim/pack/settings/start/settings/ftplugin/vim.vim` file:
+* `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration for the Vim language server.
+* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim) - Global ALE configuration.
+* [`vim.vim`](../.vim/pack/settings/start/settings/after/ftplugin/vim.vim) - Vim-specific settings for editing Vim script files.
 
-### Syntax Highlighting
+### Configured Features
 
-Syntax highlighting for Vim script files is provided by Vim's built-in support
-for the `vim` filetype.
+#### Syntax Highlighting
+Provided by Vim's built-in syntax highlighting for Vim script files.
 
-### Linting and Static Analysis
+#### Linting and Static Analysis
+* **Tool**: `vint` via `ALE`
+* **Configuration**: Configured in `ale.vim`
+* **Usage**: Errors and warnings appear in the location list and gutter
 
-- **`ALE` (Asynchronous Lint Engine)**: `ALE` is configured to use `vint` for
-    linting Vim script files.
+#### Auto Completion
+* **Tool**: `vim-language-server` via `coc-vimlsp`
+* **Configuration**: Configured in `coc-settings.json`
+* **Features**: Function completion, variable completion, keyword completion
 
-### Auto Completion
+#### Error Highlighting
+* **Tool**: `vint` via `ALE`
+* **Configuration**: Configured in `ale.vim`
+* **Usage**: Syntax errors and style issues are highlighted in the editor
 
-- **`coc.nvim` (Conqueror of Completion)**: `CoC` is configured with the
-    `coc-vimlsp` extension to provide auto-completion for Vim script files.
+### Default or Inapplicable Sections
 
-### Error Highlighting
-
-Error highlighting for Vim script files is provided by ALE with the `vint`
-linter.
+The following features use default settings without additional configuration:
+* Code Folding (uses Vim's default folding mechanisms)
+* Snippets (not configured specifically for Vim script)
+* Version Control Integration (uses global Git integration)
+* Formatting (not configured specifically for Vim script)
