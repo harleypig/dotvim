@@ -12,5 +12,11 @@ let g:ale_virtualtext_cursor = 'disabled'
 " Auto cleanup for all files
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'terraform': ['terraform'],
+\}
+
+" Terraform linters
+let g:ale_linters = {
+\   'terraform': ['tflint'],
 \}
 

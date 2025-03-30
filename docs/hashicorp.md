@@ -1,75 +1,54 @@
 ## HashiCorp Configuration
 
-This document outlines the setup and configuration for HashiCorp tools used
-within this development environment, specifically focusing on Terraform,
-Packer, and the Terraform testing framework.
+This document outlines the support for HashiCorp tools development within the Vim environment, specifically focusing on Terraform and Packer.
+
+Note: The configuration leverages language servers for enhanced functionality over built-in options, providing more comprehensive language support for HashiCorp's domain-specific languages.
 
 ### External Packages Used
 
-For working with HashiCorp tools, the following external packages are used:
-
-- **Terraform**: Provides infrastructure as code to define and provision data
-    center infrastructure.
-
-- **Packer**: Enables the creation of machine and container images for
-    multiple platforms from a single source configuration.
-
-- **terraform-ls**: Provides language server support for Terraform files,
-    offering features like auto-completion, document formatting, and
-    diagnostics.
+Install via package manager:
+* [terraform](https://www.terraform.io/) - Infrastructure as code tool for provisioning and managing cloud infrastructure.
+* [packer](https://www.packer.io/) - Tool for creating identical machine images for multiple platforms from a single configuration.
+* [terraform-ls](https://github.com/hashicorp/terraform-ls) - Language server providing Terraform language support for editors and IDEs.
+* [tflint](https://github.com/terraform-linters/tflint) - Terraform linter focused on possible errors, best practices, and more.
 
 ### Plugins and Extensions Used
 
-The following plugins and extensions are used for HashiCorp tooling support:
+* [vim-polyglot](https://github.com/sheerun/vim-polyglot) (Vim Plugin) - Provides syntax highlighting for Terraform and HCL files.
+* [coc.nvim](https://github.com/neoclide/coc.nvim) (Vim Plugin) - Intellisense engine that integrates with terraform-ls for language server features.
+* [ALE](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for linting Terraform files with tflint and formatting with terraform fmt.
 
-- **vim-terraform**: Provides syntax highlighting, formatting, and other features for Terraform files.
-- **ALE (Asynchronous Lint Engine)**: Used for linting Terraform files with `tflint`.
-- **CoC (Conqueror of Completion)**: Provides auto-completion and language server integration for Terraform via `coc-terraform`.
+### Configuration Files Used
 
-### Language Server
+* `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration for the terraform-ls language server.
+* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim) - Global ALE configuration including Terraform linting and formatting settings.
 
-`terraform-ls`
+### Configured Features
 
-### Syntax Highlighting
+#### Syntax Highlighting
+Provided by vim-polyglot, which includes support for Terraform (HCL) syntax highlighting.
 
-XXX: TBD
+#### Linting and Static Analysis
+* **Tool**: tflint via ALE
+* **Configuration**: Configured in ale.vim to run automatically on file save
+* **Usage**: Errors and warnings appear in the location list and gutter
 
-### Linting and Static Analysis
+#### Auto Completion
+* **Tool**: terraform-ls via CoC
+* **Configuration**: Configured in coc-settings.json
+* **Features**: Variable completion, resource type completion, attribute completion
 
-XXX: TBD
+#### Formatting
+* **Tool**: terraform fmt via ALE
+* **Configuration**: Set as a fixer in ale.vim
+* **Usage**: Automatically formats code on save or manually with `:ALEFix`
 
-### Auto Completion
+### Default or Inapplicable Sections
 
-XXX: TBD
-
-### Linting and Static Analysis
-
-XXX: TBD
-
-### Error Highlighting
-
-XXX: TBD
-
-### Code Folding
-
-XXX: TBD
-
-### Formatting and Beautification
-
-XXX: TBD
-
-### Schema or Contract Validation
-
-XXX: TBD
-
-### Version Control Integration
-
-XXX: TBD
-
-### Snippets
-
-XXX: TBD
-
-### Filetype Detection
-
-XXX: TBD
+The following features use default settings without additional configuration:
+* Error Highlighting (handled by ALE and CoC)
+* Code Folding (uses Vim's default folding mechanisms)
+* Schema Validation (handled by terraform-ls)
+* Version Control Integration (uses global Git integration)
+* Snippets (not configured specifically for Terraform)
+* Filetype Detection (handled by vim-polyglot)
