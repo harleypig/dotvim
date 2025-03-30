@@ -15,20 +15,12 @@ Install manually:
 
 #### tflint
 
-[tflint](https://github.com/terraform-linters/tflint) - Pluggable Terraform linter focused on possible errors, best practices, and naming conventions.
+[tflint](https://github.com/terraform-linters/tflint) - Pluggable Terraform
+linter focused on possible errors, best practices, and naming conventions.
 
 Using installation script (Linux):
 ```bash
 curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
-```
-
-Using package managers:
-```bash
-# macOS
-brew install tflint
-
-# Windows
-choco install tflint
 ```
 
 Using GitHub CLI:
@@ -36,17 +28,8 @@ Using GitHub CLI:
 # Linux
 gh release download --repo terraform-linters/tflint --pattern "*_linux_amd64.zip"
 unzip tflint_*_linux_amd64.zip
+# Change this to use the 'install' command, AI!
 sudo mv tflint /usr/local/bin/
-
-# macOS
-gh release download --repo terraform-linters/tflint --pattern "*_darwin_amd64.zip"
-unzip tflint_*_darwin_amd64.zip
-sudo mv tflint /usr/local/bin/
-
-# Windows
-gh release download --repo terraform-linters/tflint --pattern "*_windows_amd64.zip"
-unzip tflint_*_windows_amd64.zip
-# Move to a directory in your PATH
 ```
 
 Verification (recommended):
