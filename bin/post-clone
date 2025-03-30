@@ -1,0 +1,220 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+# Function to print section headers
+section() {
+  echo -e "\n${BLUE}==>${NC} ${GREEN}$1${NC}"
+}
+
+# Function to print status messages
+status() {
+  echo -e "${YELLOW}-->${NC} $1"
+}
+
+# Function to print error messages
+error() {
+  echo -e "${RED}Error:${NC} $1" >&2
+}
+
+# Function to check if a command exists
+command_exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
+# Initialize and update git submodules
+section "Initializing git submodules"
+git submodule update --init --recursive --remote
+status "Git submodules initialized successfully"
+
+# Check for npm installation
+section "Checking for npm installation"
+if ! command_exists npm; then
+  status "npm not found, checking for Node.js installation methods"
+  
+  # Check if nvm is installed
+  if [ -s "$HOME/.nvm/nvm.sh" ]; then
+    status "nvm found, using it to install Node.js"
+    # shellcheck disable=SC1090
+    source "$HOME/.nvm/nvm.sh"
+    nvm install --lts
+    nvm use --lts
+  else
+    status "nvm not found, attempting to install Node.js using package manager"
+    
+    # Detect OS
+    if command_exists apt-get; then
+      status "Debian/Ubuntu detected, installing Node.js via apt"
+      sudo apt-get update
+      sudo apt-get install -y nodejs npm
+    elif command_exists dnf; then
+      status "Fedora detected, installing Node.js via dnf"
+      sudo dnf install -y nodejs npm
+    elif command_exists pacman; then
+      status "Arch Linux detected, installing Node.js via pacman"
+      sudo pacman -Sy nodejs npm
+    elif command_exists brew; then
+      status "macOS with Homebrew detected, installing Node.js"
+      brew install node
+    else
+      error "Could not detect package manager. Please install Node.js manually."
+      exit 1
+    fi
+  fi
+  
+  # Verify npm installation
+  if ! command_exists npm; then
+    error "npm installation failed. Please install manually."
+    exit 1
+  fi
+  
+  status "npm installed successfully"
+else
+  status "npm already installed"
+fi
+
+# Install npm packages
+section "Installing npm packages"
+npm_packages=(
+  "vim-language-server"
+  "docker-langserver"
+  "terraform-ls"
+  "eslint"
+)
+
+for package in "${npm_packages[@]}"; do
+  status "Installing $package"
+  npm install -g "$package"
+done
+
+# Check for pipx installation
+section "Checking for pipx installation"
+if ! command_exists pipx; then
+  status "pipx not found, installing"
+  
+  # Check if pip is installed
+  if command_exists pip3; then
+    pip3 install --user pipx
+    # Add pipx to PATH if needed
+    python3 -m pipx ensurepath
+  elif command_exists pip; then
+    pip install --user pipx
+    # Add pipx to PATH if needed
+    python3 -m pipx ensurepath
+  else
+    status "pip not found, attempting to install python3-pip"
+    
+    # Detect OS
+    if command_exists apt-get; then
+      sudo apt-get update
+      sudo apt-get install -y python3-pip
+      pip3 install --user pipx
+      python3 -m pipx ensurepath
+    elif command_exists dnf; then
+      sudo dnf install -y python3-pip
+      pip3 install --user pipx
+      python3 -m pipx ensurepath
+    elif command_exists pacman; then
+      sudo pacman -Sy python-pip
+      pip install --user pipx
+      python3 -m pipx ensurepath
+    elif command_exists brew; then
+      brew install pipx
+    else
+      error "Could not detect package manager. Please install pipx manually."
+      exit 1
+    fi
+  fi
+  
+  # Verify pipx installation
+  if ! command_exists pipx; then
+    # Try to use it directly from the user's Python path
+    if [ -f "$HOME/.local/bin/pipx" ]; then
+      export PATH="$HOME/.local/bin:$PATH"
+    else
+      error "pipx installation failed. Please install manually."
+      exit 1
+    fi
+  fi
+  
+  status "pipx installed successfully"
+else
+  status "pipx already installed"
+fi
+
+# Install pipx packages
+section "Installing pipx packages"
+pipx_packages=(
+  "ansible-lint"
+  "yamllint"
+  "ansible-language-server"
+  "proselint"
+  "vint"
+)
+
+for package in "${pipx_packages[@]}"; do
+  status "Installing $package"
+  pipx install "$package"
+done
+
+# Install other packages using system package manager
+section "Installing other required packages"
+status "Attempting to install shellcheck, shfmt, and jq"
+
+# Detect OS
+if command_exists apt-get; then
+  sudo apt-get update
+  sudo apt-get install -y shellcheck jq
+  # shfmt might not be in default repos
+  if ! apt-cache show shfmt >/dev/null 2>&1; then
+    status "shfmt not found in apt repositories, installing via go"
+    if command_exists go; then
+      go install mvdan.cc/sh/v3/cmd/shfmt@latest
+    else
+      sudo apt-get install -y golang
+      go install mvdan.cc/sh/v3/cmd/shfmt@latest
+      # Add Go binaries to PATH
+      export PATH="$HOME/go/bin:$PATH"
+      echo 'export PATH="$HOME/go/bin:$PATH"' >> "$HOME/.bashrc"
+    fi
+  else
+    sudo apt-get install -y shfmt
+  fi
+elif command_exists dnf; then
+  sudo dnf install -y ShellCheck jq
+  # shfmt might not be in default repos
+  if ! dnf list shfmt >/dev/null 2>&1; then
+    status "shfmt not found in dnf repositories, installing via go"
+    if command_exists go; then
+      go install mvdan.cc/sh/v3/cmd/shfmt@latest
+    else
+      sudo dnf install -y golang
+      go install mvdan.cc/sh/v3/cmd/shfmt@latest
+      # Add Go binaries to PATH
+      export PATH="$HOME/go/bin:$PATH"
+      echo 'export PATH="$HOME/go/bin:$PATH"' >> "$HOME/.bashrc"
+    fi
+  else
+    sudo dnf install -y shfmt
+  fi
+elif command_exists pacman; then
+  sudo pacman -Sy shellcheck jq shfmt
+elif command_exists brew; then
+  brew install shellcheck jq shfmt
+else
+  error "Could not detect package manager. Please install shellcheck, shfmt, and jq manually."
+  status "You can find installation instructions at:"
+  status "shellcheck: https://github.com/koalaman/shellcheck#installing"
+  status "shfmt: https://github.com/mvdan/sh#shfmt"
+  status "jq: https://stedolan.github.io/jq/download/"
+fi
+
+section "Setup completed successfully!"
+status "All required packages have been installed."
+status "You may need to restart your terminal or source your shell configuration to use newly installed tools."
