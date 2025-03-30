@@ -1,0 +1,106 @@
+*learning.txt*  Keystrokes and Mappings Reference
+
+==============================================================================
+CONTENTS                                                   *learning-contents*
+
+    1. Introduction .......................... |learning-introduction|
+    2. General Mappings ...................... |learning-general-mappings|
+    3. File and Buffer Navigation ............ |learning-navigation|
+    4. Gutter and Display Controls ........... |learning-gutter|
+    5. Terminal Integration .................. |learning-terminal|
+    6. Git Integration ....................... |learning-git|
+    7. CoC and Completion .................... |learning-completion|
+    8. ALE and Formatting .................... |learning-formatting|
+    9. Vim Built-in Shortcuts ................ |learning-vim-shortcuts|
+
+==============================================================================
+1. Introduction                                        *learning-introduction*
+
+This help file documents keystrokes and mappings defined in this Vim
+configuration. It serves as a quick reference for both custom mappings and
+useful built-in Vim commands.
+
+Leader key: <Leader> (typically mapped to '\')
+
+==============================================================================
+2. General Mappings                                  *learning-general-mappings*
+
+<Leader>pp          Toggle paste mode
+<C-l>               Clear search highlighting and redraw screen
+
+==============================================================================
+3. File and Buffer Navigation                            *learning-navigation*
+
+No custom mappings documented yet.
+
+Built-in commands:
+Ctrl+]              Go to function definition (requires ctags)
+Ctrl+t              Return to previous location after Ctrl+]
+
+==============================================================================
+4. Gutter and Display Controls                              *learning-gutter*
+
+<Leader>signs       Toggle the sign column display
+<Leader>ln          Cycle through line numbering modes:
+                    - No numbers
+                    - Absolute numbers
+                    - Relative numbers
+                    - Both absolute and relative numbers
+
+==============================================================================
+5. Terminal Integration                                   *learning-terminal*
+
+<Leader>tt          Open terminal in a new window below current window
+
+<Leader>adr         Open Aider AI assistant in a terminal window
+                    (Only available if Aider is installed)
+
+==============================================================================
+6. Git Integration                                            *learning-git*
+
+w!!                 Write file with sudo (uses vim-eunuch if available)
+
+==============================================================================
+7. CoC and Completion                                    *learning-completion*
+
+<Tab>               In insert mode:
+                    - Navigate to next item if completion menu is visible
+                    - Accept Copilot suggestion if available
+                    - Insert tab or trigger completion based on context
+
+<CR> (Enter)        In insert mode:
+                    - Confirm selected completion if menu is visible
+                    - Otherwise insert a new line
+
+<C-Space>           Trigger completion (if not using Copilot)
+
+gd                  Go to definition
+gy                  Go to type definition
+gi                  Go to implementation
+gr                  Go to references
+
+[g                  Go to previous diagnostic
+]g                  Go to next diagnostic
+
+c[                  Go to previous quickfix item
+c]                  Go to next quickfix item
+
+==============================================================================
+8. ALE and Formatting                                    *learning-formatting*
+
+<Leader>fb          Fix current buffer with ALE
+
+==============================================================================
+9. Vim Built-in Shortcuts                              *learning-vim-shortcuts*
+
+Completion shortcuts:
+Ctrl+x Ctrl+n       Word completion
+Ctrl+x Ctrl+l       Line completion
+Ctrl+x Ctrl+f       Filename completion
+
+Help navigation:
+<Return>            Follow help link (in help files)
+<C-[>               Go back in help navigation (in help files)
+
+==============================================================================
+ vim:tw=78:ts=8:ft=help:norl:
