@@ -33,7 +33,7 @@ let b:ale_fixers = ['shfmt']
 let b:ale_fix_on_save = 1
 
 " Configure shfmt options for the built-in fixer
-" ALE automatically uses Vim's indent settings (shiftwidth), so options like 
+" ALE automatically uses Vim's indent settings (shiftwidth), so options like
 " '--indent=2' are not needed. ALE will pass:
 " * --indent=<shiftwidth> based on Vim's settings
 " * --filename=<current_filename> automatically
