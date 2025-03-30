@@ -25,9 +25,12 @@ pipx_packages=(
 )
 
 system_packages=(
+  "jq"
+  "packer"
   "shellcheck"
   "shfmt"
-  "jq"
+  "terraform"
+  "terraform-ls"
 )
 
 ##############################################################################

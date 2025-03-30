@@ -20,6 +20,12 @@ Install via package manager:
 * [package-name](link) - Brief description of the package and its purpose.
     Include installation method (prefer pipx over pip where applicable).
 
+Install manually:
+
+#### package-name
+
+Instructions on how to install manually (wget, curl, install, etc.)
+
 ### Plugins and Extensions Used
 
 * [plugin-name](link) (Plugin/Extension type) - Brief description including
