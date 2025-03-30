@@ -7,15 +7,18 @@ functionality.
 
 ### External Packages Used
 
+Install via `pipx`:
 * [ansible](https://www.ansible.com/) - Automation tool for provisioning,
-    configuration management, and deployment. Install via pipx.
+    configuration management, and deployment.
 * [ansible-lint](https://github.com/ansible-community/ansible-lint) - Lints
-    Ansible playbooks for best practices and potential errors. Install via pipx.
+    Ansible playbooks for best practices and potential errors. Installed with
+    ansible via pipx.
 * [yamllint](https://github.com/adrienverge/yamllint) - Linter for YAML files
-    to ensure consistent formatting. Install via pipx.
+    to ensure consistent formatting. Installed with ansible via pipx.
+
+Install via `npm`:
 * [ansible-language-server](https://github.com/ansible/ansible-language-server)
     - Provides language features like auto-completion and linting for Ansible.
-    Install via pipx.
 
 ### Plugins and Extensions Used
 

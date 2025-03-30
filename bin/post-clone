@@ -83,11 +83,10 @@ done
 section "Checking for pipx installation"
 
 pipx_packages=(
+  "ansible"
   "ansible-language-server"
-  "ansible-lint"
   "proselint"
   "vint"
-  "yamllint"
 )
 
 if ! command_exists pipx; then
