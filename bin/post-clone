@@ -40,27 +40,25 @@ status "Git submodules initialized successfully"
 section "Checking for npm installation"
 if ! command_exists npm; then
   status "npm not found, installing Node.js via nvm as documented"
-  
+
   # Install nvm as documented in coc-ale-setup.md
   status "Installing nvm"
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | PROFILE='/dev/null' bash
-  
-  # Source nvm
-  export NVM_DIR="$HOME/.nvm"
+
   # shellcheck disable=SC1091
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-  
+  source "$XDG_CONFIG_HOME/shell-startup/nodejs"
+
   # Install and use LTS version of Node.js
   status "Installing Node.js LTS version"
   nvm install --lts
   nvm use --lts
-  
+
   # Verify npm installation
   if ! command_exists npm; then
     error "npm installation failed. Please install manually."
     exit 1
   fi
-  
+
   status "npm installed successfully"
 else
   status "npm already installed"
@@ -69,10 +67,11 @@ fi
 # Install npm packages
 section "Installing npm packages"
 npm_packages=(
-  "vim-language-server"
   "docker-langserver"
-  "terraform-ls"
   "eslint"
+  "terraform-ls"
+  "vim-language-server"
+  "yarn"
 )
 
 for package in "${npm_packages[@]}"; do
@@ -98,17 +97,20 @@ if ! command_exists pipx; then
   for package in "${pipx_packages[@]}"; do
     status "  - $package"
   done
+
 else
   status "pipx found, installing packages"
-  
+
   # Install pipx packages
   section "Installing pipx packages"
+
   for package in "${pipx_packages[@]}"; do
     status "Installing $package"
     pipx install "$package"
   done
 fi
 
+##############################################################################
 # Install other packages using system package manager
 section "Installing other required packages"
 status "Attempting to install shellcheck, shfmt, and jq"
@@ -131,6 +133,7 @@ if command_exists apt-get; then
   else
     sudo apt-get install -y shfmt
   fi
+
 elif command_exists dnf; then
   sudo dnf install -y ShellCheck jq
   # shfmt might not be in default repos
@@ -147,10 +150,13 @@ elif command_exists dnf; then
   else
     sudo dnf install -y shfmt
   fi
+
 elif command_exists pacman; then
   sudo pacman -Sy shellcheck jq shfmt
+
 elif command_exists brew; then
   brew install shellcheck jq shfmt
+
 else
   error "Could not detect package manager. Please install shellcheck, shfmt, and jq manually."
   status "You can find installation instructions at:"

@@ -1,6 +1,6 @@
 # Stuff to do
 
-## Setup
+## Document setup and configuration
 
 * ansible
 * azure pipelines
@@ -16,9 +16,10 @@
 ## Setup script
 
 * run update stuff first
-* coc branch needs to be manually checked out to the release branch
-  + submodule tracking checks out the hash as a detached head which doesn't
-      seem to work
+
+### Submodules
+
+* git submodule update --init --recursive --remote
 
 ### Language servers
 
@@ -37,12 +38,8 @@ pipx install:
 
 other packages:
 * shellcheck - Required for shell script linting
+* shfmt - Required for shell script formatting
 * jq - Required for JSON formatting
-
-## Update
-
-* git submodule update --init --recursive --remote
-    + need to fix coc branch?
 
 ## Toggles
 
