@@ -133,8 +133,7 @@
   // Requires proselint be installed
   "diagnostic-languageserver.filetypes": {
     "text": ["proselint"],
-    "sh": "shellcheck",
-    "bash": "shellcheck"
+    "sh": "shellcheck"
   },
 
   "diagnostic-languageserver.linters": {
