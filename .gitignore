@@ -8,7 +8,10 @@ build/**
 dist/**
 git_plugin.egg-info/**
 venv/**
+node_modules/**
 
 .netrwhist
 .vim/sessions
 poetry.lock
+package.json
+package-lock.json
