@@ -95,13 +95,9 @@ pipx_packages=(
 if ! command_exists pipx; then
   status "pipx not found. Skipping pipx package installations."
   status "Please install pipx manually to use the following packages:"
-  # change this to print pipx_packages, AI!
-  status "  - ansible-lint"
-  status "  - yamllint"
-  status "  - ansible-language-server"
-  status "  - proselint"
-  status "  - vint"
-
+  for package in "${pipx_packages[@]}"; do
+    status "  - $package"
+  done
 else
   status "pipx found, installing packages"
   
