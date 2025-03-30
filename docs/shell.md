@@ -7,12 +7,12 @@ Note: While Vim has built-in syntax highlighting for shell scripts, external too
 ### External Packages Used
 
 Install via package manager:
-* [`shellcheck`](https://github.com/koalaman/shellcheck) - A static analysis tool for shell scripts that provides warnings and suggestions for bash/sh shell scripts.
-* [`shfmt`](https://github.com/mvdan/sh) - A shell parser, formatter, and interpreter with bash support.
+* [`shellcheck`](https://github.com/koalaman/shellcheck) - A static analysis tool for shell scripts that provides warnings and suggestions for `bash`/`sh` shell scripts.
+* [`shfmt`](https://github.com/mvdan/sh) - A shell parser, formatter, and interpreter with `bash` support.
 
 Install via npm:
-* [`bash-language-server`](https://github.com/bash-lsp/bash-language-server) - A language server for Bash that provides intelligent code completion, hover information, and more.
-* [`diagnostic-languageserver`](https://github.com/iamcco/diagnostic-languageserver) - Provides additional diagnostic capabilities for shellcheck.
+* [`bash-language-server`](https://github.com/bash-lsp/bash-language-server) - A language server for `Bash` that provides intelligent code completion, hover information, and more.
+* [`diagnostic-languageserver`](https://github.com/iamcco/diagnostic-languageserver) - Provides additional diagnostic capabilities for `shellcheck`.
 
 ### Plugins and Extensions Used
 
@@ -39,7 +39,7 @@ Provided by `vim-polyglot`, which includes enhanced support for shell script syn
 * **Features**: Detects common shell script issues, suggests best practices
 
 #### Auto Completion
-* **Tool**: bash-language-server via `coc-sh`
+* **Tool**: `bash-language-server` via `coc-sh`
 * **Configuration**: Configured in `coc-settings.json`
 * **Features**: Command completion, variable completion, path completion
 

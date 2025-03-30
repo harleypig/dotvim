@@ -18,23 +18,23 @@ Install via `npm`:
 
 Several Python language servers are available, each with different strengths:
 
-1. **Pyright** (Current choice) - Microsoft's static type checker and language server
+1. **`Pyright`** (Current choice) - Microsoft's static type checker and language server
    * Pros: Fast, lightweight, excellent type checking, works well with type annotations
    * Cons: Less comprehensive than some alternatives for certain features
    * Install: `npm install -g pyright`
 
-2. **Python LSP Server (pylsp)** - Community-maintained language server
+2. **`Python LSP Server (pylsp)`** - Community-maintained language server
    * Pros: Highly extensible with plugins, good integration with various tools
-   * Cons: Can be slower than Pyright
+   * Cons: Can be slower than `Pyright`
    * Install: `pipx install python-lsp-server`
 
-3. **Jedi Language Server** - Based on the Jedi static analysis tool
+3. **`Jedi Language Server`** - Based on the `Jedi` static analysis tool
    * Pros: Lightweight, good completion and navigation
    * Cons: Less feature-rich than some alternatives
    * Install: `pipx install jedi-language-server`
 
-4. **Palantir's Python Language Server (pyls)** - Original Python LSP implementation
-   * Note: Deprecated in favor of python-lsp-server
+4. **`Palantir's Python Language Server (pyls)`** - Original Python LSP implementation
+   * Note: Deprecated in favor of `python-lsp-server`
 
 ### Plugins and Extensions Used
 
@@ -60,23 +60,23 @@ Several Python language servers are available, each with different strengths:
 Provided by vim-polyglot, which includes enhanced support for Python syntax highlighting.
 
 #### Linting and Static Analysis
-* **Tool**: Pyright via coc-pyright and flake8 via CoC
-* **Configuration**: Configured in coc-settings.json
+* **Tool**: `Pyright` via `coc-pyright` and `flake8` via `CoC`
+* **Configuration**: Configured in `coc-settings.json`
 * **Usage**: Errors and warnings appear in the location list and gutter
 * **Features**: Type checking, style enforcement, syntax error detection
 
 #### Auto Completion
-* **Tool**: Pyright via coc-pyright
-* **Configuration**: Configured in coc-settings.json
+* **Tool**: `Pyright` via `coc-pyright`
+* **Configuration**: Configured in `coc-settings.json`
 * **Features**: Function completion, variable completion, import completion
 * **Settings**: Inlay hints for function return types and variable types are disabled
 
 #### Formatting
-* **Tool**: isort via ALE
-* **Configuration**: Set as a fixer in python.vim
+* **Tool**: `isort` via `ALE`
+* **Configuration**: Set as a fixer in `python.vim`
 * **Usage**: Automatically formats imports on save or manually with `:ALEFix`
 * **Features**: Sorts imports alphabetically and by sections
-* **Poetry Support**: Automatically detects Poetry environments
+* **Poetry Support**: Automatically detects `Poetry` environments
 
 #### Indentation
 * **Configuration**: Set in python.vim

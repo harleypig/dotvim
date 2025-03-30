@@ -25,7 +25,7 @@ Install via `npm`:
 ### Configured Features
 
 #### Linting and Static Analysis
-* **Tool**: `proselint` via diagnostic-languageserver
+* **Tool**: `proselint` via `diagnostic-languageserver`
 * **Configuration**: Configured in `coc-settings.json` to run on text files
 * **Usage**: Errors and warnings appear in the location list and gutter
 
