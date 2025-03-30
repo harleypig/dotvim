@@ -10,33 +10,41 @@ NC='\033[0m' # No Color
 ##############################################################################
 # Setup and Sanity
 
+# NPM packages as documented in various markdown files
 npm_packages=(
-  "ansible-language-server"
-  "bash-language-server"
-  "diagnostic-languageserver"
-  "dockerfile-language-server-nodejs"
-  "eslint"
-  "pyright"
-  "vim-language-server"
-  "yarn"
+  "ansible-language-server"     # ansible.md
+  "bash-language-server"        # shell.md
+  "diagnostic-languageserver"   # proselint.md, shell.md
+  "dockerfile-language-server-nodejs" # docker.md
+  "eslint"                      # json.md
+  "pyright"                     # python.md
+  "vim-language-server"         # vim-files.md
+  "yarn"                        # utility
 )
 
+# PIPX packages as documented in various markdown files
 pipx_packages=(
-  "ansible"
-  "proselint"
-  "vint"
-  "isort"
-  "flake8"
+  "ansible"                     # ansible.md
+  "ansible-lint"                # ansible.md (installed with ansible)
+  "yamllint"                    # ansible.md (installed with ansible)
+  "proselint"                   # proselint.md
+  "vint"                        # vim-files.md
+  "isort"                       # python.md
+  "flake8"                      # python.md
 )
 
+# System packages as documented in various markdown files
 system_packages=(
-  "jq"
-  "packer"
-  "shellcheck"
-  "shfmt"
-  "terraform"
-  "terraform-ls"
+  "jq"                          # json.md
+  "packer"                      # hashicorp.md
+  "shellcheck"                  # shell.md
+  "shfmt"                       # shell.md
+  "terraform"                   # hashicorp.md
+  "terraform-ls"                # hashicorp.md
 )
+
+# Optional manual installations (mentioned in docs but not auto-installed)
+# - tflint (hashicorp.md) - requires manual installation
 
 ##############################################################################
 # Functions
@@ -47,6 +55,11 @@ error() { echo -e "${RED}Error:${NC} $1" >&2; }
 warn() { echo -e "${YELLOW}Warning:${NC} $1" >&2; }
 
 command_exists() { command -v "$1" >/dev/null 2>&1; }
+
+# Function to check if a package is already installed via pipx
+pipx_package_installed() {
+  pipx list | grep -q "package $1"
+}
 
 ##############################################################################
 # Initialize and update git submodules
@@ -97,9 +110,13 @@ section "Installing npm packages"
 
 if command_exists npm; then
   for package in "${npm_packages[@]}"; do
-    status "Installing $package"
-    if ! npm install -g "$package"; then
-      warn "Failed to install $package. Some features may not work correctly."
+    if npm list -g "$package" &>/dev/null; then
+      status "$package is already installed"
+    else
+      status "Installing $package"
+      if ! npm install -g "$package"; then
+        warn "Failed to install $package. Some features may not work correctly."
+      fi
     fi
   done
 
@@ -129,9 +146,13 @@ else
   section "Installing pipx packages"
 
   for package in "${pipx_packages[@]}"; do
-    status "Installing $package"
-    if ! pipx install "$package" --include-deps; then
-      warn "Failed to install $package with pipx. Some features may not work correctly."
+    if pipx_package_installed "$package"; then
+      status "$package is already installed"
+    else
+      status "Installing $package"
+      if ! pipx install "$package" --include-deps; then
+        warn "Failed to install $package with pipx. Some features may not work correctly."
+      fi
     fi
   done
 fi
@@ -142,13 +163,45 @@ section "Installing other required packages"
 
 # Detect OS
 if command_exists apt-get; then
-  if ! sudo apt-get install -y "${system_packages[@]}"; then
-    warn "Failed to install system packages"
+  # Check which packages are already installed
+  installed_packages=()
+  for package in "${system_packages[@]}"; do
+    if dpkg -l "$package" &>/dev/null; then
+      status "$package is already installed"
+    else
+      installed_packages+=("$package")
+    fi
+  done
+  
+  # Install missing packages
+  if [ ${#installed_packages[@]} -gt 0 ]; then
+    status "Installing missing packages: ${installed_packages[*]}"
+    if ! sudo apt-get install -y "${installed_packages[@]}"; then
+      warn "Failed to install some system packages"
+    fi
+  else
+    status "All system packages are already installed"
   fi
 
 elif command_exists dnf; then
-  if ! sudo dnf install -y "${system_packages[@]}"; then
-    warn "Failed to install system packages"
+  # Check which packages are already installed
+  installed_packages=()
+  for package in "${system_packages[@]}"; do
+    if rpm -q "$package" &>/dev/null; then
+      status "$package is already installed"
+    else
+      installed_packages+=("$package")
+    fi
+  done
+  
+  # Install missing packages
+  if [ ${#installed_packages[@]} -gt 0 ]; then
+    status "Installing missing packages: ${installed_packages[*]}"
+    if ! sudo dnf install -y "${installed_packages[@]}"; then
+      warn "Failed to install some system packages"
+    fi
+  else
+    status "All system packages are already installed"
   fi
 
 else
@@ -157,6 +210,14 @@ else
     warn " - $package"
   done
 fi
+
+##############################################################################
+# Mention manual installations
+section "Manual installations required"
+
+status "The following tools need to be installed manually:"
+status "- tflint: Used for Terraform linting (see hashicorp.md for instructions)"
+status "  curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash"
 
 section "Setup completed successfully!"
 status "All required packages have been installed."
