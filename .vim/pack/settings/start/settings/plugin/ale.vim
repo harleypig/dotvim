@@ -13,10 +13,12 @@ let g:ale_virtualtext_cursor = 'disabled'
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'terraform': ['terraform'],
+\   'hcl': ['terraform'],
 \}
 
 " Terraform linters
 let g:ale_linters = {
 \   'terraform': ['tflint'],
+\   'hcl': ['tflint'],
 \}
 
