@@ -22,10 +22,8 @@ The following plugins have been evaluated and can be removed as their functional
 * [vim-endwise](https://github.com/tpope/vim-endwise.git) - Add end/endif/etc automatically *
 * [vim-lion](https://github.com/tommcdo/vim-lion.git) - Alignment operator *
 * [vim-sleuth](https://github.com/tpope/vim-sleuth.git) - Auto-detect indentation *
-* [vim-speeddating](https://github.com/tpope/vim-speeddating.git) - Date manipulation
 * [vim-table-mode](https://github.com/dhruvasagar/vim-table-mode) - Table creation/editing
-* [vim-unimpaired](https://github.com/tpope/vim-unimpaired.git) - Pairs of handy bracket mappings
-* [vim-visual-multi](https://github.com/mg979/vim-visual-multi) - Multiple cursors
+* [vim-unimpaired](https://github.com/tpope/vim-unimpaired.git) - Pairs of handy bracket mappings *
 
 ### Navigation and Motion
 * [targets](https://github.com/wellle/targets.vim.git) - Additional text objects
@@ -47,22 +45,20 @@ The following plugins have been evaluated and can be removed as their functional
 * [undotree](https://github.com/mbbill/undotree.git) - Visualize undo history
 * [vim-devicons](https://github.com/ryanoasis/vim-devicons.git) - Add file icons
 * [vim-diff-enhanced](https://github.com/chrisbra/vim-diff-enhanced.git) - Better diff algorithm
-* [vim-showmarks](https://github.com/jacquesbh/vim-showmarks.git) - Show marks in gutter
+* [vim-showmarks](https://github.com/jacquesbh/vim-showmarks.git) - Show marks in gutter *
 * [vim-qf](https://github.com/romainl/vim-qf.git) - Quickfix enhancements
 * [vim-qlist](https://github.com/romainl/vim-qlist.git) - Quickfix improvements
 
 ### Git and Version Control
 * [fugitive-azure-devops](https://github.com/cedarbaum/fugitive-azure-devops.vim.git) - Azure DevOps integration
 * [vim-fugitive](https://github.com/tpope/vim-fugitive.git) - Git wrapper
-* [vim-gitgutter](https://github.com/airblade/vim-gitgutter.git) - Git diff in the gutter
+* [vim-gitgutter](https://github.com/airblade/vim-gitgutter.git) - Git diff in the gutter *
 
 ### Language and Syntax Support
-* [AnsiEsc](https://github.com/vim-scripts/AnsiEsc.vim.git) - ANSI escape sequence highlighting
 * [apiblueprint](https://github.com/kylef/apiblueprint.vim.git) - API Blueprint support *
 * [hledger-vim](https://github.com/anekos/hledger-vim.git) - Hledger support
 * [jupyter-vim](https://github.com/jupyter-vim/jupyter-vim) - Jupyter notebook integration *
 * [MatchTag](https://github.com/gregsexton/MatchTag.git) - Highlight matching HTML tags *
-* [perlomni](https://github.com/c9s/perlomni.vim.git) - Perl omni completion *
 * [vim-jdaddy](https://github.com/tpope/vim-jdaddy.git) - JSON manipulation *
 * [vim-packer](https://github.com/hashivim/vim-packer.git) - Packer template support *
 * [vim-vaultproject](https://github.com/hashivim/vim-vaultproject.git) - HashiCorp Vault support *
@@ -71,17 +67,12 @@ The following plugins have been evaluated and can be removed as their functional
 * [ultisnips](https://github.com/SirVer/ultisnips.git) - Snippet engine *
 * [vim-snippets](https://github.com/honza/vim-snippets.git) - Snippet collection *
 
-### Database
-* [vim-dadbod](https://github.com/tpope/vim-dadbod.git) - Database interface
-* [vim-db](https://github.com/tpope/vim-db.git) - Database interface
-
 ### Debugging and Development
 * [vimspector](https://github.com/puremourning/vimspector.git) - Debugging *
 * [vim-healthcheck](https://github.com/rhysd/vim-healthcheck.git) - Vim health check
 
 ### Utilities and Misc
 * [calendar](https://github.com/itchyny/calendar.vim) - Calendar functionality
-* [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim.git) - EditorConfig support *
 * [FastFold](https://github.com/Konfekt/FastFold.git) - Faster folding
 * [helpful](https://github.com/tweekmonster/helpful.vim.git) - Show helpful info
 * [linediff](https://github.com/AndrewRadev/linediff.vim.git) - Line-based diff
