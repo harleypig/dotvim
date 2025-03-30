@@ -10,7 +10,34 @@ Install via package manager:
 * [terraform](https://www.terraform.io/) - Infrastructure as code tool for provisioning and managing cloud infrastructure.
 * [packer](https://www.packer.io/) - Tool for creating identical machine images for multiple platforms from a single configuration.
 * [terraform-ls](https://github.com/hashicorp/terraform-ls) - Language server providing Terraform language support for editors and IDEs.
-* [tflint](https://github.com/terraform-linters/tflint) - Terraform linter focused on possible errors, best practices, and more.
+
+Install manually:
+
+#### tflint
+
+[tflint](https://github.com/terraform-linters/tflint) - Pluggable Terraform linter focused on possible errors, best practices, and naming conventions.
+
+Linux:
+```bash
+curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+```
+
+macOS:
+```bash
+brew install tflint
+```
+
+Windows:
+```bash
+choco install tflint
+```
+
+Verification (recommended):
+```bash
+# Using GitHub CLI
+gh attestation verify checksums.txt -R terraform-linters/tflint
+sha256sum --ignore-missing -c checksums.txt
+```
 
 ### Plugins and Extensions Used
 
