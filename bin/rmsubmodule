@@ -19,8 +19,6 @@ git rm -r "$path" || {
   exit 1
 }
 
-mkreadme > README.md
-git add README.md
 git commit -m "removed $name and updated readme"
 
 rm -fr ".git/modules/${path##*/}"

@@ -1,23 +1,21 @@
 # Plugins to Try
 
-## Already Covered Functionality
+## Covered Functionality
 
-The following plugins have been evaluated and can be removed as their functionality is already covered:
-
-### Already covered by fzf (mentioned in utility.md)
+### Covered by fzf (mentioned in utility.md)
 * [ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky.git)
 * [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
 * [ctrlp](https://github.com/kien/ctrlp.vim) - Original ctrlp repository
 
-### Already covered by vim-fugitive (mentioned in utility.md)
+### Covered by vim-fugitive (mentioned in utility.md)
 * [vim-conflicted](https://github.com/christoomey/vim-conflicted.git)
 * [gitv](https://github.com/gregsexton/gitv) - Git repository viewer
 * [hypergit](https://github.com/c9s/hypergit.vim) - Git wrapper
 
-### Already covered by vim-gitgutter (mentioned in utility.md)
+### Covered by vim-gitgutter (mentioned in utility.md)
 * [vim-signify](https://github.com/mhinz/vim-signify.git)
 
-## Remaining Plugins to Consider
+## Plugins to Consider
 
 ### Text Editing Enhancements
 * [tabular](https://github.com/godlygeek/tabular.git) - Text alignment *
@@ -100,5 +98,9 @@ The following plugins have been evaluated and can be removed as their functional
 ### Colorschemes
 * [blue-mood-vim](https://github.com/lmintmate/blue-mood-vim.git) - Blue mood colorscheme
 * [vim-blueper](https://github.com/whonore/vim-blueper.git) - Blueper colorscheme
+
+### To Be Categorized
+
+* [vim-flagship](https://github.com/tpope/vim-flagship)
 
 _Note: Plugins marked with * have functionality that may be partially covered by CoC or ALE._
