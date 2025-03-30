@@ -7,9 +7,12 @@ The following plugins have been evaluated and can be removed as their functional
 ### Already covered by fzf (mentioned in utility.md)
 * [ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky.git)
 * [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
+* [ctrlp](https://github.com/kien/ctrlp.vim) - Original ctrlp repository
 
 ### Already covered by vim-fugitive (mentioned in utility.md)
 * [vim-conflicted](https://github.com/christoomey/vim-conflicted.git)
+* [gitv](https://github.com/gregsexton/gitv) - Git repository viewer
+* [hypergit](https://github.com/c9s/hypergit.vim) - Git wrapper
 
 ### Already covered by vim-gitgutter (mentioned in utility.md)
 * [vim-signify](https://github.com/mhinz/vim-signify.git)
@@ -37,6 +40,7 @@ The following plugins have been evaluated and can be removed as their functional
 * [vim-autotag](https://github.com/craigemery/vim-autotag) - Auto-update tags
 * [vim-easytags](https://github.com/xolox/vim-easytags.git) - Automated tag generation
 * [vim-misc](https://github.com/xolox/vim-misc.git) - Required for vim-easytags
+* [ctrlp](https://github.com/kien/ctrlp.vim) - Fuzzy file, buffer, mru, tag finder
 
 ### UI Enhancements
 * [rainbow](https://github.com/luochen1990/rainbow.git) - Rainbow parentheses
@@ -59,6 +63,7 @@ The following plugins have been evaluated and can be removed as their functional
 * [hledger-vim](https://github.com/anekos/hledger-vim.git) - Hledger support
 * [jupyter-vim](https://github.com/jupyter-vim/jupyter-vim) - Jupyter notebook integration *
 * [MatchTag](https://github.com/gregsexton/MatchTag.git) - Highlight matching HTML tags *
+* [perlcritic](https://github.com/mattfoster/vim-Perl-Critic) - Perl::Critic integration
 * [vim-jdaddy](https://github.com/tpope/vim-jdaddy.git) - JSON manipulation *
 * [vim-packer](https://github.com/hashivim/vim-packer.git) - Packer template support *
 * [vim-vaultproject](https://github.com/hashivim/vim-vaultproject.git) - HashiCorp Vault support *
@@ -66,10 +71,12 @@ The following plugins have been evaluated and can be removed as their functional
 ### Snippets and Completion
 * [ultisnips](https://github.com/SirVer/ultisnips.git) - Snippet engine *
 * [vim-snippets](https://github.com/honza/vim-snippets.git) - Snippet collection *
+* [snipmate](https://github.com/garbas/vim-snipmate) - Snippet manager for Vim
 
 ### Debugging and Development
 * [vimspector](https://github.com/puremourning/vimspector.git) - Debugging *
 * [vim-healthcheck](https://github.com/rhysd/vim-healthcheck.git) - Vim health check
+* [SVNDiff](http://www.vim.org/scripts/script.php?script_id=1881) - SVN diff viewer
 
 ### Utilities and Misc
 * [calendar](https://github.com/itchyny/calendar.vim) - Calendar functionality
@@ -81,6 +88,7 @@ The following plugins have been evaluated and can be removed as their functional
 * [vim-ExtractMatches](https://github.com/inkarkat/vim-ExtractMatches.git) - Extract regex matches
 * [vim-fake](https://github.com/tkhren/vim-fake.git) - Generate fake data
 * [vim-frign](https://github.com/KimNorgaard/vim-frign.git) - Frign plugin
+* [vim-google-scribe](https://github.com/dubenstein/vim-google-scribe) - Google Script integration
 * [vim-ingo-library](https://github.com/inkarkat/vim-ingo-library.git) - Library for inkarkat plugins
 * [vim-LanguageTool](https://github.com/dpelle/vim-LanguageTool.git) - Grammar checking *
 * [vim-man](https://github.com/vim-utils/vim-man.git) - View man pages
