@@ -1,136 +1,57 @@
 {
-  //-------------------------------------------------------------------------
-  // Let ALE handle formatting
-  // Diagnostics are displayed by ALE instead of CoC.
+  //=========================================================================
+  // GENERAL SETTINGS
+  //=========================================================================
+  
+  // Diagnostic Settings
   "diagnostic.displayByAle": true,
-  // Enables virtual text diagnostics.
   "diagnostic.virtualText": true,
-  // Shows virtual text diagnostics only on the current line.
   "diagnostic.virtualTextCurrentLineOnly": true,
-  // Sets the format for virtual text diagnostics.
   "diagnostic.virtualTextFormat": " >>> %severity: %message {%source}",
-
-  // Enables auto-update of the current function symbol.
-  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
-  // Sets the extension update check to daily.
-  "coc.preferences.extensionUpdateCheck": "daily",
-  // Disables automatic formatting on save.
-  "coc.preferences.formatOnSave": false,
-  // Don't use quickfix for locations.
-  "coc.preferences.useQuickfixForLocations": false,
-
-  // Enables colors.
+  
+  // UI and Visual Settings
   "colors.enable": true,
-
-  // Aligns columns in lists.
   "list.alignColumns": true,
-
-  // Enables status line progress notifications.
   "notification.statusLineProgress": true,
-
-  // Disables signature help.
+  
+  // Behavior Preferences
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.formatOnSave": false,
+  "coc.preferences.useQuickfixForLocations": false,
   "signature.enable": false,
 
-  //-------------------------------------------------------------------------
-  // Configuration for ansible-lint
-  // https://ansible.readthedocs.io/projects/language-server/settings/
-  "ansible.ansible.useFullyQualifiedCollectionNames": false,
-
-  //-------------------------------------------------------------------------
-  // coc-sh settings
-  //"bashIde.enableSourceErrorDiagnostic": true,
-
-  //-------------------------------------------------------------------------
-  // coc-spell-checker settings
-  // https://github.com/iamcco/coc-spell-checker
-
-  //-------------------------------------------------------------------------
-  // coc-git settings
-  //"git.changedSign.hlGroup": "DiffChange",
-  //"git.addedSign.hlGroup": "DiffAdd",
-  //"git.removedSign.hlGroup": "DiffDelete",
-  //"git.topRemovedSign.hlGroup": "DiffDelete",
-  //"git.changeRemovedSign.hlGroup": "DiffChange",
-  //"git.conflict.current.hlGroup": "DiffChange",
-  //"git.conflict.incoming.hlGroup": "DiffAdd",
-
-//  "cSpell.enabled": true,
-//  "cSpell.showStatus": true,
-//  "cSpell.enabledLanguageIds": [
-//    "asciidoc",
-//    "bash",
-//    "c",
-//    "cpp",
-//    "csharp",
-//    "css",
-//    "dockerfile",
-//    "go",
-//    "haskell",
-//    "html",
-//    "java",
-//    "javascript",
-//    "javascriptreact",
-//    "json",
-//    "latex",
-//    "less",
-//    "lua",
-//    "markdown",
-//    "php",
-//    "plaintext",
-//    "python",
-//    "r",
-//    "ruby",
-//    "rust",
-//    "scss",
-//    "sh",
-//    "sql",
-//    "swift",
-//    "tex",
-//    "typescript",
-//    "typescriptreact",
-//    "vim",
-//    "vue",
-//    "xml",
-//    "yaml"
-//  ],
-//
-//  "cSpell.languageSettings": [
-//    // Python
-//    {
-//      "languageId": "python",
-//      "includeRegExpList": [
-//        "strings",
-//        "comments",
-//      ]
-//    },
-//
-//    // Shell
-//    {
-//      "languageId": "sh",
-//      "includeRegExpList": [
-//        "/#.*/",
-//        "strings",
-//      ]
-//    },
-//  ],
-
-  //-------------------------------------------------------------------------
+  //=========================================================================
+  // PYTHON SETTINGS
+  //=========================================================================
   // Pyright settings
   // https://github.com/fannheyward/coc-pyright
   // https://github.com/microsoft/pyright
   // https://microsoft.github.io/pyright
   // look in pyrightconfig.json or pyproject.toml for more settings
-
   "pyright.inlayHints.functionReturnTypes": false,
   "pyright.inlayHints.variableTypes": false,
-
-  //-------------------------------------------------------------------------
-  // coc-pyright flake8
+  
+  // Flake8 integration
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Stdin": true,
 
-  //-------------------------------------------------------------------------
-  // Requires proselint be installed
+  //=========================================================================
+  // SHELL SCRIPT SETTINGS
+  //=========================================================================
+  // Uncomment to enable source error diagnostics
+  //"bashIde.enableSourceErrorDiagnostic": true,
+
+  //=========================================================================
+  // ANSIBLE SETTINGS
+  //=========================================================================
+  // https://ansible.readthedocs.io/projects/language-server/settings/
+  "ansible.ansible.useFullyQualifiedCollectionNames": false,
+
+  //=========================================================================
+  // PROSE AND TEXT SETTINGS
+  //=========================================================================
+  // Diagnostic language server configuration
   "diagnostic-languageserver.filetypes": {
     "text": ["proselint"],
     "sh": "shellcheck"
@@ -182,8 +103,87 @@
     }
   },
 
-  //-------------------------------------------------------------------------
+  //=========================================================================
+  // SPELL CHECKER SETTINGS (DISABLED)
+  //=========================================================================
+  // Uncomment to enable spell checking
+  //  "cSpell.enabled": true,
+  //  "cSpell.showStatus": true,
+  //  "cSpell.enabledLanguageIds": [
+  //    "asciidoc",
+  //    "bash",
+  //    "c",
+  //    "cpp",
+  //    "csharp",
+  //    "css",
+  //    "dockerfile",
+  //    "go",
+  //    "haskell",
+  //    "html",
+  //    "java",
+  //    "javascript",
+  //    "javascriptreact",
+  //    "json",
+  //    "latex",
+  //    "less",
+  //    "lua",
+  //    "markdown",
+  //    "php",
+  //    "plaintext",
+  //    "python",
+  //    "r",
+  //    "ruby",
+  //    "rust",
+  //    "scss",
+  //    "sh",
+  //    "sql",
+  //    "swift",
+  //    "tex",
+  //    "typescript",
+  //    "typescriptreact",
+  //    "vim",
+  //    "vue",
+  //    "xml",
+  //    "yaml"
+  //  ],
+  //
+  //  "cSpell.languageSettings": [
+  //    // Python
+  //    {
+  //      "languageId": "python",
+  //      "includeRegExpList": [
+  //        "strings",
+  //        "comments",
+  //      ]
+  //    },
+  //
+  //    // Shell
+  //    {
+  //      "languageId": "sh",
+  //      "includeRegExpList": [
+  //        "/#.*/",
+  //        "strings",
+  //      ]
+  //    },
+  //  ],
+
+  //=========================================================================
+  // GIT INTEGRATION SETTINGS (DISABLED)
+  //=========================================================================
+  // Uncomment to enable git integration with custom highlighting
+  //"git.changedSign.hlGroup": "DiffChange",
+  //"git.addedSign.hlGroup": "DiffAdd",
+  //"git.removedSign.hlGroup": "DiffDelete",
+  //"git.topRemovedSign.hlGroup": "DiffDelete",
+  //"git.changeRemovedSign.hlGroup": "DiffChange",
+  //"git.conflict.current.hlGroup": "DiffChange",
+  //"git.conflict.incoming.hlGroup": "DiffAdd",
+
+  //=========================================================================
+  // LANGUAGE SERVERS
+  //=========================================================================
   "languageserver": {
+    // HTML Language Server
     "html": {
       "command": "vscode-html-languageservice",
       "args": ["--stdio"],
@@ -193,37 +193,41 @@
       },
       "settings": {}
     },
+    
+    // Vim Language Server
     "vimls": {
       "command": "vim-language-server",
       "args": ["--stdio"],
       "filetypes": ["vim"]
-//      "initializationOptions": {
-//        "iskeyword": "@,48-57,_,192-255,-#",
-//        "vimruntime": "",
-//        "runtimepath": "",
-//        "diagnostic": {
-//          "enable": true
-//        },
-//        "indexes": {
-//          "runtimepath": true,
-//          "gap": 100,
-//          "count": 3,
-//          "projectRootPatterns": ["runtime", "nvim", ".git", "autoload", "plugin"]
-//        },
-//        "suggest": {
-//          "fromVimruntime": true,
-//          "fromRuntimepath": false
-//        }
-//      }
+      // Uncomment for additional configuration
+      //"initializationOptions": {
+      //  "iskeyword": "@,48-57,_,192-255,-#",
+      //  "vimruntime": "",
+      //  "runtimepath": "",
+      //  "diagnostic": {
+      //    "enable": true
+      //  },
+      //  "indexes": {
+      //    "runtimepath": true,
+      //    "gap": 100,
+      //    "count": 3,
+      //    "projectRootPatterns": ["runtime", "nvim", ".git", "autoload", "plugin"]
+      //  },
+      //  "suggest": {
+      //    "fromVimruntime": true,
+      //    "fromRuntimepath": false
+      //  }
+      //}
     },
-    // Requires docker-langserver be installed
+    
+    // Docker Language Server
     "dockerfile": {
       "args": ["--stdio"],
       "command": "docker-langserver",
       "filetypes": ["dockerfile"]
     },
 
-    // Requires terraform-ls be installed
+    // Terraform Language Server
     "terraform": {
       "args": ["serve"],
       "command": "terraform-ls",
@@ -243,6 +247,5 @@
         // "validation.enableEnhancedValidation": true
       }
     }
-//   }
   }
 }
