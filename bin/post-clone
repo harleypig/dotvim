@@ -35,6 +35,7 @@ status "Git submodules initialized successfully"
 
 # Check for npm installation
 section "Checking for npm installation"
+# npm should only be installed via the method documented, AI!
 if ! command_exists npm; then
   status "npm not found, checking for Node.js installation methods"
   
