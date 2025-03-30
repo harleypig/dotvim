@@ -1,36 +1,39 @@
-# proselint
+## Proselint
 
-## Installation and Sources
+This document outlines the support for prose linting within the Vim environment using Proselint.
 
-Probably need to `pip install proselint`.
+Note: Proselint was chosen over built-in options for its comprehensive prose checking capabilities, focusing on clarity, consistency, and avoiding common writing errors.
 
-- [Repository](https://github.com/amperser/proselint)
+### External Packages Used
 
-ArchLinux's `proselint` package won't install; use the pip install method.
+Install via `pipx`:
+* [`proselint`](https://github.com/amperser/proselint) - A linter for prose that identifies errors in style, usage, and consistency in writing.
 
-$Work won't let me use 'universe' for ubuntu, so need to use the pip install
-method there too.
+### Plugins and Extensions Used
 
-Probably should just stick with the pip install method all around.
+* [`coc.nvim`](https://github.com/neoclide/coc.nvim) (Vim Plugin) - Integrates with diagnostic-languageserver to provide Proselint functionality.
+* [`diagnostic-languageserver`](https://github.com/iamcco/diagnostic-languageserver) (Language Server) - Provides a bridge between Proselint and CoC.
 
-There is no `coc-proselint` (yet) so see Configuration below for details.
+### Configuration Files Used
 
-## Configuration
+* `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration for diagnostic-languageserver to use Proselint.
+* `.proselint-config.json` - Custom configuration file for Proselint rules and settings.
 
-See this
-[discussion](https://github.com/neoclide/coc.nvim/discussions/2028#discussioncomment-198844)
-for `coc` configuration details.
+### Configured Features
 
-There's not a whole lot to configure though, as far as calling the program
-itself. See `coc-settings.json` for what is currently being used for setup.
+#### Linting and Static Analysis
+* **Tool**: `proselint` via diagnostic-languageserver
+* **Configuration**: Configured in `coc-settings.json` to run on text files
+* **Usage**: Errors and warnings appear in the location list and gutter
 
-As for the [configuration file](https://github.com/amperser/proselint#checks)
-itself, the order of search is the following (I think):
+### Default or Inapplicable Sections
 
-- $XDG_CONFIG_HOME/proselint/config.json
-- $HOME/.config/proselint/config.json
-- $XDG_CONFIG_HOME/proselint/config.json (legacy)
-- $HOME/.proselintrc.json (legacy)
-
-Additionally, proselint has the `--config` option which I'm using to make it
-easier to manage.
+The following features use default settings or are not applicable:
+* Syntax Highlighting (uses Vim's default text highlighting)
+* Auto Completion (not applicable for prose linting)
+* Formatting (not provided by Proselint)
+* Error Highlighting (handled by CoC's diagnostic display)
+* Code Folding (uses Vim's default folding mechanisms)
+* Snippets (not configured specifically for prose)
+* Schema Validation (not applicable for prose)
+* Version Control Integration (uses global Git integration)
