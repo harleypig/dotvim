@@ -27,6 +27,8 @@ npm install:
 * docker-langserver - Required for Dockerfile language support
 * terraform-ls - Required for Terraform language support
 
+other packages:
+
 ## Update
 
 * git submodule update --init --recursive --remote
