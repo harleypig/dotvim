@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-#set -euo pipefail
-
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -23,6 +21,11 @@ status() {
 # Function to print error messages
 error() {
   echo -e "${RED}Error:${NC} $1" >&2
+}
+
+# Function to print warnings
+warn() {
+  echo -e "${YELLOW}Warning:${NC} $1" >&2
 }
 
 # Function to check if a command exists
@@ -56,8 +59,10 @@ if ! command_exists npm; then
 
   # Verify npm installation
   if ! command_exists npm; then
-    error "npm installation failed. Please install manually."
-    exit 1
+    warn "npm installation failed. Please install manually."
+    warn "Continuing with the rest of the setup..."
+  else
+    status "npm installed successfully"
   fi
 
   status "npm installed successfully"
@@ -75,10 +80,20 @@ npm_packages=(
   "yarn"
 )
 
-for package in "${npm_packages[@]}"; do
-  status "Installing $package"
-  npm install -g "$package"
-done
+if command_exists npm; then
+  for package in "${npm_packages[@]}"; do
+    status "Installing $package"
+    if ! npm install -g "$package"; then
+      warn "Failed to install $package. Some features may not work correctly."
+    fi
+  done
+else
+  warn "npm is not available. Skipping npm package installations."
+  warn "The following packages will need to be installed manually:"
+  for package in "${npm_packages[@]}"; do
+    warn "  - $package"
+  done
+fi
 
 ##############################################################################
 # Check for pipx installation
@@ -105,7 +120,9 @@ else
 
   for package in "${pipx_packages[@]}"; do
     status "Installing $package"
-    pipx install "$package" --include-deps
+    if ! pipx install "$package" --include-deps; then
+      warn "Failed to install $package with pipx. Some features may not work correctly."
+    fi
   done
 fi
 
@@ -116,52 +133,83 @@ status "Attempting to install shellcheck, shfmt, and jq"
 
 # Detect OS
 if command_exists apt-get; then
-  sudo apt-get update
-  sudo apt-get install -y shellcheck jq
+  if ! sudo apt-get update; then
+    warn "Failed to update apt repositories. Continuing anyway..."
+  fi
+  
+  if ! sudo apt-get install -y shellcheck jq; then
+    warn "Failed to install shellcheck and/or jq via apt-get."
+  fi
+  
   # shfmt might not be in default repos
   if ! apt-cache show shfmt >/dev/null 2>&1; then
     status "shfmt not found in apt repositories, installing via go"
     if command_exists go; then
-      go install mvdan.cc/sh/v3/cmd/shfmt@latest
+      if ! go install mvdan.cc/sh/v3/cmd/shfmt@latest; then
+        warn "Failed to install shfmt via go."
+      fi
     else
-      sudo apt-get install -y golang
-      go install mvdan.cc/sh/v3/cmd/shfmt@latest
-      # Export Go binaries path for current session
-      export PATH="$HOME/go/bin:$PATH"
+      if ! sudo apt-get install -y golang; then
+        warn "Failed to install golang. Cannot install shfmt."
+      else
+        if ! go install mvdan.cc/sh/v3/cmd/shfmt@latest; then
+          warn "Failed to install shfmt via go."
+        fi
+        # Export Go binaries path for current session
+        export PATH="$HOME/go/bin:$PATH"
+      fi
     fi
   else
-    sudo apt-get install -y shfmt
+    if ! sudo apt-get install -y shfmt; then
+      warn "Failed to install shfmt via apt-get."
+    fi
   fi
 
 elif command_exists dnf; then
-  sudo dnf install -y ShellCheck jq
+  if ! sudo dnf install -y ShellCheck jq; then
+    warn "Failed to install ShellCheck and/or jq via dnf."
+  fi
+  
   # shfmt might not be in default repos
   if ! dnf list shfmt >/dev/null 2>&1; then
     status "shfmt not found in dnf repositories, installing via go"
     if command_exists go; then
-      go install mvdan.cc/sh/v3/cmd/shfmt@latest
+      if ! go install mvdan.cc/sh/v3/cmd/shfmt@latest; then
+        warn "Failed to install shfmt via go."
+      fi
     else
-      sudo dnf install -y golang
-      go install mvdan.cc/sh/v3/cmd/shfmt@latest
-      # Export Go binaries path for current session
-      export PATH="$HOME/go/bin:$PATH"
+      if ! sudo dnf install -y golang; then
+        warn "Failed to install golang. Cannot install shfmt."
+      else
+        if ! go install mvdan.cc/sh/v3/cmd/shfmt@latest; then
+          warn "Failed to install shfmt via go."
+        fi
+        # Export Go binaries path for current session
+        export PATH="$HOME/go/bin:$PATH"
+      fi
     fi
   else
-    sudo dnf install -y shfmt
+    if ! sudo dnf install -y shfmt; then
+      warn "Failed to install shfmt via dnf."
+    fi
   fi
 
 elif command_exists pacman; then
-  sudo pacman -Sy shellcheck jq shfmt
+  if ! sudo pacman -Sy shellcheck jq shfmt; then
+    warn "Failed to install shellcheck, jq, and/or shfmt via pacman."
+  fi
 
 elif command_exists brew; then
-  brew install shellcheck jq shfmt
+  if ! brew install shellcheck jq shfmt; then
+    warn "Failed to install shellcheck, jq, and/or shfmt via brew."
+  fi
 
 else
-  error "Could not detect package manager. Please install shellcheck, shfmt, and jq manually."
-  status "You can find installation instructions at:"
-  status "shellcheck: https://github.com/koalaman/shellcheck#installing"
-  status "shfmt: https://github.com/mvdan/sh#shfmt"
-  status "jq: https://stedolan.github.io/jq/download/"
+  warn "Could not detect package manager. Please install shellcheck, shfmt, and jq manually."
+  warn "You can find installation instructions at:"
+  warn "shellcheck: https://github.com/koalaman/shellcheck#installing"
+  warn "shfmt: https://github.com/mvdan/sh#shfmt"
+  warn "jq: https://stedolan.github.io/jq/download/"
 fi
 
 section "Setup completed successfully!"
