@@ -26,7 +26,12 @@ Install manually:
 
 Instructions on how to install manually (wget, curl, install, etc.)
 
-### Plugins and Extensions Used
+### VIm Plugins Used
+
+* [plugin-name](link) (Plugin/Extension type) - Brief description including
+    supported features (e.g., linting, completion, syntax).
+
+### CoC Extensions Used
 
 * [plugin-name](link) (Plugin/Extension type) - Brief description including
     supported features (e.g., linting, completion, syntax).
