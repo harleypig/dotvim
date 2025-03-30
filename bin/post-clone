@@ -105,7 +105,7 @@ else
 
   for package in "${pipx_packages[@]}"; do
     status "Installing $package"
-    pipx install "$package"
+    pipx install "$package" --include-deps
   done
 fi
 
