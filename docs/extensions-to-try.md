@@ -16,17 +16,17 @@ The following extensions are currently installed and configured:
 * [coc-vimlsp](https://github.com/iamcco/coc-vimlsp) - VimL language server
 * [@yaegassy/coc-ansible](https://github.com/yaegassy/coc-ansible) - Ansible language server
 
-## Extensions Ready to Install
-
-The following extensions are documented in `.coc-extensions.yml` and ready to be installed:
+## Extensions to Evaluate
 
 ### Language Support
+
 * [coc-sql](https://github.com/fannheyward/coc-sql) - SQL language server
 * [coc-yaml](https://github.com/neoclide/coc-yaml) - YAML language server
 * [coc-markdownlint](https://github.com/fannheyward/coc-markdownlint) - Markdown linting
 * [coc-pydocstring](https://github.com/yaegassy/coc-pydocstring) - Python docstring generation
 
 ### Utilities
+
 * [coc-lists](https://github.com/neoclide/coc-lists) - Common lists for CoC
 * [coc-pairs](https://github.com/neoclide/coc-pairs) - Auto-pair brackets, quotes, etc.
 * [coc-smartf](https://github.com/neoclide/coc-smartf) - Enhanced f/t motions
@@ -35,16 +35,10 @@ The following extensions are documented in `.coc-extensions.yml` and ready to be
 * [coc-coverage](https://github.com/ruanyl/coc-coverage) - Code coverage visualization
 * [coc-db](https://github.com/kristijanhusak/vim-dadbod-completion) - Database completion
 
-### Formatting and Editing
+### To Be Categorized
+
 * [coc-prettier](https://github.com/neoclide/coc-prettier) - Code formatting with Prettier
-
-### Task Management
 * [coc-tasks](https://github.com/voldikss/coc-tasks) - Task management with asynctasks.vim
-
-## Extensions to Evaluate
-
-The following extensions are marked for evaluation in `.coc-extensions.yml`:
-
 * [coc-todolist](https://github.com/voldikss/coc-todolist) - Manage TODOs
 * [coc-yank](https://github.com/neoclide/coc-yank) - Yank history management
 * [coc-webview](https://github.com/weirongxu/coc-webview) - Web view integration
@@ -52,11 +46,6 @@ The following extensions are marked for evaluation in `.coc-extensions.yml`:
 * [coc-snippets](https://github.com/neoclide/coc-snippets) - Snippet support
 * [coc-calc](https://github.com/weirongxu/coc-calc) - Calculator integration
 * [coc-format-json](https://github.com/gera2ld/coc-format-json) - JSON formatting
-
-## Extensions Mentioned in .vimrc
-
-The following extensions are mentioned in `.vimrc` as "Extensions to try":
-
 * [coc-coverage](https://github.com/ruanyl/coc-coverage) - Code coverage visualization
 * [coc-db](https://github.com/kristijanhusak/vim-dadbod-completion) - Database completion
 * [coc-dictd](https://github.com/jeewangue/coc-dictd) - Dictionary integration
@@ -72,8 +61,6 @@ The following extensions are mentioned in `.vimrc` as "Extensions to try":
 * [coc-yaml](https://github.com/neoclide/coc-yaml) - YAML language server
 
 ## Extensions Not Working
-
-The following extensions are marked as not working in `.coc-extensions.yml`:
 
 * [coc-nginx](https://github.com/yaegassy/coc-nginx) - Nginx configuration support
 * [coc-cucumber](https://github.com/yaegassy/coc-cucumber) - Cucumber support

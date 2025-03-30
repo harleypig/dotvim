@@ -46,22 +46,3 @@ let g:coc_global_extensions = [
     \ 'coc-vimlsp',
     \ '@yaegassy/coc-ansible',
     \]
-
-" @yaegassy/coc-ansible
-" coc-coverage
-" coc-db
-" coc-dictd
-" coc-lists
-" coc-markdownlint
-" coc-pairs
-" coc-prettier
-" coc-pydocstring
-" coc-smartf
-" coc-sql
-" coc-tasks
-" coc-terminal
-" coc-toml
-" coc-yaml
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"colorscheme norwaytoday
