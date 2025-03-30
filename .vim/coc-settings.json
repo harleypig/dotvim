@@ -197,7 +197,7 @@
     "vimls": {
       "command": "vim-language-server",
       "args": ["--stdio"],
-      "filetypes": ["vim"],
+      "filetypes": ["vim"]
 //      "initializationOptions": {
 //        "iskeyword": "@,48-57,_,192-255,-#",
 //        "vimruntime": "",
@@ -231,7 +231,7 @@
       "filetypes": ["terraform", "tf"],
       "initializationOptions": {},
       "settings": {
-        "indexing.ignorePaths": [".aider.*"],
+        "indexing.ignorePaths": [".aider.*"]
         // "terraform.logFilePath": "/path/to/logfile",
         // "terraform.timeout": "30s",
         // "terraform.path": "/path/to/terraform",
