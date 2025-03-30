@@ -69,7 +69,6 @@ section "Installing npm packages"
 npm_packages=(
   "dockerfile-language-server-nodejs"
   "eslint"
-  "terraform-ls"
   "vim-language-server"
   "yarn"
 )
