@@ -179,9 +179,8 @@ if command_exists apt-get; then
     else
       sudo apt-get install -y golang
       go install mvdan.cc/sh/v3/cmd/shfmt@latest
-      # Add Go binaries to PATH
+      # Export Go binaries path for current session
       export PATH="$HOME/go/bin:$PATH"
-      echo 'export PATH="$HOME/go/bin:$PATH"' >> "$HOME/.bashrc"
     fi
   else
     sudo apt-get install -y shfmt
@@ -196,9 +195,8 @@ elif command_exists dnf; then
     else
       sudo dnf install -y golang
       go install mvdan.cc/sh/v3/cmd/shfmt@latest
-      # Add Go binaries to PATH
+      # Export Go binaries path for current session
       export PATH="$HOME/go/bin:$PATH"
-      echo 'export PATH="$HOME/go/bin:$PATH"' >> "$HOME/.bashrc"
     fi
   else
     sudo dnf install -y shfmt
@@ -217,4 +215,6 @@ fi
 
 section "Setup completed successfully!"
 status "All required packages have been installed."
-status "You may need to restart your terminal or source your shell configuration to use newly installed tools."
+status "You may need to restart your terminal to use newly installed tools."
+status "Note: This script doesn't modify any shell configuration files."
+status "If tools aren't available in your PATH, you may need to add their locations manually."
