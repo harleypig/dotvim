@@ -158,7 +158,55 @@
   },
 
   "diagnostic-languageserver.filetypes": {
-    "text": ["proselint"]
+    "text": ["proselint"],
+    "sh": "shellcheck",
+    "bash": "shellcheck"
+  },
+  
+  "diagnostic-languageserver.linters": {
+    "proselint": {
+      "args": ["--config", "$HOME/.vim/.proselint-config.json", "-"],
+      "command": "proselint",
+      "debounce": 100,
+      "formatLines": 1,
+      "formatPattern": [
+        "^[^:]+:(\\d+):(\\d+):(\\s)(.*)$",
+        {
+          "column": 2,
+          "line": 1,
+          "message": 4,
+          "security": 3
+        }
+      ],
+      "isStderr": false,
+      "isStdout": true,
+      "offsetColumn": 0,
+      "offsetLine": 0,
+      "securities": {
+        " ": "info"
+      },
+      "sourceName": "proselint"
+    },
+    "shellcheck": {
+      "command": "shellcheck",
+      "debounce": 100,
+      "args": ["-f", "json", "-"],
+      "sourceName": "shellcheck",
+      "parseJson": {
+        "line": "line",
+        "column": "column",
+        "endLine": "endLine",
+        "endColumn": "endColumn",
+        "message": "${message} [${code}]",
+        "security": "level"
+      },
+      "securities": {
+        "error": "error",
+        "warning": "warning",
+        "info": "info",
+        "style": "hint"
+      }
+    }
   },
 
   //-------------------------------------------------------------------------

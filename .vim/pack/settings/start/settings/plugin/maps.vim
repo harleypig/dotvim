@@ -27,6 +27,13 @@ else
   cmap w!! %!sudo tee > /dev/null %
 endif
 
+" Manual formatting with ALE
+nmap <leader>f <Plug>(ale_fix)
+
+" CoC diagnostics navigation
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " If Aider is installed, then map <leader>aid to open a terminal window at the
 " bottom, running aider.

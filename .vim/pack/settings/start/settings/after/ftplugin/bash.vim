@@ -23,6 +23,9 @@ endfunction
 "let b:ale_fixers = {'bash': function('s:shfmt_fixer')}
 let b:ale_fixers = ['shfmt']
 
+" Enable format on save
+let b:ale_fix_on_save = 1
+
 " ale shfmt uses vim's indent settings, so don't hardcode them here.
 let g:ale_sh_shfmt_options =
       \ '--write ' .
