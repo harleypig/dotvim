@@ -25,7 +25,7 @@
 
 npm install:
 * vim-language-server - Required for Vim script language support in CoC
-* docker-langserver - Required for Dockerfile language support
+* dockerfile-language-server-nodejs - Required for Dockerfile language support
 * terraform-ls - Required for Terraform language support
 * eslint - Required for JavaScript/JSON linting
 

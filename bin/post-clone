@@ -67,7 +67,7 @@ fi
 # Install npm packages
 section "Installing npm packages"
 npm_packages=(
-  "docker-langserver"
+  "dockerfile-language-server-nodejs"
   "eslint"
   "terraform-ls"
   "vim-language-server"
