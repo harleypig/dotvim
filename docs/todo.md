@@ -28,6 +28,14 @@ npm install:
 * terraform-ls - Required for Terraform language support
 
 other packages:
+* ansible-lint - Required for Ansible linting
+* yamllint - Required for YAML linting
+* ansible-language-server - Required for Ansible language support
+* shellcheck - Required for shell script linting
+* proselint - Required for prose/text linting
+* vint - Required for Vim script linting
+* jq - Required for JSON formatting
+* eslint - Required for JavaScript/JSON linting
 
 ## Update
 
