@@ -8,6 +8,7 @@ YELLOW='\033[0;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
+##############################################################################
 # Function to print section headers
 section() {
   echo -e "\n${BLUE}==>${NC} ${GREEN}$1${NC}"
@@ -28,11 +29,13 @@ command_exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
+##############################################################################
 # Initialize and update git submodules
 section "Initializing git submodules"
 git submodule update --init --recursive --remote
 status "Git submodules initialized successfully"
 
+##############################################################################
 # Check for npm installation
 section "Checking for npm installation"
 if ! command_exists npm; then
@@ -77,8 +80,11 @@ for package in "${npm_packages[@]}"; do
   npm install -g "$package"
 done
 
+##############################################################################
 # Check for pipx installation
 section "Checking for pipx installation"
+# If pipx is not installed then this section should be skipped with a warning,
+# AI!
 if ! command_exists pipx; then
   status "pipx not found, installing"
   
