@@ -13,10 +13,6 @@
 	url = https://github.com/neoclide/coc.nvim.git
 	ignore = dirty
 	branch = release
-[submodule "asynctasks"]
-	path = .vim/pack/testing/start/asynctasks
-	url = https://github.com/skywind3000/asynctasks.vim.git
-	ignore = dirty
 [submodule "ale"]
 	path = .vim/pack/intellisense/start/ale
 	url = https://github.com/dense-analysis/ale.git
