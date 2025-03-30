@@ -16,7 +16,52 @@ For installing Node.js, you can either:
 
 * Use nvm (Node Version Manager) to install and manage multiple Node.js versions.
 * Use the nodesource repository to install a specific version of Node.js.
-* npm or yarn: Used to install CoC extensions.
+
+##### Installing nvm
+
+**Ubuntu/Debian:**
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# Or using wget
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
+
+**RedHat/CentOS/Fedora:**
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# Or using wget
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
+
+After installation, you'll need to source your profile or restart your terminal:
+```bash
+source ~/.bashrc  # or ~/.zshrc if using zsh
+```
+
+Then install Node.js:
+```bash
+nvm install --lts  # Install latest LTS version
+nvm use --lts      # Use the installed LTS version
+```
+
+##### Installing npm and yarn
+
+**npm:**
+npm comes bundled with Node.js. After installing Node.js using nvm, npm will be available.
+
+To verify:
+```bash
+npm --version
+```
+
+**yarn:**
+```bash
+# Install yarn using npm
+npm install -g yarn
+
+# Verify installation
+yarn --version
+```
 
 ### Plugins and Extensions Used
 
