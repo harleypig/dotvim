@@ -31,8 +31,8 @@ Install via `npm`:
 
 ### Configuration Files Used
 
-* [yaml.vim](../.vim/pack/settings/start/settings/ftplugin/yaml.vim) - Configures
-    Vim to recognize YAML files, which are commonly used by Ansible.
+* [yaml.vim](../.vim/pack/settings/start/settings/after/ftplugin/yaml.vim)
+  Configures Vim to recognize YAML files, which are commonly used by Ansible.
 * `coc-settings` - Use `:CocConfig` to edit this file.
 
 ### Syntax Highlighting
