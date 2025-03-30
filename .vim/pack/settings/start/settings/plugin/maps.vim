@@ -28,7 +28,7 @@ else
 endif
 
 " Manual formatting with ALE
-nmap <leader>f <Plug>(ale_fix)
+nmap <leader>fb <Plug>(ale_fix)
 
 " CoC diagnostics navigation
 nmap <silent> [g <Plug>(coc-diagnostic-prev)

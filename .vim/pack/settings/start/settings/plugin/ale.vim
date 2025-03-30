@@ -14,5 +14,3 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \}
 
-" Map ALEFix
-map <leader>fb :ALEFix<CR>
