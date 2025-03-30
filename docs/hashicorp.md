@@ -26,16 +26,10 @@ curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/instal
 Using GitHub CLI:
 ```bash
 # Linux
-gh release download --repo terraform-linters/tflint --pattern "*_linux_amd64.zip"
+gh release download --repo terraform-linters/tflint --pattern "*_linux_amd64.zip" --pattern "checksums.txt"
+sha256sum --ignore-missing -c checksums.txt
 unzip tflint_*_linux_amd64.zip
 sudo install -m 755 tflint /usr/local/bin/
-```
-
-Verification (recommended):
-```bash
-# Verify checksums
-curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/checksums.txt -o checksums.txt
-sha256sum --ignore-missing -c checksums.txt
 ```
 
 ### Plugins and Extensions Used
