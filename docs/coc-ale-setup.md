@@ -19,23 +19,16 @@ For installing Node.js, you can either:
 
 ##### Installing nvm
 
-**Ubuntu/Debian:**
 ```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | PROFILE='/dev/null' bash
 # Or using wget
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | PROFILE='/dev/null' bash
 ```
 
-**RedHat/CentOS/Fedora:**
+You will need to reload your bash setup (assuming you're using my `dotfiles`
+configuration):
 ```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-# Or using wget
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-```
-
-After installation, you'll need to source your profile or restart your terminal:
-```bash
-source ~/.bashrc  # or ~/.zshrc if using zsh
+source ~/.bash_profile
 ```
 
 Then install Node.js:
