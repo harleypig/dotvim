@@ -136,7 +136,7 @@
     "sh": "shellcheck",
     "bash": "shellcheck"
   },
-  
+
   "diagnostic-languageserver.linters": {
     "proselint": {
       "args": ["--config", "$HOME/.vim/.proselint-config.json", "-"],
