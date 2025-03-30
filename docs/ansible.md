@@ -8,7 +8,7 @@ functionality.
 ### External Packages Used
 
 * [ansible](https://www.ansible.com/) - Automation tool for provisioning,
-    configuration management, and deployment. Install via system package manager.
+    configuration management, and deployment. Install via pipx.
 * [ansible-lint](https://github.com/ansible-community/ansible-lint) - Lints
     Ansible playbooks for best practices and potential errors. Install via pipx.
 * [yamllint](https://github.com/adrienverge/yamllint) - Linter for YAML files
