@@ -83,27 +83,30 @@ done
 ##############################################################################
 # Check for pipx installation
 section "Checking for pipx installation"
+
+pipx_packages=(
+  "ansible-language-server"
+  "ansible-lint"
+  "proselint"
+  "vint"
+  "yamllint"
+)
+
 if ! command_exists pipx; then
   status "pipx not found. Skipping pipx package installations."
   status "Please install pipx manually to use the following packages:"
+  # change this to print pipx_packages, AI!
   status "  - ansible-lint"
   status "  - yamllint"
   status "  - ansible-language-server"
   status "  - proselint"
   status "  - vint"
+
 else
   status "pipx found, installing packages"
   
   # Install pipx packages
   section "Installing pipx packages"
-  pipx_packages=(
-    "ansible-lint"
-    "yamllint"
-    "ansible-language-server"
-    "proselint"
-    "vint"
-  )
-
   for package in "${pipx_packages[@]}"; do
     status "Installing $package"
     pipx install "$package"
