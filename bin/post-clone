@@ -8,46 +8,59 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 ##############################################################################
-# Function to print section headers
-section() {
-  echo -e "\n${BLUE}==>${NC} ${GREEN}$1${NC}"
-}
+# Setup and Sanity
 
-# Function to print status messages
-status() {
-  echo -e "${YELLOW}-->${NC} $1"
-}
+npm_packages=(
+  "ansible-language-server"
+  "dockerfile-language-server-nodejs"
+  "eslint"
+  "vim-language-server"
+  "yarn"
+)
 
-# Function to print error messages
-error() {
-  echo -e "${RED}Error:${NC} $1" >&2
-}
+pipx_packages=(
+  "ansible"
+  "proselint"
+  "vint"
+)
 
-# Function to print warnings
-warn() {
-  echo -e "${YELLOW}Warning:${NC} $1" >&2
-}
+system_packages=(
+  "shellcheck"
+  "shfmt"
+  "jq"
+)
 
-# Function to check if a command exists
-command_exists() {
-  command -v "$1" >/dev/null 2>&1
-}
+##############################################################################
+# Functions
+#-----------------------------------------------------------------------------
+section() { echo -e "\n${BLUE}==>${NC} ${GREEN}$1${NC}" >&2; }
+status() { echo -e "${YELLOW}-->${NC} $1" >&2; }
+error() { echo -e "${RED}Error:${NC} $1" >&2; }
+warn() { echo -e "${YELLOW}Warning:${NC} $1" >&2; }
+
+command_exists() { command -v "$1" >/dev/null 2>&1; }
 
 ##############################################################################
 # Initialize and update git submodules
 section "Initializing git submodules"
-git submodule update --init --recursive --remote
-status "Git submodules initialized successfully"
+
+if git submodule update --init --recursive --remote; then
+  status "Git submodules initialized successfully"
+else
+  warn "Git submodules not initialized. Do this manually."
+fi
 
 ##############################################################################
 # Check for npm installation
 section "Checking for npm installation"
+
 if ! command_exists npm; then
   status "npm not found, installing Node.js via nvm as documented"
 
   # Install nvm as documented in coc-ale-setup.md
   status "Installing nvm"
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | PROFILE='/dev/null' bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh \
+    | PROFILE='/dev/null' bash
 
   # shellcheck disable=SC1091
   source "$XDG_CONFIG_HOME/shell-startup/nodejs"
@@ -70,15 +83,9 @@ else
   status "npm already installed"
 fi
 
+#-----------------------------------------------------------------------------
 # Install npm packages
 section "Installing npm packages"
-npm_packages=(
-  "ansible-language-server"
-  "dockerfile-language-server-nodejs"
-  "eslint"
-  "vim-language-server"
-  "yarn"
-)
 
 if command_exists npm; then
   for package in "${npm_packages[@]}"; do
@@ -87,6 +94,7 @@ if command_exists npm; then
       warn "Failed to install $package. Some features may not work correctly."
     fi
   done
+
 else
   warn "npm is not available. Skipping npm package installations."
   warn "The following packages will need to be installed manually:"
@@ -98,12 +106,6 @@ fi
 ##############################################################################
 # Check for pipx installation
 section "Checking for pipx installation"
-
-pipx_packages=(
-  "ansible"
-  "proselint"
-  "vint"
-)
 
 if ! command_exists pipx; then
   status "pipx not found. Skipping pipx package installations."
@@ -129,87 +131,23 @@ fi
 ##############################################################################
 # Install other packages using system package manager
 section "Installing other required packages"
-status "Attempting to install shellcheck, shfmt, and jq"
 
 # Detect OS
 if command_exists apt-get; then
-  if ! sudo apt-get update; then
-    warn "Failed to update apt repositories. Continuing anyway..."
-  fi
-  
-  if ! sudo apt-get install -y shellcheck jq; then
-    warn "Failed to install shellcheck and/or jq via apt-get."
-  fi
-  
-  # shfmt might not be in default repos
-  if ! apt-cache show shfmt >/dev/null 2>&1; then
-    status "shfmt not found in apt repositories, installing via go"
-    if command_exists go; then
-      if ! go install mvdan.cc/sh/v3/cmd/shfmt@latest; then
-        warn "Failed to install shfmt via go."
-      fi
-    else
-      if ! sudo apt-get install -y golang; then
-        warn "Failed to install golang. Cannot install shfmt."
-      else
-        if ! go install mvdan.cc/sh/v3/cmd/shfmt@latest; then
-          warn "Failed to install shfmt via go."
-        fi
-        # Export Go binaries path for current session
-        export PATH="$HOME/go/bin:$PATH"
-      fi
-    fi
-  else
-    if ! sudo apt-get install -y shfmt; then
-      warn "Failed to install shfmt via apt-get."
-    fi
+  if ! sudo apt-get install -y "${system_packages[@]}"; then
+    warn "Failed to install system packages"
   fi
 
 elif command_exists dnf; then
-  if ! sudo dnf install -y ShellCheck jq; then
-    warn "Failed to install ShellCheck and/or jq via dnf."
-  fi
-  
-  # shfmt might not be in default repos
-  if ! dnf list shfmt >/dev/null 2>&1; then
-    status "shfmt not found in dnf repositories, installing via go"
-    if command_exists go; then
-      if ! go install mvdan.cc/sh/v3/cmd/shfmt@latest; then
-        warn "Failed to install shfmt via go."
-      fi
-    else
-      if ! sudo dnf install -y golang; then
-        warn "Failed to install golang. Cannot install shfmt."
-      else
-        if ! go install mvdan.cc/sh/v3/cmd/shfmt@latest; then
-          warn "Failed to install shfmt via go."
-        fi
-        # Export Go binaries path for current session
-        export PATH="$HOME/go/bin:$PATH"
-      fi
-    fi
-  else
-    if ! sudo dnf install -y shfmt; then
-      warn "Failed to install shfmt via dnf."
-    fi
-  fi
-
-elif command_exists pacman; then
-  if ! sudo pacman -Sy shellcheck jq shfmt; then
-    warn "Failed to install shellcheck, jq, and/or shfmt via pacman."
-  fi
-
-elif command_exists brew; then
-  if ! brew install shellcheck jq shfmt; then
-    warn "Failed to install shellcheck, jq, and/or shfmt via brew."
+  if ! sudo dnf install -y "${system_packages[@]}"; then
+    warn "Failed to install system packages"
   fi
 
 else
-  warn "Could not detect package manager. Please install shellcheck, shfmt, and jq manually."
-  warn "You can find installation instructions at:"
-  warn "shellcheck: https://github.com/koalaman/shellcheck#installing"
-  warn "shfmt: https://github.com/mvdan/sh#shfmt"
-  warn "jq: https://stedolan.github.io/jq/download/"
+  warn "Could not detect package manager. Please install the following packages manually."
+  for package in "${system_packages[@]}"; do
+    warn " - $package"
+  done
 fi
 
 section "Setup completed successfully!"
