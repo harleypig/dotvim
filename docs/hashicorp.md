@@ -28,8 +28,7 @@ Using GitHub CLI:
 # Linux
 gh release download --repo terraform-linters/tflint --pattern "*_linux_amd64.zip"
 unzip tflint_*_linux_amd64.zip
-# Change this to use the 'install' command, AI!
-sudo mv tflint /usr/local/bin/
+sudo install -m 755 tflint /usr/local/bin/
 ```
 
 Verification (recommended):
