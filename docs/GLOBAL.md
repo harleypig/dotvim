@@ -69,9 +69,3 @@ location list windows.
 Errors (syntax, linting, compiling, etc.) should go in location list windows.
 CoC and ALE are configured to follow this convention; double check when making
 changes this is not altered.
-
-## TODO
-
-* Define and document the configuration and mappings that apply globally,
-    ensuring they are clear and actionable for both human and AI
-    implementation.

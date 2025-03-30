@@ -1,22 +1,16 @@
 # Stuff to do
 
+## GLOBAL documentation
+
+* Define and document the configuration and mappings that apply globally,
+    ensuring they are clear and actionable for both human and AI
+    implementation.
+
 ## Document setup and configuration
 
 * azure pipelines
 * bats
-* packer
-
-## Required packages
-
-### npm install:
-* vim-language-server - Required for Vim script language support in CoC
-* dockerfile-language-server-nodejs - Required for Dockerfile language support
-* eslint - Required for JavaScript/JSON linting
-
-### other packages:
-* shellcheck - Required for shell script linting
-* jq - Required for JSON formatting
-* terraform-ls - Required for Terraform language support
+* packer (in hashicorp.md)
 
 ## Toggles
 
