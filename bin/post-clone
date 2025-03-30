@@ -38,6 +38,8 @@ section "Checking for npm installation"
 if ! command_exists npm; then
   status "npm not found, checking for Node.js installation methods"
   
+  # $HOME/.nvm should never exist on my setup and is not supported. Please
+  # remove this check, AI!
   # Check if nvm is installed
   if [ -s "$HOME/.nvm/nvm.sh" ]; then
     status "nvm found, using it to install Node.js"
