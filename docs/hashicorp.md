@@ -46,7 +46,7 @@ sudo install -m 755 tflint /usr/local/bin/
 ### Configured Features
 
 #### Syntax Highlighting
-Provided by vim-polyglot, which includes support for Terraform (HCL) syntax highlighting.
+Provided by `vim-polyglot`, which includes support for Terraform (HCL) syntax highlighting.
 
 #### Linting and Static Analysis
 * **Tool**: tflint via ALE
@@ -54,12 +54,12 @@ Provided by vim-polyglot, which includes support for Terraform (HCL) syntax high
 * **Usage**: Errors and warnings appear in the location list and gutter
 
 #### Auto Completion
-* **Tool**: terraform-ls via CoC
-* **Configuration**: Configured in coc-settings.json
+* **Tool**: `terraform-ls` via CoC
+* **Configuration**: Configured in `coc-settings.json`
 * **Features**: Variable completion, resource type completion, attribute completion
 
 #### Formatting
-* **Tool**: terraform fmt via ALE
+* **Tool**: `terraform fmt` via ALE
 * **Configuration**: Set as a fixer in ale.vim
 * **Usage**: Automatically formats code on save or manually with `:ALEFix`
 
@@ -68,7 +68,7 @@ Provided by vim-polyglot, which includes support for Terraform (HCL) syntax high
 The following features use default settings without additional configuration:
 * Error Highlighting (handled by ALE and CoC)
 * Code Folding (uses Vim's default folding mechanisms)
-* Schema Validation (handled by terraform-ls)
+* Schema Validation (handled by `terraform-ls`)
 * Version Control Integration (uses global Git integration)
 * Snippets (not configured specifically for Terraform)
-* Filetype Detection (handled by vim-polyglot)
+* Filetype Detection (handled by `vim-polyglot`)
