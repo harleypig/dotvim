@@ -22,6 +22,7 @@ This script will:
 ### Core Setup
 - [Global Defaults](docs/GLOBAL.md) - Global settings and conventions across all configurations
 - [CoC and ALE Setup](docs/coc-ale-setup.md) - Setup and configuration for CoC and ALE
+- [Statusline](docs/statusline.md) - Custom statusline configuration with diagnostic integration
 - [Utility Plugins](docs/utility.md) - Documentation for utility plugins like gitgutter, fzf, and fugitive
 
 ### Language Support
