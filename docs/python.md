@@ -12,6 +12,29 @@ Install via `pipx`:
 
 Install via `npm`:
 * [`pyright`](https://github.com/microsoft/pyright) - Static type checker for Python, used by CoC for type checking and language server features.
+* [`pyright-langserver`](https://github.com/microsoft/pyright) - The language server component of Pyright that provides IDE features.
+
+#### Language Server Options
+
+Several Python language servers are available, each with different strengths:
+
+1. **Pyright** (Current choice) - Microsoft's static type checker and language server
+   * Pros: Fast, lightweight, excellent type checking, works well with type annotations
+   * Cons: Less comprehensive than some alternatives for certain features
+   * Install: `npm install -g pyright`
+
+2. **Python LSP Server (pylsp)** - Community-maintained language server
+   * Pros: Highly extensible with plugins, good integration with various tools
+   * Cons: Can be slower than Pyright
+   * Install: `pipx install python-lsp-server`
+
+3. **Jedi Language Server** - Based on the Jedi static analysis tool
+   * Pros: Lightweight, good completion and navigation
+   * Cons: Less feature-rich than some alternatives
+   * Install: `pipx install jedi-language-server`
+
+4. **Palantir's Python Language Server (pyls)** - Original Python LSP implementation
+   * Note: Deprecated in favor of python-lsp-server
 
 ### Plugins and Extensions Used
 
@@ -19,6 +42,11 @@ Install via `npm`:
 * [`coc.nvim`](https://github.com/neoclide/coc.nvim) (Vim Plugin) - Intellisense engine that integrates with pyright for Python language server features.
 * [`coc-pyright`](https://github.com/fannheyward/coc-pyright) (CoC Extension) - CoC extension that provides Python language server support.
 * [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for formatting Python files with isort.
+
+#### Alternative CoC Extensions for Python
+
+* [`coc-jedi`](https://github.com/pappasam/coc-jedi) - CoC extension that uses Jedi language server
+* [`coc-pylsp`](https://github.com/fannheyward/coc-pylsp) - CoC extension for python-lsp-server
 
 ### Configuration Files Used
 
