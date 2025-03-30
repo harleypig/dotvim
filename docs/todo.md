@@ -39,9 +39,3 @@ Steal
 [this](https://github.com/timakro/vim-copytoggle/blob/master/plugin/copytoggle.vim).
 
 Add a statusline notifier.
-
-## Configuration Consistency
-
-* Standardize ALE fix key mappings:
-  + Currently have both `<leader>f` in maps.vim and `<leader>fb` in ale.vim
-  + Choose one approach: either keep both for flexibility or standardize on one mapping
