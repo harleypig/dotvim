@@ -10,13 +10,16 @@ Install via package manager:
 * [`shellcheck`](https://github.com/koalaman/shellcheck) - A static analysis tool for shell scripts that provides warnings and suggestions for bash/sh shell scripts.
 * [`shfmt`](https://github.com/mvdan/sh) - A shell parser, formatter, and interpreter with bash support.
 
+Install via npm:
+* [`bash-language-server`](https://github.com/bash-lsp/bash-language-server) - A language server for Bash that provides intelligent code completion, hover information, and more.
+* [`diagnostic-languageserver`](https://github.com/iamcco/diagnostic-languageserver) - Provides additional diagnostic capabilities for shellcheck.
+
 ### Plugins and Extensions Used
 
 * [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin) - Provides enhanced syntax highlighting for shell scripts.
 * [`coc.nvim`](https://github.com/neoclide/coc.nvim) (Vim Plugin) - Intellisense engine that integrates with bash-language-server.
 * [`coc-sh`](https://github.com/josa42/coc-sh) (CoC Extension) - CoC extension that provides bash language server support.
 * [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for linting shell scripts with shellcheck and formatting with shfmt.
-* [`diagnostic-languageserver`](https://github.com/iamcco/diagnostic-languageserver) (Language Server) - Provides additional diagnostic capabilities for shellcheck.
 
 ### Configuration Files Used
 

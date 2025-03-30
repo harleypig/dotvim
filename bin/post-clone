@@ -12,6 +12,7 @@ NC='\033[0m' # No Color
 
 npm_packages=(
   "ansible-language-server"
+  "bash-language-server"
   "diagnostic-languageserver"
   "dockerfile-language-server-nodejs"
   "eslint"
