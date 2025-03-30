@@ -7,11 +7,11 @@ for editing Vim configuration files within this development environment.
 
 For Vim file editing, the following external package is used:
 
-- **vim-language-server**: Provides language server support for Vim script files.
+- **`vim-language-server`**: Provides language server support for Vim script files.
 
 ### Plugins and Extensions Used
 
-coc-vimlsp
+`coc-vimlsp`
 
 ### Configuration Files Used
 
@@ -25,12 +25,12 @@ for the `vim` filetype.
 
 ### Linting and Static Analysis
 
-- **ALE (Asynchronous Lint Engine)**: ALE is configured to use `vint` for
+- **`ALE` (Asynchronous Lint Engine)**: `ALE` is configured to use `vint` for
     linting Vim script files.
 
 ### Auto Completion
 
-- **coc.nvim (Conqueror of Completion)**: CoC is configured with the
+- **`coc.nvim` (Conqueror of Completion)**: `CoC` is configured with the
     `coc-vimlsp` extension to provide auto-completion for Vim script files.
 
 ### Error Highlighting

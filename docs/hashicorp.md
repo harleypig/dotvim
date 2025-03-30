@@ -7,15 +7,15 @@ Note: The configuration leverages language servers for enhanced functionality ov
 ### External Packages Used
 
 Install via package manager:
-* [terraform](https://www.terraform.io/) - Infrastructure as code tool for provisioning and managing cloud infrastructure.
-* [packer](https://www.packer.io/) - Tool for creating identical machine images for multiple platforms from a single configuration.
-* [terraform-ls](https://github.com/hashicorp/terraform-ls) - Language server providing Terraform language support for editors and IDEs.
+* [`terraform`](https://www.terraform.io/) - Infrastructure as code tool for provisioning and managing cloud infrastructure.
+* [`packer`](https://www.packer.io/) - Tool for creating identical machine images for multiple platforms from a single configuration.
+* [`terraform-ls`](https://github.com/hashicorp/terraform-ls) - Language server providing Terraform language support for editors and IDEs.
 
 Install manually:
 
 #### tflint
 
-[tflint](https://github.com/terraform-linters/tflint) - Pluggable Terraform
+[`tflint`](https://github.com/terraform-linters/tflint) - Pluggable Terraform
 linter focused on possible errors, best practices, and naming conventions.
 
 Using installation script (Linux):
@@ -34,9 +34,9 @@ sudo install -m 755 tflint /usr/local/bin/
 
 ### Plugins and Extensions Used
 
-* [vim-polyglot](https://github.com/sheerun/vim-polyglot) (Vim Plugin) - Provides syntax highlighting for Terraform and HCL files.
-* [coc.nvim](https://github.com/neoclide/coc.nvim) (Vim Plugin) - Intellisense engine that integrates with terraform-ls for language server features.
-* [ALE](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for linting Terraform files with tflint and formatting with terraform fmt.
+* [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin) - Provides syntax highlighting for Terraform and HCL files.
+* [`coc.nvim`](https://github.com/neoclide/coc.nvim) (Vim Plugin) - Intellisense engine that integrates with `terraform-ls` for language server features.
+* [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for linting Terraform files with `tflint` and formatting with `terraform fmt`.
 
 ### Configuration Files Used
 
@@ -49,18 +49,18 @@ sudo install -m 755 tflint /usr/local/bin/
 Provided by `vim-polyglot`, which includes support for Terraform (HCL) syntax highlighting.
 
 #### Linting and Static Analysis
-* **Tool**: tflint via ALE
-* **Configuration**: Configured in ale.vim to run automatically on file save
+* **Tool**: `tflint` via `ALE`
+* **Configuration**: Configured in `ale.vim` to run automatically on file save
 * **Usage**: Errors and warnings appear in the location list and gutter
 
 #### Auto Completion
-* **Tool**: `terraform-ls` via CoC
+* **Tool**: `terraform-ls` via `CoC`
 * **Configuration**: Configured in `coc-settings.json`
 * **Features**: Variable completion, resource type completion, attribute completion
 
 #### Formatting
-* **Tool**: `terraform fmt` via ALE
-* **Configuration**: Set as a fixer in ale.vim
+* **Tool**: `terraform fmt` via `ALE`
+* **Configuration**: Set as a fixer in `ale.vim`
 * **Usage**: Automatically formats code on save or manually with `:ALEFix`
 
 ### Default or Inapplicable Sections

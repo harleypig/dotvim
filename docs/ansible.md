@@ -8,24 +8,24 @@ functionality.
 ### External Packages Used
 
 Install via `pipx`:
-* [ansible](https://www.ansible.com/) - Automation tool for provisioning,
+* [`ansible`](https://www.ansible.com/) - Automation tool for provisioning,
     configuration management, and deployment.
-* [ansible-lint](https://github.com/ansible-community/ansible-lint) - Lints
+* [`ansible-lint`](https://github.com/ansible-community/ansible-lint) - Lints
     Ansible playbooks for best practices and potential errors. Installed with
     ansible via pipx.
-* [yamllint](https://github.com/adrienverge/yamllint) - Linter for YAML files
+* [`yamllint`](https://github.com/adrienverge/yamllint) - Linter for YAML files
     to ensure consistent formatting. Installed with ansible via pipx.
 
 Install via `npm`:
-* [ansible-language-server](https://github.com/ansible/ansible-language-server)
+* [`ansible-language-server`](https://github.com/ansible/ansible-language-server)
     - Provides language features like auto-completion and linting for Ansible.
 
 ### Plugins and Extensions Used
 
-* [@yaegassy/coc-ansible](https://github.com/yaegassy/coc-ansible) (CoC
+* [`@yaegassy/coc-ansible`](https://github.com/yaegassy/coc-ansible) (CoC
     Extension) - Provides auto-completion, linting, and other language features
     for Ansible.
-* [vim-polyglot](https://github.com/sheerun/vim-polyglot) (Vim Plugin)
+* [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin)
     - A collection of language packs for Vim, which includes support for
     Ansible syntax highlighting and filetype detection.
 

@@ -5,9 +5,9 @@
 To utilize CoC and ALE as configured in this repository, the following
 external packages must be installed:
 
-* [Node.js](https://nodejs.org/) - A JavaScript runtime built on Chrome's V8
+* [`Node.js`](https://nodejs.org/) - A JavaScript runtime built on Chrome's V8
     JavaScript engine, required for running the CoC extension host.
-* [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) - Package
+* [`npm`](https://www.npmjs.com/) or [`yarn`](https://yarnpkg.com/) - Package
     managers for JavaScript, used to install CoC extensions.
 
 #### Node.js Installation Options
@@ -60,9 +60,9 @@ yarn --version
 
 The following plugins and extensions are utilized by ALE and CoC within this repository:
 
-* [ALE](https://github.com/dense-analysis/ale) - An Asynchronous Lint Engine
+* [`ALE`](https://github.com/dense-analysis/ale) - An Asynchronous Lint Engine
     for Vim and Neovim.
-* [CoC](https://github.com/neoclide/coc.nvim) - Conquer of Completion, an
+* [`CoC`](https://github.com/neoclide/coc.nvim) - Conquer of Completion, an
     intellisense engine for Vim/Neovim with LSP support.
 
 ### Configuration Files Used

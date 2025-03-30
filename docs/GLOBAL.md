@@ -23,7 +23,7 @@ clear and intended behavior.
 
 ### CoC
 
-[CoC](https://github.com/neoclide/coc.nvim) (Conquer of Completion) is a Vim
+[`CoC`](https://github.com/neoclide/coc.nvim) (Conquer of Completion) is a Vim
 plugin that offers an `intellisense engine` with real-time, or 'as you type',
 features like linting and auto-completion. It leverages language servers for
 these capabilities.
@@ -35,7 +35,7 @@ file).
 
 ### ALE
 
-[ALE](https://github.com/dense-analysis/ale) (Asynchronous Lint Engine) is
+[`ALE`](https://github.com/dense-analysis/ale) (Asynchronous Lint Engine) is
 a Vim plugin for asynchronous linting and formatting. It supports a wide range
 of linters and formatters, which can be configured to operate on file save or
 in the background.
@@ -48,7 +48,7 @@ a specific file type should be in
 
 ### vim-polyglot
 
-[vim-polyglot](https://github.com/sheerun/vim-polyglot) is a Vim plugin that
+[`vim-polyglot`](https://github.com/sheerun/vim-polyglot) is a Vim plugin that
 aggregates various language packs for enhanced syntax highlighting,
 indentation, and more. It is optimized for performance by loading only the
 necessary plugins for a given file type.
