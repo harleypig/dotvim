@@ -8,6 +8,15 @@ tool selection or changes if multiple solutions were evaluated.
 
 ### External Packages Used
 
+Install via `pipx`:
+* [package-name](link) - Brief description of the package and its purpose.
+    Include installation method (prefer pipx over pip where applicable).
+
+Install via `npm`:
+* [package-name](link) - Brief description of the package and its purpose.
+    Include installation method (prefer pipx over pip where applicable).
+
+Install via package manager:
 * [package-name](link) - Brief description of the package and its purpose.
     Include installation method (prefer pipx over pip where applicable).
 
