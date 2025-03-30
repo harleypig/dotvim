@@ -1,44 +1,9 @@
 # Plugins to Try
 # The following plugins have been evaluated and can be removed as their functionality is already covered:
 
-# Already covered by coc-ansible and vim-polyglot:
-# ansible-vim: https://github.com/pearofducks/ansible-vim.git
-
-# Already covered by ALE and CoC for linting/completion:
-# astroid: https://github.com/PyCQA/astroid
-# async: https://github.com/prabirshrestha/async.vim.git
-# asyncomplete: https://github.com/prabirshrestha/asyncomplete.vim.git
-# asyncomplete-lsp: https://github.com/prabirshrestha/asyncomplete-lsp.vim.git
-# pylama: https://github.com/klen/pylama.git
-# rope: https://github.com/python-rope/rope.git
-# ropevim: https://github.com/python-rope/ropevim.git
-# supertab: https://github.com/ervandew/supertab.git
-# syntastic: https://github.com/scrooloose/syntastic.git
-# VimCompletesMe: https://github.com/ackyshake/VimCompletesMe.git
-# vim-lint: https://github.com/dbakker/vim-lint.git
-# vim-markify: https://github.com/dhruvasagar/vim-markify
-
-# Already covered by vim-polyglot for syntax highlighting:
-# awk: https://github.com/vim-scripts/awk.vim
-# bats: https://github.com/aliou/bats.vim
-# nginx: https://github.com/chr4/nginx.vim
-# vim-irssi-syntax: https://github.com/isundil/vim-irssi-syntax.git
-# vim-markdown: https://github.com/preservim/vim-markdown.git
-# vim-perl: https://github.com/vim-perl/vim-perl.git
-# vim-tmux: https://github.com/tmux-plugins/vim-tmux.git
-# vim-yaml: https://github.com/stephpy/vim-yaml
-
 # Already covered by fzf (mentioned in utility.md):
 # ctrlp-funky: https://github.com/tacahiroy/ctrlp-funky.git
 # ctrlp: https://github.com/ctrlpvim/ctrlp.vim
-
-# Already covered by coc-pairs or similar CoC functionality:
-# delimitMate: https://github.com/Raimondi/delimitMate.git
-
-# Already covered by ALE for formatting/linting:
-# vim-jsbeautify: https://github.com/maksimr/vim-jsbeautify.git
-# vim-shellcheck: https://github.com/itspriddle/vim-shellcheck.git
-# vim-shfmt: https://github.com/z0mbix/vim-shfmt.git
 
 # Already covered by vim-fugitive (mentioned in utility.md):
 # vim-conflicted: https://github.com/christoomey/vim-conflicted.git
