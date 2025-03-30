@@ -20,6 +20,11 @@
   + submodule tracking checks out the hash as a detached head which doesn't
       seem to work
 
+### Language servers
+
+npm install:
+* vim-language-server
+
 ## Update
 
 * git submodule update --init --recursive --remote
