@@ -1,9 +1,12 @@
-setlocal shiftwidth=2
-setlocal softtabstop=2
-setlocal expandtab
-setlocal autoindent
-setlocal smartindent
-setlocal indentexpr=
+" setlocal shiftwidth=2
+" setlocal softtabstop=2
+" setlocal expandtab
+" setlocal autoindent
+" setlocal smartindent
+
+let g:vim_indent = #{
+                  \ line_continuation: shiftwidth(),
+                  \ }
 
 " Configure ALE to use vim-language-server for Vimscript
 "let b:ale_fixers = []
