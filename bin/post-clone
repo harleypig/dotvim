@@ -173,7 +173,7 @@ if command_exists apt-get; then
       installed_packages+=("$package")
     fi
   done
-  
+
   # Install missing packages
   if [ ${#installed_packages[@]} -gt 0 ]; then
     status "Installing missing packages: ${installed_packages[*]}"
@@ -194,7 +194,7 @@ elif command_exists dnf; then
       installed_packages+=("$package")
     fi
   done
-  
+
   # Install missing packages
   if [ ${#installed_packages[@]} -gt 0 ]; then
     status "Installing missing packages: ${installed_packages[*]}"
