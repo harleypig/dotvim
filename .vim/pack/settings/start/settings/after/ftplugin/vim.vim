@@ -3,6 +3,7 @@ setlocal softtabstop=2
 setlocal expandtab
 setlocal autoindent
 setlocal smartindent
+setlocal indentexpr=
 
 " Configure ALE to use vim-language-server for Vimscript
 "let b:ale_fixers = []
