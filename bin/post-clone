@@ -46,7 +46,6 @@ system_packages=(
 
 # Optional manual installations (mentioned in docs but not auto-installed)
 # - tflint (hashicorp.md) - requires manual installation
-# Add instructions for using gh to install tflint here, AI!
 
 ##############################################################################
 # Functions
@@ -219,7 +218,12 @@ section "Manual installations required"
 
 status "The following tools need to be installed manually:"
 status "- tflint: Used for Terraform linting (see hashicorp.md for instructions)"
-status "  curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash"
+status "  Using curl:"
+status "    curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash"
+status "  Using GitHub CLI:"
+status "    gh release download --repo terraform-linters/tflint --pattern \"*_linux_amd64.zip\""
+status "    unzip tflint_*_linux_amd64.zip"
+status "    sudo install -m 755 tflint /usr/local/bin/"
 
 section "Setup completed successfully!"
 status "All required packages have been installed."
