@@ -9,7 +9,7 @@ Note: The configuration leverages CoC for language server features and vim-polyg
 Install via npm:
 * [`dockerfile-language-server-nodejs`](https://github.com/rcjsuen/dockerfile-language-server-nodejs) - Language server that provides intelligent code completion, validation, and other language features for Dockerfiles.
 
-### Plugins and Extensions Used
+### VIm Plugins Used
 
 * [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin) - Provides enhanced syntax highlighting for Dockerfiles.
 
@@ -48,4 +48,4 @@ The following features use default settings without additional configuration:
 * Debugging Support (not configured specifically for Dockerfiles)
 * Testing Tools (not applicable for Dockerfiles)
 * Version Control Integration (uses global Git integration)
-* Filetype Detection (handled by vim-polyglot)
+* Filetype Detection (handled by `vim-polyglot`)
