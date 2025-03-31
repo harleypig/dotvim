@@ -3,7 +3,6 @@
 
 set   autoread
 set nocursorline
-set   expandtab
 set nohidden
 set   list
 set   showcmd
@@ -25,8 +24,6 @@ set   path=.,$HOME
 "set   pastetoggle=<leader>pt
 set   report=1
 set   shortmess=a
-set   softtabstop=2
-set   tabstop=2
 set   undolevels=1000
 set   updatecount=10
 set   updatetime=1000
@@ -48,10 +45,14 @@ set   backspace=indent,eol,start
 set   textwidth=78
 
 " Indenting
-set   autoindent
-set   smartindent
-set nocopyindent
-set   shiftwidth=2
+" All indent settings are grouped here for easier management
+set   autoindent      " automatically set the indent of a new line
+set   smartindent     " do clever autoindenting
+set nocopyindent      " don't copy indent structure from previous line
+set   shiftwidth=2    " number of spaces used for each step of (auto)indent
+set   softtabstop=2   " number of spaces to insert for a <Tab>
+set   expandtab       " use spaces when <Tab> is inserted
+set   tabstop=2       " number of spaces a <Tab> in the text stands for
 
 " See http://www.shallowsky.com/linux/noaltscreen.html for an explanation of set t_ti= t_te=
 set   t_te=
