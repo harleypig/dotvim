@@ -12,7 +12,7 @@ NC='\033[0m' # No Color
 
 # NPM packages as documented in various markdown files
 npm_packages=(
-  "ansible-language-server"     # ansible.md
+  "@ansible/ansible-language-server" # ansible.md
   "bash-language-server"        # shell.md
   "diagnostic-languageserver"   # proselint.md, shell.md
   "dockerfile-language-server-nodejs" # docker.md
@@ -25,13 +25,13 @@ npm_packages=(
 # PIPX packages as documented in various markdown files
 pipx_packages=(
   "ansible"                     # ansible.md
-  "ansible-lint"                # ansible.md (installed with ansible)
-  "yamllint"                    # ansible.md (installed with ansible)
   "proselint"                   # proselint.md
   "vint"                        # vim-files.md
   "isort"                       # python.md
   "flake8"                      # python.md
 )
+
+# ansible-lint and yamllint (installed with ansible)
 
 # System packages as documented in various markdown files
 system_packages=(
@@ -39,12 +39,14 @@ system_packages=(
   "packer"                      # hashicorp.md
   "shellcheck"                  # shell.md
   "shfmt"                       # shell.md
+  "packer"                      # hashicorp.md
   "terraform"                   # hashicorp.md
   "terraform-ls"                # hashicorp.md
 )
 
 # Optional manual installations (mentioned in docs but not auto-installed)
 # - tflint (hashicorp.md) - requires manual installation
+# Add instructions for using gh to install tflint here, AI!
 
 ##############################################################################
 # Functions
