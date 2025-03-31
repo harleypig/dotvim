@@ -1,8 +1,3 @@
-setlocal shiftwidth=2
-setlocal softtabstop=2
-setlocal expandtab
-setlocal autoindent
-setlocal smartindent
 let g:is_bash = 1  " This tells Vim to use bash syntax for sh files
 
 " coc.nvim is handling the LSP (including linters) so we don't need to setup
