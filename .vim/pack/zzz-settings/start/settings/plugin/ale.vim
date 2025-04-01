@@ -26,12 +26,7 @@ let g:ale_fix_on_save = 1
 " Auto cleanup for all files
 let g:ale_fixers = {
   \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-  \   'terraform': ['terraform'],
-  \   'hcl': ['terraform'],
   \}
 
 " Default linters for specific filetypes
-let g:ale_linters = {
-  \   'terraform': ['tflint'],
-  \   'hcl': ['tflint'],
-  \}
+let g:ale_linters = {}
