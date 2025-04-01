@@ -47,7 +47,11 @@ let g:ale_lint_on_insert_leave = 1
 " let g:ale_lint_on_enter = 1
 
 " Lint when saving a file (default: true)
-# Add ELI5 about what happens when both ale_fix_on_save and this are true, AI!
+" When both ale_fix_on_save and ale_lint_on_save are true, ALE will:
+" 1. First fix your file (apply formatters, remove whitespace, etc.)
+" 2. Save those changes to disk
+" 3. Then lint the fixed file to check for remaining problems
+" This gives you clean, formatted code that's also checked for errors!
 " let g:ale_lint_on_save = 1
 
 " Lint when filetype changes (default: true)
