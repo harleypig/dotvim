@@ -25,7 +25,7 @@
 	path = .vim/pack/plugins/start/vim-surround
 [submodule "vim-repeat"]
 	url = https://github.com/tpope/vim-repeat.git
-	path = .vim/pack/plugins/start/vim-repeat
+	path = .vim/pack/100-core/start/vim-repeat
 [submodule "vim-toml"]
 	url = https://github.com/cespare/vim-toml.git
 	path = .vim/pack/testing/start/vim-toml
