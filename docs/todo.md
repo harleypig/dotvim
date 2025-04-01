@@ -54,6 +54,17 @@ Add a statusline notifier.
 * Make CoC show linting popup regardless of cursor position on the line
   - Reference: https://stackoverflow.com/questions/61694504/how-to-make-coc-show-linting-popup-no-matter-where-the-cursor-is-on-the-line
 
+### Text Checking Tools Evaluation
+* Evaluate dprint for multi-language formatting
+  - https://dprint.dev/
+* Evaluate LanguageTool for grammar and style checking in documentation and comments
+  - Consider configuration for technical terminology
+* Evaluate write-good for plain language improvements
+* Research other text quality tools:
+  - textlint for pluggable text linting
+  - proselint for prose-specific linting
+  - vale for customizable style checking
+
 ### Additional Tools Integration
 * Evaluate GNU diction and style for CoC, ALE, or polyglot
   - https://www.gnu.org/software/diction/
