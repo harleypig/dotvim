@@ -1,5 +1,5 @@
 [submodule "vim-polyglot"]
-  path = .vim/pack/000-syntax/start/vim-polyglot
+	path = .vim/pack/010-syntax/start/vim-polyglot
   url = https://github.com/sheerun/vim-polyglot.git
   #url = https://github.com/harleypig/vim-polyglot.git
   branch = master
