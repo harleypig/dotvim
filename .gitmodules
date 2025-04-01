@@ -19,7 +19,7 @@
 	ignore = dirty
 [submodule "vim-eunuch"]
 	url = https://github.com/tpope/vim-eunuch.git
-	path = .vim/pack/plugins/start/vim-eunuch
+	path = .vim/pack/100-core/start/vim-eunuch
 [submodule "vim-surround"]
 	url = https://github.com/tpope/vim-surround.git
 	path = .vim/pack/100-core/start/vim-surround
