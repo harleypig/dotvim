@@ -38,14 +38,13 @@ let g:ale_virtualtext_cursor = 'disabled'
 " Control when ALE checks your code to avoid slowdowns
 
 " Only check for problems when typing in insert mode
-let g:ale_lint_on_text_changed = 'insert'
+let g:ale_lint_on_text_changed = 'insert'  " Default: 'normal'
 
-# Change this section show let g:varname = default setting as comments, AI!
-" * When you modify a buffer                   - |g:ale_lint_on_text_changed|
-" * On leaving insert mode                     - |g:ale_lint_on_insert_leave|
-" * When you open a new or modified buffer     - |g:ale_lint_on_enter|
-" * When you save a buffer                     - |g:ale_lint_on_save|
-" * When the filetype changes for a buffer     - |g:ale_lint_on_filetype_changed|
+" Other linting trigger settings (commented with defaults):
+" let g:ale_lint_on_insert_leave = 0       " Default: 0 - Don't lint when leaving insert mode
+" let g:ale_lint_on_enter = 1              " Default: 1 - Lint when opening a file
+" let g:ale_lint_on_save = 1               " Default: 1 - Lint when saving a file
+" let g:ale_lint_on_filetype_changed = 1   " Default: 1 - Lint when filetype changes
 
 " ----------------------------------------------------------------------------
 " Global Fixers
