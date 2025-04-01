@@ -40,11 +40,18 @@ let g:ale_virtualtext_cursor = 'disabled'
 " Only check for problems when typing in insert mode
 let g:ale_lint_on_text_changed = 'insert'  " Default: 'normal'
 
-" Other linting trigger settings (commented with defaults):
-" let g:ale_lint_on_insert_leave = 0       " Default: 0 - Don't lint when leaving insert mode
-" let g:ale_lint_on_enter = 1              " Default: 1 - Lint when opening a file
-" let g:ale_lint_on_save = 1               " Default: 1 - Lint when saving a file
-" let g:ale_lint_on_filetype_changed = 1   " Default: 1 - Lint when filetype changes
+" Lint when leaving insert mode (default: false)
+let g:ale_lint_on_insert_leave = 1
+
+" Lint when opening a file (default: true)
+" let g:ale_lint_on_enter = 1
+
+" Lint when saving a file (default: true)
+# Add ELI5 about what happens when both ale_fix_on_save and this are true, AI!
+" let g:ale_lint_on_save = 1
+
+" Lint when filetype changes (default: true)
+" let g:ale_lint_on_filetype_changed = 1
 
 " ----------------------------------------------------------------------------
 " Global Fixers
