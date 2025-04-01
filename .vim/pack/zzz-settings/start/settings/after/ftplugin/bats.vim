@@ -4,6 +4,6 @@
 let g:ale_fixers = { 'sh' : [ 'shfmt' ] }
 
 let g:ale_sh_shfmt_options =
-      \ '--binary-next-line ' .
-      \ '--case-indent ' .
-      \ '--space-redirects '
+  \ '--binary-next-line ' .
+  \ '--case-indent ' .
+  \ '--space-redirects '

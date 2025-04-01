@@ -17,7 +17,7 @@ set   background=dark
 set   clipboard+=unnamed
 set   encoding=utf-8
 set   history=1000
-set   listchars=tab:\ \ 
+set   listchars=tab:\ \
 set   matchpairs+=<:>
 set   mouse=
 set   path=.,$HOME
@@ -53,6 +53,10 @@ set   shiftwidth=2    " number of spaces used for each step of (auto)indent
 set   softtabstop=2   " number of spaces to insert for a <Tab>
 set   expandtab       " use spaces when <Tab> is inserted
 set   tabstop=2       " number of spaces a <Tab> in the text stands for
+
+" vim-polyglot is overriding shiftwidth
+" https://github.com/sheerun/vim-polyglot/issues/740
+autocmd BufEnter * set shiftwidth=2
 
 " See http://www.shallowsky.com/linux/noaltscreen.html for an explanation of set t_ti= t_te=
 set   t_te=

@@ -1,35 +1,35 @@
 [submodule "vim-polyglot"]
-	path = .vim/pack/000-syntax/start/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot.git
-	#url = https://github.com/harleypig/vim-polyglot.git
-	branch = master
-	ignore = dirty
+  path = .vim/pack/000-syntax/start/vim-polyglot
+  url = https://github.com/sheerun/vim-polyglot.git
+  #url = https://github.com/harleypig/vim-polyglot.git
+  branch = master
+  ignore = dirty
 [submodule "vim-colorschemes"]
-	path = .vim/pack/400-ui/start/vim-colorschemes
-	url = https://github.com/EvitanRelta/vim-colorschemes.git
-	ignore = dirty
+  path = .vim/pack/400-ui/start/vim-colorschemes
+  url = https://github.com/EvitanRelta/vim-colorschemes.git
+  ignore = dirty
 [submodule "coc"]
-	path = .vim/pack/300-intellisense/start/coc
-	url = https://github.com/neoclide/coc.nvim.git
-	ignore = dirty
-	branch = release
+  path = .vim/pack/300-intellisense/start/coc
+  url = https://github.com/neoclide/coc.nvim.git
+  ignore = dirty
+  branch = release
 [submodule "ale"]
-	path = .vim/pack/300-intellisense/start/ale
-	url = https://github.com/dense-analysis/ale.git
-	ignore = dirty
+  path = .vim/pack/300-intellisense/start/ale
+  url = https://github.com/dense-analysis/ale.git
+  ignore = dirty
 [submodule "vim-eunuch"]
-	url = https://github.com/tpope/vim-eunuch.git
-	path = .vim/pack/100-core/start/vim-eunuch
+  url = https://github.com/tpope/vim-eunuch.git
+  path = .vim/pack/100-core/start/vim-eunuch
 [submodule "vim-surround"]
-	url = https://github.com/tpope/vim-surround.git
-	path = .vim/pack/100-core/start/vim-surround
+  url = https://github.com/tpope/vim-surround.git
+  path = .vim/pack/100-core/start/vim-surround
 [submodule "vim-repeat"]
-	url = https://github.com/tpope/vim-repeat.git
-	path = .vim/pack/100-core/start/vim-repeat
+  url = https://github.com/tpope/vim-repeat.git
+  path = .vim/pack/100-core/start/vim-repeat
 [submodule "vim-toml"]
-	url = https://github.com/cespare/vim-toml.git
-	path = .vim/pack/200-lang/start/vim-toml
+  url = https://github.com/cespare/vim-toml.git
+  path = .vim/pack/200-lang/start/vim-toml
 [submodule "vim-mustache-handlebars"]
-	path = .vim/2btested/vim-mustache-handlebars
-	url = https://github.com/mustache/vim-mustache-handlebars.git
-	ignore = dirty
+  path = .vim/pack/200-lang/opt/vim-mustache-handlebars
+  url = https://github.com/mustache/vim-mustache-handlebars.git
+  ignore = dirty

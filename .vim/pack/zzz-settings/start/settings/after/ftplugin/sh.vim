@@ -6,15 +6,15 @@ let g:is_bash = 1  " This tells Vim to use bash syntax for sh files
 " Custom shfmt fixer function (kept for reference but not currently used)
 " vint: -ProhibitUnusedVariable
 function! s:shfmt_fixer(buffer) abort
-    let l:cwd = getcwd()
-    let l:filename = expand('#' . a:buffer . ':p')
-    let l:dirname = fnamemodify(l:filename, ':h')
+  let l:cwd = getcwd()
+  let l:filename = expand('#' . a:buffer . ':p')
+  let l:dirname = fnamemodify(l:filename, ':h')
 
-    execute 'cd' l:dirname
-    let l:fixer_result = ale#fixers#shfmt#Fix(a:buffer)
-    execute 'cd' l:cwd
+  execute 'cd' l:dirname
+  let l:fixer_result = ale#fixers#shfmt#Fix(a:buffer)
+  execute 'cd' l:cwd
 
-    return l:fixer_result
+  return l:fixer_result
 endfunction
 " vint: +ProhibitUnusedVariable
 
@@ -33,8 +33,8 @@ let b:ale_fix_on_save = 1
 " * --indent=<shiftwidth> based on Vim's settings
 " * --filename=<current_filename> automatically
 let g:ale_sh_shfmt_options =
-      \ '--write ' .
-      \ '--simplify ' .
-      \ '--binary-next-line ' .
-      \ '--case-indent ' .
-      \ '--space-redirects '
+  \ '--write ' .
+  \ '--simplify ' .
+  \ '--binary-next-line ' .
+  \ '--case-indent ' .
+  \ '--space-redirects '

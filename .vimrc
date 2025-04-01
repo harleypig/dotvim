@@ -34,15 +34,14 @@ syntax on
 
 " Run bin/update-coc-extensions to make sure this is setup correctly.
 
-" This list has to exist before coc is loaded.
 let g:coc_global_extensions = [
-    \ 'coc-diagnostic',
-    \ 'coc-docker',
-    \ 'coc-git',
-    \ 'coc-json',
-    \ 'coc-pyright',
-    \ 'coc-sh',
-    \ 'coc-toml',
-    \ 'coc-vimlsp',
-    \ '@yaegassy/coc-ansible',
-    \]
+  \ 'coc-diagnostic',
+  \ 'coc-docker',
+  \ 'coc-git',
+  \ 'coc-json',
+  \ 'coc-pyright',
+  \ 'coc-sh',
+  \ 'coc-toml',
+  \ 'coc-vimlsp',
+  \ '@yaegassy/coc-ansible',
+  \]

@@ -33,4 +33,3 @@
 "  read.
 
 highlight CocDiagnosticVirtualText ctermbg=DarkRed ctermfg=Yellow guibg=DarkRed guifg=Yellow
-

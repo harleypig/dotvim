@@ -1,6 +1,6 @@
 let g:vim_indent = #{
-                  \ line_continuation: shiftwidth(),
-                  \ }
+  \ line_continuation: shiftwidth(),
+  \ }
 
 " Configure ALE to use vim-language-server for Vimscript
 "let b:ale_fixers = []

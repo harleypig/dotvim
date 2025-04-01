@@ -5,10 +5,10 @@ function! CheckBackspace() abort
 endfunction
 
 inoremap <silent><expr> <Tab>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ exists('b:_copilot') ? copilot#Accept("\<CR>") :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
+  \ coc#pum#visible() ? coc#pum#next(1) :
+  \ exists('b:_copilot') ? copilot#Accept("\<CR>") :
+  \ CheckBackspace() ? "\<Tab>" :
+  \ coc#refresh()
 
 " Use <cr> to confirm completion, <c-g>u to break undo chain.
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"

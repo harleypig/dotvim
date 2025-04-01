@@ -62,12 +62,12 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale info for statusline
 function! LinterStatus() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
+  let l:counts = ale#statusline#Count(bufnr(''))
 
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
 
-    return l:counts.total == 0 ? '' : printf('[%dW %dE]', all_non_errors, all_errors)
+  return l:counts.total == 0 ? '' : printf('[%dW %dE]', all_non_errors, all_errors)
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -174,7 +174,6 @@ autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
 " Expand tab and mixed indenting warnings
 
 function! YASL_MixedIndentWarning()
-
   if (&filetype == 'help')
     return ''
   endif
@@ -196,7 +195,6 @@ function! YASL_MixedIndentWarning()
 endfunction
 
 function! YASL_TrailingSpaceWarning()
-
   " Need to move this to an array and allow for multiple filetypes to be skipped.
   if (&filetype == 'help')
     return ''
@@ -218,7 +216,6 @@ endfunction
 " Show + if this file is modifiable and has been modified.
 
 function! YASL_IsModified()
-
   if &modifiable
     if &modified
       let l:text = g:YASL_Modified
@@ -230,12 +227,10 @@ function! YASL_IsModified()
   endif
 
   return l:text
-
 endfunction
 
 " We only want to see if the file format is not unix.
 function! YASL_FileFormat()
-
   if &fileformat == 'unix'
     let l:text = ''
   else
@@ -243,12 +238,10 @@ function! YASL_FileFormat()
   endif
 
   return l:text
-
 endfunction
 
 " We only want to see if the file encoding is not utf-8.
 function! YASL_FileEncoding()
-
   if &fileencoding == 'utf-8' || &fileencoding == ''
     let l:text = ''
   else
@@ -256,11 +249,9 @@ function! YASL_FileEncoding()
   endif
 
   return l:text
-
 endfunction
 
 function! YASL_PasteMode()
-
   if &paste
     let l:text = g:YASL_PasteMode
   else
@@ -268,11 +259,9 @@ function! YASL_PasteMode()
   endif
 
   return l:text
-
 endfunction
 
 function! YASL_Filetype()
-
   if strlen( &filetype )
     let l:text = &filetype
   else
@@ -280,5 +269,4 @@ function! YASL_Filetype()
   endif
 
   return l:text
-
 endfunction

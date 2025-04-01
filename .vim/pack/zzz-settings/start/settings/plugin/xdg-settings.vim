@@ -1,10 +1,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! CleanOldFiles(directory, pattern, days) abort
-    let l:current_time = localtime()
-    let l:target_time = l:current_time - (a:days * 24 * 60 * 60)
-    let l:files = split(globpath(a:directory, a:pattern), "\n")
-    call filter(l:files, 'getftime(v:val) < l:target_time')
-    call map(l:files, 'delete(v:val)')
+  let l:current_time = localtime()
+  let l:target_time = l:current_time - (a:days * 24 * 60 * 60)
+  let l:files = split(globpath(a:directory, a:pattern), "\n")
+  call filter(l:files, 'getftime(v:val) < l:target_time')
+  call map(l:files, 'delete(v:val)')
 endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
