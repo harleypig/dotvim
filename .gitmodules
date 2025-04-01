@@ -5,7 +5,7 @@
 	branch = master
 	ignore = dirty
 [submodule "vim-colorschemes"]
-	path = .vim/pack/colorschemes/start/vim-colorschemes
+	path = .vim/pack/400-ui/start/vim-colorschemes
 	url = https://github.com/EvitanRelta/vim-colorschemes.git
 	ignore = dirty
 [submodule "coc"]
