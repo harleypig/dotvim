@@ -22,7 +22,7 @@
 	path = .vim/pack/plugins/start/vim-eunuch
 [submodule "vim-surround"]
 	url = https://github.com/tpope/vim-surround.git
-	path = .vim/pack/plugins/start/vim-surround
+	path = .vim/pack/100-core/start/vim-surround
 [submodule "vim-repeat"]
 	url = https://github.com/tpope/vim-repeat.git
 	path = .vim/pack/100-core/start/vim-repeat
