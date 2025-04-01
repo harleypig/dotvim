@@ -1,6 +1,5 @@
 " ----------------------------------------------------------------------------
 " Gutter and Line Number Settings
-" ----------------------------------------------------------------------------
 
 " Default settings
 set   signcolumn=yes    " Always show the sign column
@@ -11,9 +10,6 @@ set   numberwidth=1     " Minimum width of line number column
 highlight SignColumn ctermbg=NONE guibg=NONE
 
 " ----------------------------------------------------------------------------
-" Toggle Functions
-" ----------------------------------------------------------------------------
-
 " Toggle sign column visibility
 " Cycles between showing signs and hiding them
 function! ToggleSigns()
@@ -28,6 +24,7 @@ function! ToggleSigns()
   endif
 endfunction
 
+" ----------------------------------------------------------------------------
 " Toggle line numbering mode
 " Cycles through: no numbers → absolute → relative → both → no numbers
 function! ToggleLineNumbers()
@@ -44,7 +41,6 @@ endfunction
 
 " ----------------------------------------------------------------------------
 " Key Mappings
-" ----------------------------------------------------------------------------
 
 " Toggle sign column with <leader>signs
 map <leader>signs :call ToggleSigns()<CR>

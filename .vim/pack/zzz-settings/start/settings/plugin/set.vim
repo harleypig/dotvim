@@ -1,10 +1,6 @@
-"===========================================================================================
-" General Settings
-"===========================================================================================
-" I don't need the -i, apparently my aliases are being loaded now.
-"set   shellcmdflag=-ic
-
+" ----------------------------------------------------------------------------
 " File Handling
+
 set   autoread            " automatically read file when changed outside of Vim
 set   encoding=utf-8      " character encoding used in Vim
 set   history=1000        " number of command-lines that are remembered
@@ -12,7 +8,9 @@ set   undolevels=1000     " maximum number of changes that can be undone
 set   updatecount=10      " after this many characters flush swap file
 set   updatetime=1000     " time in msec after which the swap file will be updated
 
+" ----------------------------------------------------------------------------
 " UI Settings
+
 set nocursorline          " don't highlight the screen line of the cursor
 set nohidden              " don't keep buffers loaded when abandoned
 set   list                " show <Tab> and <EOL>
@@ -25,11 +23,15 @@ set   title               " show info in the window title
 set   wildmenu            " command-line completion shows a list of matches
 "set   spell              " enable spell checking
 
+" ----------------------------------------------------------------------------
 " Visual Preferences
+
 set   background=dark     " background color brightness
 set   hlsearch            " highlight all matches for the last used search pattern
 
+" ----------------------------------------------------------------------------
 " Editing Behavior
+
 set   clipboard+=unnamed  " use the * register in addition to the unnamed register
 set   matchpairs+=<:>     " pairs of characters that "%" can match
 set   mouse=              " disable mouse usage
@@ -39,24 +41,25 @@ set   report=1            " threshold for reporting number of lines changed
 set   shortmess=a         " use abbreviations in messages
 set   virtualedit=block   " allow virtual editing in Visual block mode
 
+" ----------------------------------------------------------------------------
 " File Navigation
+
 set   wildignore+=*/.git/ " patterns to ignore when expanding wildcards
 set   wildignore+=*/CVS/
 set   wildignore+=*/SVN/
 set   wildmode=list:longest,full  " specifies how command line completion works
 
-"===========================================================================================
+" ----------------------------------------------------------------------------
 " Text Wrapping
-"===========================================================================================
+
 set   formatoptions=tcroq1  " how automatic formatting works
 set   wrapmargin=2          " margin from the right where wrapping starts
 set   backspace=indent,eol,start  " how backspace works at start of line
 set   textwidth=78          " maximum width of text being inserted
 
-"===========================================================================================
+" ----------------------------------------------------------------------------
 " Indenting
-"===========================================================================================
-" All indent settings are grouped here for easier management
+
 set   autoindent      " automatically set the indent of a new line
 set   smartindent     " do clever autoindenting
 set nocopyindent      " don't copy indent structure from previous line
@@ -65,20 +68,18 @@ set   softtabstop=2   " number of spaces to insert for a <Tab>
 set   expandtab       " use spaces when <Tab> is inserted
 set   tabstop=2       " number of spaces a <Tab> in the text stands for
 
-" vim-polyglot is overriding shiftwidth
-" https://github.com/sheerun/vim-polyglot/issues/740
-autocmd BufEnter * set shiftwidth=2
-
-"===========================================================================================
+" ----------------------------------------------------------------------------
 " Terminal Settings
-"===========================================================================================
-" See http://www.shallowsky.com/linux/noaltscreen.html for an explanation of set t_ti= t_te=
+
+" See http://www.shallowsky.com/linux/noaltscreen.html for an explanation of
+" set t_ti= t_te=
+
 set   t_te=
 set   t_ti=
 
-"===========================================================================================
+" ----------------------------------------------------------------------------
 " Movement
-"===========================================================================================
+
 set   whichwrap=b,s,<,>,[,] " list of flags specifying which commands wrap to another line
 set noautochdir             " change to directory of file in buffer
 set   wrapscan              " search commands wrap around the end of the buffer
@@ -87,9 +88,9 @@ set   magic                 " change the way backslashes are used in search patt
 set   ignorecase            " ignore case when using a search pattern
 set   smartcase             " override 'ignorecase' when pattern has upper case characters
 
-"===========================================================================================
+" ----------------------------------------------------------------------------
 " Display
-"===========================================================================================
+
 set   scroll=11             " number of lines to scroll for CTRL-U and CTRL-D
 set   scrolloff=999999      " number of screen lines to show around the cursor
 set   wrap                  " long lines wrap
