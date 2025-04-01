@@ -17,6 +17,7 @@ let g:ale_disable_lsp = 1
 let g:ale_linters_explicit = 1
 
 " Automatically fix problems when saving files
+" See comments below on g:ale_lint_on_save
 let g:ale_fix_on_save = 1
 
 " ----------------------------------------------------------------------------
@@ -37,8 +38,9 @@ let g:ale_virtualtext_cursor = 'disabled'
 "
 " Control when ALE checks your code to avoid slowdowns
 
-" Only check for problems when typing in insert mode
-let g:ale_lint_on_text_changed = 'insert'  " Default: 'normal'
+# ELI5 the options available here. Add ELI5 about what TextChanged and
+# TextChangedI are, AI!
+let g:ale_lint_on_text_changed = 'always'  " Default: 'normal'
 
 " Lint when leaving insert mode (default: false)
 let g:ale_lint_on_insert_leave = 1
@@ -51,7 +53,6 @@ let g:ale_lint_on_insert_leave = 1
 " 1. First fix your file (apply formatters, remove whitespace, etc.)
 " 2. Save those changes to disk
 " 3. Then lint the fixed file to check for remaining problems
-" This gives you clean, formatted code that's also checked for errors!
 " let g:ale_lint_on_save = 1
 
 " Lint when filetype changes (default: true)
