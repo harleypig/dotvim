@@ -14,7 +14,7 @@
 	ignore = dirty
 	branch = release
 [submodule "ale"]
-	path = .vim/pack/intellisense/start/ale
+	path = .vim/pack/300-intellisense/start/ale
 	url = https://github.com/dense-analysis/ale.git
 	ignore = dirty
 [submodule "vim-eunuch"]
