@@ -39,14 +39,16 @@ let g:ale_virtualtext_cursor = 'disabled'
 " Control when ALE checks your code to avoid slowdowns
 
 " ALE can check your code in different ways:
-" 'always' - Check whenever you type in any mode
-" 'normal' - Check only when typing in normal mode
-" 'insert' - Check only when typing in insert mode
+"
+" 'always' - Check whenever you type in any mode (TextChanged, TextChangedI)
+" 'normal' - Check only when typing in normal mode (TextChanged)
+" 'insert' - Check only when typing in insert mode (TextChangedI)
 " 'never'  - Don't check as you type
 "
 " TextChanged is when you edit text in normal mode (like when deleting with 'x' or 'd')
 " TextChangedI is when you edit text in insert mode (like when typing new code)
-let g:ale_lint_on_text_changed = 'always'  " Default: 'normal'
+" Default: 'normal'
+let g:ale_lint_on_text_changed = 'always'
 
 " Lint when leaving insert mode (default: false)
 let g:ale_lint_on_insert_leave = 1
