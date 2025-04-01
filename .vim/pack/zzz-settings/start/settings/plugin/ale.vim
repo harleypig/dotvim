@@ -1,9 +1,16 @@
 " ----------------------------------------------------------------------------
 " ALE Core Configuration
-"
-" These are the fundamental settings that control how ALE behaves
 
 " Tell ALE not to try and provide LSP features (we use CoC for that)
+" This means we should only pay attention to sections 3, 4, 6 (specific only
+" as described below), 7, and 8 (specific only as described below).
+"
+" ALE is configured to focus solely on:
+"
+" • Running non-LSP linters
+" • Providing fixing capabilities
+" • Displaying diagnostics
+
 let g:ale_disable_lsp = 1
 
 " Only run linters we explicitly configure (no surprises!)
@@ -22,11 +29,8 @@ let g:ale_virtualtext_cursor = 'disabled'
 
 " Change the sign column color when there are errors
 " This changes the entire column color. Ick.
+" Leave this here so I don't try it again.
 "let g:ale_change_sign_column_color = v:true
-
-" Don't use the quickfix list (use location list instead)
-" Is this a valid setting?
-"let g:ale_use_quickfix = v:false
 
 " ----------------------------------------------------------------------------
 " Performance Settings
@@ -36,8 +40,12 @@ let g:ale_virtualtext_cursor = 'disabled'
 " Only check for problems when typing in insert mode
 let g:ale_lint_on_text_changed = 'insert'
 
-" Uncomment to disable checking when leaving insert mode
-" let g:ale_lint_on_insert_leave = v:false
+# Change this section show let g:varname = default setting as comments, AI!
+" * When you modify a buffer                   - |g:ale_lint_on_text_changed|
+" * On leaving insert mode                     - |g:ale_lint_on_insert_leave|
+" * When you open a new or modified buffer     - |g:ale_lint_on_enter|
+" * When you save a buffer                     - |g:ale_lint_on_save|
+" * When the filetype changes for a buffer     - |g:ale_lint_on_filetype_changed|
 
 " ----------------------------------------------------------------------------
 " Global Fixers
