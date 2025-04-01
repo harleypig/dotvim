@@ -9,7 +9,7 @@
 	url = https://github.com/EvitanRelta/vim-colorschemes.git
 	ignore = dirty
 [submodule "coc"]
-	path = .vim/pack/intellisense/start/coc
+	path = .vim/pack/300-intellisense/start/coc
 	url = https://github.com/neoclide/coc.nvim.git
 	ignore = dirty
 	branch = release
