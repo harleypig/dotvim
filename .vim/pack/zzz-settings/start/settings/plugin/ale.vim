@@ -1,6 +1,6 @@
 " ----------------------------------------------------------------------------
 " ALE Configuration
-" 
+"
 " Note: Early settings that must be set before ALE loads are in:
 " .vim/pack/000-settings/start/settings/plugin/ale.vim
 

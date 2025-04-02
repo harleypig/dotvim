@@ -1,6 +1,6 @@
 " ----------------------------------------------------------------------------
 " ALE Early Settings
-" 
+"
 " These settings must be set before ALE is loaded to take effect
 
 " Control when ALE checks your code to avoid slowdowns

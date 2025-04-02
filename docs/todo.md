@@ -12,21 +12,6 @@
 * bats
 * packer (in hashicorp.md)
 
-## Required packages
-
-### npm install:
-* `vim-language-server` - Required for Vim script language support in `CoC`
-* `dockerfile-language-server-nodejs` - Required for Dockerfile language support
-* `eslint` - Required for JavaScript/JSON linting
-* `diagnostic-languageserver` - Required for Proselint integration with `CoC`
-* `bash-language-server` - Required for Bash/Shell script language support
-* `pyright` - Required for Python language server support
-
-### other packages:
-* `shellcheck` - Required for shell script linting
-* `jq` - Required for JSON formatting
-* `terraform-ls` - Required for Terraform language support
-
 ## Toggles
 
 * What is available to be in the gutter?
@@ -41,6 +26,23 @@ Steal
 [this](https://github.com/timakro/vim-copytoggle/blob/master/plugin/copytoggle.vim).
 
 Add a statusline notifier.
+
+## Universal keybinds
+
+### error/warning (and other) navigation
+
+* Move to first error/warning in file
+  - ALEFirst: no keybind by default
+* Move to last error/warning in file
+  - ALELast: <Plug>(ale_last)
+* Move to next error/warning
+  - ALENext: <Plug>(ale_next)
+* Move to last error/warning
+  - ALELast: <Plug>(ale_last)
+
+### Show more details
+
+* ale: ALEDetail to show full linter message
 
 ## CoC and ALE Enhancements
 
