@@ -81,3 +81,20 @@ Add a statusline notifier.
     - click-completion: https://github.com/click-contrib/click-completion
     - click-configfile: https://github.com/click-contrib/click-configfile
     - click-help-colors: https://github.com/click-contrib/click-help-colors
+
+### Language Setup
+Check :h ale-supported-languages-and-tools
+
+* awk - :h ale-awk
+* dockerfile - :h ale-dockerfile
+* hcl - :h ale-hcl ; :h ale-packer ; :h ale-terraform
+* json - :h ale-json ; :h ale-jsonc
+* markdown - :h ale-markdown
+* powershell - :h ale-powershell
+* python - :h ale-python
+* sh - :h ale-sh
+* sql - :h ale-sql
+* systemd - :h ale-systemd
+* toml - :h ale-toml
+* vim - :h ale-vim ; :h ale-vim-help
+* yaml - :h ale-yaml
