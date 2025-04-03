@@ -19,7 +19,7 @@
   "extensions.updateCheck": "daily",
   "coc.preferences.formatOnSave": false,
   "coc.preferences.useQuickfixForLocations": false,
-  "coc.preferences.rootPatterns": [".git", ".hg", ".projections.json", "pyproject.toml", "setup.py"],
+  "workspace.rootPatterns": [".git", ".hg", ".projections.json", "pyproject.toml", "setup.py"],
   "signature.enable": false,
 
   //=========================================================================
