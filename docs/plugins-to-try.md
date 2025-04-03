@@ -102,5 +102,6 @@
 ### To Be Categorized
 
 * [vim-flagship](https://github.com/tpope/vim-flagship)
+* [vim-tbone](https://github.com/tpope/vim-tbone)
 
 _Note: Plugins marked with * have functionality that may be partially covered by CoC or ALE._
