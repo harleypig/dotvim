@@ -66,10 +66,6 @@ let g:ale_linters.systemd = ['systemd-analyze']
 " TODO: Move to ftplugin/toml.vim
 let g:ale_linters.toml = ['tomllint']
 
-" yaml
-" TODO: Move to ftplugin/yaml.vim
-let g:ale_linters.yaml = ['yamllint']
-
 " vim-help
 " TODO: Move to ftplugin/help.vim
 let g:ale_linters.help = ['vimhelplint']
