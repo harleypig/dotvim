@@ -30,12 +30,18 @@
   // https://github.com/microsoft/pyright
   // https://microsoft.github.io/pyright
   // look in pyrightconfig.json or pyproject.toml for more settings
-  "pyright.inlayHints.functionReturnTypes": false,
-  "pyright.inlayHints.variableTypes": false,
+  # Add a discussion of the possible values here for the two analysis settings here, AI!
+  // "python.analysis.typeCheckingMode": "basic",
+  // "python.analysis.useLibraryCodeForTypes": true,
+  // "pyright.inlayHints.functionReturnTypes": false,
+  // "pyright.inlayHints.variableTypes": false,
+  // "pyright.inlayHints.parameterTypes": false,
 
   // Flake8 integration
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Stdin": true,
+  // Ensure flake8 respects project configuration
+  "python.linting.flake8Args": ["--append-config=.flake8"],
 
   //=========================================================================
   // SHELL SCRIPT SETTINGS
