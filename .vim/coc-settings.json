@@ -30,8 +30,15 @@
   // https://github.com/microsoft/pyright
   // https://microsoft.github.io/pyright
   // look in pyrightconfig.json or pyproject.toml for more settings
-  # Add a discussion of the possible values here for the two analysis settings here, AI!
+  // Type checking modes:
+  //   "off" - No type checking
+  //   "basic" - Basic type checking (default)
+  //   "strict" - Strict type checking with all rules enabled
   // "python.analysis.typeCheckingMode": "basic",
+  // 
+  // Library code for types:
+  //   true - Use library implementations for type info (more accurate but slower)
+  //   false - Use stub files only for type info (faster but less complete)
   // "python.analysis.useLibraryCodeForTypes": true,
   // "pyright.inlayHints.functionReturnTypes": false,
   // "pyright.inlayHints.variableTypes": false,
