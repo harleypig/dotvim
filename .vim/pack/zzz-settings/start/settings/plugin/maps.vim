@@ -35,6 +35,18 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " XXX: Add function and mapping to toggle quickfix window here
+" Toggle quickfix window
+function! QuickfixToggle()
+    for i in range(1, winnr('$'))
+        if getbufvar(winbufnr(i), '&buftype') == 'quickfix'
+            cclose
+            return
+        endif
+    endfor
+    copen
+endfunction
+
+nnoremap <silent> <leader>qf :call QuickfixToggle()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " If Aider is installed, then map <leader>aid to open a terminal window at the
