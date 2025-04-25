@@ -1,15 +1,15 @@
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " This is a setting, but I'm putting it here because it's actings as
 " a mapping.
 "set   pastetoggle=<Leader>pp
+
+" README: Toggle paste mode.
+map <leader>pp :set paste!<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " README: Open terminal in a new window below the current window. Will not be
 " included in a sessions file.
 map <leader>tt :botright terminal ++norestore<CR>
-
-" README: Toggle paste mode.
-map <leader>pp :set paste!<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/95139#95139
@@ -33,6 +33,8 @@ nmap <leader>fb <Plug>(ale_fix)
 " CoC diagnostics navigation
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" XXX: Add function and mapping to toggle quickfix window here
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " If Aider is installed, then map <leader>aid to open a terminal window at the
