@@ -62,32 +62,34 @@ endif
 " Function to generate the buffer info block
 function! YASL_BufferInfo()
   " Buffer number with padding
-  let l:bufinfo = '[' . printf('%02d', bufnr('%'))
+  let l:bufinfo = '[' . printf('%02d', bufnr('%')) . ' '
 
   " Filetype
   if strlen(&filetype)
-    let l:bufinfo .= ' ' . &filetype
+    let l:bufinfo .= &filetype
   else
-    let l:bufinfo .= ' ' . g:yasl.buffer.none_filetype
+    let l:bufinfo .= g:yasl.buffer.none_filetype
   endif
+
+  let l:bufinfo .= ' '
 
   " Modification and read-only status with colors applied directly
   if !&modifiable
     " Not modifiable trumps everything
-    let l:bufinfo .= ' %#DiagnosticError#' . g:yasl.buffer.not_modifiable . '%*'
+    let l:bufinfo .= g:yasl.buffer.not_modifiable
   elseif &readonly
     " Read-only files
     if &modified
-      let l:bufinfo .= ' %#DiffChange#' . g:yasl.buffer.modified . '%#warningmsg#' . g:yasl.buffer.readonly . '%*'
+      let l:bufinfo .= g:yasl.buffer.modified . g:yasl.buffer.readonly
     else
-      let l:bufinfo .= ' %#warningmsg#' . g:yasl.buffer.readonly . '%*'
+      let l:bufinfo .= g:yasl.buffer.readonly
     endif
   else
     " Normal files
     if &modified
-      let l:bufinfo .= ' %#DiffChange#' . g:yasl.buffer.modified . '%*'
+      let l:bufinfo .= g:yasl.buffer.modified
     else
-      let l:bufinfo .= ' ' . g:yasl.buffer.not_modified
+      let l:bufinfo .= g:yasl.buffer.not_modified
     endif
   endif
 
@@ -96,6 +98,7 @@ function! YASL_BufferInfo()
 
   return l:bufinfo
 endfunction
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale info for statusline
 function! LinterStatus() abort
