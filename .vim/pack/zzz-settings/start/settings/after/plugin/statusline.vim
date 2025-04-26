@@ -300,8 +300,37 @@ function! YASL_Filetype()
   if strlen( &filetype )
     let l:text = &filetype
   else
-    let l:text = g:YASL_NoneFiletype
+    let l:text = g:yasl.buffer.none_filetype
   endif
 
   return l:text
+endfunction
+
+" Function to generate the buffer info block
+function! YASL_BufferInfo()
+  " Buffer number with padding
+  let l:bufinfo = '[' . printf('%02d', bufnr('%'))
+  
+  " Filetype
+  if strlen(&filetype)
+    let l:bufinfo .= ' ' . &filetype
+  else
+    let l:bufinfo .= ' ' . g:yasl.buffer.none_filetype
+  endif
+  
+  " Modification status
+  if &modifiable
+    if &modified
+      let l:bufinfo .= ' ' . g:yasl.buffer.modified
+    else
+      let l:bufinfo .= ' ' . g:yasl.buffer.not_modified
+    endif
+  else
+    let l:bufinfo .= ' ' . g:yasl.buffer.not_modifiable
+  endif
+  
+  " Close the bracket
+  let l:bufinfo .= ']'
+  
+  return l:bufinfo
 endfunction
