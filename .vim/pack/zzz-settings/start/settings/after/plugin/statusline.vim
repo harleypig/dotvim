@@ -65,16 +65,36 @@ function! LinterStatus() abort
   let l:counts = ale#statusline#Count(bufnr(''))
 
   let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
+  let l:all_warnings = l:counts.warning + l:counts.style_warning
+  let l:all_info = get(l:counts, 'info', 0)
+  let l:all_hints = get(l:counts, 'hint', 0)
 
   let l:output = ''
 
+  " Show diagnostics in descending order of severity
   if l:all_errors > 0
     let l:output .= '%#DiagnosticError#E' . l:all_errors . '%*'
   endif
 
-  if l:all_non_errors > 0
-    let l:output .= '%#DiagnosticWarning#W' . l:all_non_errors . '%*'
+  if l:all_warnings > 0
+    if !empty(l:output)
+      let l:output .= ' '
+    endif
+    let l:output .= '%#DiagnosticWarning#W' . l:all_warnings . '%*'
+  endif
+
+  if l:all_info > 0
+    if !empty(l:output)
+      let l:output .= ' '
+    endif
+    let l:output .= '%#DiagnosticInfo#I' . l:all_info . '%*'
+  endif
+
+  if l:all_hints > 0
+    if !empty(l:output)
+      let l:output .= ' '
+    endif
+    let l:output .= '%#DiagnosticHint#H' . l:all_hints . '%*'
   endif
 
   return l:output
