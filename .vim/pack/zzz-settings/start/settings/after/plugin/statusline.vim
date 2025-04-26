@@ -249,3 +249,5 @@ set statusline+=\ %-.20F
 " recalculate the warnings when idle or after saving
 autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
 autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
+" Force refresh of warnings in the statusline
+autocmd cursorhold,bufwritepost * let &ro=&ro
