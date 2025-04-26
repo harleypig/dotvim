@@ -43,32 +43,11 @@ if !exists("g:yasl")
     \   'no_paste_mode': ''
     \ },
     \ 'format': {
-    \   'non_unix_format': '*%s*',  
+    \   'non_unix_format': '*%s*',
     \   'non_utf8_encoding': '*%s*'
     \ }
   \ }
 endif
-
-" For backward compatibility with existing configurations
-function! s:MigrateOldWarningSettings()
-  if exists("g:YASL_MixedIndentText")
-    let g:yasl.warnings.mixed_indent = g:YASL_MixedIndentText
-  endif
-  if exists("g:YASL_ExpandTabText")
-    let g:yasl.warnings.expand_tab = g:YASL_ExpandTabText
-  endif
-  if exists("g:YASL_TrailingSpaceText")
-    let g:yasl.warnings.trailing_space = g:YASL_TrailingSpaceText
-  endif
-  if exists("g:YASL_PasteMode")
-    let g:yasl.warnings.paste_mode = g:YASL_PasteMode
-  endif
-  if exists("g:YASL_NoPasteMode")
-    let g:yasl.warnings.no_paste_mode = g:YASL_NoPasteMode
-  endif
-endfunction
-
-call s:MigrateOldWarningSettings()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Function to generate the buffer info block
@@ -113,6 +92,7 @@ endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale info for statusline
+# Rename LinterStatus to YASL_LinterStatus, AI!
 function! LinterStatus() abort
   let l:counts = ale#statusline#Count(bufnr(''))
 
@@ -282,17 +262,17 @@ endfunction
 " We only want to see if the file format is not unix.
 function! YASL_Warnings()
   let l:warnings = []
-  
+
   " File format warning
   if &fileformat != 'unix'
     call add(l:warnings, printf(g:yasl.format.non_unix_format, &fileformat))
   endif
-  
+
   " File encoding warning
   if &fileencoding != '' && &fileencoding != 'utf-8'
     call add(l:warnings, printf(g:yasl.format.non_utf8_encoding, &fileencoding))
   endif
-  
+
   " Mixed indent warning
   if !exists("b:statusline_tab_warning")
     let b:statusline_tab_warning = ''
@@ -307,11 +287,11 @@ function! YASL_Warnings()
       endif
     endif
   endif
-  
+
   if b:statusline_tab_warning != ''
     call add(l:warnings, b:statusline_tab_warning)
   endif
-  
+
   " Trailing space warning
   if !exists("b:statusline_trailing_space_warning")
     let b:statusline_trailing_space_warning = ''
@@ -319,16 +299,16 @@ function! YASL_Warnings()
       let b:statusline_trailing_space_warning = g:yasl.warnings.trailing_space
     endif
   endif
-  
+
   if b:statusline_trailing_space_warning != ''
     call add(l:warnings, b:statusline_trailing_space_warning)
   endif
-  
+
   " Paste mode warning
   if &paste
     call add(l:warnings, g:yasl.warnings.paste_mode)
   endif
-  
+
   " Join all warnings with a space
   return join(l:warnings, ' ')
 endfunction
