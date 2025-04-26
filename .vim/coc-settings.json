@@ -8,6 +8,7 @@
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": true,
   "diagnostic.virtualTextFormat": " >>> %severity: %message {%source}",
+  //"diagnostic.messageTarget": "float",
 
   // UI and Visual Settings
   "colors.enable": true,
@@ -17,8 +18,10 @@
   // Behavior Preferences
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
   "extensions.updateCheck": "daily",
+  // Let ALE handle formatting
   "coc.preferences.formatOnSave": false,
-  "coc.preferences.useQuickfixForLocations": false,
+  //"coc.preferences.useQuickfixForLocations": false,
+  "coc.preferences.useQuickfixForLocations": true,
   "signature.enable": false,
   "workspace.rootPatterns": [".git", ".hg", ".projections.json", "pyproject.toml", "setup.py"],
 

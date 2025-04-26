@@ -27,50 +27,43 @@ else
   cmap w!! %!sudo tee > /dev/null %
 endif
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Manual formatting with ALE
 nmap <leader>fb <Plug>(ale_fix)
 
 " CoC diagnostics navigation
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" nmap <silent> [g <Plug>(coc-diagnostic-prev)
+" nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" XXX: Add function and mapping to toggle quickfix window here
-" Toggle quickfix window
-function! QuickfixToggle()
-    for i in range(1, winnr('$'))
-        if getbufvar(winbufnr(i), '&buftype') == 'quickfix'
-            cclose
-            return
-        endif
-    endfor
-    copen
-endfunction
+command! QuickfixToggle call quickfixtoggle#toggle()
 
-nnoremap <silent> <leader>qf :call QuickfixToggle()<CR>
+nnoremap <leader>q] <Cmd>cnext<CR>
+nnoremap <leader>q[ <Cmd>cprevious<CR>
+nnoremap <leader>qf <Cmd>QuickfixToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " If Aider is installed, then map <leader>aid to open a terminal window at the
 " bottom, running aider.
 "
-if executable('aider')
-  function! OpenAiderTerminal()
-    let l:repo_root = system('git rev-parse --show-toplevel')
-    let l:repo_root = substitute(l:repo_root, '\n\+$', '', '')
-    "let l:current_file = expand('%:p')
-
-    "if l:current_file != '' && l:repo_root != ''
-    "  let l:relative_file_path = l:current_file[l:repo_root != '/' ? len(l:repo_root) + 1 : len(l:repo_root):]
-    "else
-    "  let l:relative_file_path = ''
-    "endif
-
-    if v:shell_error == 0 && !empty(l:repo_root)
-      execute 'lcd ' . l:repo_root
-    endif
-
-    "execute 'botright terminal aider ++close ++norestore aider ' . l:relative_file_path
-    execute 'botright terminal ++close ++norestore aider'
-  endfunction
-
-  nnoremap <silent> <leader>adr :call OpenAiderTerminal()<CR>
-endif
+"if executable('aider')
+"  function! OpenAiderTerminal()
+"    let l:repo_root = system('git rev-parse --show-toplevel')
+"    let l:repo_root = substitute(l:repo_root, '\n\+$', '', '')
+"    "let l:current_file = expand('%:p')
+"
+"    "if l:current_file != '' && l:repo_root != ''
+"    "  let l:relative_file_path = l:current_file[l:repo_root != '/' ? len(l:repo_root) + 1 : len(l:repo_root):]
+"    "else
+"    "  let l:relative_file_path = ''
+"    "endif
+"
+"    if v:shell_error == 0 && !empty(l:repo_root)
+"      execute 'lcd ' . l:repo_root
+"    endif
+"
+"    "execute 'botright terminal aider ++close ++norestore aider ' . l:relative_file_path
+"    execute 'botright terminal ++close ++norestore aider'
+"  endfunction
+"
+"  nnoremap <silent> <leader>adr :call OpenAiderTerminal()<CR>
+"endif

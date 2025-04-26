@@ -86,11 +86,11 @@ function! StatusDiagnostic() abort
   let msgs = []
 
   if get(info, 'error', 0)
-    call add(msgs, printf('E:%d', info.error))
+    call add(msgs, printf('E%d', info.error))
   endif
 
   if get(info, 'warning', 0)
-    call add(msgs, printf('W:%d', info.warning))
+    call add(msgs, printf('W%d', info.warning))
   endif
 
   return join(msgs, ' ') . ' ' . get(g:, 'coc_status', '')
@@ -114,7 +114,7 @@ set statusline+=%(%{YASL_MixedIndentWarning()}%)
 set statusline+=%(%{YASL_TrailingSpaceWarning()}%)
 set statusline+=%(%{YASL_PasteMode()}%)
 set statusline+=%(%{LinterStatus()}%)
-set statusline+=%(%{StatusDiagnostic()}%)
+"set statusline+=%(%{StatusDiagnostic()}%)
 " end warningmsg
 set statusline+=%*
 
@@ -144,10 +144,11 @@ set statusline+=%=
 " What are the permissions for the current file.
 set statusline+=%(\ %{getfperm(expand('%'))}%)
 
+" handled by StatusDiagnostic function above
 " coc info
-if exists("g:did_coc_loaded")
-  set statusline+=%(\ %{coc#status()}%)
-endif
+"if exists("g:did_coc_loaded")
+"  set statusline+=%(\ %{coc#status()}%)
+"endif
 
 " What file are we editing?
 set statusline+=\ %-.20F
