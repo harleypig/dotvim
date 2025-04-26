@@ -69,35 +69,32 @@ function! LinterStatus() abort
   let l:all_info = get(l:counts, 'info', 0)
   let l:all_hints = get(l:counts, 'hint', 0)
 
+  " Return null if there's nothing to display
+  if l:counts.total == 0
+    return ''
+  endif
+
   let l:output = ''
 
-  " Show diagnostics in descending order of severity
+  " Show diagnostics in descending order of severity without spaces
   if l:all_errors > 0
     let l:output .= '%#DiagnosticError#E' . l:all_errors . '%*'
   endif
 
   if l:all_warnings > 0
-    if !empty(l:output)
-      let l:output .= ' '
-    endif
     let l:output .= '%#DiagnosticWarning#W' . l:all_warnings . '%*'
   endif
 
   if l:all_info > 0
-    if !empty(l:output)
-      let l:output .= ' '
-    endif
     let l:output .= '%#DiagnosticInfo#I' . l:all_info . '%*'
   endif
 
   if l:all_hints > 0
-    if !empty(l:output)
-      let l:output .= ' '
-    endif
     let l:output .= '%#DiagnosticHint#H' . l:all_hints . '%*'
   endif
 
-  return l:output
+  " Wrap in square brackets and add :\qf at the end
+  return '[' . l:output . ':\qf]'
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
