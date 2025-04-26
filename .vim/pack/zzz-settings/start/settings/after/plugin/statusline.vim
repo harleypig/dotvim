@@ -29,11 +29,11 @@ if !exists("g:yasl")
   let g:yasl = {
     \ 'buffer': {
     \   'none_filetype': 'none',
-    \   'modified': '%#DiffChange#+%*',
+    \   'modified': '+',
     \   'not_modified': '-',
-    \   'not_modifiable': '%#DiagnosticError#X%*',
-    \   'readonly': '%#warningmsg#RO%*',
-    \   'modified_readonly': '%#DiffChange#+%#warningmsg#RO%*'
+    \   'not_modifiable': 'X',
+    \   'readonly': 'RO',
+    \   'modified_readonly': '+RO'
     \ }
   \ }
 endif
@@ -71,21 +71,21 @@ function! YASL_BufferInfo()
     let l:bufinfo .= ' ' . g:yasl.buffer.none_filetype
   endif
 
-  " Modification and read-only status
+  " Modification and read-only status with colors applied directly
   if !&modifiable
     " Not modifiable trumps everything
-    let l:bufinfo .= ' ' . g:yasl.buffer.not_modifiable
+    let l:bufinfo .= ' %#DiagnosticError#' . g:yasl.buffer.not_modifiable . '%*'
   elseif &readonly
     " Read-only files
     if &modified
-      let l:bufinfo .= ' ' . g:yasl.buffer.modified_readonly
+      let l:bufinfo .= ' %#DiffChange#' . g:yasl.buffer.modified . '%#warningmsg#' . g:yasl.buffer.readonly . '%*'
     else
-      let l:bufinfo .= ' ' . g:yasl.buffer.readonly
+      let l:bufinfo .= ' %#warningmsg#' . g:yasl.buffer.readonly . '%*'
     endif
   else
     " Normal files
     if &modified
-      let l:bufinfo .= ' ' . g:yasl.buffer.modified
+      let l:bufinfo .= ' %#DiffChange#' . g:yasl.buffer.modified . '%*'
     else
       let l:bufinfo .= ' ' . g:yasl.buffer.not_modified
     endif
@@ -250,16 +250,16 @@ endfunction
 
 function! YASL_IsModified()
   if !&modifiable
-    let l:text = g:yasl.buffer.not_modifiable
+    let l:text = '%#DiagnosticError#' . g:yasl.buffer.not_modifiable . '%*'
   elseif &readonly
     if &modified
-      let l:text = g:yasl.buffer.modified_readonly
+      let l:text = '%#DiffChange#' . g:yasl.buffer.modified . '%#warningmsg#' . g:yasl.buffer.readonly . '%*'
     else
-      let l:text = g:yasl.buffer.readonly
+      let l:text = '%#warningmsg#' . g:yasl.buffer.readonly . '%*'
     endif
   else
     if &modified
-      let l:text = g:yasl.buffer.modified
+      let l:text = '%#DiffChange#' . g:yasl.buffer.modified . '%*'
     else
       let l:text = g:yasl.buffer.not_modified
     endif
