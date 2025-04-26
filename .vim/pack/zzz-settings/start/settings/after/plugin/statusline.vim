@@ -253,12 +253,12 @@ endfunction
 function! YASL_IsModified()
   if &modifiable
     if &modified
-      let l:text = g:YASL_Modified
+      let l:text = g:yasl.buffer.modified
     else
-      let l:text = g:YASL_NotModified
+      let l:text = g:yasl.buffer.not_modified
     endif
   else
-    let l:text = g:YASL_NotModifiable
+    let l:text = g:yasl.buffer.not_modifiable
   endif
 
   return l:text
