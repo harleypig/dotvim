@@ -94,7 +94,7 @@ function! LinterStatus() abort
   endif
 
   " Wrap in square brackets and add :\qf at the end
-  return '[' . l:output . ':\qf]'
+  return '[' . l:output . '%#warningmsg#:\qf]'
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -134,7 +134,6 @@ set statusline+=%(\ %{YASL_IsModified()}%)
 set statusline+=]
 
 set statusline+=%#warningmsg#
-"set statusline+=%1*
 set statusline+=%(%{YASL_FileFormat()}%)
 set statusline+=%(%{YASL_FileEncoding()}%)
 set statusline+=%(%{YASL_MixedIndentWarning()}%)
