@@ -9,6 +9,8 @@
 " continue to do my own.  However, I plan on ripping off as much as possible
 " from airline and other statusline tips and tricks I find.
 
+" XXX: Can I modify statusline for various types (help, quickfix, etc.)?
+
 set laststatus=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -34,24 +36,6 @@ if !exists("g:yasl")
   \ }
 endif
 
-" For backward compatibility with existing configurations
-function! s:MigrateOldSettings()
-  if exists("g:YASL_NoneFiletype")
-    let g:yasl.buffer.none_filetype = g:YASL_NoneFiletype
-  endif
-  if exists("g:YASL_Modified")
-    let g:yasl.buffer.modified = g:YASL_Modified
-  endif
-  if exists("g:YASL_NotModifiable")
-    let g:yasl.buffer.not_modifiable = g:YASL_NotModifiable
-  endif
-  if exists("g:YASL_NotModified")
-    let g:yasl.buffer.not_modified = g:YASL_NotModified
-  endif
-endfunction
-
-call s:MigrateOldSettings()
-
 if !exists("g:YASL_MixedIndentText")
   let g:YASL_MixedIndentText = '[mixed indenting]'
 endif
@@ -72,6 +56,35 @@ if !exists("g:YASL_NoPasteMode")
   let g:YASL_NoPasteMode = ''
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Function to generate the buffer info block
+function! YASL_BufferInfo()
+  " Buffer number with padding
+  let l:bufinfo = '[' . printf('%02d', bufnr('%'))
+
+  " Filetype
+  if strlen(&filetype)
+    let l:bufinfo .= ' ' . &filetype
+  else
+    let l:bufinfo .= ' ' . g:yasl.buffer.none_filetype
+  endif
+
+  " Modification status
+  if &modifiable
+    if &modified
+      let l:bufinfo .= ' ' . g:yasl.buffer.modified
+    else
+      let l:bufinfo .= ' ' . g:yasl.buffer.not_modified
+    endif
+  else
+    let l:bufinfo .= ' ' . g:yasl.buffer.not_modifiable
+  endif
+
+  " Close the bracket
+  let l:bufinfo .= ']'
+
+  return l:bufinfo
+endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale info for statusline
 function! LinterStatus() abort
@@ -109,32 +122,6 @@ function! LinterStatus() abort
   " Wrap in square brackets and add :\qf at the end
   return '[' . l:output . '%#warningmsg#:\qf]'
 endfunction
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" What non-ale information can I put here?
-"function! StatusDiagnostic() abort
-"  if ! exists("g:did_coc_loaded")
-"    return ''
-"  endif
-"
-"  let info = get(b:, 'coc_diagnostic_info', {})
-"
-"  if empty(info)
-"    return ''
-"  endif
-"
-"  let msgs = []
-"
-"  if get(info, 'error', 0)
-"    call add(msgs, printf('E%d', info.error))
-"  endif
-"
-"  if get(info, 'warning', 0)
-"    call add(msgs, printf('W%d', info.warning))
-"  endif
-"
-"  return join(msgs, ' ') . ' ' . get(g:, 'coc_status', '')
-"endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Make sure the status line is empty before we start.
@@ -304,33 +291,4 @@ function! YASL_Filetype()
   endif
 
   return l:text
-endfunction
-
-" Function to generate the buffer info block
-function! YASL_BufferInfo()
-  " Buffer number with padding
-  let l:bufinfo = '[' . printf('%02d', bufnr('%'))
-  
-  " Filetype
-  if strlen(&filetype)
-    let l:bufinfo .= ' ' . &filetype
-  else
-    let l:bufinfo .= ' ' . g:yasl.buffer.none_filetype
-  endif
-  
-  " Modification status
-  if &modifiable
-    if &modified
-      let l:bufinfo .= ' ' . g:yasl.buffer.modified
-    else
-      let l:bufinfo .= ' ' . g:yasl.buffer.not_modified
-    endif
-  else
-    let l:bufinfo .= ' ' . g:yasl.buffer.not_modifiable
-  endif
-  
-  " Close the bracket
-  let l:bufinfo .= ']'
-  
-  return l:bufinfo
 endfunction
