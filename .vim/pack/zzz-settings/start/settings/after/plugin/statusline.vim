@@ -29,9 +29,11 @@ if !exists("g:yasl")
   let g:yasl = {
     \ 'buffer': {
     \   'none_filetype': 'none',
-    \   'modified': '+',
+    \   'modified': '%#DiffChange#+%*',
     \   'not_modified': '-',
-    \   'not_modifiable': 'X'
+    \   'not_modifiable': '%#DiagnosticError#X%*',
+    \   'readonly': '%#warningmsg#RO%*',
+    \   'modified_readonly': '%#DiffChange#+%#warningmsg#RO%*'
     \ }
   \ }
 endif
@@ -69,15 +71,24 @@ function! YASL_BufferInfo()
     let l:bufinfo .= ' ' . g:yasl.buffer.none_filetype
   endif
 
-  " Modification status
-  if &modifiable
+  " Modification and read-only status
+  if !&modifiable
+    " Not modifiable trumps everything
+    let l:bufinfo .= ' ' . g:yasl.buffer.not_modifiable
+  elseif &readonly
+    " Read-only files
+    if &modified
+      let l:bufinfo .= ' ' . g:yasl.buffer.modified_readonly
+    else
+      let l:bufinfo .= ' ' . g:yasl.buffer.readonly
+    endif
+  else
+    " Normal files
     if &modified
       let l:bufinfo .= ' ' . g:yasl.buffer.modified
     else
       let l:bufinfo .= ' ' . g:yasl.buffer.not_modified
     endif
-  else
-    let l:bufinfo .= ' ' . g:yasl.buffer.not_modifiable
   endif
 
   " Close the bracket
@@ -238,14 +249,20 @@ endfunction
 " Show + if this file is modifiable and has been modified.
 
 function! YASL_IsModified()
-  if &modifiable
+  if !&modifiable
+    let l:text = g:yasl.buffer.not_modifiable
+  elseif &readonly
+    if &modified
+      let l:text = g:yasl.buffer.modified_readonly
+    else
+      let l:text = g:yasl.buffer.readonly
+    endif
+  else
     if &modified
       let l:text = g:yasl.buffer.modified
     else
       let l:text = g:yasl.buffer.not_modified
     endif
-  else
-    let l:text = g:yasl.buffer.not_modifiable
   endif
 
   return l:text
