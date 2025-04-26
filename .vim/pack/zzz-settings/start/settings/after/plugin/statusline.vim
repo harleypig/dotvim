@@ -34,29 +34,41 @@ if !exists("g:yasl")
     \   'not_modifiable': 'X',
     \   'readonly': 'RO',
     \   'modified_readonly': '+RO'
+    \ },
+    \ 'warnings': {
+    \   'mixed_indent': '[mixed indenting]',
+    \   'expand_tab': '[&et]',
+    \   'trailing_space': '[trailing space]',
+    \   'paste_mode': '[PASTE]',
+    \   'no_paste_mode': ''
+    \ },
+    \ 'format': {
+    \   'non_unix_format': '*%s*',  
+    \   'non_utf8_encoding': '*%s*'
     \ }
   \ }
 endif
 
-if !exists("g:YASL_MixedIndentText")
-  let g:YASL_MixedIndentText = '[mixed indenting]'
-endif
+" For backward compatibility with existing configurations
+function! s:MigrateOldWarningSettings()
+  if exists("g:YASL_MixedIndentText")
+    let g:yasl.warnings.mixed_indent = g:YASL_MixedIndentText
+  endif
+  if exists("g:YASL_ExpandTabText")
+    let g:yasl.warnings.expand_tab = g:YASL_ExpandTabText
+  endif
+  if exists("g:YASL_TrailingSpaceText")
+    let g:yasl.warnings.trailing_space = g:YASL_TrailingSpaceText
+  endif
+  if exists("g:YASL_PasteMode")
+    let g:yasl.warnings.paste_mode = g:YASL_PasteMode
+  endif
+  if exists("g:YASL_NoPasteMode")
+    let g:yasl.warnings.no_paste_mode = g:YASL_NoPasteMode
+  endif
+endfunction
 
-if !exists("g:YASL_ExpandTabText")
-  let g:YASL_ExpandTabText = '[&et]'
-endif
-
-if !exists("g:YASL_TrailingSpaceText")
-  let g:YASL_TrailingSpaceText = '[trailing space]'
-endif
-
-if !exists("g:YASL_PasteMode")
-  let g:YASL_PasteMode = '[PASTE]'
-endif
-
-if !exists("g:YASL_NoPasteMode")
-  let g:YASL_NoPasteMode = ''
-endif
+call s:MigrateOldWarningSettings()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Function to generate the buffer info block
@@ -145,11 +157,7 @@ set statusline=
 set statusline+=%{YASL_BufferInfo()}
 
 set statusline+=%#warningmsg#
-set statusline+=%(%{YASL_FileFormat()}%)
-set statusline+=%(%{YASL_FileEncoding()}%)
-set statusline+=%(%{YASL_MixedIndentWarning()}%)
-set statusline+=%(%{YASL_TrailingSpaceWarning()}%)
-set statusline+=%(%{YASL_PasteMode()}%)
+set statusline+=%(%{YASL_Warnings()}%)
 set statusline+=%{%LinterStatus()%}
 set statusline+=%*
 
@@ -219,9 +227,9 @@ function! YASL_MixedIndentWarning()
     let spaces = search('^ ', 'nw') != 0
 
     if tabs && spaces
-      let b:statusline_tab_warning = g:YASL_MixedIndentText
+      let b:statusline_tab_warning = g:yasl.warnings.mixed_indent
     elseif (spaces && !&et) || (tabs && &et)
-      let b:statusline_tab_warning = g:YASL_ExpandTabText
+      let b:statusline_tab_warning = g:yasl.warnings.expand_tab
     else
       let b:statusline_tab_warning = ''
     endif
@@ -238,7 +246,7 @@ function! YASL_TrailingSpaceWarning()
 
   if !exists("b:statusline_trailing_space_warning")
     if search('\s\+$', 'nw') != 0
-      let b:statusline_trailing_space_warning = g:YASL_TrailingSpaceText
+      let b:statusline_trailing_space_warning = g:yasl.warnings.trailing_space
     else
       let b:statusline_trailing_space_warning = ''
     endif
@@ -272,11 +280,65 @@ function! YASL_IsModified()
 endfunction
 
 " We only want to see if the file format is not unix.
+function! YASL_Warnings()
+  let l:warnings = []
+  
+  " File format warning
+  if &fileformat != 'unix'
+    call add(l:warnings, printf(g:yasl.format.non_unix_format, &fileformat))
+  endif
+  
+  " File encoding warning
+  if &fileencoding != '' && &fileencoding != 'utf-8'
+    call add(l:warnings, printf(g:yasl.format.non_utf8_encoding, &fileencoding))
+  endif
+  
+  " Mixed indent warning
+  if !exists("b:statusline_tab_warning")
+    let b:statusline_tab_warning = ''
+    if &filetype != 'help'
+      let l:tabs = search('^\t', 'nw') != 0
+      let l:spaces = search('^ ', 'nw') != 0
+
+      if l:tabs && l:spaces
+        let b:statusline_tab_warning = g:yasl.warnings.mixed_indent
+      elseif (l:spaces && !&et) || (l:tabs && &et)
+        let b:statusline_tab_warning = g:yasl.warnings.expand_tab
+      endif
+    endif
+  endif
+  
+  if b:statusline_tab_warning != ''
+    call add(l:warnings, b:statusline_tab_warning)
+  endif
+  
+  " Trailing space warning
+  if !exists("b:statusline_trailing_space_warning")
+    let b:statusline_trailing_space_warning = ''
+    if &filetype != 'help' && search('\s\+$', 'nw') != 0
+      let b:statusline_trailing_space_warning = g:yasl.warnings.trailing_space
+    endif
+  endif
+  
+  if b:statusline_trailing_space_warning != ''
+    call add(l:warnings, b:statusline_trailing_space_warning)
+  endif
+  
+  " Paste mode warning
+  if &paste
+    call add(l:warnings, g:yasl.warnings.paste_mode)
+  endif
+  
+  " Join all warnings with a space
+  return join(l:warnings, ' ')
+endfunction
+
+" Keep these for backward compatibility
 function! YASL_FileFormat()
   if &fileformat == 'unix'
     let l:text = ''
   else
-    let l:text = '*' . &fileformat . '*'
+    let l:text = printf(g:yasl.format.non_unix_format, &fileformat)
   endif
 
   return l:text
@@ -287,7 +349,7 @@ function! YASL_FileEncoding()
   if &fileencoding == 'utf-8' || &fileencoding == ''
     let l:text = ''
   else
-    let l:text = '*' . &fileencoding . '*'
+    let l:text = printf(g:yasl.format.non_utf8_encoding, &fileencoding)
   endif
 
   return l:text
@@ -295,9 +357,9 @@ endfunction
 
 function! YASL_PasteMode()
   if &paste
-    let l:text = g:YASL_PasteMode
+    let l:text = g:yasl.warnings.paste_mode
   else
-    let l:text = g:YASL_NoPasteMode
+    let l:text = g:yasl.warnings.no_paste_mode
   endif
 
   return l:text
