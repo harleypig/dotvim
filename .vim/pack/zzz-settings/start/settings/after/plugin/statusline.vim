@@ -68,15 +68,12 @@ function! LinterStatus() abort
   let l:all_non_errors = l:counts.total - l:all_errors
 
   let l:output = ''
-  
+
   if l:all_errors > 0
     let l:output .= '%#DiagnosticError#E' . l:all_errors . '%*'
   endif
-  
+
   if l:all_non_errors > 0
-    if !empty(l:output)
-      let l:output .= ' '
-    endif
     let l:output .= '%#DiagnosticWarning#W' . l:all_non_errors . '%*'
   endif
 
@@ -126,9 +123,7 @@ set statusline+=%(%{YASL_FileEncoding()}%)
 set statusline+=%(%{YASL_MixedIndentWarning()}%)
 set statusline+=%(%{YASL_TrailingSpaceWarning()}%)
 set statusline+=%(%{YASL_PasteMode()}%)
-set statusline+=%(%{LinterStatus()}%)
-"set statusline+=%(%{StatusDiagnostic()}%)
-" end warningmsg
+set statusline+=%{%LinterStatus()%}
 set statusline+=%*
 
 " column and line # of total lines ; what percentage of the file are we at?
