@@ -22,22 +22,35 @@ au InsertEnter * hi StatusLine ctermbg=Yellow ctermfg=Blue
 au InsertLeave * hi StatusLine ctermbg=White ctermfg=Black
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if !exists("g:YASL_NoneFiletype")
-  let g:YASL_NoneFiletype = 'none'
+" Define the YASL configuration dictionary
+if !exists("g:yasl")
+  let g:yasl = {
+    \ 'buffer': {
+    \   'none_filetype': 'none',
+    \   'modified': '+',
+    \   'not_modified': '-',
+    \   'not_modifiable': 'X'
+    \ }
+  \ }
 endif
 
-" Modify notification
-if !exists("g:YASL_Modified")
-  let g:YASL_Modified = '+'
-endif
+" For backward compatibility with existing configurations
+function! s:MigrateOldSettings()
+  if exists("g:YASL_NoneFiletype")
+    let g:yasl.buffer.none_filetype = g:YASL_NoneFiletype
+  endif
+  if exists("g:YASL_Modified")
+    let g:yasl.buffer.modified = g:YASL_Modified
+  endif
+  if exists("g:YASL_NotModifiable")
+    let g:yasl.buffer.not_modifiable = g:YASL_NotModifiable
+  endif
+  if exists("g:YASL_NotModified")
+    let g:yasl.buffer.not_modified = g:YASL_NotModified
+  endif
+endfunction
 
-if !exists("g:YASL_NotModifiable")
-  let g:YASL_NotModifiable = 'X'
-endif
-
-if !exists("g:YASL_NotModified")
-  let g:YASL_NotModified = '-'
-endif
+call s:MigrateOldSettings()
 
 if !exists("g:YASL_MixedIndentText")
   let g:YASL_MixedIndentText = '[mixed indenting]'
@@ -127,11 +140,8 @@ endfunction
 "Make sure the status line is empty before we start.
 set statusline=
 
-" Buffer number
-set statusline+=[%02n
-set statusline+=%(\ %{YASL_Filetype()}%)
-set statusline+=%(\ %{YASL_IsModified()}%)
-set statusline+=]
+" Buffer information block
+set statusline+=%{YASL_BufferInfo()}
 
 set statusline+=%#warningmsg#
 set statusline+=%(%{YASL_FileFormat()}%)
