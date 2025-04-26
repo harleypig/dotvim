@@ -92,8 +92,7 @@ endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale info for statusline
-# Rename LinterStatus to YASL_LinterStatus, AI!
-function! LinterStatus() abort
+function! YASL_LinterStatus() abort
   let l:counts = ale#statusline#Count(bufnr(''))
 
   let l:all_errors = l:counts.error + l:counts.style_error
@@ -138,7 +137,7 @@ set statusline+=%{YASL_BufferInfo()}
 
 set statusline+=%#warningmsg#
 set statusline+=%(%{YASL_Warnings()}%)
-set statusline+=%{%LinterStatus()%}
+set statusline+=%{%YASL_LinterStatus()%}
 set statusline+=%*
 
 " column and line # of total lines ; what percentage of the file are we at?
