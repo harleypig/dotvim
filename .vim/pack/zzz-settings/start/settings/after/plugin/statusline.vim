@@ -91,174 +91,7 @@ function! YASL_BufferInfo()
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ale info for statusline
-function! YASL_LinterStatus() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_warnings = l:counts.warning + l:counts.style_warning
-  let l:all_info = get(l:counts, 'info', 0)
-  let l:all_hints = get(l:counts, 'hint', 0)
-
-  " Return null if there's nothing to display
-  if l:counts.total == 0
-    return ''
-  endif
-
-  let l:output = ''
-
-  " Show diagnostics in descending order of severity without spaces
-  if l:all_errors > 0
-    let l:output .= '%#DiagnosticError#E' . l:all_errors . '%*'
-  endif
-
-  if l:all_warnings > 0
-    let l:output .= '%#DiagnosticWarning#W' . l:all_warnings . '%*'
-  endif
-
-  if l:all_info > 0
-    let l:output .= '%#DiagnosticInfo#I' . l:all_info . '%*'
-  endif
-
-  if l:all_hints > 0
-    let l:output .= '%#DiagnosticHint#H' . l:all_hints . '%*'
-  endif
-
-  " Wrap in square brackets and add :\qf at the end
-  return '[' . l:output . '%#warningmsg#:\qf]'
-endfunction
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Make sure the status line is empty before we start.
-set statusline=
-
-" Buffer information block
-set statusline+=%{YASL_BufferInfo()}
-
-set statusline+=%#warningmsg#
-set statusline+=%(%{YASL_Warnings()}%)
-set statusline+=%{%YASL_LinterStatus()%}
-set statusline+=%*
-
-" column and line # of total lines ; what percentage of the file are we at?
-" and what size is the file?
-set statusline+=[%c%V:%02l/%02L\ %p%%\ %{YASL_FileSize()}]
-
-" The ascii value under the cursor, human and hexadecimal formats.
-set statusline+=[%03b:%02B]
-
-" What does vim think is under the cursor?
-set statusline+=%([%{synIDattr(synID(line('.'),col('.'),1),'name')}]%)
-
-" XXX: This doesn't update reliably
-"set statusline+=%([%{get(b:,'coc_current_function','')}]%)
-
-" End of left justified, begin right justified.
-set statusline+=%=
-
-" Version Control Information
-" XXX: Add check for Fugitive being installed
-"set statusline+=%{FugitiveStatusline()}
-
-"Date time stamp for the current file.
-"set statusline+=%{strftime('%D\ %T',getftime(expand('%:p')))}
-
-" What are the permissions for the current file.
-set statusline+=%(\ %{getfperm(expand('%'))}%)
-
-" handled by StatusDiagnostic function above
-" coc info
-"if exists("g:did_coc_loaded")
-"  set statusline+=%(\ %{coc#status()}%)
-"endif
-
-" What file are we editing?
-set statusline+=\ %-.20F
-
-" found @ http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html
-function! YASL_FileSize()
-  let bytes = getfsize(expand("%:p"))
-
-  if bytes <= 0
-    return ''
-  elseif bytes < 1024
-    return bytes
-  elseif bytes < 1024 * 1024
-    return ( bytes / 1024 ) . 'k'
-  else
-    return 'TooDamnBig!'
-  endif
-endfunction
-
-" recalculate the warnings when idle or after saving
-autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
-autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
-
-" Expand tab and mixed indenting warnings
-
-function! YASL_MixedIndentWarning()
-  if (&filetype == 'help')
-    return ''
-  endif
-
-  if !exists("b:statusline_tab_warning")
-    let tabs = search('^\t', 'nw') != 0
-    let spaces = search('^ ', 'nw') != 0
-
-    if tabs && spaces
-      let b:statusline_tab_warning = g:yasl.warnings.mixed_indent
-    elseif (spaces && !&et) || (tabs && &et)
-      let b:statusline_tab_warning = g:yasl.warnings.expand_tab
-    else
-      let b:statusline_tab_warning = ''
-    endif
-  endif
-
-  return b:statusline_tab_warning
-endfunction
-
-function! YASL_TrailingSpaceWarning()
-  " Need to move this to an array and allow for multiple filetypes to be skipped.
-  if (&filetype == 'help')
-    return ''
-  endif
-
-  if !exists("b:statusline_trailing_space_warning")
-    if search('\s\+$', 'nw') != 0
-      let b:statusline_trailing_space_warning = g:yasl.warnings.trailing_space
-    else
-      let b:statusline_trailing_space_warning = ''
-    endif
-  endif
-
-  return b:statusline_trailing_space_warning
-endfunction
-
-" Show X if this file is not modifiable.
-" Show - if this file is modifiable and has not been modified.
-" Show + if this file is modifiable and has been modified.
-
-function! YASL_IsModified()
-  if !&modifiable
-    let l:text = '%#DiagnosticError#' . g:yasl.buffer.not_modifiable . '%*'
-  elseif &readonly
-    if &modified
-      let l:text = '%#DiffChange#' . g:yasl.buffer.modified . '%#warningmsg#' . g:yasl.buffer.readonly . '%*'
-    else
-      let l:text = '%#warningmsg#' . g:yasl.buffer.readonly . '%*'
-    endif
-  else
-    if &modified
-      let l:text = '%#DiffChange#' . g:yasl.buffer.modified . '%*'
-    else
-      let l:text = g:yasl.buffer.not_modified
-    endif
-  endif
-
-  return l:text
-endfunction
-
-" We only want to see if the file format is not unix.
+" Function to generate warnings section
 function! YASL_Warnings()
   let l:warnings = []
 
@@ -312,44 +145,107 @@ function! YASL_Warnings()
   return join(l:warnings, ' ')
 endfunction
 
-" Keep these for backward compatibility
-function! YASL_FileFormat()
-  if &fileformat == 'unix'
-    let l:text = ''
-  else
-    let l:text = printf(g:yasl.format.non_unix_format, &fileformat)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ale info for statusline
+function! YASL_LinterStatus() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_warnings = l:counts.warning + l:counts.style_warning
+  let l:all_info = get(l:counts, 'info', 0)
+  let l:all_hints = get(l:counts, 'hint', 0)
+
+  " Return null if there's nothing to display
+  if l:counts.total == 0
+    return ''
   endif
 
-  return l:text
-endfunction
+  let l:output = ''
 
-" We only want to see if the file encoding is not utf-8.
-function! YASL_FileEncoding()
-  if &fileencoding == 'utf-8' || &fileencoding == ''
-    let l:text = ''
-  else
-    let l:text = printf(g:yasl.format.non_utf8_encoding, &fileencoding)
+  " Show diagnostics in descending order of severity without spaces
+  if l:all_errors > 0
+    let l:output .= '%#DiagnosticError#E' . l:all_errors . '%*'
   endif
 
-  return l:text
-endfunction
-
-function! YASL_PasteMode()
-  if &paste
-    let l:text = g:yasl.warnings.paste_mode
-  else
-    let l:text = g:yasl.warnings.no_paste_mode
+  if l:all_warnings > 0
+    let l:output .= '%#DiagnosticWarning#W' . l:all_warnings . '%*'
   endif
 
-  return l:text
-endfunction
-
-function! YASL_Filetype()
-  if strlen( &filetype )
-    let l:text = &filetype
-  else
-    let l:text = g:yasl.buffer.none_filetype
+  if l:all_info > 0
+    let l:output .= '%#DiagnosticInfo#I' . l:all_info . '%*'
   endif
 
-  return l:text
+  if l:all_hints > 0
+    let l:output .= '%#DiagnosticHint#H' . l:all_hints . '%*'
+  endif
+
+  " Wrap in square brackets and add :\qf at the end
+  return '[' . l:output . '%#warningmsg#:\qf]'
 endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" found @ http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html
+function! YASL_FileSize()
+  let bytes = getfsize(expand("%:p"))
+
+  if bytes <= 0
+    return ''
+  elseif bytes < 1024
+    return bytes
+  elseif bytes < 1024 * 1024
+    return ( bytes / 1024 ) . 'k'
+  else
+    return 'TooDamnBig!'
+  endif
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Make sure the status line is empty before we start.
+set statusline=
+
+" Buffer information block
+set statusline+=%{YASL_BufferInfo()}
+
+set statusline+=%#warningmsg#
+set statusline+=%(%{YASL_Warnings()}%)
+set statusline+=%{%YASL_LinterStatus()%}
+set statusline+=%*
+
+" column and line # of total lines ; what percentage of the file are we at?
+" and what size is the file?
+set statusline+=[%c%V:%02l/%02L\ %p%%\ %{YASL_FileSize()}]
+
+" The ascii value under the cursor, human and hexadecimal formats.
+set statusline+=[%03b:%02B]
+
+" What does vim think is under the cursor?
+set statusline+=%([%{synIDattr(synID(line('.'),col('.'),1),'name')}]%)
+
+" XXX: This doesn't update reliably
+"set statusline+=%([%{get(b:,'coc_current_function','')}]%)
+
+" End of left justified, begin right justified.
+set statusline+=%=
+
+" Version Control Information
+" XXX: Add check for Fugitive being installed
+"set statusline+=%{FugitiveStatusline()}
+
+"Date time stamp for the current file.
+"set statusline+=%{strftime('%D\ %T',getftime(expand('%:p')))}
+
+" What are the permissions for the current file.
+set statusline+=%(\ %{getfperm(expand('%'))}%)
+
+" handled by StatusDiagnostic function above
+" coc info
+"if exists("g:did_coc_loaded")
+"  set statusline+=%(\ %{coc#status()}%)
+"endif
+
+" What file are we editing?
+set statusline+=\ %-.20F
+
+" recalculate the warnings when idle or after saving
+autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
+autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
