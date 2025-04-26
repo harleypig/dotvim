@@ -15,7 +15,7 @@ set laststatus=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "hi StatusLine ctermbg=White ctermfg=Black
-hi StatusLine ctermbg=black ctermfg=white
+hi StatusLine ctermbg=Black ctermfg=White
 "hi User1 ctermbg=White ctermfg=Red
 "hi WarningMsg ctermbg=White ctermfg=Red
 au CmdwinEnter * hi StatusLine ctermbg=Gray ctermfg=Red
@@ -246,8 +246,5 @@ set statusline+=%(\ %{getfperm(expand('%'))}%)
 " What file are we editing?
 set statusline+=\ %-.20F
 
-" recalculate the warnings when idle or after saving
-autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
-autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
 " Force refresh of warnings in the statusline
 autocmd cursorhold,bufwritepost * let &ro=&ro
