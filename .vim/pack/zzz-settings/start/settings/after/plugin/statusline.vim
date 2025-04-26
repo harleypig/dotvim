@@ -67,7 +67,20 @@ function! LinterStatus() abort
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_non_errors = l:counts.total - l:all_errors
 
-  return l:counts.total == 0 ? '' : printf('[W%d E%d]', all_non_errors, all_errors)
+  let l:output = ''
+  
+  if l:all_errors > 0
+    let l:output .= '%#DiagnosticError#E' . l:all_errors . '%*'
+  endif
+  
+  if l:all_non_errors > 0
+    if !empty(l:output)
+      let l:output .= ' '
+    endif
+    let l:output .= '%#DiagnosticWarning#W' . l:all_non_errors . '%*'
+  endif
+
+  return l:output
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
