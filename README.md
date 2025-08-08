@@ -8,7 +8,7 @@ This repository contains a comprehensive Vim configuration with language support
 Node.js is required for CoC (Conquer of Completion) and its extensions to function properly.
 
 * **Minimum version**: Node.js 14.14 or higher
-* **Installation**: 
+* **Installation**:
   - **Arch Linux**: `pacman -S nodejs npm`
   - **Ubuntu**: `apt install nodejs npm`
   - **Alternative**: Use [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm) for version management
