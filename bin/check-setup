@@ -40,6 +40,32 @@ install_msg() {
 }
 
 #-----------------------------------------------------------------------------
+check_node() {
+  if ! executable 'node'; then
+    [[ $NAME == "Arch Linux" ]] && pkgname='nodejs'
+    [[ $NAME == "Ubuntu" ]] && pkgname='nodejs'
+    install_msg 'node' "$pkgname"
+    return
+  fi
+
+  # Check Node.js version (CoC requires 14.14+)
+  node_version=$(node --version | sed 's/v//')
+  required_version="14.14.0"
+  
+  if ! printf '%s\n%s\n' "$required_version" "$node_version" | sort -V | head -n1 | grep -q "^$required_version$"; then
+    warn "Node.js version $node_version found, but CoC requires $required_version or higher"
+  fi
+
+  if ! executable 'npm'; then
+    [[ $NAME == "Arch Linux" ]] && pkgname='npm'
+    [[ $NAME == "Ubuntu" ]] && pkgname='npm'
+    install_msg 'npm' "$pkgname"
+  fi
+}
+
+checks[node]='check_node'
+
+#-----------------------------------------------------------------------------
 declare -A checks
 
 ##############################################################################

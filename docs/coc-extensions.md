@@ -4,7 +4,7 @@ This document outlines the CoC extensions installed in this Vim environment that
 
 ### External Packages Used
 
-No additional external packages are required for these extensions beyond what's already installed for CoC.
+* [Node.js](https://nodejs.org/) - Required for CoC and all CoC extensions. Minimum version 14.14 or higher.
 
 ### Plugins and Extensions Used
 
