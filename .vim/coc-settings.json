@@ -23,7 +23,12 @@
   //"coc.preferences.useQuickfixForLocations": false,
   "coc.preferences.useQuickfixForLocations": true,
   "signature.enable": false,
-  "workspace.rootPatterns": [".git", ".hg", ".projections.json", "pyproject.toml", "setup.py"],
+  "workspace.rootPatterns": [
+    ".git", ".hg", ".projections.json",
+    "pyproject.toml", "setup.py",
+    "build.gradle", "build.gradle.kts", "settings.gradle", "settings.gradle.kts",
+    "pom.xml"
+  ],
 
   //=========================================================================
   // PYTHON SETTINGS
@@ -200,6 +205,13 @@
   //"git.conflict.incoming.hlGroup": "DiffAdd",
 
   //=========================================================================
+  // JAVA SETTINGS
+  //=========================================================================
+  // coc-java manages the Eclipse JDT language server (jdtls) automatically.
+  // https://github.com/neoclide/coc-java
+  // https://github.com/eclipse-jdtls/eclipse.jdt.ls
+
+  //=========================================================================
   // LANGUAGE SERVERS
   //=========================================================================
   "languageserver": {
@@ -212,32 +224,6 @@
         "provideFormatter": true
       },
       "settings": {}
-    },
-
-    // Vim Language Server
-    "vimls": {
-      "command": "vim-language-server",
-      "args": ["--stdio"],
-      "filetypes": ["vim"]
-      // Uncomment for additional configuration
-      //"initializationOptions": {
-      //  "iskeyword": "@,48-57,_,192-255,-#",
-      //  "vimruntime": "",
-      //  "runtimepath": "",
-      //  "diagnostic": {
-      //    "enable": true
-      //  },
-      //  "indexes": {
-      //    "runtimepath": true,
-      //    "gap": 100,
-      //    "count": 3,
-      //    "projectRootPatterns": ["runtime", "nvim", ".git", "autoload", "plugin"]
-      //  },
-      //  "suggest": {
-      //    "fromVimruntime": true,
-      //    "fromRuntimepath": false
-      //  }
-      //}
     },
 
     // Docker Language Server
