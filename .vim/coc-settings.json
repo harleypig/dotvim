@@ -211,6 +211,10 @@
   // https://github.com/neoclide/coc-java
   // https://github.com/eclipse-jdtls/eclipse.jdt.ls
 
+  // Disable null analysis — SpotBugs handles null bugs at build time;
+  // enabling this without a consistent annotation framework just adds noise.
+  "java.compile.nullAnalysis.mode": "disabled",
+
   //=========================================================================
   // LANGUAGE SERVERS
   //=========================================================================
