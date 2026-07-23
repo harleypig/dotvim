@@ -141,6 +141,13 @@ function! YASL_Warnings()
     call add(l:warnings, g:yasl.warnings.paste_mode)
   endif
 
+  " ICEBOX: add a COPY-mode statusline notifier segment here, mirroring the
+  " paste-mode [PASTE] indicator above — light up when the planned COPY-mode
+  " toggle (the copytoggle.vim "steal", see docs/todo.md "Toggles") is active.
+  " Deferred to icebox 2026-07-23 at the user's request (revisit on request);
+  " hoisted from docs/todo.md "Toggles > COPY mode toggle: add a statusline
+  " notifier".
+
   " Join all warnings with a space
   return join(l:warnings, ' ')
 endfunction
