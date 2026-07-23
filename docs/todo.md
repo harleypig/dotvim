@@ -25,8 +25,6 @@ This seems like it has issues.
 Steal
 [this](https://github.com/timakro/vim-copytoggle/blob/master/plugin/copytoggle.vim).
 
-Add a statusline notifier.
-
 ## Universal keybinds
 
 ### error/warning (and other) navigation
