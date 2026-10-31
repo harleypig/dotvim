@@ -18,7 +18,7 @@ defaults and other considerations.
 
 Use asterisks (*) for bullet points in lists.
 
-Start new documents with a level 2 heading (##) in Markdown.
+Start new documents with a level 1 heading (#) in Markdown.
 
 Document only non-default settings; omit default behaviors.
 
@@ -47,7 +47,7 @@ not just after the previous section header. This ensures a logical and
 contiguous flow of information.
 
 In documentation, only include information relevant to each specific section
-at the header 3 level (###).
+at the header 2 level (##).
 
 Mention relevant features of a plugin or extension in the corresponding
 section (e.g., linting in "Linting and Static Analysis"). For example,

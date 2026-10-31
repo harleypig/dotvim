@@ -1,4 +1,4 @@
-## [NAME]
+# [NAME]
 
 This document outlines the support for [NAME] development within the Vim
 environment.
@@ -13,7 +13,7 @@ sections that have something to document; list the rest under "Default or
 Inapplicable Sections".
 -->
 
-### External Packages Used
+## External Packages Used
 
 Install via `pipx`:
 
@@ -32,18 +32,18 @@ Install via package manager:
 
 Install manually:
 
-#### package-name
+### package-name
 
 Instructions on how to install manually (wget, curl, install, etc.)
 
-### Plugins and Extensions Used
+## Plugins and Extensions Used
 
 * [plugin-name](link) (Vim Plugin) - Brief description including supported
     features (e.g., linting, completion, syntax).
 * [extension-name](link) (CoC Extension) - Brief description including
     supported features. Install with `:CocInstall extension-name`.
 
-### Configuration Files Used
+## Configuration Files Used
 
 For CoC-based configuration:
 
@@ -60,7 +60,7 @@ Additional configuration files:
 * [filename](https://github.com/harleypig/dotvim/blob/master/path/to/file) -
     Purpose and scope of the configuration
 
-### Syntax Highlighting
+## Syntax Highlighting
 
 One section per feature that needs specific configuration, named and
 ordered as in the *Remaining Possible Sections* list in `CONVENTIONS.md`
@@ -70,7 +70,7 @@ ordered as in the *Remaining Possible Sections* list in `CONVENTIONS.md`
 * Configuration details
 * Relevant key combinations and usage (if not obvious)
 
-### Default or Inapplicable Sections
+## Default or Inapplicable Sections
 
 List features that:
 

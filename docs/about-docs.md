@@ -53,8 +53,8 @@ phase ([#12]).
 * Wrap prose at 78 columns.
 * Reference-style links, so the prose reads cleanly in a terminal.
 * **Every doc starts with a level-1 (`#`) heading**, which the published
-  site uses as the page title. `CONVENTIONS.md` still says level 2 and will
-  be updated to match ([#8]).
+  site uses as the page title. `CONVENTIONS.md` says the same, and every
+  page in `docs/` follows it ([#8]).
 * `CONVENTIONS.md` is the authority for document structure: asterisks for
   bullets, document only non-default settings.
 * **Every language or tool page follows one template**,
@@ -79,7 +79,7 @@ phase ([#12]).
   ([#13]).
 * **Headings and generators.** Starting each page at level 1 suits the
   default build. If a site generator (MkDocs or another) is chosen later,
-  re-check how it treats a page's first heading before converting.
+  re-check how it treats a page's first heading; [#8] stays open for that.
 * **Room for a hub.** These pages may later be grouped with other public
   utility repositories under the owner's user site. Nothing here should
   assume it is the top of a site; keep links relative within `docs/`.
@@ -96,7 +96,7 @@ area-by-area pass.
 | File | Kind | Disposition |
 | ---- | ---- | ----------- |
 | `README.md` | Overview | Fine in shape. The Node.js minimum is written here and in two `docs/` pages; keep one home ([#14]). Long lines. |
-| `CONVENTIONS.md` | Conventions | Keep; the authority. Change the starting heading to level 1 ([#8]). Its reference to `GLOBAL.md` now points at `.claude/CLAUDE.md` ([#11]). |
+| `CONVENTIONS.md` | Conventions | Keep; the authority. Starting heading changed to level 1 ([#8]). Its reference to `GLOBAL.md` now points at `.claude/CLAUDE.md` ([#11]). |
 | `TODO.md` | Backlog | Open items move to GitHub issues, then the file goes ([#7]). Its "create `docs/vim.md`" item looks already covered by `docs/vim-files.md`. |
 | `docs/todo.md` | Backlog | Open items move to GitHub issues, then the file goes ([#7]). Mixes tasks with research notes; sort them as part of that move. |
 | `docs/GLOBAL.md` | AI-assistant instructions | Moved to `.claude/CLAUDE.md`, out of the published docs ([#11]); its human-facing part went to `coc-ale-setup.md`. Its broken links were fixed first ([#13]). |
@@ -134,7 +134,8 @@ The questions an earlier version of this draft raised are answered on
 [#6], and each answer that needs work has its own issue:
 
 * Backlog: GitHub issues; both TODO files are emptied into them ([#7]).
-* Headings: docs start at level 1 ([#8]).
+* Headings: docs start at level 1, rechecked once a site generator is
+  chosen ([#8]).
 * Template versus `CONVENTIONS.md`: `CONVENTIONS.md` wins; the template and
   the pages are rewritten to match ([#9]).
 * Scripts in `bin/`: a `--help` in each, plus one summary page ([#10]).

@@ -1,12 +1,12 @@
-## CoC Extensions
+# CoC Extensions
 
 This document outlines the CoC extensions installed in this Vim environment that aren't documented in language-specific files.
 
-### External Packages Used
+## External Packages Used
 
 * [Node.js](https://nodejs.org/) - Required for CoC and all CoC extensions. Minimum version 14.14 or higher.
 
-### Plugins and Extensions Used
+## Plugins and Extensions Used
 
 No additional Vim plugins are required specifically for these extensions.
 
@@ -14,11 +14,11 @@ No additional Vim plugins are required specifically for these extensions.
 * [`coc-git`](https://github.com/neoclide/coc-git) (CoC Extension) - Provides Git integration within CoC.
 * [`coc-toml`](https://github.com/kkiyama117/coc-toml) (CoC Extension) - Provides language server support for TOML files.
 
-### Configuration Files Used
+## Configuration Files Used
 
 * `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration for these extensions.
 
-### Diagnostic Integration (coc-diagnostic)
+## Diagnostic Integration (coc-diagnostic)
 
 * **Purpose**: Provides a bridge between external linters/formatters and CoC
 * **Features**: 
@@ -28,7 +28,7 @@ No additional Vim plugins are required specifically for these extensions.
 * **Configuration**: Configured in `coc-settings.json` under the `diagnostic-languageserver` section
 * **Current Usage**: Used for integrating proselint for text files and shellcheck for shell scripts
 
-### Version Control Integration (coc-git)
+## Version Control Integration (coc-git)
 
 * **Purpose**: Provides Git integration within CoC
 * **Features**:
@@ -40,7 +40,7 @@ No additional Vim plugins are required specifically for these extensions.
 * **Potential Usage**: Could be enabled to provide Git information directly in the editor
 * **Note**: Some functionality overlaps with vim-gitgutter and vim-fugitive
 
-### TOML Language Support (coc-toml)
+## TOML Language Support (coc-toml)
 
 * **Purpose**: Provides language server support for TOML files
 * **Features**:
@@ -54,7 +54,7 @@ No additional Vim plugins are required specifically for these extensions.
   - pyproject.toml for Python projects
   - Configuration files for various tools
 
-### Default or Inapplicable Sections
+## Default or Inapplicable Sections
 
 The following features use default settings without additional configuration:
 * Syntax Highlighting (handled by vim-polyglot for TOML files)

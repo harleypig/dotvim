@@ -1,4 +1,4 @@
-## ALE and CoC Setup
+# ALE and CoC Setup
 
 CoC and ALE divide the work. CoC provides the real-time, 'as you type',
 features that come from language servers, such as completion and
@@ -7,7 +7,7 @@ formatting on save, and leaves language-server features to CoC. Where a
 language page uses another plugin that overlaps either of them, the page
 should say which one does the work and what was turned off.
 
-### External Packages Used
+## External Packages Used
 
 To utilize CoC and ALE as configured in this repository, the following
 external packages must be installed:
@@ -17,14 +17,14 @@ external packages must be installed:
 * [`npm`](https://www.npmjs.com/) or [`yarn`](https://yarnpkg.com/) - Package
     managers for JavaScript, used to install CoC extensions.
 
-#### Node.js Installation Options
+### Node.js Installation Options
 
 For installing Node.js, you can either:
 
 * Use nvm (Node Version Manager) to install and manage multiple Node.js versions.
 * Use the nodesource repository to install a specific version of Node.js.
 
-##### Installing nvm
+#### Installing nvm
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | PROFILE='/dev/null' bash
@@ -44,7 +44,7 @@ nvm install --lts  # Install latest LTS version
 nvm use --lts      # Use the installed LTS version
 ```
 
-##### Installing npm and yarn
+#### Installing npm and yarn
 
 **npm:**
 npm comes bundled with Node.js. After installing Node.js using nvm, npm will be available.
@@ -63,7 +63,7 @@ npm install -g yarn
 yarn --version
 ```
 
-### Plugins and Extensions Used
+## Plugins and Extensions Used
 
 The following plugins are utilized by ALE and CoC within this repository:
 
@@ -72,7 +72,7 @@ The following plugins are utilized by ALE and CoC within this repository:
 * [`CoC`](https://github.com/neoclide/coc.nvim) - Conquer of Completion, an
     intellisense engine for Vim/Neovim with LSP support.
 
-### Configuration Files Used
+## Configuration Files Used
 
 Configuration for ALE and CoC is managed through the following files:
 
@@ -82,7 +82,7 @@ Configuration for ALE and CoC is managed through the following files:
     CoC-specific Vimscript settings.
 * `coc-settings` - Use `:CocConfig` to edit this file.
 
-#### Settings for CoC
+### Settings for CoC
 
 * Diagnostic settings are configured to integrate with ALE, enabling virtual
     text diagnostics and customizing their appearance and behavior.
@@ -93,7 +93,7 @@ Configuration for ALE and CoC is managed through the following files:
 * Visual enhancements include enabling colors and aligning columns in lists,
     as well as enabling status line progress notifications.
 
-#### Settings for CoC.vim
+### Settings for CoC.vim
 
 The `coc.vim` file configures key mappings and behaviors for using CoC
 (Conquer of Completion) effectively within Vim. Here's a breakdown of the
@@ -113,7 +113,7 @@ settings:
     type definitions, implementations, and references of the symbol under the
     cursor, respectively.
 
-#### Settings for ALE
+### Settings for ALE
 
 The ALE settings in the `ale.vim` file are grouped to optimize the plugin's
 behavior and integration with CoC.
