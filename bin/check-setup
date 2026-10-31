@@ -40,6 +40,9 @@ install_msg() {
 }
 
 #-----------------------------------------------------------------------------
+declare -A checks
+
+#-----------------------------------------------------------------------------
 check_node() {
   if ! executable 'node'; then
     [[ $NAME == "Arch Linux" ]] && pkgname='nodejs'
@@ -64,9 +67,6 @@ check_node() {
 }
 
 checks[node]='check_node'
-
-#-----------------------------------------------------------------------------
-declare -A checks
 
 ##############################################################################
 # Ansible
@@ -111,7 +111,7 @@ checks[docker]='check_docker'
 ##############################################################################
 # Run checks
 
-sorted=("$(printf '%s\n' "${!checks[@]}" | sort)")
+mapfile -t sorted < <(printf '%s\n' "${!checks[@]}" | sort)
 
 for check in "${sorted[@]}"; do
   "${checks[$check]}"
