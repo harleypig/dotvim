@@ -26,7 +26,7 @@ Install via `npm`:
 
 * **Tool**: `proselint` via `diagnostic-languageserver`
 * **Configuration**: Configured in `coc-settings.json` to run on text files
-* **Usage**: Errors and warnings appear in the location list and gutter
+* **Usage**: Errors and warnings appear in the quickfix list and gutter
 
 ## Default or Inapplicable Sections
 

@@ -31,7 +31,7 @@ Provided by Vim's built-in syntax highlighting for Vim script files.
 
 * **Tool**: `vint` via `ALE`
 * **Configuration**: Configured in `ale.vim`
-* **Usage**: Errors and warnings appear in the location list and gutter
+* **Usage**: Errors and warnings appear in the quickfix list and gutter
 
 ## Auto Completion
 

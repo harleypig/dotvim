@@ -35,7 +35,7 @@ Provided by `vim-polyglot`, which includes enhanced support for shell script syn
 
 * **Tool**: `shellcheck` via `ALE` and `diagnostic-languageserver`
 * **Configuration**: Configured in `coc-settings.json` and `ale.vim`
-* **Usage**: Errors and warnings appear in the location list and gutter
+* **Usage**: Errors and warnings appear in the quickfix list and gutter
 * **Features**: Detects common shell script issues, suggests best practices
 
 ## Auto Completion

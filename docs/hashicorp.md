@@ -51,7 +51,7 @@ Provided by `vim-polyglot`, which includes support for Terraform (HCL) syntax hi
 
 * **Tool**: `tflint` via `ALE`
 * **Configuration**: Configured in `ale.vim` to run automatically on file save
-* **Usage**: Errors and warnings appear in the location list and gutter
+* **Usage**: Errors and warnings appear in the quickfix list and gutter
 
 ## Auto Completion
 

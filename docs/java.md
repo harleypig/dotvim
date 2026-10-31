@@ -71,7 +71,7 @@ Provided by vim-polyglot with no additional configuration required.
 * **Tool**: jdtls via `coc-java`
 * **Configuration**: ALE Java linters are disabled in `java.vim` to prevent
     duplicate and conflicting diagnostics
-* **Usage**: Errors and warnings appear in the location list and gutter
+* **Usage**: Errors and warnings appear in the quickfix list and gutter
 
 ## Auto Completion
 

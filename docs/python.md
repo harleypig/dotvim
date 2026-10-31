@@ -62,7 +62,7 @@ Provided by vim-polyglot, which includes enhanced support for Python syntax high
 
 * **Tool**: `Pyright` via `coc-pyright` and `flake8` via `CoC`
 * **Configuration**: Configured in `coc-settings.json`
-* **Usage**: Errors and warnings appear in the location list and gutter
+* **Usage**: Errors and warnings appear in the quickfix list and gutter
 * **Features**: Type checking, style enforcement, syntax error detection
 
 ## Auto Completion

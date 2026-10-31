@@ -34,7 +34,7 @@ Provided by vim-polyglot, which includes support for JSON syntax highlighting.
 
 * **Tool**: `ESLint` via `coc-eslint`
 * **Configuration**: Configured in `.eslintrc.json`
-* **Usage**: Errors and warnings appear in the location list and gutter
+* **Usage**: Errors and warnings appear in the quickfix list and gutter
 
 ## Auto Completion
 

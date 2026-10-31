@@ -120,7 +120,10 @@ behavior and integration with CoC.
 
 LSP features are disabled to prevent conflicts with CoC's LSP capabilities.
 
-Linters are disabled to prevent conflicts with CoC's linting configuration.
+Only the linters listed for a file type run (`g:ale_linters_explicit`); the
+lists are in `ale.vim` and the per-filetype settings.
+
+Errors and warnings go to the quickfix list rather than the location list.
 
 Virtual text for inline error messages is disabled for a cleaner editing
 interface.
