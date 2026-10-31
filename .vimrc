@@ -25,6 +25,13 @@ filetype plugin indent on
 syntax on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CoC needs Node.js. Without it, setting coc.nvim's load guard keeps its
+" plugin from loading, so Vim starts quietly with CoC switched off.
+if !executable('node')
+  let g:did_coc_loaded = 1
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Install these extensions if they aren't already.
 " This list has to exist before coc is loaded.
 

@@ -1,3 +1,8 @@
+" Only when coc.nvim loaded; .vimrc switches it off when node is missing.
+if !exists(':CocStart')
+  finish
+endif
+
 " use <tab> for trigger completion and navigate to the next complete item
 function! CheckBackspace() abort
   let l:col = col('.') - 1

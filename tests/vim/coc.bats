@@ -74,6 +74,43 @@ EOF
 
   assert_equal "$vim_status" 0
   assert_line 'errmsg='
+  assert_line --partial 'tab_map=coc#pum#visible()'
   assert_line --regexp '^line=\[\s+\]$'
+  refute [ -e "$tripped" ]
+}
+
+#-----------------------------------------------------------------------------
+@test "without node, Vim starts with no errors and no CoC warning" {
+  start_vim
+
+  assert_equal "$vim_status" 0
+  assert_line 'errmsg='
+  refute_output --partial 'coc.nvim'
+}
+
+#-----------------------------------------------------------------------------
+@test "without node, CoC and its mappings are not loaded" {
+  start_vim
+
+  assert_line 'coc_plugin=0'
+  assert_line 'tab_map='
+}
+
+#-----------------------------------------------------------------------------
+@test "without node, ALE and the rest of the config still load" {
+  start_vim
+
+  assert_line 'ale_plugin=2'
+  assert_line 'ale_fix_map=<Plug>(ale_fix)'
+}
+
+#-----------------------------------------------------------------------------
+@test "with node, CoC and its mappings are loaded" {
+  with_node
+  start_vim --cmd 'let g:coc_start_at_startup = 0'
+
+  assert_equal "$vim_status" 0
+  assert_line 'coc_plugin=2'
+  assert_line --partial 'tab_map=coc#pum#visible()'
   refute [ -e "$tripped" ]
 }
