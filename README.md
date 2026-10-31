@@ -7,8 +7,9 @@ support, linting, and completion features.
 
 ### Node.js
 
-Node.js is required for CoC (Conquer of Completion) and its extensions to
-function properly.
+Node.js is needed for CoC (Conquer of Completion) and its extensions.
+Without `node` on `PATH`, Vim still starts: CoC is switched off, and ALE and
+the rest of the configuration work as usual.
 
 * **Minimum version**: Node.js 14.14 or higher
 * **Installation**:
@@ -33,3 +34,7 @@ one shows its usage with `--help`.
 Run `bats tests/shell` to test the scripts in `bin/` (needs
 [bats-core](https://github.com/bats-core/bats-core) with the bats-support and
 bats-assert libraries).
+
+Run `bats tests/vim` to test the Vim configuration in headless Vim. It needs
+the plugin submodules checked out (`git submodule update --init`) and the
+same bats libraries.
