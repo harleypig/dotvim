@@ -25,10 +25,10 @@
 | Docs front page | `docs/index.md` (proposed) | Front page of the published site; see *GitHub Pages*. |
 | Per-language / per-tool setup | `docs/<name>.md` | One file per language or tool, built from the template. |
 | Shared plugin setup (CoC, ALE, polyglot) | `docs/` | One home for facts every language page relies on. |
-| Script and tool usage | each script's own `--help`, plus one summary page in `docs/` ([#10]) | Usage text lives with the code; the page lists the scripts and what each is for. |
+| Script and tool usage | each script's own `--help`, plus `docs/scripts.md` ([#10]) | Usage text lives with the code; the page lists the scripts and what each is for. |
 | Design and rationale | a short "why" note in the relevant page | A separate decision-record directory only if a decision outgrows a paragraph. |
-| Backlog | GitHub issues ([#7]) | No TODO file. Both current TODO files are being emptied into issues. |
-| Research ("to try" lists) | `docs/extensions-to-try.md`, `docs/plugins-to-try.md` | Kept as research pages for now; see *Still open*. |
+| Backlog | GitHub issues ([#7]) | No TODO file. Both former TODO files were emptied into issues and removed. |
+| Research ("to try" lists) | `docs/extensions-to-try.md`, `docs/plugins-to-try.md`, `docs/tools-to-try.md` | Kept as research pages for now; see *Still open*. |
 | Documentation conventions | `CONVENTIONS.md` | How docs are written. |
 | Instructions for AI assistants | `.claude/CLAUDE.md` ([#11]) | Not part of the published docs. |
 | In-editor reference | `late-settings/doc/*.txt` | Vim `:help` files; tags are built at startup and not committed. |
@@ -97,14 +97,15 @@ area-by-area pass.
 | ---- | ---- | ----------- |
 | `README.md` | Overview | Fine in shape. The Node.js minimum is written here and in two `docs/` pages; keep one home ([#14]). Long lines. |
 | `CONVENTIONS.md` | Conventions | Keep; the authority. Starting heading changed to level 1 ([#8]). Its reference to `GLOBAL.md` now points at `.claude/CLAUDE.md` ([#11]). |
-| `TODO.md` | Backlog | Open items move to GitHub issues, then the file goes ([#7]). Its "create `docs/vim.md`" item looks already covered by `docs/vim-files.md`. |
-| `docs/todo.md` | Backlog | Open items move to GitHub issues, then the file goes ([#7]). Mixes tasks with research notes; sort them as part of that move. |
+| `TODO.md` | Backlog | Removed; its open items are GitHub issues ([#7]). |
+| `docs/todo.md` | Backlog | Removed; its tasks are GitHub issues and its writing-tool research notes moved to `docs/tools-to-try.md` ([#7]). |
 | `docs/GLOBAL.md` | AI-assistant instructions | Moved to `.claude/CLAUDE.md`, out of the published docs ([#11]); its human-facing part went to `coc-ale-setup.md`. Its broken links were fixed first ([#13]). |
 | `docs/LANGUAGE_SETUP_TEMPLATE.md` | Template | Keep as the template; rewritten to match `CONVENTIONS.md` ([#9]). Broken path fixed ([#13]). |
 | `docs/coc-ale-setup.md` | Shared plugin setup | Overlaps `README.md`. Now opens with how CoC and ALE divide the work, the human-facing part of `GLOBAL.md` ([#11]). |
 | `docs/coc-extensions.md` | Tool setup | Fine; overlaps the installed list in `extensions-to-try.md`. Headings aligned with the template ([#9]). |
 | `docs/extensions-to-try.md` | Research | Kept as a research page for now. Its "currently installed" list duplicates `coc-extensions.md`. |
 | `docs/plugins-to-try.md` | Research | Kept as a research page for now. |
+| `docs/tools-to-try.md` | Research | Added from the research notes in `docs/todo.md` ([#7]); kept as a research page like the other two. |
 | `docs/utility.md` | Tool setup | Mostly a TODO; needs writing. |
 | `docs/statusline.md` | Tool setup | Fine; check against the current statusline config. |
 | `docs/vim-files.md` | Language setup | Fine in shape; broken paths fixed ([#13]). |
@@ -119,6 +120,7 @@ area-by-area pass.
 | `docs/shell.md` | Language setup | Reworked to template ([#9]); broken paths fixed ([#13]). |
 | `docs/toml.md` | Language setup | Reworked to template ([#9]); long lines. |
 | `docs/yaml.md` | Language setup | Reworked to template ([#9]). |
+| `docs/scripts.md` | Script usage | Added: lists the `bin/` scripts and what each is for; usage stays in each `--help` ([#10]). |
 | `late-settings/doc/learning.txt` | `:help` | Keep; the model for in-editor docs. |
 
 "Broken paths" means links to `.vim/pack/settings/start/settings/...`,
@@ -133,7 +135,8 @@ at the real file on GitHub ([#13]).
 The questions an earlier version of this draft raised are answered on
 [#6], and each answer that needs work has its own issue:
 
-* Backlog: GitHub issues; both TODO files are emptied into them ([#7]).
+* Backlog: GitHub issues; both TODO files were emptied into them and
+  removed ([#7]).
 * Headings: docs start at level 1, rechecked once a site generator is
   chosen ([#8]).
 * Template versus `CONVENTIONS.md`: `CONVENTIONS.md` wins; the template and
@@ -152,8 +155,9 @@ places ([#14]), and bugs in `bin/check-setup` ([#15]).
 ### Still open
 
 1. **The "to try" pages** (`docs/extensions-to-try.md`,
-   `docs/plugins-to-try.md`): whether they stay as research pages, become
-   issues, or go. They stay as research pages until that is decided.
+   `docs/plugins-to-try.md`, `docs/tools-to-try.md`): whether they stay as
+   research pages, become issues, or go. They stay as research pages until
+   that is decided.
 2. **GitHub Pages defaults**: the index page and how pages without front
    matter are handled. Verified when Pages is turned on.
 
