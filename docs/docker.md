@@ -42,8 +42,5 @@ The following features use default settings without additional configuration:
 * Formatting and Beautification (not specifically configured for Dockerfiles)
 * Snippets (not configured specifically for Dockerfiles)
 * Schema or Contract Validation (not applicable for Dockerfiles)
-* Documentation Tools (not configured specifically for Dockerfiles)
-* Debugging Support (not configured specifically for Dockerfiles)
-* Testing Tools (not applicable for Dockerfiles)
 * Version Control Integration (uses global Git integration)
 * Filetype Detection (handled by `vim-polyglot`)

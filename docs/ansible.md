@@ -46,9 +46,6 @@ The following features use default settings without additional configuration:
 * Code Folding (uses Vim's default folding mechanisms)
 * Snippets (not configured specifically for Ansible)
 * Schema or Contract Validation (handled by `coc-ansible`)
-* Documentation Tools (not configured specifically for Ansible)
-* Debugging Support (not configured specifically for Ansible)
-* Testing Tools (not configured specifically for Ansible)
 * Version Control Integration (uses global Git integration)
 * Filetype Detection (handled by `vim-polyglot`)
 

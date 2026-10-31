@@ -62,7 +62,4 @@ The following features use default settings without additional configuration:
 * Code Folding (uses Vim's default folding mechanisms)
 * Snippets (not configured specifically for these extensions)
 * Schema or Contract Validation (not applicable for these extensions)
-* Documentation Tools (not configured specifically for these extensions)
-* Debugging Support (not configured specifically for these extensions)
-* Testing Tools (not applicable for these extensions)
 * Filetype Detection (handled by vim-polyglot for TOML files)

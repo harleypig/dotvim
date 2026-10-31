@@ -43,8 +43,5 @@ The following features use default settings without additional configuration:
 * Code Folding (uses Vim's default folding mechanisms)
 * Snippets (not configured specifically for HTML)
 * Schema or Contract Validation (not applicable for HTML)
-* Documentation Tools (not configured specifically for HTML)
-* Debugging Support (not configured specifically for HTML)
-* Testing Tools (not applicable for HTML)
 * Version Control Integration (uses global Git integration)
 * Filetype Detection (handled by vim-polyglot)

@@ -44,8 +44,5 @@ The following features use default settings without additional configuration:
 * Error Highlighting (handled by CoC)
 * Code Folding (uses Vim's default folding mechanisms)
 * Snippets (not configured specifically for TOML)
-* Documentation Tools (not configured specifically for TOML)
-* Debugging Support (not applicable for TOML)
-* Testing Tools (not applicable for TOML)
 * Version Control Integration (uses global Git integration)
 * Filetype Detection (handled by vim-polyglot and vim-toml)

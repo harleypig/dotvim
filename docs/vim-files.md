@@ -51,9 +51,6 @@ The following features use default settings without additional configuration:
 * Code Folding (uses Vim's default folding mechanisms)
 * Snippets (not configured specifically for Vim script)
 * Schema or Contract Validation (not applicable for Vim script)
-* Documentation Tools (not configured specifically for Vim script)
-* Debugging Support (not configured specifically for Vim script)
-* Testing Tools (not configured specifically for Vim script)
 * Version Control Integration (uses global Git integration)
 * Formatting and Beautification (not configured specifically for Vim script)
 
