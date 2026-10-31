@@ -50,7 +50,8 @@ phase ([#12]).
 ## Format conventions
 
 * GitHub-flavored Markdown.
-* Wrap prose at 78 columns.
+* Wrap prose at 78 columns. The markdownlint configuration at the
+  repository root, `.markdownlint.yaml`, checks it ([#40]).
 * Reference-style links, so the prose reads cleanly in a terminal.
 * **Every doc starts with a level-1 (`#`) heading**, which the published
   site uses as the page title. `CONVENTIONS.md` says the same, and every
@@ -90,12 +91,13 @@ to be verified when Pages is turned on; see *Still open*.
 ## Disposition of existing docs
 
 Recorded when this draft was written; a row notes where an issue has since
-been done. Lines over 78 columns and smaller overlaps are left to the
-area-by-area pass.
+been done. Smaller overlaps are left to the area-by-area pass. Lines over 78
+columns were re-wrapped across `README.md` and `docs/` ([#40]); the few left
+hold a link too long to break.
 
 | File | Kind | Disposition |
 | ---- | ---- | ----------- |
-| `README.md` | Overview | Fine in shape. The Node.js minimum is written here and in two `docs/` pages; keep one home ([#14]). Long lines. |
+| `README.md` | Overview | Fine in shape. The Node.js minimum is written here and in two `docs/` pages; keep one home ([#14]). |
 | `CONVENTIONS.md` | Conventions | Keep; the authority. Starting heading changed to level 1 ([#8]). Its reference to `GLOBAL.md` now points at `.claude/CLAUDE.md` ([#11]). |
 | `TODO.md` | Backlog | Removed; its open items are GitHub issues ([#7]). |
 | `docs/todo.md` | Backlog | Removed; its tasks are GitHub issues and its writing-tool research notes moved to `docs/tools-to-try.md` ([#7]). |
@@ -109,16 +111,16 @@ area-by-area pass.
 | `docs/utility.md` | Tool setup | Mostly a TODO; needs writing. |
 | `docs/statusline.md` | Tool setup | Fine; check against the current statusline config. |
 | `docs/vim-files.md` | Language setup | Fine in shape; broken paths fixed ([#13]). |
-| `docs/ansible.md` | Language setup | Reworked to template ([#9]); long lines. |
-| `docs/docker.md` | Language setup | Reworked to template ([#9]); long lines. |
-| `docs/hashicorp.md` | Language setup | Reworked to template ([#9]); long lines. |
-| `docs/html.md` | Language setup | Reworked to template ([#9]); long lines. |
+| `docs/ansible.md` | Language setup | Reworked to template ([#9]). |
+| `docs/docker.md` | Language setup | Reworked to template ([#9]). |
+| `docs/hashicorp.md` | Language setup | Reworked to template ([#9]). |
+| `docs/html.md` | Language setup | Reworked to template ([#9]). |
 | `docs/java.md` | Language setup | Closest to the bar; good model. Headings aligned with the template ([#9]). |
-| `docs/json.md` | Language setup | Reworked to template ([#9]); long lines. |
-| `docs/proselint.md` | Tool setup | Reworked to template ([#9]); long lines. |
+| `docs/json.md` | Language setup | Reworked to template ([#9]). |
+| `docs/proselint.md` | Tool setup | Reworked to template ([#9]). |
 | `docs/python.md` | Language setup | Reworked to template ([#9]); broken paths fixed ([#13]). |
 | `docs/shell.md` | Language setup | Reworked to template ([#9]); broken paths fixed ([#13]). |
-| `docs/toml.md` | Language setup | Reworked to template ([#9]); long lines. |
+| `docs/toml.md` | Language setup | Reworked to template ([#9]). |
 | `docs/yaml.md` | Language setup | Reworked to template ([#9]). |
 | `docs/scripts.md` | Script usage | Added: lists the `bin/` scripts and what each is for; usage stays in each `--help` ([#10]). |
 | `late-settings/doc/learning.txt` | `:help` | Keep; the model for in-editor docs. |
@@ -171,3 +173,4 @@ three places ([#14]), and bugs in `bin/check-setup` ([#15]).
 [#13]: https://github.com/harleypig/dotvim/issues/13
 [#14]: https://github.com/harleypig/dotvim/issues/14
 [#15]: https://github.com/harleypig/dotvim/issues/15
+[#40]: https://github.com/harleypig/dotvim/issues/40
