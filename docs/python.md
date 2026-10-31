@@ -51,8 +51,8 @@ Several Python language servers are available, each with different strengths:
 ### Configuration Files Used
 
 * `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration for the Python language server and flake8 integration.
-* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim) - Global ALE configuration.
-* [`python.vim`](../.vim/pack/settings/start/settings/after/ftplugin/python.vim) - Python-specific settings for editing Python files.
+* [`ale.vim`][ale.vim] - Global ALE configuration.
+* [`python.vim`][python.vim] - Python-specific settings for editing Python files.
 
 ### Configured Features
 
@@ -91,3 +91,6 @@ The following features use default settings without additional configuration:
 * Schema Validation (not applicable for Python)
 * Version Control Integration (uses global Git integration)
 * Filetype Detection (handled by vim-polyglot)
+
+[ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/ale.vim
+[python.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/ftplugin/python.vim

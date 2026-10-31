@@ -58,7 +58,7 @@ Useful commands when jdtls misbehaves:
 * `coc-settings` — Use `:CocConfig` to edit this file. The
     `workspace.rootPatterns` list must include Gradle and Maven root files so
     jdtls can locate the project root.
-* [`java.vim`](../.vim/pack/zzz-settings/start/settings/after/ftplugin/java.vim)
+* [`java.vim`][java.vim]
     — Java-specific indentation, ALE linter suppression, and optional
     google-java-format fixer.
 
@@ -105,3 +105,5 @@ The following features use default settings without additional configuration:
 * Schema Validation (not applicable)
 * Version Control Integration (uses global Git integration)
 * Filetype Detection (handled by vim-polyglot)
+
+[java.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/ftplugin/java.vim

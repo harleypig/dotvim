@@ -41,7 +41,7 @@ sudo install -m 755 tflint /usr/local/bin/
 ### Configuration Files Used
 
 * `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration for the terraform-ls language server.
-* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim) - Global ALE configuration including Terraform linting and formatting settings.
+* [`ale.vim`][ale.vim] - Global ALE configuration including Terraform linting and formatting settings.
 
 ### Configured Features
 
@@ -72,3 +72,5 @@ The following features use default settings without additional configuration:
 * Version Control Integration (uses global Git integration)
 * Snippets (not configured specifically for Terraform)
 * Filetype Detection (handled by `vim-polyglot`)
+
+[ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/ale.vim

@@ -24,8 +24,8 @@ Install via npm:
 ### Configuration Files Used
 
 * `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration for the bash language server and shellcheck integration.
-* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim) - Global ALE configuration including shell script linting and formatting settings.
-* [`sh.vim`](../.vim/pack/settings/start/settings/after/ftplugin/sh.vim) - Shell-specific settings for editing shell script files.
+* [`ale.vim`][ale.vim] - Global ALE configuration including shell script linting and formatting settings.
+* [`sh.vim`][sh.vim] - Shell-specific settings for editing shell script files.
 
 ### Configured Features
 
@@ -57,3 +57,6 @@ The following features use default settings without additional configuration:
 * Snippets (not configured specifically for shell scripts)
 * Version Control Integration (uses global Git integration)
 * Filetype Detection (handled by Vim's built-in detection and vim-polyglot)
+
+[ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/ale.vim
+[sh.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/ftplugin/sh.vim

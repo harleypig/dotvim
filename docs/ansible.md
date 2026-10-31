@@ -23,7 +23,7 @@ Install via `npm`:
 
 ### Configuration Files Used
 
-* [yaml.vim](../.vim/pack/settings/start/settings/after/ftplugin/yaml.vim) - Configures Vim to recognize YAML files, which are commonly used by Ansible.
+* [yaml.vim][yaml.vim] - Configures Vim to recognize YAML files, which are commonly used by Ansible.
 * `coc-settings` - Use `:CocConfig` to edit this file.
 
 ### Configured Features
@@ -53,3 +53,5 @@ The following features use default settings without additional configuration:
 * Testing Tools (not configured specifically for Ansible)
 * Version Control Integration (uses global Git integration)
 * Filetype Detection (handled by `vim-polyglot`)
+
+[yaml.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/ftplugin/yaml.vim

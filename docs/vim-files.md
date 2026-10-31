@@ -23,8 +23,8 @@ Install via pipx:
 ### Configuration Files Used
 
 * `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration for the Vim language server.
-* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim) - Global ALE configuration.
-* [`vim.vim`](../.vim/pack/settings/start/settings/after/ftplugin/vim.vim) - Vim-specific settings for editing Vim script files.
+* [`ale.vim`][ale.vim] - Global ALE configuration.
+* [`vim.vim`][vim.vim] - Vim-specific settings for editing Vim script files.
 
 ### Configured Features
 
@@ -57,3 +57,6 @@ The following features use default settings without additional configuration:
 * Testing Tools (not configured specifically for Vim script)
 * Version Control Integration (uses global Git integration)
 * Formatting (not configured specifically for Vim script)
+
+[ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/ale.vim
+[vim.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/ftplugin/vim.vim

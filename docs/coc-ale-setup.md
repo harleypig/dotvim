@@ -69,9 +69,9 @@ The following plugins are utilized by ALE and CoC within this repository:
 
 Configuration for ALE and CoC is managed through the following files:
 
-* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim) - Contains
+* [`ale.vim`][ale.vim] - Contains
     ALE-specific Vimscript settings.
-* [`coc.vim`](../.vim/pack/settings/start/settings/plugin/coc.vim) - Contains
+* [`coc.vim`][coc.vim] - Contains
     CoC-specific Vimscript settings.
 * `coc-settings` - Use `:CocConfig` to edit this file.
 
@@ -124,3 +124,6 @@ ALE fixers are set up to clean up whitespace and other formatting issues
 across various file types.
 
 `<leader>fb` mapping is provided for triggering fixes manually.
+
+[ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/ale.vim
+[coc.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/coc.vim

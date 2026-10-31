@@ -22,9 +22,9 @@ Install via package manager:
 ### Configuration Files Used
 
 * `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration for JSON language server and schema validation.
-* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim) - Global ALE configuration including JSON formatting settings.
-* [`json.vim`](../.vim/pack/settings/start/settings/after/ftplugin/json.vim) - Configures ALE to use jq as a fixer for JSON files and sets up Vim folding for JSON syntax.
-* [`.eslintrc.json`](../.eslintrc.json) - Contains the ESLint configuration for linting JavaScript and related languages, including JSON.
+* [`ale.vim`][ale.vim] - Global ALE configuration including JSON formatting settings.
+* [`json.vim`][json.vim] - Configures ALE to use jq as a fixer for JSON files and sets up Vim folding for JSON syntax.
+* [`.eslintrc.json`][.eslintrc.json] - Contains the ESLint configuration for linting JavaScript and related languages, including JSON.
 
 ### Configured Features
 
@@ -59,3 +59,7 @@ The following features use default settings without additional configuration:
 * Version Control Integration (uses global Git integration)
 * Snippets (not configured specifically for JSON)
 * Filetype Detection (handled by vim-polyglot)
+
+[ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/ale.vim
+[json.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/ftplugin/json.vim
+[.eslintrc.json]: https://github.com/harleypig/dotvim/blob/master/.eslintrc.json

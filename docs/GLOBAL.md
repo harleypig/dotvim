@@ -28,8 +28,7 @@ plugin that offers an `intellisense engine` with real-time, or 'as you type',
 features like linting and auto-completion. It leverages language servers for
 these capabilities.
 
-Settings for this plugin should be in
-[coc.vim](../.vim/pack/settings/start/settings/plugin/coc.vim) and settings
+Settings for this plugin should be in [coc.vim][coc.vim] and settings
 for extensions should be in `coc-settings` (use `:CocConfig` to edit this
 file).
 
@@ -40,10 +39,10 @@ a Vim plugin for asynchronous linting and formatting. It supports a wide range
 of linters and formatters, which can be configured to operate on file save or
 in the background.
 
-Settings for this plugin should be in
-[ale.vim](../.vim/pack/settings/start/settings/plugin/ale.vim). Settings for
-a specific file type should be in
-`.vim/pack/settings/start/settings/ftplugin/filetype.vim` (where
+Settings for this plugin should be in [ale.vim][ale.vim]; settings that must
+be in place before ALE loads go in the [early ale.vim][early-ale.vim].
+Settings for a specific file type should be in
+`.vim/pack/zzz-settings/start/settings/after/ftplugin/filetype.vim` (where
 `filetype.vim` is `json.vim` for json, etc.).
 
 ### vim-polyglot
@@ -69,3 +68,7 @@ location list windows.
 Errors (syntax, linting, compiling, etc.) should go in location list windows.
 CoC and ALE are configured to follow this convention; double check when making
 changes this is not altered.
+
+[coc.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/coc.vim
+[ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/ale.vim
+[early-ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/000-settings/start/settings/plugin/ale.vim

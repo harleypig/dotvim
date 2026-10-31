@@ -77,9 +77,11 @@ at the document's end.
 
 * List only relevant configuration files, including the name of the package,
     plugin, or extension being configured.
-* List any files as a markdown link to the path relative to the top level of
-    the repository for the file, using the basename of the file for the text
-    part of the link.
+* Link each file to its page on GitHub
+    (`https://github.com/harleypig/dotvim/blob/master/` followed by the path
+    from the top level of the repository), using the basename of the file for
+    the text part of the link. Files outside `docs/` are not part of the
+    published site, so a relative link to them would not resolve there.
 * For `coc-settings.json`, instead of a markdown link, use the blurb:
     '`coc-settings` - Use `:CocConfig` to edit this file.' as its presence
     indicates it is being utilized.

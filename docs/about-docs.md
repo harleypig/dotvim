@@ -75,9 +75,10 @@ phase ([#12]).
   `README.md`) in `docs/` to serve as the front page; there is none today.
   When one is added, it opens with the same "working draft" notice as this
   page, plus a short list of what the site covers.
-* **Links outside `docs/`** (to files under `.vim/`, for example) are
-  expected not to resolve on the published site. They would need to point
-  at the file on GitHub instead, or be left as plain paths.
+* **Links outside `docs/`** (to files under `.vim/`, for example) point at
+  the file on GitHub, because only `docs/` is published and a relative link
+  would not resolve on the site. `CONVENTIONS.md` gives the URL form
+  ([#13]).
 * **Headings and generators.** Starting each page at level 1 suits the
   default build. If a site generator (MkDocs or another) is chosen later,
   re-check how it treats a page's first heading before converting.
@@ -85,13 +86,14 @@ phase ([#12]).
   utility repositories under the owner's user site. Nothing here should
   assume it is the top of a site; keep links relative within `docs/`.
 
-The three "expected" points above are assumptions about the default build,
+The two "expected" points above are assumptions about the default build,
 to be verified when Pages is turned on; see *Still open*.
 
 ## Disposition of existing docs
 
-Recorded only; nothing has been moved or edited yet. Lines over 78 columns
-and smaller overlaps are left to the area-by-area pass.
+Recorded when this draft was written; a row notes where an issue has since
+been done. Lines over 78 columns and smaller overlaps are left to the
+area-by-area pass.
 
 | File | Kind | Disposition |
 | ---- | ---- | ----------- |
@@ -100,14 +102,14 @@ and smaller overlaps are left to the area-by-area pass.
 | `TODO.md` | Backlog | Open items move to GitHub issues, then the file goes ([#7]). Its "create `docs/vim.md`" item looks already covered by `docs/vim-files.md`. |
 | `docs/todo.md` | Backlog | Open items move to GitHub issues, then the file goes ([#7]). Mixes tasks with research notes; sort them as part of that move. |
 | `docs/GLOBAL.md` | AI-assistant instructions | Moves to `.claude/`, out of the published docs ([#11]). Links to the nonexistent `.vim/pack/settings/` ([#13]). |
-| `docs/LANGUAGE_SETUP_TEMPLATE.md` | Template | Keep as the template; rewrite to match `CONVENTIONS.md` ([#9]). Same broken path ([#13]). |
+| `docs/LANGUAGE_SETUP_TEMPLATE.md` | Template | Keep as the template; rewrite to match `CONVENTIONS.md` ([#9]). Broken path fixed ([#13]). |
 | `docs/coc-ale-setup.md` | Shared plugin setup | Overlaps `GLOBAL.md` and `README.md`. When `GLOBAL.md` moves, check whether any human-facing setup in it belongs here. |
 | `docs/coc-extensions.md` | Tool setup | Fine; overlaps the installed list in `extensions-to-try.md`. |
 | `docs/extensions-to-try.md` | Research | Kept as a research page for now. Its "currently installed" list duplicates `coc-extensions.md`. |
 | `docs/plugins-to-try.md` | Research | Kept as a research page for now. |
 | `docs/utility.md` | Tool setup | Mostly a TODO; needs writing. |
 | `docs/statusline.md` | Tool setup | Fine; check against the current statusline config. |
-| `docs/vim-files.md` | Language setup | Fine in shape; broken paths ([#13]). |
+| `docs/vim-files.md` | Language setup | Fine in shape; broken paths fixed ([#13]). |
 | `docs/ansible.md` | Language setup | Rework to template ([#9]); long lines. |
 | `docs/docker.md` | Language setup | Rework to template ([#9]); long lines. |
 | `docs/hashicorp.md` | Language setup | Rework to template ([#9]); long lines. |
@@ -115,16 +117,18 @@ and smaller overlaps are left to the area-by-area pass.
 | `docs/java.md` | Language setup | Closest to the bar; good model. |
 | `docs/json.md` | Language setup | Rework to template ([#9]); long lines. |
 | `docs/proselint.md` | Tool setup | Rework to template ([#9]); long lines. |
-| `docs/python.md` | Language setup | Rework to template ([#9]); broken paths ([#13]). |
-| `docs/shell.md` | Language setup | Rework to template ([#9]); broken paths ([#13]). |
+| `docs/python.md` | Language setup | Rework to template ([#9]); broken paths fixed ([#13]). |
+| `docs/shell.md` | Language setup | Rework to template ([#9]); broken paths fixed ([#13]). |
 | `docs/toml.md` | Language setup | Rework to template ([#9]); long lines. |
 | `docs/yaml.md` | Language setup | Rework to template ([#9]). |
 | `late-settings/doc/learning.txt` | `:help` | Keep; the model for in-editor docs. |
 
-"Broken paths" means links to `.vim/pack/settings/start/settings/...`; the
-real directories are `.vim/pack/000-settings/` and `.vim/pack/zzz-settings/`
-(reachable as `early-settings/` and `late-settings/`). Fixing them is
-[#13].
+"Broken paths" means links to `.vim/pack/settings/start/settings/...`,
+which does not exist. The real directories are `.vim/pack/000-settings/`
+and `.vim/pack/zzz-settings/` (reachable as `early-settings/` and
+`late-settings/`). Every such link, including three in pages not listed
+above as broken (`coc-ale-setup.md`, `hashicorp.md`, `json.md`), now points
+at the real file on GitHub ([#13]).
 
 ## Decisions
 
@@ -142,7 +146,7 @@ The questions an earlier version of this draft raised are answered on
   file to publish.
 
 Problems found while drafting are filed separately: the broken
-`.vim/pack/settings/` links ([#13]), the Node.js minimum written in three
+`.vim/pack/settings/` links ([#13], fixed), the Node.js minimum written in three
 places ([#14]), and bugs in `bin/check-setup` ([#15]).
 
 ### Still open
@@ -150,9 +154,8 @@ places ([#14]), and bugs in `bin/check-setup` ([#15]).
 1. **The "to try" pages** (`docs/extensions-to-try.md`,
    `docs/plugins-to-try.md`): whether they stay as research pages, become
    issues, or go. They stay as research pages until that is decided.
-2. **GitHub Pages defaults**: the index page, how pages without front
-   matter are handled, and links outside `docs/`. Verified when Pages is
-   turned on.
+2. **GitHub Pages defaults**: the index page and how pages without front
+   matter are handled. Verified when Pages is turned on.
 
 [#6]: https://github.com/harleypig/dotvim/issues/6
 [#7]: https://github.com/harleypig/dotvim/issues/7

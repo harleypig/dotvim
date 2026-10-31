@@ -43,8 +43,9 @@ For CoC-based configuration:
 * [coc-extension-name](link) - Install with `:CocInstall coc-extension-name`
 
 For ALE-based configuration:
-* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim) - Global ALE configuration
-* [`filetype.vim`](../.vim/pack/settings/start/settings/ftplugin/filetype.vim) - Language-specific ALE settings
+* [`ale.vim`][ale.vim] - Global ALE configuration
+* [`filetype.vim`][ftplugin] - Language-specific ALE settings, in
+    `after/ftplugin/`
 
 Additional configuration files:
 * [filename](/path/to/file) - Purpose and scope of the configuration
@@ -78,3 +79,6 @@ List features that:
 * Use default settings without modification
 * Are not applicable to this language/environment
 * Are handled by listed plugins/extensions without additional configuration
+
+[ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/ale.vim
+[ftplugin]: https://github.com/harleypig/dotvim/tree/master/.vim/pack/zzz-settings/start/settings/after/ftplugin
