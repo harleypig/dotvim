@@ -58,7 +58,6 @@ system_packages=(
   "packer"                      # hashicorp.md
   "shellcheck"                  # shell.md
   "shfmt"                       # shell.md
-  "packer"                      # hashicorp.md
   "terraform"                   # hashicorp.md
   "terraform-ls"                # hashicorp.md
 )
@@ -119,7 +118,6 @@ if ! command_exists npm; then
     status "npm installed successfully"
   fi
 
-  status "npm installed successfully"
 else
   status "npm already installed"
 fi
