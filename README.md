@@ -1,25 +1,35 @@
 # Vim Configuration
 
-This repository contains a comprehensive Vim configuration with language support, linting, and completion features.
+This repository contains a comprehensive Vim configuration with language
+support, linting, and completion features.
 
 ## Requirements
 
 ### Node.js
-Node.js is required for CoC (Conquer of Completion) and its extensions to function properly.
+
+Node.js is required for CoC (Conquer of Completion) and its extensions to
+function properly.
 
 * **Minimum version**: Node.js 14.14 or higher
 * **Installation**:
-  - **Arch Linux**: `pacman -S nodejs npm`
-  - **Ubuntu**: `apt install nodejs npm`
-  - **Alternative**: Use [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm) for version management
+  * **Arch Linux**: `pacman -S nodejs npm`
+  * **Ubuntu**: `apt install nodejs npm`
+  * **Alternative**: Use [Node Version Manager
+      (nvm)](https://github.com/nvm-sh/nvm) for version management
 
 ### Other Dependencies
-Additional language-specific tools are documented in their respective language documentation files in the `docs/` directory.
+
+Additional language-specific tools are documented in their respective language
+documentation files in the `docs/` directory.
 
 ## Setup
-Run `bin/check-setup` to verify that required tools are installed for your development environment.
+
+Run `bin/check-setup` to verify that required tools are installed for your
+development environment.
 
 The scripts in `bin/` are listed in [docs/scripts.md](docs/scripts.md); each
 one shows its usage with `--help`.
 
-Run `bats tests/shell` to test the scripts in `bin/` (needs [bats-core](https://github.com/bats-core/bats-core) with the bats-support and bats-assert libraries).
+Run `bats tests/shell` to test the scripts in `bin/` (needs
+[bats-core](https://github.com/bats-core/bats-core) with the bats-support and
+bats-assert libraries).

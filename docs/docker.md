@@ -1,26 +1,36 @@
 # Docker
 
-This document outlines the support for Docker development within the Vim environment.
+This document outlines the support for Docker development within the Vim
+environment.
 
-Note: The configuration leverages CoC for language server features and vim-polyglot for syntax highlighting, providing a streamlined experience for working with Dockerfiles.
+Note: The configuration leverages CoC for language server features and
+vim-polyglot for syntax highlighting, providing a streamlined experience for
+working with Dockerfiles.
 
 ## External Packages Used
 
 Install via npm:
-* [`dockerfile-language-server-nodejs`](https://github.com/rcjsuen/dockerfile-language-server-nodejs) - Language server that provides intelligent code completion, validation, and other language features for Dockerfiles.
+
+* [`dockerfile-language-server-nodejs`](https://github.com/rcjsuen/dockerfile-language-server-nodejs) -
+    Language server that provides intelligent code completion, validation, and
+    other language features for Dockerfiles.
 
 ## Plugins and Extensions Used
 
-* [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin) - Provides enhanced syntax highlighting for Dockerfiles.
-* [`coc-docker`](https://github.com/josa42/coc-docker) (CoC Extension) - Provides Docker integration for CoC.
+* [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin) -
+    Provides enhanced syntax highlighting for Dockerfiles.
+* [`coc-docker`](https://github.com/josa42/coc-docker) (CoC Extension) -
+    Provides Docker integration for CoC.
 
 ## Configuration Files Used
 
-* `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration for the Dockerfile language server.
+* `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration
+    for the Dockerfile language server.
 
 ## Syntax Highlighting
 
-Provided by vim-polyglot, which includes enhanced support for Dockerfile syntax highlighting.
+Provided by vim-polyglot, which includes enhanced support for Dockerfile
+syntax highlighting.
 
 ## Linting and Static Analysis
 
@@ -32,11 +42,13 @@ Provided by vim-polyglot, which includes enhanced support for Dockerfile syntax 
 
 * **Tool**: `dockerfile-language-server` via `CoC`
 * **Configuration**: Configured in `coc-settings.json`
-* **Features**: Directive completion, instruction completion, context-aware suggestions
+* **Features**: Directive completion, instruction completion, context-aware
+    suggestions
 
 ## Default or Inapplicable Sections
 
 The following features use default settings without additional configuration:
+
 * Error Highlighting (handled by CoC)
 * Code Folding (uses Vim's default folding mechanisms)
 * Formatting and Beautification (not specifically configured for Dockerfiles)

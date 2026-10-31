@@ -1,25 +1,36 @@
 # Vim Files
 
-This document outlines the support for Vim script development within the Vim environment.
+This document outlines the support for Vim script development within the Vim
+environment.
 
-Note: While Vim has built-in support for its own scripting language, external tools are used to provide enhanced functionality like linting and intelligent code completion.
+Note: While Vim has built-in support for its own scripting language, external
+tools are used to provide enhanced functionality like linting and intelligent
+code completion.
 
 ## External Packages Used
 
 Install via npm:
-* [`vim-language-server`](https://github.com/iamcco/vim-language-server) - Language server that provides intelligent code completion, go to definition, and other language features for Vim script files.
+
+* [`vim-language-server`](https://github.com/iamcco/vim-language-server) -
+    Language server that provides intelligent code completion, go to
+    definition, and other language features for Vim script files.
 
 Install via pipx:
-* [`vint`](https://github.com/Vimjas/vint) - A linter for Vim script that checks for style issues and potential errors.
+
+* [`vint`](https://github.com/Vimjas/vint) - A linter for Vim script that
+    checks for style issues and potential errors.
 
 ## Plugins and Extensions Used
 
-* [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for linting Vim script files with vint.
-* [`coc-vimlsp`](https://github.com/iamcco/coc-vimlsp) (CoC Extension) - CoC extension that provides Vim script language server support.
+* [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for
+    linting Vim script files with vint.
+* [`coc-vimlsp`](https://github.com/iamcco/coc-vimlsp) (CoC Extension) - CoC
+    extension that provides Vim script language server support.
 
 ## Configuration Files Used
 
-* `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration for the Vim language server.
+* `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration
+    for the Vim language server.
 * [`ale.vim`][ale.vim] - Global ALE configuration.
 * [`vim.vim`][vim.vim] - Vim-specific settings for editing Vim script files.
 
@@ -48,6 +59,7 @@ Provided by Vim's built-in syntax highlighting for Vim script files.
 ## Default or Inapplicable Sections
 
 The following features use default settings without additional configuration:
+
 * Code Folding (uses Vim's default folding mechanisms)
 * Snippets (not configured specifically for Vim script)
 * Schema or Contract Validation (not applicable for Vim script)

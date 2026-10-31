@@ -149,8 +149,8 @@ The questions an earlier version of this draft raised are answered on
   file to publish.
 
 Problems found while drafting are filed separately: the broken
-`.vim/pack/settings/` links ([#13], fixed), the Node.js minimum written in three
-places ([#14]), and bugs in `bin/check-setup` ([#15]).
+`.vim/pack/settings/` links ([#13], fixed), the Node.js minimum written in
+three places ([#14]), and bugs in `bin/check-setup` ([#15]).
 
 ### Still open
 

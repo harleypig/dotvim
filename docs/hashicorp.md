@@ -1,15 +1,22 @@
 # HashiCorp Configuration
 
-This document outlines the support for HashiCorp tools development within the Vim environment, specifically focusing on Terraform and Packer.
+This document outlines the support for HashiCorp tools development within the
+Vim environment, specifically focusing on Terraform and Packer.
 
-Note: The configuration leverages language servers for enhanced functionality over built-in options, providing more comprehensive language support for HashiCorp's domain-specific languages.
+Note: The configuration leverages language servers for enhanced functionality
+over built-in options, providing more comprehensive language support for
+HashiCorp's domain-specific languages.
 
 ## External Packages Used
 
 Install via package manager:
-* [`terraform`](https://www.terraform.io/) - Infrastructure as code tool for provisioning and managing cloud infrastructure.
-* [`packer`](https://www.packer.io/) - Tool for creating identical machine images for multiple platforms from a single configuration.
-* [`terraform-ls`](https://github.com/hashicorp/terraform-ls) - Language server providing Terraform language support for editors and IDEs.
+
+* [`terraform`](https://www.terraform.io/) - Infrastructure as code tool for
+    provisioning and managing cloud infrastructure.
+* [`packer`](https://www.packer.io/) - Tool for creating identical machine
+    images for multiple platforms from a single configuration.
+* [`terraform-ls`](https://github.com/hashicorp/terraform-ls) - Language
+    server providing Terraform language support for editors and IDEs.
 
 Install manually:
 
@@ -19,11 +26,13 @@ Install manually:
 linter focused on possible errors, best practices, and naming conventions.
 
 Using installation script (Linux):
+
 ```bash
 curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
 ```
 
 Using GitHub CLI:
+
 ```bash
 # Linux
 gh release download --repo terraform-linters/tflint --pattern "*_linux_amd64.zip" --pattern "checksums.txt"
@@ -34,18 +43,25 @@ sudo install -m 755 tflint /usr/local/bin/
 
 ## Plugins and Extensions Used
 
-* [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin) - Provides syntax highlighting for Terraform and HCL files.
-* [`coc.nvim`](https://github.com/neoclide/coc.nvim) (Vim Plugin) - Intellisense engine that integrates with `terraform-ls` for language server features.
-* [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for linting Terraform files with `tflint` and formatting with `terraform fmt`.
+* [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin) -
+    Provides syntax highlighting for Terraform and HCL files.
+* [`coc.nvim`](https://github.com/neoclide/coc.nvim) (Vim Plugin) -
+    Intellisense engine that integrates with `terraform-ls` for language
+    server features.
+* [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for
+    linting Terraform files with `tflint` and formatting with `terraform fmt`.
 
 ## Configuration Files Used
 
-* `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration for the terraform-ls language server.
-* [`ale.vim`][ale.vim] - Global ALE configuration including Terraform linting and formatting settings.
+* `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration
+    for the terraform-ls language server.
+* [`ale.vim`][ale.vim] - Global ALE configuration including Terraform linting
+    and formatting settings.
 
 ## Syntax Highlighting
 
-Provided by `vim-polyglot`, which includes support for Terraform (HCL) syntax highlighting.
+Provided by `vim-polyglot`, which includes support for Terraform (HCL) syntax
+highlighting.
 
 ## Linting and Static Analysis
 
@@ -57,7 +73,8 @@ Provided by `vim-polyglot`, which includes support for Terraform (HCL) syntax hi
 
 * **Tool**: `terraform-ls` via `CoC`
 * **Configuration**: Configured in `coc-settings.json`
-* **Features**: Variable completion, resource type completion, attribute completion
+* **Features**: Variable completion, resource type completion, attribute
+    completion
 
 ## Formatting and Beautification
 
@@ -68,6 +85,7 @@ Provided by `vim-polyglot`, which includes support for Terraform (HCL) syntax hi
 ## Default or Inapplicable Sections
 
 The following features use default settings without additional configuration:
+
 * Error Highlighting (handled by ALE and CoC)
 * Code Folding (uses Vim's default folding mechanisms)
 * Schema or Contract Validation (handled by `terraform-ls`)

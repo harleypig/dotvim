@@ -1,35 +1,53 @@
 # Shell Scripting
 
-This document outlines the support for shell script development within the Vim environment.
+This document outlines the support for shell script development within the Vim
+environment.
 
-Note: While Vim has built-in syntax highlighting for shell scripts, external tools are used to provide enhanced functionality like linting and formatting to ensure script quality and consistency.
+Note: While Vim has built-in syntax highlighting for shell scripts, external
+tools are used to provide enhanced functionality like linting and formatting
+to ensure script quality and consistency.
 
 ## External Packages Used
 
 Install via package manager:
-* [`shellcheck`](https://github.com/koalaman/shellcheck) - A static analysis tool for shell scripts that provides warnings and suggestions for `bash`/`sh` shell scripts.
-* [`shfmt`](https://github.com/mvdan/sh) - A shell parser, formatter, and interpreter with `bash` support.
+
+* [`shellcheck`](https://github.com/koalaman/shellcheck) - A static analysis
+    tool for shell scripts that provides warnings and suggestions for
+    `bash`/`sh` shell scripts.
+* [`shfmt`](https://github.com/mvdan/sh) - A shell parser, formatter, and
+    interpreter with `bash` support.
 
 Install via npm:
-* [`bash-language-server`](https://github.com/bash-lsp/bash-language-server) - A language server for `Bash` that provides intelligent code completion, hover information, and more.
-* [`diagnostic-languageserver`](https://github.com/iamcco/diagnostic-languageserver) - Provides additional diagnostic capabilities for `shellcheck`.
+
+* [`bash-language-server`](https://github.com/bash-lsp/bash-language-server) -
+    A language server for `Bash` that provides intelligent code completion,
+    hover information, and more.
+* [`diagnostic-languageserver`](https://github.com/iamcco/diagnostic-languageserver) -
+    Provides additional diagnostic capabilities for `shellcheck`.
 
 ## Plugins and Extensions Used
 
-* [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin) - Provides enhanced syntax highlighting for shell scripts.
-* [`coc.nvim`](https://github.com/neoclide/coc.nvim) (Vim Plugin) - Intellisense engine that integrates with bash-language-server.
-* [`coc-sh`](https://github.com/josa42/coc-sh) (CoC Extension) - CoC extension that provides bash language server support.
-* [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for linting shell scripts with shellcheck and formatting with shfmt.
+* [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin) -
+    Provides enhanced syntax highlighting for shell scripts.
+* [`coc.nvim`](https://github.com/neoclide/coc.nvim) (Vim Plugin) -
+    Intellisense engine that integrates with bash-language-server.
+* [`coc-sh`](https://github.com/josa42/coc-sh) (CoC Extension) - CoC extension
+    that provides bash language server support.
+* [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for
+    linting shell scripts with shellcheck and formatting with shfmt.
 
 ## Configuration Files Used
 
-* `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration for the bash language server and shellcheck integration.
-* [`ale.vim`][ale.vim] - Global ALE configuration including shell script linting and formatting settings.
+* `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration
+    for the bash language server and shellcheck integration.
+* [`ale.vim`][ale.vim] - Global ALE configuration including shell script
+    linting and formatting settings.
 * [`sh.vim`][sh.vim] - Shell-specific settings for editing shell script files.
 
 ## Syntax Highlighting
 
-Provided by `vim-polyglot`, which includes enhanced support for shell script syntax highlighting.
+Provided by `vim-polyglot`, which includes enhanced support for shell script
+syntax highlighting.
 
 ## Linting and Static Analysis
 
@@ -54,6 +72,7 @@ Provided by `vim-polyglot`, which includes enhanced support for shell script syn
 ## Default or Inapplicable Sections
 
 The following features use default settings without additional configuration:
+
 * Error Highlighting (handled by ALE and CoC)
 * Code Folding (uses Vim's default folding mechanisms)
 * Snippets (not configured specifically for shell scripts)

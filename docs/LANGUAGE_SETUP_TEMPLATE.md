@@ -3,9 +3,9 @@
 This document outlines the support for [NAME] development within the Vim
 environment.
 
-Note: Prefer Vim's built-in functionality when available. Document why external
-tools were chosen over built-in options when applicable. Include rationale for
-tool selection or changes if multiple solutions were evaluated.
+Note: Prefer Vim's built-in functionality when available. Document why
+external tools were chosen over built-in options when applicable. Include
+rationale for tool selection or changes if multiple solutions were evaluated.
 
 <!--
 Section names and their order come from CONVENTIONS.md. Keep only the

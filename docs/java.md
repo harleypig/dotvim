@@ -42,8 +42,8 @@ Verify ALE can find it by opening a `.java` file and running `:ALEInfo`.
     inline diagnostics, and code actions. jdtls is downloaded and managed
     automatically on first use (~200 MB).
 
-Install with `:CocInstall coc-java`, or add `coc-java` to `g:coc_global_extensions`
-in `plugin/coc.vim` to make it persistent.
+Install with `:CocInstall coc-java`, or add `coc-java` to
+`g:coc_global_extensions` in `plugin/coc.vim` to make it persistent.
 
 On first open of a `.java` file, jdtls indexes the project. Build system
 projects (Gradle, Maven) are detected automatically from their root files.
