@@ -44,8 +44,7 @@
 Neither is generated from the other. Mappings are the one area where both
 carry the same content, so the mappings reference is written by hand during
 the cleanup and kept in step by hand. Generating it (from `:help`, or from
-the live mappings `bin/dump-maps` can show) is deferred to the improvements
-phase ([#12]).
+the live mappings) is deferred to the improvements phase ([#12]).
 
 ## Format conventions
 
