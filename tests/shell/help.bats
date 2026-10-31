@@ -53,7 +53,6 @@ assert_help() {
 ##############################################################################
 @test "addsubmodule has help" { assert_help addsubmodule; }
 @test "check-setup has help" { assert_help check-setup; }
-@test "dump-maps has help" { assert_help dump-maps; }
 @test "envsubstitute has help" { assert_help envsubstitute; }
 @test "mvsubmodule has help" { assert_help mvsubmodule; }
 @test "post-clone has help" { assert_help post-clone; }

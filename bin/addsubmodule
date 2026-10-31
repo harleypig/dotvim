@@ -2,14 +2,15 @@
 
 #-----------------------------------------------------------------------------
 usage() {
-  cat << EOF
-Usage: ${0##*/} URL...
+  cat << EOF2
+Usage: ${0##*/} PACKAGE URL...
 
-Add each plugin repository URL as a git submodule under .vim/2btested/,
-named after the repository (lowercased, without .git, .vim or .nvim), then
-regenerate README.md with mkreadme and commit. A URL whose name already
-appears in .gitmodules is skipped. Run from the top of the repository.
-EOF
+Add each plugin repository URL as a git submodule at
+.vim/pack/PACKAGE/start/NAME and commit it. PACKAGE is an existing directory
+under .vim/pack, such as 100-core. NAME is the repository's name,
+lowercased, without .git, .vim or .nvim. A URL whose name already appears in
+.gitmodules is skipped. Run from the top of the repository.
+EOF2
 }
 
 case $1 in
@@ -19,8 +20,10 @@ case $1 in
     ;;
 esac
 
+#-----------------------------------------------------------------------------
 _add() {
-  local url="${1:?must pass url to add}"
+  local package="$1"
+  local url="${2:?must pass url to add}"
   local name="${url##*/}"
   name="${name,,}"
   name="${name%\.git}"
@@ -29,14 +32,27 @@ _add() {
 
   grep "$name" .gitmodules && return 0
 
-  #echo git submodule add --name "$name" "$url" ".vim/2btested/$name"
-  git submodule add --name "$name" "$url" ".vim/2btested/$name"
+  git submodule add --name "$name" "$url" ".vim/pack/$package/start/$name"
   git config -f .gitmodules submodule."$name".ignore dirty
-  mkreadme > README.md
-  git add .gitmodules README.md
-  git commit -m "updated readme after adding $name"
+  git add .gitmodules
+  git commit -m "added $name to $package"
+}
+
+##############################################################################
+(($# >= 2)) || {
+  usage >&2
+  exit 1
+}
+
+package="$1"
+shift
+
+[[ -n $package && -d .vim/pack/$package ]] || {
+  echo "No package '$package' under .vim/pack. Packages:" >&2
+  ls .vim/pack >&2
+  exit 1
 }
 
 for u in "$@"; do
-  _add "$u"
+  _add "$package" "$u"
 done
