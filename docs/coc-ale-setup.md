@@ -1,5 +1,12 @@
 ## ALE and CoC Setup
 
+CoC and ALE divide the work. CoC provides the real-time, 'as you type',
+features that come from language servers, such as completion and
+diagnostics. ALE runs the linters and fixers configured for it, such as
+formatting on save, and leaves language-server features to CoC. Where a
+language page uses another plugin that overlaps either of them, the page
+should say which one does the work and what was turned off.
+
 ### External Packages Used
 
 To utilize CoC and ALE as configured in this repository, the following

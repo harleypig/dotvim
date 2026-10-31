@@ -1,10 +1,14 @@
-# Global Defaults
+# Instructions for AI Assistants
 
-This file serves a dual purpose: it documents global defaults across languages
-and configurations for human reference, and it also provides instructions for
-AI systems to understand and apply these settings. It does **not** document
-plugin defaults. For plugin-specific settings, refer to the respective plugin
-documentation.
+These are the owner's standing instructions for AI tools working in this
+repository. How the documentation is written is set out in
+[CONVENTIONS.md](../CONVENTIONS.md).
+
+## Global Defaults
+
+These instructions cover global defaults across languages and
+configurations. They do **not** cover plugin defaults; for plugin-specific
+settings, refer to the respective plugin documentation.
 
 ## Plugins
 
@@ -28,9 +32,8 @@ plugin that offers an `intellisense engine` with real-time, or 'as you type',
 features like linting and auto-completion. It leverages language servers for
 these capabilities.
 
-Settings for this plugin should be in [coc.vim][coc.vim] and settings
-for extensions should be in `coc-settings` (use `:CocConfig` to edit this
-file).
+Settings for this plugin should be in [coc.vim][coc.vim] and settings for
+extensions should be in `coc-settings` (use `:CocConfig` to edit this file).
 
 ### ALE
 
@@ -57,18 +60,17 @@ other plugins providing similar features, such as CoC and ALE. Ensure that
 `vim-polyglot` is configured to complement these plugins rather than compete
 with them.
 
-For more information and configuration details, visit the
-[vim-polyglot](https://github.com/sheerun/vim-polyglot) repository on GitHub.
-
 ## Special Windows
 
-For purposes of this document, we're only concerned with quickfix and
-location list windows.
+For these instructions, only quickfix and location list windows matter.
 
 Errors (syntax, linting, compiling, etc.) should go in location list windows.
-CoC and ALE are configured to follow this convention; double check when making
-changes this is not altered.
 
-[coc.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/coc.vim
-[ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/ale.vim
-[early-ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/000-settings/start/settings/plugin/ale.vim
+The configuration does not currently match this: ALE sends its results to
+the quickfix list (`g:ale_set_quickfix` in the early `ale.vim`), and the
+`c[` / `c]` mappings in `coc.vim` move through the quickfix list. Ask the
+owner before changing either this instruction or the configuration.
+
+[coc.vim]: ../.vim/pack/zzz-settings/start/settings/plugin/coc.vim
+[ale.vim]: ../.vim/pack/zzz-settings/start/settings/plugin/ale.vim
+[early-ale.vim]: ../.vim/pack/000-settings/start/settings/plugin/ale.vim

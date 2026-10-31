@@ -11,8 +11,8 @@ utilizing authoritative sources for accuracy:
 
 Avoid fabricated data except for clearly marked illustrative examples.
 
-Refer to `GLOBAL.md` for rules regarding global defaults and other
-considerations.
+Refer to [`.claude/CLAUDE.md`](.claude/CLAUDE.md) for rules regarding global
+defaults and other considerations.
 
 ## General Documentation Rules
 

@@ -30,7 +30,7 @@
 | Backlog | GitHub issues ([#7]) | No TODO file. Both current TODO files are being emptied into issues. |
 | Research ("to try" lists) | `docs/extensions-to-try.md`, `docs/plugins-to-try.md` | Kept as research pages for now; see *Still open*. |
 | Documentation conventions | `CONVENTIONS.md` | How docs are written. |
-| Instructions for AI assistants | `.claude/` ([#11]) | Not part of the published docs. |
+| Instructions for AI assistants | `.claude/CLAUDE.md` ([#11]) | Not part of the published docs. |
 | In-editor reference | `late-settings/doc/*.txt` | Vim `:help` files; tags are built at startup and not committed. |
 
 ### `:help` versus the web pages
@@ -98,12 +98,12 @@ area-by-area pass.
 | File | Kind | Disposition |
 | ---- | ---- | ----------- |
 | `README.md` | Overview | Fine in shape. The Node.js minimum is written here and in two `docs/` pages; keep one home ([#14]). Long lines. |
-| `CONVENTIONS.md` | Conventions | Keep; the authority. Change the starting heading to level 1 ([#8]). Refers to `GLOBAL.md` without a path; fix when it moves ([#11]). |
+| `CONVENTIONS.md` | Conventions | Keep; the authority. Change the starting heading to level 1 ([#8]). Its reference to `GLOBAL.md` now points at `.claude/CLAUDE.md` ([#11]). |
 | `TODO.md` | Backlog | Open items move to GitHub issues, then the file goes ([#7]). Its "create `docs/vim.md`" item looks already covered by `docs/vim-files.md`. |
 | `docs/todo.md` | Backlog | Open items move to GitHub issues, then the file goes ([#7]). Mixes tasks with research notes; sort them as part of that move. |
-| `docs/GLOBAL.md` | AI-assistant instructions | Moves to `.claude/`, out of the published docs ([#11]). Links to the nonexistent `.vim/pack/settings/` ([#13]). |
+| `docs/GLOBAL.md` | AI-assistant instructions | Moved to `.claude/CLAUDE.md`, out of the published docs ([#11]); its human-facing part went to `coc-ale-setup.md`. Its broken links were fixed first ([#13]). |
 | `docs/LANGUAGE_SETUP_TEMPLATE.md` | Template | Keep as the template; rewrite to match `CONVENTIONS.md` ([#9]). Broken path fixed ([#13]). |
-| `docs/coc-ale-setup.md` | Shared plugin setup | Overlaps `GLOBAL.md` and `README.md`. When `GLOBAL.md` moves, check whether any human-facing setup in it belongs here. |
+| `docs/coc-ale-setup.md` | Shared plugin setup | Overlaps `README.md`. Now opens with how CoC and ALE divide the work, the human-facing part of `GLOBAL.md` ([#11]). |
 | `docs/coc-extensions.md` | Tool setup | Fine; overlaps the installed list in `extensions-to-try.md`. |
 | `docs/extensions-to-try.md` | Research | Kept as a research page for now. Its "currently installed" list duplicates `coc-extensions.md`. |
 | `docs/plugins-to-try.md` | Research | Kept as a research page for now. |
@@ -139,7 +139,7 @@ The questions an earlier version of this draft raised are answered on
 * Headings: docs start at level 1 ([#8]).
 * Template versus `CONVENTIONS.md`: `CONVENTIONS.md` wins ([#9]).
 * Scripts in `bin/`: a `--help` in each, plus one summary page ([#10]).
-* `docs/GLOBAL.md`: moves to `.claude/` ([#11]).
+* `docs/GLOBAL.md`: moved to `.claude/CLAUDE.md` ([#11]).
 * Mappings reference: hand-written for now; generating it waits for the
   improvements phase ([#12]).
 * Publishing the backlog: no longer a question, since there is no backlog
