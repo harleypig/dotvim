@@ -19,4 +19,7 @@ Additional language-specific tools are documented in their respective language d
 ## Setup
 Run `bin/check-setup` to verify that required tools are installed for your development environment.
 
+The scripts in `bin/` are listed in [docs/scripts.md](docs/scripts.md); each
+one shows its usage with `--help`.
+
 Run `bats tests/shell` to test the scripts in `bin/` (needs [bats-core](https://github.com/bats-core/bats-core) with the bats-support and bats-assert libraries).

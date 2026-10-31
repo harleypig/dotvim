@@ -25,7 +25,7 @@
 | Docs front page | `docs/index.md` (proposed) | Front page of the published site; see *GitHub Pages*. |
 | Per-language / per-tool setup | `docs/<name>.md` | One file per language or tool, built from the template. |
 | Shared plugin setup (CoC, ALE, polyglot) | `docs/` | One home for facts every language page relies on. |
-| Script and tool usage | each script's own `--help`, plus one summary page in `docs/` ([#10]) | Usage text lives with the code; the page lists the scripts and what each is for. |
+| Script and tool usage | each script's own `--help`, plus `docs/scripts.md` ([#10]) | Usage text lives with the code; the page lists the scripts and what each is for. |
 | Design and rationale | a short "why" note in the relevant page | A separate decision-record directory only if a decision outgrows a paragraph. |
 | Backlog | GitHub issues ([#7]) | No TODO file. Both current TODO files are being emptied into issues. |
 | Research ("to try" lists) | `docs/extensions-to-try.md`, `docs/plugins-to-try.md` | Kept as research pages for now; see *Still open*. |
@@ -119,6 +119,7 @@ area-by-area pass.
 | `docs/shell.md` | Language setup | Reworked to template ([#9]); broken paths fixed ([#13]). |
 | `docs/toml.md` | Language setup | Reworked to template ([#9]); long lines. |
 | `docs/yaml.md` | Language setup | Reworked to template ([#9]). |
+| `docs/scripts.md` | Script usage | Added: lists the `bin/` scripts and what each is for; usage stays in each `--help` ([#10]). |
 | `late-settings/doc/learning.txt` | `:help` | Keep; the model for in-editor docs. |
 
 "Broken paths" means links to `.vim/pack/settings/start/settings/...`,
