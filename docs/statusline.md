@@ -1,10 +1,12 @@
 # Statusline Configuration
 
-This document outlines the custom statusline configuration used in this Vim setup.
+This document outlines the custom statusline configuration used in this Vim
+setup.
 
 ## Overview
 
-The statusline provides a comprehensive view of the current editing state, including:
+The statusline provides a comprehensive view of the current editing state,
+including:
 
 * Buffer information
 * File status
@@ -16,29 +18,35 @@ The statusline provides a comprehensive view of the current editing state, inclu
 ## Features
 
 ### Buffer and File Information
+
 * Buffer number
 * Current filetype
-* Modification status (`+` for modified, `-` for unmodified, `X` for non-modifiable)
+* Modification status (`+` for modified, `-` for unmodified, `X` for
+    non-modifiable)
 * File size (with automatic unit conversion)
 * File format (only shown if not unix)
 * File encoding (only shown if not utf-8)
 
 ### Warning Indicators
+
 * Mixed indentation warning
 * Trailing space warning
 * Paste mode indicator
 
 ### Diagnostic Information
+
 * ALE linter status (warning and error counts)
 * CoC diagnostic information
 
 ### Position Information
+
 * Column and line position
 * Percentage through file
 * ASCII value under cursor (decimal and hexadecimal)
 * Syntax highlighting group under cursor
 
 ### Additional Information
+
 * File permissions
 * Full file path (truncated to 20 characters)
 
@@ -66,6 +74,7 @@ let g:YASL_NoPasteMode = ''
 ## Color Scheme Integration
 
 The statusline changes color based on the current mode:
+
 * Normal mode: White background, Black text
 * Insert mode: Yellow background, Blue text
 * Command window: Gray background, Red text
@@ -88,5 +97,6 @@ The statusline uses several custom functions to generate its components:
 ## Integration with Plugins
 
 The statusline integrates with:
+
 * ALE - Shows linting errors and warnings
 * CoC - Shows diagnostic information and current function

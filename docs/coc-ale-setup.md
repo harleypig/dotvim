@@ -21,7 +21,8 @@ external packages must be installed:
 
 For installing Node.js, you can either:
 
-* Use nvm (Node Version Manager) to install and manage multiple Node.js versions.
+* Use nvm (Node Version Manager) to install and manage multiple Node.js
+    versions.
 * Use the nodesource repository to install a specific version of Node.js.
 
 #### Installing nvm
@@ -34,11 +35,13 @@ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | PROF
 
 You will need to reload your bash setup (assuming you're using my `dotfiles`
 configuration):
+
 ```bash
 source ~/.bash_profile
 ```
 
 Then install Node.js:
+
 ```bash
 nvm install --lts  # Install latest LTS version
 nvm use --lts      # Use the installed LTS version
@@ -46,15 +49,17 @@ nvm use --lts      # Use the installed LTS version
 
 #### Installing npm and yarn
 
-**npm:**
-npm comes bundled with Node.js. After installing Node.js using nvm, npm will be available.
+**npm:** npm comes bundled with Node.js. After installing Node.js using nvm,
+npm will be available.
 
 To verify:
+
 ```bash
 npm --version
 ```
 
 **yarn:**
+
 ```bash
 # Install yarn using npm
 npm install -g yarn
@@ -120,7 +125,10 @@ behavior and integration with CoC.
 
 LSP features are disabled to prevent conflicts with CoC's LSP capabilities.
 
-Linters are disabled to prevent conflicts with CoC's linting configuration.
+Only the linters listed for a file type run (`g:ale_linters_explicit`); the
+lists are in `ale.vim` and the per-filetype settings.
+
+Errors and warnings go to the quickfix list rather than the location list.
 
 Virtual text for inline error messages is disabled for a cleaner editing
 interface.

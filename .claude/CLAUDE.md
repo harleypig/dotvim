@@ -64,12 +64,10 @@ with them.
 
 For these instructions, only quickfix and location list windows matter.
 
-Errors (syntax, linting, compiling, etc.) should go in location list windows.
-
-The configuration does not currently match this: ALE sends its results to
-the quickfix list (`g:ale_set_quickfix` in the early `ale.vim`), and the
-`c[` / `c]` mappings in `coc.vim` move through the quickfix list. Ask the
-owner before changing either this instruction or the configuration.
+Errors (syntax, linting, compiling, etc.) go in the quickfix list. ALE sends
+its results there (`g:ale_set_quickfix` in the early `ale.vim`), CoC's
+diagnostics reach it through ALE (`diagnostic.displayByAle` in
+`coc-settings`), and the `c[` / `c]` mappings in `coc.vim` move through it.
 
 [coc.vim]: ../.vim/pack/zzz-settings/start/settings/plugin/coc.vim
 [ale.vim]: ../.vim/pack/zzz-settings/start/settings/plugin/ale.vim
