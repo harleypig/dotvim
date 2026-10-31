@@ -59,7 +59,7 @@ The following extensions are currently installed and configured:
 * [coc-lists](https://github.com/neoclide/coc-lists) - Common lists for CoC
 * [coc-markdownlint](https://github.com/fannheyward/coc-markdownlint) -
     Markdown linting
-* [coc-markdown-preview-enhanced](https://github.com/weirongxu/coc-markdown-preview-enhanced) -
+* [coc-markdown-preview-enhanced][] -
     Markdown preview
 * [coc-pairs](https://github.com/neoclide/coc-pairs) - Auto-pair brackets,
     quotes, etc.
@@ -83,3 +83,5 @@ The following extensions are currently installed and configured:
 * [coc-nginx](https://github.com/yaegassy/coc-nginx) - Nginx configuration
     support
 * [coc-cucumber](https://github.com/yaegassy/coc-cucumber) - Cucumber support
+
+[coc-markdown-preview-enhanced]: https://github.com/weirongxu/coc-markdown-preview-enhanced

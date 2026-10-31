@@ -22,7 +22,7 @@ Install via npm:
 * [`bash-language-server`](https://github.com/bash-lsp/bash-language-server) -
     A language server for `Bash` that provides intelligent code completion,
     hover information, and more.
-* [`diagnostic-languageserver`](https://github.com/iamcco/diagnostic-languageserver) -
+* [`diagnostic-languageserver`][diagnostic-languageserver] -
     Provides additional diagnostic capabilities for `shellcheck`.
 
 ## Plugins and Extensions Used
@@ -81,3 +81,4 @@ The following features use default settings without additional configuration:
 
 [ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/ale.vim
 [sh.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/ftplugin/sh.vim
+[diagnostic-languageserver]: https://github.com/iamcco/diagnostic-languageserver

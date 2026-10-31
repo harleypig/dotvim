@@ -76,7 +76,7 @@
 
 ### Git and Version Control
 
-* [fugitive-azure-devops](https://github.com/cedarbaum/fugitive-azure-devops.vim.git) -
+* [fugitive-azure-devops][] -
     Azure DevOps integration
 * [vim-fugitive](https://github.com/tpope/vim-fugitive.git) - Git wrapper
 * [vim-gitgutter](https://github.com/airblade/vim-gitgutter.git) - Git diff in
@@ -157,3 +157,5 @@
 
 _Note: Plugins marked with * have functionality that may be partially covered
 by CoC or ALE._
+
+[fugitive-azure-devops]: https://github.com/cedarbaum/fugitive-azure-devops.vim.git

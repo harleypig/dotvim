@@ -18,7 +18,7 @@ Install via `pipx`:
 
 Install via `npm`:
 
-* [`ansible-language-server`](https://github.com/ansible/ansible-language-server) -
+* [`ansible-language-server`][ansible-language-server] -
     Provides language features like auto-completion and linting for Ansible.
 
 ## Plugins and Extensions Used
@@ -66,3 +66,4 @@ The following features use default settings without additional configuration:
 * Filetype Detection (handled by `vim-polyglot`)
 
 [yaml.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/ftplugin/yaml.vim
+[ansible-language-server]: https://github.com/ansible/ansible-language-server

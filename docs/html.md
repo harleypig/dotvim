@@ -11,7 +11,7 @@ working with HTML files.
 
 Install via npm:
 
-* [`vscode-html-languageservice`](https://github.com/Microsoft/vscode-html-languageservice) -
+* [`vscode-html-languageservice`][vscode-html-languageservice] -
     Language service that provides intelligent code completion, validation,
     and other language features for HTML files.
 
@@ -61,3 +61,5 @@ The following features use default settings without additional configuration:
 * Schema or Contract Validation (not applicable for HTML)
 * Version Control Integration (uses global Git integration)
 * Filetype Detection (handled by vim-polyglot)
+
+[vscode-html-languageservice]: https://github.com/Microsoft/vscode-html-languageservice
