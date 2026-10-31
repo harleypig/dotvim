@@ -1,10 +1,10 @@
-## HashiCorp Configuration
+# HashiCorp Configuration
 
 This document outlines the support for HashiCorp tools development within the Vim environment, specifically focusing on Terraform and Packer.
 
 Note: The configuration leverages language servers for enhanced functionality over built-in options, providing more comprehensive language support for HashiCorp's domain-specific languages.
 
-### External Packages Used
+## External Packages Used
 
 Install via package manager:
 * [`terraform`](https://www.terraform.io/) - Infrastructure as code tool for provisioning and managing cloud infrastructure.
@@ -13,7 +13,7 @@ Install via package manager:
 
 Install manually:
 
-#### tflint
+### tflint
 
 [`tflint`](https://github.com/terraform-linters/tflint) - Pluggable Terraform
 linter focused on possible errors, best practices, and naming conventions.
@@ -32,43 +32,47 @@ unzip tflint_*_linux_amd64.zip
 sudo install -m 755 tflint /usr/local/bin/
 ```
 
-### Plugins and Extensions Used
+## Plugins and Extensions Used
 
 * [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin) - Provides syntax highlighting for Terraform and HCL files.
 * [`coc.nvim`](https://github.com/neoclide/coc.nvim) (Vim Plugin) - Intellisense engine that integrates with `terraform-ls` for language server features.
 * [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for linting Terraform files with `tflint` and formatting with `terraform fmt`.
 
-### Configuration Files Used
+## Configuration Files Used
 
 * `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration for the terraform-ls language server.
-* [`ale.vim`](../.vim/pack/settings/start/settings/plugin/ale.vim) - Global ALE configuration including Terraform linting and formatting settings.
+* [`ale.vim`][ale.vim] - Global ALE configuration including Terraform linting and formatting settings.
 
-### Configured Features
+## Syntax Highlighting
 
-#### Syntax Highlighting
 Provided by `vim-polyglot`, which includes support for Terraform (HCL) syntax highlighting.
 
-#### Linting and Static Analysis
+## Linting and Static Analysis
+
 * **Tool**: `tflint` via `ALE`
 * **Configuration**: Configured in `ale.vim` to run automatically on file save
 * **Usage**: Errors and warnings appear in the location list and gutter
 
-#### Auto Completion
+## Auto Completion
+
 * **Tool**: `terraform-ls` via `CoC`
 * **Configuration**: Configured in `coc-settings.json`
 * **Features**: Variable completion, resource type completion, attribute completion
 
-#### Formatting
+## Formatting and Beautification
+
 * **Tool**: `terraform fmt` via `ALE`
 * **Configuration**: Set as a fixer in `ale.vim`
 * **Usage**: Automatically formats code on save or manually with `:ALEFix`
 
-### Default or Inapplicable Sections
+## Default or Inapplicable Sections
 
 The following features use default settings without additional configuration:
 * Error Highlighting (handled by ALE and CoC)
 * Code Folding (uses Vim's default folding mechanisms)
-* Schema Validation (handled by `terraform-ls`)
+* Schema or Contract Validation (handled by `terraform-ls`)
 * Version Control Integration (uses global Git integration)
 * Snippets (not configured specifically for Terraform)
 * Filetype Detection (handled by `vim-polyglot`)
+
+[ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/ale.vim

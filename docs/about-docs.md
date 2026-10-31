@@ -30,7 +30,7 @@
 | Backlog | GitHub issues ([#7]) | No TODO file. Both current TODO files are being emptied into issues. |
 | Research ("to try" lists) | `docs/extensions-to-try.md`, `docs/plugins-to-try.md` | Kept as research pages for now; see *Still open*. |
 | Documentation conventions | `CONVENTIONS.md` | How docs are written. |
-| Instructions for AI assistants | `.claude/` ([#11]) | Not part of the published docs. |
+| Instructions for AI assistants | `.claude/CLAUDE.md` ([#11]) | Not part of the published docs. |
 | In-editor reference | `late-settings/doc/*.txt` | Vim `:help` files; tags are built at startup and not committed. |
 
 ### `:help` versus the web pages
@@ -53,17 +53,15 @@ phase ([#12]).
 * Wrap prose at 78 columns.
 * Reference-style links, so the prose reads cleanly in a terminal.
 * **Every doc starts with a level-1 (`#`) heading**, which the published
-  site uses as the page title. `CONVENTIONS.md` still says level 2 and will
-  be updated to match ([#8]).
+  site uses as the page title. `CONVENTIONS.md` says the same, and every
+  page in `docs/` follows it ([#8]).
 * `CONVENTIONS.md` is the authority for document structure: asterisks for
   bullets, document only non-default settings.
 * **Every language or tool page follows one template**,
-  `docs/LANGUAGE_SETUP_TEMPLATE.md`. Where it and `CONVENTIONS.md` disagree
-  on section names, `CONVENTIONS.md` wins: one "Plugins and Extensions Used"
-  section and its list of feature sections, not the template's separate
-  "VIm Plugins Used", "CoC Extensions Used" and "Configured Features". The
-  template is being rewritten to match, and the language pages follow it
-  ([#9]).
+  `docs/LANGUAGE_SETUP_TEMPLATE.md`. Where it and `CONVENTIONS.md` disagreed
+  on section names, `CONVENTIONS.md` won: one "Plugins and Extensions Used"
+  section, then one section per configured feature, named from its list. The
+  template and the language pages now follow that ([#9]).
 
 ## GitHub Pages
 
@@ -75,56 +73,60 @@ phase ([#12]).
   `README.md`) in `docs/` to serve as the front page; there is none today.
   When one is added, it opens with the same "working draft" notice as this
   page, plus a short list of what the site covers.
-* **Links outside `docs/`** (to files under `.vim/`, for example) are
-  expected not to resolve on the published site. They would need to point
-  at the file on GitHub instead, or be left as plain paths.
+* **Links outside `docs/`** (to files under `.vim/`, for example) point at
+  the file on GitHub, because only `docs/` is published and a relative link
+  would not resolve on the site. `CONVENTIONS.md` gives the URL form
+  ([#13]).
 * **Headings and generators.** Starting each page at level 1 suits the
   default build. If a site generator (MkDocs or another) is chosen later,
-  re-check how it treats a page's first heading before converting.
+  re-check how it treats a page's first heading; [#8] stays open for that.
 * **Room for a hub.** These pages may later be grouped with other public
   utility repositories under the owner's user site. Nothing here should
   assume it is the top of a site; keep links relative within `docs/`.
 
-The three "expected" points above are assumptions about the default build,
+The two "expected" points above are assumptions about the default build,
 to be verified when Pages is turned on; see *Still open*.
 
 ## Disposition of existing docs
 
-Recorded only; nothing has been moved or edited yet. Lines over 78 columns
-and smaller overlaps are left to the area-by-area pass.
+Recorded when this draft was written; a row notes where an issue has since
+been done. Lines over 78 columns and smaller overlaps are left to the
+area-by-area pass.
 
 | File | Kind | Disposition |
 | ---- | ---- | ----------- |
 | `README.md` | Overview | Fine in shape. The Node.js minimum is written here and in two `docs/` pages; keep one home ([#14]). Long lines. |
-| `CONVENTIONS.md` | Conventions | Keep; the authority. Change the starting heading to level 1 ([#8]). Refers to `GLOBAL.md` without a path; fix when it moves ([#11]). |
+| `CONVENTIONS.md` | Conventions | Keep; the authority. Starting heading changed to level 1 ([#8]). Its reference to `GLOBAL.md` now points at `.claude/CLAUDE.md` ([#11]). |
 | `TODO.md` | Backlog | Open items move to GitHub issues, then the file goes ([#7]). Its "create `docs/vim.md`" item looks already covered by `docs/vim-files.md`. |
 | `docs/todo.md` | Backlog | Open items move to GitHub issues, then the file goes ([#7]). Mixes tasks with research notes; sort them as part of that move. |
-| `docs/GLOBAL.md` | AI-assistant instructions | Moves to `.claude/`, out of the published docs ([#11]). Links to the nonexistent `.vim/pack/settings/` ([#13]). |
-| `docs/LANGUAGE_SETUP_TEMPLATE.md` | Template | Keep as the template; rewrite to match `CONVENTIONS.md` ([#9]). Same broken path ([#13]). |
-| `docs/coc-ale-setup.md` | Shared plugin setup | Overlaps `GLOBAL.md` and `README.md`. When `GLOBAL.md` moves, check whether any human-facing setup in it belongs here. |
-| `docs/coc-extensions.md` | Tool setup | Fine; overlaps the installed list in `extensions-to-try.md`. |
+| `docs/GLOBAL.md` | AI-assistant instructions | Moved to `.claude/CLAUDE.md`, out of the published docs ([#11]); its human-facing part went to `coc-ale-setup.md`. Its broken links were fixed first ([#13]). |
+| `docs/LANGUAGE_SETUP_TEMPLATE.md` | Template | Keep as the template; rewritten to match `CONVENTIONS.md` ([#9]). Broken path fixed ([#13]). |
+| `docs/coc-ale-setup.md` | Shared plugin setup | Overlaps `README.md`. Now opens with how CoC and ALE divide the work, the human-facing part of `GLOBAL.md` ([#11]). |
+| `docs/coc-extensions.md` | Tool setup | Fine; overlaps the installed list in `extensions-to-try.md`. Headings aligned with the template ([#9]). |
 | `docs/extensions-to-try.md` | Research | Kept as a research page for now. Its "currently installed" list duplicates `coc-extensions.md`. |
 | `docs/plugins-to-try.md` | Research | Kept as a research page for now. |
 | `docs/utility.md` | Tool setup | Mostly a TODO; needs writing. |
 | `docs/statusline.md` | Tool setup | Fine; check against the current statusline config. |
-| `docs/vim-files.md` | Language setup | Fine in shape; broken paths ([#13]). |
-| `docs/ansible.md` | Language setup | Rework to template ([#9]); long lines. |
-| `docs/docker.md` | Language setup | Rework to template ([#9]); long lines. |
-| `docs/hashicorp.md` | Language setup | Rework to template ([#9]); long lines. |
-| `docs/html.md` | Language setup | Rework to template ([#9]); long lines. |
-| `docs/java.md` | Language setup | Closest to the bar; good model. |
-| `docs/json.md` | Language setup | Rework to template ([#9]); long lines. |
-| `docs/proselint.md` | Tool setup | Rework to template ([#9]); long lines. |
-| `docs/python.md` | Language setup | Rework to template ([#9]); broken paths ([#13]). |
-| `docs/shell.md` | Language setup | Rework to template ([#9]); broken paths ([#13]). |
-| `docs/toml.md` | Language setup | Rework to template ([#9]); long lines. |
-| `docs/yaml.md` | Language setup | Rework to template ([#9]). |
+| `docs/vim-files.md` | Language setup | Fine in shape; broken paths fixed ([#13]). |
+| `docs/ansible.md` | Language setup | Reworked to template ([#9]); long lines. |
+| `docs/docker.md` | Language setup | Reworked to template ([#9]); long lines. |
+| `docs/hashicorp.md` | Language setup | Reworked to template ([#9]); long lines. |
+| `docs/html.md` | Language setup | Reworked to template ([#9]); long lines. |
+| `docs/java.md` | Language setup | Closest to the bar; good model. Headings aligned with the template ([#9]). |
+| `docs/json.md` | Language setup | Reworked to template ([#9]); long lines. |
+| `docs/proselint.md` | Tool setup | Reworked to template ([#9]); long lines. |
+| `docs/python.md` | Language setup | Reworked to template ([#9]); broken paths fixed ([#13]). |
+| `docs/shell.md` | Language setup | Reworked to template ([#9]); broken paths fixed ([#13]). |
+| `docs/toml.md` | Language setup | Reworked to template ([#9]); long lines. |
+| `docs/yaml.md` | Language setup | Reworked to template ([#9]). |
 | `late-settings/doc/learning.txt` | `:help` | Keep; the model for in-editor docs. |
 
-"Broken paths" means links to `.vim/pack/settings/start/settings/...`; the
-real directories are `.vim/pack/000-settings/` and `.vim/pack/zzz-settings/`
-(reachable as `early-settings/` and `late-settings/`). Fixing them is
-[#13].
+"Broken paths" means links to `.vim/pack/settings/start/settings/...`,
+which does not exist. The real directories are `.vim/pack/000-settings/`
+and `.vim/pack/zzz-settings/` (reachable as `early-settings/` and
+`late-settings/`). Every such link, including three in pages not listed
+above as broken (`coc-ale-setup.md`, `hashicorp.md`, `json.md`), now points
+at the real file on GitHub ([#13]).
 
 ## Decisions
 
@@ -132,17 +134,19 @@ The questions an earlier version of this draft raised are answered on
 [#6], and each answer that needs work has its own issue:
 
 * Backlog: GitHub issues; both TODO files are emptied into them ([#7]).
-* Headings: docs start at level 1 ([#8]).
-* Template versus `CONVENTIONS.md`: `CONVENTIONS.md` wins ([#9]).
+* Headings: docs start at level 1, rechecked once a site generator is
+  chosen ([#8]).
+* Template versus `CONVENTIONS.md`: `CONVENTIONS.md` wins; the template and
+  the pages are rewritten to match ([#9]).
 * Scripts in `bin/`: a `--help` in each, plus one summary page ([#10]).
-* `docs/GLOBAL.md`: moves to `.claude/` ([#11]).
+* `docs/GLOBAL.md`: moved to `.claude/CLAUDE.md` ([#11]).
 * Mappings reference: hand-written for now; generating it waits for the
   improvements phase ([#12]).
 * Publishing the backlog: no longer a question, since there is no backlog
   file to publish.
 
 Problems found while drafting are filed separately: the broken
-`.vim/pack/settings/` links ([#13]), the Node.js minimum written in three
+`.vim/pack/settings/` links ([#13], fixed), the Node.js minimum written in three
 places ([#14]), and bugs in `bin/check-setup` ([#15]).
 
 ### Still open
@@ -150,9 +154,8 @@ places ([#14]), and bugs in `bin/check-setup` ([#15]).
 1. **The "to try" pages** (`docs/extensions-to-try.md`,
    `docs/plugins-to-try.md`): whether they stay as research pages, become
    issues, or go. They stay as research pages until that is decided.
-2. **GitHub Pages defaults**: the index page, how pages without front
-   matter are handled, and links outside `docs/`. Verified when Pages is
-   turned on.
+2. **GitHub Pages defaults**: the index page and how pages without front
+   matter are handled. Verified when Pages is turned on.
 
 [#6]: https://github.com/harleypig/dotvim/issues/6
 [#7]: https://github.com/harleypig/dotvim/issues/7

@@ -1,8 +1,8 @@
-## Statusline Configuration
+# Statusline Configuration
 
 This document outlines the custom statusline configuration used in this Vim setup.
 
-### Overview
+## Overview
 
 The statusline provides a comprehensive view of the current editing state, including:
 
@@ -13,9 +13,9 @@ The statusline provides a comprehensive view of the current editing state, inclu
 * Syntax highlighting information
 * File permissions and path
 
-### Features
+## Features
 
-#### Buffer and File Information
+### Buffer and File Information
 * Buffer number
 * Current filetype
 * Modification status (`+` for modified, `-` for unmodified, `X` for non-modifiable)
@@ -23,26 +23,26 @@ The statusline provides a comprehensive view of the current editing state, inclu
 * File format (only shown if not unix)
 * File encoding (only shown if not utf-8)
 
-#### Warning Indicators
+### Warning Indicators
 * Mixed indentation warning
 * Trailing space warning
 * Paste mode indicator
 
-#### Diagnostic Information
+### Diagnostic Information
 * ALE linter status (warning and error counts)
 * CoC diagnostic information
 
-#### Position Information
+### Position Information
 * Column and line position
 * Percentage through file
 * ASCII value under cursor (decimal and hexadecimal)
 * Syntax highlighting group under cursor
 
-#### Additional Information
+### Additional Information
 * File permissions
 * Full file path (truncated to 20 characters)
 
-### Customization
+## Customization
 
 The statusline appearance can be customized through several global variables:
 
@@ -63,14 +63,14 @@ let g:YASL_PasteMode = '[PASTE]'
 let g:YASL_NoPasteMode = ''
 ```
 
-### Color Scheme Integration
+## Color Scheme Integration
 
 The statusline changes color based on the current mode:
 * Normal mode: White background, Black text
 * Insert mode: Yellow background, Blue text
 * Command window: Gray background, Red text
 
-### Functions
+## Functions
 
 The statusline uses several custom functions to generate its components:
 
@@ -85,7 +85,7 @@ The statusline uses several custom functions to generate its components:
 * `YASL_PasteMode()` - Shows paste mode status
 * `YASL_Filetype()` - Shows current filetype
 
-### Integration with Plugins
+## Integration with Plugins
 
 The statusline integrates with:
 * ALE - Shows linting errors and warnings
