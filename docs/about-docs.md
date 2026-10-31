@@ -171,6 +171,3 @@ places ([#14]), and bugs in `bin/check-setup` ([#15]).
 [#13]: https://github.com/harleypig/dotvim/issues/13
 [#14]: https://github.com/harleypig/dotvim/issues/14
 [#15]: https://github.com/harleypig/dotvim/issues/15
-
-<!-- Table rows cannot wrap, so the line-length check skips tables. -->
-<!-- markdownlint-configure-file { "MD013": { "tables": false } } -->

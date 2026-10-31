@@ -1,0 +1,14 @@
+# markdownlint configuration. Every rule not named here runs with its
+# default settings; each entry below is a departure from a default, made to
+# match CONVENTIONS.md and docs/about-docs.md.
+
+# Prose wraps at 78 columns. Table rows and code blocks cannot be wrapped
+# without changing what they say, so they are exempt.
+MD013:
+  line_length: 78
+  tables: false
+  code_blocks: false
+
+# Bullet points use asterisks.
+MD004:
+  style: asterisk
