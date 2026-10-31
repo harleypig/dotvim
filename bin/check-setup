@@ -2,9 +2,10 @@
 
 # :shfmt -w -s -i 2 -bn -ci -sr %
 
-# Load release information
-# shellcheck disable=SC1091
-source /etc/os-release
+# Load release information. CHECK_SETUP_OS_RELEASE points it at another file,
+# so the tests can stand in for an OS other than the one running them.
+# shellcheck disable=SC1090,SC1091
+source "${CHECK_SETUP_OS_RELEASE:-/etc/os-release}"
 
 ##############################################################################
 #-----------------------------------------------------------------------------
@@ -22,21 +23,48 @@ executable() {
 
 #-----------------------------------------------------------------------------
 install_msg() {
-  pkgname="$1"
+  local tool="$1" pkg="$2" osinstall msg
 
-  if [[ $2 == http* ]]; then
-    osinstall="unknown package name - for $NAME"
-    pkg="see $2"
-
-  else
-    osinstall="(Unknown OS: $NAME)"
-    [[ $NAME == "Arch Linux" ]] && osinstall='trizen -S'
-    [[ $NAME == "Ubuntu" ]] && osinstall='apt install'
-    pkg="$2"
+  if [[ -z $pkg ]]; then
+    warn "$tool not installed: no package name known for $NAME"
+    return
   fi
 
-  printf -v msg '%s not installed: %s %s' "$pkgname" "$osinstall" "$pkg"
+  if [[ $pkg == http* ]]; then
+    osinstall="unknown package name - for $NAME"
+    pkg="see $pkg"
+
+  else
+    case $NAME in
+      'Arch Linux') osinstall='trizen -S' ;;
+      Ubuntu) osinstall='apt install' ;;
+      *) osinstall="(no install command known for $NAME)" ;;
+    esac
+  fi
+
+  printf -v msg '%s not installed: %s %s' "$tool" "$osinstall" "$pkg"
   warn "$msg"
+}
+
+#-----------------------------------------------------------------------------
+# os_pkg ARCH UBUNTU - the package name for this OS; empty on any other.
+os_pkg() {
+  case $NAME in
+    'Arch Linux') printf '%s' "$1" ;;
+    Ubuntu) printf '%s' "$2" ;;
+  esac
+}
+
+#-----------------------------------------------------------------------------
+usage() {
+  cat << EOF
+Usage: ${0##*/}
+
+Report the tools this Vim setup expects that are missing: node and npm
+(and whether node is new enough for CoC), plus the ansible and docker
+linters when ansible or docker is installed. Each report carries an install
+hint for Arch Linux or Ubuntu. Installs nothing.
+EOF
 }
 
 #-----------------------------------------------------------------------------
@@ -45,13 +73,12 @@ declare -A checks
 #-----------------------------------------------------------------------------
 check_node() {
   if ! executable 'node'; then
-    [[ $NAME == "Arch Linux" ]] && pkgname='nodejs'
-    [[ $NAME == "Ubuntu" ]] && pkgname='nodejs'
-    install_msg 'node' "$pkgname"
+    install_msg 'node' "$(os_pkg 'nodejs' 'nodejs')"
     return
   fi
 
   # Check Node.js version (CoC requires 14.14+)
+  local node_version required_version
   node_version=$(node --version | sed 's/v//')
   required_version="14.14.0"
   
@@ -60,9 +87,7 @@ check_node() {
   fi
 
   if ! executable 'npm'; then
-    [[ $NAME == "Arch Linux" ]] && pkgname='npm'
-    [[ $NAME == "Ubuntu" ]] && pkgname='npm'
-    install_msg 'npm' "$pkgname"
+    install_msg 'npm' "$(os_pkg 'npm' 'npm')"
   fi
 }
 
@@ -77,9 +102,7 @@ check_ansible() {
   executable 'ansible-lint' || install_msg 'ansible-lint' 'ansible-lint'
 
   if ! executable 'ansible-language-server'; then
-    [[ $NAME == "Arch Linux" ]] && pkgname='ansible-language-server'
-    [[ $NAME == "Ubuntu" ]] && pkgname='https://als.readthedocs.io'
-    install_msg 'ansible-language-server' "$pkgname"
+    install_msg 'ansible-language-server' "$(os_pkg 'ansible-language-server' 'https://als.readthedocs.io')"
   fi
 
   warn "ansible also depends on yamllint"
@@ -94,15 +117,11 @@ check_docker() {
   executable 'docker' || return 0
 
   if ! executable 'docker_lint'; then
-    [[ $NAME == "Arch Linux" ]] && pkgname='docker-lint'
-    [[ $NAME == "Ubuntu" ]] && pkgname='https://github.com/projectatomic/dockerfile_lint'
-    install_msg 'docker_lint' "$pkgname"
+    install_msg 'docker_lint' "$(os_pkg 'docker-lint' 'https://github.com/projectatomic/dockerfile_lint')"
   fi
 
   if ! executable 'hadolint'; then
-    [[ $NAME == "Arch Linux" ]] && pkgname='hadolint'
-    [[ $NAME == "Ubuntu" ]] && pkgname='https://github.com/hadolint/hadolint'
-    install_msg 'hadolint' "$pkgname"
+    install_msg 'hadolint' "$(os_pkg 'hadolint' 'https://github.com/hadolint/hadolint')"
   fi
 }
 
@@ -110,6 +129,13 @@ checks[docker]='check_docker'
 
 ##############################################################################
 # Run checks
+
+case $1 in
+  -h | --help)
+    usage
+    exit 0
+    ;;
+esac
 
 mapfile -t sorted < <(printf '%s\n' "${!checks[@]}" | sort)
 

@@ -1,5 +1,24 @@
 #!/bin/bash
 
+#-----------------------------------------------------------------------------
+usage() {
+  cat << EOF
+Usage: ${0##*/} URL...
+
+Add each plugin repository URL as a git submodule under .vim/2btested/,
+named after the repository (lowercased, without .git, .vim or .nvim), then
+regenerate README.md with mkreadme and commit. A URL whose name already
+appears in .gitmodules is skipped. Run from the top of the repository.
+EOF
+}
+
+case $1 in
+  -h | --help)
+    usage
+    exit 0
+    ;;
+esac
+
 _add() {
   local url="${1:?must pass url to add}"
   local name="${url##*/}"

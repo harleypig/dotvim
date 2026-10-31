@@ -33,6 +33,13 @@ check_setup() {
   run env PATH="$stubs" "$script"
 }
 
+#-----------------------------------------------------------------------------
+# on_os NAME - run as though /etc/os-release named NAME.
+on_os() {
+  printf 'NAME="%s"\n' "$1" > "$BATS_TEST_TMPDIR/os-release"
+  export CHECK_SETUP_OS_RELEASE="$BATS_TEST_TMPDIR/os-release"
+}
+
 ##############################################################################
 @test "registers every check without a declare error" {
   check_setup
@@ -92,4 +99,27 @@ check_setup() {
   assert_line --index 0 --partial 'ansible-lint not installed:'
   assert_line --partial 'hadolint not installed:'
   assert_line --index -1 --partial 'node not installed:'
+}
+
+@test "names the OS when it knows no package for it" {
+  on_os 'Fedora Linux'
+  check_setup
+  assert_line 'node not installed: no package name known for Fedora Linux'
+}
+
+@test "carries no package name over from an earlier check" {
+  on_os 'Fedora Linux'
+  stub ansible
+  check_setup
+  assert_line --partial 'ansible-lint not installed:'
+  assert_line \
+    'ansible-language-server not installed: no package name known for Fedora Linux'
+}
+
+@test "still gives the package and command on a known OS" {
+  on_os 'Arch Linux'
+  stub docker
+  check_setup
+  assert_line 'hadolint not installed: trizen -S hadolint'
+  assert_line 'node not installed: trizen -S nodejs'
 }
