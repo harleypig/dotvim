@@ -80,6 +80,14 @@ commits() {
   assert_equal "$(commits)" 2
 }
 
+@test "fails without committing when the submodule cannot be added" {
+  addsubmodule 100-core "$BATS_TEST_TMPDIR/remotes/missing.git"
+  assert_failure
+  assert_equal "$(commits)" 1
+  [[ -z $(git config -f .gitmodules --get-regexp '^submodule\.missing\.' \
+    2> /dev/null) ]] || fail ".gitmodules has missing: $(< .gitmodules)"
+}
+
 @test "refuses a package that does not exist" {
   addsubmodule core "$remote"
   assert_failure

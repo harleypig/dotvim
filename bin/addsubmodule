@@ -9,7 +9,8 @@ Add each plugin repository URL as a git submodule at
 .vim/pack/PACKAGE/start/NAME and commit it. PACKAGE is an existing directory
 under .vim/pack, such as 100-core. NAME is the repository's name,
 lowercased, without .git, .vim or .nvim. A URL whose name already appears in
-.gitmodules is skipped. Run from the top of the repository.
+.gitmodules is skipped. Exits non-zero if any URL could not be added. Run
+from the top of the repository.
 EOF2
 }
 
@@ -32,9 +33,11 @@ _add() {
 
   grep "$name" .gitmodules && return 0
 
-  git submodule add --name "$name" "$url" ".vim/pack/$package/start/$name"
-  git config -f .gitmodules submodule."$name".ignore dirty
-  git add .gitmodules
+  git submodule add --name "$name" "$url" ".vim/pack/$package/start/$name" \
+    || return 1
+
+  git config -f .gitmodules submodule."$name".ignore dirty || return 1
+  git add .gitmodules || return 1
   git commit -m "added $name to $package"
 }
 
@@ -53,6 +56,10 @@ shift
   exit 1
 }
 
+failed=0
+
 for u in "$@"; do
-  _add "$package" "$u"
+  _add "$package" "$u" || failed=1
 done
+
+exit "$failed"

@@ -49,13 +49,34 @@ post_clone() {
   post_clone
   assert_success
 
-  local packer
-  packer=$(grep -c -- '- packer$' <<< "$output")
-  assert_equal "$packer" 1
+  # The system packages are the lines between the "Could not detect" warning
+  # and the next section heading.
+  local listed dupes
+  listed=$(awk '/Could not detect package manager/ { on = 1; next }
+    /==>/ { on = 0 }
+    on && /- / { print $NF }' <<< "$output")
+  [[ -n $listed ]] || fail 'no system packages listed'
+
+  dupes=$(sort <<< "$listed" | uniq -d)
+  [[ -z $dupes ]] || fail "listed more than once: $dupes"
 }
 
 @test "does not claim npm installed when the install failed" {
   post_clone
   assert_output --partial 'npm installation failed'
   refute_output --partial 'npm installed successfully'
+}
+
+@test "reports npm installed once when nvm installs it" {
+  cat > "$BATS_TEST_TMPDIR/config/shell-startup/nodejs" << NODEJS
+nvm() { printf '#!/bin/sh\\n' > "$stubs/npm"; chmod +x "$stubs/npm"; }
+NODEJS
+  ln -s "$(type -P chmod)" "$stubs/chmod"
+  post_clone
+  assert_success
+  refute_output --partial 'npm installation failed'
+
+  local said
+  said=$(grep -c 'npm installed successfully' <<< "$output")
+  assert_equal "$said" 1
 }
