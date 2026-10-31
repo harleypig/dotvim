@@ -12,26 +12,24 @@ No additional external packages are required beyond what's already installed for
 
 * [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin) - Provides basic syntax highlighting for TOML files.
 * [`vim-toml`](https://github.com/cespare/vim-toml) (Vim Plugin) - Provides enhanced syntax highlighting specifically for TOML files.
-
-### CoC Extensions Used
-
 * [`coc-toml`](https://github.com/kkiyama117/coc-toml) (CoC Extension) - Provides language server support for TOML files.
 
 ### Configuration Files Used
 
 * `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration for the TOML language server.
 
-### Configured Features
+### Syntax Highlighting
 
-#### Syntax Highlighting
 Provided by both vim-polyglot and vim-toml, which include enhanced support for TOML syntax highlighting. The vim-toml plugin offers more specialized highlighting for TOML-specific constructs.
 
-#### Auto Completion
+### Auto Completion
+
 * **Tool**: TOML language server via `coc-toml`
 * **Configuration**: No specific configuration in `coc-settings.json`
 * **Features**: Key completion, value suggestions based on schema (when available)
 
-#### Schema Validation
+### Schema or Contract Validation
+
 * **Tool**: TOML language server via `coc-toml`
 * **Features**: Validates TOML files against schemas when available
 * **Common Use Cases**: 

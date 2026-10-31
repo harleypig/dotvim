@@ -27,23 +27,25 @@ Install via npm:
 * [`ale.vim`][ale.vim] - Global ALE configuration including shell script linting and formatting settings.
 * [`sh.vim`][sh.vim] - Shell-specific settings for editing shell script files.
 
-### Configured Features
+### Syntax Highlighting
 
-#### Syntax Highlighting
 Provided by `vim-polyglot`, which includes enhanced support for shell script syntax highlighting.
 
-#### Linting and Static Analysis
+### Linting and Static Analysis
+
 * **Tool**: `shellcheck` via `ALE` and `diagnostic-languageserver`
 * **Configuration**: Configured in `coc-settings.json` and `ale.vim`
 * **Usage**: Errors and warnings appear in the location list and gutter
 * **Features**: Detects common shell script issues, suggests best practices
 
-#### Auto Completion
+### Auto Completion
+
 * **Tool**: `bash-language-server` via `coc-sh`
 * **Configuration**: Configured in `coc-settings.json`
 * **Features**: Command completion, variable completion, path completion
 
-#### Formatting
+### Formatting and Beautification
+
 * **Tool**: `shfmt` via `ALE`
 * **Configuration**: Set as a fixer in `ale.vim`
 * **Usage**: Automatically formats code on save or manually with `:ALEFix`

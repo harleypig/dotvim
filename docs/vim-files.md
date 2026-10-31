@@ -15,9 +15,6 @@ Install via pipx:
 ### Plugins and Extensions Used
 
 * [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for linting Vim script files with vint.
-
-### CoC Extensions Used
-
 * [`coc-vimlsp`](https://github.com/iamcco/coc-vimlsp) (CoC Extension) - CoC extension that provides Vim script language server support.
 
 ### Configuration Files Used
@@ -26,22 +23,24 @@ Install via pipx:
 * [`ale.vim`][ale.vim] - Global ALE configuration.
 * [`vim.vim`][vim.vim] - Vim-specific settings for editing Vim script files.
 
-### Configured Features
+### Syntax Highlighting
 
-#### Syntax Highlighting
 Provided by Vim's built-in syntax highlighting for Vim script files.
 
-#### Linting and Static Analysis
+### Linting and Static Analysis
+
 * **Tool**: `vint` via `ALE`
 * **Configuration**: Configured in `ale.vim`
 * **Usage**: Errors and warnings appear in the location list and gutter
 
-#### Auto Completion
+### Auto Completion
+
 * **Tool**: `vim-language-server` via `coc-vimlsp`
 * **Configuration**: Configured in `coc-settings.json`
 * **Features**: Function completion, variable completion, keyword completion
 
-#### Error Highlighting
+### Error Highlighting
+
 * **Tool**: `vint` via `ALE`
 * **Configuration**: Configured in `ale.vim`
 * **Usage**: Syntax errors and style issues are highlighted in the editor
@@ -51,12 +50,12 @@ Provided by Vim's built-in syntax highlighting for Vim script files.
 The following features use default settings without additional configuration:
 * Code Folding (uses Vim's default folding mechanisms)
 * Snippets (not configured specifically for Vim script)
-* Schema Validation (not applicable for Vim script)
+* Schema or Contract Validation (not applicable for Vim script)
 * Documentation Tools (not configured specifically for Vim script)
 * Debugging Support (not configured specifically for Vim script)
 * Testing Tools (not configured specifically for Vim script)
 * Version Control Integration (uses global Git integration)
-* Formatting (not configured specifically for Vim script)
+* Formatting and Beautification (not configured specifically for Vim script)
 
 [ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/ale.vim
 [vim.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/ftplugin/vim.vim

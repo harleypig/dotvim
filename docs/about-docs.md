@@ -58,12 +58,10 @@ phase ([#12]).
 * `CONVENTIONS.md` is the authority for document structure: asterisks for
   bullets, document only non-default settings.
 * **Every language or tool page follows one template**,
-  `docs/LANGUAGE_SETUP_TEMPLATE.md`. Where it and `CONVENTIONS.md` disagree
-  on section names, `CONVENTIONS.md` wins: one "Plugins and Extensions Used"
-  section and its list of feature sections, not the template's separate
-  "VIm Plugins Used", "CoC Extensions Used" and "Configured Features". The
-  template is being rewritten to match, and the language pages follow it
-  ([#9]).
+  `docs/LANGUAGE_SETUP_TEMPLATE.md`. Where it and `CONVENTIONS.md` disagreed
+  on section names, `CONVENTIONS.md` won: one "Plugins and Extensions Used"
+  section, then one section per configured feature, named from its list. The
+  template and the language pages now follow that ([#9]).
 
 ## GitHub Pages
 
@@ -102,25 +100,25 @@ area-by-area pass.
 | `TODO.md` | Backlog | Open items move to GitHub issues, then the file goes ([#7]). Its "create `docs/vim.md`" item looks already covered by `docs/vim-files.md`. |
 | `docs/todo.md` | Backlog | Open items move to GitHub issues, then the file goes ([#7]). Mixes tasks with research notes; sort them as part of that move. |
 | `docs/GLOBAL.md` | AI-assistant instructions | Moved to `.claude/CLAUDE.md`, out of the published docs ([#11]); its human-facing part went to `coc-ale-setup.md`. Its broken links were fixed first ([#13]). |
-| `docs/LANGUAGE_SETUP_TEMPLATE.md` | Template | Keep as the template; rewrite to match `CONVENTIONS.md` ([#9]). Broken path fixed ([#13]). |
+| `docs/LANGUAGE_SETUP_TEMPLATE.md` | Template | Keep as the template; rewritten to match `CONVENTIONS.md` ([#9]). Broken path fixed ([#13]). |
 | `docs/coc-ale-setup.md` | Shared plugin setup | Overlaps `README.md`. Now opens with how CoC and ALE divide the work, the human-facing part of `GLOBAL.md` ([#11]). |
-| `docs/coc-extensions.md` | Tool setup | Fine; overlaps the installed list in `extensions-to-try.md`. |
+| `docs/coc-extensions.md` | Tool setup | Fine; overlaps the installed list in `extensions-to-try.md`. Headings aligned with the template ([#9]). |
 | `docs/extensions-to-try.md` | Research | Kept as a research page for now. Its "currently installed" list duplicates `coc-extensions.md`. |
 | `docs/plugins-to-try.md` | Research | Kept as a research page for now. |
 | `docs/utility.md` | Tool setup | Mostly a TODO; needs writing. |
 | `docs/statusline.md` | Tool setup | Fine; check against the current statusline config. |
 | `docs/vim-files.md` | Language setup | Fine in shape; broken paths fixed ([#13]). |
-| `docs/ansible.md` | Language setup | Rework to template ([#9]); long lines. |
-| `docs/docker.md` | Language setup | Rework to template ([#9]); long lines. |
-| `docs/hashicorp.md` | Language setup | Rework to template ([#9]); long lines. |
-| `docs/html.md` | Language setup | Rework to template ([#9]); long lines. |
-| `docs/java.md` | Language setup | Closest to the bar; good model. |
-| `docs/json.md` | Language setup | Rework to template ([#9]); long lines. |
-| `docs/proselint.md` | Tool setup | Rework to template ([#9]); long lines. |
-| `docs/python.md` | Language setup | Rework to template ([#9]); broken paths fixed ([#13]). |
-| `docs/shell.md` | Language setup | Rework to template ([#9]); broken paths fixed ([#13]). |
-| `docs/toml.md` | Language setup | Rework to template ([#9]); long lines. |
-| `docs/yaml.md` | Language setup | Rework to template ([#9]). |
+| `docs/ansible.md` | Language setup | Reworked to template ([#9]); long lines. |
+| `docs/docker.md` | Language setup | Reworked to template ([#9]); long lines. |
+| `docs/hashicorp.md` | Language setup | Reworked to template ([#9]); long lines. |
+| `docs/html.md` | Language setup | Reworked to template ([#9]); long lines. |
+| `docs/java.md` | Language setup | Closest to the bar; good model. Headings aligned with the template ([#9]). |
+| `docs/json.md` | Language setup | Reworked to template ([#9]); long lines. |
+| `docs/proselint.md` | Tool setup | Reworked to template ([#9]); long lines. |
+| `docs/python.md` | Language setup | Reworked to template ([#9]); broken paths fixed ([#13]). |
+| `docs/shell.md` | Language setup | Reworked to template ([#9]); broken paths fixed ([#13]). |
+| `docs/toml.md` | Language setup | Reworked to template ([#9]); long lines. |
+| `docs/yaml.md` | Language setup | Reworked to template ([#9]). |
 | `late-settings/doc/learning.txt` | `:help` | Keep; the model for in-editor docs. |
 
 "Broken paths" means links to `.vim/pack/settings/start/settings/...`,
@@ -137,7 +135,8 @@ The questions an earlier version of this draft raised are answered on
 
 * Backlog: GitHub issues; both TODO files are emptied into them ([#7]).
 * Headings: docs start at level 1 ([#8]).
-* Template versus `CONVENTIONS.md`: `CONVENTIONS.md` wins ([#9]).
+* Template versus `CONVENTIONS.md`: `CONVENTIONS.md` wins; the template and
+  the pages are rewritten to match ([#9]).
 * Scripts in `bin/`: a `--help` in each, plus one summary page ([#10]).
 * `docs/GLOBAL.md`: moved to `.claude/CLAUDE.md` ([#11]).
 * Mappings reference: hand-written for now; generating it waits for the

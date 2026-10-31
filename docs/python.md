@@ -54,31 +54,34 @@ Several Python language servers are available, each with different strengths:
 * [`ale.vim`][ale.vim] - Global ALE configuration.
 * [`python.vim`][python.vim] - Python-specific settings for editing Python files.
 
-### Configured Features
+### Syntax Highlighting
 
-#### Syntax Highlighting
 Provided by vim-polyglot, which includes enhanced support for Python syntax highlighting.
 
-#### Linting and Static Analysis
+### Linting and Static Analysis
+
 * **Tool**: `Pyright` via `coc-pyright` and `flake8` via `CoC`
 * **Configuration**: Configured in `coc-settings.json`
 * **Usage**: Errors and warnings appear in the location list and gutter
 * **Features**: Type checking, style enforcement, syntax error detection
 
-#### Auto Completion
+### Auto Completion
+
 * **Tool**: `Pyright` via `coc-pyright`
 * **Configuration**: Configured in `coc-settings.json`
 * **Features**: Function completion, variable completion, import completion
 * **Settings**: Inlay hints for function return types and variable types are disabled
 
-#### Formatting
+### Formatting and Beautification
+
 * **Tool**: `isort` via `ALE`
 * **Configuration**: Set as a fixer in `python.vim`
 * **Usage**: Automatically formats imports on save or manually with `:ALEFix`
 * **Features**: Sorts imports alphabetically and by sections
 * **Poetry Support**: Automatically detects `Poetry` environments
 
-#### Indentation
+### Indentation
+
 * **Configuration**: Set in python.vim
 * **Settings**: 2-space indentation with expandtab, autoindent, and smartindent
 
@@ -88,7 +91,7 @@ The following features use default settings without additional configuration:
 * Error Highlighting (handled by CoC and ALE)
 * Code Folding (uses Vim's default folding mechanisms)
 * Snippets (not configured specifically for Python)
-* Schema Validation (not applicable for Python)
+* Schema or Contract Validation (not applicable for Python)
 * Version Control Integration (uses global Git integration)
 * Filetype Detection (handled by vim-polyglot)
 

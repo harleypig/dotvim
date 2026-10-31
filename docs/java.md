@@ -34,7 +34,7 @@ chmod +x ~/.local/bin/google-java-format
 
 Verify ALE can find it by opening a `.java` file and running `:ALEInfo`.
 
-### CoC Extensions Used
+### Plugins and Extensions Used
 
 * [`coc-java`](https://github.com/neoclide/coc-java) (CoC Extension) -
     Provides Java language server support via Eclipse JDT (jdtls). Features
@@ -62,33 +62,31 @@ Useful commands when jdtls misbehaves:
     — Java-specific indentation, ALE linter suppression, and optional
     google-java-format fixer.
 
-### Configured Features
-
-#### Syntax Highlighting
+### Syntax Highlighting
 
 Provided by vim-polyglot with no additional configuration required.
 
-#### Auto Completion
-
-* **Tool**: jdtls via `coc-java`
-* **Features**: Method and field completion, import completion, constructor
-    completion, and snippet expansion for common patterns
-
-#### Linting and Static Analysis
+### Linting and Static Analysis
 
 * **Tool**: jdtls via `coc-java`
 * **Configuration**: ALE Java linters are disabled in `java.vim` to prevent
     duplicate and conflicting diagnostics
 * **Usage**: Errors and warnings appear in the location list and gutter
 
-#### Formatting
+### Auto Completion
+
+* **Tool**: jdtls via `coc-java`
+* **Features**: Method and field completion, import completion, constructor
+    completion, and snippet expansion for common patterns
+
+### Formatting and Beautification
 
 * **Tool**: `google-java-format` via ALE (only active when the binary is on
     `$PATH`)
 * **Configuration**: Set as a conditional fixer in `java.vim`
 * **Usage**: Runs on save via `b:ale_fix_on_save`, or manually with `:ALEFix`
 
-#### Indentation
+### Indentation
 
 * **Configuration**: None — global 2-space default is kept intentionally
 * **Reason**: `google-java-format` enforces 2-space block indentation per the
@@ -102,7 +100,7 @@ The following features use default settings without additional configuration:
 * Error Highlighting (handled by coc-java and ALE)
 * Code Folding (uses Vim's default folding mechanisms)
 * Snippets (not configured; coc-java includes basic snippets via jdtls)
-* Schema Validation (not applicable)
+* Schema or Contract Validation (not applicable)
 * Version Control Integration (uses global Git integration)
 * Filetype Detection (handled by vim-polyglot)
 

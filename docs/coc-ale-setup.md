@@ -63,7 +63,7 @@ npm install -g yarn
 yarn --version
 ```
 
-### VIm Plugins Used
+### Plugins and Extensions Used
 
 The following plugins are utilized by ALE and CoC within this repository:
 

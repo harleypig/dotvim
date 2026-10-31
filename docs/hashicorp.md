@@ -43,22 +43,24 @@ sudo install -m 755 tflint /usr/local/bin/
 * `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration for the terraform-ls language server.
 * [`ale.vim`][ale.vim] - Global ALE configuration including Terraform linting and formatting settings.
 
-### Configured Features
+### Syntax Highlighting
 
-#### Syntax Highlighting
 Provided by `vim-polyglot`, which includes support for Terraform (HCL) syntax highlighting.
 
-#### Linting and Static Analysis
+### Linting and Static Analysis
+
 * **Tool**: `tflint` via `ALE`
 * **Configuration**: Configured in `ale.vim` to run automatically on file save
 * **Usage**: Errors and warnings appear in the location list and gutter
 
-#### Auto Completion
+### Auto Completion
+
 * **Tool**: `terraform-ls` via `CoC`
 * **Configuration**: Configured in `coc-settings.json`
 * **Features**: Variable completion, resource type completion, attribute completion
 
-#### Formatting
+### Formatting and Beautification
+
 * **Tool**: `terraform fmt` via `ALE`
 * **Configuration**: Set as a fixer in `ale.vim`
 * **Usage**: Automatically formats code on save or manually with `:ALEFix`
@@ -68,7 +70,7 @@ Provided by `vim-polyglot`, which includes support for Terraform (HCL) syntax hi
 The following features use default settings without additional configuration:
 * Error Highlighting (handled by ALE and CoC)
 * Code Folding (uses Vim's default folding mechanisms)
-* Schema Validation (handled by `terraform-ls`)
+* Schema or Contract Validation (handled by `terraform-ls`)
 * Version Control Integration (uses global Git integration)
 * Snippets (not configured specifically for Terraform)
 * Filetype Detection (handled by `vim-polyglot`)

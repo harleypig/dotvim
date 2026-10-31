@@ -22,9 +22,8 @@ Install via `npm`:
 * `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration for diagnostic-languageserver to use Proselint.
 * `.proselint-config.json` - Custom configuration file for Proselint rules and settings.
 
-### Configured Features
+### Linting and Static Analysis
 
-#### Linting and Static Analysis
 * **Tool**: `proselint` via `diagnostic-languageserver`
 * **Configuration**: Configured in `coc-settings.json` to run on text files
 * **Usage**: Errors and warnings appear in the location list and gutter
@@ -34,9 +33,9 @@ Install via `npm`:
 The following features use default settings or are not applicable:
 * Syntax Highlighting (uses Vim's default text highlighting)
 * Auto Completion (not applicable for prose linting)
-* Formatting (not provided by Proselint)
+* Formatting and Beautification (not provided by Proselint)
 * Error Highlighting (handled by CoC's diagnostic display)
 * Code Folding (uses Vim's default folding mechanisms)
 * Snippets (not configured specifically for prose)
-* Schema Validation (not applicable for prose)
+* Schema or Contract Validation (not applicable for prose)
 * Version Control Integration (uses global Git integration)

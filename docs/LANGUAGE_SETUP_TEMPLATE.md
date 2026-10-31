@@ -1,22 +1,32 @@
 ## [NAME]
 
-This document outlines the support for [NAME] development within the Vim environment.
+This document outlines the support for [NAME] development within the Vim
+environment.
 
 Note: Prefer Vim's built-in functionality when available. Document why external
 tools were chosen over built-in options when applicable. Include rationale for
 tool selection or changes if multiple solutions were evaluated.
 
+<!--
+Section names and their order come from CONVENTIONS.md. Keep only the
+sections that have something to document; list the rest under "Default or
+Inapplicable Sections".
+-->
+
 ### External Packages Used
 
 Install via `pipx`:
+
 * [package-name](link) - Brief description of the package and its purpose.
     Include installation method (prefer pipx over pip where applicable).
 
 Install via `npm`:
+
 * [package-name](link) - Brief description of the package and its purpose.
     Include installation method (prefer pipx over pip where applicable).
 
 Install via package manager:
+
 * [package-name](link) - Brief description of the package and its purpose.
     Include installation method (prefer pipx over pip where applicable).
 
@@ -26,51 +36,39 @@ Install manually:
 
 Instructions on how to install manually (wget, curl, install, etc.)
 
-### VIm Plugins Used
+### Plugins and Extensions Used
 
-* [plugin-name](link) (Plugin type) - Brief description including
-    supported features (e.g., linting, completion, syntax).
-
-### CoC Extensions Used
-
-* [plugin-name](link) (Extension type) - Brief description including
-    supported features (e.g., linting, completion, syntax).
+* [plugin-name](link) (Vim Plugin) - Brief description including supported
+    features (e.g., linting, completion, syntax).
+* [extension-name](link) (CoC Extension) - Brief description including
+    supported features. Install with `:CocInstall extension-name`.
 
 ### Configuration Files Used
 
 For CoC-based configuration:
+
 * `coc-settings` - Use `:CocConfig` to edit this file.
-* [coc-extension-name](link) - Install with `:CocInstall coc-extension-name`
 
 For ALE-based configuration:
+
 * [`ale.vim`][ale.vim] - Global ALE configuration
 * [`filetype.vim`][ftplugin] - Language-specific ALE settings, in
     `after/ftplugin/`
 
 Additional configuration files:
-* [filename](/path/to/file) - Purpose and scope of the configuration
 
-### Configured Features
+* [filename](https://github.com/harleypig/dotvim/blob/master/path/to/file) -
+    Purpose and scope of the configuration
 
-Document only features requiring specific configuration. Each feature should include:
+### Syntax Highlighting
+
+One section per feature that needs specific configuration, named and
+ordered as in the *Remaining Possible Sections* list in `CONVENTIONS.md`
+(this one is the first). Each feature section covers:
 
 * Tools/plugins used
 * Configuration details
-* Usage instructions (if not obvious)
-
-Common features to document if configured:
-
-* Syntax Highlighting
-* Linting and Static Analysis
-* Auto Completion
-* Formatting
-* Error Highlighting
-* Code Folding
-* Snippets
-* Schema Validation
-* Documentation Tools
-* Debugging Support
-* Testing Tools
+* Relevant key combinations and usage (if not obvious)
 
 ### Default or Inapplicable Sections
 

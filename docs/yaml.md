@@ -37,6 +37,6 @@ The following features use default settings or are not applicable:
 * Error Highlighting (handled by ALE)
 * Code Folding (uses Vim's default folding)
 * Snippets
-* Schema Validation
+* Schema or Contract Validation
 * Version Control Integration
 * Comment Support (uses Vim's default comment support)
