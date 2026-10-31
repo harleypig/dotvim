@@ -37,7 +37,9 @@ jobs:
       - name: Run bats
         env:
           BATS_LIB_PATH: ${{ steps.bats.outputs.lib-path }}
-        run: bats tests/shell
+        # The runner starts steps with SIGPIPE ignored, which a terminal
+        # never does; a `cmd | head` pipeline in bin/ then never ends.
+        run: env --default-signal=PIPE bats tests/shell
 
   bats-vim:
     name: bats tests/vim
@@ -66,7 +68,7 @@ jobs:
       - name: Run bats
         env:
           BATS_LIB_PATH: ${{ steps.bats.outputs.lib-path }}
-        run: bats tests/vim
+        run: env --default-signal=PIPE bats tests/vim
 
   markdownlint:
     name: markdownlint
