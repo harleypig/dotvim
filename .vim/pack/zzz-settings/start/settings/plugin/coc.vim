@@ -1,6 +1,6 @@
 " use <tab> for trigger completion and navigate to the next complete item
 function! CheckBackspace() abort
-  let l:col = l:col('.') - 1
+  let l:col = col('.') - 1
   return !l:col || getline('.')[l:col - 1]  =~# '\s'
 endfunction
 
