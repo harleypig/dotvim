@@ -18,3 +18,5 @@ Additional language-specific tools are documented in their respective language d
 
 ## Setup
 Run `bin/check-setup` to verify that required tools are installed for your development environment.
+
+Run `bats tests/shell` to test the scripts in `bin/` (needs [bats-core](https://github.com/bats-core/bats-core) with the bats-support and bats-assert libraries).
