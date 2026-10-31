@@ -47,9 +47,8 @@ debug() {
 }
 
 #-----------------------------------------------------------------------------
-usage() {
-  die "
-
+usage_text() {
+  cat << EOF
 Usage: $selfname '/path/to/%PRJNAME%/'
 
 $selfname takes a string as a parameter and looks
@@ -69,6 +68,14 @@ FIXME: If being sourced, then call _envsubst <string>
 
 * Set SUBST_DELIM to change the delimiter. This must be a single character.
 * Set NO_WARN to turn off warnings.
+EOF
+}
+
+#-----------------------------------------------------------------------------
+usage() {
+  die "
+
+$(usage_text)
 
 $*
 "
@@ -123,5 +130,14 @@ _envsubst() {
 
   printf '%s' "$s"
 }
+
+if ((NOT_SOURCED)); then
+  case $1 in
+    -h | --help)
+      usage_text
+      exit 0
+      ;;
+  esac
+fi
 
 ((NOT_SOURCED)) && _envsubst "$@"

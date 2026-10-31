@@ -1,5 +1,23 @@
 #!/bin/bash
 
+#-----------------------------------------------------------------------------
+usage() {
+  cat << EOF
+Usage: ${0##*/}
+
+For every submodule in .gitmodules with no branch set, check out its
+remote's default branch and record that branch in .gitmodules. Run from the
+top of the repository.
+EOF
+}
+
+case $1 in
+  -h | --help)
+    usage
+    exit 0
+    ;;
+esac
+
 readarray -t submodules < <(grep '^\[submodule' .gitmodules | cut -d '"' -f 2)
 
 oldpwd="$PWD"

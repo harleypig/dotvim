@@ -1,5 +1,23 @@
 #!/usr/bin/env bash
 
+#-----------------------------------------------------------------------------
+usage() {
+  cat << EOF
+Usage: ${0##*/}
+
+Meant to rewrite g:coc_global_extensions in .vimrc from the CoC extensions
+installed in ~/.config/coc/extensions/package.json. It currently stops with
+"B0rked!" before changing anything.
+EOF
+}
+
+case $1 in
+  -h | --help)
+    usage
+    exit 0
+    ;;
+esac
+
 # Found on vi.stackexchange
 # https://vi.stackexchange.com/questions/39382/how-can-i-export-a-list-of-coc-extensions-and-install-it-on-another-machine
 

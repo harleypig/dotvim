@@ -56,6 +56,18 @@ os_pkg() {
 }
 
 #-----------------------------------------------------------------------------
+usage() {
+  cat << EOF
+Usage: ${0##*/}
+
+Report the tools this Vim setup expects that are missing: node and npm
+(and whether node is new enough for CoC), plus the ansible and docker
+linters when ansible or docker is installed. Each report carries an install
+hint for Arch Linux or Ubuntu. Installs nothing.
+EOF
+}
+
+#-----------------------------------------------------------------------------
 declare -A checks
 
 #-----------------------------------------------------------------------------
@@ -117,6 +129,13 @@ checks[docker]='check_docker'
 
 ##############################################################################
 # Run checks
+
+case $1 in
+  -h | --help)
+    usage
+    exit 0
+    ;;
+esac
 
 mapfile -t sorted < <(printf '%s\n' "${!checks[@]}" | sort)
 

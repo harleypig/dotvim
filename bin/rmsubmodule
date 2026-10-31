@@ -1,5 +1,23 @@
 #!/bin/bash
 
+#-----------------------------------------------------------------------------
+usage() {
+  cat << EOF
+Usage: ${0##*/} NAME
+
+Remove the submodule NAME (as named in .gitmodules): git rm its path,
+commit, then delete its directory under .git/modules and its section in
+.git/config. Run from the top of the repository.
+EOF
+}
+
+case $1 in
+  -h | --help)
+    usage
+    exit 0
+    ;;
+esac
+
 (($#)) || {
   echo 'Must pass submodule to be removed.' >&2
   exit 1

@@ -2,6 +2,24 @@
 
 # git config -f .gitmodules --get-regexp vim-abolish.path
 
+#-----------------------------------------------------------------------------
+usage() {
+  cat << EOF
+Usage: ${0##*/} NAME PACKAGE
+
+Move the submodule NAME (as named in .gitmodules) to
+.vim/pack/PACKAGE/start/NAME, or to .vim/2btested/NAME when PACKAGE is
+2btested, and commit the move. Run from the top of the repository.
+EOF
+}
+
+case $1 in
+  -h | --help)
+    usage
+    exit 0
+    ;;
+esac
+
 _mv() {
   local name="${1:?must pass name of submodule as it appears in .gitmodules}"
   local newpath="${2:?must pass new path '.vim/pack/NEWPATH/start'}"

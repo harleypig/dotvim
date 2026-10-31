@@ -1,5 +1,24 @@
 #!/usr/bin/env bash
 
+#-----------------------------------------------------------------------------
+usage() {
+  cat << EOF
+Usage: ${0##*/}
+
+Set up a fresh clone: initialise and update the git submodules to their
+remote branches, install Node.js through nvm if npm is missing, install the
+npm and pipx tools this setup uses, and install the system packages with
+apt-get or dnf (through sudo). Ends by listing what to install by hand.
+EOF
+}
+
+case $1 in
+  -h | --help)
+    usage
+    exit 0
+    ;;
+esac
+
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'

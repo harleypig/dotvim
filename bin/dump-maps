@@ -1,5 +1,23 @@
 #!/bin/bash
 
+#-----------------------------------------------------------------------------
+usage() {
+  cat << EOF
+Usage: ${0##*/}
+
+Run git_plugin/dump-maps.py: activate the Python virtualenv in venv/,
+install the project into it with 'pip install -e .', then run the script.
+Run from the top of a checkout that has venv/ and git_plugin/.
+EOF
+}
+
+case $1 in
+  -h | --help)
+    usage
+    exit 0
+    ;;
+esac
+
 gtl
 
 source venv/bin/activate || {
