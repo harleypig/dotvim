@@ -27,13 +27,12 @@ let b:ale_fixers = ['shfmt']
 " Enable format on save
 let b:ale_fix_on_save = 1
 
-" Configure shfmt options for the built-in fixer
-" ALE automatically uses Vim's indent settings (shiftwidth), so options like
-" '--indent=2' are not needed. ALE will pass:
-" * --indent=<shiftwidth> based on Vim's settings
-" * --filename=<current_filename> automatically
+" ALE pipes the buffer to shfmt on stdin and adds only --filename, so the
+" indent must be given here to match shiftwidth (set.vim). --write must never
+" be: shfmt refuses it on stdin and the fix fails. Keep these in step with
+" the shfmt keys in the repository's .editorconfig.
 let g:ale_sh_shfmt_options =
-  \ '--write ' .
+  \ '--indent 2 ' .
   \ '--simplify ' .
   \ '--binary-next-line ' .
   \ '--case-indent ' .

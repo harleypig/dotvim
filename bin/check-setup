@@ -10,7 +10,10 @@ source "${CHECK_SETUP_OS_RELEASE:-/etc/os-release}"
 ##############################################################################
 #-----------------------------------------------------------------------------
 warn() { printf '%s\n' "$@" >&2; }
-die() { (($#)) && warn "$@"; exit 1; }
+die() {
+  (($#)) && warn "$@"
+  exit 1
+}
 
 # XXX: Figure out a way to use docker instead of installing all the linters
 #      and lsps ...
@@ -81,7 +84,7 @@ check_node() {
   local node_version required_version
   node_version=$(node --version | sed 's/v//')
   required_version="14.14.0"
-  
+
   if ! printf '%s\n%s\n' "$required_version" "$node_version" | sort -V | head -n1 | grep -q "^$required_version$"; then
     warn "Node.js version $node_version found, but CoC requires $required_version or higher"
   fi

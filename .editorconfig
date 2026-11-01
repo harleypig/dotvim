@@ -1,0 +1,12 @@
+root = true
+
+# The scripts have no extension, so they are matched by directory. The shfmt
+# keys mirror the Vim shell fixer's options, so `shfmt -d bin/` with no flags
+# checks the same style the editor writes.
+[bin/*]
+indent_style = space
+indent_size = 2
+simplify = true
+binary_next_line = true
+switch_case_indent = true
+space_redirects = true
