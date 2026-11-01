@@ -4,6 +4,9 @@ These are the owner's standing instructions for AI tools working in this
 repository. How the documentation is written is set out in
 [CONVENTIONS.md](../CONVENTIONS.md).
 
+Issue area labels are in [WORKFLOW.md](WORKFLOW.md); testing is in
+[TESTS.md](TESTS.md).
+
 ## Global Defaults
 
 These instructions cover global defaults across languages and
