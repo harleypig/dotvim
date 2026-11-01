@@ -76,9 +76,13 @@ post_clone() {
 }
 
 @test "does not claim npm installed when the install failed" {
+  stub_apt
   post_clone
+  assert_failure
   assert_output --partial 'npm installation failed'
   refute_output --partial 'npm installed successfully'
+  refute_output --partial 'Setup completed successfully!'
+  assert_output --partial 'npm: Node.js install through nvm'
 }
 
 @test "reports npm installed once when nvm installs it" {
@@ -99,6 +103,8 @@ NODEJS
 @test "reports success and exits zero when every step succeeds" {
   stub npm
   stub_apt
+  stub pipx
+  ln -s "$(type -P grep)" "$stubs/grep"
   post_clone
   assert_success
   assert_output --partial 'Setup completed successfully!'
@@ -120,6 +126,17 @@ NODEJS
   stub npm
   stub apt-get
   stub_failing dpkg
+  stub_failing sudo
+  post_clone
+  assert_failure
+  refute_output --partial 'Setup completed successfully!'
+  assert_output --partial 'system packages: jq'
+}
+
+@test "does not report success when dnf fails to install" {
+  stub npm
+  stub dnf
+  stub_failing rpm
   stub_failing sudo
   post_clone
   assert_failure
