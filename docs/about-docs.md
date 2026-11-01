@@ -109,6 +109,7 @@ hold a link too long to break.
 | `docs/tools-to-try.md` | Research | Added from the research notes in `docs/todo.md` ([#7]); kept as a research page like the other two. |
 | `docs/utility.md` | Tool setup | Mostly a TODO; needs writing. |
 | `docs/statusline.md` | Tool setup | Fine; check against the current statusline config. |
+| `docs/gutter.md` | Tool setup | Added: what the sign column shows and where each sign comes from, plus things to try ([#42]). |
 | `docs/vim-files.md` | Language setup | Fine in shape; broken paths fixed ([#13]). |
 | `docs/ansible.md` | Language setup | Reworked to template ([#9]). |
 | `docs/docker.md` | Language setup | Reworked to template ([#9]). |
@@ -173,3 +174,4 @@ three places ([#14]), and bugs in `bin/check-setup` ([#15]).
 [#14]: https://github.com/harleypig/dotvim/issues/14
 [#15]: https://github.com/harleypig/dotvim/issues/15
 [#40]: https://github.com/harleypig/dotvim/issues/40
+[#42]: https://github.com/harleypig/dotvim/issues/42
