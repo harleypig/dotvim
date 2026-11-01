@@ -29,9 +29,7 @@ jobs:
         uses: ./.github/actions/setup-bats
 
       - name: Run bats
-        # The runner starts steps with SIGPIPE ignored, which a terminal
-        # never does; a `cmd | head` pipeline in bin/ then never ends.
-        run: env --default-signal=PIPE bats tests/shell
+        run: bats tests/shell
 
   bats-vim:
     name: bats tests/vim
@@ -52,7 +50,7 @@ jobs:
         run: vim --version | head -n 3
 
       - name: Run bats
-        run: env --default-signal=PIPE bats tests/vim
+        run: bats tests/vim
 
   markdownlint:
     name: markdownlint
