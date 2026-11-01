@@ -4,8 +4,3 @@ if !exists('b:ale_linters')
 else
   call add(b:ale_linters, 'yamllint')
 endif
-
-" Keep the Ansible detection
-if search('^\s*-\s*hosts:\s', 'nw')
-  setfiletype yaml.ansible
-endif

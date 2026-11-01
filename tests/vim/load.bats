@@ -282,3 +282,42 @@ EOF
   assert_line 'bats_local=1'
   assert_no_error_message
 }
+
+#-----------------------------------------------------------------------------
+# open_yaml NAME - open a file called NAME, in a directory of its own, holding
+# a one-play Ansible playbook, and report the filetype Vim gave it.
+open_yaml() {
+  local dir="$BATS_TEST_TMPDIR/yaml"
+  mkdir -p "$(dirname "$dir/$1")"
+  printf -- '- hosts: all\n  tasks: []\n' > "$dir/$1"
+
+  cat > "$BATS_TEST_TMPDIR/yaml.vim" <<'EOF'
+echomsg 'filetype=' . &filetype
+EOF
+
+  start_vim "$dir/$1" -S "$BATS_TEST_TMPDIR/yaml.vim"
+}
+
+#-----------------------------------------------------------------------------
+# Ansible files are told apart from other YAML by where they live and what
+# they are called, not by what they hold: a playbook-shaped file under any
+# other name is plain YAML.
+@test "a playbook named playbook.yml is yaml.ansible" {
+  open_yaml playbook.yml
+
+  assert_line 'filetype=yaml.ansible'
+}
+
+#-----------------------------------------------------------------------------
+@test "a role's tasks file is yaml.ansible" {
+  open_yaml roles/web/tasks/main.yml
+
+  assert_line 'filetype=yaml.ansible'
+}
+
+#-----------------------------------------------------------------------------
+@test "a playbook-shaped file under another name stays yaml" {
+  open_yaml deploy.yml
+
+  assert_line 'filetype=yaml'
+}
