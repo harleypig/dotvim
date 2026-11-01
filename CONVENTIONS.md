@@ -18,6 +18,11 @@ defaults and other considerations.
 
 Use asterisks (*) for bullet points in lists.
 
+Wrap prose at 78 columns. Table rows and code blocks are exempt, and a line
+may run longer only where it holds a link or other text with no space to break
+at. The markdownlint configuration at the repository root,
+`.markdownlint.yaml`, checks it.
+
 Start new documents with a level 1 heading (#) in Markdown.
 
 Document only non-default settings; omit default behaviors.
