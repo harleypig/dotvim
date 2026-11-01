@@ -107,7 +107,7 @@ hold a link too long to break.
 | `docs/extensions-to-try.md` | Research | Kept as a research page for now. Its "currently installed" list duplicates `coc-extensions.md`. |
 | `docs/plugins-to-try.md` | Research | Kept as a research page for now. |
 | `docs/tools-to-try.md` | Research | Added from the research notes in `docs/todo.md` ([#7]); kept as a research page like the other two. |
-| `docs/utility.md` | Tool setup | Mostly a TODO; needs writing. |
+| `docs/utility.md` | Tool setup | Mostly a TODO; needs writing. Its plugin list now names what is installed, not gitgutter, fzf and fugitive ([#34]). |
 | `docs/statusline.md` | Tool setup | Fine; check against the current statusline config. |
 | `docs/gutter.md` | Tool setup | Added: what the sign column shows and where each sign comes from, plus things to try ([#42]). |
 | `docs/vim-files.md` | Language setup | Fine in shape; broken paths fixed ([#13]). |
@@ -173,5 +173,6 @@ three places ([#14]), and bugs in `bin/check-setup` ([#15]).
 [#13]: https://github.com/harleypig/dotvim/issues/13
 [#14]: https://github.com/harleypig/dotvim/issues/14
 [#15]: https://github.com/harleypig/dotvim/issues/15
+[#34]: https://github.com/harleypig/dotvim/issues/34
 [#40]: https://github.com/harleypig/dotvim/issues/40
 [#42]: https://github.com/harleypig/dotvim/issues/42
