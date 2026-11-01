@@ -63,5 +63,11 @@ jobs:
 
       # Only the repository's own Markdown: git ls-files never lists files
       # inside a submodule, so the plugins' docs are not linted.
+      # The upstream image is pinned by digest, so markdownlint-cli, its
+      # dependency tree and the Node that runs it are all fixed here.
       - name: Run markdownlint
-        run: git ls-files -z '*.md' | xargs -0 npx --yes markdownlint-cli@0.48.0
+        env:
+          MARKDOWNLINT_IMAGE: ghcr.io/igorshubovych/markdownlint-cli@sha256:c97f19b52cf7371ff767c080e3e15c15f1cbd3336fc41aeca7a93bb2cdb9843c # v0.48.0
+        run: |
+          git ls-files -z '*.md' |
+            xargs -0 docker run --rm -v "$PWD:/workdir:ro" "$MARKDOWNLINT_IMAGE"
