@@ -2,13 +2,15 @@
 
 #-----------------------------------------------------------------------------
 usage() {
-  cat << EOF
+  cat << EOF2
 Usage: ${0##*/}
 
-Meant to rewrite g:coc_global_extensions in .vimrc from the CoC extensions
-installed in ~/.config/coc/extensions/package.json. It currently stops with
-"B0rked!" before changing anything.
-EOF
+Rewrite the g:coc_global_extensions list in .vimrc from the CoC extensions
+installed on this machine, sorted by name. Run from the top of the
+repository. Installed extensions are read from package.json in
+\$COC_EXTENSIONS_DIR, which defaults to ~/.config/coc/extensions. Nothing is
+written when no extensions are installed or .vimrc has no list to replace.
+EOF2
 }
 
 case $1 in
@@ -18,28 +20,33 @@ case $1 in
     ;;
 esac
 
-# Found on vi.stackexchange
-# https://vi.stackexchange.com/questions/39382/how-can-i-export-a-list-of-coc-extensions-and-install-it-on-another-machine
+#-----------------------------------------------------------------------------
+die() {
+  echo "$*" >&2
+  exit 1
+}
 
-# Extract the list of extensions from package.json
-#read -r -d '' UPDATE_EXTENSIONS << EOF
-#let g:coc_global_extensions = \[
-#$(jq -Sr '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json | sed "s#^#    \\\\\\\\ '#;s/$/',/")
-#    \\\]
-#
-#EOF
+##############################################################################
+package="${COC_EXTENSIONS_DIR:-$HOME/.config/coc/extensions}/package.json"
 
-readarray -t INSTALLED_EXTENSIONS < <(jq -Sr '.dependencies | keys | .[]' ~/.config/coc/extensions/package.json | perl -pe 's/([@{}])/\\\\$1/g')
+[[ -r $package ]] || die "Cannot read $package."
 
-read -r -d '' UPDATE_EXTENSIONS << EOF
-let g:coc_global_extensions = \[
-$(printf '    \\ %s\n' "${INSTALLED_EXTENSIONS[@]}")
-    \\\]
+readarray -t extensions < <(jq -r '.dependencies // {} | keys[]' "$package")
 
-EOF
+((${#extensions[@]})) || die "No CoC extensions are installed in $package."
 
-#printf '%s\n' "${INSTALLED_EXTENSIONS[@]}" && exit
-#printf '%s\n' "$UPDATE_EXTENSIONS" && exit
+[[ -w .vimrc ]] \
+  || die "No writable .vimrc here; run from the top of the repository."
 
-echo "B0rked!" && exit 1
-perl -i -pe "BEGIN{undef $/;} s#let g:coc_global_extensions = \[.*?\]#$UPDATE_EXTENSIONS#s" .vimrc
+list='let g:coc_global_extensions = ['$'\n'
+printf -v entries "  \\\\ '%s',\n" "${extensions[@]}"
+list+="$entries  \\]"$'\n'
+
+# The list reaches perl through the environment, so the @ and $ in names
+# such as @yaegassy/coc-ansible are never interpolated by perl or the shell.
+# perl -i writes a temporary file and renames it only on success, so a die
+# leaves .vimrc as it was.
+COC_LIST="$list" perl -0777 -i -pe '
+  s/^let g:coc_global_extensions = \[\n.*?^\s*\\\s*\]\n/$ENV{COC_LIST}/ms
+    or die "No g:coc_global_extensions list found in .vimrc.\n";
+' .vimrc
