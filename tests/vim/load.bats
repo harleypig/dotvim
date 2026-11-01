@@ -67,13 +67,16 @@ EOF
 }
 
 #-----------------------------------------------------------------------------
-# The message history names the file and line of every error, so this runs
-# before any check that would print less, and a failure shows which settings
-# file raised it.
+# The message history names the file and line of every error, so a failure
+# here shows which settings file raised it.
+#
+# v:errmsg is not checked here: an error inside silent! sets it without ever
+# reaching the user. Vim 9.1.0016's own syntax/sh.vim does exactly that
+# (sil! delc ShFoldIfDoFor), so checking it would fail the sh and bats
+# filetypes on Ubuntu 24.04 for a file that is not ours.
 assert_no_error_message() {
   refute_output --partial 'Error detected while processing'
   refute_line --regexp '^E[0-9]+:'
-  assert_line 'errmsg='
 }
 
 ##############################################################################
@@ -82,6 +85,7 @@ assert_no_error_message() {
   start_vim
 
   assert_no_error_message
+  assert_line 'errmsg='
   assert_equal "$vim_status" 0
 }
 
@@ -91,6 +95,7 @@ assert_no_error_message() {
   start_vim --cmd 'let g:coc_start_at_startup = 0'
 
   assert_no_error_message
+  assert_line 'errmsg='
   assert_equal "$vim_status" 0
   refute [ -e "$tripped" ]
 }
