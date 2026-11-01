@@ -111,14 +111,29 @@ assert_no_error_message() {
 # Startup's errors are cleared first and Vim's exit status is not checked, so
 # a broken startup file fails the startup tests above, not every one of
 # these.
+#
+# Our file is then sourced a second time on its own, so v:errmsg can catch
+# an error it hides with silent!. Checked after the filetype is set it would
+# also hold what Vim's own syntax files leave there on some versions (see
+# assert_no_error_message). Whether the filetype sourced it is read from
+# :scriptnames before that, since the direct source adds it there too.
 test_ftplugin() {
   local ft=$1
+  local file="$repo/.vim/pack/zzz-settings/start/settings/after/ftplugin/$ft.vim"
 
-  start_vim -c 'messages clear' -c 'let v:errmsg = ""' \
-    -c "set filetype=$ft"
+  cat > "$BATS_TEST_TMPDIR/ftplugin.vim" <<EOF
+messages clear
+set filetype=$ft
+echomsg 'by_filetype=' . (execute('scriptnames') =~# '/zzz-settings/start/settings/after/ftplugin/$ft\.vim\%(\n\|\$\)')
+let v:errmsg = ''
+source $file
+EOF
 
-  assert_line --regexp "/zzz-settings/start/settings/after/ftplugin/$ft\.vim$"
+  start_vim -S "$BATS_TEST_TMPDIR/ftplugin.vim"
+
+  assert_line 'by_filetype=1'
   assert_no_error_message
+  assert_line 'errmsg='
 }
 
 # One test per file, registered from the directory listing. If the glob
