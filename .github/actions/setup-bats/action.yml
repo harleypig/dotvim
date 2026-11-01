@@ -1,0 +1,45 @@
+name: Set up bats
+description: >-
+  Install bats-core with the bats-support and bats-assert libraries, put
+  bats on PATH and point BATS_LIB_PATH at the libraries.
+
+# Each one is fetched by the commit its release tag points at, so a moved
+# tag cannot change what CI runs. The defaults are the pins; callers pass
+# nothing.
+inputs:
+  bats-core-sha:
+    description: bats-core commit to install.
+    default: 3bca150ec86275d6d9d5a4fd7d48ab8b6c6f3d87 # v1.13.0
+  bats-support-sha:
+    description: bats-support commit to install.
+    default: 24a72e14349690bcbf7c151b9d2d1cdd32d36eb1 # v0.3.0
+  bats-assert-sha:
+    description: bats-assert commit to install.
+    default: f1e9280eaae8f86cbe278a687e6ba755bc802c1a # v2.2.4
+
+runs:
+  using: composite
+  steps:
+    - name: Fetch and install bats
+      shell: bash
+      env:
+        BATS_CORE_SHA: ${{ inputs.bats-core-sha }}
+        BATS_SUPPORT_SHA: ${{ inputs.bats-support-sha }}
+        BATS_ASSERT_SHA: ${{ inputs.bats-assert-sha }}
+      run: |
+        root=$RUNNER_TEMP/bats
+        fetch() {
+          git init -q "$3"
+          git -C "$3" fetch -q --depth 1 "https://github.com/bats-core/$1.git" "$2"
+          git -C "$3" checkout -q --detach FETCH_HEAD
+        }
+        fetch bats-core "$BATS_CORE_SHA" "$root/src/bats-core"
+        "$root/src/bats-core/install.sh" "$root"
+        fetch bats-support "$BATS_SUPPORT_SHA" "$root/lib/bats-support"
+        fetch bats-assert "$BATS_ASSERT_SHA" "$root/lib/bats-assert"
+
+    - name: Put bats on PATH
+      shell: bash
+      run: |
+        echo "$RUNNER_TEMP/bats/bin" >> "$GITHUB_PATH"
+        echo "BATS_LIB_PATH=$RUNNER_TEMP/bats/lib" >> "$GITHUB_ENV"
