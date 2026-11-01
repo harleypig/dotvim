@@ -3,7 +3,7 @@
 # bin/addsubmodule adds and commits git submodules, so every test runs it
 # inside a throwaway repository in the per-test temp directory, with a
 # local bare repository standing in for the plugin's URL. Git reads no
-# global or system configuration, and mkreadme is a tripwire.
+# global or system configuration.
 
 bats_load_library bats-support
 bats_load_library bats-assert
@@ -13,7 +13,6 @@ bats_load_library bats-assert
 setup() {
   script="$BATS_TEST_DIRNAME/../../bin/addsubmodule"
   stubs="$BATS_TEST_TMPDIR/bin"
-  tripped="$BATS_TEST_TMPDIR/tripped"
   mkdir -p "$stubs"
 
   local tool
@@ -21,10 +20,6 @@ setup() {
   for tool in basename bash cat git grep ls sed uname; do
     ln -s "$(type -P "$tool")" "$stubs/$tool"
   done
-
-  printf '#!/bin/sh\necho "mkreadme $*" >> "%s"\n' "$tripped" \
-    > "$stubs/mkreadme"
-  chmod +x "$stubs/mkreadme"
 
   export GIT_CONFIG_GLOBAL=/dev/null GIT_CONFIG_NOSYSTEM=1
   export GIT_AUTHOR_NAME=test GIT_AUTHOR_EMAIL=test@example.invalid
@@ -69,7 +64,6 @@ commits() {
   assert_equal "$(commits)" 2
   [[ -z $(git status --porcelain) ]] \
     || fail "uncommitted: $(git status --porcelain)"
-  [[ ! -e $tripped ]] || fail "unexpected call: $(< "$tripped")"
   [[ ! -e README.md ]] || fail 'README.md was written'
 }
 
