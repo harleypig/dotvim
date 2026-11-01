@@ -1,0 +1,85 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+# A new push to a pull request cancels its older run; runs on master are
+# never cancelled, so every merge gets a complete result.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  bats-shell:
+    name: bats tests/shell
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - id: bats
+        uses: bats-core/bats-action@77d6fb60505b4d0d1d73e48bd035b55074bbfb43 # 4.0.0
+        with:
+          bats-version: 1.13.0
+          support-version: 0.3.0
+          assert-version: 2.2.4
+          detik-install: false
+          file-install: false
+
+      - name: Run bats
+        env:
+          BATS_LIB_PATH: ${{ steps.bats.outputs.lib-path }}
+        # The runner starts steps with SIGPIPE ignored, which a terminal
+        # never does; a `cmd | head` pipeline in bin/ then never ends.
+        run: env --default-signal=PIPE bats tests/shell
+
+  bats-vim:
+    name: bats tests/vim
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      # The tests load the plugins, so the submodules are needed. Node is
+      # deliberately absent: the suite stubs it per test.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          submodules: true
+
+      - id: bats
+        uses: bats-core/bats-action@77d6fb60505b4d0d1d73e48bd035b55074bbfb43 # 4.0.0
+        with:
+          bats-version: 1.13.0
+          support-version: 0.3.0
+          assert-version: 2.2.4
+          detik-install: false
+          file-install: false
+
+      - name: Show Vim version
+        run: vim --version | head -n 3
+
+      - name: Run bats
+        env:
+          BATS_LIB_PATH: ${{ steps.bats.outputs.lib-path }}
+        run: env --default-signal=PIPE bats tests/vim
+
+  markdownlint:
+    name: markdownlint
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      # Only the repository's own Markdown: git ls-files never lists files
+      # inside a submodule, so the plugins' docs are not linted.
+      - name: Run markdownlint
+        run: git ls-files -z '*.md' | xargs -0 npx --yes markdownlint-cli@0.48.0

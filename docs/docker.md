@@ -11,7 +11,7 @@ working with Dockerfiles.
 
 Install via npm:
 
-* [`dockerfile-language-server-nodejs`](https://github.com/rcjsuen/dockerfile-language-server-nodejs) -
+* [`dockerfile-language-server-nodejs`][dockerfile-language-server-nodejs] -
     Language server that provides intelligent code completion, validation, and
     other language features for Dockerfiles.
 
@@ -56,3 +56,5 @@ The following features use default settings without additional configuration:
 * Schema or Contract Validation (not applicable for Dockerfiles)
 * Version Control Integration (uses global Git integration)
 * Filetype Detection (handled by `vim-polyglot`)
+
+[dockerfile-language-server-nodejs]: https://github.com/rcjsuen/dockerfile-language-server-nodejs

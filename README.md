@@ -38,3 +38,6 @@ bats-assert libraries).
 Run `bats tests/vim` to test the Vim configuration in headless Vim. It needs
 the plugin submodules checked out (`git submodule update --init`) and the
 same bats libraries.
+
+GitHub Actions runs both suites, and markdownlint over the repository's own
+Markdown files, on every pull request to `master` and every push to it.
