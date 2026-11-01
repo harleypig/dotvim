@@ -2,19 +2,10 @@
 
 ## Covered Functionality
 
-### Covered by fzf (mentioned in utility.md)
+### Covered by coc-git
 
-* [ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky.git)
-* [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
-* [ctrlp](https://github.com/kien/ctrlp.vim) - Original ctrlp repository
-
-### Covered by vim-fugitive (mentioned in utility.md)
-
-* [vim-conflicted](https://github.com/christoomey/vim-conflicted.git)
-* [gitv](https://github.com/gregsexton/gitv) - Git repository viewer
-* [hypergit](https://github.com/c9s/hypergit.vim) - Git wrapper
-
-### Covered by vim-gitgutter (mentioned in utility.md)
+coc-git, an installed CoC extension (see [CoC Extensions](coc-extensions.md)),
+already shows Git change signs in the gutter.
 
 * [vim-signify](https://github.com/mhinz/vim-signify.git)
 
@@ -55,8 +46,12 @@
     generation
 * [vim-misc](https://github.com/xolox/vim-misc.git) - Required for
     vim-easytags
-* [ctrlp](https://github.com/kien/ctrlp.vim) - Fuzzy file, buffer, mru, tag
-    finder
+* [ctrlp](https://github.com/ctrlpvim/ctrlp.vim) - Fuzzy file, buffer, mru,
+    tag finder; the maintained fork of the original, kien/ctrlp.vim
+* [ctrlp-funky](https://github.com/tacahiroy/ctrlp-funky.git) - Function
+    navigator for ctrlp
+* [fzf](https://github.com/junegunn/fzf) - Command-line fuzzy finder with a
+    Vim plugin, for searching and opening files
 
 ### UI Enhancements
 
@@ -78,6 +73,11 @@
 
 * [fugitive-azure-devops][] -
     Azure DevOps integration
+* [gitv](https://github.com/gregsexton/gitv) - Git repository viewer; needs
+    vim-fugitive
+* [hypergit](https://github.com/c9s/hypergit.vim) - Git wrapper
+* [vim-conflicted](https://github.com/christoomey/vim-conflicted.git) - Merge
+    conflict resolution; needs vim-fugitive
 * [vim-fugitive](https://github.com/tpope/vim-fugitive.git) - Git wrapper
 * [vim-gitgutter](https://github.com/airblade/vim-gitgutter.git) - Git diff in
     the gutter *

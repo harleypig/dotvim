@@ -19,12 +19,26 @@ that affect the entire Vim environment.
 
 ## Existing Utility Plugins
 
-The following utility plugins, already installed and configured in this Vim
-environment, are linked to their respective homepages or repositories:
+The utility plugins installed in this Vim environment are the ones under
+`.vim/pack/100-core/start/`:
 
-* [`gitgutter`](https://github.com/airblade/vim-gitgutter): A plugin that
-    shows a git diff in the gutter (sign column) and stages/undoes hunks.
-* [`fzf`](https://github.com/junegunn/fzf): A command-line fuzzy finder
-    integrated with Vim, used for searching and opening files.
-* [`fugitive`](https://github.com/tpope/vim-fugitive): A Git wrapper for Vim,
-    which provides Git integration directly within the editor.
+* [`vim-eunuch`](https://github.com/tpope/vim-eunuch) (plugin): Vim commands
+    for the Unix shell operations that need them most, such as `:Remove`,
+    `:Move`, `:Chmod`, `:Mkdir` and `:SudoWrite`.
+* [`vim-surround`](https://github.com/tpope/vim-surround) (plugin): mappings
+    to delete, change and add surroundings in pairs, such as parentheses,
+    brackets, quotes and XML tags.
+* [`vim-repeat`](https://github.com/tpope/vim-repeat) (plugin): lets `.`
+    repeat a whole plugin mapping, such as a vim-surround change, instead of
+    only the last native command inside it.
+
+[`vim-colorschemes`](https://github.com/EvitanRelta/vim-colorschemes), a collection
+of colorschemes, is also installed, under `.vim/pack/400-ui/start/`. No
+`colorscheme` command selects one of them, so Vim starts with its default
+colorscheme; a comment in `colors.vim` names norwaytoday, which the collection
+includes, but nothing loads it.
+
+gitgutter, fzf and fugitive are not installed. Git change signs in the gutter
+come from the coc-git extension instead (see [The Gutter](gutter.md) and [CoC
+Extensions](coc-extensions.md)); fzf and vim-fugitive are on [Plugins to
+Try](plugins-to-try.md).

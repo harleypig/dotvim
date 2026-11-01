@@ -45,10 +45,13 @@ No additional Vim plugins are required specifically for these extensions.
   * Git blame information
   * Git chunk navigation and operations
   * Commit browser
-* **Configuration**: Currently disabled in `coc-settings.json` (commented out)
-* **Potential Usage**: Could be enabled to provide Git information directly in
-    the editor
-* **Note**: Some functionality overlaps with vim-gitgutter and vim-fugitive
+* **Configuration**: Installed and active, with its defaults. The only
+    coc-git settings in `coc-settings.json`, the sign highlight groups, are
+    commented out.
+* **Current Usage**: Git change signs in the gutter; see [The
+    Gutter](gutter.md). None of its commands is mapped.
+* **Note**: vim-gitgutter and vim-fugitive are not installed; coc-git's
+    gutter signs cover what vim-gitgutter would show.
 
 ## TOML Language Support (coc-toml)
 

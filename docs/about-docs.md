@@ -49,8 +49,8 @@ the live mappings) is deferred to the improvements phase ([#12]).
 ## Format conventions
 
 * GitHub-flavored Markdown.
-* Wrap prose at 78 columns. The markdownlint configuration at the
-  repository root, `.markdownlint.yaml`, checks it ([#40]).
+* Prose wraps at 78 columns; `CONVENTIONS.md` holds the rule and its
+  exemptions, and `.markdownlint.yaml` checks it ([#40]).
 * Reference-style links, so the prose reads cleanly in a terminal.
 * **Every doc starts with a level-1 (`#`) heading**, which the published
   site uses as the page title. `CONVENTIONS.md` says the same, and every
@@ -102,13 +102,14 @@ hold a link too long to break.
 | `docs/todo.md` | Backlog | Removed; its tasks are GitHub issues and its writing-tool research notes moved to `docs/tools-to-try.md` ([#7]). |
 | `docs/GLOBAL.md` | AI-assistant instructions | Moved to `.claude/CLAUDE.md`, out of the published docs ([#11]); its human-facing part went to `coc-ale-setup.md`. Its broken links were fixed first ([#13]). |
 | `docs/LANGUAGE_SETUP_TEMPLATE.md` | Template | Keep as the template; rewritten to match `CONVENTIONS.md` ([#9]). Broken path fixed ([#13]). |
-| `docs/coc-ale-setup.md` | Shared plugin setup | Overlaps `README.md`. Now opens with how CoC and ALE divide the work, the human-facing part of `GLOBAL.md` ([#11]). |
-| `docs/coc-extensions.md` | Tool setup | Fine; overlaps the installed list in `extensions-to-try.md`. Headings aligned with the template ([#9]). |
-| `docs/extensions-to-try.md` | Research | Kept as a research page for now. Its "currently installed" list duplicates `coc-extensions.md`. |
-| `docs/plugins-to-try.md` | Research | Kept as a research page for now. |
+| `docs/coc-ale-setup.md` | Shared plugin setup | Overlaps `README.md`. Now opens with how CoC and ALE divide the work, the human-facing part of `GLOBAL.md` ([#11]). Its ALE section now says which `ale.vim` holds what, and where `<leader>fb` is defined ([#52]). |
+| `docs/coc-extensions.md` | Tool setup | Fine. Headings aligned with the template ([#9]). Its coc-git section said the extension was disabled; it is installed and places the gutter's Git signs ([#47]). |
+| `docs/extensions-to-try.md` | Research | Kept as a research page for now. Its "currently installed" list, which duplicated `coc-extensions.md`, now points at `.vimrc`, and its repeated entries are gone ([#47]). |
+| `docs/plugins-to-try.md` | Research | Kept as a research page for now. De-duplicated; no longer claims fzf, fugitive or gitgutter are installed ([#47]). |
 | `docs/tools-to-try.md` | Research | Added from the research notes in `docs/todo.md` ([#7]); kept as a research page like the other two. |
-| `docs/utility.md` | Tool setup | Mostly a TODO; needs writing. |
+| `docs/utility.md` | Tool setup | Mostly a TODO; needs writing. Its plugin list now names what is installed, not gitgutter, fzf and fugitive ([#34]). |
 | `docs/statusline.md` | Tool setup | Fine; check against the current statusline config. |
+| `docs/gutter.md` | Tool setup | Added: what the sign column shows and where each sign comes from, plus things to try ([#42]). |
 | `docs/vim-files.md` | Language setup | Fine in shape; broken paths fixed ([#13]). |
 | `docs/ansible.md` | Language setup | Reworked to template ([#9]). |
 | `docs/docker.md` | Language setup | Reworked to template ([#9]). |
@@ -172,4 +173,8 @@ three places ([#14]), and bugs in `bin/check-setup` ([#15]).
 [#13]: https://github.com/harleypig/dotvim/issues/13
 [#14]: https://github.com/harleypig/dotvim/issues/14
 [#15]: https://github.com/harleypig/dotvim/issues/15
+[#34]: https://github.com/harleypig/dotvim/issues/34
 [#40]: https://github.com/harleypig/dotvim/issues/40
+[#42]: https://github.com/harleypig/dotvim/issues/42
+[#47]: https://github.com/harleypig/dotvim/issues/47
+[#52]: https://github.com/harleypig/dotvim/issues/52
