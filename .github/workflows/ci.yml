@@ -15,6 +15,13 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
+# bats and its libraries, each fetched by the commit its release tag points
+# at, so a moved tag cannot change what CI runs.
+env:
+  BATS_CORE_SHA: 3bca150ec86275d6d9d5a4fd7d48ab8b6c6f3d87 # v1.13.0
+  BATS_SUPPORT_SHA: 24a72e14349690bcbf7c151b9d2d1cdd32d36eb1 # v0.3.0
+  BATS_ASSERT_SHA: f1e9280eaae8f86cbe278a687e6ba755bc802c1a # v2.2.4
+
 jobs:
   bats-shell:
     name: bats tests/shell
@@ -25,18 +32,22 @@ jobs:
         with:
           persist-credentials: false
 
-      - id: bats
-        uses: bats-core/bats-action@77d6fb60505b4d0d1d73e48bd035b55074bbfb43 # 4.0.0
-        with:
-          bats-version: 1.13.0
-          support-version: 0.3.0
-          assert-version: 2.2.4
-          detik-install: false
-          file-install: false
+      - name: Install bats
+        run: |
+          root=$RUNNER_TEMP/bats
+          fetch() {
+            git init -q "$3"
+            git -C "$3" fetch -q --depth 1 "https://github.com/bats-core/$1.git" "$2"
+            git -C "$3" checkout -q --detach FETCH_HEAD
+          }
+          fetch bats-core "$BATS_CORE_SHA" "$root/src/bats-core"
+          "$root/src/bats-core/install.sh" "$root"
+          fetch bats-support "$BATS_SUPPORT_SHA" "$root/lib/bats-support"
+          fetch bats-assert "$BATS_ASSERT_SHA" "$root/lib/bats-assert"
+          echo "$root/bin" >> "$GITHUB_PATH"
+          echo "BATS_LIB_PATH=$root/lib" >> "$GITHUB_ENV"
 
       - name: Run bats
-        env:
-          BATS_LIB_PATH: ${{ steps.bats.outputs.lib-path }}
         # The runner starts steps with SIGPIPE ignored, which a terminal
         # never does; a `cmd | head` pipeline in bin/ then never ends.
         run: env --default-signal=PIPE bats tests/shell
@@ -53,21 +64,25 @@ jobs:
           persist-credentials: false
           submodules: true
 
-      - id: bats
-        uses: bats-core/bats-action@77d6fb60505b4d0d1d73e48bd035b55074bbfb43 # 4.0.0
-        with:
-          bats-version: 1.13.0
-          support-version: 0.3.0
-          assert-version: 2.2.4
-          detik-install: false
-          file-install: false
+      - name: Install bats
+        run: |
+          root=$RUNNER_TEMP/bats
+          fetch() {
+            git init -q "$3"
+            git -C "$3" fetch -q --depth 1 "https://github.com/bats-core/$1.git" "$2"
+            git -C "$3" checkout -q --detach FETCH_HEAD
+          }
+          fetch bats-core "$BATS_CORE_SHA" "$root/src/bats-core"
+          "$root/src/bats-core/install.sh" "$root"
+          fetch bats-support "$BATS_SUPPORT_SHA" "$root/lib/bats-support"
+          fetch bats-assert "$BATS_ASSERT_SHA" "$root/lib/bats-assert"
+          echo "$root/bin" >> "$GITHUB_PATH"
+          echo "BATS_LIB_PATH=$root/lib" >> "$GITHUB_ENV"
 
       - name: Show Vim version
         run: vim --version | head -n 3
 
       - name: Run bats
-        env:
-          BATS_LIB_PATH: ${{ steps.bats.outputs.lib-path }}
         run: env --default-signal=PIPE bats tests/vim
 
   markdownlint:
