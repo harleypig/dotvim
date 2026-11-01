@@ -2,7 +2,9 @@
 
 # Every settings file loads without raising an error: the whole config at
 # startup, with and without Node.js, then each file under the late settings'
-# after/ftplugin directory, one test per file.
+# after/ftplugin directory, one test per file. Each of those files is also
+# checked to load only through the filetype plugin mechanism, and the last
+# tests check what the ftplugins leave behind for other filetypes.
 #
 # The harness is the one in coc.bats: headless Vim on this checkout's .vimrc,
 # HOME and the XDG directories inside the test's temp directory, and a PATH
@@ -136,12 +138,87 @@ EOF
   assert_line 'errmsg='
 }
 
-# One test per file, registered from the directory listing. If the glob
-# matches nothing it stays literal and registers a test for "*", which fails
-# rather than leaving the suite silently empty.
+#-----------------------------------------------------------------------------
+# test_ftplugin_off FILETYPE - with filetype plugins switched off, setting the
+# filetype must not source our ftplugin file for it. Syntax stays on, so a
+# syntax file that sources ftplugins itself fails this.
+#
+# json is the exception and has its own tests below: vim-polyglot's JSON
+# syntax file sources every ftplugin/json.vim itself, so ours is always read
+# and has to stop itself.
+test_ftplugin_off() {
+  local ft=$1
+
+  cat > "$BATS_TEST_TMPDIR/ftplugin.vim" <<EOF
+filetype plugin off
+set filetype=$ft
+echomsg 'by_filetype=' . (execute('scriptnames') =~# '/zzz-settings/start/settings/after/ftplugin/$ft\.vim\%(\n\|\$\)')
+EOF
+
+  start_vim -S "$BATS_TEST_TMPDIR/ftplugin.vim"
+
+  assert_line 'by_filetype=0'
+  assert_no_error_message
+}
+
+# Tests per file, registered from the directory listing. If the glob matches
+# nothing it stays literal and registers tests for "*", which fail rather
+# than leaving the suite silently empty.
 for file in "$ftplugin_dir"/*.vim; do
   ft=${file##*/}
   ft=${ft%.vim}
   bats_test_function --description "ftplugin $ft loads with no error message" \
     -- test_ftplugin "$ft"
+
+  [[ $ft == json ]] && continue
+
+  bats_test_function \
+    --description "ftplugin $ft is not sourced with filetype plugins off" \
+    -- test_ftplugin_off "$ft"
 done
+
+##############################################################################
+#-----------------------------------------------------------------------------
+# json_ftplugin_ran FILETYPE [VIM COMMAND] - run the command, set the
+# filetype, and report what our json ftplugin would have changed: the
+# buffer's foldmethod and the json key in ALE's fixers.
+json_ftplugin_ran() {
+  cat > "$BATS_TEST_TMPDIR/json.vim" <<EOF
+${2:-}
+set filetype=$1
+echomsg 'foldmethod=' . &l:foldmethod
+echomsg 'json_fixers=' . string(get(g:ale_fixers, 'json', 'missing'))
+EOF
+
+  start_vim -S "$BATS_TEST_TMPDIR/json.vim"
+}
+
+#-----------------------------------------------------------------------------
+@test "ftplugin json has no effect with filetype plugins off" {
+  json_ftplugin_ran json 'filetype plugin off'
+
+  assert_line 'foldmethod=manual'
+  assert_line "json_fixers='missing'"
+  assert_no_error_message
+}
+
+#-----------------------------------------------------------------------------
+# The Dockerfile syntax includes the JSON syntax, which reaches the json
+# ftplugin from a buffer that is not JSON.
+@test "ftplugin json has no effect in a Dockerfile buffer" {
+  json_ftplugin_ran dockerfile
+
+  assert_line 'foldmethod=manual'
+  assert_line "json_fixers='missing'"
+  assert_no_error_message
+}
+
+#-----------------------------------------------------------------------------
+# The guard in the json ftplugin must still let it run for JSON.
+@test "ftplugin json takes effect in a json buffer" {
+  json_ftplugin_ran json
+
+  assert_line 'foldmethod=syntax'
+  assert_line "json_fixers=['jq']"
+  assert_no_error_message
+}
