@@ -65,6 +65,10 @@ system_packages=(
 # Optional manual installations (mentioned in docs but not auto-installed)
 # - tflint (hashicorp.md) - requires manual installation
 
+# Each step that warns about a failure adds a line here. A missing pipx is
+# reported as a status, not a warning, and is deliberately not a failure.
+failures=()
+
 ##############################################################################
 # Functions
 #-----------------------------------------------------------------------------
@@ -88,6 +92,7 @@ if git submodule update --init --recursive --remote; then
   status "Git submodules initialized successfully"
 else
   warn "Git submodules not initialized. Do this manually."
+  failures+=("git submodules")
 fi
 
 ##############################################################################
@@ -113,6 +118,7 @@ if ! command_exists npm; then
   # Verify npm installation
   if ! command_exists npm; then
     warn "npm installation failed. Please install manually."
+    failures+=("npm: Node.js install through nvm")
     warn "Continuing with the rest of the setup..."
   else
     status "npm installed successfully"
@@ -134,6 +140,7 @@ if command_exists npm; then
       status "Installing $package"
       if ! npm install -g "$package"; then
         warn "Failed to install $package. Some features may not work correctly."
+        failures+=("npm package: $package")
       fi
     fi
   done
@@ -170,6 +177,7 @@ else
       status "Installing $package"
       if ! pipx install "$package" --include-deps; then
         warn "Failed to install $package with pipx. Some features may not work correctly."
+        failures+=("pipx package: $package")
       fi
     fi
   done
@@ -196,6 +204,7 @@ if command_exists apt-get; then
     status "Installing missing packages: ${installed_packages[*]}"
     if ! sudo apt-get install -y "${installed_packages[@]}"; then
       warn "Failed to install some system packages"
+      failures+=("system packages: ${installed_packages[*]}")
     fi
   else
     status "All system packages are already installed"
@@ -217,6 +226,7 @@ elif command_exists dnf; then
     status "Installing missing packages: ${installed_packages[*]}"
     if ! sudo dnf install -y "${installed_packages[@]}"; then
       warn "Failed to install some system packages"
+      failures+=("system packages: ${installed_packages[*]}")
     fi
   else
     status "All system packages are already installed"
@@ -224,6 +234,7 @@ elif command_exists dnf; then
 
 else
   warn "Could not detect package manager. Please install the following packages manually."
+  failures+=("system packages: no apt-get or dnf found")
   for package in "${system_packages[@]}"; do
     warn " - $package"
   done
@@ -241,6 +252,14 @@ status "  Using GitHub CLI:"
 status "    gh release download --repo terraform-linters/tflint --pattern \"*_linux_amd64.zip\""
 status "    unzip tflint_*_linux_amd64.zip"
 status "    sudo install -m 755 tflint /usr/local/bin/"
+
+if ((${#failures[@]})); then
+  section "Setup did not complete"
+  for failure in "${failures[@]}"; do
+    error "$failure"
+  done
+  exit 1
+fi
 
 section "Setup completed successfully!"
 status "All required packages have been installed."
