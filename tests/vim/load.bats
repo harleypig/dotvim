@@ -222,3 +222,63 @@ EOF
   assert_line "json_fixers=['jq']"
   assert_no_error_message
 }
+
+#-----------------------------------------------------------------------------
+# g:ale_fixers is one dictionary shared by every filetype, set up in the late
+# plugin/ale.vim. Opening a buffer of one filetype must leave the keys of the
+# others in place, whichever order the buffers are opened in.
+@test "python and bats buffers leave other filetypes' ALE fixers in place" {
+  cat > "$BATS_TEST_TMPDIR/fixers.vim" <<'EOF'
+set filetype=json
+new
+set filetype=python
+new
+set filetype=bats
+for s:key in ['*', 'json', 'jsonc', 'markdown', 'sql', 'bats', 'python']
+  echomsg 'fixers[' . s:key . ']=' . string(get(g:ale_fixers, s:key, 'missing'))
+endfor
+echomsg 'buffer_fixers=' . string(get(b:, 'ale_fixers', 'missing'))
+EOF
+
+  start_vim -S "$BATS_TEST_TMPDIR/fixers.vim"
+
+  assert_line "fixers[*]=['remove_trailing_lines', 'trim_whitespace']"
+  assert_line "fixers[json]=['jq']"
+  assert_line "fixers[jsonc]=['jq']"
+  assert_line "fixers[markdown]=['prettier']"
+  assert_line "fixers[sql]=['sqlformat']"
+  assert_no_error_message
+
+  # ALE looks fixers up under each part of the buffer's own filetype, and a
+  # buffer-local setting would hide the dictionary: the bats buffer, the last
+  # one opened, gets shfmt from its own key.
+  assert_line "fixers[bats]=['shfmt']"
+  assert_line "buffer_fixers='missing'"
+
+  # Neither isort nor yapf is on the test's PATH, so python has no key of its
+  # own and its buffers fall back to the '*' fixers.
+  assert_line "fixers[python]='missing'"
+}
+
+#-----------------------------------------------------------------------------
+# shfmt's options are one global setting read by every buffer that runs
+# shfmt, so a bats buffer keeps its own and leaves an sh buffer's alone. The
+# buffer-local check still catches a global write once the two filetypes'
+# flags are the same and the before-and-after comparison cannot.
+@test "a bats buffer leaves an sh buffer's shfmt options in place" {
+  cat > "$BATS_TEST_TMPDIR/shfmt.vim" <<'EOF'
+set filetype=sh
+let s:sh = bufnr()
+let s:before = ale#Var(s:sh, 'sh_shfmt_options')
+new
+set filetype=bats
+echomsg 'sh_unchanged=' . (ale#Var(s:sh, 'sh_shfmt_options') ==# s:before)
+echomsg 'bats_local=' . exists('b:ale_sh_shfmt_options')
+EOF
+
+  start_vim -S "$BATS_TEST_TMPDIR/shfmt.vim"
+
+  assert_line 'sh_unchanged=1'
+  assert_line 'bats_local=1'
+  assert_no_error_message
+}
