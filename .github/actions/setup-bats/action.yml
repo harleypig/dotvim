@@ -20,7 +20,16 @@ inputs:
 runs:
   using: composite
   steps:
+    # The key holds every pin, so changing one misses and fetches afresh.
+    - name: Restore bats from cache
+      id: cache
+      uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+      with:
+        path: ${{ runner.temp }}/bats
+        key: bats-${{ runner.os }}-${{ inputs.bats-core-sha }}-${{ inputs.bats-support-sha }}-${{ inputs.bats-assert-sha }}
+
     - name: Fetch and install bats
+      if: steps.cache.outputs.cache-hit != 'true'
       shell: bash
       env:
         BATS_CORE_SHA: ${{ inputs.bats-core-sha }}
