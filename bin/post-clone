@@ -66,8 +66,10 @@ system_packages=(
 # - tflint (hashicorp.md) - requires manual installation
 
 # Each step that warns about a failure adds a line here. A missing pipx is
-# reported as a status, not a warning, and is deliberately not a failure.
+# reported as a status, not a warning, and is deliberately not a failure;
+# the closing message names what it skipped instead.
 failures=()
+pipx_missing=
 
 ##############################################################################
 # Functions
@@ -158,6 +160,7 @@ fi
 section "Checking for pipx installation"
 
 if ! command_exists pipx; then
+  pipx_missing=1
   status "pipx not found. Skipping pipx package installations."
   status "Please install pipx manually to use the following packages:"
   for package in "${pipx_packages[@]}"; do
@@ -261,8 +264,15 @@ if ((${#failures[@]})); then
   exit 1
 fi
 
-section "Setup completed successfully!"
-status "All required packages have been installed."
+if [[ -n $pipx_missing ]]; then
+  section "Setup completed, but pipx was not found"
+  status "Skipped: ${pipx_packages[*]}"
+
+else
+  section "Setup completed successfully!"
+  status "All required packages have been installed."
+fi
+
 status "You may need to restart your terminal to use newly installed tools."
 status "Note: This script doesn't modify any shell configuration files."
 status "If tools aren't available in your PATH, you may need to add their locations manually."

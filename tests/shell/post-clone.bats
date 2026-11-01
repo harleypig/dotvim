@@ -158,6 +158,10 @@ NODEJS
   post_clone
   assert_success
   assert_output --partial 'pipx not found'
+  assert_output --partial 'Setup completed, but pipx was not found'
+  assert_output --partial 'Skipped: ansible proselint vint isort flake8'
+  refute_output --partial 'Setup completed successfully!'
+  refute_output --partial 'All required packages have been installed.'
 }
 
 @test "does not report success when the submodules fail to update" {
