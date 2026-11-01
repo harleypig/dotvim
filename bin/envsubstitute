@@ -25,8 +25,15 @@ else
   selfname="envsubstitute"
 fi
 
-declare tmpdelim
-tmpdelim="$(tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w 6 | head -n 1)"
+# Read a fixed amount of /dev/urandom rather than stopping an endless read
+# early: that relies on SIGPIPE, which a caller may have ignored.
+declare tmpdelim=
+
+while ((${#tmpdelim} < 6)); do
+  tmpdelim+="$(head -c 64 /dev/urandom | tr -dc 'a-zA-Z0-9')"
+done
+
+tmpdelim="${tmpdelim:0:6}"
 
 #-----------------------------------------------------------------------------
 warn() {

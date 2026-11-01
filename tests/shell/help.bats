@@ -18,7 +18,7 @@ setup() {
   mkdir -p "$stubs"
 
   local tool
-  for tool in bash cat fold head tr; do
+  for tool in bash cat head tr; do
     ln -s "$(type -P "$tool")" "$stubs/$tool"
   done
 
