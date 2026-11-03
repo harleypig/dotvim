@@ -31,7 +31,10 @@ _add() {
   name="${name%\.vim}"
   name="${name%\.nvim}"
 
-  grep "$name" .gitmodules && return 0
+  if git config -f .gitmodules --get "submodule.$name.path" > /dev/null; then
+    echo "$name is already in .gitmodules, skipping."
+    return 0
+  fi
 
   git submodule add --name "$name" "$url" ".vim/pack/$package/start/$name" \
     || return 1
