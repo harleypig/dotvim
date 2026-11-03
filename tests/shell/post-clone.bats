@@ -317,8 +317,7 @@ NODEJS
   post_clone
 
   local tool
-  for tool in dockerfile-language-server-nodejs markdownlint-cli prettier \
-    vim-language-server; do
+  for tool in markdownlint-cli prettier vim-language-server; do
     called "^npm install -g $tool\$"
   done
 
@@ -333,7 +332,8 @@ NODEJS
 
   # Bundled by the CoC extension that uses it, or used by nothing configured.
   for tool in @ansible/ansible-language-server bash-language-server \
-    diagnostic-languageserver eslint pyright yarn; do
+    diagnostic-languageserver dockerfile-language-server-nodejs eslint \
+    pyright yarn; do
     not_called "^npm install -g $tool\$"
   done
 
