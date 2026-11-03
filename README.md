@@ -5,13 +5,18 @@ support, linting, and completion features.
 
 ## Requirements
 
+### Vim
+
+CoC (Conquer of Completion) needs Vim 9.0.0438 or later.
+
 ### Node.js
 
-Node.js is needed for CoC (Conquer of Completion) and its extensions.
-Without `node` on `PATH`, Vim still starts: CoC is switched off, and ALE and
-the rest of the configuration work as usual.
+Node.js is needed for CoC and its extensions. Without `node` on `PATH`, Vim
+still starts: CoC is switched off, and ALE and the rest of the configuration
+work as usual.
 
-* **Minimum version**: Node.js 14.14 or higher
+* **Minimum version**: Node.js 16.18.0 or later, the oldest the installed
+    CoC supports
 * **Installation**:
   * **Arch Linux**: `pacman -S nodejs npm`
   * **Ubuntu**: `apt install nodejs npm`
