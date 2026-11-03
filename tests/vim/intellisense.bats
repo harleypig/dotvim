@@ -147,3 +147,20 @@ EOF
   assert_line 'ft=markdown'
   assert_line 'opts=unset'
 }
+
+#-----------------------------------------------------------------------------
+@test "ALE's virtual text keeps ALE's own colours while it is switched off" {
+  cat > "$BATS_TEST_TMPDIR/body.vim" <<'EOF'
+echo 'virtualtext=' . g:ale_virtualtext_cursor
+for group in ['Error', 'Warning', 'Info']
+  echo group . '=' . synIDattr(hlID('ALEVirtualText' . group), 'bg', 'cterm')
+endfor
+EOF
+
+  start_vim "$BATS_TEST_TMPDIR/body.vim"
+
+  assert_line 'virtualtext=disabled'
+  assert_line 'Error='
+  assert_line 'Warning='
+  assert_line 'Info='
+}
