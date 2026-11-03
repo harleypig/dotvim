@@ -13,6 +13,10 @@ from, and what else it could show.
     sign on each line changed since the last Git commit. It is installed
     through `g:coc_global_extensions` in `.vimrc`. It runs inside CoC, so
     when `.vimrc` switches CoC off for want of Node.js there are no Git signs.
+    Nothing in this repository fixes its version: CoC installs the newest
+    release from npm into its own data directory, and
+    `extensions.updateCheck` in `coc-settings` updates it daily. The signs
+    below were checked against coc-git 2.7.15.
 
 CoC itself places no diagnostic signs: `diagnostic.displayByAle` hands its
 diagnostics to ALE, which displays them (see [ALE and CoC
