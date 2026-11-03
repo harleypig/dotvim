@@ -7,6 +7,5 @@ setlocal commentstring=#\ %s
 " Enable folding by syntax
 setlocal foldmethod=syntax
 
-" Enable ALE linters and fixers for HCL
-let b:ale_linters = ['tflint']
+" ALE has no HCL linter (tflint is Terraform's), so only the fixer is set.
 let b:ale_fixers = ['terraform']
