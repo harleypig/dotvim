@@ -2,7 +2,7 @@
 
 > **Working draft.** This page defines how the documentation in this
 > repository is organized. It is provisional on purpose: the repository is
-> being cleaned up one area at a time (`bin/`, `tools/`, `early-settings/`,
+> being cleaned up one area at a time (`bin/`, `early-settings/`,
 > `late-settings/`), and this page will be revised as each area teaches us
 > something. Nothing here is settled until it stops saying "draft".
 
