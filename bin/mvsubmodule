@@ -45,13 +45,17 @@ _mv() {
     }
   fi
 
-  [[ $oldpath == "$newpath" ]] && {
+  [[ $oldpath == "$newpath/$name" ]] && {
     echo "$name is already in $newpath"
     exit 0
   }
 
   #echo git mv "$oldpath" "$newpath/$name"
-  git mv "$oldpath" "$newpath/$name"
+  git mv "$oldpath" "$newpath/$name" || {
+    echo "Unable to move $oldpath to $newpath/$name, exiting."
+    exit 1
+  }
+
   #mkreadme > README.md
   #git add "$newpath/$name" README.md
   git add "$newpath/$name"
