@@ -102,7 +102,7 @@ hold a link too long to break.
 | `docs/todo.md` | Backlog | Removed; its tasks are GitHub issues and its writing-tool research notes moved to `docs/tools-to-try.md` ([#7]). |
 | `docs/GLOBAL.md` | AI-assistant instructions | Moved to `.claude/CLAUDE.md`, out of the published docs ([#11]); its human-facing part went to `coc-ale-setup.md`. Its broken links were fixed first ([#13]). |
 | `docs/LANGUAGE_SETUP_TEMPLATE.md` | Template | Keep as the template; rewritten to match `CONVENTIONS.md` ([#9]). Broken path fixed ([#13]). |
-| `docs/coc-ale-setup.md` | Shared plugin setup | Overlaps `README.md`. Now opens with how CoC and ALE divide the work, the human-facing part of `GLOBAL.md` ([#11]). Its ALE section now says which `ale.vim` holds what, and where `<leader>fb` is defined ([#52]). |
+| `docs/coc-ale-setup.md` | Shared plugin setup | Overlaps `README.md`. Now opens with how CoC and ALE divide the work, the human-facing part of `GLOBAL.md` ([#11]). Its ALE section now says which `ale.vim` holds what, and where `<leader>fb` is defined ([#52]), and which file types the global fixers skip ([#104]). |
 | `docs/coc-extensions.md` | Tool setup | Fine. Headings aligned with the template ([#9]). Its coc-git section said the extension was disabled; it is installed and places the gutter's Git signs ([#47]). |
 | `docs/extensions-to-try.md` | Research | Kept as a research page for now. Its "currently installed" list, which duplicated `coc-extensions.md`, now points at `.vimrc`, and its repeated entries are gone ([#47]). |
 | `docs/plugins-to-try.md` | Research | Kept as a research page for now. De-duplicated; no longer claims fzf, fugitive or gitgutter are installed ([#47]). |
@@ -111,18 +111,18 @@ hold a link too long to break.
 | `docs/statusline.md` | Tool setup | Rewritten to describe the statusline `statusline.vim` builds: the `g:yasl` dictionary, the four `YASL_` functions, and CoC only through ALE's counts ([#102]). |
 | `docs/gutter.md` | Tool setup | Added: what the sign column shows and where each sign comes from, plus things to try ([#42]). |
 | `docs/editor-settings.md` | Tool setup | Added: the general options, help windows, fold text and diagnostic colors, non-defaults only ([#109]). |
-| `docs/vim-files.md` | Language setup | Fine in shape; broken paths fixed ([#13]). |
-| `docs/ansible.md` | Language setup | Reworked to template ([#9]). |
-| `docs/docker.md` | Language setup | Reworked to template ([#9]). |
-| `docs/hashicorp.md` | Language setup | Reworked to template ([#9]). |
+| `docs/vim-files.md` | Language setup | Fine in shape; broken paths fixed ([#13]). vint is credited to `vim.vim`, not `ale.vim` ([#104]). |
+| `docs/ansible.md` | Language setup | Reworked to template ([#9]). Says what installs each tool, and that yamllint runs through ALE ([#104]). |
+| `docs/docker.md` | Language setup | Reworked to template ([#9]). Now lists hadolint ([#104]). |
+| `docs/hashicorp.md` | Language setup | Reworked to template ([#9]). Credits the ftplugins, not `ale.vim`; tflint is Terraform's only, and packer is gone ([#104]). |
 | `docs/html.md` | Language setup | Reworked to template ([#9]). |
-| `docs/java.md` | Language setup | Closest to the bar; good model. Headings aligned with the template ([#9]). |
+| `docs/java.md` | Language setup | Closest to the bar; good model. Headings aligned with the template ([#9]). Says where `coc-java` is listed, and what `java.vim` sets ([#104]). |
 | `docs/json.md` | Language setup | Reworked to template ([#9]). |
 | `docs/proselint.md` | Tool setup | Reworked to template ([#9]). |
 | `docs/python.md` | Language setup | Reworked to template ([#9]); broken paths fixed ([#13]). |
-| `docs/shell.md` | Language setup | Reworked to template ([#9]); broken paths fixed ([#13]). |
+| `docs/shell.md` | Language setup | Reworked to template ([#9]); broken paths fixed ([#13]). shellcheck is credited to `coc-diagnostic` and shfmt to `sh.vim` ([#104]). |
 | `docs/toml.md` | Language setup | Reworked to template ([#9]). |
-| `docs/yaml.md` | Language setup | Reworked to template ([#9]). |
+| `docs/yaml.md` | Language setup | Reworked to template ([#9]). Says how Ansible files are detected ([#104]). |
 | `docs/scripts.md` | Script usage | Added: lists the `bin/` scripts and what each is for; usage stays in each `--help` ([#10]). |
 | `late-settings/doc/learning.txt` | `:help` | Keep; the model for in-editor docs. |
 
@@ -180,4 +180,5 @@ three places ([#14]), and bugs in `bin/check-setup` ([#15]).
 [#47]: https://github.com/harleypig/dotvim/issues/47
 [#52]: https://github.com/harleypig/dotvim/issues/52
 [#102]: https://github.com/harleypig/dotvim/issues/102
+[#104]: https://github.com/harleypig/dotvim/issues/104
 [#109]: https://github.com/harleypig/dotvim/issues/109

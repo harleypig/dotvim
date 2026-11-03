@@ -35,8 +35,7 @@ The utility plugins installed in this Vim environment are the ones under
 [`vim-colorschemes`](https://github.com/EvitanRelta/vim-colorschemes), a collection
 of colorschemes, is also installed, under `.vim/pack/400-ui/start/`. No
 `colorscheme` command selects one of them, so Vim starts with its default
-colorscheme; a comment in `colors.vim` names norwaytoday, which the collection
-includes, but nothing loads it.
+colorscheme.
 
 gitgutter, fzf and fugitive are not installed. Git change signs in the gutter
 come from the coc-git extension instead (see [The Gutter](gutter.md) and [CoC

@@ -1,7 +1,8 @@
 # HashiCorp Configuration
 
 This document outlines the support for HashiCorp tools development within the
-Vim environment, specifically focusing on Terraform and Packer.
+Vim environment: Terraform files (`terraform` filetype) and other HCL files
+(`hcl`).
 
 Note: The configuration leverages language servers for enhanced functionality
 over built-in options, providing more comprehensive language support for
@@ -13,8 +14,6 @@ Install via package manager:
 
 * [`terraform`](https://www.terraform.io/) - Infrastructure as code tool for
     provisioning and managing cloud infrastructure.
-* [`packer`](https://www.packer.io/) - Tool for creating identical machine
-    images for multiple platforms from a single configuration.
 * [`terraform-ls`](https://github.com/hashicorp/terraform-ls) - Language
     server providing Terraform language support for editors and IDEs.
 
@@ -47,16 +46,19 @@ sudo install -m 755 tflint /usr/local/bin/
     Provides syntax highlighting for Terraform and HCL files.
 * [`coc.nvim`](https://github.com/neoclide/coc.nvim) (Vim Plugin) -
     Intellisense engine that integrates with `terraform-ls` for language
-    server features.
-* [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for
-    linting Terraform files with `tflint` and formatting with `terraform fmt`.
+    server features, on Terraform files only.
+* [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Lints
+    Terraform files with `tflint`, and formats Terraform and HCL files with
+    `terraform fmt`.
 
 ## Configuration Files Used
 
-* `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration
-    for the terraform-ls language server.
-* [`ale.vim`][ale.vim] - Global ALE configuration including Terraform linting
-    and formatting settings.
+* `coc-settings` - Use `:CocConfig` to edit this file. Runs terraform-ls for
+    the `terraform` and `tf` filetypes.
+* [`terraform.vim`][terraform.vim] - The ALE linter and fixer, folding and
+    comment string for Terraform files.
+* [`hcl.vim`][hcl.vim] - The ALE fixer, folding and comment string for HCL
+    files.
 
 ## Syntax Highlighting
 
@@ -65,32 +67,47 @@ highlighting.
 
 ## Linting and Static Analysis
 
-* **Tool**: `tflint` via `ALE`
-* **Configuration**: Configured in `ale.vim` to run automatically on file save
-* **Usage**: Errors and warnings appear in the quickfix list and gutter
+* **Tool**: `tflint` via `ALE`, on Terraform files. HCL files get no ALE
+    linter: ALE has none for HCL, and tflint is Terraform's.
+* **Configuration**: Set as the buffer's linter in `terraform.vim`. ALE
+    lints as you type, on leaving Insert mode, on opening and on saving
+    ([ALE and CoC Setup](coc-ale-setup.md)).
+* **Usage**: Errors and warnings appear in the gutter and the quickfix list
+    (see [The Gutter](gutter.md))
 
 ## Auto Completion
 
-* **Tool**: `terraform-ls` via `CoC`
+* **Tool**: `terraform-ls` via `CoC`, on Terraform files
 * **Configuration**: Configured in `coc-settings.json`
 * **Features**: Variable completion, resource type completion, attribute
     completion
 
 ## Formatting and Beautification
 
-* **Tool**: `terraform fmt` via `ALE`
-* **Configuration**: Set as a fixer in `ale.vim`
+* **Tool**: `terraform fmt` via `ALE`, on Terraform and HCL files
+* **Configuration**: Set as the buffer's fixer in `terraform.vim` and
+    `hcl.vim`, so the trailing-whitespace fixers every other file gets do not
+    run here
 * **Usage**: Automatically formats code on save or manually with `:ALEFix`
+
+## Code Folding
+
+Both `terraform.vim` and `hcl.vim` set `foldmethod=syntax`, so blocks fold.
+
+## Comment Support
+
+Both `terraform.vim` and `hcl.vim` set `commentstring` to `# %s`, with a
+space after the `#`.
 
 ## Default or Inapplicable Sections
 
 The following features use default settings without additional configuration:
 
-* Error Highlighting (handled by ALE and CoC)
-* Code Folding (uses Vim's default folding mechanisms)
+* Error Highlighting (handled by ALE)
 * Schema or Contract Validation (handled by `terraform-ls`)
 * Version Control Integration (uses global Git integration)
 * Snippets (not configured specifically for Terraform)
 * Filetype Detection (handled by `vim-polyglot`)
 
-[ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/ale.vim
+[terraform.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/ftplugin/terraform.vim
+[hcl.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/ftplugin/hcl.vim

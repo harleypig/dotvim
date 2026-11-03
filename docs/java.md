@@ -42,8 +42,8 @@ Verify ALE can find it by opening a `.java` file and running `:ALEInfo`.
     inline diagnostics, and code actions. jdtls is downloaded and managed
     automatically on first use (~200 MB).
 
-Install with `:CocInstall coc-java`, or add `coc-java` to
-`g:coc_global_extensions` in `plugin/coc.vim` to make it persistent.
+`coc-java` is in `g:coc_global_extensions` in `.vimrc`, so CoC installs it
+when it is missing.
 
 On first open of a `.java` file, jdtls indexes the project. Build system
 projects (Gradle, Maven) are detected automatically from their root files.
@@ -59,8 +59,7 @@ Useful commands when jdtls misbehaves:
     `workspace.rootPatterns` list must include Gradle and Maven root files so
     jdtls can locate the project root.
 * [`java.vim`][java.vim]
-    — Java-specific indentation, ALE linter suppression, and optional
-    google-java-format fixer.
+    — ALE linter suppression, and the optional google-java-format fixer.
 
 ## Syntax Highlighting
 
@@ -71,7 +70,8 @@ Provided by vim-polyglot with no additional configuration required.
 * **Tool**: jdtls via `coc-java`
 * **Configuration**: ALE Java linters are disabled in `java.vim` to prevent
     duplicate and conflicting diagnostics
-* **Usage**: Errors and warnings appear in the quickfix list and gutter
+* **Usage**: CoC hands the problems to ALE, which shows them in the gutter
+    and the quickfix list (see [The Gutter](gutter.md))
 
 ## Auto Completion
 

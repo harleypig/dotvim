@@ -14,6 +14,7 @@
 
 ## Configuration Files Used
 
+* [`yaml.vim`][yaml.vim] - Adds yamllint to ALE's linters for the buffer.
 * `.yamllint` - Optional configuration file for yamllint (can be placed in
     project root or home directory)
 
@@ -32,8 +33,11 @@ YAML files are linted using yamllint through ALE, which checks for:
 ## Filetype Detection
 
 * Files with `.yml` and `.yaml` extensions are automatically detected as YAML
-* Files containing Ansible patterns (e.g., `hosts:` entries) are detected as
-    `yaml.ansible`
+* vim-polyglot detects Ansible files as `yaml.ansible` by name and place, not
+    by content, chiefly `playbook.yml`, `site.yml`, `main.yml`, `local.yml` and
+    `requirements.yml` (or `.yaml`), and any file under a `group_vars/` or
+    `host_vars/` directory. `yaml.vim` applies to them too, so yamllint runs
+    on them (see [Ansible](ansible.md)).
 
 ## Default or Inapplicable Sections
 
@@ -47,3 +51,5 @@ The following features use default settings or are not applicable:
 * Schema or Contract Validation
 * Version Control Integration
 * Comment Support (uses Vim's default comment support)
+
+[yaml.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/ftplugin/yaml.vim

@@ -40,7 +40,8 @@ Provided by vim-polyglot, which includes support for JSON syntax highlighting.
 * **Tool**: `coc-json`, which reports syntax errors and schema problems.
     ALE runs no JSON linter: `g:ale_linters_explicit` is on and `ale.vim`
     names none for `json`.
-* **Usage**: Errors and warnings appear in the quickfix list and gutter
+* **Usage**: CoC hands the problems to ALE, which shows them in the gutter
+    and the quickfix list (see [The Gutter](gutter.md))
 
 ## Auto Completion
 

@@ -19,7 +19,8 @@ work as usual.
     CoC supports
 * **Installation**:
   * **Arch Linux**: `pacman -S nodejs npm`
-  * **Ubuntu**: `apt install nodejs npm`
+  * **Ubuntu 24.04 or later**: `apt install nodejs npm` (24.04 ships
+      Node.js 18; 22.04 ships 12, below the minimum, so use nvm there)
   * **Alternative**: Use [Node Version Manager
       (nvm)](https://github.com/nvm-sh/nvm) for version management
 
