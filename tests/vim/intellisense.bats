@@ -90,3 +90,12 @@ start_vim() {
   assert_line \
     'value=["html","handlebars","htmldjango","blade","html.mustache"]'
 }
+
+#-----------------------------------------------------------------------------
+@test "proselint is run with its 0.16 check command, reading stdin" {
+  coc_setting 's["diagnostic-languageserver.linters"].proselint.args'
+
+  # No --config: proselint finds a project's proselint.json, or the user's
+  # own, by itself.
+  assert_line 'value=["check"]'
+}

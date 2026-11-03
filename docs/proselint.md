@@ -29,16 +29,27 @@ Install via `npm`:
 
 * `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration
   for diagnostic-languageserver to use Proselint.
-* `.proselint-config.json` - Proselint's rule settings. The
-  diagnostic-languageserver entry in `coc-settings` passes
-  `--config $HOME/.vim/.proselint-config.json`, but there is no file at
-  that path: this repository does not have one.
+* `proselint.json` - Proselint's rule settings, optional. This repository
+  sets none. Proselint looks for one itself: `proselint.json` in the working
+  directory or any directory above it, then
+  `$XDG_CONFIG_HOME/proselint/config.json`, then its built-in defaults.
 
 ## Linting and Static Analysis
 
-* **Tool**: `proselint` via `diagnostic-languageserver`
-* **Configuration**: Configured in `coc-settings.json` to run on text files
-* **Usage**: Errors and warnings appear in the quickfix list and gutter
+* **Tool**: `proselint` via `diagnostic-languageserver`, on text files
+* **Configuration**: Configured in `coc-settings.json` to run on text files,
+  as `proselint check` reading the buffer on stdin. That is the command line
+  from proselint 0.16.0 on; earlier releases do not have the `check`
+  command.
+* **Tools**: `proselint` and `markdownlint` via `ALE`, on Markdown files
+* **Configuration**: Both are the Markdown linters in the late `ale.vim`.
+  markdownlint is given the nearest `.markdownlint.yaml` above the file (or
+  its `.jsonc`, `.json` or `.yml` form) by the Markdown ftplugin. The ALE
+  release this repository pins runs `proselint %t`, which proselint 0.16.0
+  rejects, so on Markdown proselint reports nothing until ALE is updated to
+  a release that runs `proselint check`.
+* **Usage**: Both report to ALE, which shows the problems in the gutter and
+  the quickfix list (see [The Gutter](gutter.md))
 
 ## Default or Inapplicable Sections
 

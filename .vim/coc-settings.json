@@ -80,8 +80,11 @@
   },
 
   "diagnostic-languageserver.linters": {
+    // proselint 0.16 and later: `check` with no paths reads stdin, and its
+    // own search finds a proselint.json above the working directory or in
+    // $XDG_CONFIG_HOME/proselint/config.json.
     "proselint": {
-      "args": ["--config", "$HOME/.vim/.proselint-config.json", "-"],
+      "args": ["check"],
       "command": "proselint",
       "debounce": 100,
       "formatLines": 1,
