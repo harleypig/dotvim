@@ -215,6 +215,8 @@
   //=========================================================================
   // LANGUAGE SERVERS
   //=========================================================================
+  // A server an extension starts is not started here as well: coc-docker
+  // starts docker-langserver.
   "languageserver": {
     // HTML Language Server
     "html": {
@@ -227,14 +229,8 @@
       "settings": {}
     },
 
-    // Docker Language Server
-    "dockerfile": {
-      "args": ["--stdio"],
-      "command": "docker-langserver",
-      "filetypes": ["dockerfile"]
-    },
-
-    // Terraform Language Server
+    // Terraform Language Server. No CoC extension bundles terraform-ls, so
+    // it is started by hand.
     "terraform": {
       "args": ["serve"],
       "command": "terraform-ls",
