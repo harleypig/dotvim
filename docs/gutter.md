@@ -13,6 +13,10 @@ from, and what else it could show.
     sign on each line changed since the last Git commit. It is installed
     through `g:coc_global_extensions` in `.vimrc`. It runs inside CoC, so
     when `.vimrc` switches CoC off for want of Node.js there are no Git signs.
+    Nothing in this repository fixes its version: CoC installs the newest
+    release from npm into its own data directory, and
+    `extensions.updateCheck` in `coc-settings` updates it daily. The signs
+    below were checked against coc-git 2.7.15.
 
 CoC itself places no diagnostic signs: `diagnostic.displayByAle` hands its
 diagnostics to ALE, which displays them (see [ALE and CoC
@@ -107,9 +111,7 @@ plugin that would do it.
     `git.prevChunk`), staging and undo, and `git.toggleGutters` to hide only
     the Git signs.
 * **Marks.** [vim-showmarks](https://github.com/jacquesbh/vim-showmarks)
-    shows marks in the gutter; it is on [Plugins to Try](plugins-to-try.md),
-    and older showmarks settings are kept in [`showmarks.vim`][showmarks.vim]
-    under `OLD_FILES/`, which Vim does not load.
+    shows marks in the gutter; it is on [Plugins to Try](plugins-to-try.md).
 * **Test coverage.** [coc-coverage](https://github.com/ruanyl/coc-coverage)
     marks uncovered lines with a sign; it is on [CoC Extensions to
     Try](extensions-to-try.md).
@@ -126,5 +128,4 @@ the whole sign column when a buffer has problems. The note in
 
 [gutter.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/gutter.vim
 [diagnostic-colors.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/diagnostic-colors.vim
-[showmarks.vim]: https://github.com/harleypig/dotvim/blob/master/OLD_FILES/showmarks.vim
 [ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/ale.vim
