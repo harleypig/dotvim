@@ -275,7 +275,7 @@ NVM
   post_clone
   assert_output --partial 'prettier is already installed'
   not_called '^npm install -g prettier$'
-  called '^npm install -g vim-language-server$'
+  called '^npm install -g markdownlint-cli$'
 }
 
 @test "installs only the pipx packages pipx does not already list" {
@@ -366,7 +366,7 @@ else echo "install ok installed"; fi'
   post_clone
 
   local tool
-  for tool in markdownlint-cli prettier vim-language-server; do
+  for tool in markdownlint-cli prettier; do
     called "^npm install -g $tool\$"
   done
 
@@ -382,7 +382,7 @@ else echo "install ok installed"; fi'
   # Bundled by the CoC extension that uses it, or used by nothing configured.
   for tool in @ansible/ansible-language-server bash-language-server \
     diagnostic-languageserver dockerfile-language-server-nodejs eslint \
-    pyright yarn; do
+    pyright vim-language-server yarn; do
     not_called "^npm install -g $tool\$"
   done
 

@@ -34,9 +34,8 @@ NC='\033[0m' # No Color
 # language server a CoC extension bundles is left to the extension.
 
 npm_packages=(
-  "markdownlint-cli"    # ALE markdown linter markdownlint
-  "prettier"            # ALE markdown fixer
-  "vim-language-server" # ALE vim linter vimls
+  "markdownlint-cli" # ALE markdown linter markdownlint
+  "prettier"         # ALE markdown fixer
 )
 
 # yamllint comes before ansible-lint, which depends on it, so the yamllint
