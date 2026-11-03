@@ -72,7 +72,8 @@ update() {
   update
   assert_success
 
-  assert_equal "$(< .vimrc)" "$(cat << 'VIMRC'
+  assert_equal "$(< .vimrc)" "$(
+    cat << 'VIMRC'
 set nocompatible
 
 let g:coc_global_extensions = [
@@ -83,7 +84,7 @@ let g:coc_global_extensions = [
 
 set number
 VIMRC
-)"
+  )"
 
   [[ ! -e $tripped ]] || fail "unexpected call: $(< "$tripped")"
 }
