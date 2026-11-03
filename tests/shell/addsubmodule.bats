@@ -96,3 +96,57 @@ commits() {
   assert_line --index 0 --partial 'Usage: addsubmodule'
   assert_equal "$(commits)" 1
 }
+
+@test "adds the other URLs and fails when one of several cannot be added" {
+  other="$BATS_TEST_TMPDIR/remotes/vim-abolish.git"
+  git clone -q --bare "$BATS_TEST_TMPDIR/src" "$other"
+
+  addsubmodule 100-core "$remote" "$BATS_TEST_TMPDIR/remotes/missing.git" \
+    "$other"
+  assert_failure
+
+  assert_equal \
+    "$(git config -f .gitmodules submodule.surround.path)" \
+    .vim/pack/100-core/start/surround
+  assert_equal \
+    "$(git config -f .gitmodules submodule.vim-abolish.path)" \
+    .vim/pack/100-core/start/vim-abolish
+  assert_equal "$(commits)" 3
+}
+
+@test "lowercases the name and drops .git, .vim and .nvim" {
+  other="$BATS_TEST_TMPDIR/remotes/Foo.nvim.git"
+  git clone -q --bare "$BATS_TEST_TMPDIR/src" "$other"
+
+  addsubmodule 100-core "$other"
+  assert_success
+  assert_equal \
+    "$(git config -f .gitmodules submodule.foo.path)" \
+    .vim/pack/100-core/start/foo
+}
+
+@test "adds a plugin whose name is part of one already added" {
+  # 'surround' appears inside 'surround-extra', and is not a duplicate.
+  other="$BATS_TEST_TMPDIR/remotes/surround-extra.git"
+  git clone -q --bare "$BATS_TEST_TMPDIR/src" "$other"
+
+  addsubmodule 100-core "$other" "$remote"
+  assert_success
+  assert_equal \
+    "$(git config -f .gitmodules submodule.surround.path)" \
+    .vim/pack/100-core/start/surround
+  assert_equal "$(commits)" 3
+}
+
+@test "says which plugin it skipped" {
+  addsubmodule 100-core "$remote"
+  addsubmodule 100-core "$remote"
+  assert_success
+  assert_output 'surround is already in .gitmodules, skipping.'
+}
+
+@test "reports no error when .gitmodules does not exist yet" {
+  addsubmodule 100-core "$remote"
+  assert_success
+  refute_output --partial 'No such file'
+}

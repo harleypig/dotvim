@@ -35,7 +35,8 @@ for s in "${submodules[@]}"; do
 
   read -r default < <(git remote show origin | grep HEAD | rev | cut -d ' ' -f 1 | rev)
 
-  [[ -z $default ]] && {
+  # git prints "(unknown)" when the remote's HEAD names no branch.
+  [[ -z $default || $default == '(unknown)' ]] && {
     echo "fatal error: no default branch found for $s"
     exit 1
   }
