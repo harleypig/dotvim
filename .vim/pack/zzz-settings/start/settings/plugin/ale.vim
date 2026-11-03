@@ -46,7 +46,10 @@ let g:ale_fixers.jsonc = ['jq']
 " markdown
 " TODO: Move to ftplugin/markdown.vim
 let g:ale_linters.markdown = ['markdownlint', 'proselint']
-let g:ale_fixers.markdown = ['prettier']
+
+" No Markdown fixer beyond the global ones: prettier writes every bullet as
+" '-', and has no option to keep the '*' that CONVENTIONS.md and
+" .markdownlint.yaml (MD004) ask for.
 
 " powershell
 " TODO: Move to ftplugin/ps1.vim

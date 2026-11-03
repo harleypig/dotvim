@@ -99,3 +99,51 @@ start_vim() {
   # own, by itself.
   assert_line 'value=["check"]'
 }
+
+#-----------------------------------------------------------------------------
+@test "Markdown gets only the global fixers, never prettier" {
+  cat > "$BATS_TEST_TMPDIR/body.vim" <<'EOF'
+echo 'markdown=' . string(get(g:ale_fixers, 'markdown', 'unset'))
+echo 'star=' . string(g:ale_fixers['*'])
+EOF
+
+  start_vim "$BATS_TEST_TMPDIR/body.vim"
+
+  assert_line 'markdown='"'"'unset'"'"
+  assert_line "star=['remove_trailing_lines', 'trim_whitespace']"
+}
+
+#-----------------------------------------------------------------------------
+@test "markdownlint is given the nearest .markdownlint.yaml from any cwd" {
+  local project="$BATS_TEST_TMPDIR/project"
+  mkdir -p "$project/docs" "$BATS_TEST_TMPDIR/elsewhere"
+  : > "$project/.markdownlint.yaml"
+  : > "$project/docs/page.md"
+
+  cat > "$BATS_TEST_TMPDIR/body.vim" <<'EOF'
+echo 'ft=' . &filetype
+echo 'opts=' . get(b:, 'ale_markdown_markdownlint_options', 'unset')
+EOF
+
+  workdir="$BATS_TEST_TMPDIR/elsewhere" \
+    start_vim "$BATS_TEST_TMPDIR/body.vim" "$project/docs/page.md"
+
+  assert_line 'ft=markdown'
+  assert_line "opts=--config '$project/.markdownlint.yaml'"
+}
+
+#-----------------------------------------------------------------------------
+@test "markdownlint keeps its defaults where no .markdownlint.yaml exists" {
+  mkdir -p "$BATS_TEST_TMPDIR/bare"
+  : > "$BATS_TEST_TMPDIR/bare/page.md"
+
+  cat > "$BATS_TEST_TMPDIR/body.vim" <<'EOF'
+echo 'ft=' . &filetype
+echo 'opts=' . get(b:, 'ale_markdown_markdownlint_options', 'unset')
+EOF
+
+  start_vim "$BATS_TEST_TMPDIR/body.vim" "$BATS_TEST_TMPDIR/bare/page.md"
+
+  assert_line 'ft=markdown'
+  assert_line 'opts=unset'
+}
