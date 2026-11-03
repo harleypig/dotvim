@@ -264,7 +264,16 @@ NODEJS
   called '^sudo apt-get install -y '
   not_called '^sudo apt-get install .* jq( |$)'
   called '^sudo apt-get install -y .*shellcheck'
-  called '^sudo apt-get install -y .*terraform-ls'
+}
+
+@test "asks no package manager for terraform, which neither apt nor dnf carries" {
+  stub npm
+  stub apt-get
+  stub_failing dpkg
+  recorder sudo
+  post_clone
+  called '^sudo apt-get install -y '
+  not_called '^sudo apt-get install .*terraform'
 }
 
 @test "dnf installs the missing system packages and not the present ones" {
@@ -318,7 +327,7 @@ NODEJS
     called "^pipx install $tool --include-deps\$"
   done
 
-  for tool in gawk jq shellcheck shfmt terraform terraform-ls; do
+  for tool in gawk jq shellcheck shfmt; do
     called "^sudo apt-get install -y( .*)? $tool( |\$)"
   done
 
@@ -337,7 +346,7 @@ NODEJS
   post_clone
 
   local tool
-  for tool in hadolint sqlint tflint; do
+  for tool in hadolint sqlint terraform terraform-ls tflint; do
     assert_output --partial "- $tool:"
   done
 }

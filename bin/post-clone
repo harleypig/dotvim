@@ -56,16 +56,17 @@ pipx_packages=(
 )
 
 system_packages=(
-  "gawk"         # ALE awk linter
-  "jq"           # ALE json and jsonc fixer
-  "shellcheck"   # coc-diagnostic sh
-  "shfmt"        # ALE sh fixer
-  "terraform"    # ALE terraform and hcl fixer
-  "terraform-ls" # coc-settings languageserver.terraform
+  "gawk"       # ALE awk linter
+  "jq"         # ALE json and jsonc fixer
+  "shellcheck" # coc-diagnostic sh
+  "shfmt"      # ALE sh fixer
 )
 
-# hadolint, sqlint and tflint are configured too, but neither apt nor dnf
-# carries them; the closing message says how to install them.
+# hadolint, sqlint, terraform (ALE terraform and hcl fixer), terraform-ls
+# (coc-settings languageserver.terraform) and tflint are configured too, but
+# neither apt nor dnf carries them; terraform and terraform-ls are only in
+# HashiCorp's own repository, which this script does not add. The closing
+# message says how to install them.
 
 # Each step that warns about a failure adds a line here. A missing pipx is
 # reported as a status, not a warning, and is deliberately not a failure;
@@ -256,6 +257,10 @@ status '    gh release download --repo hadolint/hadolint --pattern "hadolint-lin
 status "    sudo install -m 755 hadolint-linux-x86_64 /usr/local/bin/hadolint"
 status "- sqlint: Used for SQL linting; a Ruby gem"
 status "    gem install sqlint"
+status "- terraform: Used for Terraform formatting; from HashiCorp's repository"
+status "    https://developer.hashicorp.com/terraform/install"
+status "- terraform-ls: The Terraform language server; from the same repository"
+status "    https://github.com/hashicorp/terraform-ls/blob/main/docs/installation.md"
 status "- tflint: Used for Terraform linting (see hashicorp.md for instructions)"
 status "  Using curl:"
 status "    curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash"
