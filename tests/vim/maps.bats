@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 
 # What the late maps.vim maps: the w!! sudo write, with vim-eunuch loaded
-# and without it.
+# and without it, and the one paste-mode toggle.
 #
 # The harness is the one in coc.bats: headless Vim on this checkout's .vimrc,
 # HOME and the XDG directories inside the test's temp directory, and a PATH
@@ -39,6 +39,8 @@ echo 'errmsg=' . v:errmsg
 echo 'eunuch=' . exists('g:loaded_eunuch')
 echo 'sudowrite_cmd=' . exists(':SudoWrite')
 echo 'sudo_map=' . maparg('w!!', 'c')
+echo 'paste_map=' . maparg('<Leader>pp', 'n')
+echo 'pastetoggle=' . &pastetoggle
 redir END
 qa!
 EOF
@@ -71,4 +73,13 @@ EOF
 
   assert_line 'eunuch=0'
   assert_line 'sudo_map=w !sudo tee > /dev/null %'
+}
+
+#-----------------------------------------------------------------------------
+@test "<Leader>pp is the one paste-mode toggle" {
+  start_vim
+
+  assert_line 'errmsg='
+  assert_line 'paste_map=:set paste!<CR>'
+  assert_line 'pastetoggle='
 }

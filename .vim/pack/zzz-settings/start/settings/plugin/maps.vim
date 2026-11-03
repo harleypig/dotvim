@@ -1,9 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" This is a setting, but I'm putting it here because it's actings as
-" a mapping.
-"set   pastetoggle=<Leader>pp
-
-" README: Toggle paste mode.
+" README: Toggle paste mode. The only paste toggle: 'pastetoggle' is left
+" unset, since bracketed paste covers pasting in Insert mode.
 map <leader>pp :set paste!<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
