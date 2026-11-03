@@ -1,102 +1,92 @@
 # Statusline Configuration
 
-This document outlines the custom statusline configuration used in this Vim
-setup.
+The statusline is built by [`statusline.vim`][statusline.vim], which loads
+from `after/plugin/` so it runs after every plugin. It is always shown
+(`laststatus=2`).
 
-## Overview
+## Layout
 
-The statusline provides a comprehensive view of the current editing state,
-including:
+Left-aligned, in order:
 
-* Buffer information
-* File status
-* Linting/diagnostic information
-* Cursor position
-* Syntax highlighting information
-* File permissions and path
+* **Buffer block**, in brackets: the buffer number (two digits), the
+  filetype (`none` when there is none), and one status marker:
+  * `X` - not modifiable; this wins over the rest
+  * `RO` - read-only, or `+RO` when also modified
+  * `+` - modified, `-` - not modified
+* **Warnings**, separated by spaces, each shown only when it applies:
+  * the file format between asterisks (`*dos*`) when it is not unix
+  * the file encoding between asterisks when it is set and is not utf-8
+  * `[mixed indenting]` when some lines start with a tab and others with a
+    space, or `[&et]` when lines start only with the one 'expandtab' would
+    not produce (spaces with it off, tabs with it on)
+  * `[trailing space]` when any line ends in whitespace
+  * `[PASTE]` when 'paste' is on
 
-## Features
+  The indent and trailing-space checks are skipped in help buffers, and run
+  once per buffer, the first time its statusline is drawn. Editing the
+  buffer afterwards does not change them.
+* **ALE counts**, only when ALE has problems for the buffer, such as
+  `[E2W1I3:\qf]`: errors (style errors included), warnings (style warnings
+  included) and info, each in its own highlight group. CoC's diagnostics
+  are counted here, because CoC hands them to ALE (`diagnostic.displayByAle`
+  in `coc-settings`). `\qf` is the `<leader>qf` mapping that toggles the
+  quickfix window, where the problems are listed.
+* **Position**, in brackets: the column (with the screen column after a `-`
+  when they differ), line and total lines, percentage through the file, and
+  the file size: bytes under 1 KiB, then `k`, then `TooDamnBig!` from 1 MiB
+  up. An empty or unsaved file shows no size.
+* **Character under the cursor**, in brackets, in decimal and hexadecimal.
+* **Syntax group under the cursor**, in brackets, when there is one.
 
-### Buffer and File Information
+Right-aligned:
 
-* Buffer number
-* Current filetype
-* Modification status (`+` for modified, `-` for unmodified, `X` for
-    non-modifiable)
-* File size (with automatic unit conversion)
-* File format (only shown if not unix)
-* File encoding (only shown if not utf-8)
+* The file's permissions, such as `rw-r--r--`, when the file exists.
+* The full file path, cut to its last 20 characters, with `<` marking the
+  cut.
 
-### Warning Indicators
+The statusline is redrawn on `CursorHold` and after each write.
 
-* Mixed indentation warning
-* Trailing space warning
-* Paste mode indicator
+## Colors
 
-### Diagnostic Information
+The `StatusLine` highlight is set for terminals only (`ctermbg` and
+`ctermfg`), and changes with the mode. No color scheme is loaded, so
+`StatusLine` keeps Vim's default `reverse` attribute, which swaps the two
+colors on screen:
 
-* ALE linter status (warning and error counts)
-* CoC diagnostic information
+| When | Set to | Shows as |
+| ---- | ------ | -------- |
+| Startup | `ctermbg=Black ctermfg=White` | black text on white |
+| Insert mode | `ctermbg=Yellow ctermfg=Blue` | yellow text on blue |
+| Command-line window | `ctermbg=Gray ctermfg=Red` | gray text on red |
+| After leaving either | `ctermbg=White ctermfg=Black` | white text on black |
 
-### Position Information
+The startup colors and the ones restored on leaving Insert mode or the
+command-line window are opposites, so the Normal-mode statusline changes
+color the first time either is entered and left.
 
-* Column and line position
-* Percentage through file
-* ASCII value under cursor (decimal and hexadecimal)
-* Syntax highlighting group under cursor
-
-### Additional Information
-
-* File permissions
-* Full file path (truncated to 20 characters)
+The ALE counts use `DiagnosticError`, `DiagnosticWarning` and
+`DiagnosticInfo`, set in [`diagnostic-colors.vim`][diagnostic-colors.vim].
+The warnings use `warningmsg`.
 
 ## Customization
 
-The statusline appearance can be customized through several global variables:
-
-```vim
-" Filetype display when none is detected
-let g:YASL_NoneFiletype = 'none'
-
-" Modification indicators
-let g:YASL_Modified = '+'
-let g:YASL_NotModifiable = 'X'
-let g:YASL_NotModified = '-'
-
-" Warning text
-let g:YASL_MixedIndentText = '[mixed indenting]'
-let g:YASL_ExpandTabText = '[&et]'
-let g:YASL_TrailingSpaceText = '[trailing space]'
-let g:YASL_PasteMode = '[PASTE]'
-let g:YASL_NoPasteMode = ''
-```
-
-## Color Scheme Integration
-
-The statusline changes color based on the current mode:
-
-* Normal mode: White background, Black text
-* Insert mode: Yellow background, Blue text
-* Command window: Gray background, Red text
+Every marker and warning text above comes from one dictionary, `g:yasl`,
+with `buffer`, `warnings` and `format` sections; the file lists its keys.
+It is set only when `g:yasl` does not already exist, so a `g:yasl` defined
+before the file loads replaces it whole and has to carry every key.
 
 ## Functions
 
-The statusline uses several custom functions to generate its components:
-
-* `LinterStatus()` - Shows ALE linter warnings and errors
-* `StatusDiagnostic()` - Shows CoC diagnostic information
-* `YASL_FileSize()` - Formats file size with appropriate units
-* `YASL_MixedIndentWarning()` - Detects and warns about mixed indentation
-* `YASL_TrailingSpaceWarning()` - Detects and warns about trailing whitespace
-* `YASL_IsModified()` - Shows file modification status
-* `YASL_FileFormat()` - Shows file format if not unix
-* `YASL_FileEncoding()` - Shows file encoding if not utf-8
-* `YASL_PasteMode()` - Shows paste mode status
-* `YASL_Filetype()` - Shows current filetype
+* `YASL_BufferInfo()` - the buffer block
+* `YASL_Warnings()` - the warnings
+* `YASL_LinterStatus()` - the ALE counts
+* `YASL_FileSize()` - the file size in the position block
 
 ## Integration with Plugins
 
-The statusline integrates with:
+* ALE - the problem counts, through `ale#statusline#Count()`.
+* CoC - its diagnostics only, inside ALE's counts. There is no CoC status
+  or current-function segment.
 
-* ALE - Shows linting errors and warnings
-* CoC - Shows diagnostic information and current function
+[statusline.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/plugin/statusline.vim
+[diagnostic-colors.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/diagnostic-colors.vim
