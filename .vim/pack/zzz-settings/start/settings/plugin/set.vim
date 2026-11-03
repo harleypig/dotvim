@@ -97,3 +97,8 @@ set   linebreak             " wrap long lines at a character in 'breakat'
 set   display=uhex,lastline " include "lastline" to show the last line even if it doesn't fit
 set   foldlevelstart=99     " start editing with all folds opened
 set   concealcursor=nc      " modes in which text in the cursor line can be concealed
+
+" ----------------------------------------------------------------------------
+" Diff
+
+set   diffopt+=algorithm:patience " match unique lines first

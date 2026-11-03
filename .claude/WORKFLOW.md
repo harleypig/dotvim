@@ -29,8 +29,7 @@ picked it on 2026-10-31 (#57 - record the area label set).
   settings shared by every language land in intellisense.
 * `area:editor`: core editor behaviour. The rest of `.vimrc` and of the late
   settings: `set.vim`, `maps.vim`, the quickfix toggle, the statusline,
-  gutter, colours, diff, XDG paths and in-editor help. Also `OLD_FILES/`,
-  which is waiting to be merged.
+  gutter, colours, diff, XDG paths and in-editor help.
 * `area:plugin-submodules`: which third-party plugins are installed and from
   where. The submodules under `.vim/pack/` (every directory there except
   `000-settings` and `zzz-settings`, which are ours), `.gitmodules`, the
