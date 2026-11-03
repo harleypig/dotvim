@@ -59,6 +59,22 @@ path_of() {
     || fail "uncommitted: $(git status --porcelain)"
 }
 
+@test "moves a submodule in a linked worktree" {
+  # A linked worktree's .git is a file, and git keeps the worktree's
+  # submodule directories under the main repository's .git/worktrees.
+  git worktree add -q "$BATS_TEST_TMPDIR/wt"
+  cd "$BATS_TEST_TMPDIR/wt" || return 1
+  git submodule -q update --init
+
+  mvsubmodule surround 200-lang
+  assert_success
+  assert_equal "$(path_of surround)" .vim/pack/200-lang/start/surround
+  git -C .vim/pack/200-lang/start/surround rev-parse -q --verify HEAD \
+    > /dev/null || fail 'moved submodule is not a working checkout'
+  [[ -z $(git status --porcelain) ]] \
+    || fail "uncommitted: $(git status --porcelain)"
+}
+
 @test "fails without committing for a name not in .gitmodules" {
   mvsubmodule abolish 200-lang
   assert_failure

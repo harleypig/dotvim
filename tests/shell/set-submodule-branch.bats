@@ -94,6 +94,33 @@ checked_out() {
   assert_equal "$(checked_out surround)" main
 }
 
+@test "commits the branch it records, and nothing else" {
+  add_submodule surround
+  echo staged > other
+  git add other
+
+  set_submodule_branch
+  assert_success
+  assert_equal "$(git show HEAD:.gitmodules \
+    | git config -f - submodule.surround.branch)" main
+  [[ -z $(git status --porcelain .gitmodules) ]] \
+    || fail ".gitmodules left uncommitted: $(git diff .gitmodules)"
+  assert_equal "$(git diff --cached --name-only)" other
+}
+
+@test "records no branch when the checkout fails" {
+  add_submodule surround
+  # With no local or remote-tracking main, git checkout main has nothing to
+  # check out, though the remote still names main as its HEAD.
+  git -C "$(path_of_name surround)" branch -q -D main
+  git -C "$(path_of_name surround)" update-ref -d refs/remotes/origin/main
+
+  set_submodule_branch
+  assert_failure
+  assert_output --partial 'surround'
+  [[ -z $(branch_of surround) ]] || fail 'a branch was recorded'
+}
+
 @test "fails when the remote cannot be read" {
   add_submodule surround
   mv "$BATS_TEST_TMPDIR/remotes/surround.git" "$BATS_TEST_TMPDIR/gone.git"

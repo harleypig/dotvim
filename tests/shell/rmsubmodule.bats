@@ -47,7 +47,9 @@ commits() {
 assert_gone() {
   [[ -z $(git config -f .gitmodules --get-regexp "^submodule\\.$1\\." \
     2> /dev/null) ]] || fail ".gitmodules still has $1: $(< .gitmodules)"
-  [[ ! -e .git/modules/$1 ]] || fail ".git/modules/$1 still exists"
+  local gitdir
+  gitdir=$(git rev-parse --git-path "modules/$1")
+  [[ ! -e $gitdir ]] || fail "$gitdir still exists"
   [[ -z $(git config --local --get-regexp "^submodule\\.$1\\.") ]] \
     || fail ".git/config still has $1"
 }
@@ -102,6 +104,22 @@ assert_gone() {
   assert_success
   assert_gone surround
   assert_equal "$(commits)" 2
+}
+
+@test "removes the submodule's git directory in a linked worktree" {
+  # A linked worktree's .git is a file, and git keeps the worktree's
+  # submodule directories under the main repository's .git/worktrees.
+  git commit -q --allow-empty -m init
+  git worktree add -q "$BATS_TEST_TMPDIR/wt"
+  cd "$BATS_TEST_TMPDIR/wt" || return 1
+  add_submodule surround .vim/pack/100-core/start/surround
+  [[ -d $(git rev-parse --git-path modules/surround) ]] \
+    || fail 'fixture has no modules entry'
+
+  rmsubmodule surround
+  assert_success
+  assert_gone surround
+  assert_equal "$(commits)" 3
 }
 
 @test "fails without committing for a name not in .gitmodules" {

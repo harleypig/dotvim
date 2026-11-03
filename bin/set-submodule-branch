@@ -6,8 +6,10 @@ usage() {
 Usage: ${0##*/}
 
 For every submodule in .gitmodules with no branch set, check out its
-remote's default branch and record that branch in .gitmodules. Run from the
-top of the repository.
+remote's default branch, record that branch in .gitmodules and commit
+.gitmodules alone. A submodule whose checkout fails is reported and left
+without a branch, and the script then exits non-zero. Run from the top of
+the repository.
 EOF
 }
 
@@ -21,6 +23,7 @@ esac
 readarray -t submodules < <(grep '^\[submodule' .gitmodules | cut -d '"' -f 2)
 
 oldpwd="$PWD"
+failed=
 
 for s in "${submodules[@]}"; do
   read -r branch < <(git config -f .gitmodules --get "submodule.$s.branch")
@@ -41,10 +44,22 @@ for s in "${submodules[@]}"; do
     exit 1
   }
 
-  git checkout "$default"
+  if ! git checkout "$default"; then
+    echo "error checking out $default in $path, no branch recorded for $s"
+    failed=1
+
+    # shellcheck disable=SC2164
+    cd "$oldpwd"
+    continue
+  fi
 
   # shellcheck disable=SC2164
   cd "$oldpwd"
 
   git config -f .gitmodules --add "submodule.$s.branch" "$default"
+
+  # Naming the path commits .gitmodules alone, whatever else is staged.
+  git commit -q -m "set $s branch to $default" -- .gitmodules
 done
+
+[[ -z $failed ]]
