@@ -45,13 +45,15 @@ Setup](coc-ale-setup.md)).
 ### Problem signs (ALE)
 
 ALE's sign text is left at its defaults;
-[`diagnostic-colors.vim`][diagnostic-colors.vim] colors them.
+[`diagnostic-colors.vim`][diagnostic-colors.vim] colors them. `termguicolors`
+is on ([General Editor Settings](editor-settings.md)), so the GUI colors
+below are the ones shown, in a terminal too.
 
 | Sign | Meaning | Colors |
 | ---- | ------- | ------ |
 | `E` | error | white on dark red |
-| `W` | warning | black on yellow (gold in the GUI) |
-| `I` | info | white on blue (royal blue in the GUI) |
+| `W` | warning | black on gold |
+| `I` | info | white on royal blue |
 
 Style errors and style warnings use `E` and `W` as well. The same problems go
 to the quickfix list (`g:ale_set_quickfix`), where `c[` and `c]` move through

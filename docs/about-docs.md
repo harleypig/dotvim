@@ -110,6 +110,7 @@ hold a link too long to break.
 | `docs/utility.md` | Tool setup | Mostly a TODO; needs writing. Its plugin list now names what is installed, not gitgutter, fzf and fugitive ([#34]). |
 | `docs/statusline.md` | Tool setup | Fine; check against the current statusline config. |
 | `docs/gutter.md` | Tool setup | Added: what the sign column shows and where each sign comes from, plus things to try ([#42]). |
+| `docs/editor-settings.md` | Tool setup | Added: the general options, help windows, fold text and diagnostic colors, non-defaults only ([#109]). |
 | `docs/vim-files.md` | Language setup | Fine in shape; broken paths fixed ([#13]). |
 | `docs/ansible.md` | Language setup | Reworked to template ([#9]). |
 | `docs/docker.md` | Language setup | Reworked to template ([#9]). |
@@ -178,3 +179,4 @@ three places ([#14]), and bugs in `bin/check-setup` ([#15]).
 [#42]: https://github.com/harleypig/dotvim/issues/42
 [#47]: https://github.com/harleypig/dotvim/issues/47
 [#52]: https://github.com/harleypig/dotvim/issues/52
+[#109]: https://github.com/harleypig/dotvim/issues/109
