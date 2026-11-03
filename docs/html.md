@@ -7,26 +7,19 @@ Note: The configuration leverages CoC for language server features and
 vim-polyglot for syntax highlighting, providing a streamlined experience for
 working with HTML files.
 
-## External Packages Used
-
-Install via npm:
-
-* [`vscode-html-languageservice`][vscode-html-languageservice] -
-    Language service that provides intelligent code completion, validation,
-    and other language features for HTML files.
-
 ## Plugins and Extensions Used
 
 * [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin) -
     Provides enhanced syntax highlighting for HTML files, and syntax
     highlighting and indentation for Mustache and Handlebars templates.
-* No specific CoC extension is used for HTML, but the HTML language server is
-    configured directly in CoC settings.
+* [`coc-html`](https://github.com/neoclide/coc-html) (CoC Extension) -
+    Runs the HTML language server, which it bundles, so nothing is installed
+    outside Vim. It provides completion, formatting and diagnostics.
 
 ## Configuration Files Used
 
-* `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration
-    for the HTML language server.
+* `coc-settings` - Use `:CocConfig` to edit this file. Sets
+    `html.filetypes`, the filetypes coc-html serves.
 
 ## Syntax Highlighting
 
@@ -36,17 +29,19 @@ Handlebars templates, using the vim-mustache-handlebars plugin it bundles.
 
 ## Auto Completion
 
-* **Tool**: `vscode-html-languageservice` via `CoC`
-* **Configuration**: Configured in `coc-settings.json`
+* **Tool**: `coc-html`
+* **Configuration**: `html.filetypes` in `coc-settings` adds `html.mustache`,
+    the filetype vim-polyglot gives Mustache templates, to coc-html's
+    defaults (`html`, `handlebars`, `htmldjango` and `blade`). CoC passes the
+    whole filetype to the server, so `mustache` alone would not match.
 * **Features**: Tag completion, attribute completion, context-aware
     suggestions
 
 ## Formatting and Beautification
 
-* **Tool**: `vscode-html-languageservice` via `CoC`
-* **Configuration**: Configured in `coc-settings.json` with
-    `provideFormatter: true`
-* **Features**: Automatic formatting of HTML documents
+* **Tool**: `coc-html`, run with `:call CocAction('format')`. Nothing formats
+    HTML on save: CoC's format on save is off, and ALE has no HTML fixer
+    configured.
 
 ## Default or Inapplicable Sections
 
@@ -59,5 +54,3 @@ The following features use default settings without additional configuration:
 * Schema or Contract Validation (not applicable for HTML)
 * Version Control Integration (uses global Git integration)
 * Filetype Detection (handled by vim-polyglot)
-
-[vscode-html-languageservice]: https://github.com/Microsoft/vscode-html-languageservice

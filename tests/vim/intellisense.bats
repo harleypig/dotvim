@@ -78,7 +78,15 @@ start_vim() {
 @test "coc-settings starts no language server an extension provides" {
   coc_setting 'sort(keys(s.languageserver))'
 
-  # coc-docker starts docker-langserver, so it is not started by hand.
-  # terraform-ls has no extension.
-  assert_line 'value=["html","terraform"]'
+  # coc-docker starts docker-langserver and coc-html the HTML language
+  # server, so neither is started by hand. terraform-ls has no extension.
+  assert_line 'value=["terraform"]'
+}
+
+#-----------------------------------------------------------------------------
+@test "coc-html is told about Mustache templates as well as its defaults" {
+  coc_setting "s['html.filetypes']"
+
+  assert_line \
+    'value=["html","handlebars","htmldjango","blade","html.mustache"]'
 }

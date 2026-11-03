@@ -213,22 +213,20 @@
   "java.compile.nullAnalysis.mode": "disabled",
 
   //=========================================================================
+  // HTML SETTINGS
+  //=========================================================================
+  // coc-html's defaults, plus the filetype vim-polyglot gives Mustache
+  // templates. CoC passes the whole filetype as the language id.
+  "html.filetypes": [
+    "html", "handlebars", "htmldjango", "blade", "html.mustache"
+  ],
+
+  //=========================================================================
   // LANGUAGE SERVERS
   //=========================================================================
   // A server an extension starts is not started here as well: coc-docker
-  // starts docker-langserver.
+  // starts docker-langserver and coc-html the HTML language server.
   "languageserver": {
-    // HTML Language Server
-    "html": {
-      "command": "vscode-html-languageservice",
-      "args": ["--stdio"],
-      "filetypes": ["html", "mustache"],
-      "initializationOptions": {
-        "provideFormatter": true
-      },
-      "settings": {}
-    },
-
     // Terraform Language Server. No CoC extension bundles terraform-ls, so
     // it is started by hand.
     "terraform": {
