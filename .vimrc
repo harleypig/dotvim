@@ -12,6 +12,13 @@
 " Put the required settings here, and the remainder in the xdg-settings.vim
 " file in the settings/plugin directory.
 
+" Unset or empty, XDG_DOTVIM is the checkout this file is in, found through
+" a ~/.vimrc symlink; otherwise the paths below become /.vim and Vim starts
+" on its defaults without a word.
+if empty($XDG_DOTVIM)
+  let $XDG_DOTVIM = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+endif
+
 set runtimepath^=$XDG_DOTVIM/.vim
 set packpath^=$XDG_DOTVIM/.vim
 
