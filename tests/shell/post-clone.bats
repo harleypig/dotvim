@@ -15,6 +15,7 @@ bats_load_library bats-assert
 setup() {
   script="$BATS_TEST_DIRNAME/../../bin/post-clone"
   stubs="$BATS_TEST_TMPDIR/bin"
+  calls="$BATS_TEST_TMPDIR/calls"
   mkdir -p "$stubs" "$BATS_TEST_TMPDIR/config/shell-startup"
 
   ln -s "$(type -P bash)" "$stubs/bash"
@@ -49,6 +50,45 @@ stub_failing() {
 stub_apt() {
   stub apt-get
   stub dpkg
+}
+
+#-----------------------------------------------------------------------------
+# recorder NAME [BODY] - an executable on the test PATH that appends its name
+# and arguments to $calls, one call per line, then runs BODY (sh), which
+# defaults to succeeding.
+recorder() {
+  printf '#!/bin/sh\necho "%s $*" >> "%s"\n%s\n' "$1" "$calls" "${2:-exit 0}" \
+    > "$stubs/$1"
+  chmod +x "$stubs/$1"
+}
+
+#-----------------------------------------------------------------------------
+# called PATTERN - assert some recorded call matches the extended regex.
+called() {
+  grep -Eq -- "$1" "$calls" \
+    || fail "no call matches '$1'; calls were:"$'\n'"$(cat "$calls" 2> /dev/null)"
+}
+
+#-----------------------------------------------------------------------------
+# not_called PATTERN - assert no recorded call matches the extended regex.
+not_called() {
+  ! grep -Eq -- "$1" "$calls" 2> /dev/null \
+    || fail "unexpected call matching '$1':"$'\n'"$(grep -E -- "$1" "$calls")"
+}
+
+#-----------------------------------------------------------------------------
+# pipx_lists NAME... - a recording pipx whose list holds these packages, in
+# the format pipx itself prints for plain `list` and for `list --short`.
+pipx_lists() {
+  local name long= short=
+
+  for name in "$@"; do
+    long+="   package $name 1.0, installed using Python 3.12\\n"
+    short+="$name 1.0\\n"
+  done
+
+  recorder pipx "[ \"\$1\" = list ] || exit 0
+if [ \"\$2\" = --short ]; then printf '$short'; else printf '$long'; fi"
 }
 
 #-----------------------------------------------------------------------------
@@ -119,7 +159,7 @@ NODEJS
   assert_failure
   refute_output --partial 'Setup completed successfully!'
   refute_output --partial 'All required packages have been installed.'
-  assert_output --partial 'npm package: yarn'
+  assert_output --partial 'npm package: prettier'
 }
 
 @test "does not report success when the system packages fail to install" {
@@ -130,7 +170,7 @@ NODEJS
   post_clone
   assert_failure
   refute_output --partial 'Setup completed successfully!'
-  assert_output --partial 'system packages: jq'
+  assert_output --partial 'system packages: gawk jq'
 }
 
 @test "does not report success when dnf fails to install" {
@@ -141,7 +181,7 @@ NODEJS
   post_clone
   assert_failure
   refute_output --partial 'Setup completed successfully!'
-  assert_output --partial 'system packages: jq'
+  assert_output --partial 'system packages: gawk jq'
 }
 
 @test "does not report success when no package manager is found" {
@@ -159,7 +199,7 @@ NODEJS
   assert_success
   assert_output --partial 'pipx not found'
   assert_output --partial 'Setup completed, but pipx was not found'
-  assert_output --partial 'Skipped: ansible proselint vint isort flake8'
+  assert_output --partial 'Skipped: ansible yamllint ansible-lint proselint vint isort yapf flake8 sqlparse'
   refute_output --partial 'Setup completed successfully!'
   refute_output --partial 'All required packages have been installed.'
 }
@@ -183,4 +223,136 @@ NODEJS
   assert_failure
   refute_output --partial 'Setup completed successfully!'
   assert_output --partial 'pipx package: vint'
+}
+
+@test "updates the submodules recursively to their remote branches" {
+  recorder git
+  stub npm
+  stub_apt
+  post_clone
+  called '^git submodule update --init --recursive --remote$'
+}
+
+@test "installs only the npm packages npm does not already list" {
+  # npm list -g succeeds for prettier alone, so prettier is skipped.
+  recorder npm 'case "$1 $3" in "list prettier") exit 0 ;; list*) exit 1 ;; esac'
+  stub_apt
+  post_clone
+  assert_output --partial 'prettier is already installed'
+  not_called '^npm install -g prettier$'
+  called '^npm install -g vim-language-server$'
+}
+
+@test "installs only the pipx packages pipx does not already list" {
+  pipx_lists vint
+  ln -s "$(type -P grep)" "$stubs/grep"
+  stub npm
+  stub_apt
+  post_clone
+  assert_output --partial 'vint is already installed'
+  not_called '^pipx install vint '
+  called '^pipx install flake8 --include-deps$'
+}
+
+@test "apt-get installs the missing system packages and not the present ones" {
+  stub npm
+  stub apt-get
+  recorder dpkg '[ "$2" = jq ]'
+  recorder sudo
+  post_clone
+  assert_output --partial 'jq is already installed'
+  called '^sudo apt-get install -y '
+  not_called '^sudo apt-get install .* jq( |$)'
+  called '^sudo apt-get install -y .*shellcheck'
+  called '^sudo apt-get install -y .*terraform-ls'
+}
+
+@test "dnf installs the missing system packages and not the present ones" {
+  stub npm
+  stub dnf
+  recorder rpm '[ "$2" = jq ]'
+  recorder sudo
+  post_clone
+  assert_output --partial 'jq is already installed'
+  called '^sudo dnf install -y '
+  not_called '^sudo dnf install .* jq( |$)'
+  called '^sudo dnf install -y .*shellcheck'
+}
+
+@test "calls no package manager when every system package is present" {
+  stub npm
+  stub_apt
+  recorder sudo
+  post_clone
+  assert_output --partial 'All system packages are already installed'
+  not_called '^sudo '
+}
+
+@test "a pipx package whose name prefixes an installed one is still installed" {
+  pipx_lists ansible-core
+  ln -s "$(type -P grep)" "$stubs/grep"
+  stub npm
+  stub_apt
+  post_clone
+  refute_output --partial 'ansible is already installed'
+  called '^pipx install ansible --include-deps$'
+}
+
+@test "installs the linters and fixers the settings configure, and no others" {
+  recorder npm '[ "$1" != list ]'
+  pipx_lists
+  ln -s "$(type -P grep)" "$stubs/grep"
+  stub apt-get
+  stub_failing dpkg
+  recorder sudo
+  post_clone
+
+  local tool
+  for tool in dockerfile-language-server-nodejs markdownlint-cli prettier \
+    vim-language-server; do
+    called "^npm install -g $tool\$"
+  done
+
+  for tool in ansible ansible-lint flake8 isort proselint sqlparse vint \
+    yamllint yapf; do
+    called "^pipx install $tool --include-deps\$"
+  done
+
+  for tool in gawk jq shellcheck shfmt terraform terraform-ls; do
+    called "^sudo apt-get install -y( .*)? $tool( |\$)"
+  done
+
+  # Bundled by the CoC extension that uses it, or used by nothing configured.
+  for tool in @ansible/ansible-language-server bash-language-server \
+    diagnostic-languageserver eslint pyright yarn; do
+    not_called "^npm install -g $tool\$"
+  done
+
+  not_called '^sudo apt-get install .*packer'
+}
+
+@test "names the configured tools no package manager installs" {
+  stub npm
+  stub_apt
+  post_clone
+
+  local tool
+  for tool in hadolint sqlint tflint; do
+    assert_output --partial "- $tool:"
+  done
+}
+
+@test "prints the failure heading in red" {
+  stub npm
+  post_clone
+  assert_failure
+  assert_output --partial $'\033[0;31mSetup did not complete'
+}
+
+@test "prints the missing-pipx heading in yellow" {
+  stub npm
+  stub_apt
+  post_clone
+  assert_success
+  assert_output --partial $'\033[0;33mSetup completed, but pipx was not found'
 }
