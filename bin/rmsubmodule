@@ -38,7 +38,7 @@ git rm -r "$path" || {
   exit 1
 }
 
-git commit -m "removed $name and updated readme"
+git commit -m "removed $name"
 
 # Git keys both of these by the submodule's name, not its path. In a linked
 # worktree .git is a file, and --git-path names the worktree's own modules.

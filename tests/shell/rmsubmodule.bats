@@ -69,6 +69,14 @@ assert_gone() {
     || fail "uncommitted: $(git status --porcelain)"
 }
 
+@test "says in its commit message only what it did" {
+  add_submodule surround .vim/pack/100-core/start/surround
+
+  rmsubmodule surround
+  assert_success
+  assert_equal "$(git log -1 --format=%s)" 'removed surround'
+}
+
 @test "removes the .git/modules entry of a submodule named unlike its path" {
   add_submodule abolish .vim/pack/100-core/start/vim-abolish
   [[ -d .git/modules/abolish ]] || fail 'fixture has no .git/modules entry'

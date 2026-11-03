@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# git config -f .gitmodules --get-regexp vim-abolish.path
-
 #-----------------------------------------------------------------------------
 usage() {
   cat << EOF
@@ -50,16 +48,13 @@ _mv() {
     exit 0
   }
 
-  #echo git mv "$oldpath" "$newpath/$name"
   git mv "$oldpath" "$newpath/$name" || {
     echo "Unable to move $oldpath to $newpath/$name, exiting."
     exit 1
   }
 
-  #mkreadme > README.md
-  #git add "$newpath/$name" README.md
   git add "$newpath/$name"
-  git commit -m "moved $name to $location and updated readme"
+  git commit -m "moved $name to $location"
 }
 
 _mv "$@"

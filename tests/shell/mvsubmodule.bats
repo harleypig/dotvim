@@ -59,6 +59,12 @@ path_of() {
     || fail "uncommitted: $(git status --porcelain)"
 }
 
+@test "says in its commit message only what it did" {
+  mvsubmodule surround 200-lang
+  assert_success
+  assert_equal "$(git log -1 --format=%s)" 'moved surround to 200-lang'
+}
+
 @test "moves a submodule in a linked worktree" {
   # A linked worktree's .git is a file, and git keeps the worktree's
   # submodule directories under the main repository's .git/worktrees.

@@ -112,13 +112,28 @@ if ! command_exists npm; then
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh \
     | PROFILE='/dev/null' bash
 
-  # shellcheck disable=SC1091
-  source "$XDG_CONFIG_HOME/shell-startup/nodejs"
+  # Where nvm's installer puts it: NVM_DIR, else $XDG_CONFIG_HOME/nvm when
+  # XDG_CONFIG_HOME is set, else ~/.nvm.
+  if [[ -n $NVM_DIR ]]; then
+    nvm_dir=$NVM_DIR
+  elif [[ -n $XDG_CONFIG_HOME ]]; then
+    nvm_dir="$XDG_CONFIG_HOME/nvm"
+  else
+    nvm_dir="$HOME/.nvm"
+  fi
 
-  # Install and use LTS version of Node.js
-  status "Installing Node.js LTS version"
-  nvm install --lts
-  nvm use --lts
+  if [[ -r $nvm_dir/nvm.sh ]]; then
+    # shellcheck disable=SC1091
+    source "$nvm_dir/nvm.sh"
+
+    # Install and use LTS version of Node.js
+    status "Installing Node.js LTS version"
+    nvm install --lts
+    nvm use --lts
+
+  else
+    warn "nvm did not install: no $nvm_dir/nvm.sh to load."
+  fi
 
   # Verify npm installation
   if ! command_exists npm; then
@@ -198,7 +213,10 @@ if command_exists apt-get; then
   # Check which packages are already installed
   installed_packages=()
   for package in "${system_packages[@]}"; do
-    if dpkg -l "$package" &> /dev/null; then
+    # dpkg -l also lists a package removed with its configuration left
+    # behind; only the status tells the two apart.
+    dpkg_status=$(dpkg-query --show --showformat='${Status}' "$package" 2> /dev/null)
+    if [[ $dpkg_status == 'install ok installed' ]]; then
       status "$package is already installed"
     else
       installed_packages+=("$package")
