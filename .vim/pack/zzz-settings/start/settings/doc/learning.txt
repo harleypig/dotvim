@@ -5,13 +5,16 @@ CONTENTS                                                   *learning-contents*
 
     1. Introduction .......................... |learning-introduction|
     2. General Mappings ...................... |learning-general-mappings|
-    3. File and Buffer Navigation ............ |learning-navigation|
-    4. Gutter and Display Controls ........... |learning-gutter|
-    5. Terminal Integration .................. |learning-terminal|
-    6. Git Integration ....................... |learning-git|
-    7. CoC and Completion .................... |learning-completion|
-    8. ALE and Formatting .................... |learning-formatting|
-    9. Vim Built-in Shortcuts ................ |learning-vim-shortcuts|
+    3. Editing ............................... |learning-editing|
+    4. File and Buffer Navigation ............ |learning-navigation|
+    5. Quickfix List ......................... |learning-quickfix|
+    6. Gutter and Display Controls ........... |learning-gutter|
+    7. Terminal Integration .................. |learning-terminal|
+    8. Writing as Root ....................... |learning-sudo|
+    9. CoC and Completion .................... |learning-completion|
+   10. ALE and Formatting .................... |learning-formatting|
+   11. Help Windows .......................... |learning-help|
+   12. Vim Built-in Shortcuts ................ |learning-vim-shortcuts|
 
 ==============================================================================
 1. Introduction                                        *learning-introduction*
@@ -20,25 +23,59 @@ This help file documents keystrokes and mappings defined in this Vim
 configuration. It serves as a quick reference for both custom mappings and
 useful built-in Vim commands.
 
-Leader key: <Leader> (typically mapped to '\')
+Leader key: <Leader> is '\'; this configuration does not change it.
 
 ==============================================================================
-2. General Mappings                                  *learning-general-mappings*
+2. General Mappings                                *learning-general-mappings*
 
-<Leader>pp          Toggle paste mode
+<Leader>pp          Toggle paste mode, in Normal and Visual mode. There is
+                    no Insert-mode toggle; bracketed paste covers pasting
+                    in Insert mode.
 <C-l>               Clear search highlighting and redraw screen
+<Leader>y           Toggle syntax highlighting
 
 ==============================================================================
-3. File and Buffer Navigation                            *learning-navigation*
+3. Editing                                                  *learning-editing*
 
-No custom mappings documented yet.
+[count]<Leader>O    Add [count] blank lines above the cursor line, staying
+                    in Normal mode
+[count]<Leader>o    Add [count] blank lines below the cursor line, staying
+                    in Normal mode
+S                   Start ":%s//g" with the cursor between the first two
+                    slashes. Normal mode only; Visual-mode S is
+                    vim-surround's.
+Y                   Yank to the end of the line, like D and C
+.                   Repeat the last change, then put the cursor where the
+                    repeated change started. Changes made by plugins that
+                    use vim-repeat, such as vim-surround, repeat too.
+<Leader>ml          Add a modeline at the top of the buffer holding its
+                    'tabstop', 'shiftwidth', 'textwidth' and 'expandtab',
+                    commented with 'commentstring'
+
+==============================================================================
+4. File and Buffer Navigation                            *learning-navigation*
+
+<Leader>b           List the buffers, then prompt for one to open
 
 Built-in commands:
 Ctrl+]              Go to function definition (requires ctags)
 Ctrl+t              Return to previous location after Ctrl+]
 
 ==============================================================================
-4. Gutter and Display Controls                              *learning-gutter*
+5. Quickfix List                                           *learning-quickfix*
+
+Errors from ALE, and CoC's diagnostics through ALE, go to the quickfix list.
+
+:QuickfixToggle     Open the quickfix window, keeping the cursor where it
+                    was, or close it if it is open
+<Leader>qf          Same as :QuickfixToggle
+<Leader>q]          Go to next quickfix item
+<Leader>q[          Go to previous quickfix item
+c]                  Go to next quickfix item (only when CoC is loaded)
+c[                  Go to previous quickfix item (only when CoC is loaded)
+
+==============================================================================
+6. Gutter and Display Controls                               *learning-gutter*
 
 <Leader>signs       Toggle the sign column display
 <Leader>ln          Cycle through line numbering modes:
@@ -48,59 +85,60 @@ Ctrl+t              Return to previous location after Ctrl+]
                     - Both absolute and relative numbers
 
 ==============================================================================
-5. Terminal Integration                                   *learning-terminal*
+7. Terminal Integration                                    *learning-terminal*
 
 <Leader>tt          Open terminal in a new window below current window
 
-<Leader>adr         Open Aider AI assistant in a terminal window
-                    (Only available if Aider is installed)
+==============================================================================
+8. Writing as Root                                             *learning-sudo*
+
+w!!                 On the command line, expands to ":SudoWrite" when
+                    vim-eunuch is loaded, otherwise to
+                    ":w !sudo tee > /dev/null %". Press Enter to run it.
 
 ==============================================================================
-6. Git Integration                                            *learning-git*
+9. CoC and Completion                                    *learning-completion*
 
-w!!                 Write file with sudo (uses vim-eunuch if available)
-
-==============================================================================
-7. CoC and Completion                                    *learning-completion*
+These mappings exist only when CoC is loaded, which needs Node.js.
 
 <Tab>               In insert mode:
                     - Navigate to next item if completion menu is visible
-                    - Accept Copilot suggestion if available
-                    - Insert tab or trigger completion based on context
+                    - Insert a tab at the start of a line or after
+                      whitespace
+                    - Otherwise trigger completion
 
 <CR> (Enter)        In insert mode:
                     - Confirm selected completion if menu is visible
                     - Otherwise insert a new line
 
-<C-Space>           Trigger completion (if not using Copilot)
+<C-Space>           Trigger completion
 
 gd                  Go to definition
 gy                  Go to type definition
 gi                  Go to implementation
 gr                  Go to references
 
-[g                  Go to previous diagnostic
-]g                  Go to next diagnostic
-
-c[                  Go to previous quickfix item
-c]                  Go to next quickfix item
-
 ==============================================================================
-8. ALE and Formatting                                    *learning-formatting*
+10. ALE and Formatting                                   *learning-formatting*
 
 <Leader>fb          Fix current buffer with ALE
 
 ==============================================================================
-9. Vim Built-in Shortcuts                              *learning-vim-shortcuts*
+11. Help Windows                                               *learning-help*
+
+Help opens in a vertical split on the right, at most 80 columns wide.
+
+In a help window:
+<Return>            Follow help link
+<C-[>               Go back in help navigation
+
+==============================================================================
+12. Vim Built-in Shortcuts                            *learning-vim-shortcuts*
 
 Completion shortcuts:
 Ctrl+x Ctrl+n       Word completion
 Ctrl+x Ctrl+l       Line completion
 Ctrl+x Ctrl+f       Filename completion
-
-Help navigation:
-<Return>            Follow help link (in help files)
-<C-[>               Go back in help navigation (in help files)
 
 ==============================================================================
  vim:tw=78:ts=8:ft=help:norl:
