@@ -3,9 +3,13 @@
 # :shfmt -w -s -i 2 -bn -ci -sr %
 
 # Load release information. CHECK_SETUP_OS_RELEASE points it at another file,
-# so the tests can stand in for an OS other than the one running them.
+# so the tests can stand in for an OS other than the one running them. A
+# missing file, or one without NAME, leaves the OS unknown.
+NAME='an unknown OS'
+os_release="${CHECK_SETUP_OS_RELEASE:-/etc/os-release}"
+
 # shellcheck disable=SC1090,SC1091
-source "${CHECK_SETUP_OS_RELEASE:-/etc/os-release}"
+[[ -r $os_release ]] && source "$os_release"
 
 ##############################################################################
 #-----------------------------------------------------------------------------
@@ -80,10 +84,10 @@ check_node() {
     return
   fi
 
-  # Check Node.js version (CoC requires 14.14+)
+  # Check Node.js version (CoC requires 16.18+)
   local node_version required_version
   node_version=$(node --version | sed 's/v//')
-  required_version="14.14.0"
+  required_version="16.18.0"
 
   if ! printf '%s\n%s\n' "$required_version" "$node_version" | sort -V | head -n1 | grep -q "^$required_version$"; then
     warn "Node.js version $node_version found, but CoC requires $required_version or higher"

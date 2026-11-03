@@ -37,8 +37,6 @@ commit the change.
   this machine, sorted by name. It reads them from `~/.config/coc/extensions`
   unless `COC_EXTENSIONS_DIR` names another directory, and writes nothing
   when none are installed.
-* [`envsubstitute`][envsubstitute] - Replaces `%WORD%` in a string with the
-  value of the environment variable `WORD` and prints the result.
 
 ## Testing
 
@@ -54,5 +52,4 @@ tests need.
 [rmsubmodule]: https://github.com/harleypig/dotvim/blob/master/bin/rmsubmodule
 [set-submodule-branch]: https://github.com/harleypig/dotvim/blob/master/bin/set-submodule-branch
 [update-coc-extensions]: https://github.com/harleypig/dotvim/blob/master/bin/update-coc-extensions
-[envsubstitute]: https://github.com/harleypig/dotvim/blob/master/bin/envsubstitute
 [readme]: https://github.com/harleypig/dotvim/blob/master/README.md

@@ -123,3 +123,51 @@ on_os() {
   assert_line 'hadolint not installed: trizen -S hadolint'
   assert_line 'node not installed: trizen -S nodejs'
 }
+
+@test "gives the Ubuntu command and package on Ubuntu" {
+  on_os Ubuntu
+  stub docker
+  check_setup
+  assert_line 'node not installed: apt install nodejs'
+  assert_line \
+    'hadolint not installed: unknown package name - for Ubuntu see https://github.com/hadolint/hadolint'
+}
+
+@test "points at a URL when Ubuntu has no package" {
+  on_os Ubuntu
+  stub ansible
+  check_setup
+  assert_line \
+    'ansible-language-server not installed: unknown package name - for Ubuntu see https://als.readthedocs.io'
+}
+
+@test "gives a literal package name with no command on an unknown OS" {
+  on_os 'Fedora Linux'
+  stub ansible
+  check_setup
+  assert_line \
+    'ansible-lint not installed: (no install command known for Fedora Linux) ansible-lint'
+}
+
+@test "accepts node at exactly the version CoC requires" {
+  stub node v16.18.0
+  stub npm
+  check_setup
+  refute_output --partial 'Node.js version'
+}
+
+@test "warns about node just below the version CoC requires" {
+  stub node v16.17.9
+  stub npm
+  check_setup
+  assert_line \
+    'Node.js version 16.17.9 found, but CoC requires 16.18.0 or higher'
+}
+
+@test "treats a missing os-release file as an unknown OS" {
+  export CHECK_SETUP_OS_RELEASE="$BATS_TEST_TMPDIR/no-such-os-release"
+  check_setup
+  assert_success
+  refute_output --partial 'No such file'
+  assert_line 'node not installed: no package name known for an unknown OS'
+}

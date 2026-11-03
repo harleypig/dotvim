@@ -108,11 +108,10 @@ on CI. When a test behaves differently on CI, reproduce it in an
 * **SIGPIPE.** GitHub Actions starts each step with SIGPIPE ignored, which a
   terminal never does. Under GNU coreutils, a pipeline that reads an
   endless source and relies on SIGPIPE to stop it, such as one ending in
-  `| head`, then never ends; that is how CI hung in #60 (#74 - build
-  envsubstitute's delimiter without an endless read). CI runs the suites
-  without a workaround for this, so the code must not depend on SIGPIPE.
-  To reproduce, run a suite the way CI does, with the GNU tools first on
-  `PATH`:
+  `| head`, then never ends; that is how CI hung in #60 (#74 - a delimiter
+  built from an endless read). CI runs the suites without a workaround for
+  this, so the code must not depend on SIGPIPE. To reproduce, run a suite
+  the way CI does, with the GNU tools first on `PATH`:
 
   ```sh
   bash -c "trap '' PIPE; exec bats tests/shell"

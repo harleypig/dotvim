@@ -29,8 +29,10 @@ Install via `npm`:
 
 * `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration
   for diagnostic-languageserver to use Proselint.
-* `.proselint-config.json` - Custom configuration file for Proselint rules and
-  settings.
+* `.proselint-config.json` - Proselint's rule settings. The
+  diagnostic-languageserver entry in `coc-settings` passes
+  `--config $HOME/.vim/.proselint-config.json`, but there is no file at
+  that path: this repository does not have one.
 
 ## Linting and Static Analysis
 
