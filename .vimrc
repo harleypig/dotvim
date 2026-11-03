@@ -52,6 +52,7 @@ let g:coc_global_extensions = [
   \ 'coc-diagnostic',
   \ 'coc-docker',
   \ 'coc-git',
+  \ 'coc-html',
   \ 'coc-java',
   \ 'coc-json',
   \ 'coc-pyright',
