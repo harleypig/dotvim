@@ -5,9 +5,6 @@
 
   // Diagnostic Settings
   "diagnostic.displayByAle": true,
-  "diagnostic.virtualText": true,
-  "diagnostic.virtualTextCurrentLineOnly": true,
-  "diagnostic.virtualTextFormat": " >>> %severity: %message {%source}",
   //"diagnostic.messageTarget": "float",
 
   // UI and Visual Settings
