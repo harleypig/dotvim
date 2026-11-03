@@ -108,7 +108,7 @@ hold a link too long to break.
 | `docs/plugins-to-try.md` | Research | Kept as a research page for now. De-duplicated; no longer claims fzf, fugitive or gitgutter are installed ([#47]). |
 | `docs/tools-to-try.md` | Research | Added from the research notes in `docs/todo.md` ([#7]); kept as a research page like the other two. |
 | `docs/utility.md` | Tool setup | Mostly a TODO; needs writing. Its plugin list now names what is installed, not gitgutter, fzf and fugitive ([#34]). |
-| `docs/statusline.md` | Tool setup | Fine; check against the current statusline config. |
+| `docs/statusline.md` | Tool setup | Rewritten to describe the statusline `statusline.vim` builds: the `g:yasl` dictionary, the four `YASL_` functions, and CoC only through ALE's counts ([#102]). |
 | `docs/gutter.md` | Tool setup | Added: what the sign column shows and where each sign comes from, plus things to try ([#42]). |
 | `docs/editor-settings.md` | Tool setup | Added: the general options, help windows, fold text and diagnostic colors, non-defaults only ([#109]). |
 | `docs/vim-files.md` | Language setup | Fine in shape; broken paths fixed ([#13]). |
@@ -179,4 +179,5 @@ three places ([#14]), and bugs in `bin/check-setup` ([#15]).
 [#42]: https://github.com/harleypig/dotvim/issues/42
 [#47]: https://github.com/harleypig/dotvim/issues/47
 [#52]: https://github.com/harleypig/dotvim/issues/52
+[#102]: https://github.com/harleypig/dotvim/issues/102
 [#109]: https://github.com/harleypig/dotvim/issues/109

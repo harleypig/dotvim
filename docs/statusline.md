@@ -64,6 +64,11 @@ The startup colors and the ones restored on leaving Insert mode or the
 command-line window are opposites, so the Normal-mode statusline changes
 color the first time either is entered and left.
 
+These colors show only with `termguicolors` off. It is on ([General Editor
+Settings](editor-settings.md)), and then Vim colors the terminal from each
+group's GUI colors, which `statusline.vim` does not set, so the statusline
+keeps Vim's default reverse video in every mode.
+
 The ALE counts use `DiagnosticError`, `DiagnosticWarning` and
 `DiagnosticInfo`, set in [`diagnostic-colors.vim`][diagnostic-colors.vim].
 The warnings use `warningmsg`.
