@@ -35,7 +35,6 @@ NC='\033[0m' # No Color
 
 npm_packages=(
   "markdownlint-cli" # ALE markdown linter markdownlint
-  "prettier"         # ALE markdown fixer
 )
 
 # yamllint comes before ansible-lint, which depends on it, so the yamllint

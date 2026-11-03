@@ -194,7 +194,7 @@ NVM
   assert_failure
   refute_output --partial 'Setup completed successfully!'
   refute_output --partial 'All required packages have been installed.'
-  assert_output --partial 'npm package: prettier'
+  assert_output --partial 'npm package: markdownlint-cli'
 }
 
 @test "does not report success when the system packages fail to install" {
@@ -268,14 +268,12 @@ NVM
   called '^git submodule update --init --recursive --remote$'
 }
 
-@test "installs only the npm packages npm does not already list" {
-  # npm list -g succeeds for prettier alone, so prettier is skipped.
-  recorder npm 'case "$1 $3" in "list prettier") exit 0 ;; list*) exit 1 ;; esac'
+@test "skips an npm package npm already lists" {
+  recorder npm '[ "$1 $3" = "list markdownlint-cli" ]'
   stub_apt
   post_clone
-  assert_output --partial 'prettier is already installed'
-  not_called '^npm install -g prettier$'
-  called '^npm install -g markdownlint-cli$'
+  assert_output --partial 'markdownlint-cli is already installed'
+  not_called '^npm install -g markdownlint-cli$'
 }
 
 @test "installs only the pipx packages pipx does not already list" {
@@ -366,9 +364,7 @@ else echo "install ok installed"; fi'
   post_clone
 
   local tool
-  for tool in markdownlint-cli prettier; do
-    called "^npm install -g $tool\$"
-  done
+  called '^npm install -g markdownlint-cli$'
 
   for tool in ansible ansible-lint flake8 isort proselint sqlparse vint \
     yamllint yapf; do
@@ -382,7 +378,7 @@ else echo "install ok installed"; fi'
   # Bundled by the CoC extension that uses it, or used by nothing configured.
   for tool in @ansible/ansible-language-server bash-language-server \
     diagnostic-languageserver dockerfile-language-server-nodejs eslint \
-    pyright vim-language-server yarn; do
+    prettier pyright vim-language-server yarn; do
     not_called "^npm install -g $tool\$"
   done
 
