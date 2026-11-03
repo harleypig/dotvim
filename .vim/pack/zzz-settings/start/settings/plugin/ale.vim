@@ -41,7 +41,6 @@ let g:ale_linters.dockerfile = ['hadolint']
 
 " jsonc
 " TODO: Move to ftplugin/jsonc.vim
-let g:ale_linters.jsonc = ['jsonlint']
 let g:ale_fixers.jsonc = ['jq']
 
 " markdown
@@ -62,10 +61,6 @@ let g:ale_fixers.sql = ['sqlformat']
 " TODO: Move to ftplugin/systemd.vim
 let g:ale_linters.systemd = ['systemd-analyze']
 
-" toml
-" TODO: Move to ftplugin/toml.vim
-let g:ale_linters.toml = ['tomllint']
-
-" vim-help
-" TODO: Move to ftplugin/help.vim
-let g:ale_linters.help = ['vimhelplint']
+" jsonc, toml and help have no linter here: jsonlint, tomllint and
+" vimhelplint are not ALE linters for them (#100 - nonexistent linter
+" names), and g:ale_linters_explicit leaves an unlisted filetype unlinted.

@@ -1,9 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" This is a setting, but I'm putting it here because it's actings as
-" a mapping.
-"set   pastetoggle=<Leader>pp
-
-" README: Toggle paste mode.
+" README: Toggle paste mode. The only paste toggle: 'pastetoggle' is left
+" unset, since bracketed paste covers pasting in Insert mode.
 map <leader>pp :set paste!<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -19,12 +16,12 @@ map <leader>tt :botright terminal ++norestore<CR>
 nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Requires vim-eunuch.
+" README: :w!! writes the file through sudo; Enter runs it. vim-eunuch's
+" :SudoWrite when it is loaded, otherwise the buffer is piped to sudo tee.
 if exists('g:loaded_eunuch')
-  " Use Sudowrite instead of write.
-  cmap w!! :call Sudowrite()
+  cnoremap w!! SudoWrite
 else
-  cmap w!! %!sudo tee > /dev/null %
+  cnoremap w!! w !sudo tee > /dev/null %
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

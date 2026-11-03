@@ -36,7 +36,6 @@ set   clipboard+=unnamed  " use the * register in addition to the unnamed regist
 set   matchpairs+=<:>     " pairs of characters that "%" can match
 set   mouse=              " disable mouse usage
 set   path=.,$HOME        " list of directories searched with "gf" etc.
-"set   pastetoggle=<leader>pt  " key sequence to toggle paste mode
 set   report=1            " threshold for reporting number of lines changed
 set   shortmess=a         " use abbreviations in messages
 set   virtualedit=block   " allow virtual editing in Visual block mode

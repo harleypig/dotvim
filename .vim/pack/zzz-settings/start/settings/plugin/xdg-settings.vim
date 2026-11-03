@@ -10,8 +10,14 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use the XDG setup (to keep the home directory as clean as possible)
 " https://wiki.archlinux.org/title/Vim#Workaround_for_XDG_Base_Directory_specification
+"
+" An unset or empty variable takes the specification's default. Without the
+" fallback, :set keeps an unset variable's name as a literal directory.
 
-set backupdir=$XDG_STATE_HOME/vim/backup | call mkdir(&backupdir, 'p')
+let s:state = empty($XDG_STATE_HOME) ? $HOME.'/.local/state' : $XDG_STATE_HOME
+let s:data  = empty($XDG_DATA_HOME)  ? $HOME.'/.local/share' : $XDG_DATA_HOME
+
+let &backupdir = s:state.'/vim/backup' | call mkdir(&backupdir, 'p')
 call CleanOldFiles(&backupdir, '*', 90)
 
 " see :h backup-table
@@ -30,20 +36,20 @@ set nobackup
 set   writebackup
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set viminfofile=$XDG_STATE_HOME/vim/viminfo
+let &viminfofile = s:state.'/vim/viminfo'
 set viminfo=%10,'50,s1000,/1000,:1000
-call CleanOldFiles($XDG_STATE_HOME.'/vim', 'viminfo', 180)
+call CleanOldFiles(s:state.'/vim', 'viminfo', 180)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set undodir=$XDG_STATE_HOME/vim/undo | call mkdir(&undodir,   'p')
+let &undodir = s:state.'/vim/undo' | call mkdir(&undodir,   'p')
 call CleanOldFiles(&undodir, '*', 90)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:netrw_home = $XDG_DATA_HOME.'/vim'
-call mkdir($XDG_DATA_HOME.'/vim/spell', 'p')
+let g:netrw_home = s:data.'/vim'
+call mkdir(s:data.'/vim/spell', 'p')
 
-set directory=$XDG_STATE_HOME/vim/swap   | call mkdir(&directory, 'p')
+let &directory = s:state.'/vim/swap'   | call mkdir(&directory, 'p')
 call CleanOldFiles(&directory, '*', 90)
 
-set viewdir=$XDG_STATE_HOME/vim/view     | call mkdir(&viewdir,   'p')
+let &viewdir = s:state.'/vim/view'     | call mkdir(&viewdir,   'p')
 call CleanOldFiles(&viewdir, '*', 90)
