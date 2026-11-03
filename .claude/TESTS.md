@@ -48,20 +48,22 @@ loaded with `bats_load_library`, so `BATS_LIB_PATH` must point at them.
   submodules checked out (`git submodule update --init`); Node.js is not
   needed, because the suite stubs it per test.
 
-### Known departure: `tests/vim` rewrites help tags
+### Known departure: `tests/vim` can write help tags once
 
 A test run should leave the tree as it found it, and the Vim suite does
-not quite. Every headless Vim it starts loads the late settings'
-`after/plugin/helptags.vim`, which runs `helptags ALL` and rewrites the
-`doc/tags` file of every package on the runtime path: our late settings
-and the plugin submodules. Those files are ignored by git, so `git status`
-stays clean, but they are rewritten all the same. This is recorded, not
-yet fixed.
+so once the help tags are current. Every headless Vim it starts loads the
+late settings' `after/plugin/helptags.vim`, which builds the `doc/tags`
+file of a package on the runtime path only when it is missing or older
+than a file beside it. On a fresh checkout, or after a plugin update, the
+first Vim to start, under the suite or not, writes those files for our
+late settings and the plugin submodules; later runs leave them alone.
+They are ignored by git, so `git status` stays clean either way.
 
 The same files make a test of help tags easy to write vacuously: a
 `doc/tags` left by an earlier run satisfies a check that only asks whether
-the file exists. Delete it first, or compare its modification time against
-the start of the test.
+the file exists. `tests/vim/helptags.bats` avoids this by building its own
+doc directory in each test, so the test sets what it holds before Vim
+starts.
 
 ## CI
 
