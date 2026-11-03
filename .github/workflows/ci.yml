@@ -47,6 +47,22 @@ jobs:
       - name: Install bats
         uses: ./.github/actions/setup-bats
 
+      # sh-ftplugin.bats runs ALE's shfmt command and skips without it.
+      # The release binary, not Ubuntu's older package, checked against the
+      # SHA-256 GitHub records for the release asset.
+      - name: Install shfmt
+        env:
+          SHFMT_VERSION: v3.14.1
+          SHFMT_SHA256: 76e77641faa025814b77f153b29796b8e6fa2fca03e0c76a691608b86c7ea7bf
+        run: |
+          dir=$RUNNER_TEMP/shfmt
+          mkdir -p "$dir"
+          curl -fsSL -o "$dir/shfmt" \
+            "https://github.com/mvdan/sh/releases/download/$SHFMT_VERSION/shfmt_${SHFMT_VERSION}_linux_amd64"
+          echo "$SHFMT_SHA256  $dir/shfmt" | sha256sum -c -
+          chmod +x "$dir/shfmt"
+          echo "$dir" >> "$GITHUB_PATH"
+
       - name: Show Vim version
         run: vim --version | head -n 3
 
