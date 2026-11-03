@@ -3,9 +3,13 @@
 # :shfmt -w -s -i 2 -bn -ci -sr %
 
 # Load release information. CHECK_SETUP_OS_RELEASE points it at another file,
-# so the tests can stand in for an OS other than the one running them.
+# so the tests can stand in for an OS other than the one running them. A
+# missing file, or one without NAME, leaves the OS unknown.
+NAME='an unknown OS'
+os_release="${CHECK_SETUP_OS_RELEASE:-/etc/os-release}"
+
 # shellcheck disable=SC1090,SC1091
-source "${CHECK_SETUP_OS_RELEASE:-/etc/os-release}"
+[[ -r $os_release ]] && source "$os_release"
 
 ##############################################################################
 #-----------------------------------------------------------------------------
