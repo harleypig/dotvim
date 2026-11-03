@@ -18,10 +18,8 @@ Install via npm:
 ## Plugins and Extensions Used
 
 * [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin) -
-    Provides enhanced syntax highlighting for HTML files.
-* [`vim-mustache-handlebars`](https://github.com/mustache/vim-mustache-handlebars)
-    (Vim Plugin) - Provides syntax highlighting and indentation for Mustache
-    and Handlebars templates.
+    Provides enhanced syntax highlighting for HTML files, and syntax
+    highlighting and indentation for Mustache and Handlebars templates.
 * No specific CoC extension is used for HTML, but the HTML language server is
     configured directly in CoC settings.
 
@@ -33,8 +31,8 @@ Install via npm:
 ## Syntax Highlighting
 
 Provided by vim-polyglot, which includes enhanced support for HTML syntax
-highlighting. Additional support for Mustache templates is provided by
-vim-mustache-handlebars.
+highlighting. vim-polyglot also highlights and indents Mustache and
+Handlebars templates, using the vim-mustache-handlebars plugin it bundles.
 
 ## Auto Completion
 
