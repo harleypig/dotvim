@@ -6,7 +6,7 @@ that aren't documented in language-specific files.
 ## External Packages Used
 
 * [Node.js](https://nodejs.org/) - Required for CoC and all CoC extensions.
-    Minimum version 14.14 or higher.
+    The minimum version is in the [README's Requirements][requirements].
 
 ## Plugins and Extensions Used
 
@@ -77,3 +77,5 @@ The following features use default settings without additional configuration:
 * Snippets (not configured specifically for these extensions)
 * Schema or Contract Validation (not applicable for these extensions)
 * Filetype Detection (handled by vim-polyglot for TOML files)
+
+[requirements]: https://github.com/harleypig/dotvim/blob/master/README.md#requirements

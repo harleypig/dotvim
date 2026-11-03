@@ -13,15 +13,14 @@ Install via `pipx`:
 
 * [`isort`](https://pycqa.github.io/isort/) - A Python utility to sort imports
     alphabetically and automatically separate them into sections and by type.
+* [`yapf`](https://github.com/google/yapf) - A Python code formatter. Used
+    only when installed.
 * [`flake8`](https://flake8.pycqa.org/) - A Python linter that checks Python
     code for style and syntax errors.
 
-Install via `npm`:
-
-* [`pyright`](https://github.com/microsoft/pyright) - Static type checker for
-    Python, used by CoC for type checking and language server features.
-* [`pyright-langserver`](https://github.com/microsoft/pyright) - The language
-    server component of Pyright that provides IDE features.
+[`pyright`](https://github.com/microsoft/pyright), Microsoft's static type
+checker and language server, does not need installing: `coc-pyright` ships
+its own copy.
 
 ### Language Server Options
 
@@ -58,7 +57,7 @@ Several Python language servers are available, each with different strengths:
 * [`coc-pyright`](https://github.com/fannheyward/coc-pyright) (CoC
     Extension) - CoC extension that provides Python language server support.
 * [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for
-    formatting Python files with isort.
+    formatting Python files with isort and yapf.
 
 ### Alternative CoC Extensions for Python
 
@@ -69,11 +68,11 @@ Several Python language servers are available, each with different strengths:
 
 ## Configuration Files Used
 
-* `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration
-    for the Python language server and flake8 integration.
+* `coc-settings` - Use `:CocConfig` to edit this file. Turns on flake8
+    through `coc-pyright`.
 * [`ale.vim`][ale.vim] - Global ALE configuration.
-* [`python.vim`][python.vim] - Python-specific settings for editing Python
-    files.
+* [`python.vim`][python.vim] - The Python fixers for ALE, and the
+    indentation settings.
 
 ## Syntax Highlighting
 
@@ -82,32 +81,33 @@ highlighting.
 
 ## Linting and Static Analysis
 
-* **Tool**: `Pyright` via `coc-pyright` and `flake8` via `CoC`
-* **Configuration**: Configured in `coc-settings.json`
+* **Tool**: `Pyright` and `flake8`, both through `coc-pyright`, which runs
+    flake8 as one of its external linters. ALE runs no Python linter.
+* **Configuration**: `coc-settings` turns flake8 on
+    (`python.linting.flake8Enabled`), feeds it the buffer on standard input
+    (`python.linting.flake8Stdin`), and passes `--append-config=.flake8`, so
+    a project's `.flake8` file is read.
 * **Usage**: Errors and warnings appear in the quickfix list and gutter
 * **Features**: Type checking, style enforcement, syntax error detection
 
 ## Auto Completion
 
-* **Tool**: `Pyright` via `coc-pyright`
-* **Configuration**: Configured in `coc-settings.json`
+* **Tool**: `Pyright` via `coc-pyright`, with its default settings
 * **Features**: Function completion, variable completion, import completion
-* **Settings**: Inlay hints for function return types and variable types are
-    disabled
 
 ## Formatting and Beautification
 
-* **Tool**: `isort` via `ALE`
-* **Configuration**: Set as a fixer in `python.vim`
-* **Usage**: Automatically formats imports on save or manually with `:ALEFix`
-* **Features**: Sorts imports alphabetically and by sections
-* **Poetry Support**: Automatically detects `Poetry` environments
-
-## Indentation
-
-* **Configuration**: Set in python.vim
-* **Settings**: 2-space indentation with expandtab, autoindent, and
-    smartindent
+* **Tool**: `isort`, then `yapf`, via `ALE`
+* **Configuration**: Set as fixers in `python.vim`, each only when it is
+    installed. With neither installed, Python files get the fixers every
+    file gets (trailing whitespace and trailing blank lines).
+* **Usage**: Runs on save, or manually with `:ALEFix`
+* **Features**: isort sorts imports alphabetically and by sections; yapf
+    reformats the code
+* **Poetry Support**: isort runs through `poetry` when a `poetry.lock` is
+    found in the file's directory or above (`g:ale_python_isort_auto_poetry`)
+* **Indentation**: `python.vim` sets 2-space indentation: `tabstop`,
+    `softtabstop` and `shiftwidth` at 2, with `expandtab`
 
 ## Default or Inapplicable Sections
 

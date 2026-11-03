@@ -5,13 +5,18 @@ support, linting, and completion features.
 
 ## Requirements
 
+### Vim
+
+CoC (Conquer of Completion) needs Vim 9.0.0438 or later.
+
 ### Node.js
 
-Node.js is needed for CoC (Conquer of Completion) and its extensions.
-Without `node` on `PATH`, Vim still starts: CoC is switched off, and ALE and
-the rest of the configuration work as usual.
+Node.js is needed for CoC and its extensions. Without `node` on `PATH`, Vim
+still starts: CoC is switched off, and ALE and the rest of the configuration
+work as usual.
 
-* **Minimum version**: Node.js 14.14 or higher
+* **Minimum version**: Node.js 16.18.0 or later, the oldest the installed
+    CoC supports
 * **Installation**:
   * **Arch Linux**: `pacman -S nodejs npm`
   * **Ubuntu**: `apt install nodejs npm`
@@ -24,6 +29,42 @@ Additional language-specific tools are documented in their respective language
 documentation files in the `docs/` directory.
 
 ## Setup
+
+### Running it
+
+Vim runs this configuration from the checkout; nothing is copied into
+`~/.vim`. The plugins are git submodules, so fetch them first, then start
+Vim with three environment variables set. From the top of the checkout:
+
+```bash
+git submodule update --init
+export XDG_DOTVIM="$PWD"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_DATA_HOME="$HOME/.local/share"
+vim -N -u "$XDG_DOTVIM/.vimrc"
+```
+
+The two `XDG_` values shown are the XDG defaults; any directories will do.
+`-u` on its own leaves Vim in Vi-compatible mode, which this `.vimrc` cannot
+load in, hence `-N`. A `~/.vimrc` symlinked to this repository's `.vimrc`
+needs neither flag.
+
+* `XDG_DOTVIM` puts the checkout's `.vim` directory at the front of
+  `runtimepath` and `packpath`.
+* `$XDG_STATE_HOME/vim` holds the backup, swap, undo and view directories
+  and the viminfo file. `$XDG_DATA_HOME/vim` is netrw's home and holds a
+  `spell` directory. Startup creates the directories.
+* Without `XDG_STATE_HOME` and `XDG_DATA_HOME`, startup errors, and leaves
+  a directory literally named `$XDG_STATE_HOME` in the current directory.
+
+### What it deletes
+
+Every startup deletes files older than 90 days from the backup, swap, undo
+and view directories under `$XDG_STATE_HOME/vim`, and deletes the viminfo
+file there once it is older than 180 days. An old swap file is deleted
+whether or not it was ever recovered.
+
+### Checking and testing
 
 Run `bin/check-setup` to verify that required tools are installed for your
 development environment.

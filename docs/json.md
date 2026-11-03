@@ -8,12 +8,6 @@ providing comprehensive language support for JSON files.
 
 ## External Packages Used
 
-Install via npm:
-
-* [`eslint`](https://eslint.org/) - A pluggable and configurable linter tool
-    for identifying and reporting on patterns in JavaScript and related
-    languages.
-
 Install via package manager:
 
 * [`jq`](https://stedolan.github.io/jq/) - A lightweight and flexible
@@ -24,9 +18,6 @@ Install via package manager:
 * [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin) - A
     collection of language packs for Vim that includes syntax highlighting for
     JSON.
-* [`coc-eslint`](https://github.com/neoclide/coc-eslint) (CoC Extension) -
-    Integrates ESLint into Vim, providing linting for JavaScript and related
-    languages within the CoC framework.
 * [`coc-json`](https://github.com/neoclide/coc-json) (CoC Extension) -
     Provides JSON language support including schema validation,
     auto-completion, and more.
@@ -35,14 +26,10 @@ Install via package manager:
 
 ## Configuration Files Used
 
-* `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration
-    for JSON language server and schema validation.
-* [`ale.vim`][ale.vim] - Global ALE configuration including JSON formatting
-    settings.
-* [`json.vim`][json.vim] - Configures ALE to use jq as a fixer for JSON files
-    and sets up Vim folding for JSON syntax.
-* [`.eslintrc.json`][.eslintrc.json] - Contains the ESLint configuration for
-    linting JavaScript and related languages, including JSON.
+* [`json.vim`][json.vim] - Sets jq as ALE's fixer for JSON and JSONC files
+    and turns on syntax folding. It runs only for `json` and `jsonc` buffers,
+    and only with filetype plugins on.
+* [`ale.vim`][ale.vim] - Also sets jq as the JSONC fixer.
 
 ## Syntax Highlighting
 
@@ -50,38 +37,42 @@ Provided by vim-polyglot, which includes support for JSON syntax highlighting.
 
 ## Linting and Static Analysis
 
-* **Tool**: `ESLint` via `coc-eslint`
-* **Configuration**: Configured in `.eslintrc.json`
+* **Tool**: `coc-json`, which reports syntax errors and schema problems.
+    ALE runs no JSON linter: `g:ale_linters_explicit` is on and `ale.vim`
+    names none for `json`.
 * **Usage**: Errors and warnings appear in the quickfix list and gutter
 
 ## Auto Completion
 
-* **Tool**: `coc-json`
-* **Configuration**: Configured in `coc-settings.json`
+* **Tool**: `coc-json`, with its default settings
 * **Features**: Property completion, schema-based suggestions
 
 ## Formatting and Beautification
 
 * **Tool**: `jq` via `ALE`
-* **Configuration**: Set as a fixer in `ale.vim` and `json.vim`
+* **Configuration**: Set as a fixer in `json.vim`
 * **Usage**: Automatically formats code on save or manually with `:ALEFix`
 
 ## Schema or Contract Validation
 
-* **Tool**: `coc-json`
-* **Configuration**: Schema mappings in `coc-settings.json`
+* **Tool**: `coc-json`, with its default settings: no schema mappings are
+    configured. A file is checked against the schema its `$schema` key
+    names, or the one coc-json's built-in SchemaStore catalog matches to its
+    file name.
 * **Features**: Validates JSON against schemas, provides contextual help
+
+## Code Folding
+
+`json.vim` sets `foldmethod=syntax`, so objects and arrays fold.
 
 ## Default or Inapplicable Sections
 
 The following features use default settings without additional configuration:
 
 * Error Highlighting (handled by CoC and ALE)
-* Code Folding (configured in json.vim with syntax-based folding)
 * Version Control Integration (uses global Git integration)
 * Snippets (not configured specifically for JSON)
 * Filetype Detection (handled by vim-polyglot)
 
 [ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/ale.vim
 [json.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/ftplugin/json.vim
-[.eslintrc.json]: https://github.com/harleypig/dotvim/blob/master/.eslintrc.json

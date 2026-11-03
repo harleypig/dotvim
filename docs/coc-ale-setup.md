@@ -13,7 +13,8 @@ To utilize CoC and ALE as configured in this repository, the following
 external packages must be installed:
 
 * [`Node.js`](https://nodejs.org/) - A JavaScript runtime built on Chrome's V8
-    JavaScript engine, required for running the CoC extension host.
+    JavaScript engine, required for running the CoC extension host. The
+    minimum version is in the [README's Requirements][requirements].
 * [`npm`](https://www.npmjs.com/) or [`yarn`](https://yarnpkg.com/) - Package
     managers for JavaScript, used to install CoC extensions.
 
@@ -159,3 +160,4 @@ is defined in `maps.vim`, not in either `ale.vim`.
 [early-ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/000-settings/start/settings/plugin/ale.vim
 [maps.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/maps.vim
 [coc.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/coc.vim
+[requirements]: https://github.com/harleypig/dotvim/blob/master/README.md#requirements
