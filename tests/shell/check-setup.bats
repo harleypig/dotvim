@@ -150,18 +150,18 @@ on_os() {
 }
 
 @test "accepts node at exactly the version CoC requires" {
-  stub node v14.14.0
+  stub node v16.18.0
   stub npm
   check_setup
   refute_output --partial 'Node.js version'
 }
 
 @test "warns about node just below the version CoC requires" {
-  stub node v14.13.9
+  stub node v16.17.9
   stub npm
   check_setup
   assert_line \
-    'Node.js version 14.13.9 found, but CoC requires 14.14.0 or higher'
+    'Node.js version 16.17.9 found, but CoC requires 16.18.0 or higher'
 }
 
 @test "treats a missing os-release file as an unknown OS" {
