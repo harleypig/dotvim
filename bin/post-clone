@@ -29,41 +29,43 @@ NC='\033[0m' # No Color
 ##############################################################################
 # Setup and Sanity
 
-# NPM packages as documented in various markdown files
+# Each list holds the linters, fixers and language servers the settings run:
+# the late ale.vim, the after/ftplugin files and coc-settings.json. A
+# language server a CoC extension bundles is left to the extension.
+
 npm_packages=(
-  "@ansible/ansible-language-server"  # ansible.md
-  "bash-language-server"              # shell.md
-  "diagnostic-languageserver"         # proselint.md, shell.md
-  "dockerfile-language-server-nodejs" # docker.md
-  "eslint"                            # json.md
-  "pyright"                           # python.md
-  "vim-language-server"               # vim-files.md
-  "yarn"                              # utility
+  "dockerfile-language-server-nodejs" # coc-settings languageserver.dockerfile
+  "markdownlint-cli"                  # ALE markdown linter markdownlint
+  "prettier"                          # ALE markdown fixer
+  "vim-language-server"               # ALE vim linter vimls
 )
 
-# PIPX packages as documented in various markdown files
+# yamllint comes before ansible-lint, which depends on it, so the yamllint
+# on PATH is its own install. ansible-lint and yamllint do not come with
+# ansible.
 pipx_packages=(
-  "ansible"   # ansible.md
-  "proselint" # proselint.md
-  "vint"      # vim-files.md
-  "isort"     # python.md
-  "flake8"    # python.md
+  "ansible"      # coc-ansible
+  "yamllint"     # ALE yaml linter
+  "ansible-lint" # coc-ansible
+  "proselint"    # ALE markdown linter, coc-diagnostic
+  "vint"         # ALE vim linter
+  "isort"        # ALE python fixer
+  "yapf"         # ALE python fixer
+  "flake8"       # coc-pyright python.linting.flake8Enabled
+  "sqlparse"     # ALE sql fixer sqlformat
 )
 
-# ansible-lint and yamllint (installed with ansible)
-
-# System packages as documented in various markdown files
 system_packages=(
-  "jq"           # json.md
-  "packer"       # hashicorp.md
-  "shellcheck"   # shell.md
-  "shfmt"        # shell.md
-  "terraform"    # hashicorp.md
-  "terraform-ls" # hashicorp.md
+  "gawk"         # ALE awk linter
+  "jq"           # ALE json and jsonc fixer
+  "shellcheck"   # coc-diagnostic sh
+  "shfmt"        # ALE sh fixer
+  "terraform"    # ALE terraform and hcl fixer
+  "terraform-ls" # coc-settings languageserver.terraform
 )
 
-# Optional manual installations (mentioned in docs but not auto-installed)
-# - tflint (hashicorp.md) - requires manual installation
+# hadolint, sqlint and tflint are configured too, but neither apt nor dnf
+# carries them; the closing message says how to install them.
 
 # Each step that warns about a failure adds a line here. A missing pipx is
 # reported as a status, not a warning, and is deliberately not a failure;
@@ -74,16 +76,17 @@ pipx_missing=
 ##############################################################################
 # Functions
 #-----------------------------------------------------------------------------
-section() { echo -e "\n${BLUE}==>${NC} ${GREEN}$1${NC}" >&2; }
+# section TITLE [COLOR] - a heading, in green unless COLOR is given.
+section() { echo -e "\n${BLUE}==>${NC} ${2:-$GREEN}$1${NC}" >&2; }
 status() { echo -e "${YELLOW}-->${NC} $1" >&2; }
 error() { echo -e "${RED}Error:${NC} $1" >&2; }
 warn() { echo -e "${YELLOW}Warning:${NC} $1" >&2; }
 
 command_exists() { command -v "$1" > /dev/null 2>&1; }
 
-# Function to check if a package is already installed via pipx
+# The name is matched whole, so ansible-core does not count as ansible.
 pipx_package_installed() {
-  pipx list | grep -q "package $1"
+  pipx list --short | grep -q "^$1 "
 }
 
 ##############################################################################
@@ -248,6 +251,11 @@ fi
 section "Manual installations required"
 
 status "The following tools need to be installed manually:"
+status "- hadolint: Used for Dockerfile linting"
+status '    gh release download --repo hadolint/hadolint --pattern "hadolint-linux-x86_64"'
+status "    sudo install -m 755 hadolint-linux-x86_64 /usr/local/bin/hadolint"
+status "- sqlint: Used for SQL linting; a Ruby gem"
+status "    gem install sqlint"
 status "- tflint: Used for Terraform linting (see hashicorp.md for instructions)"
 status "  Using curl:"
 status "    curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash"
@@ -257,7 +265,7 @@ status "    unzip tflint_*_linux_amd64.zip"
 status "    sudo install -m 755 tflint /usr/local/bin/"
 
 if ((${#failures[@]})); then
-  section "Setup did not complete"
+  section "Setup did not complete" "$RED"
   for failure in "${failures[@]}"; do
     error "$failure"
   done
@@ -265,7 +273,7 @@ if ((${#failures[@]})); then
 fi
 
 if [[ -n $pipx_missing ]]; then
-  section "Setup completed, but pipx was not found"
+  section "Setup completed, but pipx was not found" "$YELLOW"
   status "Skipped: ${pipx_packages[*]}"
 
 else

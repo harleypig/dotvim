@@ -159,7 +159,7 @@ NODEJS
   assert_failure
   refute_output --partial 'Setup completed successfully!'
   refute_output --partial 'All required packages have been installed.'
-  assert_output --partial 'npm package: yarn'
+  assert_output --partial 'npm package: prettier'
 }
 
 @test "does not report success when the system packages fail to install" {
@@ -170,7 +170,7 @@ NODEJS
   post_clone
   assert_failure
   refute_output --partial 'Setup completed successfully!'
-  assert_output --partial 'system packages: jq'
+  assert_output --partial 'system packages: gawk jq'
 }
 
 @test "does not report success when dnf fails to install" {
@@ -181,7 +181,7 @@ NODEJS
   post_clone
   assert_failure
   refute_output --partial 'Setup completed successfully!'
-  assert_output --partial 'system packages: jq'
+  assert_output --partial 'system packages: gawk jq'
 }
 
 @test "does not report success when no package manager is found" {
@@ -199,7 +199,7 @@ NODEJS
   assert_success
   assert_output --partial 'pipx not found'
   assert_output --partial 'Setup completed, but pipx was not found'
-  assert_output --partial 'Skipped: ansible proselint vint isort flake8'
+  assert_output --partial 'Skipped: ansible yamllint ansible-lint proselint vint isort yapf flake8 sqlparse'
   refute_output --partial 'Setup completed successfully!'
   refute_output --partial 'All required packages have been installed.'
 }
@@ -234,12 +234,12 @@ NODEJS
 }
 
 @test "installs only the npm packages npm does not already list" {
-  # npm list -g succeeds for pyright alone, so pyright is skipped.
-  recorder npm 'case "$1 $3" in "list pyright") exit 0 ;; list*) exit 1 ;; esac'
+  # npm list -g succeeds for prettier alone, so prettier is skipped.
+  recorder npm 'case "$1 $3" in "list prettier") exit 0 ;; list*) exit 1 ;; esac'
   stub_apt
   post_clone
-  assert_output --partial 'pyright is already installed'
-  not_called '^npm install -g pyright$'
+  assert_output --partial 'prettier is already installed'
+  not_called '^npm install -g prettier$'
   called '^npm install -g vim-language-server$'
 }
 
@@ -286,4 +286,73 @@ NODEJS
   post_clone
   assert_output --partial 'All system packages are already installed'
   not_called '^sudo '
+}
+
+@test "a pipx package whose name prefixes an installed one is still installed" {
+  pipx_lists ansible-core
+  ln -s "$(type -P grep)" "$stubs/grep"
+  stub npm
+  stub_apt
+  post_clone
+  refute_output --partial 'ansible is already installed'
+  called '^pipx install ansible --include-deps$'
+}
+
+@test "installs the linters and fixers the settings configure, and no others" {
+  recorder npm '[ "$1" != list ]'
+  pipx_lists
+  ln -s "$(type -P grep)" "$stubs/grep"
+  stub apt-get
+  stub_failing dpkg
+  recorder sudo
+  post_clone
+
+  local tool
+  for tool in dockerfile-language-server-nodejs markdownlint-cli prettier \
+    vim-language-server; do
+    called "^npm install -g $tool\$"
+  done
+
+  for tool in ansible ansible-lint flake8 isort proselint sqlparse vint \
+    yamllint yapf; do
+    called "^pipx install $tool --include-deps\$"
+  done
+
+  for tool in gawk jq shellcheck shfmt terraform terraform-ls; do
+    called "^sudo apt-get install -y( .*)? $tool( |\$)"
+  done
+
+  # Bundled by the CoC extension that uses it, or used by nothing configured.
+  for tool in @ansible/ansible-language-server bash-language-server \
+    diagnostic-languageserver eslint pyright yarn; do
+    not_called "^npm install -g $tool\$"
+  done
+
+  not_called '^sudo apt-get install .*packer'
+}
+
+@test "names the configured tools no package manager installs" {
+  stub npm
+  stub_apt
+  post_clone
+
+  local tool
+  for tool in hadolint sqlint tflint; do
+    assert_output --partial "- $tool:"
+  done
+}
+
+@test "prints the failure heading in red" {
+  stub npm
+  post_clone
+  assert_failure
+  assert_output --partial $'\033[0;31mSetup did not complete'
+}
+
+@test "prints the missing-pipx heading in yellow" {
+  stub npm
+  stub_apt
+  post_clone
+  assert_success
+  assert_output --partial $'\033[0;33mSetup completed, but pipx was not found'
 }
