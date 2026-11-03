@@ -7,6 +7,7 @@
 
 bats_load_library bats-support
 bats_load_library bats-assert
+load helpers/git-fixture
 
 ##############################################################################
 #-----------------------------------------------------------------------------
@@ -21,25 +22,10 @@ setup() {
     ln -s "$(type -P "$tool")" "$stubs/$tool"
   done
 
-  export GIT_CONFIG_GLOBAL=/dev/null GIT_CONFIG_NOSYSTEM=1
-  export GIT_AUTHOR_NAME=test GIT_AUTHOR_EMAIL=test@example.invalid
-  export GIT_COMMITTER_NAME=test GIT_COMMITTER_EMAIL=test@example.invalid
-
-  # A local path as a submodule URL needs the file transport allowed.
-  export GIT_CONFIG_COUNT=1
-  export GIT_CONFIG_KEY_0=protocol.file.allow GIT_CONFIG_VALUE_0=always
-
-  remote="$BATS_TEST_TMPDIR/remotes/Surround.vim.git"
-  git init -q "$BATS_TEST_TMPDIR/src"
-  git -C "$BATS_TEST_TMPDIR/src" commit -q --allow-empty -m init
-  git clone -q --bare "$BATS_TEST_TMPDIR/src" "$remote"
-
-  repo="$BATS_TEST_TMPDIR/repo"
-  git init -q "$repo"
-  mkdir -p "$repo/.vim/pack/100-core/start"
-  git -C "$repo" commit -q --allow-empty -m init
-
-  cd "$repo" || return 1
+  git_fixture
+  remote=$(bare_remote Surround.vim)
+  mkdir -p .vim/pack/100-core/start
+  git commit -q --allow-empty -m init
 }
 
 #-----------------------------------------------------------------------------
@@ -98,8 +84,7 @@ commits() {
 }
 
 @test "adds the other URLs and fails when one of several cannot be added" {
-  other="$BATS_TEST_TMPDIR/remotes/vim-abolish.git"
-  git clone -q --bare "$BATS_TEST_TMPDIR/src" "$other"
+  other=$(bare_remote vim-abolish)
 
   addsubmodule 100-core "$remote" "$BATS_TEST_TMPDIR/remotes/missing.git" \
     "$other"
@@ -115,8 +100,7 @@ commits() {
 }
 
 @test "lowercases the name and drops .git, .vim and .nvim" {
-  other="$BATS_TEST_TMPDIR/remotes/Foo.nvim.git"
-  git clone -q --bare "$BATS_TEST_TMPDIR/src" "$other"
+  other=$(bare_remote Foo.nvim)
 
   addsubmodule 100-core "$other"
   assert_success
@@ -127,8 +111,7 @@ commits() {
 
 @test "adds a plugin whose name is part of one already added" {
   # 'surround' appears inside 'surround-extra', and is not a duplicate.
-  other="$BATS_TEST_TMPDIR/remotes/surround-extra.git"
-  git clone -q --bare "$BATS_TEST_TMPDIR/src" "$other"
+  other=$(bare_remote surround-extra)
 
   addsubmodule 100-core "$other" "$remote"
   assert_success

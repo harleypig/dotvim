@@ -8,6 +8,7 @@
 
 bats_load_library bats-support
 bats_load_library bats-assert
+load helpers/git-fixture
 
 ##############################################################################
 #-----------------------------------------------------------------------------
@@ -21,29 +22,16 @@ setup() {
     ln -s "$(type -P "$tool")" "$stubs/$tool"
   done
 
-  export GIT_CONFIG_GLOBAL=/dev/null GIT_CONFIG_NOSYSTEM=1
-  export GIT_AUTHOR_NAME=test GIT_AUTHOR_EMAIL=test@example.invalid
-  export GIT_COMMITTER_NAME=test GIT_COMMITTER_EMAIL=test@example.invalid
-
-  # A local path as a submodule URL needs the file transport allowed.
-  export GIT_CONFIG_COUNT=1
-  export GIT_CONFIG_KEY_0=protocol.file.allow GIT_CONFIG_VALUE_0=always
-
-  git init -q -b main "$BATS_TEST_TMPDIR/src"
-  git -C "$BATS_TEST_TMPDIR/src" commit -q --allow-empty -m init
-
-  repo="$BATS_TEST_TMPDIR/repo"
-  git init -q "$repo"
-  cd "$repo" || return 1
+  git_fixture main
 }
 
 #-----------------------------------------------------------------------------
 # add_submodule NAME: add and commit submodule NAME from a bare remote of
 # its own, then detach its checkout so a later checkout of main shows.
 add_submodule() {
-  local remote="$BATS_TEST_TMPDIR/remotes/$1.git"
+  local remote
 
-  git clone -q --bare "$BATS_TEST_TMPDIR/src" "$remote"
+  remote=$(bare_remote "$1")
   git submodule -q add --name "$1" "$remote" "$(path_of_name "$1")"
   git -C "$(path_of_name "$1")" checkout -q --detach
   git commit -q -m "add $1"
