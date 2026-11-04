@@ -26,17 +26,19 @@ commit the change.
 * [`mvsubmodule`][mvsubmodule] - Moves a submodule into a package under
   `.vim/pack/`, or back to `.vim/2btested/`.
 * [`rmsubmodule`][rmsubmodule] - Removes a submodule completely, including
-  its copy under `.git/modules`.
+  its copy under `.git/modules` (or a linked worktree's own copy).
 * [`set-submodule-branch`][set-submodule-branch] - Records the remote's
-  default branch for every submodule that has none set.
+  default branch for every submodule that has none set, and commits
+  `.gitmodules`.
 
 ## Other
 
 * [`update-coc-extensions`][update-coc-extensions] - Rewrites
   `g:coc_global_extensions` in `.vimrc` from the CoC extensions installed on
-  this machine, sorted by name. It reads them from `~/.config/coc/extensions`
-  unless `COC_EXTENSIONS_DIR` names another directory, and writes nothing
-  when none are installed.
+  this machine, sorted by name. It reads them from `coc/extensions` under
+  `$XDG_CONFIG_HOME`, or under `~/.config` when that is not a directory, as
+  CoC does, unless `COC_EXTENSIONS_DIR` names another directory. It writes
+  nothing when none are installed.
 
 ## Testing
 

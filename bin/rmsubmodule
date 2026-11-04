@@ -6,8 +6,9 @@ usage() {
 Usage: ${0##*/} NAME
 
 Remove the submodule NAME (as named in .gitmodules): git rm its path,
-commit, then delete its directory under .git/modules and its section in
-.git/config. Run from the top of the repository.
+commit, then delete its git directory (under .git/modules, or the linked
+worktree's own modules directory) and its section in .git/config. Run from
+the top of the repository.
 EOF
 }
 
@@ -37,10 +38,11 @@ git rm -r "$path" || {
   exit 1
 }
 
-git commit -m "removed $name and updated readme"
+git commit -m "removed $name"
 
-# Git keys both of these by the submodule's name, not its path.
-rm -fr ".git/modules/$name"
+# Git keys both of these by the submodule's name, not its path. In a linked
+# worktree .git is a file, and --git-path names the worktree's own modules.
+rm -fr "$(git rev-parse --git-path "modules/$name")"
 
 # A submodule that was never initialised has no section in .git/config.
 if git config --local --name-only --get-regexp '^submodule\.' \

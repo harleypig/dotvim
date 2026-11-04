@@ -34,10 +34,7 @@ NC='\033[0m' # No Color
 # language server a CoC extension bundles is left to the extension.
 
 npm_packages=(
-  "dockerfile-language-server-nodejs" # coc-settings languageserver.dockerfile
-  "markdownlint-cli"                  # ALE markdown linter markdownlint
-  "prettier"                          # ALE markdown fixer
-  "vim-language-server"               # ALE vim linter vimls
+  "markdownlint-cli" # ALE markdown linter markdownlint
 )
 
 # yamllint comes before ansible-lint, which depends on it, so the yamllint
@@ -56,16 +53,17 @@ pipx_packages=(
 )
 
 system_packages=(
-  "gawk"         # ALE awk linter
-  "jq"           # ALE json and jsonc fixer
-  "shellcheck"   # coc-diagnostic sh
-  "shfmt"        # ALE sh fixer
-  "terraform"    # ALE terraform and hcl fixer
-  "terraform-ls" # coc-settings languageserver.terraform
+  "gawk"       # ALE awk linter
+  "jq"         # ALE json and jsonc fixer
+  "shellcheck" # coc-diagnostic sh
+  "shfmt"      # ALE sh fixer
 )
 
-# hadolint, sqlint and tflint are configured too, but neither apt nor dnf
-# carries them; the closing message says how to install them.
+# hadolint, sqlint, terraform (ALE terraform and hcl fixer), terraform-ls
+# (coc-settings languageserver.terraform) and tflint are configured too, but
+# neither apt nor dnf carries them; terraform and terraform-ls are only in
+# HashiCorp's own repository, which this script does not add. The closing
+# message says how to install them.
 
 # Each step that warns about a failure adds a line here. A missing pipx is
 # reported as a status, not a warning, and is deliberately not a failure;
@@ -112,13 +110,28 @@ if ! command_exists npm; then
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh \
     | PROFILE='/dev/null' bash
 
-  # shellcheck disable=SC1091
-  source "$XDG_CONFIG_HOME/shell-startup/nodejs"
+  # Where nvm's installer puts it: NVM_DIR, else $XDG_CONFIG_HOME/nvm when
+  # XDG_CONFIG_HOME is set, else ~/.nvm.
+  if [[ -n $NVM_DIR ]]; then
+    nvm_dir=$NVM_DIR
+  elif [[ -n $XDG_CONFIG_HOME ]]; then
+    nvm_dir="$XDG_CONFIG_HOME/nvm"
+  else
+    nvm_dir="$HOME/.nvm"
+  fi
 
-  # Install and use LTS version of Node.js
-  status "Installing Node.js LTS version"
-  nvm install --lts
-  nvm use --lts
+  if [[ -r $nvm_dir/nvm.sh ]]; then
+    # shellcheck disable=SC1091
+    source "$nvm_dir/nvm.sh"
+
+    # Install and use LTS version of Node.js
+    status "Installing Node.js LTS version"
+    nvm install --lts
+    nvm use --lts
+
+  else
+    warn "nvm did not install: no $nvm_dir/nvm.sh to load."
+  fi
 
   # Verify npm installation
   if ! command_exists npm; then
@@ -198,7 +211,10 @@ if command_exists apt-get; then
   # Check which packages are already installed
   installed_packages=()
   for package in "${system_packages[@]}"; do
-    if dpkg -l "$package" &> /dev/null; then
+    # dpkg -l also lists a package removed with its configuration left
+    # behind; only the status tells the two apart.
+    dpkg_status=$(dpkg-query --show --showformat='${Status}' "$package" 2> /dev/null)
+    if [[ $dpkg_status == 'install ok installed' ]]; then
       status "$package is already installed"
     else
       installed_packages+=("$package")
@@ -256,6 +272,10 @@ status '    gh release download --repo hadolint/hadolint --pattern "hadolint-lin
 status "    sudo install -m 755 hadolint-linux-x86_64 /usr/local/bin/hadolint"
 status "- sqlint: Used for SQL linting; a Ruby gem"
 status "    gem install sqlint"
+status "- terraform: Used for Terraform formatting; from HashiCorp's repository"
+status "    https://developer.hashicorp.com/terraform/install"
+status "- terraform-ls: The Terraform language server; from the same repository"
+status "    https://github.com/hashicorp/terraform-ls/blob/main/docs/installation.md"
 status "- tflint: Used for Terraform linting (see hashicorp.md for instructions)"
 status "  Using curl:"
 status "    curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash"

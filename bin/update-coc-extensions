@@ -8,8 +8,10 @@ Usage: ${0##*/}
 Rewrite the g:coc_global_extensions list in .vimrc from the CoC extensions
 installed on this machine, sorted by name. Run from the top of the
 repository. Installed extensions are read from package.json in
-\$COC_EXTENSIONS_DIR, which defaults to ~/.config/coc/extensions. Nothing is
-written when no extensions are installed or .vimrc has no list to replace.
+\$COC_EXTENSIONS_DIR, which defaults to coc/extensions in \$XDG_CONFIG_HOME
+when that is a directory, as CoC itself does, and to ~/.config/coc/extensions
+otherwise. Nothing is written when no extensions are installed, package.json
+cannot be parsed, or .vimrc has no list to replace.
 EOF2
 }
 
@@ -27,13 +29,19 @@ die() {
 }
 
 ##############################################################################
-package="${COC_EXTENSIONS_DIR:-$HOME/.config/coc/extensions}/package.json"
+config_home="$HOME/.config"
+[[ -n $XDG_CONFIG_HOME && -d $XDG_CONFIG_HOME ]] && config_home=$XDG_CONFIG_HOME
+
+package="${COC_EXTENSIONS_DIR:-$config_home/coc/extensions}/package.json"
 
 [[ -r $package ]] || die "Cannot read $package."
 
-readarray -t extensions < <(jq -r '.dependencies // {} | keys[]' "$package")
+names=$(jq -r '.dependencies // {} | keys[]' "$package") \
+  || die "Cannot parse $package."
 
-((${#extensions[@]})) || die "No CoC extensions are installed in $package."
+[[ -n $names ]] || die "No CoC extensions are installed in $package."
+
+readarray -t extensions <<< "$names"
 
 [[ -w .vimrc ]] \
   || die "No writable .vimrc here; run from the top of the repository."

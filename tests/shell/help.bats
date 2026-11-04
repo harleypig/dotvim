@@ -22,7 +22,7 @@ setup() {
     ln -s "$(type -P "$tool")" "$stubs/$tool"
   done
 
-  for tool in apt-get curl cut dnf dpkg git grep jq mkdir npm perl \
+  for tool in apt-get curl cut dnf dpkg dpkg-query git grep jq mkdir npm perl \
     pip pipx python3 rev rm rpm sed sudo; do
     printf '#!/bin/sh\necho "%s $*" >> "%s"\n' "$tool" "$tripped" \
       > "$stubs/$tool"

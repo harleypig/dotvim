@@ -7,6 +7,7 @@
 
 bats_load_library bats-support
 bats_load_library bats-assert
+load helpers/git-fixture
 
 ##############################################################################
 #-----------------------------------------------------------------------------
@@ -20,22 +21,8 @@ setup() {
     ln -s "$(type -P "$tool")" "$stubs/$tool"
   done
 
-  export GIT_CONFIG_GLOBAL=/dev/null GIT_CONFIG_NOSYSTEM=1
-  export GIT_AUTHOR_NAME=test GIT_AUTHOR_EMAIL=test@example.invalid
-  export GIT_COMMITTER_NAME=test GIT_COMMITTER_EMAIL=test@example.invalid
-
-  # A local path as a submodule URL needs the file transport allowed.
-  export GIT_CONFIG_COUNT=1
-  export GIT_CONFIG_KEY_0=protocol.file.allow GIT_CONFIG_VALUE_0=always
-
-  remote="$BATS_TEST_TMPDIR/remotes/surround.git"
-  git init -q "$BATS_TEST_TMPDIR/src"
-  git -C "$BATS_TEST_TMPDIR/src" commit -q --allow-empty -m init
-  git clone -q --bare "$BATS_TEST_TMPDIR/src" "$remote"
-
-  repo="$BATS_TEST_TMPDIR/repo"
-  git init -q "$repo"
-  cd "$repo" || return 1
+  git_fixture
+  remote=$(bare_remote surround)
 }
 
 #-----------------------------------------------------------------------------
@@ -60,7 +47,9 @@ commits() {
 assert_gone() {
   [[ -z $(git config -f .gitmodules --get-regexp "^submodule\\.$1\\." \
     2> /dev/null) ]] || fail ".gitmodules still has $1: $(< .gitmodules)"
-  [[ ! -e .git/modules/$1 ]] || fail ".git/modules/$1 still exists"
+  local gitdir
+  gitdir=$(git rev-parse --git-path "modules/$1")
+  [[ ! -e $gitdir ]] || fail "$gitdir still exists"
   [[ -z $(git config --local --get-regexp "^submodule\\.$1\\.") ]] \
     || fail ".git/config still has $1"
 }
@@ -78,6 +67,14 @@ assert_gone() {
   assert_equal "$(commits)" 2
   [[ -z $(git status --porcelain) ]] \
     || fail "uncommitted: $(git status --porcelain)"
+}
+
+@test "says in its commit message only what it did" {
+  add_submodule surround .vim/pack/100-core/start/surround
+
+  rmsubmodule surround
+  assert_success
+  assert_equal "$(git log -1 --format=%s)" 'removed surround'
 }
 
 @test "removes the .git/modules entry of a submodule named unlike its path" {
@@ -115,6 +112,22 @@ assert_gone() {
   assert_success
   assert_gone surround
   assert_equal "$(commits)" 2
+}
+
+@test "removes the submodule's git directory in a linked worktree" {
+  # A linked worktree's .git is a file, and git keeps the worktree's
+  # submodule directories under the main repository's .git/worktrees.
+  git commit -q --allow-empty -m init
+  git worktree add -q "$BATS_TEST_TMPDIR/wt"
+  cd "$BATS_TEST_TMPDIR/wt" || return 1
+  add_submodule surround .vim/pack/100-core/start/surround
+  [[ -d $(git rev-parse --git-path modules/surround) ]] \
+    || fail 'fixture has no modules entry'
+
+  rmsubmodule surround
+  assert_success
+  assert_gone surround
+  assert_equal "$(commits)" 3
 }
 
 @test "fails without committing for a name not in .gitmodules" {

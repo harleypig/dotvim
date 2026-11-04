@@ -4,8 +4,8 @@
 # packages through sudo, so every test runs it with PATH holding only stubs:
 # git and curl do nothing, and neither apt-get nor dnf is present, which
 # makes the script list the system packages instead of installing them.
-# XDG_CONFIG_HOME points at a temp directory whose nodejs startup file
-# defines an nvm that installs nothing.
+# XDG_CONFIG_HOME points at a temp directory, where nvm's installer would
+# put nvm, holding an nvm.sh that defines an nvm that installs nothing.
 
 bats_load_library bats-support
 bats_load_library bats-assert
@@ -16,7 +16,7 @@ setup() {
   script="$BATS_TEST_DIRNAME/../../bin/post-clone"
   stubs="$BATS_TEST_TMPDIR/bin"
   calls="$BATS_TEST_TMPDIR/calls"
-  mkdir -p "$stubs" "$BATS_TEST_TMPDIR/config/shell-startup"
+  mkdir -p "$stubs" "$BATS_TEST_TMPDIR/config/nvm"
 
   ln -s "$(type -P bash)" "$stubs/bash"
 
@@ -26,7 +26,7 @@ setup() {
     chmod +x "$stubs/$tool"
   done
 
-  printf 'nvm() { :; }\n' > "$BATS_TEST_TMPDIR/config/shell-startup/nodejs"
+  printf 'nvm() { :; }\n' > "$BATS_TEST_TMPDIR/config/nvm/nvm.sh"
 
   cd "$BATS_TEST_TMPDIR" || return 1
 }
@@ -46,10 +46,12 @@ stub_failing() {
 }
 
 #-----------------------------------------------------------------------------
-# stub_apt - apt-get and dpkg, with every system package already installed.
+# stub_apt - apt-get and dpkg-query, with every system package already
+# installed.
 stub_apt() {
   stub apt-get
-  stub dpkg
+  printf '#!/bin/sh\necho "install ok installed"\n' > "$stubs/dpkg-query"
+  chmod +x "$stubs/dpkg-query"
 }
 
 #-----------------------------------------------------------------------------
@@ -93,7 +95,7 @@ if [ \"\$2\" = --short ]; then printf '$short'; else printf '$long'; fi"
 
 #-----------------------------------------------------------------------------
 post_clone() {
-  run env PATH="$stubs" HOME="$BATS_TEST_TMPDIR" \
+  run env -u NVM_DIR PATH="$stubs" HOME="$BATS_TEST_TMPDIR" \
     XDG_CONFIG_HOME="$BATS_TEST_TMPDIR/config" "$script"
 }
 
@@ -126,9 +128,9 @@ post_clone() {
 }
 
 @test "reports npm installed once when nvm installs it" {
-  cat > "$BATS_TEST_TMPDIR/config/shell-startup/nodejs" << NODEJS
+  cat > "$BATS_TEST_TMPDIR/config/nvm/nvm.sh" << NVM
 nvm() { printf '#!/bin/sh\\n' > "$stubs/npm"; chmod +x "$stubs/npm"; }
-NODEJS
+NVM
   ln -s "$(type -P chmod)" "$stubs/chmod"
   stub_apt
   post_clone
@@ -138,6 +140,39 @@ NODEJS
   local said
   said=$(grep -c 'npm installed successfully' <<< "$output")
   assert_equal "$said" 1
+}
+
+@test "loads nvm from NVM_DIR when it is set" {
+  mkdir -p "$BATS_TEST_TMPDIR/elsewhere"
+  mv "$BATS_TEST_TMPDIR/config/nvm/nvm.sh" "$BATS_TEST_TMPDIR/elsewhere"
+  printf 'nvm() { echo "nvm $*" >> "%s"; }\n' "$calls" \
+    > "$BATS_TEST_TMPDIR/elsewhere/nvm.sh"
+  stub_apt
+  run env NVM_DIR="$BATS_TEST_TMPDIR/elsewhere" PATH="$stubs" \
+    HOME="$BATS_TEST_TMPDIR" XDG_CONFIG_HOME="$BATS_TEST_TMPDIR/config" \
+    "$script"
+  called '^nvm install --lts$'
+}
+
+@test "loads nvm from ~/.nvm when XDG_CONFIG_HOME is unset" {
+  mkdir -p "$BATS_TEST_TMPDIR/.nvm"
+  printf 'nvm() { echo "nvm $*" >> "%s"; }\n' "$calls" \
+    > "$BATS_TEST_TMPDIR/.nvm/nvm.sh"
+  stub_apt
+  run env -u NVM_DIR -u XDG_CONFIG_HOME PATH="$stubs" \
+    HOME="$BATS_TEST_TMPDIR" "$script"
+  called '^nvm install --lts$'
+}
+
+@test "reports a missing nvm.sh as a failure, without a shell error" {
+  rm "$BATS_TEST_TMPDIR/config/nvm/nvm.sh"
+  stub_apt
+  post_clone
+  assert_failure
+  assert_output --partial "nvm.sh"
+  refute_output --partial 'No such file'
+  refute_output --partial 'command not found'
+  assert_output --partial 'npm: Node.js install through nvm'
 }
 
 @test "reports success and exits zero when every step succeeds" {
@@ -159,13 +194,13 @@ NODEJS
   assert_failure
   refute_output --partial 'Setup completed successfully!'
   refute_output --partial 'All required packages have been installed.'
-  assert_output --partial 'npm package: prettier'
+  assert_output --partial 'npm package: markdownlint-cli'
 }
 
 @test "does not report success when the system packages fail to install" {
   stub npm
   stub apt-get
-  stub_failing dpkg
+  stub_failing dpkg-query
   stub_failing sudo
   post_clone
   assert_failure
@@ -233,14 +268,12 @@ NODEJS
   called '^git submodule update --init --recursive --remote$'
 }
 
-@test "installs only the npm packages npm does not already list" {
-  # npm list -g succeeds for prettier alone, so prettier is skipped.
-  recorder npm 'case "$1 $3" in "list prettier") exit 0 ;; list*) exit 1 ;; esac'
+@test "skips an npm package npm already lists" {
+  recorder npm '[ "$1 $3" = "list markdownlint-cli" ]'
   stub_apt
   post_clone
-  assert_output --partial 'prettier is already installed'
-  not_called '^npm install -g prettier$'
-  called '^npm install -g vim-language-server$'
+  assert_output --partial 'markdownlint-cli is already installed'
+  not_called '^npm install -g markdownlint-cli$'
 }
 
 @test "installs only the pipx packages pipx does not already list" {
@@ -257,14 +290,37 @@ NODEJS
 @test "apt-get installs the missing system packages and not the present ones" {
   stub npm
   stub apt-get
-  recorder dpkg '[ "$2" = jq ]'
+  recorder dpkg-query '[ "$3" = jq ] && echo "install ok installed"'
   recorder sudo
   post_clone
   assert_output --partial 'jq is already installed'
   called '^sudo apt-get install -y '
   not_called '^sudo apt-get install .* jq( |$)'
   called '^sudo apt-get install -y .*shellcheck'
-  called '^sudo apt-get install -y .*terraform-ls'
+}
+
+@test "asks no package manager for terraform, which neither apt nor dnf carries" {
+  stub npm
+  stub apt-get
+  stub_failing dpkg-query
+  recorder sudo
+  post_clone
+  called '^sudo apt-get install -y '
+  not_called '^sudo apt-get install .*terraform'
+}
+
+@test "apt-get installs a package that was removed but left its configuration" {
+  # dpkg -l lists such a package, and exits zero, though it is not
+  # installed; only its status says so.
+  stub npm
+  stub apt-get
+  stub dpkg
+  recorder dpkg-query 'if [ "$3" = jq ]; then echo "deinstall ok config-files"
+else echo "install ok installed"; fi'
+  recorder sudo
+  post_clone
+  refute_output --partial 'jq is already installed'
+  called '^sudo apt-get install -y jq$'
 }
 
 @test "dnf installs the missing system packages and not the present ones" {
@@ -303,28 +359,26 @@ NODEJS
   pipx_lists
   ln -s "$(type -P grep)" "$stubs/grep"
   stub apt-get
-  stub_failing dpkg
+  stub_failing dpkg-query
   recorder sudo
   post_clone
 
   local tool
-  for tool in dockerfile-language-server-nodejs markdownlint-cli prettier \
-    vim-language-server; do
-    called "^npm install -g $tool\$"
-  done
+  called '^npm install -g markdownlint-cli$'
 
   for tool in ansible ansible-lint flake8 isort proselint sqlparse vint \
     yamllint yapf; do
     called "^pipx install $tool --include-deps\$"
   done
 
-  for tool in gawk jq shellcheck shfmt terraform terraform-ls; do
+  for tool in gawk jq shellcheck shfmt; do
     called "^sudo apt-get install -y( .*)? $tool( |\$)"
   done
 
   # Bundled by the CoC extension that uses it, or used by nothing configured.
   for tool in @ansible/ansible-language-server bash-language-server \
-    diagnostic-languageserver eslint pyright yarn; do
+    diagnostic-languageserver dockerfile-language-server-nodejs eslint \
+    prettier pyright vim-language-server yarn; do
     not_called "^npm install -g $tool\$"
   done
 
@@ -337,7 +391,7 @@ NODEJS
   post_clone
 
   local tool
-  for tool in hadolint sqlint tflint; do
+  for tool in hadolint sqlint terraform terraform-ls tflint; do
     assert_output --partial "- $tool:"
   done
 }

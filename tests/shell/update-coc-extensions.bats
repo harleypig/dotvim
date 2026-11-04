@@ -62,7 +62,7 @@ installed() {
 
 #-----------------------------------------------------------------------------
 update() {
-  run env PATH="$stubs" HOME="$BATS_TEST_TMPDIR" \
+  run env -u XDG_CONFIG_HOME PATH="$stubs" HOME="$BATS_TEST_TMPDIR" \
     COC_EXTENSIONS_DIR="$COC_EXTENSIONS_DIR" "$script"
 }
 
@@ -72,7 +72,8 @@ update() {
   update
   assert_success
 
-  assert_equal "$(< .vimrc)" "$(cat << 'VIMRC'
+  assert_equal "$(< .vimrc)" "$(
+    cat << 'VIMRC'
 set nocompatible
 
 let g:coc_global_extensions = [
@@ -83,7 +84,7 @@ let g:coc_global_extensions = [
 
 set number
 VIMRC
-)"
+  )"
 
   [[ ! -e $tripped ]] || fail "unexpected call: $(< "$tripped")"
 }
@@ -125,10 +126,40 @@ VIMRC
   installed coc-default
   mkdir -p .config/coc
   mv "$COC_EXTENSIONS_DIR" .config/coc/extensions
-  run env -u COC_EXTENSIONS_DIR PATH="$stubs" HOME="$BATS_TEST_TMPDIR" \
-    "$script"
+  run env -u COC_EXTENSIONS_DIR -u XDG_CONFIG_HOME PATH="$stubs" \
+    HOME="$BATS_TEST_TMPDIR" "$script"
   assert_success
   grep -qF "  \\ 'coc-default'," .vimrc || fail "list not rewritten: $(< .vimrc)"
+}
+
+@test "reads the extensions from XDG_CONFIG_HOME's coc/extensions" {
+  installed coc-xdg
+  mkdir -p xdg/coc
+  mv "$COC_EXTENSIONS_DIR" xdg/coc/extensions
+  run env -u COC_EXTENSIONS_DIR PATH="$stubs" HOME="$BATS_TEST_TMPDIR" \
+    XDG_CONFIG_HOME="$BATS_TEST_TMPDIR/xdg" "$script"
+  assert_success
+  grep -qF "  \\ 'coc-xdg'," .vimrc || fail "list not rewritten: $(< .vimrc)"
+}
+
+@test "falls back to ~/.config/coc when XDG_CONFIG_HOME is not a directory" {
+  # CoC itself only uses XDG_CONFIG_HOME when it names a directory.
+  installed coc-default
+  mkdir -p .config/coc
+  mv "$COC_EXTENSIONS_DIR" .config/coc/extensions
+  run env -u COC_EXTENSIONS_DIR PATH="$stubs" HOME="$BATS_TEST_TMPDIR" \
+    XDG_CONFIG_HOME="$BATS_TEST_TMPDIR/missing" "$script"
+  assert_success
+  grep -qF "  \\ 'coc-default'," .vimrc || fail "list not rewritten: $(< .vimrc)"
+}
+
+@test "says the package.json cannot be parsed, not that nothing is installed" {
+  printf '{"dependencies": {' > "$COC_EXTENSIONS_DIR/package.json"
+  update
+  assert_failure
+  refute_output --partial 'No CoC extensions'
+  assert_output --partial "Cannot parse $COC_EXTENSIONS_DIR/package.json"
+  assert_equal "$(< .vimrc)" "$(< original.vimrc)"
 }
 
 @test "rewrites the list in the repository's own .vimrc" {
