@@ -36,9 +36,10 @@ kept, is in the [README's Setup][setup].
 
 * `termguicolors` - Vim uses each highlight group's GUI colors
     (`guifg`, `guibg`) in the terminal too, in 24-bit color. A group that
-    sets only `ctermfg` and `ctermbg` shows none of those colors; the
-    statusline's mode colors are one ([Statusline
-    Configuration](statusline.md)).
+    sets only `ctermfg` and `ctermbg` shows none of those colors, so every
+    group our settings color is given GUI colors as well: the statusline's
+    mode colors ([Statusline Configuration](statusline.md)) and the
+    diagnostic colors below.
 * `background=dark`.
 * `list`, with `listchars` holding only a `tab:` of two spaces - tabs are
     drawn as blanks and no `$` marks line ends, so the text looks as it does
@@ -138,9 +139,11 @@ these highlight groups from it at startup and again after every
 
 `termguicolors` is on, so the GUI colors are the ones shown, in a terminal
 too. The `ALE*Sign` groups color the gutter's signs and the `Diagnostic*`
-groups color the statusline's ALE counts. The `Coc*Sign` groups are set
-but do not show today: CoC hands its diagnostics to ALE instead of placing
-signs ([ALE and CoC Setup](coc-ale-setup.md)).
+groups color the statusline's ALE counts. The `Coc*Sign` groups color no
+signs, because CoC hands its diagnostics to ALE instead of placing them
+([ALE and CoC Setup](coc-ale-setup.md)), but CoC uses them elsewhere: the
+info, warning and error icons in its notifications, and `CocHintSign`'s
+foreground for inlay hints.
 
 ## Default or Inapplicable Sections
 

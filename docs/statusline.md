@@ -49,23 +49,20 @@ warnings are checked again.
 
 ## Colors
 
-The `StatusLine` highlight is set for terminals only (`ctermbg` and
-`ctermfg`), and changes with the mode. No color scheme is loaded, so
-`StatusLine` keeps Vim's default `reverse` attribute, which swaps the two
-colors on screen:
+The `StatusLine` highlight changes with the mode, and each change sets the
+same colors for terminals (`ctermbg`, `ctermfg`) and the GUI (`guibg`,
+`guifg`). `termguicolors` is on ([General Editor
+Settings](editor-settings.md)), so a terminal shows the GUI colors. No color
+scheme is loaded, so `StatusLine` keeps Vim's default `reverse` attribute,
+which swaps the two colors on screen:
 
 | When | Set to | Shows as |
 | ---- | ------ | -------- |
-| Startup | `ctermbg=Black ctermfg=White` | black text on white |
-| Insert mode | `ctermbg=Yellow ctermfg=Blue` | yellow text on blue |
-| Command-line window | `ctermbg=Gray ctermfg=Red` | gray text on red |
+| Startup | background Black, foreground White | black text on white |
+| Insert mode | background Yellow, foreground Blue | yellow text on blue |
+| Command-line window | background Gray, foreground Red | gray text on red |
 
 Leaving Insert mode or the command-line window restores the startup colors.
-
-These colors show only with `termguicolors` off. It is on ([General Editor
-Settings](editor-settings.md)), and then Vim colors the terminal from each
-group's GUI colors, which `statusline.vim` does not set, so the statusline
-keeps Vim's default reverse video in every mode.
 
 The ALE counts use `DiagnosticError`, `DiagnosticWarning` and
 `DiagnosticInfo`, set in [`diagnostic-colors.vim`][diagnostic-colors.vim].

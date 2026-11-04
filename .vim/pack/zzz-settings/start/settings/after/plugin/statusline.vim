@@ -15,14 +15,15 @@ set laststatus=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Leaving Insert mode or the command-line window restores these, so they
-" are written once.
-let s:statusline_colors = 'ctermbg=Black ctermfg=White'
+" are written once. The gui colours are the ones a terminal shows, because
+" set.vim turns on termguicolors.
+let s:statusline_colors = 'ctermbg=Black ctermfg=White guibg=Black guifg=White'
 execute 'hi StatusLine' s:statusline_colors
 "hi User1 ctermbg=White ctermfg=Red
 "hi WarningMsg ctermbg=White ctermfg=Red
-au CmdwinEnter * hi StatusLine ctermbg=Gray ctermfg=Red
+au CmdwinEnter * hi StatusLine ctermbg=Gray ctermfg=Red guibg=Gray guifg=Red
 au CmdwinLeave * execute 'hi StatusLine' s:statusline_colors
-au InsertEnter * hi StatusLine ctermbg=Yellow ctermfg=Blue
+au InsertEnter * hi StatusLine ctermbg=Yellow ctermfg=Blue guibg=Yellow guifg=Blue
 au InsertLeave * execute 'hi StatusLine' s:statusline_colors
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
