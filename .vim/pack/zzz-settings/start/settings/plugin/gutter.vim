@@ -12,7 +12,7 @@ highlight SignColumn ctermbg=NONE guibg=NONE
 " ----------------------------------------------------------------------------
 " Toggle sign column visibility
 " Cycles between showing signs and hiding them
-function! ToggleSigns()
+function! s:ToggleSigns()
   if (&signcolumn ==# 'yes' || &signcolumn ==# 'number')
     set signcolumn=no
   else
@@ -27,7 +27,7 @@ endfunction
 " ----------------------------------------------------------------------------
 " Toggle line numbering mode
 " Cycles through: no numbers → absolute → relative → both → no numbers
-function! ToggleLineNumbers()
+function! s:ToggleLineNumbers()
   if (&number == 0 && &relativenumber == 0)
     set number norelativenumber        " Show absolute line numbers
   elseif (&number == 1 && &relativenumber == 0)
@@ -43,7 +43,7 @@ endfunction
 " Key Mappings
 
 " Toggle sign column with <leader>signs
-map <leader>signs :call ToggleSigns()<CR>
+nnoremap <leader>signs :call <SID>ToggleSigns()<CR>
 
 " Toggle line numbering mode with <leader>ln
-map <leader>ln :call ToggleLineNumbers()<CR>
+nnoremap <leader>ln :call <SID>ToggleLineNumbers()<CR>

@@ -1,30 +1,26 @@
 #!/usr/bin/env bats
 
 # The small fixes of #44 - small tidy-ups in the late settings: functions
-# kept script-local, autocmds that do not stack when re-sourced, settings
-# kept to the buffer, and branches left for plugins that are not installed.
+# kept script-local, mappings kept to the modes they work in, autocmds that
+# do not stack when re-sourced, settings kept to the buffer, and branches
+# left for plugins that are not installed.
 #
-# The harness is the one in coc.bats: headless Vim on this checkout's .vimrc,
-# HOME and the XDG directories inside the test's temp directory, and a PATH
-# holding only a stub directory, so CoC stays off unless a test adds node.
+# Vim runs headless through helpers/vim.bash, whose PATH holds only a shell,
+# so CoC stays off unless a test adds node.
 
 bats_load_library bats-support
 bats_load_library bats-assert
+load helpers/vim
 
 ##############################################################################
 #-----------------------------------------------------------------------------
 setup() {
-  repo="$(cd "$BATS_TEST_DIRNAME/../.." && pwd)"
+  vim_fixture
+
   settings="$repo/.vim/pack/zzz-settings/start/settings"
-  stubs="$BATS_TEST_TMPDIR/bin"
-  report="$BATS_TEST_TMPDIR/report"
-  vim="$(type -P vim)"
-  mkdir -p "$stubs" "$BATS_TEST_TMPDIR/home"
 
   [[ -f $repo/.vim/pack/300-intellisense/start/coc/plugin/coc.vim ]] \
     || fail "coc.nvim submodule is not checked out"
-
-  ln -s "$(type -P sh)" "$stubs/sh"
 }
 
 #-----------------------------------------------------------------------------
@@ -47,12 +43,7 @@ start_vim() {
     echo 'qa!'
   } > "$tmp/report.vim"
 
-  timeout 30 env -i \
-    HOME="$tmp/home" PATH="$stubs" TERM=dumb \
-    XDG_DOTVIM="$repo" XDG_CONFIG_HOME="$tmp/config" \
-    XDG_DATA_HOME="$tmp/data" XDG_STATE_HOME="$tmp/state" \
-    XDG_CACHE_HOME="$tmp/cache" \
-    "$vim" -N -u "$repo/.vimrc" -es "$@" -S "$tmp/report.vim" || true
+  headless_vim -- "$@" -S "$tmp/report.vim" || true
 
   run cat "$report"
 }
@@ -156,4 +147,50 @@ EOF
 
   assert_line --partial 'buffer=--indent 2 '
   assert_line 'global=0'
+}
+
+#-----------------------------------------------------------------------------
+@test "the gutter toggles are Normal-mode, non-remapping and script-local" {
+  start_vim << 'EOF2'
+for s:keys in ['<Leader>ln', '<Leader>signs']
+  let s:noremap = maparg(s:keys, 'n', 0, 1).noremap
+  echo s:keys . ' noremap=' . s:noremap . ' rhs=' . maparg(s:keys, 'n')
+  echo s:keys . ' visual=' . maparg(s:keys, 'v')
+endfor
+echo 'global=' . exists('*ToggleLineNumbers') . exists('*ToggleSigns')
+EOF2
+
+  assert_line --regexp '^<Leader>ln noremap=1 rhs=.*<SNR>[0-9]+_ToggleLineNumbers\(\)'
+  assert_line --regexp '^<Leader>signs noremap=1 rhs=.*<SNR>[0-9]+_ToggleSigns\(\)'
+  assert_line '<Leader>ln visual='
+  assert_line '<Leader>signs visual='
+  assert_line 'global=00'
+}
+
+#-----------------------------------------------------------------------------
+@test "<Leader>ln cycles absolute, relative, both, none" {
+  start_vim << 'EOF2'
+for s:i in range(4)
+  execute "normal \\ln"
+  echo 'step' . s:i . '=' . &number . &relativenumber
+endfor
+EOF2
+
+  assert_line 'step0=01'
+  assert_line 'step1=11'
+  assert_line 'step2=00'
+  assert_line 'step3=10'
+}
+
+#-----------------------------------------------------------------------------
+@test "<Leader>signs hides the sign column and brings it back" {
+  start_vim << 'EOF2'
+execute "normal \\signs"
+echo 'hidden=' . &signcolumn
+execute "normal \\signs"
+echo 'shown=' . &signcolumn
+EOF2
+
+  assert_line 'hidden=no'
+  assert_line 'shown=number'
 }

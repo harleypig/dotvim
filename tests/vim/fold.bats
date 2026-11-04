@@ -1,9 +1,9 @@
 #!/usr/bin/env bats
 
-# The text the late fold.vim's CustomFoldText() gives a closed fold: its
-# first non-blank line, its size and its level. Vim runs headless through
-# helpers/vim.bash, whose PATH holds only a shell, so CoC stays off and
-# nothing reaches the network.
+# The text the late fold.vim's script-local CustomFoldText() gives a closed
+# fold: its first non-blank line, its size and its level. Vim runs headless
+# through helpers/vim.bash, whose PATH holds only a shell, so CoC stays off
+# and nothing reaches the network.
 
 bats_load_library bats-support
 bats_load_library bats-assert
@@ -34,6 +34,7 @@ setlocal foldmethod=manual nonumber
 ${range}fold
 redir! > $report
 echo 'foldtext=' . &foldtext
+echo 'global=' . exists('*CustomFoldText')
 echo 'text=[' . foldtextresult(foldclosed(line('$'))) . ']'
 echo 'errmsg=' . v:errmsg
 redir END
@@ -50,7 +51,8 @@ EOF
 @test "a closed fold shows its first line, its size and its level" {
   fold_text % 'first' 'second' 'third' 'fourth'
 
-  assert_line 'foldtext=CustomFoldText()'
+  assert_line --regexp '^foldtext=<SNR>[0-9]+_CustomFoldText\(\)$'
+  assert_line 'global=0'
   assert_line --regexp '^text=\[first\.+ 4 lines \[100\.0%\] \+--\]$'
   assert_line 'errmsg='
 }
