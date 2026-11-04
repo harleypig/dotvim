@@ -107,8 +107,6 @@ settings:
     item from the popup if it's visible. If not, it simply inserts a new line.
 * `<C-Space>` in insert mode (mapped as `<C-@>`, which is what terminals send
     for it): triggers the completion popup.
-* `<Tab>` and `<C-Space>` also check for Copilot, which is not installed, so
-    those branches never apply.
 * `gd`, `gy`, `gi`, `gr` in normal mode: These mappings are shortcuts for "go
     to" commands provided by CoC, allowing quick navigation to definitions,
     type definitions, implementations, and references of the symbol under the
