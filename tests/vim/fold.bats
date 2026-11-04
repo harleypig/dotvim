@@ -1,8 +1,9 @@
 #!/usr/bin/env bats
 
-# Settings merged out of OLD_FILES/ into the late settings (#4 - merge or
-# remove OLD_FILES). Vim runs headless through helpers/vim.bash, whose PATH
-# holds only a shell, so CoC stays off and nothing reaches the network.
+# The text the late fold.vim's CustomFoldText() gives a closed fold: its
+# first non-blank line, its size and its level. Vim runs headless through
+# helpers/vim.bash, whose PATH holds only a shell, so CoC stays off and
+# nothing reaches the network.
 
 bats_load_library bats-support
 bats_load_library bats-assert
