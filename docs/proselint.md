@@ -44,10 +44,9 @@ Install via `npm`:
 * **Tools**: `proselint` and `markdownlint` via `ALE`, on Markdown files
 * **Configuration**: Both are the Markdown linters in the late `ale.vim`.
   markdownlint is given the nearest `.markdownlint.yaml` above the file (or
-  its `.jsonc`, `.json` or `.yml` form) by the Markdown ftplugin. The ALE
-  release this repository pins runs `proselint %t`, which proselint 0.16.0
-  rejects, so on Markdown proselint reports nothing until ALE is updated to
-  a release that runs `proselint check`.
+  its `.jsonc`, `.json` or `.yml` form) by the Markdown ftplugin. ALE asks
+  proselint for its version and runs `proselint check` from 0.16.0 on, and
+  `proselint` on earlier releases.
 * **Usage**: Both report to ALE, which shows the problems in the gutter and
   the quickfix list (see [The Gutter](gutter.md))
 
