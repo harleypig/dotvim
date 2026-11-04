@@ -43,8 +43,12 @@ function! Show(name) abort
   echo a:name . '=' . (type(l:value) == v:t_string ? l:value : string(l:value))
 endfunction
 EOF
+    echo 'messages clear'
     echo "setlocal filetype=$1"
     cat
+    echo "for s:line in split(execute('messages'), \"\\n\")"
+    echo "  echo 'message: ' . s:line"
+    echo 'endfor'
     echo 'redir END'
     echo 'qa!'
   } > "$tmp/test.vim"
@@ -53,11 +57,11 @@ EOF
 
   run cat "$report"
 
-  # Errors are read from what reached the user, not from v:errmsg: CI's
-  # Vim 9.1.0016 sets v:errmsg from inside a silent! in its own
-  # syntax/sh.vim (see load.bats).
-  refute_output --partial 'Error detected while processing'
-  refute_line --regexp '^E[0-9]+:'
+  # Errors are read from the message history, as load.bats reads them:
+  # CI's Vim 9.1.0016 writes the errors a silent! hides in its own
+  # syntax/sh.vim to the redirect, and sets v:errmsg from them, though
+  # they never reach the history.
+  refute_line --regexp '^message: (Error detected while processing|E[0-9]+:)'
 }
 
 ##############################################################################

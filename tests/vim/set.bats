@@ -20,14 +20,16 @@ setup() {
 }
 
 #-----------------------------------------------------------------------------
-# start_vim OPTION... - run Vim, then write v:errmsg and each OPTION's value
-# as OPTION=VALUE to $report and load it as $output.
+# start_vim OPTION... - run Vim, then write v:errmsg, whether this Vim has a
+# working 'clipboard' option, and each OPTION's value as OPTION=VALUE to
+# $report, and load it as $output.
 start_vim() {
   local tmp="$BATS_TEST_TMPDIR" option
 
   {
     echo "redir! > $report"
     echo "echo 'errmsg=' . v:errmsg"
+    echo "echo 'has_clipboard=' . exists('+clipboard')"
 
     for option in "$@"; do
       echo "echo '$option=' . &$option"
@@ -89,7 +91,14 @@ start_vim() {
 @test "editing: unnamed clipboard, <> pairs, no mouse, path of . and HOME" {
   start_vim clipboard matchpairs mouse path report shortmess virtualedit
 
-  assert_line --regexp '^clipboard=(.*,)?unnamed(,.*)?$'
+  # A Vim built without +clipboard, as CI's is, has no working 'clipboard'
+  # option: set.vim's line does nothing there and the option reads empty.
+  if [[ " ${lines[*]} " == *' has_clipboard=1 '* ]]; then
+    assert_line --regexp '^clipboard=(.*,)?unnamed(,.*)?$'
+  else
+    assert_line 'clipboard='
+  fi
+
   assert_line --regexp '^matchpairs=(.*,)?<:>$'
   assert_line --regexp '^matchpairs=(.*,)?\(:\)(,.*)?$'
   assert_line 'mouse='
