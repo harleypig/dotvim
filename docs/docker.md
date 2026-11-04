@@ -3,17 +3,11 @@
 This document outlines the support for Docker development within the Vim
 environment.
 
-Note: The configuration leverages CoC for language server features and
-vim-polyglot for syntax highlighting, providing a streamlined experience for
-working with Dockerfiles.
+Note: The configuration leverages CoC (through coc-docker) for language
+server features and vim-polyglot for syntax highlighting, providing a
+streamlined experience for working with Dockerfiles.
 
 ## External Packages Used
-
-Install via npm:
-
-* [`dockerfile-language-server-nodejs`][dockerfile-language-server-nodejs] -
-    Language server that provides intelligent code completion, validation, and
-    other language features for Dockerfiles.
 
 Install manually (no apt or dnf repository carries it; `bin/post-clone`
 prints these steps):
@@ -32,14 +26,14 @@ sudo install -m 755 hadolint-linux-x86_64 /usr/local/bin/hadolint
 * [`vim-polyglot`](https://github.com/sheerun/vim-polyglot) (Vim Plugin) -
     Provides enhanced syntax highlighting for Dockerfiles.
 * [`coc-docker`](https://github.com/josa42/coc-docker) (CoC Extension) -
-    Provides Docker integration for CoC.
+    Starts its own bundled copy of
+    [`dockerfile-language-server-nodejs`][dockerfile-language-server-nodejs],
+    so nothing needs installing for it.
 * [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Lints
     Dockerfiles with hadolint.
 
 ## Configuration Files Used
 
-* `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration
-    for the Dockerfile language server.
 * [`ale.vim`][ale.vim] - Sets hadolint as ALE's linter for Dockerfiles.
 
 ## Syntax Highlighting
@@ -49,18 +43,18 @@ syntax highlighting.
 
 ## Linting and Static Analysis
 
-* **Tools**: `dockerfile-language-server` via `CoC`, and `hadolint` via
-    `ALE`
-* **Configuration**: The language server in `coc-settings.json`; hadolint in
-    `ale.vim`
+* **Tools**: `dockerfile-language-server` via `coc-docker`, and `hadolint`
+    via `ALE`
+* **Configuration**: The language server uses coc-docker's defaults;
+    hadolint is set in `ale.vim`
 * **Usage**: Both report to ALE, which shows the problems in the gutter and
     the quickfix list (see [The Gutter](gutter.md))
 * **Features**: Syntax validation, best practices checking
 
 ## Auto Completion
 
-* **Tool**: `dockerfile-language-server` via `CoC`
-* **Configuration**: Configured in `coc-settings.json`
+* **Tool**: `dockerfile-language-server` via `coc-docker`
+* **Configuration**: coc-docker's defaults
 * **Features**: Directive completion, instruction completion, context-aware
     suggestions
 
