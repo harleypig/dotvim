@@ -87,7 +87,8 @@ highlighting.
     (`python.linting.flake8Enabled`), feeds it the buffer on standard input
     (`python.linting.flake8Stdin`), and passes `--append-config=.flake8`, so
     a project's `.flake8` file is read.
-* **Usage**: Errors and warnings appear in the quickfix list and gutter
+* **Usage**: CoC hands the problems to ALE, which shows them in the gutter
+    and the quickfix list (see [The Gutter](gutter.md))
 * **Features**: Type checking, style enforcement, syntax error detection
 
 ## Auto Completion

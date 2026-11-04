@@ -9,7 +9,7 @@ to ensure script quality and consistency.
 
 ## External Packages Used
 
-Install via package manager:
+Install via package manager (`bin/post-clone` installs both):
 
 * [`shellcheck`](https://github.com/koalaman/shellcheck) - A static analysis
     tool for shell scripts that provides warnings and suggestions for
@@ -17,13 +17,11 @@ Install via package manager:
 * [`shfmt`](https://github.com/mvdan/sh) - A shell parser, formatter, and
     interpreter with `bash` support.
 
-Install via npm:
-
-* [`bash-language-server`](https://github.com/bash-lsp/bash-language-server) -
-    A language server for `Bash` that provides intelligent code completion,
-    hover information, and more.
-* [`diagnostic-languageserver`][diagnostic-languageserver] -
-    Provides additional diagnostic capabilities for `shellcheck`.
+The two language servers need no install of their own: `coc-sh` bundles
+[`bash-language-server`](https://github.com/bash-lsp/bash-language-server),
+and `coc-diagnostic` bundles
+[`diagnostic-languageserver`][diagnostic-languageserver], which runs
+shellcheck.
 
 ## Plugins and Extensions Used
 
@@ -33,52 +31,62 @@ Install via npm:
     Intellisense engine that integrates with bash-language-server.
 * [`coc-sh`](https://github.com/josa42/coc-sh) (CoC Extension) - CoC extension
     that provides bash language server support.
-* [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Used for
-    linting shell scripts with shellcheck and formatting with shfmt.
+* [`coc-diagnostic`](https://github.com/iamcco/coc-diagnostic) (CoC
+    Extension) - Runs command-line linters as a language server; here, it
+    runs shellcheck on `sh` buffers.
+* [`ALE`](https://github.com/dense-analysis/ale) (Vim Plugin) - Formats
+    shell scripts with shfmt. It runs no shell linter.
 
 ## Configuration Files Used
 
-* `coc-settings` - Use `:CocConfig` to edit this file. Contains configuration
-    for the bash language server and shellcheck integration.
-* [`ale.vim`][ale.vim] - Global ALE configuration including shell script
-    linting and formatting settings.
-* [`sh.vim`][sh.vim] - Shell-specific settings for editing shell script files.
+* `coc-settings` - Use `:CocConfig` to edit this file. Sends `sh` buffers to
+    shellcheck through `coc-diagnostic` (`diagnostic-languageserver.filetypes`
+    and `diagnostic-languageserver.linters`).
+* [`sh.vim`][sh.vim] - Sets `g:is_bash`, and shfmt as ALE's fixer, with its
+    options and fixing on save.
 
 ## Syntax Highlighting
 
 Provided by `vim-polyglot`, which includes enhanced support for shell script
-syntax highlighting.
+syntax highlighting. `sh.vim` sets `g:is_bash`, so a file with the `sh`
+filetype is highlighted as bash.
 
 ## Linting and Static Analysis
 
-* **Tool**: `shellcheck` via `ALE` and `diagnostic-languageserver`
-* **Configuration**: Configured in `coc-settings.json` and `ale.vim`
-* **Usage**: Errors and warnings appear in the quickfix list and gutter
+* **Tool**: `shellcheck` via `coc-diagnostic`. ALE runs no linter for
+    `sh`: `g:ale_linters_explicit` is on and none is named for it.
+* **Configuration**: `coc-settings` reads shellcheck's JSON output and maps
+    its `style` level to a hint.
+* **Usage**: CoC hands the problems to ALE, which shows them in the gutter
+    and the quickfix list (see [The Gutter](gutter.md))
 * **Features**: Detects common shell script issues, suggests best practices
 
 ## Auto Completion
 
 * **Tool**: `bash-language-server` via `coc-sh`
-* **Configuration**: Configured in `coc-settings.json`
 * **Features**: Command completion, variable completion, path completion
 
 ## Formatting and Beautification
 
 * **Tool**: `shfmt` via `ALE`
-* **Configuration**: Set as a fixer in `ale.vim`
-* **Usage**: Automatically formats code on save or manually with `:ALEFix`
+* **Configuration**: Set as the buffer's only fixer in `sh.vim`, so the
+    trailing-whitespace fixers every other file gets do not run here. Its
+    options are `--indent 2 --simplify --binary-next-line --case-indent
+    --space-redirects`, kept in step with the shfmt keys in the
+    repository's `.editorconfig`.
+* **Usage**: Formats on save (`b:ale_fix_on_save`), or manually with
+    `:ALEFix`
 * **Features**: Consistent indentation, spacing, and line breaks
 
 ## Default or Inapplicable Sections
 
 The following features use default settings without additional configuration:
 
-* Error Highlighting (handled by ALE and CoC)
+* Error Highlighting (handled by ALE)
 * Code Folding (uses Vim's default folding mechanisms)
 * Snippets (not configured specifically for shell scripts)
 * Version Control Integration (uses global Git integration)
 * Filetype Detection (handled by Vim's built-in detection and vim-polyglot)
 
-[ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/ale.vim
 [sh.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/ftplugin/sh.vim
 [diagnostic-languageserver]: https://github.com/iamcco/diagnostic-languageserver

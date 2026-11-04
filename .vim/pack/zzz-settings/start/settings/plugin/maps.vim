@@ -25,6 +25,43 @@ else
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Add blank lines above or below without entering Insert mode; a count adds
+" that many.
+nnoremap <Leader>O :<C-U>call append(line('.') - 1, repeat([''], v:count1))<CR>
+nnoremap <Leader>o :<C-U>call append(line('.'), repeat([''], v:count1))<CR>
+
+" Substitute across the buffer, cursor left between the slashes. Normal mode
+" only: vim-surround maps Visual-mode S.
+nnoremap S :%s//g<Left><Left>
+
+nnoremap <silent> <Leader>y :if exists('syntax_on') <Bar> syntax off <Bar> else <Bar> syntax enable <Bar> endif<CR>
+
+nnoremap <Leader>b :ls<CR>:buffer<Space>
+
+" Yank to the end of the line, like D and C.
+nnoremap Y y$
+
+" Repeat, then put the cursor back where the change started. vim-repeat maps
+" . to its <Plug>(RepeatDot) the first time a plugin calls it, which would
+" silently replace this mapping, so its autoload file is loaded now and .
+" goes through it; without vim-repeat, through the built-in repeat.
+runtime autoload/repeat.vim
+
+if exists('g:loaded_repeat')
+  nmap . <Plug>(RepeatDot)`[
+else
+  nnoremap . .`[
+endif
+
+function! s:AppendModeline() abort
+  let l:modeline = printf(' vim: set ts=%d sw=%d tw=%d %set :',
+        \ &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
+  call append(0, substitute(&commentstring, '%s', l:modeline, ''))
+endfunction
+
+nnoremap <silent> <Leader>ml :call <SID>AppendModeline()<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Manual formatting with ALE
 nmap <leader>fb <Plug>(ale_fix)
 

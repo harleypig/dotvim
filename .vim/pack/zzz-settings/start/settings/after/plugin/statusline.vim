@@ -14,14 +14,16 @@
 set laststatus=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"hi StatusLine ctermbg=White ctermfg=Black
-hi StatusLine ctermbg=Black ctermfg=White
+" Leaving Insert mode or the command-line window restores these, so they
+" are written once.
+let s:statusline_colors = 'ctermbg=Black ctermfg=White'
+execute 'hi StatusLine' s:statusline_colors
 "hi User1 ctermbg=White ctermfg=Red
 "hi WarningMsg ctermbg=White ctermfg=Red
 au CmdwinEnter * hi StatusLine ctermbg=Gray ctermfg=Red
-au CmdwinLeave * hi StatusLine ctermbg=White ctermfg=Black
+au CmdwinLeave * execute 'hi StatusLine' s:statusline_colors
 au InsertEnter * hi StatusLine ctermbg=Yellow ctermfg=Blue
-au InsertLeave * hi StatusLine ctermbg=White ctermfg=Black
+au InsertLeave * execute 'hi StatusLine' s:statusline_colors
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Define the YASL configuration dictionary
@@ -39,8 +41,7 @@ if !exists("g:yasl")
     \   'mixed_indent': '[mixed indenting]',
     \   'expand_tab': '[&et]',
     \   'trailing_space': '[trailing space]',
-    \   'paste_mode': '[PASTE]',
-    \   'no_paste_mode': ''
+    \   'paste_mode': '[PASTE]'
     \ },
     \ 'format': {
     \   'non_unix_format': '*%s*',
@@ -105,6 +106,9 @@ function! YASL_Warnings()
     call add(l:warnings, printf(g:yasl.format.non_utf8_encoding, &fileencoding))
   endif
 
+  " The indent and trailing-space checks search the whole buffer, so their
+  " results are kept until the autocmd at the end of this file clears them.
+
   " Mixed indent warning
   if !exists("b:statusline_tab_warning")
     let b:statusline_tab_warning = ''
@@ -159,7 +163,6 @@ function! YASL_LinterStatus() abort
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_warnings = l:counts.warning + l:counts.style_warning
   let l:all_info = get(l:counts, 'info', 0)
-  let l:all_hints = get(l:counts, 'hint', 0)
 
   " Return null if there's nothing to display
   if l:counts.total == 0
@@ -179,10 +182,6 @@ function! YASL_LinterStatus() abort
 
   if l:all_info > 0
     let l:output .= '%#DiagnosticInfo#I' . l:all_info . '%*'
-  endif
-
-  if l:all_hints > 0
-    let l:output .= '%#DiagnosticHint#H' . l:all_hints . '%*'
   endif
 
   " Wrap in square brackets and add :\qf at the end
@@ -252,5 +251,7 @@ set statusline+=%(\ %{getfperm(expand('%'))}%)
 " What file are we editing?
 set statusline+=\ %-.20F
 
-" Force refresh of warnings in the statusline
-autocmd cursorhold,bufwritepost * let &ro=&ro
+" Recheck the indent and trailing-space warnings
+autocmd CursorHold,BufWritePost *
+  \ unlet! b:statusline_tab_warning b:statusline_trailing_space_warning
+  \ | redrawstatus

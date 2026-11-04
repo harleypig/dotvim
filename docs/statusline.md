@@ -22,9 +22,9 @@ Left-aligned, in order:
   * `[trailing space]` when any line ends in whitespace
   * `[PASTE]` when 'paste' is on
 
-  The indent and trailing-space checks are skipped in help buffers, and run
-  once per buffer, the first time its statusline is drawn. Editing the
-  buffer afterwards does not change them.
+  The indent and trailing-space checks are skipped in help buffers. They
+  search the whole buffer, so their results are kept, and checked again on
+  `CursorHold` and after each write.
 * **ALE counts**, only when ALE has problems for the buffer, such as
   `[E2W1I3:\qf]`: errors (style errors included), warnings (style warnings
   included) and info, each in its own highlight group. CoC's diagnostics
@@ -44,7 +44,8 @@ Right-aligned:
 * The full file path, cut to its last 20 characters, with `<` marking the
   cut.
 
-The statusline is redrawn on `CursorHold` and after each write.
+The statusline is redrawn on `CursorHold` and after each write, when the
+warnings are checked again.
 
 ## Colors
 
@@ -58,11 +59,13 @@ colors on screen:
 | Startup | `ctermbg=Black ctermfg=White` | black text on white |
 | Insert mode | `ctermbg=Yellow ctermfg=Blue` | yellow text on blue |
 | Command-line window | `ctermbg=Gray ctermfg=Red` | gray text on red |
-| After leaving either | `ctermbg=White ctermfg=Black` | white text on black |
 
-The startup colors and the ones restored on leaving Insert mode or the
-command-line window are opposites, so the Normal-mode statusline changes
-color the first time either is entered and left.
+Leaving Insert mode or the command-line window restores the startup colors.
+
+These colors show only with `termguicolors` off. It is on ([General Editor
+Settings](editor-settings.md)), and then Vim colors the terminal from each
+group's GUI colors, which `statusline.vim` does not set, so the statusline
+keeps Vim's default reverse video in every mode.
 
 The ALE counts use `DiagnosticError`, `DiagnosticWarning` and
 `DiagnosticInfo`, set in [`diagnostic-colors.vim`][diagnostic-colors.vim].
