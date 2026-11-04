@@ -1,34 +1,22 @@
 #!/usr/bin/env bats
 
-# Starts headless Vim on this checkout's .vimrc, never the installed one,
-# with HOME and the XDG directories inside the test's temp directory.
-# PATH holds only a stub directory, so whether node is "installed" is up to
-# each test. The node stub is a tripwire: CoC is told not to start its
-# server, so nothing should ever run it, and nothing reaches the network.
+# Whether CoC loads with and without Node.js, and what it maps. Vim runs
+# headless through helpers/vim.bash, whose PATH holds only a stub directory,
+# so whether node is "installed" is up to each test. The node stub is a
+# tripwire: CoC is told not to start its server, so nothing should ever run
+# it, and nothing reaches the network.
 
 bats_load_library bats-support
 bats_load_library bats-assert
+load helpers/vim
 
 ##############################################################################
 #-----------------------------------------------------------------------------
 setup() {
-  repo="$(cd "$BATS_TEST_DIRNAME/../.." && pwd)"
-  stubs="$BATS_TEST_TMPDIR/bin"
-  tripped="$BATS_TEST_TMPDIR/tripped"
-  report="$BATS_TEST_TMPDIR/report"
-  vim="$(type -P vim)"
-  mkdir -p "$stubs" "$BATS_TEST_TMPDIR/home"
+  vim_fixture
 
   [[ -f $repo/.vim/pack/300-intellisense/start/coc/plugin/coc.vim ]] \
     || fail "coc.nvim submodule is not checked out"
-
-  ln -s "$(type -P sh)" "$stubs/sh"
-}
-
-#-----------------------------------------------------------------------------
-with_node() {
-  printf '#!/bin/sh\necho "node $*" >> "%s"\n' "$tripped" > "$stubs/node"
-  chmod +x "$stubs/node"
 }
 
 #-----------------------------------------------------------------------------
@@ -54,13 +42,7 @@ EOF
 
   vim_status=0
 
-  timeout 30 env -i \
-    HOME="$tmp/home" PATH="$stubs" TERM=dumb \
-    XDG_DOTVIM="$repo" XDG_CONFIG_HOME="$tmp/config" \
-    XDG_DATA_HOME="$tmp/data" XDG_STATE_HOME="$tmp/state" \
-    XDG_CACHE_HOME="$tmp/cache" \
-    "$vim" -N -u "$repo/.vimrc" -es "$@" -S "$tmp/report.vim" \
-    || vim_status=$?
+  headless_vim "$@" -S "$tmp/report.vim" || vim_status=$?
 
   run cat "$report"
 }

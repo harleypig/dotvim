@@ -1,6 +1,6 @@
 # Testing
 
-**Version:** v0.1.0
+**Version:** v0.2.0
 
 What this repository tests, how, and where testing stops. The general bar
 (success and failure paths, a regression test with every bug fix, never
@@ -46,6 +46,21 @@ loaded with `bats_load_library`, so `BATS_LIB_PATH` must point at them.
   temporary directory. Run with `bats tests/vim`. It needs the plugin
   submodules checked out (`git submodule update --init`); Node.js is not
   needed, because the suite stubs it per test.
+
+### Shared helpers
+
+What more than one test file in a suite needs lives in that suite's
+`helpers/` directory, and a test file loads it with bats's `load`
+(`load helpers/<name>`), after the bats libraries. A new test file uses
+these rather than copying them:
+
+* `tests/shell/helpers/git-fixture.bash`: the throwaway git repositories the
+  submodule scripts run in, a source repository with bare clones of it
+  standing in for plugin remotes.
+* `tests/vim/helpers/vim.bash`: the headless Vim every Vim test runs. Its
+  `vim_fixture`, called from `setup`, builds the temporary `HOME`, the XDG
+  directories and the stub `PATH`; `headless_vim` runs Vim in them on this
+  checkout's `.vimrc`.
 
 ### Known departure: `tests/vim` can write help tags once
 

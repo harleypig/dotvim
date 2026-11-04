@@ -6,31 +6,27 @@
 # starts without an error, saves undo history there, and leaves nothing in
 # the directory it ran in.
 #
-# The harness is the one in coc.bats: headless Vim on this checkout's .vimrc,
-# HOME inside the test's temp directory, and a PATH holding only a stub
-# directory. Vim runs in an empty directory of its own, so anything it
-# creates there is visible.
+# Vim runs headless through helpers/vim.bash, with XDG_STATE_HOME and
+# XDG_DATA_HOME set only where a test sets them. It runs in an empty
+# directory of its own, so anything it creates there is visible.
 
 bats_load_library bats-support
 bats_load_library bats-assert
+load helpers/vim
 
 ##############################################################################
 #-----------------------------------------------------------------------------
 setup() {
-  repo="$(cd "$BATS_TEST_DIRNAME/../.." && pwd)"
-  stubs="$BATS_TEST_TMPDIR/bin"
-  report="$BATS_TEST_TMPDIR/report"
-  home="$BATS_TEST_TMPDIR/home"
-  cwd="$BATS_TEST_TMPDIR/cwd"
-  vim="$(type -P vim)"
-  mkdir -p "$stubs" "$home" "$cwd"
+  vim_fixture
+  vim_env_unset XDG_STATE_HOME XDG_DATA_HOME
 
-  ln -s "$(type -P sh)" "$stubs/sh"
+  cwd="$BATS_TEST_TMPDIR/cwd"
+  mkdir -p "$cwd"
 }
 
 #-----------------------------------------------------------------------------
-# start_vim [VAR=VALUE...] - run Vim in $cwd with the given XDG variables in
-# its environment and no others, then load what it reports as $output.
+# start_vim [VAR=VALUE...] - run Vim in $cwd with the given XDG variables
+# added to its environment, then load what it reports as $output.
 # Vim's exit status is left in $vim_status; in Ex mode it is non-zero when
 # any command raised an error.
 start_vim() {
@@ -53,9 +49,7 @@ EOF
 
   vim_status=0
 
-  (cd "$cwd" && timeout 30 env -i \
-    HOME="$home" PATH="$stubs" TERM=dumb XDG_DOTVIM="$repo" "$@" \
-    "$vim" -N -u "$repo/.vimrc" -es -S "$tmp/report.vim") \
+  (cd "$cwd" && headless_vim "$@" -- -S "$tmp/report.vim") \
     || vim_status=$?
 
   run cat "$report"

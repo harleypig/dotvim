@@ -4,13 +4,13 @@
 # did nothing). ALE pipes the buffer to shfmt on stdin, so the command ALE
 # builds for an sh buffer is run that way here, through the real shfmt.
 #
-# Vim itself runs in the harness from coc.bats: headless, on this checkout's
-# .vimrc, with HOME and the XDG directories inside the test's temp directory
-# and a PATH holding only stubs. Only the command it reports is run with the
-# test's own PATH, which is where shfmt has to be.
+# Vim itself runs headless through helpers/vim.bash, with a PATH holding only
+# stubs. Only the command it reports is run with the test's own PATH, which
+# is where shfmt has to be.
 
 bats_load_library bats-support
 bats_load_library bats-assert
+load helpers/vim
 
 ##############################################################################
 #-----------------------------------------------------------------------------
@@ -18,18 +18,14 @@ setup() {
   type -P shfmt > /dev/null \
     || skip "shfmt is not on PATH; the test runs the fixer's command with it"
 
-  repo="$(cd "$BATS_TEST_DIRNAME/../.." && pwd)"
-  stubs="$BATS_TEST_TMPDIR/bin"
+  vim_fixture
+
   script="$BATS_TEST_TMPDIR/script.sh"
   command_file="$BATS_TEST_TMPDIR/command"
-  vim="$(type -P vim)"
-  mkdir -p "$stubs" "$BATS_TEST_TMPDIR/home"
 
   local ale="$repo/.vim/pack/300-intellisense/start/ale"
   [[ -f $ale/autoload/ale/fixers/shfmt.vim ]] \
     || fail "ALE submodule is not checked out"
-
-  ln -s "$(type -P sh)" "$stubs/sh"
 }
 
 #-----------------------------------------------------------------------------
@@ -46,13 +42,7 @@ call writefile([substitute(s:command, '%s', shellescape(expand('%:p')), 'g')],
 qa!
 EOF
 
-  timeout 30 env -i \
-    HOME="$tmp/home" PATH="$stubs" TERM=dumb \
-    XDG_DOTVIM="$repo" XDG_CONFIG_HOME="$tmp/config" \
-    XDG_DATA_HOME="$tmp/data" XDG_STATE_HOME="$tmp/state" \
-    XDG_CACHE_HOME="$tmp/cache" \
-    "$vim" -N -u "$repo/.vimrc" -es "$1" -S "$tmp/command.vim" \
-    || true
+  headless_vim -- "$1" -S "$tmp/command.vim" || true
 
   [[ -s $command_file ]] || fail "Vim wrote no fixer command"
 }

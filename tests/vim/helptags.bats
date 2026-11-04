@@ -9,23 +9,19 @@
 # so no tags file from an earlier run can satisfy a check: each test states
 # what the directory holds before Vim starts.
 #
-# The harness is the one in coc.bats: headless Vim on this checkout's .vimrc,
-# HOME and the XDG directories inside the test's temp directory, and a PATH
-# holding only stubs.
+# Vim runs headless through helpers/vim.bash.
 
 bats_load_library bats-support
 bats_load_library bats-assert
+load helpers/vim
 
 ##############################################################################
 #-----------------------------------------------------------------------------
 setup() {
-  repo="$(cd "$BATS_TEST_DIRNAME/../.." && pwd)"
-  stubs="$BATS_TEST_TMPDIR/bin"
-  doc="$BATS_TEST_TMPDIR/home/.vim/doc"
-  vim="$(type -P vim)"
-  mkdir -p "$stubs" "$doc"
+  vim_fixture
 
-  ln -s "$(type -P sh)" "$stubs/sh"
+  doc="$home/.vim/doc"
+  mkdir -p "$doc"
 
   printf '*dotvim-demo*\tA help file for the helptags tests.\n' \
     > "$doc/dotvim-demo.txt"
@@ -35,17 +31,9 @@ setup() {
 # start_vim - start Vim and quit. Its exit status is left in $vim_status; in
 # Ex mode it is non-zero when any command raised an error.
 start_vim() {
-  local tmp="$BATS_TEST_TMPDIR"
-
   vim_status=0
 
-  timeout 30 env -i \
-    HOME="$tmp/home" PATH="$stubs" TERM=dumb \
-    XDG_DOTVIM="$repo" XDG_CONFIG_HOME="$tmp/config" \
-    XDG_DATA_HOME="$tmp/data" XDG_STATE_HOME="$tmp/state" \
-    XDG_CACHE_HOME="$tmp/cache" \
-    "$vim" -N -u "$repo/.vimrc" -es -c 'qa!' \
-    || vim_status=$?
+  headless_vim -c 'qa!' || vim_status=$?
 }
 
 #-----------------------------------------------------------------------------

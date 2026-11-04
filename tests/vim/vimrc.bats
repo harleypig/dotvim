@@ -5,31 +5,24 @@
 # is in, through a symlink if it was reached through one (#137 - unset
 # XDG_DOTVIM loaded none of the settings).
 #
-# The harness is the one in coc.bats: headless Vim, HOME and the XDG
-# directories inside the test's temp directory, and a PATH holding only a
-# stub directory. Silent Ex mode reads no vimrc of its own accord, so the
+# Vim runs headless through helpers/vim.bash, with XDG_DOTVIM set only where
+# a test sets it. Silent Ex mode reads no vimrc of its own accord, so the
 # symlink case names ~/.vimrc with -u, as a plain `vim` would find it.
 
 bats_load_library bats-support
 bats_load_library bats-assert
+load helpers/vim
 
 ##############################################################################
 #-----------------------------------------------------------------------------
 setup() {
-  repo="$(cd "$BATS_TEST_DIRNAME/../.." && pwd)"
-  stubs="$BATS_TEST_TMPDIR/bin"
-  report="$BATS_TEST_TMPDIR/report"
-  home="$BATS_TEST_TMPDIR/home"
-  vim="$(type -P vim)"
-  mkdir -p "$stubs" "$home"
-
-  ln -s "$(type -P sh)" "$stubs/sh"
+  vim_fixture
+  vim_env_unset XDG_DOTVIM
 }
 
 #-----------------------------------------------------------------------------
 # start_vim VIMRC [VAR=VALUE...] - run Vim on VIMRC with the given variables
-# in its environment besides HOME, PATH, TERM and the XDG state and data
-# directories, then load what it reports as $output.
+# added to its environment, then load what it reports as $output.
 start_vim() {
   local tmp="$BATS_TEST_TMPDIR"
   local vimrc=$1
@@ -45,10 +38,7 @@ redir END
 qa!
 EOF
 
-  timeout 30 env -i \
-    HOME="$home" PATH="$stubs" TERM=dumb \
-    XDG_DATA_HOME="$tmp/data" XDG_STATE_HOME="$tmp/state" "$@" \
-    "$vim" -N -u "$vimrc" -es -S "$tmp/report.vim" || true
+  headless_vim "$@" -- -S "$tmp/report.vim" || true
 
   run cat "$report"
 }
