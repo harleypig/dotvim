@@ -21,10 +21,15 @@ let s:statusline_colors = 'ctermbg=Black ctermfg=White guibg=Black guifg=White'
 execute 'hi StatusLine' s:statusline_colors
 "hi User1 ctermbg=White ctermfg=Red
 "hi WarningMsg ctermbg=White ctermfg=Red
-au CmdwinEnter * hi StatusLine ctermbg=Gray ctermfg=Red guibg=Gray guifg=Red
-au CmdwinLeave * execute 'hi StatusLine' s:statusline_colors
-au InsertEnter * hi StatusLine ctermbg=Yellow ctermfg=Blue guibg=Yellow guifg=Blue
-au InsertLeave * execute 'hi StatusLine' s:statusline_colors
+
+" The group lets this file be sourced again without adding its autocmds twice.
+augroup statusline
+  autocmd!
+  au CmdwinEnter * hi StatusLine ctermbg=Gray ctermfg=Red guibg=Gray guifg=Red
+  au CmdwinLeave * execute 'hi StatusLine' s:statusline_colors
+  au InsertEnter * hi StatusLine ctermbg=Yellow ctermfg=Blue guibg=Yellow guifg=Blue
+  au InsertLeave * execute 'hi StatusLine' s:statusline_colors
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Define the YASL configuration dictionary
@@ -253,6 +258,8 @@ set statusline+=%(\ %{getfperm(expand('%'))}%)
 set statusline+=\ %-.20F
 
 " Recheck the indent and trailing-space warnings
-autocmd CursorHold,BufWritePost *
-  \ unlet! b:statusline_tab_warning b:statusline_trailing_space_warning
-  \ | redrawstatus
+augroup statusline
+  autocmd CursorHold,BufWritePost *
+    \ unlet! b:statusline_tab_warning b:statusline_trailing_space_warning
+    \ | redrawstatus
+augroup END

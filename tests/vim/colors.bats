@@ -102,3 +102,26 @@ EOF
   assert_line 'CocHintSign=LightGrey/Black'
 }
 
+#-----------------------------------------------------------------------------
+# Red while statusline.vim's autocmds sit outside an augroup, so each
+# re-source adds another copy (#44 - re-sourcing stacks autocmds).
+@test "re-sourcing statusline.vim does not add its autocmds again" {
+  run_vim <<'EOF'
+let s:file = globpath(&runtimepath, 'after/plugin/statusline.vim')
+function! Count(event)
+  return len(filter(split(execute('autocmd ' . a:event), "\n"),
+    \ {_, line -> line =~# 'StatusLine\|statusline_tab_warning'}))
+endfunction
+let s:before = map(['InsertEnter', 'InsertLeave', 'CmdwinEnter',
+  \ 'CmdwinLeave', 'CursorHold', 'BufWritePost'], {_, e -> Count(e)})
+execute 'source' s:file
+execute 'source' s:file
+let s:after = map(['InsertEnter', 'InsertLeave', 'CmdwinEnter',
+  \ 'CmdwinLeave', 'CursorHold', 'BufWritePost'], {_, e -> Count(e)})
+echo 'before=' . join(s:before, ',')
+echo 'after=' . join(s:after, ',')
+EOF
+
+  assert_line 'before=1,1,1,1,1,1'
+  assert_line 'after=1,1,1,1,1,1'
+}
