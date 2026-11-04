@@ -15,8 +15,8 @@ external packages must be installed:
 * [`Node.js`](https://nodejs.org/) - A JavaScript runtime built on Chrome's V8
     JavaScript engine, required for running the CoC extension host. The
     minimum version is in the [README's Requirements][requirements].
-* [`npm`](https://www.npmjs.com/) or [`yarn`](https://yarnpkg.com/) - Package
-    managers for JavaScript, used to install CoC extensions.
+* [`npm`](https://www.npmjs.com/) - Package manager for JavaScript, used to
+    install CoC extensions.
 
 ### Node.js Installation Options
 
@@ -48,25 +48,15 @@ nvm install --lts  # Install latest LTS version
 nvm use --lts      # Use the installed LTS version
 ```
 
-#### Installing npm and yarn
+#### Installing npm
 
-**npm:** npm comes bundled with Node.js. After installing Node.js using nvm,
-npm will be available.
+npm comes bundled with Node.js. After installing Node.js using nvm, npm will
+be available.
 
 To verify:
 
 ```bash
 npm --version
-```
-
-**yarn:**
-
-```bash
-# Install yarn using npm
-npm install -g yarn
-
-# Verify installation
-yarn --version
 ```
 
 ## Plugins and Extensions Used
@@ -94,9 +84,8 @@ Configuration for ALE and CoC is managed through the following files:
 ### Settings for CoC
 
 * Diagnostics are handed to ALE for display (`diagnostic.displayByAle`),
-    which turns off CoC's own diagnostic display. The `diagnostic.virtualText`
-    settings in `coc-settings` therefore have no effect, and ALE's virtual
-    text is disabled too, so no inline diagnostic messages appear.
+    which turns off CoC's own diagnostic display. ALE's virtual text is
+    disabled too, so no inline diagnostic messages appear.
 * Preferences for CoC are set to disable automatic formatting on save, check
     for extension updates daily, and use quickfix for navigation.
     Additionally, auto-updating of the current function symbol is enabled, and
@@ -147,11 +136,14 @@ The early `ale.vim` sets how ALE behaves:
 
 The late `ale.vim` holds what ALE runs:
 
-* For every file type, the fixers remove trailing blank lines at the end of
-    the file and trailing whitespace.
-* The linter and fixer lists for awk, Dockerfile, JSONC, Markdown,
-    PowerShell, SQL, systemd, TOML and Vim help. Other file types set theirs
-    in their `after/ftplugin/` file.
+* For every file type with no fixers of its own, the fixers remove trailing
+    blank lines at the end of the file and trailing whitespace. ALE runs
+    these only when nothing names fixers for the file type, so a file type
+    that has its own, such as Markdown or shell, does not get them.
+* The linters for awk, Dockerfile, Markdown, PowerShell, SQL and systemd,
+    and the fixers for JSONC, Markdown and SQL. Other file types set theirs
+    in their `after/ftplugin/` file. JSONC, TOML and Vim help have no
+    linter, so ALE lints none of them.
 
 `<leader>fb` runs ALE's fixers on the current buffer (`<Plug>(ale_fix)`). It
 is defined in `maps.vim`, not in either `ale.vim`.

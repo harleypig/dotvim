@@ -19,7 +19,8 @@ work as usual.
     CoC supports
 * **Installation**:
   * **Arch Linux**: `pacman -S nodejs npm`
-  * **Ubuntu**: `apt install nodejs npm`
+  * **Ubuntu 24.04 or later**: `apt install nodejs npm` (24.04 ships
+      Node.js 18; 22.04 ships 12, below the minimum, so use nvm there)
   * **Alternative**: Use [Node Version Manager
       (nvm)](https://github.com/nvm-sh/nvm) for version management
 
@@ -34,7 +35,7 @@ documentation files in the `docs/` directory.
 
 Vim runs this configuration from the checkout; nothing is copied into
 `~/.vim`. The plugins are git submodules, so fetch them first, then start
-Vim with three environment variables set. From the top of the checkout:
+Vim with `XDG_DOTVIM` set to the checkout. From the top of the checkout:
 
 ```bash
 git submodule update --init
@@ -44,18 +45,17 @@ export XDG_DATA_HOME="$HOME/.local/share"
 vim -N -u "$XDG_DOTVIM/.vimrc"
 ```
 
-The two `XDG_` values shown are the XDG defaults; any directories will do.
-`-u` on its own leaves Vim in Vi-compatible mode, which this `.vimrc` cannot
-load in, hence `-N`. A `~/.vimrc` symlinked to this repository's `.vimrc`
-needs neither flag.
+The other two `XDG_` values shown are the XDG defaults, which the settings
+fall back to when either is unset or empty; set them only to choose other
+directories. `-u` on its own leaves Vim in Vi-compatible mode, which this
+`.vimrc` cannot load in, hence `-N`. A `~/.vimrc` symlinked to this
+repository's `.vimrc` needs neither flag.
 
 * `XDG_DOTVIM` puts the checkout's `.vim` directory at the front of
   `runtimepath` and `packpath`.
 * `$XDG_STATE_HOME/vim` holds the backup, swap, undo and view directories
   and the viminfo file. `$XDG_DATA_HOME/vim` is netrw's home and holds a
   `spell` directory. Startup creates the directories.
-* Without `XDG_STATE_HOME` and `XDG_DATA_HOME`, startup errors, and leaves
-  a directory literally named `$XDG_STATE_HOME` in the current directory.
 
 ### What it deletes
 

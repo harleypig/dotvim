@@ -12,7 +12,6 @@ specific to this repository.
 Our code is what this repository writes:
 
 * `bin/`, the install and maintenance scripts.
-* `tools/`, the helper scripts and their configs.
 * `.vimrc`.
 * The early and late settings, which git tracks under
   `.vim/pack/000-settings/start/settings/` and
