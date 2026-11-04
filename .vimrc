@@ -23,11 +23,6 @@ set runtimepath^=$XDG_DOTVIM/.vim
 set packpath^=$XDG_DOTVIM/.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use coc for lsp functions, not ale. This needs to be disabled before ALE is
-" loaded, so we're doing it here.
-let g:ale_disable_lsp = 1
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin indent on
 syntax on
 
