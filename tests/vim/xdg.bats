@@ -3,7 +3,8 @@
 # Where the XDG settings put Vim's state and data: under XDG_STATE_HOME and
 # XDG_DATA_HOME when they are set, and under the XDG defaults,
 # ~/.local/state and ~/.local/share, when they are not. Either way Vim
-# starts without an error and leaves nothing in the directory it ran in.
+# starts without an error, saves undo history there, and leaves nothing in
+# the directory it ran in.
 #
 # The harness is the one in coc.bats: headless Vim on this checkout's .vimrc,
 # HOME inside the test's temp directory, and a PATH holding only a stub
@@ -41,6 +42,7 @@ echo 'errmsg=' . v:errmsg
 messages
 echo 'backupdir=' . &backupdir
 echo 'undodir=' . &undodir
+echo 'undofile=' . &undofile
 echo 'directory=' . &directory
 echo 'viewdir=' . &viewdir
 echo 'viminfofile=' . &viminfofile
@@ -61,7 +63,8 @@ EOF
 
 #-----------------------------------------------------------------------------
 # assert_xdg_dirs STATE DATA - the settings point into STATE and DATA, the
-# directories exist, and Vim raised nothing and left $cwd empty.
+# directories exist, undo history is saved, and Vim raised nothing and left
+# $cwd empty.
 assert_xdg_dirs() {
   local state=$1 data=$2
 
@@ -72,6 +75,7 @@ assert_xdg_dirs() {
 
   assert_line "backupdir=$state/vim/backup"
   assert_line "undodir=$state/vim/undo"
+  assert_line 'undofile=1'
   assert_line "directory=$state/vim/swap"
   assert_line "viewdir=$state/vim/view"
   assert_line "viminfofile=$state/vim/viminfo"

@@ -23,14 +23,12 @@ picked it on 2026-10-31 (#57 - record the area label set).
   `diagnostic-colors.vim` in the late settings. Also the CoC, ALE and
   no-Node lines in `.vimrc`, and `tests/vim/coc.bats`.
 * `area:filetypes`: per-language setup. The late settings'
-  `after/ftplugin/*.vim`, `checkfiletype.vim`, the per-language pages in
-  `docs/` and `docs/LANGUAGE_SETUP_TEMPLATE.md`, and the Perl linter helpers
-  in `tools/`. One language's linter settings land here; CoC and ALE
-  settings shared by every language land in intellisense.
+  `after/ftplugin/*.vim`, and the per-language pages in `docs/` and
+  `docs/LANGUAGE_SETUP_TEMPLATE.md`. One language's linter settings land
+  here; CoC and ALE settings shared by every language land in intellisense.
 * `area:editor`: core editor behaviour. The rest of `.vimrc` and of the late
   settings: `set.vim`, `maps.vim`, the quickfix toggle, the statusline,
-  gutter, colours, diff, XDG paths and in-editor help. Also `OLD_FILES/`,
-  which is waiting to be merged.
+  gutter, colours, diff options, XDG paths and in-editor help.
 * `area:plugin-submodules`: which third-party plugins are installed and from
   where. The submodules under `.vim/pack/` (every directory there except
   `000-settings` and `zzz-settings`, which are ours), `.gitmodules`, the

@@ -18,7 +18,6 @@ set   listchars=tab:\ \   " list of strings used for list mode
 set   showcmd             " show (partial) command in the last line of the screen
 set   showmatch           " when inserting a bracket, briefly jump to its match
 set   termguicolors       " use GUI colors for the terminal
-set   terse               " shorten some messages
 set   title               " show info in the window title
 set   wildmenu            " command-line completion shows a list of matches
 "set   spell              " enable spell checking
@@ -52,7 +51,6 @@ set   wildmode=list:longest,full  " specifies how command line completion works
 " Text Wrapping
 
 set   formatoptions=tcroq1  " how automatic formatting works
-set   wrapmargin=2          " margin from the right where wrapping starts
 set   backspace=indent,eol,start  " how backspace works at start of line
 set   textwidth=78          " maximum width of text being inserted
 
@@ -90,10 +88,14 @@ set   smartcase             " override 'ignorecase' when pattern has upper case 
 " ----------------------------------------------------------------------------
 " Display
 
-set   scroll=11             " number of lines to scroll for CTRL-U and CTRL-D
 set   scrolloff=999999      " number of screen lines to show around the cursor
 set   wrap                  " long lines wrap
 set   linebreak             " wrap long lines at a character in 'breakat'
 set   display=uhex,lastline " include "lastline" to show the last line even if it doesn't fit
 set   foldlevelstart=99     " start editing with all folds opened
 set   concealcursor=nc      " modes in which text in the cursor line can be concealed
+
+" ----------------------------------------------------------------------------
+" Diff
+
+set   diffopt+=algorithm:patience " match unique lines first

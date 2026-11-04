@@ -44,6 +44,8 @@ call CleanOldFiles(s:state.'/vim', 'viminfo', 180)
 let &undodir = s:state.'/vim/undo' | call mkdir(&undodir,   'p')
 call CleanOldFiles(&undodir, '*', 90)
 
+set undofile
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:netrw_home = s:data.'/vim'
 call mkdir(s:data.'/vim/spell', 'p')
