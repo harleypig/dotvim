@@ -243,7 +243,7 @@ EOF
   assert_line "fixers[*]=['remove_trailing_lines', 'trim_whitespace']"
   assert_line "fixers[json]=['jq']"
   assert_line "fixers[jsonc]=['jq']"
-  assert_line "fixers[markdown]=['prettier']"
+  assert_line "fixers[markdown]='missing'"
   assert_line "fixers[sql]=['sqlformat']"
   assert_no_error_message
 

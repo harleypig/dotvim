@@ -131,17 +131,16 @@ these highlight groups from it at startup and again after every
 
 | Level | Terminal colors | GUI colors | Groups |
 | ----- | --------------- | ---------- | ------ |
-| error | white on dark red | white on dark red | `ALEErrorSign`, `CocErrorSign`, `ALEVirtualTextError`, `DiagnosticError` |
-| warning | black on yellow | black on gold | `ALEWarningSign`, `CocWarningSign`, `ALEVirtualTextWarning`, `DiagnosticWarning` |
-| info | white on blue | white on royal blue | `ALEInfoSign`, `CocInfoSign`, `ALEVirtualTextInfo`, `DiagnosticInfo` |
+| error | white on dark red | white on dark red | `ALEErrorSign`, `CocErrorSign`, `DiagnosticError` |
+| warning | black on yellow | black on gold | `ALEWarningSign`, `CocWarningSign`, `DiagnosticWarning` |
+| info | white on blue | white on royal blue | `ALEInfoSign`, `CocInfoSign`, `DiagnosticInfo` |
 | hint | black on light grey | black on light grey | `CocHintSign` |
 
 `termguicolors` is on, so the GUI colors are the ones shown, in a terminal
 too. The `ALE*Sign` groups color the gutter's signs and the `Diagnostic*`
-groups color the statusline's ALE counts. The `Coc*Sign` and
-`ALEVirtualText*` groups are set but do not show today: CoC hands its
-diagnostics to ALE instead of placing signs, and ALE's virtual text is off
-([ALE and CoC Setup](coc-ale-setup.md)).
+groups color the statusline's ALE counts. The `Coc*Sign` groups are set
+but do not show today: CoC hands its diagnostics to ALE instead of placing
+signs ([ALE and CoC Setup](coc-ale-setup.md)).
 
 ## Default or Inapplicable Sections
 
