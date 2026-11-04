@@ -2,7 +2,8 @@
 
 This document outlines the support for HashiCorp tools development within the
 Vim environment: Terraform files (`terraform` filetype) and other HCL files
-(`hcl`).
+(`hcl`). Packer templates (`*.pkr.hcl`, `*.pkrvars.hcl`) get the `hcl`
+filetype, so they use the HCL setup on this page.
 
 Note: The configuration leverages language servers for enhanced functionality
 over built-in options, providing more comprehensive language support for

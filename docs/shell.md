@@ -5,7 +5,8 @@ environment.
 
 Note: While Vim has built-in syntax highlighting for shell scripts, external
 tools are used to provide enhanced functionality like linting and formatting
-to ensure script quality and consistency.
+to ensure script quality and consistency. Bats test files get the `sh`
+filetype and this setup; what differs for them is on [Bats](bats.md).
 
 ## External Packages Used
 

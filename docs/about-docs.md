@@ -123,6 +123,12 @@ hold a link too long to break.
 | `docs/shell.md` | Language setup | Reworked to template ([#9]); broken paths fixed ([#13]). shellcheck is credited to `coc-diagnostic` and shfmt to `sh.vim` ([#104]). |
 | `docs/toml.md` | Language setup | Reworked to template ([#9]). |
 | `docs/yaml.md` | Language setup | Reworked to template ([#9]). Says how Ansible files are detected ([#104]). |
+| `docs/awk.md` | Language setup | Added: the gawk linter ([#22]). |
+| `docs/bats.md` | Language setup | Added: Bats files are shell scripts to Vim, so it points at `shell.md` and notes what differs ([#22]). |
+| `docs/markdown.md` | Language setup | Added: markdownlint and proselint, how markdownlint finds its configuration, and why there is no Markdown fixer ([#22]). |
+| `docs/powershell.md` | Language setup | Added: the `pwsh` syntax check ([#22]). |
+| `docs/sql.md` | Language setup | Added: the sqlint linter and the sqlformat fixer ([#22]). |
+| `docs/systemd.md` | Language setup | Added: the `systemd-analyze verify` linter ([#22]). |
 | `docs/scripts.md` | Script usage | Added: lists the `bin/` scripts and what each is for; usage stays in each `--help` ([#10]). |
 | `late-settings/doc/learning.txt` | `:help` | Keep; the model for in-editor docs. |
 
@@ -174,6 +180,7 @@ three places ([#14]), and bugs in `bin/check-setup` ([#15]).
 [#13]: https://github.com/harleypig/dotvim/issues/13
 [#14]: https://github.com/harleypig/dotvim/issues/14
 [#15]: https://github.com/harleypig/dotvim/issues/15
+[#22]: https://github.com/harleypig/dotvim/issues/22
 [#34]: https://github.com/harleypig/dotvim/issues/34
 [#40]: https://github.com/harleypig/dotvim/issues/40
 [#42]: https://github.com/harleypig/dotvim/issues/42
