@@ -5,27 +5,22 @@
 # do not stack when re-sourced, settings kept to the buffer, and branches
 # left for plugins that are not installed.
 #
-# The harness is the one in coc.bats: headless Vim on this checkout's .vimrc,
-# HOME and the XDG directories inside the test's temp directory, and a PATH
-# holding only a stub directory, so CoC stays off unless a test adds node.
+# Vim runs headless through helpers/vim.bash, whose PATH holds only a shell,
+# so CoC stays off unless a test adds node.
 
 bats_load_library bats-support
 bats_load_library bats-assert
+load helpers/vim
 
 ##############################################################################
 #-----------------------------------------------------------------------------
 setup() {
-  repo="$(cd "$BATS_TEST_DIRNAME/../.." && pwd)"
+  vim_fixture
+
   settings="$repo/.vim/pack/zzz-settings/start/settings"
-  stubs="$BATS_TEST_TMPDIR/bin"
-  report="$BATS_TEST_TMPDIR/report"
-  vim="$(type -P vim)"
-  mkdir -p "$stubs" "$BATS_TEST_TMPDIR/home"
 
   [[ -f $repo/.vim/pack/300-intellisense/start/coc/plugin/coc.vim ]] \
     || fail "coc.nvim submodule is not checked out"
-
-  ln -s "$(type -P sh)" "$stubs/sh"
 }
 
 #-----------------------------------------------------------------------------
@@ -48,12 +43,7 @@ start_vim() {
     echo 'qa!'
   } > "$tmp/report.vim"
 
-  timeout 30 env -i \
-    HOME="$tmp/home" PATH="$stubs" TERM=dumb \
-    XDG_DOTVIM="$repo" XDG_CONFIG_HOME="$tmp/config" \
-    XDG_DATA_HOME="$tmp/data" XDG_STATE_HOME="$tmp/state" \
-    XDG_CACHE_HOME="$tmp/cache" \
-    "$vim" -N -u "$repo/.vimrc" -es "$@" -S "$tmp/report.vim" || true
+  headless_vim -- "$@" -S "$tmp/report.vim" || true
 
   run cat "$report"
 }
