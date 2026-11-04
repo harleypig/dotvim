@@ -158,4 +158,4 @@ already shows Git change signs in the gutter.
 _Note: Plugins marked with * have functionality that may be partially covered
 by CoC or ALE._
 
-[fugitive-azure-devops]: https://github.com/cedarbaum/fugitive-azure-devops.vim.git
+[fugitive-azure-devops]: https://github.com/cedarbaum/fugitive-azure-devops.vim

@@ -10,12 +10,16 @@ HashiCorp's domain-specific languages.
 
 ## External Packages Used
 
-Install via package manager:
+Install from HashiCorp: neither Ubuntu's nor Fedora's repositories carry
+these, so `bin/post-clone` lists them to install by hand, with HashiCorp's
+install pages.
 
 * [`terraform`](https://www.terraform.io/) - Infrastructure as code tool for
-    provisioning and managing cloud infrastructure.
+    provisioning and managing cloud infrastructure. See
+    [Install Terraform][terraform-install].
 * [`terraform-ls`](https://github.com/hashicorp/terraform-ls) - Language
-    server providing Terraform language support for editors and IDEs.
+    server providing Terraform language support for editors and IDEs. See
+    its [installation page][terraform-ls-install].
 
 Install manually:
 
@@ -54,7 +58,8 @@ sudo install -m 755 tflint /usr/local/bin/
 ## Configuration Files Used
 
 * `coc-settings` - Use `:CocConfig` to edit this file. Runs terraform-ls for
-    the `terraform` and `tf` filetypes.
+    the `terraform` filetype. Vim's `tf` filetype is TinyFugue, not
+    Terraform, so it is not listed.
 * [`terraform.vim`][terraform.vim] - The ALE linter and fixer, folding and
     comment string for Terraform files.
 * [`hcl.vim`][hcl.vim] - The ALE fixer, folding and comment string for HCL
@@ -111,3 +116,5 @@ The following features use default settings without additional configuration:
 
 [terraform.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/ftplugin/terraform.vim
 [hcl.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/ftplugin/hcl.vim
+[terraform-install]: https://developer.hashicorp.com/terraform/install
+[terraform-ls-install]: https://github.com/hashicorp/terraform-ls/blob/main/docs/installation.md
