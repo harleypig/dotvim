@@ -28,8 +28,7 @@ Install via package manager:
 
 * [`json.vim`][json.vim] - Sets jq as ALE's fixer for JSON and JSONC files
     and turns on syntax folding. It runs only for `json` and `jsonc` buffers,
-    and only with filetype plugins on.
-* [`ale.vim`][ale.vim] - Also sets jq as the JSONC fixer.
+    and only with filetype plugins on; Vim's own `jsonc` ftplugin sources it.
 
 ## Syntax Highlighting
 
@@ -75,5 +74,4 @@ The following features use default settings without additional configuration:
 * Snippets (not configured specifically for JSON)
 * Filetype Detection (handled by vim-polyglot)
 
-[ale.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/plugin/ale.vim
 [json.vim]: https://github.com/harleypig/dotvim/blob/master/.vim/pack/zzz-settings/start/settings/after/ftplugin/json.vim

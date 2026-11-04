@@ -1,5 +1,5 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! CleanOldFiles(directory, pattern, days) abort
+function! s:CleanOldFiles(directory, pattern, days) abort
   let l:current_time = localtime()
   let l:target_time = l:current_time - (a:days * 24 * 60 * 60)
   let l:files = split(globpath(a:directory, a:pattern), "\n")
@@ -18,7 +18,7 @@ let s:state = empty($XDG_STATE_HOME) ? $HOME.'/.local/state' : $XDG_STATE_HOME
 let s:data  = empty($XDG_DATA_HOME)  ? $HOME.'/.local/share' : $XDG_DATA_HOME
 
 let &backupdir = s:state.'/vim/backup' | call mkdir(&backupdir, 'p')
-call CleanOldFiles(&backupdir, '*', 90)
+call s:CleanOldFiles(&backupdir, '*', 90)
 
 " see :h backup-table
 " backup writebackup  action
@@ -38,11 +38,11 @@ set   writebackup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let &viminfofile = s:state.'/vim/viminfo'
 set viminfo=%10,'50,s1000,/1000,:1000
-call CleanOldFiles(s:state.'/vim', 'viminfo', 180)
+call s:CleanOldFiles(s:state.'/vim', 'viminfo', 180)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let &undodir = s:state.'/vim/undo' | call mkdir(&undodir,   'p')
-call CleanOldFiles(&undodir, '*', 90)
+call s:CleanOldFiles(&undodir, '*', 90)
 
 set undofile
 
@@ -50,8 +50,13 @@ set undofile
 let g:netrw_home = s:data.'/vim'
 call mkdir(s:data.'/vim/spell', 'p')
 
+" Left empty, zg puts the word under the first writable directory on the
+" runtimepath, which is this checkout's .vim. Vim needs the name to end in
+" .{encoding}.add.
+let &spellfile = s:data.'/vim/spell/en.'.&encoding.'.add'
+
 let &directory = s:state.'/vim/swap'   | call mkdir(&directory, 'p')
-call CleanOldFiles(&directory, '*', 90)
+call s:CleanOldFiles(&directory, '*', 90)
 
 let &viewdir = s:state.'/vim/view'     | call mkdir(&viewdir,   'p')
-call CleanOldFiles(&viewdir, '*', 90)
+call s:CleanOldFiles(&viewdir, '*', 90)

@@ -3,5 +3,5 @@ let g:vim_indent = #{
   \ }
 
 " vim-language-server comes through CoC (coc-vimlsp); ALE skips LSP linters
-" because .vimrc sets g:ale_disable_lsp.
+" because the early ale.vim sets g:ale_disable_lsp.
 let b:ale_linters = ['vint']

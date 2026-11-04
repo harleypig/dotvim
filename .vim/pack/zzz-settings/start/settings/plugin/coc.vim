@@ -4,22 +4,22 @@ if !exists(':CocStart')
 endif
 
 " use <tab> for trigger completion and navigate to the next complete item
-function! CheckBackspace() abort
+function! s:CheckBackspace() abort
   let l:col = col('.') - 1
   return !l:col || getline('.')[l:col - 1]  =~# '\s'
 endfunction
 
 inoremap <silent><expr> <Tab>
   \ coc#pum#visible() ? coc#pum#next(1) :
-  \ exists('b:_copilot') ? copilot#Accept("\<CR>") :
-  \ CheckBackspace() ? "\<Tab>" :
+  \ <SID>CheckBackspace() ? "\<Tab>" :
   \ coc#refresh()
 
 " Use <cr> to confirm completion, <c-g>u to break undo chain.
-inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+inoremap <silent><expr> <cr>
+  \ coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
-" Use <c-space> to trigger completion if not using copilot.
-inoremap <silent><expr> <c-@> exists('b:_copilot') ? "\<C-@>" : coc#refresh()
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-@> coc#refresh()
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)

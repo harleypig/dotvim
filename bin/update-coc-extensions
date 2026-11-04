@@ -5,8 +5,10 @@ usage() {
   cat << EOF2
 Usage: ${0##*/}
 
-Rewrite the g:coc_global_extensions list in .vimrc from the CoC extensions
-installed on this machine, sorted by name. Run from the top of the
+Add the CoC extensions installed on this machine to the
+g:coc_global_extensions list in .vimrc, and sort the list by name. An
+extension already listed stays, installed here or not, so the list keeps
+what other machines install; remove one by hand. Run from the top of the
 repository. Installed extensions are read from package.json in
 \$COC_EXTENSIONS_DIR, which defaults to coc/extensions in \$XDG_CONFIG_HOME
 when that is a directory, as CoC itself does, and to ~/.config/coc/extensions
@@ -41,20 +43,20 @@ names=$(jq -r '.dependencies // {} | keys[]' "$package") \
 
 [[ -n $names ]] || die "No CoC extensions are installed in $package."
 
-readarray -t extensions <<< "$names"
-
 [[ -w .vimrc ]] \
   || die "No writable .vimrc here; run from the top of the repository."
 
-list='let g:coc_global_extensions = ['$'\n'
-printf -v entries "  \\\\ '%s',\n" "${extensions[@]}"
-list+="$entries  \\]"$'\n'
-
-# The list reaches perl through the environment, so the @ and $ in names
-# such as @yaegassy/coc-ansible are never interpolated by perl or the shell.
-# perl -i writes a temporary file and renames it only on success, so a die
-# leaves .vimrc as it was.
-COC_LIST="$list" perl -0777 -i -pe '
-  s/^let g:coc_global_extensions = \[\n.*?^\s*\\\s*\]\n/$ENV{COC_LIST}/ms
-    or die "No g:coc_global_extensions list found in .vimrc.\n";
+# The installed names reach perl through the environment, so the @ and $ in
+# names such as @yaegassy/coc-ansible are never interpolated by perl or the
+# shell. perl -i writes a temporary file and renames it only on success, so a
+# die leaves .vimrc as it was.
+COC_INSTALLED="$names" perl -0777 -i -pe '
+  s{^let g:coc_global_extensions = \[\n(.*?)^\s*\\\s*\]\n}{
+    my %seen;
+    my @names = grep { !$seen{$_}++ }
+      sort(($1 =~ /^\s*\\\s*\x27([^\x27]+)\x27/mg),
+        split(/\n/, $ENV{COC_INSTALLED}));
+    "let g:coc_global_extensions = [\n"
+      . join("", map { "  \\ \x27$_\x27,\n" } @names) . "  \\]\n";
+  }mse or die "No g:coc_global_extensions list found in .vimrc.\n";
 ' .vimrc

@@ -65,6 +65,15 @@ path_of() {
   assert_equal "$(git log -1 --format=%s)" 'moved surround to 200-lang'
 }
 
+# .vim/2btested is gone from the layout, so 2btested is a package name like
+# any other.
+@test "has no special 2btested target" {
+  mvsubmodule surround 2btested
+  assert_success
+  assert_equal "$(path_of surround)" .vim/pack/2btested/start/surround
+  [[ ! -e .vim/2btested ]] || fail '.vim/2btested was used'
+}
+
 @test "moves a submodule in a linked worktree" {
   # A linked worktree's .git is a file, and git keeps the worktree's
   # submodule directories under the main repository's .git/worktrees.

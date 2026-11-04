@@ -8,7 +8,7 @@ let g:ale_fixers.python = []
 
 if executable('isort')
   call add(g:ale_fixers.python, 'isort')
-  let g:ale_python_isort_auto_poetry = 1
+  let b:ale_python_isort_auto_poetry = 1
 endif
 
 if executable('yapf')

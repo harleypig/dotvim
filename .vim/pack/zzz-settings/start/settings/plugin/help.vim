@@ -1,6 +1,3 @@
-" open help window with a vertical split
-autocmd FileType help wincmd L | call s:resize_help_window()
-
 " resize help window when it is opened
 function! s:resize_help_window()
   if &filetype ==# 'help'
@@ -12,8 +9,15 @@ function! s:resize_help_window()
   endif
 endfunction
 
-" Shamelessly ripped off from
-" https://github.com/whiteinge/dotfiles/blob/master/.vim/ftplugin/help.vim
-" Vim Help docs: hit enter to activate links, and ctrl-[ as a back button
-autocmd FileType help nmap <buffer> <Return> <C-]>
-autocmd FileType help nmap <buffer> <C-[> <C-O>
+augroup HelpWindow
+  autocmd!
+
+  " open help window with a vertical split
+  autocmd FileType help wincmd L | call s:resize_help_window()
+
+  " Shamelessly ripped off from
+  " https://github.com/whiteinge/dotfiles/blob/master/.vim/ftplugin/help.vim
+  " Vim Help docs: hit enter to activate links, and ctrl-[ as a back button
+  autocmd FileType help nmap <buffer> <Return> <C-]>
+  autocmd FileType help nmap <buffer> <C-[> <C-O>
+augroup END

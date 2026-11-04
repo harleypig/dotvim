@@ -67,7 +67,7 @@ update() {
 }
 
 ##############################################################################
-@test "rewrites the list from the installed extensions" {
+@test "adds the installed extensions to the list, sorted" {
   installed coc-sh coc-json @yaegassy/coc-ansible
   update
   assert_success
@@ -79,6 +79,7 @@ set nocompatible
 let g:coc_global_extensions = [
   \ '@yaegassy/coc-ansible',
   \ 'coc-json',
+  \ 'coc-old',
   \ 'coc-sh',
   \]
 
@@ -87,6 +88,15 @@ VIMRC
   )"
 
   [[ ! -e $tripped ]] || fail "unexpected call: $(< "$tripped")"
+}
+
+# The list is what every machine installs, so one machine lacking an
+# extension must not drop it for all of them.
+@test "keeps a listed extension that is not installed here" {
+  installed coc-json
+  update
+  assert_success
+  assert_equal "$(< .vimrc)" "$(< original.vimrc)"
 }
 
 @test "leaves .vimrc alone when nothing is installed" {
@@ -174,7 +184,7 @@ VIMRC
   local entry="^  \\\\ '"
   local entries
   entries=$(grep -c "$entry" .vimrc)
-  assert_equal "$entries" 1
+  assert_equal "$entries" "$(($(grep -c "$entry" original.vimrc) + 1))"
   grep -qF "  \\ 'coc-only'," .vimrc || fail 'coc-only not in the list'
 
   # Outside the list's entries, nothing changed.

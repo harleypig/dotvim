@@ -106,7 +106,7 @@ highlighting.
 * **Features**: isort sorts imports alphabetically and by sections; yapf
     reformats the code
 * **Poetry Support**: isort runs through `poetry` when a `poetry.lock` is
-    found in the file's directory or above (`g:ale_python_isort_auto_poetry`)
+    found in the file's directory or above (`b:ale_python_isort_auto_poetry`)
 * **Indentation**: `python.vim` sets 2-space indentation: `tabstop`,
     `softtabstop` and `shiftwidth` at 2, with `expandtab`
 

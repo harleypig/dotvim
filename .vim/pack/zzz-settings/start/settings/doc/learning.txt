@@ -28,9 +28,9 @@ Leader key: <Leader> is '\'; this configuration does not change it.
 ==============================================================================
 2. General Mappings                                *learning-general-mappings*
 
-<Leader>pp          Toggle paste mode, in Normal and Visual mode. There is
-                    no Insert-mode toggle; bracketed paste covers pasting
-                    in Insert mode.
+<Leader>pp          Toggle paste mode, in Normal mode. There is no
+                    Insert-mode toggle; bracketed paste covers pasting in
+                    Insert mode.
 <C-l>               Clear search highlighting and redraw screen
 <Leader>y           Toggle syntax highlighting
 

@@ -6,8 +6,8 @@ usage() {
 Usage: ${0##*/} NAME PACKAGE
 
 Move the submodule NAME (as named in .gitmodules) to
-.vim/pack/PACKAGE/start/NAME, or to .vim/2btested/NAME when PACKAGE is
-2btested, and commit the move. Run from the top of the repository.
+.vim/pack/PACKAGE/start/NAME and commit the move. Run from the top of the
+repository.
 EOF
 }
 
@@ -32,16 +32,11 @@ _mv() {
     exit 1
   }
 
-  if [[ $newpath == '2btested' ]]; then
-    newpath='.vim/2btested'
-
-  else
-    newpath=".vim/pack/$newpath/start"
-    mkdir -p "$newpath" || {
-      echo "Unable to create $newpath, exiting."
-      exit 1
-    }
-  fi
+  newpath=".vim/pack/$newpath/start"
+  mkdir -p "$newpath" || {
+    echo "Unable to create $newpath, exiting."
+    exit 1
+  }
 
   [[ $oldpath == "$newpath/$name" ]] && {
     echo "$name is already in $newpath"
