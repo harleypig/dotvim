@@ -1,8 +1,9 @@
 #!/usr/bin/env bats
 
 # The small fixes of #44 - small tidy-ups in the late settings: functions
-# kept script-local, autocmds that do not stack when re-sourced, settings
-# kept to the buffer, and branches left for plugins that are not installed.
+# kept script-local, mappings kept to the modes they work in, autocmds that
+# do not stack when re-sourced, settings kept to the buffer, and branches
+# left for plugins that are not installed.
 #
 # The harness is the one in coc.bats: headless Vim on this checkout's .vimrc,
 # HOME and the XDG directories inside the test's temp directory, and a PATH
@@ -156,4 +157,50 @@ EOF
 
   assert_line --partial 'buffer=--indent 2 '
   assert_line 'global=0'
+}
+
+#-----------------------------------------------------------------------------
+@test "the gutter toggles are Normal-mode, non-remapping and script-local" {
+  start_vim << 'EOF2'
+for s:keys in ['<Leader>ln', '<Leader>signs']
+  let s:noremap = maparg(s:keys, 'n', 0, 1).noremap
+  echo s:keys . ' noremap=' . s:noremap . ' rhs=' . maparg(s:keys, 'n')
+  echo s:keys . ' visual=' . maparg(s:keys, 'v')
+endfor
+echo 'global=' . exists('*ToggleLineNumbers') . exists('*ToggleSigns')
+EOF2
+
+  assert_line --regexp '^<Leader>ln noremap=1 rhs=.*<SNR>[0-9]+_ToggleLineNumbers\(\)'
+  assert_line --regexp '^<Leader>signs noremap=1 rhs=.*<SNR>[0-9]+_ToggleSigns\(\)'
+  assert_line '<Leader>ln visual='
+  assert_line '<Leader>signs visual='
+  assert_line 'global=00'
+}
+
+#-----------------------------------------------------------------------------
+@test "<Leader>ln cycles absolute, relative, both, none" {
+  start_vim << 'EOF2'
+for s:i in range(4)
+  execute "normal \\ln"
+  echo 'step' . s:i . '=' . &number . &relativenumber
+endfor
+EOF2
+
+  assert_line 'step0=01'
+  assert_line 'step1=11'
+  assert_line 'step2=00'
+  assert_line 'step3=10'
+}
+
+#-----------------------------------------------------------------------------
+@test "<Leader>signs hides the sign column and brings it back" {
+  start_vim << 'EOF2'
+execute "normal \\signs"
+echo 'hidden=' . &signcolumn
+execute "normal \\signs"
+echo 'shown=' . &signcolumn
+EOF2
+
+  assert_line 'hidden=no'
+  assert_line 'shown=number'
 }
