@@ -7,7 +7,7 @@
 " Adapted from
 " http://www.gregsexton.org/2011/03/improving-the-text-displayed-in-a-fold/
 
-function! CustomFoldText() abort
+function! s:CustomFoldText() abort
   let l:first = nextnonblank(v:foldstart)
 
   if l:first == 0 || l:first > v:foldend
@@ -30,4 +30,4 @@ function! CustomFoldText() abort
   return l:line . repeat('.', l:fill) . l:size_text . l:share . l:level
 endfunction
 
-set foldtext=CustomFoldText()
+set foldtext=s:CustomFoldText()
