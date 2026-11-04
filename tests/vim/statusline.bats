@@ -5,27 +5,21 @@
 # its mode autocmds set, and the ALE counts YASL_LinterStatus() formats.
 # Whether Vim then draws the statusline is Vim's to test.
 #
-# The harness is the one in coc.bats: headless Vim on this checkout's .vimrc,
-# HOME and the XDG directories inside the test's temp directory, and a PATH
-# holding only a stub directory.
+# Vim runs headless through helpers/vim.bash.
 
 bats_load_library bats-support
 bats_load_library bats-assert
+load helpers/vim
 
 ##############################################################################
 #-----------------------------------------------------------------------------
 setup() {
-  repo="$(cd "$BATS_TEST_DIRNAME/../.." && pwd)"
-  stubs="$BATS_TEST_TMPDIR/bin"
-  report="$BATS_TEST_TMPDIR/report"
+  vim_fixture
+
   file="$BATS_TEST_TMPDIR/file.txt"
-  vim="$(type -P vim)"
-  mkdir -p "$stubs" "$BATS_TEST_TMPDIR/home"
 
   [[ -f $repo/.vim/pack/300-intellisense/start/ale/plugin/ale.vim ]] \
     || fail "ALE submodule is not checked out"
-
-  ln -s "$(type -P sh)" "$stubs/sh"
 }
 
 #-----------------------------------------------------------------------------
@@ -41,12 +35,7 @@ run_vim() {
     echo 'qa!'
   } > "$tmp/test.vim"
 
-  timeout 30 env -i \
-    HOME="$tmp/home" PATH="$stubs" TERM=dumb \
-    XDG_DOTVIM="$repo" XDG_CONFIG_HOME="$tmp/config" \
-    XDG_DATA_HOME="$tmp/data" XDG_STATE_HOME="$tmp/state" \
-    XDG_CACHE_HOME="$tmp/cache" \
-    "$vim" -N -u "$repo/.vimrc" -es "$file" -S "$tmp/test.vim" || true
+  headless_vim -- "$file" -S "$tmp/test.vim" || true
 
   run cat "$report"
 }

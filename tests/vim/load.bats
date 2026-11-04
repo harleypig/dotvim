@@ -6,36 +6,23 @@
 # checked to load only through the filetype plugin mechanism, and the last
 # tests check what the ftplugins leave behind for other filetypes.
 #
-# The harness is the one in coc.bats: headless Vim on this checkout's .vimrc,
-# HOME and the XDG directories inside the test's temp directory, and a PATH
-# holding only stubs, so each test decides whether node is "installed".
+# Vim runs headless through helpers/vim.bash, whose PATH holds only stubs, so
+# each test decides whether node is "installed".
 
 bats_load_library bats-support
 bats_load_library bats-assert
+load helpers/vim
 
 ftplugin_dir="$BATS_TEST_DIRNAME/../../.vim/pack/zzz-settings/start/settings/after/ftplugin"
 
 ##############################################################################
 #-----------------------------------------------------------------------------
 setup() {
-  repo="$(cd "$BATS_TEST_DIRNAME/../.." && pwd)"
-  stubs="$BATS_TEST_TMPDIR/bin"
-  tripped="$BATS_TEST_TMPDIR/tripped"
-  report="$BATS_TEST_TMPDIR/report"
-  vim="$(type -P vim)"
-  mkdir -p "$stubs" "$BATS_TEST_TMPDIR/home"
+  vim_fixture
 
   if git -C "$repo" submodule status | grep -q '^-'; then
     fail "a plugin submodule is not checked out"
   fi
-
-  ln -s "$(type -P sh)" "$stubs/sh"
-}
-
-#-----------------------------------------------------------------------------
-with_node() {
-  printf '#!/bin/sh\necho "node $*" >> "%s"\n' "$tripped" > "$stubs/node"
-  chmod +x "$stubs/node"
 }
 
 #-----------------------------------------------------------------------------
@@ -57,13 +44,7 @@ EOF
 
   vim_status=0
 
-  timeout 30 env -i \
-    HOME="$tmp/home" PATH="$stubs" TERM=dumb \
-    XDG_DOTVIM="$repo" XDG_CONFIG_HOME="$tmp/config" \
-    XDG_DATA_HOME="$tmp/data" XDG_STATE_HOME="$tmp/state" \
-    XDG_CACHE_HOME="$tmp/cache" \
-    "$vim" -N -u "$repo/.vimrc" -es "$@" -S "$tmp/report.vim" \
-    || vim_status=$?
+  headless_vim "$@" -S "$tmp/report.vim" || vim_status=$?
 
   run cat "$report"
 }
