@@ -7,9 +7,10 @@ Usage: ${0##*/}
 
 For every submodule in .gitmodules with no branch set, check out its
 remote's default branch, record that branch in .gitmodules and commit
-.gitmodules alone. A submodule whose checkout fails is reported and left
-without a branch, and the script then exits non-zero. Run from the top of
-the repository.
+.gitmodules with the submodule's gitlink, which the checkout may have moved,
+and nothing else. A submodule whose path is missing or whose checkout fails
+is reported and left without a branch, and the script then exits non-zero.
+Run from the top of the repository.
 EOF
 }
 
@@ -33,6 +34,7 @@ for s in "${submodules[@]}"; do
 
   cd "$path" || {
     echo "error changing to $path, ignoring $s"
+    failed=1
     continue
   }
 
@@ -58,8 +60,8 @@ for s in "${submodules[@]}"; do
 
   git config -f .gitmodules --add "submodule.$s.branch" "$default"
 
-  # Naming the path commits .gitmodules alone, whatever else is staged.
-  git commit -q -m "set $s branch to $default" -- .gitmodules
+  # Naming the paths commits these two alone, whatever else is staged.
+  git commit -q -m "set $s branch to $default" -- .gitmodules "$path"
 done
 
 [[ -z $failed ]]

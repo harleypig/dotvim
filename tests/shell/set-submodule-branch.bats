@@ -80,13 +80,13 @@ checked_out() {
   [[ -z $(checked_out surround) ]] || fail 'the submodule was checked out'
 }
 
-@test "reports a missing submodule path and carries on" {
+@test "reports a missing submodule path, carries on, and fails" {
   add_submodule abolish
   add_submodule surround
   rm -rf "$(path_of_name abolish)"
 
   set_submodule_branch
-  assert_success
+  assert_failure
   assert_output --partial 'ignoring abolish'
 
   [[ -z $(branch_of abolish) ]] || fail 'abolish was given a branch'
@@ -106,6 +106,23 @@ checked_out() {
   [[ -z $(git status --porcelain .gitmodules) ]] \
     || fail ".gitmodules left uncommitted: $(git diff .gitmodules)"
   assert_equal "$(git diff --cached --name-only)" other
+}
+
+@test "commits the gitlink the checkout moved, with the branch" {
+  add_submodule surround
+  # A local main one commit ahead of the recorded one, so checking it out
+  # moves the submodule's HEAD and so its gitlink.
+  local sub
+  sub=$(path_of_name surround)
+  git -C "$sub" checkout -q main
+  git -C "$sub" commit -q --allow-empty -m ahead
+  git -C "$sub" checkout -q --detach HEAD~1
+
+  set_submodule_branch
+  assert_success
+  assert_equal "$(git rev-parse "HEAD:$sub")" "$(git -C "$sub" rev-parse HEAD)"
+  [[ -z $(git status --porcelain "$sub") ]] \
+    || fail "gitlink left uncommitted: $(git status --porcelain "$sub")"
 }
 
 @test "records no branch when the checkout fails" {

@@ -24,18 +24,21 @@ commit the change.
   in a package under `.vim/pack/` (such as `100-core`), one commit each. The
   package must already exist; a plugin already in `.gitmodules` is skipped.
 * [`mvsubmodule`][mvsubmodule] - Moves a submodule into a package under
-  `.vim/pack/`, or back to `.vim/2btested/`.
+  `.vim/pack/`.
 * [`rmsubmodule`][rmsubmodule] - Removes a submodule completely, including
   its copy under `.git/modules` (or a linked worktree's own copy).
 * [`set-submodule-branch`][set-submodule-branch] - Records the remote's
-  default branch for every submodule that has none set, and commits
-  `.gitmodules`.
+  default branch for every submodule that has none set, checks that branch
+  out, and commits `.gitmodules` with the submodule's new commit. A
+  submodule it cannot reach or check out is reported and makes it fail.
 
 ## Other
 
-* [`update-coc-extensions`][update-coc-extensions] - Rewrites
-  `g:coc_global_extensions` in `.vimrc` from the CoC extensions installed on
-  this machine, sorted by name. It reads them from `coc/extensions` under
+* [`update-coc-extensions`][update-coc-extensions] - Adds the CoC
+  extensions installed on this machine to `g:coc_global_extensions` in
+  `.vimrc`, and sorts the list by name. An extension already in the list
+  stays even when it is not installed here, so taking one out is done by
+  hand. It reads the installed ones from `coc/extensions` under
   `$XDG_CONFIG_HOME`, or under `~/.config` when that is not a directory, as
   CoC does, unless `COC_EXTENSIONS_DIR` names another directory. It writes
   nothing when none are installed.
