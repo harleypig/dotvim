@@ -1,3 +1,9 @@
+let b:ale_linters = ['markdownlint', 'proselint']
+
+" No Markdown fixer beyond the global ones: prettier writes every bullet as
+" '-', and has no option to keep the '*' that CONVENTIONS.md and
+" .markdownlint.yaml (MD004) ask for.
+
 " markdownlint-cli reads its config file only from the directory it runs in,
 " and ALE runs it from Vim's, so name the project's file outright. The names
 " are the ones markdownlint-cli looks for, in its order.

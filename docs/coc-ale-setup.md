@@ -139,10 +139,10 @@ The late `ale.vim` holds what ALE runs:
 * For every file type with no fixers of its own, the fixers remove trailing
     blank lines at the end of the file and trailing whitespace. ALE runs
     these only when nothing names fixers for the file type, so a file type
-    that has its own, such as Markdown or shell, does not get them.
-* The linters for awk, Dockerfile, Markdown, PowerShell, SQL and systemd,
-    and the fixers for JSONC, Markdown and SQL. Other file types set theirs
-    in their `after/ftplugin/` file. JSONC, TOML and Vim help have no
+    that has its own, such as shell, does not get them.
+* The linters for awk, Dockerfile, PowerShell, SQL and systemd, and the
+    fixer for SQL. Other file types, Markdown and JSONC among them, set
+    theirs in their `after/ftplugin/` file. JSONC, TOML and Vim help have no
     linter, so ALE lints none of them.
 
 `<leader>fb` runs ALE's fixers on the current buffer (`<Plug>(ale_fix)`). It
